@@ -1,0 +1,1331 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>web.protocols Module &mdash; ParaView/Python 5.4.1-616-g387a7b18ba documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="_static/pvIcon.ico"/>
+  
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  
+  
+
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:'./',
+        VERSION:'5.4.1-616-g387a7b18ba',
+        COLLAPSE_INDEX:false,
+        FILE_SUFFIX:'.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="ParaView/Python 5.4.1-616-g387a7b18ba documentation" href="index.html"/>
+        <link rel="up" title="web Package" href="paraview.web.html"/>
+        <link rel="next" title="web.pv_web_catalyst Module" href="paraview.web.pv_web_catalyst.html"/>
+        <link rel="prev" title="web.ipython Module" href="paraview.web.ipython.html"/> 
+
+  <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        <ul>
+          <li> <a href="index.html">
+            <img src="_static/paraview-logo-small.png"
+            alt="ParaView/Python"></img></a> </li>
+          <li class="version"> version 5.4.1-616-g387a7b18ba</li>
+        </ul>
+        <form id ="rtd-search-form" class="wy-form" action="search.html" method="get">
+  <input type="text" name="q" placeholder="Search docs" />
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix">
+        
+        
+            <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="quick-start.html">Quick-Start :  A Tutorial</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="quick-start.html#getting-started">Getting Started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="quick-start.html#creating-a-pipeline">Creating a Pipeline</a></li>
+<li class="toctree-l2"><a class="reference internal" href="quick-start.html#rendering">Rendering</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="reference internal" href="paraview.html">The ParaView Python Package</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="paraview.html#id1"><code class="docutils literal"><span class="pre">paraview</span></code> Package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.html#modules">Modules</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="paraview.html#subpackages">Subpackages</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="paraview.simple.html">simple</a></li>
+<li class="toctree-l1"><a class="reference internal" href="paraview.servermanager.html">servermanager</a></li>
+<li class="toctree-l1"><a class="reference internal" href="paraview.coprocessing.html">coprocessing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="paraview.benchmark.html">benchmark</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="paraview.benchmark.html#id1"><code class="docutils literal"><span class="pre">benchmark</span></code> Package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.benchmark.html#modules">Modules</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="paraview.servermanager_proxies.html">Available readers, sources, writers, filters and animation cues</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.AMRConnectivity.html">paraview.simple.AMRConnectivity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.AMRContour.html">paraview.simple.AMRContour</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.AMRCutPlane.html">paraview.simple.AMRCutPlane</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.AMRDualClip.html">paraview.simple.AMRDualClip</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.AMRFragmentIntegration.html">paraview.simple.AMRFragmentIntegration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.AMRFragmentsFilter.html">paraview.simple.AMRFragmentsFilter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.AMRGaussianPulseSource.html">paraview.simple.AMRGaussianPulseSource</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.AVSUCDReader.html">paraview.simple.AVSUCDReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.AddFieldArrays.html">paraview.simple.AddFieldArrays</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.AggregateDataset.html">paraview.simple.AggregateDataset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.AngularPeriodicFilter.html">paraview.simple.AngularPeriodicFilter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.AnimationCueBase.html">paraview.simple.AnimationCueBase</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.AnimationScene.html">paraview.simple.AnimationScene</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.AnnotateAttributeData.html">paraview.simple.AnnotateAttributeData</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.AnnotateGlobalData.html">paraview.simple.AnnotateGlobalData</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.AnnotateTime.html">paraview.simple.AnnotateTime</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.AnnotateTimeFilter.html">paraview.simple.AnnotateTimeFilter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.AppendArcLength.html">paraview.simple.AppendArcLength</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.AppendAttributes.html">paraview.simple.AppendAttributes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.AppendDatasets.html">paraview.simple.AppendDatasets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.AppendGeometry.html">paraview.simple.AppendGeometry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.AppendReduce.html">paraview.simple.AppendReduce</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.Arrow.html">paraview.simple.Arrow</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.Axes.html">paraview.simple.Axes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.BYUReader.html">paraview.simple.BYUReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.BlockScalars.html">paraview.simple.BlockScalars</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.BlockSelectionSource.html">paraview.simple.BlockSelectionSource</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.BooleanKeyFrame.html">paraview.simple.BooleanKeyFrame</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.BoundingRuler.html">paraview.simple.BoundingRuler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.Box.html">paraview.simple.Box</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.CGNSSeriesReader.html">paraview.simple.CGNSSeriesReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.CMLMoleculeReader.html">paraview.simple.CMLMoleculeReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.CSVReader.html">paraview.simple.CSVReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.CSVWriter.html">paraview.simple.CSVWriter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.CTHSurface.html">paraview.simple.CTHSurface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.Calculator.html">paraview.simple.Calculator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.CameraAnimationCue.html">paraview.simple.CameraAnimationCue</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.CameraKeyFrame.html">paraview.simple.CameraKeyFrame</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.CellCenters.html">paraview.simple.CellCenters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.CellDatatoPointData.html">paraview.simple.CellDatatoPointData</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.CellSize.html">paraview.simple.CellSize</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.CinemaDatabasePipelineObjectFilter.html">paraview.simple.CinemaDatabasePipelineObjectFilter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.CinemaDatabasePipelineObjectReader.html">paraview.simple.CinemaDatabasePipelineObjectReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.Clean.html">paraview.simple.Clean</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.CleanCellstoGrid.html">paraview.simple.CleanCellstoGrid</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.CleantoGrid.html">paraview.simple.CleantoGrid</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.ClientServerMoveData.html">paraview.simple.ClientServerMoveData</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.Clip.html">paraview.simple.Clip</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.ClipClosedSurface.html">paraview.simple.ClipClosedSurface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.ClipGenericDataset.html">paraview.simple.ClipGenericDataset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.ColorByArray.html">paraview.simple.ColorByArray</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.ComparativeAnimationCue.html">paraview.simple.ComparativeAnimationCue</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.CompositeDataIDSelectionSource.html">paraview.simple.CompositeDataIDSelectionSource</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.CompositeKeyFrame.html">paraview.simple.CompositeKeyFrame</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.ComputeDerivatives.html">paraview.simple.ComputeDerivatives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.ComputeQuartiles.html">paraview.simple.ComputeQuartiles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.Cone.html">paraview.simple.Cone</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.Connectivity.html">paraview.simple.Connectivity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.ContingencyStatistics.html">paraview.simple.ContingencyStatistics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.Contour.html">paraview.simple.Contour</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.ContourGenericDataset.html">paraview.simple.ContourGenericDataset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.ConvertAMRdatasettoMultiblock.html">paraview.simple.ConvertAMRdatasettoMultiblock</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.ConvertSelection.html">paraview.simple.ConvertSelection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.CountCellFaces.html">paraview.simple.CountCellFaces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.CountCellVertices.html">paraview.simple.CountCellVertices</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.Crop.html">paraview.simple.Crop</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.Curvature.html">paraview.simple.Curvature</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.Cylinder.html">paraview.simple.Cylinder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.D3.html">paraview.simple.D3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.DEMReader.html">paraview.simple.DEMReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.DICOMReaderSingleFile.html">paraview.simple.DICOMReaderSingleFile</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.DICOMReaderdirectory.html">paraview.simple.DICOMReaderdirectory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.DataObjectGenerator.html">paraview.simple.DataObjectGenerator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.DataSetCSVWriter.html">paraview.simple.DataSetCSVWriter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.DataSetWriter.html">paraview.simple.DataSetWriter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.Decimate.html">paraview.simple.Decimate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.Delaunay2D.html">paraview.simple.Delaunay2D</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.Delaunay3D.html">paraview.simple.Delaunay3D</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.DescriptiveStatistics.html">paraview.simple.DescriptiveStatistics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.Disk.html">paraview.simple.Disk</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.DistributedTrivialProducer.html">paraview.simple.DistributedTrivialProducer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.ENZOAMRParticlesReader.html">paraview.simple.ENZOAMRParticlesReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.Elevation.html">paraview.simple.Elevation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.EnSightMasterServerReader.html">paraview.simple.EnSightMasterServerReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.EnSightReader.html">paraview.simple.EnSightReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.EnSightWriter.html">paraview.simple.EnSightWriter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.EnsembleDataReader.html">paraview.simple.EnsembleDataReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.EnvironmentAnnotation.html">paraview.simple.EnvironmentAnnotation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.EnzoReader.html">paraview.simple.EnzoReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.EvenlySpacedStreamlines2D.html">paraview.simple.EvenlySpacedStreamlines2D</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.ExodusIIReader.html">paraview.simple.ExodusIIReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.ExodusIIWriter.html">paraview.simple.ExodusIIWriter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.ExponentialKeyFrame.html">paraview.simple.ExponentialKeyFrame</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.ExtractAMRBlocks.html">paraview.simple.ExtractAMRBlocks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.ExtractAttributes.html">paraview.simple.ExtractAttributes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.ExtractBagPlots.html">paraview.simple.ExtractBagPlots</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.ExtractBlock.html">paraview.simple.ExtractBlock</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.ExtractCTHParts.html">paraview.simple.ExtractCTHParts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.ExtractCellsByRegion.html">paraview.simple.ExtractCellsByRegion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.ExtractComponent.html">paraview.simple.ExtractComponent</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.ExtractEdges.html">paraview.simple.ExtractEdges</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.ExtractGenericDatasetSurface.html">paraview.simple.ExtractGenericDatasetSurface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.ExtractLevel.html">paraview.simple.ExtractLevel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.ExtractLocation.html">paraview.simple.ExtractLocation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.ExtractRegionSurface.html">paraview.simple.ExtractRegionSurface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.ExtractSelection.html">paraview.simple.ExtractSelection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.ExtractSelectioninternal.html">paraview.simple.ExtractSelectioninternal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.ExtractSubset.html">paraview.simple.ExtractSubset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.ExtractSurface.html">paraview.simple.ExtractSurface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.ExtractTimeSteps.html">paraview.simple.ExtractTimeSteps</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.FFTOfSelectionOverTime.html">paraview.simple.FFTOfSelectionOverTime</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.FLASHAMRParticlesReader.html">paraview.simple.FLASHAMRParticlesReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.FacetReader.html">paraview.simple.FacetReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.FeatureEdges.html">paraview.simple.FeatureEdges</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.FlashReader.html">paraview.simple.FlashReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.FlattenFilter.html">paraview.simple.FlattenFilter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.FluentCaseReader.html">paraview.simple.FluentCaseReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.ForceTime.html">paraview.simple.ForceTime</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.FrustumSelectionSource.html">paraview.simple.FrustumSelectionSource</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.GaussianCubeReader.html">paraview.simple.GaussianCubeReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.GaussianResampling.html">paraview.simple.GaussianResampling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.GenerateIds.html">paraview.simple.GenerateIds</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.GenerateQuadraturePoints.html">paraview.simple.GenerateQuadraturePoints</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.GenerateQuadratureSchemeDictionary.html">paraview.simple.GenerateQuadratureSchemeDictionary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.GenerateSurfaceNormals.html">paraview.simple.GenerateSurfaceNormals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.GeometryFilter.html">paraview.simple.GeometryFilter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.GhostCellsGenerator.html">paraview.simple.GhostCellsGenerator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.GlobalIDSelectionSource.html">paraview.simple.GlobalIDSelectionSource</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.Glyph.html">paraview.simple.Glyph</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.GlyphWithCustomSource.html">paraview.simple.GlyphWithCustomSource</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.Gradient.html">paraview.simple.Gradient</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.GradientMagnitude.html">paraview.simple.GradientMagnitude</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.GradientOfUnstructuredDataSet.html">paraview.simple.GradientOfUnstructuredDataSet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.GridConnectivity.html">paraview.simple.GridConnectivity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.GroupDatasets.html">paraview.simple.GroupDatasets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.GroupTimeSteps.html">paraview.simple.GroupTimeSteps</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.H5PartReader.html">paraview.simple.H5PartReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.HierarchicalDataIDSelectionSource.html">paraview.simple.HierarchicalDataIDSelectionSource</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.HierarchicalFractal.html">paraview.simple.HierarchicalFractal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.Histogram.html">paraview.simple.Histogram</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.HoudiniWriter.html">paraview.simple.HoudiniWriter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.HyperTreeGrid.html">paraview.simple.HyperTreeGrid</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.IDSelectionSource.html">paraview.simple.IDSelectionSource</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.ImageDataToAMR.html">paraview.simple.ImageDataToAMR</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.ImageDataToUniformGrid.html">paraview.simple.ImageDataToUniformGrid</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.ImageDatatoPointSet.html">paraview.simple.ImageDatatoPointSet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.ImageReader.html">paraview.simple.ImageReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.ImageResampling.html">paraview.simple.ImageResampling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.ImageShrink.html">paraview.simple.ImageShrink</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.InSituParticlePath.html">paraview.simple.InSituParticlePath</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.IntegrateVariables.html">paraview.simple.IntegrateVariables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.InterpolatetoQuadraturePoints.html">paraview.simple.InterpolatetoQuadraturePoints</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.IntersectFragments.html">paraview.simple.IntersectFragments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.IsoVolume.html">paraview.simple.IsoVolume</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.JPEGSeriesReader.html">paraview.simple.JPEGSeriesReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.JPEGWriter.html">paraview.simple.JPEGWriter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.JSONImageWriter.html">paraview.simple.JSONImageWriter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.KMeans.html">paraview.simple.KMeans</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.KeyFrame.html">paraview.simple.KeyFrame</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.KeyFrameAnimationCue.html">paraview.simple.KeyFrameAnimationCue</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.LSDynaReader.html">paraview.simple.LSDynaReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.LegacyArbitrarySourceGlyph.html">paraview.simple.LegacyArbitrarySourceGlyph</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.LegacyGlyph.html">paraview.simple.LegacyGlyph</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.LegacyResampleWithDataset.html">paraview.simple.LegacyResampleWithDataset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.LegacyVTKReader.html">paraview.simple.LegacyVTKReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.LevelScalarsNonOverlappingAMR.html">paraview.simple.LevelScalarsNonOverlappingAMR</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.LevelScalarsOverlappingAMR.html">paraview.simple.LevelScalarsOverlappingAMR</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.Line.html">paraview.simple.Line</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.LinearExtrusion.html">paraview.simple.LinearExtrusion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.LocationSelectionSource.html">paraview.simple.LocationSelectionSource</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.LoopSubdivision.html">paraview.simple.LoopSubdivision</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.MFIXReader.html">paraview.simple.MFIXReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.MPIMoveData.html">paraview.simple.MPIMoveData</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.MRCSeriesReader.html">paraview.simple.MRCSeriesReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.Mandelbrot.html">paraview.simple.Mandelbrot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.MaskPoints.html">paraview.simple.MaskPoints</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.MaterialInterfaceFilter.html">paraview.simple.MaterialInterfaceFilter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.Median.html">paraview.simple.Median</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.MergeBlocks.html">paraview.simple.MergeBlocks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.MeshQuality.html">paraview.simple.MeshQuality</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.MetaFileSeriesReader.html">paraview.simple.MetaFileSeriesReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.MetaImageWriter.html">paraview.simple.MetaImageWriter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.MinMax.html">paraview.simple.MinMax</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.MulticorrelativeStatistics.html">paraview.simple.MulticorrelativeStatistics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.NetCDFCAMreader.html">paraview.simple.NetCDFCAMreader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.NetCDFMPASreader.html">paraview.simple.NetCDFMPASreader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.NetCDFPOPreader.html">paraview.simple.NetCDFPOPreader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.NetCDFReader.html">paraview.simple.NetCDFReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.NetworkImageSource.html">paraview.simple.NetworkImageSource</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.NormalGlyphs.html">paraview.simple.NormalGlyphs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.NrrdReader.html">paraview.simple.NrrdReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.OctreeDepthLimit.html">paraview.simple.OctreeDepthLimit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.OctreeDepthScalars.html">paraview.simple.OctreeDepthScalars</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.OctreeFractal.html">paraview.simple.OctreeFractal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.OpenFOAMReader.html">paraview.simple.OpenFOAMReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.OrderedCompositeDistributor.html">paraview.simple.OrderedCompositeDistributor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.Outline.html">paraview.simple.Outline</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.Outline.html">paraview.simple.Outline</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.OutlineCorners.html">paraview.simple.OutlineCorners</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.OutlineCurvilinearDataSet.html">paraview.simple.OutlineCurvilinearDataSet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.OutlineGenericDataSet.html">paraview.simple.OutlineGenericDataSet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.PDBReader.html">paraview.simple.PDBReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.PDataSetWriterPolyData.html">paraview.simple.PDataSetWriterPolyData</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.PDataSetWriterUnstructuredGrid.html">paraview.simple.PDataSetWriterUnstructuredGrid</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.PLOT3DMetaFileReader.html">paraview.simple.PLOT3DMetaFileReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.PLOT3DReader.html">paraview.simple.PLOT3DReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.PLYReader.html">paraview.simple.PLYReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.PNGSeriesReader.html">paraview.simple.PNGSeriesReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.PNGWriter.html">paraview.simple.PNGWriter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.PPLYWriter.html">paraview.simple.PPLYWriter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.PSTLWriter.html">paraview.simple.PSTLWriter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.PTSReader.html">paraview.simple.PTSReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.PVDReader.html">paraview.simple.PVDReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.PVTrivialProducer.html">paraview.simple.PVTrivialProducer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.ParallelNetCDFPOPreader.html">paraview.simple.ParallelNetCDFPOPreader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.ParticlePath.html">paraview.simple.ParticlePath</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.ParticleTracer.html">paraview.simple.ParticleTracer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.ParticlesReader.html">paraview.simple.ParticlesReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.PartitionedLegacyVTKReader.html">paraview.simple.PartitionedLegacyVTKReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.PassArrays.html">paraview.simple.PassArrays</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.PassThrough.html">paraview.simple.PassThrough</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.PedigreeIDSelectionSource.html">paraview.simple.PedigreeIDSelectionSource</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.PhastaReader.html">paraview.simple.PhastaReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.Plane.html">paraview.simple.Plane</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.PlotData.html">paraview.simple.PlotData</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.PlotGlobalVariablesOverTime.html">paraview.simple.PlotGlobalVariablesOverTime</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.PlotOnIntersectionCurves.html">paraview.simple.PlotOnIntersectionCurves</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.PlotOnSortedLines.html">paraview.simple.PlotOnSortedLines</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.PlotOverLine.html">paraview.simple.PlotOverLine</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.PlotSelectionOverTime.html">paraview.simple.PlotSelectionOverTime</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.PointDatasetInterpolator.html">paraview.simple.PointDatasetInterpolator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.PointDatatoCellData.html">paraview.simple.PointDatatoCellData</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.PointInterpolator.html">paraview.simple.PointInterpolator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.PointLineInterpolator.html">paraview.simple.PointLineInterpolator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.PointPlaneInterpolator.html">paraview.simple.PointPlaneInterpolator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.PointSource.html">paraview.simple.PointSource</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.PointVolumeInterpolator.html">paraview.simple.PointVolumeInterpolator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.PolyLineSource.html">paraview.simple.PolyLineSource</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.PolyLineToRectilinearGrid.html">paraview.simple.PolyLineToRectilinearGrid</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.PrincipalComponentAnalysis.html">paraview.simple.PrincipalComponentAnalysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.ProbeLocation.html">paraview.simple.ProbeLocation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.ProcessIdScalars.html">paraview.simple.ProcessIdScalars</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.ProgrammableFilter.html">paraview.simple.ProgrammableFilter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.ProgrammableSource.html">paraview.simple.ProgrammableSource</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.PythonAnimationCue.html">paraview.simple.PythonAnimationCue</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.PythonAnnotation.html">paraview.simple.PythonAnnotation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.PythonCalculator.html">paraview.simple.PythonCalculator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.QuadricClustering.html">paraview.simple.QuadricClustering</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.RTXMLPolyDataReader.html">paraview.simple.RTXMLPolyDataReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.RampKeyFrame.html">paraview.simple.RampKeyFrame</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.RandomAttributes.html">paraview.simple.RandomAttributes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.RandomVectors.html">paraview.simple.RandomVectors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.RectilinearDatatoPointSet.html">paraview.simple.RectilinearDatatoPointSet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.RectilinearGridConnectivity.html">paraview.simple.RectilinearGridConnectivity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.RectilinearGridGeometryFilter.html">paraview.simple.RectilinearGridGeometryFilter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.ReductionFilter.html">paraview.simple.ReductionFilter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.Reflect.html">paraview.simple.Reflect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.RemoteSourceProxy.html">paraview.simple.RemoteSourceProxy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.RemoveGhostInformation.html">paraview.simple.RemoveGhostInformation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.ResampleAMR.html">paraview.simple.ResampleAMR</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.ResampleToImage.html">paraview.simple.ResampleToImage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.ResampleWithDataset.html">paraview.simple.ResampleWithDataset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.RestartedSimExodusReader.html">paraview.simple.RestartedSimExodusReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.RestartedSimSpyPlotReader.html">paraview.simple.RestartedSimSpyPlotReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.Ribbon.html">paraview.simple.Ribbon</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.RotationalExtrusion.html">paraview.simple.RotationalExtrusion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.Ruler.html">paraview.simple.Ruler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.SLACDataReader.html">paraview.simple.SLACDataReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.SLACParticleDataReader.html">paraview.simple.SLACParticleDataReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.SPHDatasetInterpolator.html">paraview.simple.SPHDatasetInterpolator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.SPHInterpolator.html">paraview.simple.SPHInterpolator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.SPHLineInterpolator.html">paraview.simple.SPHLineInterpolator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.SPHPlaneInterpolator.html">paraview.simple.SPHPlaneInterpolator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.SPHVolumeInterpolator.html">paraview.simple.SPHVolumeInterpolator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.STLReader.html">paraview.simple.STLReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.ScatterPlot.html">paraview.simple.ScatterPlot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.SelectionQuerySource.html">paraview.simple.SelectionQuerySource</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.SelectionSourceBase.html">paraview.simple.SelectionSourceBase</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.Shrink.html">paraview.simple.Shrink</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.SinusoidKeyFrame.html">paraview.simple.SinusoidKeyFrame</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.Slice.html">paraview.simple.Slice</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.SliceAMRdata.html">paraview.simple.SliceAMRdata</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.SliceAlongPolyLine.html">paraview.simple.SliceAlongPolyLine</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.SliceGenericDataset.html">paraview.simple.SliceGenericDataset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.SliceWithPlane.html">paraview.simple.SliceWithPlane</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.Slicedemanddrivencomposite.html">paraview.simple.Slicedemanddrivencomposite</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.Smooth.html">paraview.simple.Smooth</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.Sphere.html">paraview.simple.Sphere</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.SplineSource.html">paraview.simple.SplineSource</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.SpyPlotReader.html">paraview.simple.SpyPlotReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.StreakLine.html">paraview.simple.StreakLine</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.StreamTracer.html">paraview.simple.StreamTracer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.StreamTracerForGenericDatasets.html">paraview.simple.StreamTracerForGenericDatasets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.StreamTracerWithCustomSource.html">paraview.simple.StreamTracerWithCustomSource</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.Subdivide.html">paraview.simple.Subdivide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.Superquadric.html">paraview.simple.Superquadric</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.SurfaceFlow.html">paraview.simple.SurfaceFlow</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.SurfaceVectors.html">paraview.simple.SurfaceVectors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.SynchronizeTime.html">paraview.simple.SynchronizeTime</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.TIFFReader.html">paraview.simple.TIFFReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.TIFFSeriesReader.html">paraview.simple.TIFFSeriesReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.TIFFWriter.html">paraview.simple.TIFFWriter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.TRUCHASReader.html">paraview.simple.TRUCHASReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.TableFFT.html">paraview.simple.TableFFT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.TableToPoints.html">paraview.simple.TableToPoints</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.TableToStructuredGrid.html">paraview.simple.TableToStructuredGrid</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.TecplotReader.html">paraview.simple.TecplotReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.TecplotTableReader.html">paraview.simple.TecplotTableReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.TemporalArrayOperator.html">paraview.simple.TemporalArrayOperator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.TemporalCache.html">paraview.simple.TemporalCache</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.TemporalInterpolator.html">paraview.simple.TemporalInterpolator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.TemporalParticlesToPathlines.html">paraview.simple.TemporalParticlesToPathlines</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.TemporalShiftScale.html">paraview.simple.TemporalShiftScale</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.TemporalSnaptoTimeStep.html">paraview.simple.TemporalSnaptoTimeStep</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.TemporalStatistics.html">paraview.simple.TemporalStatistics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.TensorGlyph.html">paraview.simple.TensorGlyph</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.Tessellate.html">paraview.simple.Tessellate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.TessellateGenericDataset.html">paraview.simple.TessellateGenericDataset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.Test3DWidget.html">paraview.simple.Test3DWidget</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.Tetrahedralize.html">paraview.simple.Tetrahedralize</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.Text.html">paraview.simple.Text</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.TextureMaptoCylinder.html">paraview.simple.TextureMaptoCylinder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.TextureMaptoPlane.html">paraview.simple.TextureMaptoPlane</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.TextureMaptoSphere.html">paraview.simple.TextureMaptoSphere</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.Threshold.html">paraview.simple.Threshold</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.ThresholdSelectionSource.html">paraview.simple.ThresholdSelectionSource</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.TimeAnimationCue.html">paraview.simple.TimeAnimationCue</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.TimeSource.html">paraview.simple.TimeSource</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.TimeStepProgressBar.html">paraview.simple.TimeStepProgressBar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.Transform.html">paraview.simple.Transform</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.TransposeTable.html">paraview.simple.TransposeTable</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.TriangleStrips.html">paraview.simple.TriangleStrips</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.Triangulate.html">paraview.simple.Triangulate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.TrivialProducer.html">paraview.simple.TrivialProducer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.Tube.html">paraview.simple.Tube</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.UnstructuredCellTypes.html">paraview.simple.UnstructuredCellTypes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.UnstructuredNetCDFPOPreader.html">paraview.simple.UnstructuredNetCDFPOPreader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.VASPAnimationReader.html">paraview.simple.VASPAnimationReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.VASPTessellationReader.html">paraview.simple.VASPTessellationReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.VPICReader.html">paraview.simple.VPICReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.VRMLReader.html">paraview.simple.VRMLReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.WarpByScalar.html">paraview.simple.WarpByScalar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.WarpByVector.html">paraview.simple.WarpByVector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.WavefrontOBJReader.html">paraview.simple.WavefrontOBJReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.Wavelet.html">paraview.simple.Wavelet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.WindBladereader.html">paraview.simple.WindBladereader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.XDMFReader.html">paraview.simple.XDMFReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.XMLDataSetWriterBase.html">paraview.simple.XMLDataSetWriterBase</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.XMLHierarchicalBoxDataWriter.html">paraview.simple.XMLHierarchicalBoxDataWriter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.XMLHierarchicalBoxDatareader.html">paraview.simple.XMLHierarchicalBoxDatareader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.XMLHyperOctreeWriter.html">paraview.simple.XMLHyperOctreeWriter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.XMLImageDataReader.html">paraview.simple.XMLImageDataReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.XMLImageDataWriter.html">paraview.simple.XMLImageDataWriter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.XMLMultiBlockDataReader.html">paraview.simple.XMLMultiBlockDataReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.XMLMultiBlockDataWriter.html">paraview.simple.XMLMultiBlockDataWriter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.XMLPImageDataWriter.html">paraview.simple.XMLPImageDataWriter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.XMLPPolyDataWriter.html">paraview.simple.XMLPPolyDataWriter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.XMLPRectilinearGridWriter.html">paraview.simple.XMLPRectilinearGridWriter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.XMLPStructuredGridWriter.html">paraview.simple.XMLPStructuredGridWriter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.XMLPUnstructuredGridWriter.html">paraview.simple.XMLPUnstructuredGridWriter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.XMLPVAnimationWriter.html">paraview.simple.XMLPVAnimationWriter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.XMLPVDWriter.html">paraview.simple.XMLPVDWriter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.XMLPartitionedImageDataReader.html">paraview.simple.XMLPartitionedImageDataReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.XMLPartitionedPolydataReader.html">paraview.simple.XMLPartitionedPolydataReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.XMLPartitionedRectilinearGridReader.html">paraview.simple.XMLPartitionedRectilinearGridReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.XMLPartitionedStructuredGridReader.html">paraview.simple.XMLPartitionedStructuredGridReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.XMLPartitionedUnstructuredGridReader.html">paraview.simple.XMLPartitionedUnstructuredGridReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.XMLPolyDataReader.html">paraview.simple.XMLPolyDataReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.XMLPolyDataWriter.html">paraview.simple.XMLPolyDataWriter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.XMLRectilinearGridReader.html">paraview.simple.XMLRectilinearGridReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.XMLRectilinearGridWriter.html">paraview.simple.XMLRectilinearGridWriter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.XMLStructuredGridReader.html">paraview.simple.XMLStructuredGridReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.XMLStructuredGridWriter.html">paraview.simple.XMLStructuredGridWriter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.XMLUniformGridAMRReader.html">paraview.simple.XMLUniformGridAMRReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.XMLUniformGridAMRWriter.html">paraview.simple.XMLUniformGridAMRWriter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.XMLUnstructuredGridReader.html">paraview.simple.XMLUnstructuredGridReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.XMLUnstructuredGridWriter.html">paraview.simple.XMLUnstructuredGridWriter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.XYZReader.html">paraview.simple.XYZReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.XdmfWriter.html">paraview.simple.XdmfWriter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.YoungsMaterialInterface.html">paraview.simple.YoungsMaterialInterface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.a2DGlyph.html">paraview.simple.a2DGlyph</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.a3DText.html">paraview.simple.a3DText</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.plyreader.html">paraview.simple.plyreader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.proSTARSTARCDReader.html">paraview.simple.proSTARSTARCDReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.spcthhistoryreader.html">paraview.simple.spcthhistoryreader</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="python-2-vs-3.html">Python Version 2 versus 3</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="python-2-vs-3.html#print-is-a-function"><code class="docutils literal"><span class="pre">print</span></code> is a function</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python-2-vs-3.html#exceptions">Exceptions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python-2-vs-3.html#iterables">Iterables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python-2-vs-3.html#iterators-not-lists">Iterators, not lists</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python-2-vs-3.html#submodule-import">Submodule import</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python-2-vs-3.html#new-modules">New modules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python-2-vs-3.html#references">References</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="api-changes.html">API Changes between ParaView versions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="api-changes.html#changes-in-5-5">Changes in 5.5</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-changes.html#changes-in-5-1">Changes in 5.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-changes.html#changes-in-4-2">Changes in 4.2</a></li>
+</ul>
+</li>
+</ul>
+
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top">
+        <i data-toggle="wy-nav-top" class="icon icon-reorder"></i>
+        <a href="index.html">ParaView/Python</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <ul class="wy-breadcrumbs">
+  <li><a href="index.html">Docs</a> &raquo;</li>
+  <a href="genindex.html" class="float-right">Index</a> 
+  <li><a href="">web.protocols Module</a></li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+</ul>
+<hr/>
+          
+  <div class="section" id="web-protocols-module">
+<h1>web.protocols Module<a class="headerlink" href="#web-protocols-module" title="Permalink to this headline">¶</a></h1>
+<span class="target" id="module-paraview.web.protocols"></span><p>paraviewweb_protocols is a module that contains a set of ParaViewWeb related
+protocols that can be combined together to provide a flexible way to define
+very specific web application.</p>
+<dl class="class">
+<dt id="paraview.web.protocols.ParaViewWebColorManager">
+<em class="property">class </em><code class="descclassname">paraview.web.protocols.</code><code class="descname">ParaViewWebColorManager</code><span class="sig-paren">(</span><em>pathToColorMaps=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebColorManager"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebColorManager" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#paraview.web.protocols.ParaViewWebProtocol" title="paraview.web.protocols.ParaViewWebProtocol"><code class="xref py py-class docutils literal"><span class="pre">paraview.web.protocols.ParaViewWebProtocol</span></code></a></p>
+<dl class="method">
+<dt id="paraview.web.protocols.ParaViewWebColorManager.colorBy">
+<code class="descname">colorBy</code><span class="sig-paren">(</span><em>representation</em>, <em>colorMode</em>, <em>arrayLocation='POINTS'</em>, <em>arrayName=''</em>, <em>vectorMode='Magnitude'</em>, <em>vectorComponent=0</em>, <em>rescale=False</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebColorManager.colorBy"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebColorManager.colorBy" title="Permalink to this definition">¶</a></dt>
+<dd><p>Choose the array to color by, and optionally specify magnitude or a
+vector component in the case of vector array.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="paraview.web.protocols.ParaViewWebColorManager.getCurrentScalarRange">
+<code class="descname">getCurrentScalarRange</code><span class="sig-paren">(</span><em>proxyId</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebColorManager.getCurrentScalarRange"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebColorManager.getCurrentScalarRange" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="paraview.web.protocols.ParaViewWebColorManager.getLutImage">
+<code class="descname">getLutImage</code><span class="sig-paren">(</span><em>representation</em>, <em>numSamples</em>, <em>customRange=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebColorManager.getLutImage"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebColorManager.getLutImage" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="paraview.web.protocols.ParaViewWebColorManager.getLutImages">
+<code class="descname">getLutImages</code><span class="sig-paren">(</span><em>numSamples</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebColorManager.getLutImages"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebColorManager.getLutImages" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="paraview.web.protocols.ParaViewWebColorManager.getOpacityFunctionPoints">
+<code class="descname">getOpacityFunctionPoints</code><span class="sig-paren">(</span><em>arrayName</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebColorManager.getOpacityFunctionPoints"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebColorManager.getOpacityFunctionPoints" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="paraview.web.protocols.ParaViewWebColorManager.getRgbPoints">
+<code class="descname">getRgbPoints</code><span class="sig-paren">(</span><em>arrayName</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebColorManager.getRgbPoints"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebColorManager.getRgbPoints" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="paraview.web.protocols.ParaViewWebColorManager.getScalarBarVisibilities">
+<code class="descname">getScalarBarVisibilities</code><span class="sig-paren">(</span><em>proxyIdList</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebColorManager.getScalarBarVisibilities"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebColorManager.getScalarBarVisibilities" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns whether or not each specified scalar bar is visible.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="paraview.web.protocols.ParaViewWebColorManager.getSurfaceOpacity">
+<code class="descname">getSurfaceOpacity</code><span class="sig-paren">(</span><em>representation</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebColorManager.getSurfaceOpacity"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebColorManager.getSurfaceOpacity" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="paraview.web.protocols.ParaViewWebColorManager.listColorMapNames">
+<code class="descname">listColorMapNames</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebColorManager.listColorMapNames"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebColorManager.listColorMapNames" title="Permalink to this definition">¶</a></dt>
+<dd><p>List the names of all color map presets available on the server.  This
+list will contain the names of any presets you provided in the file you
+supplied to the constructor of this protocol.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="paraview.web.protocols.ParaViewWebColorManager.rescaleTransferFunction">
+<code class="descname">rescaleTransferFunction</code><span class="sig-paren">(</span><em>options</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebColorManager.rescaleTransferFunction"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebColorManager.rescaleTransferFunction" title="Permalink to this definition">¶</a></dt>
+<dd><p>Rescale the color transfer function to fit either the data range,
+the data range over time, or to a custom range, for the array by
+which the representation is currently being colored.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="paraview.web.protocols.ParaViewWebColorManager.selectColorMap">
+<code class="descname">selectColorMap</code><span class="sig-paren">(</span><em>representation</em>, <em>paletteName</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebColorManager.selectColorMap"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebColorManager.selectColorMap" title="Permalink to this definition">¶</a></dt>
+<dd><p>Choose the color map preset to use when coloring by an array.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="paraview.web.protocols.ParaViewWebColorManager.setOpacityFunctionPoints">
+<code class="descname">setOpacityFunctionPoints</code><span class="sig-paren">(</span><em>arrayName</em>, <em>pointArray</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebColorManager.setOpacityFunctionPoints"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebColorManager.setOpacityFunctionPoints" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="paraview.web.protocols.ParaViewWebColorManager.setRgbPoints">
+<code class="descname">setRgbPoints</code><span class="sig-paren">(</span><em>arrayName</em>, <em>rgbInfo</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebColorManager.setRgbPoints"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebColorManager.setRgbPoints" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="paraview.web.protocols.ParaViewWebColorManager.setScalarBarVisibilities">
+<code class="descname">setScalarBarVisibilities</code><span class="sig-paren">(</span><em>proxyIdMap</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebColorManager.setScalarBarVisibilities"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebColorManager.setScalarBarVisibilities" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the visibility of the scalar bar corresponding to each specified
+proxy.  The representation for each proxy is found using the
+filter/source proxy id and the current view.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="paraview.web.protocols.ParaViewWebColorManager.setSurfaceOpacity">
+<code class="descname">setSurfaceOpacity</code><span class="sig-paren">(</span><em>representation</em>, <em>enabled</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebColorManager.setSurfaceOpacity"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebColorManager.setSurfaceOpacity" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="paraview.web.protocols.ParaViewWebExportData">
+<em class="property">class </em><code class="descclassname">paraview.web.protocols.</code><code class="descname">ParaViewWebExportData</code><span class="sig-paren">(</span><em>basePath</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebExportData"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebExportData" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#paraview.web.protocols.ParaViewWebProtocol" title="paraview.web.protocols.ParaViewWebProtocol"><code class="xref py py-class docutils literal"><span class="pre">paraview.web.protocols.ParaViewWebProtocol</span></code></a></p>
+<dl class="method">
+<dt id="paraview.web.protocols.ParaViewWebExportData.exportData">
+<code class="descname">exportData</code><span class="sig-paren">(</span><em>proxy_id</em>, <em>path</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebExportData.exportData"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebExportData.exportData" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="paraview.web.protocols.ParaViewWebFileListing">
+<em class="property">class </em><code class="descclassname">paraview.web.protocols.</code><code class="descname">ParaViewWebFileListing</code><span class="sig-paren">(</span><em>basePath</em>, <em>name</em>, <em>excludeRegex='^\.|~$|^\$'</em>, <em>groupRegex='[0-9]+\.'</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebFileListing"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebFileListing" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#paraview.web.protocols.ParaViewWebProtocol" title="paraview.web.protocols.ParaViewWebProtocol"><code class="xref py py-class docutils literal"><span class="pre">paraview.web.protocols.ParaViewWebProtocol</span></code></a></p>
+<dl class="method">
+<dt id="paraview.web.protocols.ParaViewWebFileListing.handleMultiRoot">
+<code class="descname">handleMultiRoot</code><span class="sig-paren">(</span><em>relativeDir</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebFileListing.handleMultiRoot"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebFileListing.handleMultiRoot" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="paraview.web.protocols.ParaViewWebFileListing.handleSingleRoot">
+<code class="descname">handleSingleRoot</code><span class="sig-paren">(</span><em>baseDirectory</em>, <em>relativeDir</em>, <em>startPath=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebFileListing.handleSingleRoot"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebFileListing.handleSingleRoot" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="paraview.web.protocols.ParaViewWebFileListing.listServerDirectory">
+<code class="descname">listServerDirectory</code><span class="sig-paren">(</span><em>relativeDir='.'</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebFileListing.listServerDirectory"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebFileListing.listServerDirectory" title="Permalink to this definition">¶</a></dt>
+<dd><p>RPC Callback to list a server directory relative to the basePath
+provided at start-up.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="paraview.web.protocols.ParaViewWebKeyValuePairStore">
+<em class="property">class </em><code class="descclassname">paraview.web.protocols.</code><code class="descname">ParaViewWebKeyValuePairStore</code><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebKeyValuePairStore"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebKeyValuePairStore" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#paraview.web.protocols.ParaViewWebProtocol" title="paraview.web.protocols.ParaViewWebProtocol"><code class="xref py py-class docutils literal"><span class="pre">paraview.web.protocols.ParaViewWebProtocol</span></code></a></p>
+<dl class="method">
+<dt id="paraview.web.protocols.ParaViewWebKeyValuePairStore.retrieveKeyPair">
+<code class="descname">retrieveKeyPair</code><span class="sig-paren">(</span><em>key</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebKeyValuePairStore.retrieveKeyPair"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebKeyValuePairStore.retrieveKeyPair" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="paraview.web.protocols.ParaViewWebKeyValuePairStore.storeKeyPair">
+<code class="descname">storeKeyPair</code><span class="sig-paren">(</span><em>key</em>, <em>value</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebKeyValuePairStore.storeKeyPair"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebKeyValuePairStore.storeKeyPair" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="paraview.web.protocols.ParaViewWebLocalRendering">
+<em class="property">class </em><code class="descclassname">paraview.web.protocols.</code><code class="descname">ParaViewWebLocalRendering</code><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebLocalRendering"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebLocalRendering" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#paraview.web.protocols.ParaViewWebProtocol" title="paraview.web.protocols.ParaViewWebProtocol"><code class="xref py py-class docutils literal"><span class="pre">paraview.web.protocols.ParaViewWebProtocol</span></code></a></p>
+<dl class="method">
+<dt id="paraview.web.protocols.ParaViewWebLocalRendering.addViewObserver">
+<code class="descname">addViewObserver</code><span class="sig-paren">(</span><em>viewId</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebLocalRendering.addViewObserver"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebLocalRendering.addViewObserver" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="paraview.web.protocols.ParaViewWebLocalRendering.getArray">
+<code class="descname">getArray</code><span class="sig-paren">(</span><em>dataHash</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebLocalRendering.getArray"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebLocalRendering.getArray" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="paraview.web.protocols.ParaViewWebLocalRendering.getViewState">
+<code class="descname">getViewState</code><span class="sig-paren">(</span><em>viewId</em>, <em>newSubscription=False</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebLocalRendering.getViewState"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebLocalRendering.getViewState" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="paraview.web.protocols.ParaViewWebLocalRendering.removeViewObserver">
+<code class="descname">removeViewObserver</code><span class="sig-paren">(</span><em>viewId</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebLocalRendering.removeViewObserver"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebLocalRendering.removeViewObserver" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="paraview.web.protocols.ParaViewWebMouseHandler">
+<em class="property">class </em><code class="descclassname">paraview.web.protocols.</code><code class="descname">ParaViewWebMouseHandler</code><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebMouseHandler"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebMouseHandler" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#paraview.web.protocols.ParaViewWebProtocol" title="paraview.web.protocols.ParaViewWebProtocol"><code class="xref py py-class docutils literal"><span class="pre">paraview.web.protocols.ParaViewWebProtocol</span></code></a></p>
+<dl class="method">
+<dt id="paraview.web.protocols.ParaViewWebMouseHandler.mouseInteraction">
+<code class="descname">mouseInteraction</code><span class="sig-paren">(</span><em>event</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebMouseHandler.mouseInteraction"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebMouseHandler.mouseInteraction" title="Permalink to this definition">¶</a></dt>
+<dd><p>RPC Callback for mouse interactions.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="paraview.web.protocols.ParaViewWebProtocol">
+<em class="property">class </em><code class="descclassname">paraview.web.protocols.</code><code class="descname">ParaViewWebProtocol</code><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebProtocol"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebProtocol" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">vtk.web.protocols.vtkWebProtocol</span></code></p>
+<dl class="method">
+<dt id="paraview.web.protocols.ParaViewWebProtocol.debug">
+<code class="descname">debug</code><span class="sig-paren">(</span><em>msg</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebProtocol.debug"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebProtocol.debug" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="paraview.web.protocols.ParaViewWebProtocol.getAbsolutePath">
+<code class="descname">getAbsolutePath</code><span class="sig-paren">(</span><em>relativePath</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebProtocol.getAbsolutePath"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebProtocol.getAbsolutePath" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="paraview.web.protocols.ParaViewWebProtocol.getView">
+<code class="descname">getView</code><span class="sig-paren">(</span><em>vid</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebProtocol.getView"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebProtocol.getView" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the view for a given view ID, if vid is None then return the
+current active view.
+:param vid: The view ID
+:type vid: str</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="paraview.web.protocols.ParaViewWebProtocol.mapIdToProxy">
+<code class="descname">mapIdToProxy</code><span class="sig-paren">(</span><em>id</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebProtocol.mapIdToProxy"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebProtocol.mapIdToProxy" title="Permalink to this definition">¶</a></dt>
+<dd><p>Maps global-id for a proxy to the proxy instance. May return None if the
+id is not valid.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="paraview.web.protocols.ParaViewWebProtocol.publish">
+<code class="descname">publish</code><span class="sig-paren">(</span><em>topic</em>, <em>event</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebProtocol.publish"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebProtocol.publish" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="paraview.web.protocols.ParaViewWebProtocol.setBaseDirectory">
+<code class="descname">setBaseDirectory</code><span class="sig-paren">(</span><em>basePath</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebProtocol.setBaseDirectory"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebProtocol.setBaseDirectory" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="paraview.web.protocols.ParaViewWebProtocol.updateScalarBars">
+<code class="descname">updateScalarBars</code><span class="sig-paren">(</span><em>view=None</em>, <em>mode=1</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebProtocol.updateScalarBars"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebProtocol.updateScalarBars" title="Permalink to this definition">¶</a></dt>
+<dd><p>Manage scalarbar state</p>
+<blockquote>
+<div><dl class="docutils">
+<dt>view:</dt>
+<dd>A view proxy or the current active view will be used.</dd>
+<dt>mode:</dt>
+<dd>HIDE_UNUSED_SCALAR_BARS = 0x01,
+SHOW_USED_SCALAR_BARS = 0x02</dd>
+</dl>
+</div></blockquote>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="paraview.web.protocols.ParaViewWebProxyManager">
+<em class="property">class </em><code class="descclassname">paraview.web.protocols.</code><code class="descname">ParaViewWebProxyManager</code><span class="sig-paren">(</span><em>allowedProxiesFile=None</em>, <em>baseDir=None</em>, <em>fileToLoad=None</em>, <em>allowUnconfiguredReaders=True</em>, <em>groupProxyEditorWidgets=True</em>, <em>respectPropertyGroups=True</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebProxyManager"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebProxyManager" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#paraview.web.protocols.ParaViewWebProtocol" title="paraview.web.protocols.ParaViewWebProtocol"><code class="xref py py-class docutils literal"><span class="pre">paraview.web.protocols.ParaViewWebProtocol</span></code></a></p>
+<dl class="attribute">
+<dt id="paraview.web.protocols.ParaViewWebProxyManager.VTK_DATA_TYPES">
+<code class="descname">VTK_DATA_TYPES</code><em class="property"> = ['void', 'bit', 'char', 'unsigned_char', 'short', 'unsigned_short', 'int', 'unsigned_int', 'long', 'unsigned_long', 'float', 'double', 'id_type', 'unspecified', 'unspecified', 'signed_char']</em><a class="headerlink" href="#paraview.web.protocols.ParaViewWebProxyManager.VTK_DATA_TYPES" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="paraview.web.protocols.ParaViewWebProxyManager.applyDomains">
+<code class="descname">applyDomains</code><span class="sig-paren">(</span><em>parentProxy</em>, <em>proxy_id</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebProxyManager.applyDomains"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebProxyManager.applyDomains" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function is used to apply the domains so that queries for
+specific values like range min and max retrieve something useful.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="paraview.web.protocols.ParaViewWebProxyManager.available">
+<code class="descname">available</code><span class="sig-paren">(</span><em>typeOfProxy</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebProxyManager.available"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebProxyManager.available" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a list of the available sources or filters, depending on the
+argument typeOfProxy, which can be either ‘filters’ or ‘sources’.  If
+typeOfProxy is anything other than ‘filter’ or ‘source’, the empty
+list will be returned.</p>
+<p>Any attempt to create a source or filter not returned by this method
+will result in an error response.  The returned list has the following
+form:</p>
+<p>[ ‘Wavelet’, ‘Cone’, ‘Sphere’, … ]</p>
+<blockquote>
+<div>or</div></blockquote>
+<p>[ ‘Contour’, ‘Clip’, ‘Slice’, … ]</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="paraview.web.protocols.ParaViewWebProxyManager.configureFiltersOrSources">
+<code class="descname">configureFiltersOrSources</code><span class="sig-paren">(</span><em>key</em>, <em>flist</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebProxyManager.configureFiltersOrSources"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebProxyManager.configureFiltersOrSources" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="paraview.web.protocols.ParaViewWebProxyManager.configureReaders">
+<code class="descname">configureReaders</code><span class="sig-paren">(</span><em>rlist</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebProxyManager.configureReaders"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebProxyManager.configureReaders" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="paraview.web.protocols.ParaViewWebProxyManager.create">
+<code class="descname">create</code><span class="sig-paren">(</span><em>functionName</em>, <em>parentId</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebProxyManager.create"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebProxyManager.create" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates a new filter/source proxy as a child of the specified
+parent proxy.  Returns the proxy state for the newly created
+proxy as a JSON object.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="paraview.web.protocols.ParaViewWebProxyManager.delete">
+<code class="descname">delete</code><span class="sig-paren">(</span><em>proxyId</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebProxyManager.delete"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebProxyManager.delete" title="Permalink to this definition">¶</a></dt>
+<dd><p>Checks if the proxy can be deleted (it is not the input to another
+proxy), and then deletes it if so.  Returns True if the proxy was
+deleted, False otherwise.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="paraview.web.protocols.ParaViewWebProxyManager.extractParentAttributes">
+<code class="descname">extractParentAttributes</code><span class="sig-paren">(</span><em>property</em>, <em>attributes</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebProxyManager.extractParentAttributes"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebProxyManager.extractParentAttributes" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="paraview.web.protocols.ParaViewWebProxyManager.fillPropertyList">
+<code class="descname">fillPropertyList</code><span class="sig-paren">(</span><em>proxy_id</em>, <em>propertyList</em>, <em>dependency=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebProxyManager.fillPropertyList"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebProxyManager.fillPropertyList" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="paraview.web.protocols.ParaViewWebProxyManager.findProxyId">
+<code class="descname">findProxyId</code><span class="sig-paren">(</span><em>groupName</em>, <em>proxyName</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebProxyManager.findProxyId"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebProxyManager.findProxyId" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="paraview.web.protocols.ParaViewWebProxyManager.get">
+<code class="descname">get</code><span class="sig-paren">(</span><em>proxyId</em>, <em>ui=True</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebProxyManager.get"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebProxyManager.get" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the proxy state for the given proxyId as a JSON object.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="paraview.web.protocols.ParaViewWebProxyManager.getColorInformation">
+<code class="descname">getColorInformation</code><span class="sig-paren">(</span><em>proxy</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebProxyManager.getColorInformation"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebProxyManager.getColorInformation" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generates a block of color information, given a representation proxy.</p>
+<blockquote>
+<div><dl class="docutils">
+<dt>colorBy: {</dt>
+<dd>‘representation’: ‘652’,
+‘scalarBar’: 0,
+‘mode’: ‘color’    # ‘array’
+‘color’: [ 0.5, 1.0, 1.0 ],
+‘array’: [ ‘POINTS’, ‘RTData’, -1 ],
+‘colorMap’: ‘Blue to Red’</dd>
+</dl>
+<p>}</p>
+</div></blockquote>
+</dd></dl>
+
+<dl class="method">
+<dt id="paraview.web.protocols.ParaViewWebProxyManager.getDataInformation">
+<code class="descname">getDataInformation</code><span class="sig-paren">(</span><em>proxy</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebProxyManager.getDataInformation"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebProxyManager.getDataInformation" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="paraview.web.protocols.ParaViewWebProxyManager.getProxyDefinition">
+<code class="descname">getProxyDefinition</code><span class="sig-paren">(</span><em>group</em>, <em>name</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebProxyManager.getProxyDefinition"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebProxyManager.getProxyDefinition" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="paraview.web.protocols.ParaViewWebProxyManager.getProxyListFromProperty">
+<code class="descname">getProxyListFromProperty</code><span class="sig-paren">(</span><em>proxy</em>, <em>proxyPropElement</em>, <em>inPropGroup</em>, <em>group</em>, <em>parentGroup</em>, <em>detailsKey</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebProxyManager.getProxyListFromProperty"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebProxyManager.getProxyListFromProperty" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="paraview.web.protocols.ParaViewWebProxyManager.getProxyXmlDefinitions">
+<code class="descname">getProxyXmlDefinitions</code><span class="sig-paren">(</span><em>proxy</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebProxyManager.getProxyXmlDefinitions"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebProxyManager.getProxyXmlDefinitions" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="paraview.web.protocols.ParaViewWebProxyManager.getUiProperties">
+<code class="descname">getUiProperties</code><span class="sig-paren">(</span><em>proxyId</em>, <em>proxyProperties</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebProxyManager.getUiProperties"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebProxyManager.getUiProperties" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generates an array of objects, parallel to the properties, containing
+the information needed to render ui for each property.  Not all of the
+following attributes will always be present.</p>
+<dl class="docutils">
+<dt>ui <span class="classifier-delimiter">:</span> <span class="classifier">[ {</span></dt>
+<dd><blockquote class="first">
+<div><blockquote>
+<div>‘name’: ‘Clip Type’,
+‘advanced’: 1,                 # 0
+‘doc’: ‘Documentation string for the property’,
+‘dependency’: ‘498:ClipFunction:Sphere:1’,
+‘values’: { ‘Plane’: ‘456’, ‘Box’: ‘457’, ‘Scalar’: ‘458’, ‘Sphere’: ‘459’ },
+‘type’: ‘int’,                    # ‘float’, ‘int’, ‘str’, ‘proxy’, ‘input’, …
+‘widget’: ‘textfield’,            # ‘checkbox’, ‘textarea’, ‘list-1’, ‘list-n’
+‘size’: -1,                       # -1, 0, 2, 3, 6
+‘range’: [ { ‘min’: 0, ‘max’: 1 }, { ‘min’: 4, ‘max’: 7 }, … ]</div></blockquote>
+<p>}, …</p>
+</div></blockquote>
+<p class="last">]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="paraview.web.protocols.ParaViewWebProxyManager.list">
+<code class="descname">list</code><span class="sig-paren">(</span><em>viewId=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebProxyManager.list"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebProxyManager.list" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the current proxy list, specifying for each proxy it’s
+name, id, and parent (input) proxy id.  A ‘parent’ of ‘0’ means
+the proxy has no input.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="paraview.web.protocols.ParaViewWebProxyManager.open">
+<code class="descname">open</code><span class="sig-paren">(</span><em>relativePath</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebProxyManager.open"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebProxyManager.open" title="Permalink to this definition">¶</a></dt>
+<dd><p>Open relative file paths, attempting to use the file extension to select
+from the configured readers.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="paraview.web.protocols.ParaViewWebProxyManager.processXmlElement">
+<code class="descname">processXmlElement</code><span class="sig-paren">(</span><em>proxy</em>, <em>xmlElement</em>, <em>inPropGroup</em>, <em>group</em>, <em>parentGroup</em>, <em>belongsToProxyProperty=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebProxyManager.processXmlElement"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebProxyManager.processXmlElement" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="paraview.web.protocols.ParaViewWebProxyManager.readAllowedProxies">
+<code class="descname">readAllowedProxies</code><span class="sig-paren">(</span><em>filepath</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebProxyManager.readAllowedProxies"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebProxyManager.readAllowedProxies" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="paraview.web.protocols.ParaViewWebProxyManager.reorderProperties">
+<code class="descname">reorderProperties</code><span class="sig-paren">(</span><em>rootProxyId</em>, <em>proxyProperties</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebProxyManager.reorderProperties"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebProxyManager.reorderProperties" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="paraview.web.protocols.ParaViewWebProxyManager.restructureProperties">
+<code class="descname">restructureProperties</code><span class="sig-paren">(</span><em>groupList</em>, <em>propList</em>, <em>uiList</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebProxyManager.restructureProperties"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebProxyManager.restructureProperties" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="paraview.web.protocols.ParaViewWebProxyManager.setProperty">
+<code class="descname">setProperty</code><span class="sig-paren">(</span><em>property</em>, <em>propertyValue</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebProxyManager.setProperty"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebProxyManager.setProperty" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="paraview.web.protocols.ParaViewWebProxyManager.trackProperty">
+<code class="descname">trackProperty</code><span class="sig-paren">(</span><em>detailsKey</em>, <em>name</em>, <em>panelVis</em>, <em>panelVisQualifier</em>, <em>size</em>, <em>inPropGroup</em>, <em>group</em>, <em>parentGroup</em>, <em>belongsToProxyProperty=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebProxyManager.trackProperty"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebProxyManager.trackProperty" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="paraview.web.protocols.ParaViewWebProxyManager.update">
+<code class="descname">update</code><span class="sig-paren">(</span><em>propertiesList</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebProxyManager.update"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebProxyManager.update" title="Permalink to this definition">¶</a></dt>
+<dd><p>Takes a list of properties and updates the corresponding proxies.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="paraview.web.protocols.ParaViewWebProxyManager.validate">
+<code class="descname">validate</code><span class="sig-paren">(</span><em>functionName</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebProxyManager.validate"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebProxyManager.validate" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="paraview.web.protocols.ParaViewWebPublishImageDelivery">
+<em class="property">class </em><code class="descclassname">paraview.web.protocols.</code><code class="descname">ParaViewWebPublishImageDelivery</code><span class="sig-paren">(</span><em>decode=True</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebPublishImageDelivery"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebPublishImageDelivery" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#paraview.web.protocols.ParaViewWebProtocol" title="paraview.web.protocols.ParaViewWebProtocol"><code class="xref py py-class docutils literal"><span class="pre">paraview.web.protocols.ParaViewWebProtocol</span></code></a>, <code class="xref py py-class docutils literal"><span class="pre">vtk.web.protocols.vtkWebPublishImageDelivery</span></code></p>
+<dl class="method">
+<dt id="paraview.web.protocols.ParaViewWebPublishImageDelivery.stillRender">
+<code class="descname">stillRender</code><span class="sig-paren">(</span><em>options</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebPublishImageDelivery.stillRender"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebPublishImageDelivery.stillRender" title="Permalink to this definition">¶</a></dt>
+<dd><p>RPC Callback to render a view and obtain the rendered image.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="paraview.web.protocols.ParaViewWebRemoteConnection">
+<em class="property">class </em><code class="descclassname">paraview.web.protocols.</code><code class="descname">ParaViewWebRemoteConnection</code><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebRemoteConnection"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebRemoteConnection" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#paraview.web.protocols.ParaViewWebProtocol" title="paraview.web.protocols.ParaViewWebProtocol"><code class="xref py py-class docutils literal"><span class="pre">paraview.web.protocols.ParaViewWebProtocol</span></code></a></p>
+<dl class="method">
+<dt id="paraview.web.protocols.ParaViewWebRemoteConnection.connect">
+<code class="descname">connect</code><span class="sig-paren">(</span><em>options</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebRemoteConnection.connect"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebRemoteConnection.connect" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates a connection to a remote pvserver.
+Expect an option argument which should override any of
+those default properties:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="s1">&#39;host&#39;</span><span class="p">:</span> <span class="s1">&#39;localhost&#39;</span><span class="p">,</span>
+<span class="s1">&#39;port&#39;</span><span class="p">:</span> <span class="mi">11111</span><span class="p">,</span>
+<span class="s1">&#39;rs_host&#39;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>
+<span class="s1">&#39;rs_port&#39;</span><span class="p">:</span> <span class="mi">11111</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="paraview.web.protocols.ParaViewWebRemoteConnection.pvDisconnect">
+<code class="descname">pvDisconnect</code><span class="sig-paren">(</span><em>message</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebRemoteConnection.pvDisconnect"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebRemoteConnection.pvDisconnect" title="Permalink to this definition">¶</a></dt>
+<dd><p>Free the current active session</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="paraview.web.protocols.ParaViewWebRemoteConnection.reverseConnect">
+<code class="descname">reverseConnect</code><span class="sig-paren">(</span><em>port=11111</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebRemoteConnection.reverseConnect"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebRemoteConnection.reverseConnect" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a reverse connection to a server.  Listens on port and waits for
+an incoming connection from the server.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="paraview.web.protocols.ParaViewWebSaveData">
+<em class="property">class </em><code class="descclassname">paraview.web.protocols.</code><code class="descname">ParaViewWebSaveData</code><span class="sig-paren">(</span><em>baseSavePath=''</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebSaveData"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebSaveData" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#paraview.web.protocols.ParaViewWebProtocol" title="paraview.web.protocols.ParaViewWebProtocol"><code class="xref py py-class docutils literal"><span class="pre">paraview.web.protocols.ParaViewWebProtocol</span></code></a></p>
+<dl class="method">
+<dt id="paraview.web.protocols.ParaViewWebSaveData.saveData">
+<code class="descname">saveData</code><span class="sig-paren">(</span><em>filePath</em>, <em>options=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebSaveData.saveData"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebSaveData.saveData" title="Permalink to this definition">¶</a></dt>
+<dd><p>Save some data on the server side.  Can save data from a proxy, a
+screenshot, or else the current state.  Options may be different
+depending on the type of data to be save.  Saving a screenshot
+can take an optional size array indicating the desired width and
+height of the saved image.  Saving data can take an optional proxy
+id specifying which filter or source to save output from.</p>
+<blockquote>
+<div><dl class="docutils">
+<dt>options = {</dt>
+<dd>‘proxyId’: ‘426’,
+‘size’: [ &lt;imgWidth&gt;, &lt;imgHeight&gt; ]</dd>
+</dl>
+<p>}</p>
+</div></blockquote>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="paraview.web.protocols.ParaViewWebSelectionHandler">
+<em class="property">class </em><code class="descclassname">paraview.web.protocols.</code><code class="descname">ParaViewWebSelectionHandler</code><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebSelectionHandler"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebSelectionHandler" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#paraview.web.protocols.ParaViewWebProtocol" title="paraview.web.protocols.ParaViewWebProtocol"><code class="xref py py-class docutils literal"><span class="pre">paraview.web.protocols.ParaViewWebProtocol</span></code></a></p>
+<dl class="method">
+<dt id="paraview.web.protocols.ParaViewWebSelectionHandler.endSelection">
+<code class="descname">endSelection</code><span class="sig-paren">(</span><em>area</em>, <em>extract</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebSelectionHandler.endSelection"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebSelectionHandler.endSelection" title="Permalink to this definition">¶</a></dt>
+<dd><p>Method used to finalize an interactive selection by providing
+the [ startPointX, startPointY, endPointX, endPointY ] area
+where (0,0) match the lower left corner of the pixel screen.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="paraview.web.protocols.ParaViewWebSelectionHandler.startSelection">
+<code class="descname">startSelection</code><span class="sig-paren">(</span><em>viewId</em>, <em>selectionType</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebSelectionHandler.startSelection"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebSelectionHandler.startSelection" title="Permalink to this definition">¶</a></dt>
+<dd><p>Method used to initialize an interactive selection</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="paraview.web.protocols.ParaViewWebStartupPluginLoader">
+<em class="property">class </em><code class="descclassname">paraview.web.protocols.</code><code class="descname">ParaViewWebStartupPluginLoader</code><span class="sig-paren">(</span><em>plugins=None</em>, <em>pathSeparator=':'</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebStartupPluginLoader"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebStartupPluginLoader" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#paraview.web.protocols.ParaViewWebProtocol" title="paraview.web.protocols.ParaViewWebProtocol"><code class="xref py py-class docutils literal"><span class="pre">paraview.web.protocols.ParaViewWebProtocol</span></code></a></p>
+<dl class="attribute">
+<dt id="paraview.web.protocols.ParaViewWebStartupPluginLoader.loaded">
+<code class="descname">loaded</code><em class="property"> = False</em><a class="headerlink" href="#paraview.web.protocols.ParaViewWebStartupPluginLoader.loaded" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="paraview.web.protocols.ParaViewWebStartupRemoteConnection">
+<em class="property">class </em><code class="descclassname">paraview.web.protocols.</code><code class="descname">ParaViewWebStartupRemoteConnection</code><span class="sig-paren">(</span><em>dsHost=None</em>, <em>dsPort=11111</em>, <em>rsHost=None</em>, <em>rsPort=22222</em>, <em>rcPort=-1</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebStartupRemoteConnection"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebStartupRemoteConnection" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#paraview.web.protocols.ParaViewWebProtocol" title="paraview.web.protocols.ParaViewWebProtocol"><code class="xref py py-class docutils literal"><span class="pre">paraview.web.protocols.ParaViewWebProtocol</span></code></a></p>
+<dl class="attribute">
+<dt id="paraview.web.protocols.ParaViewWebStartupRemoteConnection.connected">
+<code class="descname">connected</code><em class="property"> = False</em><a class="headerlink" href="#paraview.web.protocols.ParaViewWebStartupRemoteConnection.connected" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="paraview.web.protocols.ParaViewWebStateLoader">
+<em class="property">class </em><code class="descclassname">paraview.web.protocols.</code><code class="descname">ParaViewWebStateLoader</code><span class="sig-paren">(</span><em>state_path=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebStateLoader"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebStateLoader" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#paraview.web.protocols.ParaViewWebProtocol" title="paraview.web.protocols.ParaViewWebProtocol"><code class="xref py py-class docutils literal"><span class="pre">paraview.web.protocols.ParaViewWebProtocol</span></code></a></p>
+<dl class="method">
+<dt id="paraview.web.protocols.ParaViewWebStateLoader.loadState">
+<code class="descname">loadState</code><span class="sig-paren">(</span><em>state_file</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebStateLoader.loadState"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebStateLoader.loadState" title="Permalink to this definition">¶</a></dt>
+<dd><p>Load a state file and return the list of view ids</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="paraview.web.protocols.ParaViewWebTestProtocols">
+<em class="property">class </em><code class="descclassname">paraview.web.protocols.</code><code class="descname">ParaViewWebTestProtocols</code><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebTestProtocols"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebTestProtocols" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#paraview.web.protocols.ParaViewWebProtocol" title="paraview.web.protocols.ParaViewWebProtocol"><code class="xref py py-class docutils literal"><span class="pre">paraview.web.protocols.ParaViewWebProtocol</span></code></a></p>
+<dl class="method">
+<dt id="paraview.web.protocols.ParaViewWebTestProtocols.clearAll">
+<code class="descname">clearAll</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebTestProtocols.clearAll"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebTestProtocols.clearAll" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="paraview.web.protocols.ParaViewWebTestProtocols.getColoringInfo">
+<code class="descname">getColoringInfo</code><span class="sig-paren">(</span><em>proxyId</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebTestProtocols.getColoringInfo"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebTestProtocols.getColoringInfo" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="paraview.web.protocols.ParaViewWebTestProtocols.getReprFromSource">
+<code class="descname">getReprFromSource</code><span class="sig-paren">(</span><em>srcProxyId</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebTestProtocols.getReprFromSource"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebTestProtocols.getReprFromSource" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="paraview.web.protocols.ParaViewWebTimeHandler">
+<em class="property">class </em><code class="descclassname">paraview.web.protocols.</code><code class="descname">ParaViewWebTimeHandler</code><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebTimeHandler"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebTimeHandler" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#paraview.web.protocols.ParaViewWebProtocol" title="paraview.web.protocols.ParaViewWebProtocol"><code class="xref py py-class docutils literal"><span class="pre">paraview.web.protocols.ParaViewWebProtocol</span></code></a></p>
+<dl class="method">
+<dt id="paraview.web.protocols.ParaViewWebTimeHandler.getTimeStep">
+<code class="descname">getTimeStep</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebTimeHandler.getTimeStep"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebTimeHandler.getTimeStep" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="paraview.web.protocols.ParaViewWebTimeHandler.getTimeValue">
+<code class="descname">getTimeValue</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebTimeHandler.getTimeValue"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebTimeHandler.getTimeValue" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="paraview.web.protocols.ParaViewWebTimeHandler.getTimeValues">
+<code class="descname">getTimeValues</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebTimeHandler.getTimeValues"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebTimeHandler.getTimeValues" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="paraview.web.protocols.ParaViewWebTimeHandler.nextPlay">
+<code class="descname">nextPlay</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebTimeHandler.nextPlay"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebTimeHandler.nextPlay" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="paraview.web.protocols.ParaViewWebTimeHandler.play">
+<code class="descname">play</code><span class="sig-paren">(</span><em>deltaT=0.1</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebTimeHandler.play"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebTimeHandler.play" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="paraview.web.protocols.ParaViewWebTimeHandler.setTimeStep">
+<code class="descname">setTimeStep</code><span class="sig-paren">(</span><em>timeIdx</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebTimeHandler.setTimeStep"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebTimeHandler.setTimeStep" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="paraview.web.protocols.ParaViewWebTimeHandler.setTimeValue">
+<code class="descname">setTimeValue</code><span class="sig-paren">(</span><em>t</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebTimeHandler.setTimeValue"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebTimeHandler.setTimeValue" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="paraview.web.protocols.ParaViewWebTimeHandler.stop">
+<code class="descname">stop</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebTimeHandler.stop"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebTimeHandler.stop" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="paraview.web.protocols.ParaViewWebTimeHandler.updateTime">
+<code class="descname">updateTime</code><span class="sig-paren">(</span><em>action</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebTimeHandler.updateTime"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebTimeHandler.updateTime" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="paraview.web.protocols.ParaViewWebViewPort">
+<em class="property">class </em><code class="descclassname">paraview.web.protocols.</code><code class="descname">ParaViewWebViewPort</code><span class="sig-paren">(</span><em>scale=1.0</em>, <em>maxWidth=2560</em>, <em>maxHeight=1440</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebViewPort"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebViewPort" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#paraview.web.protocols.ParaViewWebProtocol" title="paraview.web.protocols.ParaViewWebProtocol"><code class="xref py py-class docutils literal"><span class="pre">paraview.web.protocols.ParaViewWebProtocol</span></code></a></p>
+<dl class="method">
+<dt id="paraview.web.protocols.ParaViewWebViewPort.getCamera">
+<code class="descname">getCamera</code><span class="sig-paren">(</span><em>view_id</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebViewPort.getCamera"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebViewPort.getCamera" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="paraview.web.protocols.ParaViewWebViewPort.resetCamera">
+<code class="descname">resetCamera</code><span class="sig-paren">(</span><em>viewId</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebViewPort.resetCamera"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebViewPort.resetCamera" title="Permalink to this definition">¶</a></dt>
+<dd><p>RPC callback to reset camera.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="paraview.web.protocols.ParaViewWebViewPort.updateCamera">
+<code class="descname">updateCamera</code><span class="sig-paren">(</span><em>view_id</em>, <em>focal_point</em>, <em>view_up</em>, <em>position</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebViewPort.updateCamera"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebViewPort.updateCamera" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="paraview.web.protocols.ParaViewWebViewPort.updateCenterAxesVisibility">
+<code class="descname">updateCenterAxesVisibility</code><span class="sig-paren">(</span><em>viewId</em>, <em>showAxis</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebViewPort.updateCenterAxesVisibility"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebViewPort.updateCenterAxesVisibility" title="Permalink to this definition">¶</a></dt>
+<dd><p>RPC callback to show/hide CenterAxesVisibility.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="paraview.web.protocols.ParaViewWebViewPort.updateOrientationAxesVisibility">
+<code class="descname">updateOrientationAxesVisibility</code><span class="sig-paren">(</span><em>viewId</em>, <em>showAxis</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebViewPort.updateOrientationAxesVisibility"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebViewPort.updateOrientationAxesVisibility" title="Permalink to this definition">¶</a></dt>
+<dd><p>RPC callback to show/hide OrientationAxis.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="paraview.web.protocols.ParaViewWebViewPort.updateSize">
+<code class="descname">updateSize</code><span class="sig-paren">(</span><em>view_id</em>, <em>width</em>, <em>height</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebViewPort.updateSize"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebViewPort.updateSize" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="paraview.web.protocols.ParaViewWebViewPortGeometryDelivery">
+<em class="property">class </em><code class="descclassname">paraview.web.protocols.</code><code class="descname">ParaViewWebViewPortGeometryDelivery</code><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebViewPortGeometryDelivery"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebViewPortGeometryDelivery" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#paraview.web.protocols.ParaViewWebProtocol" title="paraview.web.protocols.ParaViewWebProtocol"><code class="xref py py-class docutils literal"><span class="pre">paraview.web.protocols.ParaViewWebProtocol</span></code></a></p>
+<dl class="method">
+<dt id="paraview.web.protocols.ParaViewWebViewPortGeometryDelivery.getCachedWebGLData">
+<code class="descname">getCachedWebGLData</code><span class="sig-paren">(</span><em>sha</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebViewPortGeometryDelivery.getCachedWebGLData"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebViewPortGeometryDelivery.getCachedWebGLData" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="paraview.web.protocols.ParaViewWebViewPortGeometryDelivery.getSceneMetaData">
+<code class="descname">getSceneMetaData</code><span class="sig-paren">(</span><em>view_id</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebViewPortGeometryDelivery.getSceneMetaData"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebViewPortGeometryDelivery.getSceneMetaData" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="paraview.web.protocols.ParaViewWebViewPortGeometryDelivery.getSceneMetaDataAllTimesteps">
+<code class="descname">getSceneMetaDataAllTimesteps</code><span class="sig-paren">(</span><em>view_id=-1</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebViewPortGeometryDelivery.getSceneMetaDataAllTimesteps"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebViewPortGeometryDelivery.getSceneMetaDataAllTimesteps" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="paraview.web.protocols.ParaViewWebViewPortGeometryDelivery.getWebGLData">
+<code class="descname">getWebGLData</code><span class="sig-paren">(</span><em>view_id</em>, <em>object_id</em>, <em>part</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebViewPortGeometryDelivery.getWebGLData"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebViewPortGeometryDelivery.getWebGLData" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="paraview.web.protocols.ParaViewWebViewPortImageDelivery">
+<em class="property">class </em><code class="descclassname">paraview.web.protocols.</code><code class="descname">ParaViewWebViewPortImageDelivery</code><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebViewPortImageDelivery"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebViewPortImageDelivery" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#paraview.web.protocols.ParaViewWebProtocol" title="paraview.web.protocols.ParaViewWebProtocol"><code class="xref py py-class docutils literal"><span class="pre">paraview.web.protocols.ParaViewWebProtocol</span></code></a></p>
+<dl class="method">
+<dt id="paraview.web.protocols.ParaViewWebViewPortImageDelivery.stillRender">
+<code class="descname">stillRender</code><span class="sig-paren">(</span><em>options</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebViewPortImageDelivery.stillRender"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebViewPortImageDelivery.stillRender" title="Permalink to this definition">¶</a></dt>
+<dd><p>RPC Callback to render a view and obtain the rendered image.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="paraview.web.protocols.ParaViewWebWidgetManager">
+<em class="property">class </em><code class="descclassname">paraview.web.protocols.</code><code class="descname">ParaViewWebWidgetManager</code><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebWidgetManager"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebWidgetManager" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#paraview.web.protocols.ParaViewWebProtocol" title="paraview.web.protocols.ParaViewWebProtocol"><code class="xref py py-class docutils literal"><span class="pre">paraview.web.protocols.ParaViewWebProtocol</span></code></a></p>
+<dl class="method">
+<dt id="paraview.web.protocols.ParaViewWebWidgetManager.CreateWidgetRepresentation">
+<code class="descname">CreateWidgetRepresentation</code><span class="sig-paren">(</span><em>view</em>, <em>name</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebWidgetManager.CreateWidgetRepresentation"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebWidgetManager.CreateWidgetRepresentation" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="paraview.web.protocols.ParaViewWebWidgetManager.addRuler">
+<code class="descname">addRuler</code><span class="sig-paren">(</span><em>view_id=-1</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebWidgetManager.addRuler"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebWidgetManager.addRuler" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="paraview.web.protocols.ParaViewWebWidgetManager.createWidgetRepresentation">
+<code class="descname">createWidgetRepresentation</code><span class="sig-paren">(</span><em>proxy_id</em>, <em>view_id</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebWidgetManager.createWidgetRepresentation"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebWidgetManager.createWidgetRepresentation" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="paraview.web.protocols.alphanum_key">
+<code class="descclassname">paraview.web.protocols.</code><code class="descname">alphanum_key</code><span class="sig-paren">(</span><em>s</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#alphanum_key"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.alphanum_key" title="Permalink to this definition">¶</a></dt>
+<dd><p>Turn a string into a list of string and number chunks.
+“z23a” -&gt; [“z”, 23, “a”]</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="paraview.web.protocols.buffer_shared">
+<code class="descclassname">paraview.web.protocols.</code><code class="descname">buffer_shared</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#paraview.web.protocols.buffer_shared" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check if two objects share the same buffer, meaning that they point to the same block of memory.  An TypeError exception will be raised if either of the objects does not provide a buffer.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="paraview.web.protocols.tryint">
+<code class="descclassname">paraview.web.protocols.</code><code class="descname">tryint</code><span class="sig-paren">(</span><em>s</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#tryint"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.tryint" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+
+
+          <footer>
+  
+    <div class="rst-footer-buttons">
+      
+        <a href="paraview.web.pv_web_catalyst.html" class="btn btn-neutral float-right" title="web.pv_web_catalyst Module"/>Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="paraview.web.ipython.html" class="btn btn-neutral" title="web.ipython Module"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <p>
+      &copy; Copyright 2013, Kitware, Inc..
+  </p>
+
+  <a href="https://www.github.com/snide/sphinx_rtd_theme">Sphinx theme</a> provided by <a href="http://readthedocs.org">Read the Docs</a>
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+<script type=text/javascript src=/paraview-docs/paraview-version.js></script></body>
+</html>

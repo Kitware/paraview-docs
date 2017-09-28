@@ -1,0 +1,1190 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>vtk.numpy_interface.dataset_adapter Module &mdash; ParaView/Python 5.4.1-616-g387a7b18ba documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="_static/pvIcon.ico"/>
+  
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  
+  
+
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:'./',
+        VERSION:'5.4.1-616-g387a7b18ba',
+        COLLAPSE_INDEX:false,
+        FILE_SUFFIX:'.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="ParaView/Python 5.4.1-616-g387a7b18ba documentation" href="index.html"/>
+        <link rel="up" title="numpy_interface Package" href="paraview.vtk.numpy_interface.html"/>
+        <link rel="next" title="vtk.numpy_interface.internal_algorithms Module" href="paraview.vtk.numpy_interface.internal_algorithms.html"/>
+        <link rel="prev" title="vtk.numpy_interface.algorithms Module" href="paraview.vtk.numpy_interface.algorithms.html"/> 
+
+  <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        <ul>
+          <li> <a href="index.html">
+            <img src="_static/paraview-logo-small.png"
+            alt="ParaView/Python"></img></a> </li>
+          <li class="version"> version 5.4.1-616-g387a7b18ba</li>
+        </ul>
+        <form id ="rtd-search-form" class="wy-form" action="search.html" method="get">
+  <input type="text" name="q" placeholder="Search docs" />
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix">
+        
+        
+            <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="quick-start.html">Quick-Start :  A Tutorial</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="quick-start.html#getting-started">Getting Started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="quick-start.html#creating-a-pipeline">Creating a Pipeline</a></li>
+<li class="toctree-l2"><a class="reference internal" href="quick-start.html#rendering">Rendering</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="reference internal" href="paraview.html">The ParaView Python Package</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="paraview.html#id1"><code class="docutils literal"><span class="pre">paraview</span></code> Package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.html#modules">Modules</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="paraview.html#subpackages">Subpackages</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="paraview.simple.html">simple</a></li>
+<li class="toctree-l1"><a class="reference internal" href="paraview.servermanager.html">servermanager</a></li>
+<li class="toctree-l1"><a class="reference internal" href="paraview.coprocessing.html">coprocessing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="paraview.benchmark.html">benchmark</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="paraview.benchmark.html#id1"><code class="docutils literal"><span class="pre">benchmark</span></code> Package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.benchmark.html#modules">Modules</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="paraview.servermanager_proxies.html">Available readers, sources, writers, filters and animation cues</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.AMRConnectivity.html">paraview.simple.AMRConnectivity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.AMRContour.html">paraview.simple.AMRContour</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.AMRCutPlane.html">paraview.simple.AMRCutPlane</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.AMRDualClip.html">paraview.simple.AMRDualClip</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.AMRFragmentIntegration.html">paraview.simple.AMRFragmentIntegration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.AMRFragmentsFilter.html">paraview.simple.AMRFragmentsFilter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.AMRGaussianPulseSource.html">paraview.simple.AMRGaussianPulseSource</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.AVSUCDReader.html">paraview.simple.AVSUCDReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.AddFieldArrays.html">paraview.simple.AddFieldArrays</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.AggregateDataset.html">paraview.simple.AggregateDataset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.AngularPeriodicFilter.html">paraview.simple.AngularPeriodicFilter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.AnimationCueBase.html">paraview.simple.AnimationCueBase</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.AnimationScene.html">paraview.simple.AnimationScene</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.AnnotateAttributeData.html">paraview.simple.AnnotateAttributeData</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.AnnotateGlobalData.html">paraview.simple.AnnotateGlobalData</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.AnnotateTime.html">paraview.simple.AnnotateTime</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.AnnotateTimeFilter.html">paraview.simple.AnnotateTimeFilter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.AppendArcLength.html">paraview.simple.AppendArcLength</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.AppendAttributes.html">paraview.simple.AppendAttributes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.AppendDatasets.html">paraview.simple.AppendDatasets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.AppendGeometry.html">paraview.simple.AppendGeometry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.AppendReduce.html">paraview.simple.AppendReduce</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.Arrow.html">paraview.simple.Arrow</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.Axes.html">paraview.simple.Axes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.BYUReader.html">paraview.simple.BYUReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.BlockScalars.html">paraview.simple.BlockScalars</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.BlockSelectionSource.html">paraview.simple.BlockSelectionSource</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.BooleanKeyFrame.html">paraview.simple.BooleanKeyFrame</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.BoundingRuler.html">paraview.simple.BoundingRuler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.Box.html">paraview.simple.Box</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.CGNSSeriesReader.html">paraview.simple.CGNSSeriesReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.CMLMoleculeReader.html">paraview.simple.CMLMoleculeReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.CSVReader.html">paraview.simple.CSVReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.CSVWriter.html">paraview.simple.CSVWriter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.CTHSurface.html">paraview.simple.CTHSurface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.Calculator.html">paraview.simple.Calculator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.CameraAnimationCue.html">paraview.simple.CameraAnimationCue</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.CameraKeyFrame.html">paraview.simple.CameraKeyFrame</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.CellCenters.html">paraview.simple.CellCenters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.CellDatatoPointData.html">paraview.simple.CellDatatoPointData</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.CellSize.html">paraview.simple.CellSize</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.CinemaDatabasePipelineObjectFilter.html">paraview.simple.CinemaDatabasePipelineObjectFilter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.CinemaDatabasePipelineObjectReader.html">paraview.simple.CinemaDatabasePipelineObjectReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.Clean.html">paraview.simple.Clean</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.CleanCellstoGrid.html">paraview.simple.CleanCellstoGrid</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.CleantoGrid.html">paraview.simple.CleantoGrid</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.ClientServerMoveData.html">paraview.simple.ClientServerMoveData</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.Clip.html">paraview.simple.Clip</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.ClipClosedSurface.html">paraview.simple.ClipClosedSurface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.ClipGenericDataset.html">paraview.simple.ClipGenericDataset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.ColorByArray.html">paraview.simple.ColorByArray</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.ComparativeAnimationCue.html">paraview.simple.ComparativeAnimationCue</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.CompositeDataIDSelectionSource.html">paraview.simple.CompositeDataIDSelectionSource</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.CompositeKeyFrame.html">paraview.simple.CompositeKeyFrame</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.ComputeDerivatives.html">paraview.simple.ComputeDerivatives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.ComputeQuartiles.html">paraview.simple.ComputeQuartiles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.Cone.html">paraview.simple.Cone</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.Connectivity.html">paraview.simple.Connectivity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.ContingencyStatistics.html">paraview.simple.ContingencyStatistics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.Contour.html">paraview.simple.Contour</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.ContourGenericDataset.html">paraview.simple.ContourGenericDataset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.ConvertAMRdatasettoMultiblock.html">paraview.simple.ConvertAMRdatasettoMultiblock</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.ConvertSelection.html">paraview.simple.ConvertSelection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.CountCellFaces.html">paraview.simple.CountCellFaces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.CountCellVertices.html">paraview.simple.CountCellVertices</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.Crop.html">paraview.simple.Crop</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.Curvature.html">paraview.simple.Curvature</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.Cylinder.html">paraview.simple.Cylinder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.D3.html">paraview.simple.D3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.DEMReader.html">paraview.simple.DEMReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.DICOMReaderSingleFile.html">paraview.simple.DICOMReaderSingleFile</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.DICOMReaderdirectory.html">paraview.simple.DICOMReaderdirectory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.DataObjectGenerator.html">paraview.simple.DataObjectGenerator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.DataSetCSVWriter.html">paraview.simple.DataSetCSVWriter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.DataSetWriter.html">paraview.simple.DataSetWriter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.Decimate.html">paraview.simple.Decimate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.Delaunay2D.html">paraview.simple.Delaunay2D</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.Delaunay3D.html">paraview.simple.Delaunay3D</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.DescriptiveStatistics.html">paraview.simple.DescriptiveStatistics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.Disk.html">paraview.simple.Disk</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.DistributedTrivialProducer.html">paraview.simple.DistributedTrivialProducer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.ENZOAMRParticlesReader.html">paraview.simple.ENZOAMRParticlesReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.Elevation.html">paraview.simple.Elevation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.EnSightMasterServerReader.html">paraview.simple.EnSightMasterServerReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.EnSightReader.html">paraview.simple.EnSightReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.EnSightWriter.html">paraview.simple.EnSightWriter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.EnsembleDataReader.html">paraview.simple.EnsembleDataReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.EnvironmentAnnotation.html">paraview.simple.EnvironmentAnnotation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.EnzoReader.html">paraview.simple.EnzoReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.EvenlySpacedStreamlines2D.html">paraview.simple.EvenlySpacedStreamlines2D</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.ExodusIIReader.html">paraview.simple.ExodusIIReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.ExodusIIWriter.html">paraview.simple.ExodusIIWriter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.ExponentialKeyFrame.html">paraview.simple.ExponentialKeyFrame</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.ExtractAMRBlocks.html">paraview.simple.ExtractAMRBlocks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.ExtractAttributes.html">paraview.simple.ExtractAttributes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.ExtractBagPlots.html">paraview.simple.ExtractBagPlots</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.ExtractBlock.html">paraview.simple.ExtractBlock</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.ExtractCTHParts.html">paraview.simple.ExtractCTHParts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.ExtractCellsByRegion.html">paraview.simple.ExtractCellsByRegion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.ExtractComponent.html">paraview.simple.ExtractComponent</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.ExtractEdges.html">paraview.simple.ExtractEdges</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.ExtractGenericDatasetSurface.html">paraview.simple.ExtractGenericDatasetSurface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.ExtractLevel.html">paraview.simple.ExtractLevel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.ExtractLocation.html">paraview.simple.ExtractLocation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.ExtractRegionSurface.html">paraview.simple.ExtractRegionSurface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.ExtractSelection.html">paraview.simple.ExtractSelection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.ExtractSelectioninternal.html">paraview.simple.ExtractSelectioninternal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.ExtractSubset.html">paraview.simple.ExtractSubset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.ExtractSurface.html">paraview.simple.ExtractSurface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.ExtractTimeSteps.html">paraview.simple.ExtractTimeSteps</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.FFTOfSelectionOverTime.html">paraview.simple.FFTOfSelectionOverTime</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.FLASHAMRParticlesReader.html">paraview.simple.FLASHAMRParticlesReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.FacetReader.html">paraview.simple.FacetReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.FeatureEdges.html">paraview.simple.FeatureEdges</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.FlashReader.html">paraview.simple.FlashReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.FlattenFilter.html">paraview.simple.FlattenFilter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.FluentCaseReader.html">paraview.simple.FluentCaseReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.ForceTime.html">paraview.simple.ForceTime</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.FrustumSelectionSource.html">paraview.simple.FrustumSelectionSource</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.GaussianCubeReader.html">paraview.simple.GaussianCubeReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.GaussianResampling.html">paraview.simple.GaussianResampling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.GenerateIds.html">paraview.simple.GenerateIds</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.GenerateQuadraturePoints.html">paraview.simple.GenerateQuadraturePoints</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.GenerateQuadratureSchemeDictionary.html">paraview.simple.GenerateQuadratureSchemeDictionary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.GenerateSurfaceNormals.html">paraview.simple.GenerateSurfaceNormals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.GeometryFilter.html">paraview.simple.GeometryFilter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.GhostCellsGenerator.html">paraview.simple.GhostCellsGenerator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.GlobalIDSelectionSource.html">paraview.simple.GlobalIDSelectionSource</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.Glyph.html">paraview.simple.Glyph</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.GlyphWithCustomSource.html">paraview.simple.GlyphWithCustomSource</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.Gradient.html">paraview.simple.Gradient</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.GradientMagnitude.html">paraview.simple.GradientMagnitude</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.GradientOfUnstructuredDataSet.html">paraview.simple.GradientOfUnstructuredDataSet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.GridConnectivity.html">paraview.simple.GridConnectivity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.GroupDatasets.html">paraview.simple.GroupDatasets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.GroupTimeSteps.html">paraview.simple.GroupTimeSteps</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.H5PartReader.html">paraview.simple.H5PartReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.HierarchicalDataIDSelectionSource.html">paraview.simple.HierarchicalDataIDSelectionSource</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.HierarchicalFractal.html">paraview.simple.HierarchicalFractal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.Histogram.html">paraview.simple.Histogram</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.HoudiniWriter.html">paraview.simple.HoudiniWriter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.HyperTreeGrid.html">paraview.simple.HyperTreeGrid</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.IDSelectionSource.html">paraview.simple.IDSelectionSource</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.ImageDataToAMR.html">paraview.simple.ImageDataToAMR</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.ImageDataToUniformGrid.html">paraview.simple.ImageDataToUniformGrid</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.ImageDatatoPointSet.html">paraview.simple.ImageDatatoPointSet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.ImageReader.html">paraview.simple.ImageReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.ImageResampling.html">paraview.simple.ImageResampling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.ImageShrink.html">paraview.simple.ImageShrink</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.InSituParticlePath.html">paraview.simple.InSituParticlePath</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.IntegrateVariables.html">paraview.simple.IntegrateVariables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.InterpolatetoQuadraturePoints.html">paraview.simple.InterpolatetoQuadraturePoints</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.IntersectFragments.html">paraview.simple.IntersectFragments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.IsoVolume.html">paraview.simple.IsoVolume</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.JPEGSeriesReader.html">paraview.simple.JPEGSeriesReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.JPEGWriter.html">paraview.simple.JPEGWriter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.JSONImageWriter.html">paraview.simple.JSONImageWriter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.KMeans.html">paraview.simple.KMeans</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.KeyFrame.html">paraview.simple.KeyFrame</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.KeyFrameAnimationCue.html">paraview.simple.KeyFrameAnimationCue</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.LSDynaReader.html">paraview.simple.LSDynaReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.LegacyArbitrarySourceGlyph.html">paraview.simple.LegacyArbitrarySourceGlyph</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.LegacyGlyph.html">paraview.simple.LegacyGlyph</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.LegacyResampleWithDataset.html">paraview.simple.LegacyResampleWithDataset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.LegacyVTKReader.html">paraview.simple.LegacyVTKReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.LevelScalarsNonOverlappingAMR.html">paraview.simple.LevelScalarsNonOverlappingAMR</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.LevelScalarsOverlappingAMR.html">paraview.simple.LevelScalarsOverlappingAMR</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.Line.html">paraview.simple.Line</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.LinearExtrusion.html">paraview.simple.LinearExtrusion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.LocationSelectionSource.html">paraview.simple.LocationSelectionSource</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.LoopSubdivision.html">paraview.simple.LoopSubdivision</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.MFIXReader.html">paraview.simple.MFIXReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.MPIMoveData.html">paraview.simple.MPIMoveData</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.MRCSeriesReader.html">paraview.simple.MRCSeriesReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.Mandelbrot.html">paraview.simple.Mandelbrot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.MaskPoints.html">paraview.simple.MaskPoints</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.MaterialInterfaceFilter.html">paraview.simple.MaterialInterfaceFilter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.Median.html">paraview.simple.Median</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.MergeBlocks.html">paraview.simple.MergeBlocks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.MeshQuality.html">paraview.simple.MeshQuality</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.MetaFileSeriesReader.html">paraview.simple.MetaFileSeriesReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.MetaImageWriter.html">paraview.simple.MetaImageWriter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.MinMax.html">paraview.simple.MinMax</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.MulticorrelativeStatistics.html">paraview.simple.MulticorrelativeStatistics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.NetCDFCAMreader.html">paraview.simple.NetCDFCAMreader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.NetCDFMPASreader.html">paraview.simple.NetCDFMPASreader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.NetCDFPOPreader.html">paraview.simple.NetCDFPOPreader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.NetCDFReader.html">paraview.simple.NetCDFReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.NetworkImageSource.html">paraview.simple.NetworkImageSource</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.NormalGlyphs.html">paraview.simple.NormalGlyphs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.NrrdReader.html">paraview.simple.NrrdReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.OctreeDepthLimit.html">paraview.simple.OctreeDepthLimit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.OctreeDepthScalars.html">paraview.simple.OctreeDepthScalars</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.OctreeFractal.html">paraview.simple.OctreeFractal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.OpenFOAMReader.html">paraview.simple.OpenFOAMReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.OrderedCompositeDistributor.html">paraview.simple.OrderedCompositeDistributor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.Outline.html">paraview.simple.Outline</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.Outline.html">paraview.simple.Outline</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.OutlineCorners.html">paraview.simple.OutlineCorners</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.OutlineCurvilinearDataSet.html">paraview.simple.OutlineCurvilinearDataSet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.OutlineGenericDataSet.html">paraview.simple.OutlineGenericDataSet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.PDBReader.html">paraview.simple.PDBReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.PDataSetWriterPolyData.html">paraview.simple.PDataSetWriterPolyData</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.PDataSetWriterUnstructuredGrid.html">paraview.simple.PDataSetWriterUnstructuredGrid</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.PLOT3DMetaFileReader.html">paraview.simple.PLOT3DMetaFileReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.PLOT3DReader.html">paraview.simple.PLOT3DReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.PLYReader.html">paraview.simple.PLYReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.PNGSeriesReader.html">paraview.simple.PNGSeriesReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.PNGWriter.html">paraview.simple.PNGWriter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.PPLYWriter.html">paraview.simple.PPLYWriter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.PSTLWriter.html">paraview.simple.PSTLWriter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.PTSReader.html">paraview.simple.PTSReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.PVDReader.html">paraview.simple.PVDReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.PVTrivialProducer.html">paraview.simple.PVTrivialProducer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.ParallelNetCDFPOPreader.html">paraview.simple.ParallelNetCDFPOPreader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.ParticlePath.html">paraview.simple.ParticlePath</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.ParticleTracer.html">paraview.simple.ParticleTracer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.ParticlesReader.html">paraview.simple.ParticlesReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.PartitionedLegacyVTKReader.html">paraview.simple.PartitionedLegacyVTKReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.PassArrays.html">paraview.simple.PassArrays</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.PassThrough.html">paraview.simple.PassThrough</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.PedigreeIDSelectionSource.html">paraview.simple.PedigreeIDSelectionSource</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.PhastaReader.html">paraview.simple.PhastaReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.Plane.html">paraview.simple.Plane</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.PlotData.html">paraview.simple.PlotData</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.PlotGlobalVariablesOverTime.html">paraview.simple.PlotGlobalVariablesOverTime</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.PlotOnIntersectionCurves.html">paraview.simple.PlotOnIntersectionCurves</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.PlotOnSortedLines.html">paraview.simple.PlotOnSortedLines</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.PlotOverLine.html">paraview.simple.PlotOverLine</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.PlotSelectionOverTime.html">paraview.simple.PlotSelectionOverTime</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.PointDatasetInterpolator.html">paraview.simple.PointDatasetInterpolator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.PointDatatoCellData.html">paraview.simple.PointDatatoCellData</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.PointInterpolator.html">paraview.simple.PointInterpolator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.PointLineInterpolator.html">paraview.simple.PointLineInterpolator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.PointPlaneInterpolator.html">paraview.simple.PointPlaneInterpolator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.PointSource.html">paraview.simple.PointSource</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.PointVolumeInterpolator.html">paraview.simple.PointVolumeInterpolator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.PolyLineSource.html">paraview.simple.PolyLineSource</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.PolyLineToRectilinearGrid.html">paraview.simple.PolyLineToRectilinearGrid</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.PrincipalComponentAnalysis.html">paraview.simple.PrincipalComponentAnalysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.ProbeLocation.html">paraview.simple.ProbeLocation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.ProcessIdScalars.html">paraview.simple.ProcessIdScalars</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.ProgrammableFilter.html">paraview.simple.ProgrammableFilter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.ProgrammableSource.html">paraview.simple.ProgrammableSource</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.PythonAnimationCue.html">paraview.simple.PythonAnimationCue</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.PythonAnnotation.html">paraview.simple.PythonAnnotation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.PythonCalculator.html">paraview.simple.PythonCalculator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.QuadricClustering.html">paraview.simple.QuadricClustering</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.RTXMLPolyDataReader.html">paraview.simple.RTXMLPolyDataReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.RampKeyFrame.html">paraview.simple.RampKeyFrame</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.RandomAttributes.html">paraview.simple.RandomAttributes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.RandomVectors.html">paraview.simple.RandomVectors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.RectilinearDatatoPointSet.html">paraview.simple.RectilinearDatatoPointSet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.RectilinearGridConnectivity.html">paraview.simple.RectilinearGridConnectivity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.RectilinearGridGeometryFilter.html">paraview.simple.RectilinearGridGeometryFilter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.ReductionFilter.html">paraview.simple.ReductionFilter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.Reflect.html">paraview.simple.Reflect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.RemoteSourceProxy.html">paraview.simple.RemoteSourceProxy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.RemoveGhostInformation.html">paraview.simple.RemoveGhostInformation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.ResampleAMR.html">paraview.simple.ResampleAMR</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.ResampleToImage.html">paraview.simple.ResampleToImage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.ResampleWithDataset.html">paraview.simple.ResampleWithDataset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.RestartedSimExodusReader.html">paraview.simple.RestartedSimExodusReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.RestartedSimSpyPlotReader.html">paraview.simple.RestartedSimSpyPlotReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.Ribbon.html">paraview.simple.Ribbon</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.RotationalExtrusion.html">paraview.simple.RotationalExtrusion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.Ruler.html">paraview.simple.Ruler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.SLACDataReader.html">paraview.simple.SLACDataReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.SLACParticleDataReader.html">paraview.simple.SLACParticleDataReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.SPHDatasetInterpolator.html">paraview.simple.SPHDatasetInterpolator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.SPHInterpolator.html">paraview.simple.SPHInterpolator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.SPHLineInterpolator.html">paraview.simple.SPHLineInterpolator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.SPHPlaneInterpolator.html">paraview.simple.SPHPlaneInterpolator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.SPHVolumeInterpolator.html">paraview.simple.SPHVolumeInterpolator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.STLReader.html">paraview.simple.STLReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.ScatterPlot.html">paraview.simple.ScatterPlot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.SelectionQuerySource.html">paraview.simple.SelectionQuerySource</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.SelectionSourceBase.html">paraview.simple.SelectionSourceBase</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.Shrink.html">paraview.simple.Shrink</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.SinusoidKeyFrame.html">paraview.simple.SinusoidKeyFrame</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.Slice.html">paraview.simple.Slice</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.SliceAMRdata.html">paraview.simple.SliceAMRdata</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.SliceAlongPolyLine.html">paraview.simple.SliceAlongPolyLine</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.SliceGenericDataset.html">paraview.simple.SliceGenericDataset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.SliceWithPlane.html">paraview.simple.SliceWithPlane</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.Slicedemanddrivencomposite.html">paraview.simple.Slicedemanddrivencomposite</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.Smooth.html">paraview.simple.Smooth</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.Sphere.html">paraview.simple.Sphere</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.SplineSource.html">paraview.simple.SplineSource</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.SpyPlotReader.html">paraview.simple.SpyPlotReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.StreakLine.html">paraview.simple.StreakLine</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.StreamTracer.html">paraview.simple.StreamTracer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.StreamTracerForGenericDatasets.html">paraview.simple.StreamTracerForGenericDatasets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.StreamTracerWithCustomSource.html">paraview.simple.StreamTracerWithCustomSource</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.Subdivide.html">paraview.simple.Subdivide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.Superquadric.html">paraview.simple.Superquadric</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.SurfaceFlow.html">paraview.simple.SurfaceFlow</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.SurfaceVectors.html">paraview.simple.SurfaceVectors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.SynchronizeTime.html">paraview.simple.SynchronizeTime</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.TIFFReader.html">paraview.simple.TIFFReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.TIFFSeriesReader.html">paraview.simple.TIFFSeriesReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.TIFFWriter.html">paraview.simple.TIFFWriter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.TRUCHASReader.html">paraview.simple.TRUCHASReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.TableFFT.html">paraview.simple.TableFFT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.TableToPoints.html">paraview.simple.TableToPoints</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.TableToStructuredGrid.html">paraview.simple.TableToStructuredGrid</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.TecplotReader.html">paraview.simple.TecplotReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.TecplotTableReader.html">paraview.simple.TecplotTableReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.TemporalArrayOperator.html">paraview.simple.TemporalArrayOperator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.TemporalCache.html">paraview.simple.TemporalCache</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.TemporalInterpolator.html">paraview.simple.TemporalInterpolator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.TemporalParticlesToPathlines.html">paraview.simple.TemporalParticlesToPathlines</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.TemporalShiftScale.html">paraview.simple.TemporalShiftScale</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.TemporalSnaptoTimeStep.html">paraview.simple.TemporalSnaptoTimeStep</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.TemporalStatistics.html">paraview.simple.TemporalStatistics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.TensorGlyph.html">paraview.simple.TensorGlyph</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.Tessellate.html">paraview.simple.Tessellate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.TessellateGenericDataset.html">paraview.simple.TessellateGenericDataset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.Test3DWidget.html">paraview.simple.Test3DWidget</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.Tetrahedralize.html">paraview.simple.Tetrahedralize</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.Text.html">paraview.simple.Text</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.TextureMaptoCylinder.html">paraview.simple.TextureMaptoCylinder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.TextureMaptoPlane.html">paraview.simple.TextureMaptoPlane</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.TextureMaptoSphere.html">paraview.simple.TextureMaptoSphere</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.Threshold.html">paraview.simple.Threshold</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.ThresholdSelectionSource.html">paraview.simple.ThresholdSelectionSource</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.TimeAnimationCue.html">paraview.simple.TimeAnimationCue</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.TimeSource.html">paraview.simple.TimeSource</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.TimeStepProgressBar.html">paraview.simple.TimeStepProgressBar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.Transform.html">paraview.simple.Transform</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.TransposeTable.html">paraview.simple.TransposeTable</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.TriangleStrips.html">paraview.simple.TriangleStrips</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.Triangulate.html">paraview.simple.Triangulate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.TrivialProducer.html">paraview.simple.TrivialProducer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.Tube.html">paraview.simple.Tube</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.UnstructuredCellTypes.html">paraview.simple.UnstructuredCellTypes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.UnstructuredNetCDFPOPreader.html">paraview.simple.UnstructuredNetCDFPOPreader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.VASPAnimationReader.html">paraview.simple.VASPAnimationReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.VASPTessellationReader.html">paraview.simple.VASPTessellationReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.VPICReader.html">paraview.simple.VPICReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.VRMLReader.html">paraview.simple.VRMLReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.WarpByScalar.html">paraview.simple.WarpByScalar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.WarpByVector.html">paraview.simple.WarpByVector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.WavefrontOBJReader.html">paraview.simple.WavefrontOBJReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.Wavelet.html">paraview.simple.Wavelet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.WindBladereader.html">paraview.simple.WindBladereader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.XDMFReader.html">paraview.simple.XDMFReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.XMLDataSetWriterBase.html">paraview.simple.XMLDataSetWriterBase</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.XMLHierarchicalBoxDataWriter.html">paraview.simple.XMLHierarchicalBoxDataWriter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.XMLHierarchicalBoxDatareader.html">paraview.simple.XMLHierarchicalBoxDatareader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.XMLHyperOctreeWriter.html">paraview.simple.XMLHyperOctreeWriter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.XMLImageDataReader.html">paraview.simple.XMLImageDataReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.XMLImageDataWriter.html">paraview.simple.XMLImageDataWriter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.XMLMultiBlockDataReader.html">paraview.simple.XMLMultiBlockDataReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.XMLMultiBlockDataWriter.html">paraview.simple.XMLMultiBlockDataWriter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.XMLPImageDataWriter.html">paraview.simple.XMLPImageDataWriter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.XMLPPolyDataWriter.html">paraview.simple.XMLPPolyDataWriter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.XMLPRectilinearGridWriter.html">paraview.simple.XMLPRectilinearGridWriter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.XMLPStructuredGridWriter.html">paraview.simple.XMLPStructuredGridWriter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.XMLPUnstructuredGridWriter.html">paraview.simple.XMLPUnstructuredGridWriter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.XMLPVAnimationWriter.html">paraview.simple.XMLPVAnimationWriter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.XMLPVDWriter.html">paraview.simple.XMLPVDWriter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.XMLPartitionedImageDataReader.html">paraview.simple.XMLPartitionedImageDataReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.XMLPartitionedPolydataReader.html">paraview.simple.XMLPartitionedPolydataReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.XMLPartitionedRectilinearGridReader.html">paraview.simple.XMLPartitionedRectilinearGridReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.XMLPartitionedStructuredGridReader.html">paraview.simple.XMLPartitionedStructuredGridReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.XMLPartitionedUnstructuredGridReader.html">paraview.simple.XMLPartitionedUnstructuredGridReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.XMLPolyDataReader.html">paraview.simple.XMLPolyDataReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.XMLPolyDataWriter.html">paraview.simple.XMLPolyDataWriter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.XMLRectilinearGridReader.html">paraview.simple.XMLRectilinearGridReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.XMLRectilinearGridWriter.html">paraview.simple.XMLRectilinearGridWriter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.XMLStructuredGridReader.html">paraview.simple.XMLStructuredGridReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.XMLStructuredGridWriter.html">paraview.simple.XMLStructuredGridWriter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.XMLUniformGridAMRReader.html">paraview.simple.XMLUniformGridAMRReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.XMLUniformGridAMRWriter.html">paraview.simple.XMLUniformGridAMRWriter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.XMLUnstructuredGridReader.html">paraview.simple.XMLUnstructuredGridReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.XMLUnstructuredGridWriter.html">paraview.simple.XMLUnstructuredGridWriter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.XYZReader.html">paraview.simple.XYZReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.XdmfWriter.html">paraview.simple.XdmfWriter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.YoungsMaterialInterface.html">paraview.simple.YoungsMaterialInterface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.a2DGlyph.html">paraview.simple.a2DGlyph</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.a3DText.html">paraview.simple.a3DText</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.plyreader.html">paraview.simple.plyreader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.proSTARSTARCDReader.html">paraview.simple.proSTARSTARCDReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.spcthhistoryreader.html">paraview.simple.spcthhistoryreader</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="python-2-vs-3.html">Python Version 2 versus 3</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="python-2-vs-3.html#print-is-a-function"><code class="docutils literal"><span class="pre">print</span></code> is a function</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python-2-vs-3.html#exceptions">Exceptions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python-2-vs-3.html#iterables">Iterables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python-2-vs-3.html#iterators-not-lists">Iterators, not lists</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python-2-vs-3.html#submodule-import">Submodule import</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python-2-vs-3.html#new-modules">New modules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python-2-vs-3.html#references">References</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="api-changes.html">API Changes between ParaView versions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="api-changes.html#changes-in-5-5">Changes in 5.5</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-changes.html#changes-in-5-1">Changes in 5.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-changes.html#changes-in-4-2">Changes in 4.2</a></li>
+</ul>
+</li>
+</ul>
+
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top">
+        <i data-toggle="wy-nav-top" class="icon icon-reorder"></i>
+        <a href="index.html">ParaView/Python</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <ul class="wy-breadcrumbs">
+  <li><a href="index.html">Docs</a> &raquo;</li>
+  <a href="genindex.html" class="float-right">Index</a> 
+  <li><a href="">vtk.numpy_interface.dataset_adapter Module</a></li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+</ul>
+<hr/>
+          
+  <div class="section" id="module-paraview.vtk.numpy_interface.dataset_adapter">
+<span id="vtk-numpy-interface-dataset-adapter-module"></span><h1>vtk.numpy_interface.dataset_adapter Module<a class="headerlink" href="#module-paraview.vtk.numpy_interface.dataset_adapter" title="Permalink to this headline">¶</a></h1>
+<p>This module provides classes that allow Numpy-type access
+to VTK datasets and arrays. This is best described with some examples.</p>
+<p>To normalize a VTK array:</p>
+<p>import vtk
+import vtk.numpy_interface.dataset_adapter as dsa
+import vtk.numpy_interface.algorithms as algs</p>
+<p>rt = vtk.vtkRTAnalyticSource()
+rt.Update()
+image = dsa.WrapDataObject(rt.GetOutput())
+rtdata = image.PointData[‘RTData’]
+rtmin = algs.min(rtdata)
+rtmax = algs.max(rtdata)
+rtnorm = (rtdata - rtmin) / (rtmax - rtmin)
+image.PointData.append(rtnorm, ‘RTData - normalized’)
+print image.GetPointData().GetArray(‘RTData - normalized’).GetRange()</p>
+<p>To calculate gradient:</p>
+<p>grad= algs.gradient(rtnorm)</p>
+<p>To access subsets:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">grad</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">10</span><span class="p">]</span>
+<span class="go">VTKArray([[ 0.10729134,  0.03763443,  0.03136338],</span>
+<span class="go">       [ 0.02754352,  0.03886006,  0.032589  ],</span>
+<span class="go">       [ 0.02248248,  0.04127144,  0.03500038],</span>
+<span class="go">       [ 0.02678365,  0.04357527,  0.03730421],</span>
+<span class="go">       [ 0.01765099,  0.04571581,  0.03944477],</span>
+<span class="go">       [ 0.02344007,  0.04763837,  0.04136734],</span>
+<span class="go">       [ 0.01089381,  0.04929155,  0.04302051],</span>
+<span class="go">       [ 0.01769151,  0.05062952,  0.04435848],</span>
+<span class="go">       [ 0.002764  ,  0.05161414,  0.04534309],</span>
+<span class="go">       [ 0.01010841,  0.05221677,  0.04594573]])</span>
+</pre></div>
+</div>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">grad</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">]</span>
+<span class="go">VTKArray([ 0.10729134,  0.02754352,  0.02248248, ..., -0.02748174,</span>
+<span class="go">       -0.02410045,  0.05509736])</span>
+</pre></div>
+</div>
+<p>All of this functionality is also supported for composite datasets
+even though their data arrays may be spread across multiple datasets.
+We have implemented a VTKCompositeDataArray class that handles many
+Numpy style operators and is supported by all algorithms in the
+algorithms module.</p>
+<p>This module also provides an API to access composite datasets.
+For example:</p>
+<p>mb = vtk.vtkMultiBlockDataSet()
+mb.SetBlock(0, image.VTKObject)
+mb.SetBlock(1e, image.VTKObject)
+cds = dsa.WrapDataObject(mb)
+for block in cds:</p>
+<blockquote>
+<div>print block</div></blockquote>
+<p>Note that this module implements only the wrappers for datasets
+and arrays. The classes implement many useful operators. However,
+to make best use of these classes, take a look at the algorithms
+module.</p>
+<dl class="class">
+<dt id="paraview.vtk.numpy_interface.dataset_adapter.ArrayAssociation">
+<em class="property">class </em><code class="descclassname">paraview.vtk.numpy_interface.dataset_adapter.</code><code class="descname">ArrayAssociation</code><a class="reference internal" href="_modules/paraview/vtk/numpy_interface/dataset_adapter.html#ArrayAssociation"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.vtk.numpy_interface.dataset_adapter.ArrayAssociation" title="Permalink to this definition">¶</a></dt>
+<dd><p>Easy access to vtkDataObject.AttributeTypes</p>
+<dl class="attribute">
+<dt id="paraview.vtk.numpy_interface.dataset_adapter.ArrayAssociation.CELL">
+<code class="descname">CELL</code><em class="property"> = 1</em><a class="headerlink" href="#paraview.vtk.numpy_interface.dataset_adapter.ArrayAssociation.CELL" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="paraview.vtk.numpy_interface.dataset_adapter.ArrayAssociation.FIELD">
+<code class="descname">FIELD</code><em class="property"> = 2</em><a class="headerlink" href="#paraview.vtk.numpy_interface.dataset_adapter.ArrayAssociation.FIELD" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="paraview.vtk.numpy_interface.dataset_adapter.ArrayAssociation.POINT">
+<code class="descname">POINT</code><em class="property"> = 0</em><a class="headerlink" href="#paraview.vtk.numpy_interface.dataset_adapter.ArrayAssociation.POINT" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="paraview.vtk.numpy_interface.dataset_adapter.ArrayAssociation.ROW">
+<code class="descname">ROW</code><em class="property"> = 6</em><a class="headerlink" href="#paraview.vtk.numpy_interface.dataset_adapter.ArrayAssociation.ROW" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="paraview.vtk.numpy_interface.dataset_adapter.CompositeDataIterator">
+<em class="property">class </em><code class="descclassname">paraview.vtk.numpy_interface.dataset_adapter.</code><code class="descname">CompositeDataIterator</code><span class="sig-paren">(</span><em>cds</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/vtk/numpy_interface/dataset_adapter.html#CompositeDataIterator"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.vtk.numpy_interface.dataset_adapter.CompositeDataIterator" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<p>Wrapper for a vtkCompositeDataIterator class to satisfy
+the python iterator protocol. This iterator iterates
+over non-empty leaf nodes. To iterate over empty or
+non-leaf nodes, use the vtkCompositeDataIterator directly.</p>
+<dl class="method">
+<dt id="paraview.vtk.numpy_interface.dataset_adapter.CompositeDataIterator.next">
+<code class="descname">next</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/vtk/numpy_interface/dataset_adapter.html#CompositeDataIterator.next"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.vtk.numpy_interface.dataset_adapter.CompositeDataIterator.next" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="paraview.vtk.numpy_interface.dataset_adapter.CompositeDataSet">
+<em class="property">class </em><code class="descclassname">paraview.vtk.numpy_interface.dataset_adapter.</code><code class="descname">CompositeDataSet</code><span class="sig-paren">(</span><em>vtkobject</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/vtk/numpy_interface/dataset_adapter.html#CompositeDataSet"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.vtk.numpy_interface.dataset_adapter.CompositeDataSet" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#paraview.vtk.numpy_interface.dataset_adapter.DataObject" title="paraview.vtk.numpy_interface.dataset_adapter.DataObject"><code class="xref py py-class docutils literal"><span class="pre">paraview.vtk.numpy_interface.dataset_adapter.DataObject</span></code></a></p>
+<p>A wrapper for vtkCompositeData and subclasses that makes it easier
+to access Point/Cell/Field data as VTKCompositeDataArrays. It also
+provides a Python type iterator.</p>
+<dl class="attribute">
+<dt id="paraview.vtk.numpy_interface.dataset_adapter.CompositeDataSet.CellData">
+<code class="descname">CellData</code><a class="headerlink" href="#paraview.vtk.numpy_interface.dataset_adapter.CompositeDataSet.CellData" title="Permalink to this definition">¶</a></dt>
+<dd><p>This property returns the cell data of a dataset.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="paraview.vtk.numpy_interface.dataset_adapter.CompositeDataSet.FieldData">
+<code class="descname">FieldData</code><a class="headerlink" href="#paraview.vtk.numpy_interface.dataset_adapter.CompositeDataSet.FieldData" title="Permalink to this definition">¶</a></dt>
+<dd><p>This property returns the field data of a dataset.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="paraview.vtk.numpy_interface.dataset_adapter.CompositeDataSet.GetAttributes">
+<code class="descname">GetAttributes</code><span class="sig-paren">(</span><em>type</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/vtk/numpy_interface/dataset_adapter.html#CompositeDataSet.GetAttributes"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.vtk.numpy_interface.dataset_adapter.CompositeDataSet.GetAttributes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the attributes specified by the type as a
+CompositeDataSetAttributes instance.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="paraview.vtk.numpy_interface.dataset_adapter.CompositeDataSet.GetCellData">
+<code class="descname">GetCellData</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/vtk/numpy_interface/dataset_adapter.html#CompositeDataSet.GetCellData"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.vtk.numpy_interface.dataset_adapter.CompositeDataSet.GetCellData" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the cell data as a DataSetAttributes instance.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="paraview.vtk.numpy_interface.dataset_adapter.CompositeDataSet.GetFieldData">
+<code class="descname">GetFieldData</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/vtk/numpy_interface/dataset_adapter.html#CompositeDataSet.GetFieldData"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.vtk.numpy_interface.dataset_adapter.CompositeDataSet.GetFieldData" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the field data as a DataSetAttributes instance.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="paraview.vtk.numpy_interface.dataset_adapter.CompositeDataSet.GetNumberOfCells">
+<code class="descname">GetNumberOfCells</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/vtk/numpy_interface/dataset_adapter.html#CompositeDataSet.GetNumberOfCells"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.vtk.numpy_interface.dataset_adapter.CompositeDataSet.GetNumberOfCells" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the total number of cells of all datasets
+in the composite dataset. Note that this traverses the
+whole composite dataset every time and should not be
+called repeatedly for large composite datasets.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="paraview.vtk.numpy_interface.dataset_adapter.CompositeDataSet.GetNumberOfElements">
+<code class="descname">GetNumberOfElements</code><span class="sig-paren">(</span><em>assoc</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/vtk/numpy_interface/dataset_adapter.html#CompositeDataSet.GetNumberOfElements"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.vtk.numpy_interface.dataset_adapter.CompositeDataSet.GetNumberOfElements" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the total number of cells or points depending
+on the value of assoc which can be ArrayAssociation.POINT or
+ArrayAssociation.CELL.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="paraview.vtk.numpy_interface.dataset_adapter.CompositeDataSet.GetNumberOfPoints">
+<code class="descname">GetNumberOfPoints</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/vtk/numpy_interface/dataset_adapter.html#CompositeDataSet.GetNumberOfPoints"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.vtk.numpy_interface.dataset_adapter.CompositeDataSet.GetNumberOfPoints" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the total number of points of all datasets
+in the composite dataset. Note that this traverses the
+whole composite dataset every time and should not be
+called repeatedly for large composite datasets.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="paraview.vtk.numpy_interface.dataset_adapter.CompositeDataSet.GetPointData">
+<code class="descname">GetPointData</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/vtk/numpy_interface/dataset_adapter.html#CompositeDataSet.GetPointData"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.vtk.numpy_interface.dataset_adapter.CompositeDataSet.GetPointData" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the point data as a DataSetAttributes instance.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="paraview.vtk.numpy_interface.dataset_adapter.CompositeDataSet.GetPoints">
+<code class="descname">GetPoints</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/vtk/numpy_interface/dataset_adapter.html#CompositeDataSet.GetPoints"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.vtk.numpy_interface.dataset_adapter.CompositeDataSet.GetPoints" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the points as a VTKCompositeDataArray instance.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="paraview.vtk.numpy_interface.dataset_adapter.CompositeDataSet.PointData">
+<code class="descname">PointData</code><a class="headerlink" href="#paraview.vtk.numpy_interface.dataset_adapter.CompositeDataSet.PointData" title="Permalink to this definition">¶</a></dt>
+<dd><p>This property returns the point data of the dataset.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="paraview.vtk.numpy_interface.dataset_adapter.CompositeDataSet.Points">
+<code class="descname">Points</code><a class="headerlink" href="#paraview.vtk.numpy_interface.dataset_adapter.CompositeDataSet.Points" title="Permalink to this definition">¶</a></dt>
+<dd><p>This property returns the points of the dataset.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="paraview.vtk.numpy_interface.dataset_adapter.CompositeDataSetAttributes">
+<em class="property">class </em><code class="descclassname">paraview.vtk.numpy_interface.dataset_adapter.</code><code class="descname">CompositeDataSetAttributes</code><span class="sig-paren">(</span><em>dataset</em>, <em>association</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/vtk/numpy_interface/dataset_adapter.html#CompositeDataSetAttributes"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.vtk.numpy_interface.dataset_adapter.CompositeDataSetAttributes" title="Permalink to this definition">¶</a></dt>
+<dd><p>This is a python friendly wrapper for vtkDataSetAttributes for composite
+datsets. Since composite datasets themselves don’t have attribute data, but
+the attribute data is associated with the leaf nodes in the composite
+dataset, this class simulates a DataSetAttributes interface by taking a
+union of DataSetAttributes associated with all leaf nodes.</p>
+<dl class="method">
+<dt id="paraview.vtk.numpy_interface.dataset_adapter.CompositeDataSetAttributes.GetArray">
+<code class="descname">GetArray</code><span class="sig-paren">(</span><em>idx</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/vtk/numpy_interface/dataset_adapter.html#CompositeDataSetAttributes.GetArray"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.vtk.numpy_interface.dataset_adapter.CompositeDataSetAttributes.GetArray" title="Permalink to this definition">¶</a></dt>
+<dd><p>Given a name, returns a VTKCompositeArray.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="paraview.vtk.numpy_interface.dataset_adapter.CompositeDataSetAttributes.PassData">
+<code class="descname">PassData</code><span class="sig-paren">(</span><em>other</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/vtk/numpy_interface/dataset_adapter.html#CompositeDataSetAttributes.PassData"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.vtk.numpy_interface.dataset_adapter.CompositeDataSetAttributes.PassData" title="Permalink to this definition">¶</a></dt>
+<dd><p>Emulate PassData for composite datasets.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="paraview.vtk.numpy_interface.dataset_adapter.CompositeDataSetAttributes.append">
+<code class="descname">append</code><span class="sig-paren">(</span><em>narray</em>, <em>name</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/vtk/numpy_interface/dataset_adapter.html#CompositeDataSetAttributes.append"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.vtk.numpy_interface.dataset_adapter.CompositeDataSetAttributes.append" title="Permalink to this definition">¶</a></dt>
+<dd><p>Appends a new array to the composite dataset attributes.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="paraview.vtk.numpy_interface.dataset_adapter.CompositeDataSetAttributes.keys">
+<code class="descname">keys</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/vtk/numpy_interface/dataset_adapter.html#CompositeDataSetAttributes.keys"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.vtk.numpy_interface.dataset_adapter.CompositeDataSetAttributes.keys" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the names of the arrays as a list.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="paraview.vtk.numpy_interface.dataset_adapter.DataObject">
+<em class="property">class </em><code class="descclassname">paraview.vtk.numpy_interface.dataset_adapter.</code><code class="descname">DataObject</code><span class="sig-paren">(</span><em>vtkobject</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/vtk/numpy_interface/dataset_adapter.html#DataObject"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.vtk.numpy_interface.dataset_adapter.DataObject" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#paraview.vtk.numpy_interface.dataset_adapter.VTKObjectWrapper" title="paraview.vtk.numpy_interface.dataset_adapter.VTKObjectWrapper"><code class="xref py py-class docutils literal"><span class="pre">paraview.vtk.numpy_interface.dataset_adapter.VTKObjectWrapper</span></code></a></p>
+<p>A wrapper for vtkDataObject that makes it easier to access FielData
+arrays as VTKArrays</p>
+<dl class="attribute">
+<dt id="paraview.vtk.numpy_interface.dataset_adapter.DataObject.FieldData">
+<code class="descname">FieldData</code><a class="headerlink" href="#paraview.vtk.numpy_interface.dataset_adapter.DataObject.FieldData" title="Permalink to this definition">¶</a></dt>
+<dd><p>This property returns the field data of a data object.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="paraview.vtk.numpy_interface.dataset_adapter.DataObject.GetAttributes">
+<code class="descname">GetAttributes</code><span class="sig-paren">(</span><em>type</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/vtk/numpy_interface/dataset_adapter.html#DataObject.GetAttributes"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.vtk.numpy_interface.dataset_adapter.DataObject.GetAttributes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the attributes specified by the type as a DataSetAttributes
+instance.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="paraview.vtk.numpy_interface.dataset_adapter.DataObject.GetFieldData">
+<code class="descname">GetFieldData</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/vtk/numpy_interface/dataset_adapter.html#DataObject.GetFieldData"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.vtk.numpy_interface.dataset_adapter.DataObject.GetFieldData" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the field data as a DataSetAttributes instance.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="paraview.vtk.numpy_interface.dataset_adapter.DataSet">
+<em class="property">class </em><code class="descclassname">paraview.vtk.numpy_interface.dataset_adapter.</code><code class="descname">DataSet</code><span class="sig-paren">(</span><em>vtkobject</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/vtk/numpy_interface/dataset_adapter.html#DataSet"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.vtk.numpy_interface.dataset_adapter.DataSet" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#paraview.vtk.numpy_interface.dataset_adapter.DataObject" title="paraview.vtk.numpy_interface.dataset_adapter.DataObject"><code class="xref py py-class docutils literal"><span class="pre">paraview.vtk.numpy_interface.dataset_adapter.DataObject</span></code></a></p>
+<p>This is a python friendly wrapper of a vtkDataSet that defines
+a few useful properties.</p>
+<dl class="attribute">
+<dt id="paraview.vtk.numpy_interface.dataset_adapter.DataSet.CellData">
+<code class="descname">CellData</code><a class="headerlink" href="#paraview.vtk.numpy_interface.dataset_adapter.DataSet.CellData" title="Permalink to this definition">¶</a></dt>
+<dd><p>This property returns the cell data of a dataset.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="paraview.vtk.numpy_interface.dataset_adapter.DataSet.GetCellData">
+<code class="descname">GetCellData</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/vtk/numpy_interface/dataset_adapter.html#DataSet.GetCellData"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.vtk.numpy_interface.dataset_adapter.DataSet.GetCellData" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the cell data as a DataSetAttributes instance.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="paraview.vtk.numpy_interface.dataset_adapter.DataSet.GetPointData">
+<code class="descname">GetPointData</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/vtk/numpy_interface/dataset_adapter.html#DataSet.GetPointData"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.vtk.numpy_interface.dataset_adapter.DataSet.GetPointData" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the point data as a DataSetAttributes instance.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="paraview.vtk.numpy_interface.dataset_adapter.DataSet.PointData">
+<code class="descname">PointData</code><a class="headerlink" href="#paraview.vtk.numpy_interface.dataset_adapter.DataSet.PointData" title="Permalink to this definition">¶</a></dt>
+<dd><p>This property returns the point data of the dataset.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="paraview.vtk.numpy_interface.dataset_adapter.DataSetAttributes">
+<em class="property">class </em><code class="descclassname">paraview.vtk.numpy_interface.dataset_adapter.</code><code class="descname">DataSetAttributes</code><span class="sig-paren">(</span><em>vtkobject</em>, <em>dataset</em>, <em>association</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/vtk/numpy_interface/dataset_adapter.html#DataSetAttributes"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.vtk.numpy_interface.dataset_adapter.DataSetAttributes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#paraview.vtk.numpy_interface.dataset_adapter.VTKObjectWrapper" title="paraview.vtk.numpy_interface.dataset_adapter.VTKObjectWrapper"><code class="xref py py-class docutils literal"><span class="pre">paraview.vtk.numpy_interface.dataset_adapter.VTKObjectWrapper</span></code></a></p>
+<p>This is a python friendly wrapper of vtkDataSetAttributes. It
+returns VTKArrays. It also provides the dictionary interface.</p>
+<dl class="method">
+<dt id="paraview.vtk.numpy_interface.dataset_adapter.DataSetAttributes.GetArray">
+<code class="descname">GetArray</code><span class="sig-paren">(</span><em>idx</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/vtk/numpy_interface/dataset_adapter.html#DataSetAttributes.GetArray"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.vtk.numpy_interface.dataset_adapter.DataSetAttributes.GetArray" title="Permalink to this definition">¶</a></dt>
+<dd><p>Given an index or name, returns a VTKArray.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="paraview.vtk.numpy_interface.dataset_adapter.DataSetAttributes.PassData">
+<code class="descname">PassData</code><span class="sig-paren">(</span><em>other</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/vtk/numpy_interface/dataset_adapter.html#DataSetAttributes.PassData"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.vtk.numpy_interface.dataset_adapter.DataSetAttributes.PassData" title="Permalink to this definition">¶</a></dt>
+<dd><p>A wrapper for vtkDataSet.PassData.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="paraview.vtk.numpy_interface.dataset_adapter.DataSetAttributes.append">
+<code class="descname">append</code><span class="sig-paren">(</span><em>narray</em>, <em>name</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/vtk/numpy_interface/dataset_adapter.html#DataSetAttributes.append"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.vtk.numpy_interface.dataset_adapter.DataSetAttributes.append" title="Permalink to this definition">¶</a></dt>
+<dd><p>Appends a new array to the dataset attributes.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="paraview.vtk.numpy_interface.dataset_adapter.DataSetAttributes.keys">
+<code class="descname">keys</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/vtk/numpy_interface/dataset_adapter.html#DataSetAttributes.keys"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.vtk.numpy_interface.dataset_adapter.DataSetAttributes.keys" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the names of the arrays as a list.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="paraview.vtk.numpy_interface.dataset_adapter.DataSetAttributes.values">
+<code class="descname">values</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/vtk/numpy_interface/dataset_adapter.html#DataSetAttributes.values"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.vtk.numpy_interface.dataset_adapter.DataSetAttributes.values" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the arrays as a list.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="paraview.vtk.numpy_interface.dataset_adapter.MultiCompositeDataIterator">
+<em class="property">class </em><code class="descclassname">paraview.vtk.numpy_interface.dataset_adapter.</code><code class="descname">MultiCompositeDataIterator</code><span class="sig-paren">(</span><em>cds</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/vtk/numpy_interface/dataset_adapter.html#MultiCompositeDataIterator"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.vtk.numpy_interface.dataset_adapter.MultiCompositeDataIterator" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#paraview.vtk.numpy_interface.dataset_adapter.CompositeDataIterator" title="paraview.vtk.numpy_interface.dataset_adapter.CompositeDataIterator"><code class="xref py py-class docutils literal"><span class="pre">paraview.vtk.numpy_interface.dataset_adapter.CompositeDataIterator</span></code></a></p>
+<p>Iterator that can be used to iterate over multiple
+composite datasets together. This iterator works only
+with arrays that were copied from an original using
+CopyStructured. The most common use case is to use
+CopyStructure, then iterate over input and output together
+while creating output datasets from corresponding input
+datasets.</p>
+<dl class="method">
+<dt id="paraview.vtk.numpy_interface.dataset_adapter.MultiCompositeDataIterator.next">
+<code class="descname">next</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/vtk/numpy_interface/dataset_adapter.html#MultiCompositeDataIterator.next"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.vtk.numpy_interface.dataset_adapter.MultiCompositeDataIterator.next" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="paraview.vtk.numpy_interface.dataset_adapter.PointSet">
+<em class="property">class </em><code class="descclassname">paraview.vtk.numpy_interface.dataset_adapter.</code><code class="descname">PointSet</code><span class="sig-paren">(</span><em>vtkobject</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/vtk/numpy_interface/dataset_adapter.html#PointSet"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.vtk.numpy_interface.dataset_adapter.PointSet" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#paraview.vtk.numpy_interface.dataset_adapter.DataSet" title="paraview.vtk.numpy_interface.dataset_adapter.DataSet"><code class="xref py py-class docutils literal"><span class="pre">paraview.vtk.numpy_interface.dataset_adapter.DataSet</span></code></a></p>
+<p>This is a python friendly wrapper of a vtkPointSet that defines
+a few useful properties.</p>
+<dl class="method">
+<dt id="paraview.vtk.numpy_interface.dataset_adapter.PointSet.GetPoints">
+<code class="descname">GetPoints</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/vtk/numpy_interface/dataset_adapter.html#PointSet.GetPoints"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.vtk.numpy_interface.dataset_adapter.PointSet.GetPoints" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the points as a VTKArray instance. Returns None if the
+dataset has implicit points.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="paraview.vtk.numpy_interface.dataset_adapter.PointSet.Points">
+<code class="descname">Points</code><a class="headerlink" href="#paraview.vtk.numpy_interface.dataset_adapter.PointSet.Points" title="Permalink to this definition">¶</a></dt>
+<dd><p>This property returns the point coordinates of dataset.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="paraview.vtk.numpy_interface.dataset_adapter.PointSet.SetPoints">
+<code class="descname">SetPoints</code><span class="sig-paren">(</span><em>pts</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/vtk/numpy_interface/dataset_adapter.html#PointSet.SetPoints"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.vtk.numpy_interface.dataset_adapter.PointSet.SetPoints" title="Permalink to this definition">¶</a></dt>
+<dd><p>Given a VTKArray instance, sets the points of the dataset.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="paraview.vtk.numpy_interface.dataset_adapter.PolyData">
+<em class="property">class </em><code class="descclassname">paraview.vtk.numpy_interface.dataset_adapter.</code><code class="descname">PolyData</code><span class="sig-paren">(</span><em>vtkobject</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/vtk/numpy_interface/dataset_adapter.html#PolyData"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.vtk.numpy_interface.dataset_adapter.PolyData" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#paraview.vtk.numpy_interface.dataset_adapter.PointSet" title="paraview.vtk.numpy_interface.dataset_adapter.PointSet"><code class="xref py py-class docutils literal"><span class="pre">paraview.vtk.numpy_interface.dataset_adapter.PointSet</span></code></a></p>
+<p>This is a python friendly wrapper of a vtkPolyData that defines
+a few useful properties.</p>
+<dl class="method">
+<dt id="paraview.vtk.numpy_interface.dataset_adapter.PolyData.GetPolygons">
+<code class="descname">GetPolygons</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/vtk/numpy_interface/dataset_adapter.html#PolyData.GetPolygons"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.vtk.numpy_interface.dataset_adapter.PolyData.GetPolygons" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the polys as a VTKArray instance.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="paraview.vtk.numpy_interface.dataset_adapter.PolyData.Polygons">
+<code class="descname">Polygons</code><a class="headerlink" href="#paraview.vtk.numpy_interface.dataset_adapter.PolyData.Polygons" title="Permalink to this definition">¶</a></dt>
+<dd><p>This property returns the connectivity of polygons.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="paraview.vtk.numpy_interface.dataset_adapter.Table">
+<em class="property">class </em><code class="descclassname">paraview.vtk.numpy_interface.dataset_adapter.</code><code class="descname">Table</code><span class="sig-paren">(</span><em>vtkobject</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/vtk/numpy_interface/dataset_adapter.html#Table"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.vtk.numpy_interface.dataset_adapter.Table" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#paraview.vtk.numpy_interface.dataset_adapter.DataObject" title="paraview.vtk.numpy_interface.dataset_adapter.DataObject"><code class="xref py py-class docutils literal"><span class="pre">paraview.vtk.numpy_interface.dataset_adapter.DataObject</span></code></a></p>
+<p>A wrapper for vtkFielData that makes it easier to access RowData array as
+VTKArrays</p>
+<dl class="method">
+<dt id="paraview.vtk.numpy_interface.dataset_adapter.Table.GetRowData">
+<code class="descname">GetRowData</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/vtk/numpy_interface/dataset_adapter.html#Table.GetRowData"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.vtk.numpy_interface.dataset_adapter.Table.GetRowData" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the row data as a DataSetAttributes instance.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="paraview.vtk.numpy_interface.dataset_adapter.Table.RowData">
+<code class="descname">RowData</code><a class="headerlink" href="#paraview.vtk.numpy_interface.dataset_adapter.Table.RowData" title="Permalink to this definition">¶</a></dt>
+<dd><p>This property returns the row data of the table.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="paraview.vtk.numpy_interface.dataset_adapter.UnstructuredGrid">
+<em class="property">class </em><code class="descclassname">paraview.vtk.numpy_interface.dataset_adapter.</code><code class="descname">UnstructuredGrid</code><span class="sig-paren">(</span><em>vtkobject</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/vtk/numpy_interface/dataset_adapter.html#UnstructuredGrid"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.vtk.numpy_interface.dataset_adapter.UnstructuredGrid" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#paraview.vtk.numpy_interface.dataset_adapter.PointSet" title="paraview.vtk.numpy_interface.dataset_adapter.PointSet"><code class="xref py py-class docutils literal"><span class="pre">paraview.vtk.numpy_interface.dataset_adapter.PointSet</span></code></a></p>
+<p>This is a python friendly wrapper of a vtkUnstructuredGrid that defines
+a few useful properties.</p>
+<dl class="attribute">
+<dt id="paraview.vtk.numpy_interface.dataset_adapter.UnstructuredGrid.CellLocations">
+<code class="descname">CellLocations</code><a class="headerlink" href="#paraview.vtk.numpy_interface.dataset_adapter.UnstructuredGrid.CellLocations" title="Permalink to this definition">¶</a></dt>
+<dd><p>This property returns the locations of cells.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="paraview.vtk.numpy_interface.dataset_adapter.UnstructuredGrid.CellTypes">
+<code class="descname">CellTypes</code><a class="headerlink" href="#paraview.vtk.numpy_interface.dataset_adapter.UnstructuredGrid.CellTypes" title="Permalink to this definition">¶</a></dt>
+<dd><p>This property returns the types of cells.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="paraview.vtk.numpy_interface.dataset_adapter.UnstructuredGrid.Cells">
+<code class="descname">Cells</code><a class="headerlink" href="#paraview.vtk.numpy_interface.dataset_adapter.UnstructuredGrid.Cells" title="Permalink to this definition">¶</a></dt>
+<dd><p>This property returns the connectivity of cells.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="paraview.vtk.numpy_interface.dataset_adapter.UnstructuredGrid.GetCellLocations">
+<code class="descname">GetCellLocations</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/vtk/numpy_interface/dataset_adapter.html#UnstructuredGrid.GetCellLocations"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.vtk.numpy_interface.dataset_adapter.UnstructuredGrid.GetCellLocations" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the cell locations as a VTKArray instance.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="paraview.vtk.numpy_interface.dataset_adapter.UnstructuredGrid.GetCellTypes">
+<code class="descname">GetCellTypes</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/vtk/numpy_interface/dataset_adapter.html#UnstructuredGrid.GetCellTypes"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.vtk.numpy_interface.dataset_adapter.UnstructuredGrid.GetCellTypes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the cell types as a VTKArray instance.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="paraview.vtk.numpy_interface.dataset_adapter.UnstructuredGrid.GetCells">
+<code class="descname">GetCells</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/vtk/numpy_interface/dataset_adapter.html#UnstructuredGrid.GetCells"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.vtk.numpy_interface.dataset_adapter.UnstructuredGrid.GetCells" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the cells as a VTKArray instance.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="paraview.vtk.numpy_interface.dataset_adapter.UnstructuredGrid.SetCells">
+<code class="descname">SetCells</code><span class="sig-paren">(</span><em>cellTypes</em>, <em>cellLocations</em>, <em>cells</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/vtk/numpy_interface/dataset_adapter.html#UnstructuredGrid.SetCells"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.vtk.numpy_interface.dataset_adapter.UnstructuredGrid.SetCells" title="Permalink to this definition">¶</a></dt>
+<dd><p>Given cellTypes, cellLocations, cells as VTKArrays,
+populates the unstructured grid data structures.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="paraview.vtk.numpy_interface.dataset_adapter.VTKArray">
+<em class="property">class </em><code class="descclassname">paraview.vtk.numpy_interface.dataset_adapter.</code><code class="descname">VTKArray</code><a class="reference internal" href="_modules/paraview/vtk/numpy_interface/dataset_adapter.html#VTKArray"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.vtk.numpy_interface.dataset_adapter.VTKArray" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">numpy.ndarray</span></code></p>
+<p>This is a sub-class of numpy ndarray that stores a
+reference to a vtk array as well as the owning dataset.
+The numpy array and vtk array should point to the same
+memory location.</p>
+<dl class="attribute">
+<dt id="paraview.vtk.numpy_interface.dataset_adapter.VTKArray.DataSet">
+<code class="descname">DataSet</code><a class="headerlink" href="#paraview.vtk.numpy_interface.dataset_adapter.VTKArray.DataSet" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the dataset this array is associated with. The reference to the
+dataset is held through a vtkWeakReference to ensure it doesn’t prevent
+the dataset from being collected if necessary.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="paraview.vtk.numpy_interface.dataset_adapter.VTKArray.and">
+<code class="descname">and</code><span class="sig-paren">(</span><em>other</em><span class="sig-paren">)</span><a class="headerlink" href="#paraview.vtk.numpy_interface.dataset_adapter.VTKArray.and" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="paraview.vtk.numpy_interface.dataset_adapter.VTKArray.or">
+<code class="descname">or</code><span class="sig-paren">(</span><em>other</em><span class="sig-paren">)</span><a class="headerlink" href="#paraview.vtk.numpy_interface.dataset_adapter.VTKArray.or" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="paraview.vtk.numpy_interface.dataset_adapter.VTKArrayMetaClass">
+<em class="property">class </em><code class="descclassname">paraview.vtk.numpy_interface.dataset_adapter.</code><code class="descname">VTKArrayMetaClass</code><a class="reference internal" href="_modules/paraview/vtk/numpy_interface/dataset_adapter.html#VTKArrayMetaClass"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.vtk.numpy_interface.dataset_adapter.VTKArrayMetaClass" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">type</span></code></p>
+</dd></dl>
+
+<dl class="class">
+<dt id="paraview.vtk.numpy_interface.dataset_adapter.VTKCompositeDataArray">
+<em class="property">class </em><code class="descclassname">paraview.vtk.numpy_interface.dataset_adapter.</code><code class="descname">VTKCompositeDataArray</code><span class="sig-paren">(</span><em>arrays=[]</em>, <em>dataset=None</em>, <em>name=None</em>, <em>association=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/vtk/numpy_interface/dataset_adapter.html#VTKCompositeDataArray"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.vtk.numpy_interface.dataset_adapter.VTKCompositeDataArray" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<p>This class manages a set of arrays of the same name contained
+within a composite dataset. Its main purpose is to provide a
+Numpy-type interface to composite data arrays which are naturally
+nothing but a collection of vtkDataArrays. A VTKCompositeDataArray
+makes such a collection appear as a single Numpy array and support
+all array operations that this module and the associated algorithm
+module support. Note that this is not a subclass of a Numpy array
+and as such cannot be passed to native Numpy functions. Instead
+VTK modules should be used to process composite arrays.</p>
+<dl class="attribute">
+<dt id="paraview.vtk.numpy_interface.dataset_adapter.VTKCompositeDataArray.Arrays">
+<code class="descname">Arrays</code><a class="headerlink" href="#paraview.vtk.numpy_interface.dataset_adapter.VTKCompositeDataArray.Arrays" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the internal container of VTKArrays. If necessary,
+this will populate the array list from a composite dataset.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="paraview.vtk.numpy_interface.dataset_adapter.VTKCompositeDataArray.GetArrays">
+<code class="descname">GetArrays</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/vtk/numpy_interface/dataset_adapter.html#VTKCompositeDataArray.GetArrays"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.vtk.numpy_interface.dataset_adapter.VTKCompositeDataArray.GetArrays" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the internal container of VTKArrays. If necessary,
+this will populate the array list from a composite dataset.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="paraview.vtk.numpy_interface.dataset_adapter.VTKCompositeDataArray.GetSize">
+<code class="descname">GetSize</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/vtk/numpy_interface/dataset_adapter.html#VTKCompositeDataArray.GetSize"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.vtk.numpy_interface.dataset_adapter.VTKCompositeDataArray.GetSize" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the number of elements in the array.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="paraview.vtk.numpy_interface.dataset_adapter.VTKCompositeDataArray.astype">
+<code class="descname">astype</code><span class="sig-paren">(</span><em>dtype</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/vtk/numpy_interface/dataset_adapter.html#VTKCompositeDataArray.astype"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.vtk.numpy_interface.dataset_adapter.VTKCompositeDataArray.astype" title="Permalink to this definition">¶</a></dt>
+<dd><p>Implements numpy array’s as array method.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="paraview.vtk.numpy_interface.dataset_adapter.VTKCompositeDataArray.size">
+<code class="descname">size</code><a class="headerlink" href="#paraview.vtk.numpy_interface.dataset_adapter.VTKCompositeDataArray.size" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the number of elements in the array.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="paraview.vtk.numpy_interface.dataset_adapter.VTKCompositeDataArrayMetaClass">
+<em class="property">class </em><code class="descclassname">paraview.vtk.numpy_interface.dataset_adapter.</code><code class="descname">VTKCompositeDataArrayMetaClass</code><a class="reference internal" href="_modules/paraview/vtk/numpy_interface/dataset_adapter.html#VTKCompositeDataArrayMetaClass"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.vtk.numpy_interface.dataset_adapter.VTKCompositeDataArrayMetaClass" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">type</span></code></p>
+</dd></dl>
+
+<dl class="class">
+<dt id="paraview.vtk.numpy_interface.dataset_adapter.VTKNoneArray">
+<em class="property">class </em><code class="descclassname">paraview.vtk.numpy_interface.dataset_adapter.</code><code class="descname">VTKNoneArray</code><a class="reference internal" href="_modules/paraview/vtk/numpy_interface/dataset_adapter.html#VTKNoneArray"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.vtk.numpy_interface.dataset_adapter.VTKNoneArray" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<p>VTKNoneArray is used to represent a “void” array. An instance
+of this class (NoneArray) is returned instead of None when an
+array that doesn’t exist in a DataSetAttributes is requested.
+All operations on the NoneArray return NoneArray. The main reason
+for this is to support operations in parallel where one of the
+processes may be working on an empty dataset. In such cases,
+the process is still expected to evaluate a whole expression because
+some of the functions may perform bulk MPI communication. None
+cannot be used in these instances because it cannot properly override
+operators such as __add__, __sub__ etc. This is the main raison
+d’etre for VTKNoneArray.</p>
+<dl class="method">
+<dt id="paraview.vtk.numpy_interface.dataset_adapter.VTKNoneArray.astype">
+<code class="descname">astype</code><span class="sig-paren">(</span><em>dtype</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/vtk/numpy_interface/dataset_adapter.html#VTKNoneArray.astype"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.vtk.numpy_interface.dataset_adapter.VTKNoneArray.astype" title="Permalink to this definition">¶</a></dt>
+<dd><p>Implements numpy array’s astype method.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="paraview.vtk.numpy_interface.dataset_adapter.VTKNoneArrayMetaClass">
+<em class="property">class </em><code class="descclassname">paraview.vtk.numpy_interface.dataset_adapter.</code><code class="descname">VTKNoneArrayMetaClass</code><a class="reference internal" href="_modules/paraview/vtk/numpy_interface/dataset_adapter.html#VTKNoneArrayMetaClass"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.vtk.numpy_interface.dataset_adapter.VTKNoneArrayMetaClass" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">type</span></code></p>
+</dd></dl>
+
+<dl class="class">
+<dt id="paraview.vtk.numpy_interface.dataset_adapter.VTKObjectWrapper">
+<em class="property">class </em><code class="descclassname">paraview.vtk.numpy_interface.dataset_adapter.</code><code class="descname">VTKObjectWrapper</code><span class="sig-paren">(</span><em>vtkobject</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/vtk/numpy_interface/dataset_adapter.html#VTKObjectWrapper"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.vtk.numpy_interface.dataset_adapter.VTKObjectWrapper" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<p>Superclass for classes that wrap VTK objects with Python objects.
+This class holds a reference to the wrapped VTK object. It also
+forwards unresolved methods to the underlying object by overloading
+__get__attr.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="paraview.vtk.numpy_interface.dataset_adapter.WrapDataObject">
+<code class="descclassname">paraview.vtk.numpy_interface.dataset_adapter.</code><code class="descname">WrapDataObject</code><span class="sig-paren">(</span><em>ds</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/vtk/numpy_interface/dataset_adapter.html#WrapDataObject"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.vtk.numpy_interface.dataset_adapter.WrapDataObject" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a Numpy friendly wrapper of a vtkDataObject.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="paraview.vtk.numpy_interface.dataset_adapter.buffer_shared">
+<code class="descclassname">paraview.vtk.numpy_interface.dataset_adapter.</code><code class="descname">buffer_shared</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#paraview.vtk.numpy_interface.dataset_adapter.buffer_shared" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check if two objects share the same buffer, meaning that they point to the same block of memory.  An TypeError exception will be raised if either of the objects does not provide a buffer.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="paraview.vtk.numpy_interface.dataset_adapter.numpyTovtkDataArray">
+<code class="descclassname">paraview.vtk.numpy_interface.dataset_adapter.</code><code class="descname">numpyTovtkDataArray</code><span class="sig-paren">(</span><em>array</em>, <em>name='numpy_array'</em>, <em>array_type=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/vtk/numpy_interface/dataset_adapter.html#numpyTovtkDataArray"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.vtk.numpy_interface.dataset_adapter.numpyTovtkDataArray" title="Permalink to this definition">¶</a></dt>
+<dd><p>Given a numpy array or a VTKArray and a name, returns a vtkDataArray.
+The resulting vtkDataArray will store a reference to the numpy array
+through a DeleteEvent observer: the numpy array is released only when
+the vtkDataArray is destroyed.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="paraview.vtk.numpy_interface.dataset_adapter.reshape_append_ones">
+<code class="descclassname">paraview.vtk.numpy_interface.dataset_adapter.</code><code class="descname">reshape_append_ones</code><span class="sig-paren">(</span><em>a1</em>, <em>a2</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/vtk/numpy_interface/dataset_adapter.html#reshape_append_ones"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.vtk.numpy_interface.dataset_adapter.reshape_append_ones" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a list with the two arguments, any of them may be
+processed.  If the arguments are numpy.ndarrays, append 1s to the
+shape of the array with the smallest number of dimensions until
+the arrays have the same number of dimensions. Does nothing if the
+arguments are not ndarrays or the arrays have the same number of
+dimensions.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="paraview.vtk.numpy_interface.dataset_adapter.vtkDataArrayToVTKArray">
+<code class="descclassname">paraview.vtk.numpy_interface.dataset_adapter.</code><code class="descname">vtkDataArrayToVTKArray</code><span class="sig-paren">(</span><em>array</em>, <em>dataset=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/vtk/numpy_interface/dataset_adapter.html#vtkDataArrayToVTKArray"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.vtk.numpy_interface.dataset_adapter.vtkDataArrayToVTKArray" title="Permalink to this definition">¶</a></dt>
+<dd><p>Given a vtkDataArray and a dataset owning it, returns a VTKArray.</p>
+</dd></dl>
+
+</div>
+
+
+          <footer>
+  
+    <div class="rst-footer-buttons">
+      
+        <a href="paraview.vtk.numpy_interface.internal_algorithms.html" class="btn btn-neutral float-right" title="vtk.numpy_interface.internal_algorithms Module"/>Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="paraview.vtk.numpy_interface.algorithms.html" class="btn btn-neutral" title="vtk.numpy_interface.algorithms Module"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <p>
+      &copy; Copyright 2013, Kitware, Inc..
+  </p>
+
+  <a href="https://www.github.com/snide/sphinx_rtd_theme">Sphinx theme</a> provided by <a href="http://readthedocs.org">Read the Docs</a>
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+<script type=text/javascript src=/paraview-docs/paraview-version.js></script></body>
+</html>
