@@ -32,7 +32,7 @@ function buildDropDown(versions, active, otherLang) {
     buf.push(`<option value="${version}" ${version == active ? 'selected="selected"' : ''}>${version}</option>`);
   });
   buf.push('</select>');
-  buf.push(`<img class="toggleLangage" data-url="/paraview-docs/${active}/${otherLang}" src="/paraview-docs/${otherLang}.png" style="width: 40px; height: 20px; display: inline-block; margin: 5px;">`);
+  buf.push(`<a href="/paraview-docs/${active}/${otherLang}" style="display: inline-block; margin-left: 10px; color: black;">Go to ${otherLang} documentation</a>`);
   return buf.join('');
 }
 
@@ -41,12 +41,6 @@ function buildDropDown(versions, active, otherLang) {
 function patchURL(url, new_version, new_lang) {
   const lang = new_lang || urlRegExp.exec(window.location.href)[3];
   return url.replace(urlRegExp, `paraview-docs/${new_version}/${lang}/`);
-}
-
-// ----------------------------------------------------------------------------
-
-function toggleLangage(e) {
-  window.location.href = e.target.dataset.url;
 }
 
 // ----------------------------------------------------------------------------
@@ -79,7 +73,6 @@ fetchText('/paraview-docs/versions')
           const container = document.querySelector('.wy-side-nav-search li.version');
           container.innerHTML = selectHTML;
           container.querySelector('select').addEventListener('change', onSwitch);
-          container.querySelector('.toggleLangage').addEventListener('click', toggleLangage);
         } else if (lang === 'cxx') {
           // create a div, add to header
           const projectContainer = document.querySelector('#projectname');
@@ -90,7 +83,6 @@ fetchText('/paraview-docs/versions')
 
           projectContainer.appendChild(selectContainer);
           selectContainer.querySelector('select').addEventListener('change', onSwitch);
-          selectContainer.querySelector('.toggleLangage').addEventListener('click', toggleLangage);
         }
       }
     });

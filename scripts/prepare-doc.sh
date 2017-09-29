@@ -59,3 +59,6 @@ find . -type d -depth 1 | grep -v git | cut -d "/" -f 2 > versions
 # Commit to server
 # -----------------------------------------------------------------------------
 
+cd "${WORK_DIR}/paraview-docs/"
+git commit -m "Update documentation"
+git push origin gh-pages
