@@ -12,7 +12,7 @@
 
   
   
-    <link rel="shortcut icon" href="_static/pvIcon.ico"/>
+    <link rel="shortcut icon" href="static/pvIcon.ico"/>
   
 
   
@@ -30,9 +30,9 @@
         HAS_SOURCE:  true
       };
     </script>
-      <script type="text/javascript" src="_static/jquery.js"></script>
-      <script type="text/javascript" src="_static/underscore.js"></script>
-      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="static/jquery.js"></script>
+      <script type="text/javascript" src="static/underscore.js"></script>
+      <script type="text/javascript" src="static/doctools.js"></script>
 
     
 
@@ -40,8 +40,8 @@
 
   
   
-    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-    <script type="text/javascript" src="_static/js/theme.js"></script>
+    <link rel="stylesheet" href="static/css/theme.css" type="text/css" />
+    <script type="text/javascript" src="static/js/theme.js"></script>
   
 
   
@@ -66,7 +66,7 @@
       <div class="wy-side-nav-search">
         <ul>
           <li> <a href="index.html">
-            <img src="_static/paraview-logo-small.png"
+            <img src="static/paraview-logo-small.png"
             alt="ParaView/Python"></img></a> </li>
           <li class="version"> version 5.4.1-616-g387a7b18ba</li>
         </ul>
@@ -542,7 +542,7 @@
 <span id="benchmark-logparser-module"></span><h1>benchmark.logparser Module<a class="headerlink" href="#module-paraview.benchmark.logparser" title="Permalink to this headline">¶</a></h1>
 <dl class="class">
 <dt id="paraview.benchmark.logparser.BasicStats">
-<em class="property">class </em><code class="descclassname">paraview.benchmark.logparser.</code><code class="descname">BasicStats</code><span class="sig-paren">(</span><em>samples=[]</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/benchmark/logparser.html#BasicStats"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.benchmark.logparser.BasicStats" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">paraview.benchmark.logparser.</code><code class="descname">BasicStats</code><span class="sig-paren">(</span><em>samples=[]</em><span class="sig-paren">)</span><a class="reference internal" href="modules/paraview/benchmark/logparser.html#BasicStats"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.benchmark.logparser.BasicStats" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="attribute">
 <dt id="paraview.benchmark.logparser.BasicStats.Mean">
 <code class="descname">Mean</code><a class="headerlink" href="#paraview.benchmark.logparser.BasicStats.Mean" title="Permalink to this definition">¶</a></dt>
@@ -555,20 +555,20 @@
 
 <dl class="method">
 <dt id="paraview.benchmark.logparser.BasicStats.add_sample">
-<code class="descname">add_sample</code><span class="sig-paren">(</span><em>x</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/benchmark/logparser.html#BasicStats.add_sample"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.benchmark.logparser.BasicStats.add_sample" title="Permalink to this definition">¶</a></dt>
+<code class="descname">add_sample</code><span class="sig-paren">(</span><em>x</em><span class="sig-paren">)</span><a class="reference internal" href="modules/paraview/benchmark/logparser.html#BasicStats.add_sample"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.benchmark.logparser.BasicStats.add_sample" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
 <dl class="class">
 <dt id="paraview.benchmark.logparser.FrameLog">
-<em class="property">class </em><code class="descclassname">paraview.benchmark.logparser.</code><code class="descname">FrameLog</code><span class="sig-paren">(</span><em>parent=None</em>, <em>indent=0</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/benchmark/logparser.html#FrameLog"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.benchmark.logparser.FrameLog" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">paraview.benchmark.logparser.</code><code class="descname">FrameLog</code><span class="sig-paren">(</span><em>parent=None</em>, <em>indent=0</em><span class="sig-paren">)</span><a class="reference internal" href="modules/paraview/benchmark/logparser.html#FrameLog"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.benchmark.logparser.FrameLog" title="Permalink to this definition">¶</a></dt>
 <dd><p>Hold the log entries for an entire (sub-)frame</p>
 </dd></dl>
 
 <dl class="class">
 <dt id="paraview.benchmark.logparser.FrameLogEntry">
-<em class="property">class </em><code class="descclassname">paraview.benchmark.logparser.</code><code class="descname">FrameLogEntry</code><span class="sig-paren">(</span><em>log_msg</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/benchmark/logparser.html#FrameLogEntry"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.benchmark.logparser.FrameLogEntry" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">paraview.benchmark.logparser.</code><code class="descname">FrameLogEntry</code><span class="sig-paren">(</span><em>log_msg</em><span class="sig-paren">)</span><a class="reference internal" href="modules/paraview/benchmark/logparser.html#FrameLogEntry"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.benchmark.logparser.FrameLogEntry" title="Permalink to this definition">¶</a></dt>
 <dd><p>A basic container for holding timing information for a given filter</p>
 <dl class="attribute">
 <dt id="paraview.benchmark.logparser.FrameLogEntry.re">
@@ -579,13 +579,13 @@
 
 <dl class="function">
 <dt id="paraview.benchmark.logparser.collect_stats">
-<code class="descclassname">paraview.benchmark.logparser.</code><code class="descname">collect_stats</code><span class="sig-paren">(</span><em>frame_logs</em>, <em>stat_summary='Mean'</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/benchmark/logparser.html#collect_stats"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.benchmark.logparser.collect_stats" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">paraview.benchmark.logparser.</code><code class="descname">collect_stats</code><span class="sig-paren">(</span><em>frame_logs</em>, <em>stat_summary='Mean'</em><span class="sig-paren">)</span><a class="reference internal" href="modules/paraview/benchmark/logparser.html#collect_stats"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.benchmark.logparser.collect_stats" title="Permalink to this definition">¶</a></dt>
 <dd><p>Collect statistics on the specified key in a set of logs</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="paraview.benchmark.logparser.process_logs">
-<code class="descclassname">paraview.benchmark.logparser.</code><code class="descname">process_logs</code><span class="sig-paren">(</span><em>merge_before_nframes=0</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/benchmark/logparser.html#process_logs"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.benchmark.logparser.process_logs" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">paraview.benchmark.logparser.</code><code class="descname">process_logs</code><span class="sig-paren">(</span><em>merge_before_nframes=0</em><span class="sig-paren">)</span><a class="reference internal" href="modules/paraview/benchmark/logparser.html#process_logs"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.benchmark.logparser.process_logs" title="Permalink to this definition">¶</a></dt>
 <dd><p>Collect and parse logs for all ranks</p>
 <p>Keyword arguments:
 merge_before_nframes – All entries before this many frames will be merged</p>
@@ -593,13 +593,13 @@ merge_before_nframes – All entries before this many frames will be merged</p>
 
 <dl class="function">
 <dt id="paraview.benchmark.logparser.process_stats_across_ranks">
-<code class="descclassname">paraview.benchmark.logparser.</code><code class="descname">process_stats_across_ranks</code><span class="sig-paren">(</span><em>rank_frame_logs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/benchmark/logparser.html#process_stats_across_ranks"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.benchmark.logparser.process_stats_across_ranks" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">paraview.benchmark.logparser.</code><code class="descname">process_stats_across_ranks</code><span class="sig-paren">(</span><em>rank_frame_logs</em><span class="sig-paren">)</span><a class="reference internal" href="modules/paraview/benchmark/logparser.html#process_stats_across_ranks"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.benchmark.logparser.process_stats_across_ranks" title="Permalink to this definition">¶</a></dt>
 <dd><p>Calculate stats across all ranks for each frame</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="paraview.benchmark.logparser.summarize_results">
-<code class="descclassname">paraview.benchmark.logparser.</code><code class="descname">summarize_results</code><span class="sig-paren">(</span><em>num_frames</em>, <em>num_seconds_m0</em>, <em>items_per_frame</em>, <em>item_label</em>, <em>save_logs=False</em>, <em>output_basename=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/benchmark/logparser.html#summarize_results"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.benchmark.logparser.summarize_results" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">paraview.benchmark.logparser.</code><code class="descname">summarize_results</code><span class="sig-paren">(</span><em>num_frames</em>, <em>num_seconds_m0</em>, <em>items_per_frame</em>, <em>item_label</em>, <em>save_logs=False</em>, <em>output_basename=None</em><span class="sig-paren">)</span><a class="reference internal" href="modules/paraview/benchmark/logparser.html#summarize_results"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.benchmark.logparser.summarize_results" title="Permalink to this definition">¶</a></dt>
 <dd><p>Process the timing logs to display, save, and gather stats</p>
 <p>Keyword arguments:
 num_frames      – Number of frames to process
@@ -612,13 +612,13 @@ output_basename – Basename to use for output files</p>
 
 <dl class="function">
 <dt id="paraview.benchmark.logparser.summarize_stats">
-<code class="descclassname">paraview.benchmark.logparser.</code><code class="descname">summarize_stats</code><span class="sig-paren">(</span><em>rank_frame_logs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/benchmark/logparser.html#summarize_stats"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.benchmark.logparser.summarize_stats" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">paraview.benchmark.logparser.</code><code class="descname">summarize_stats</code><span class="sig-paren">(</span><em>rank_frame_logs</em><span class="sig-paren">)</span><a class="reference internal" href="modules/paraview/benchmark/logparser.html#summarize_stats"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.benchmark.logparser.summarize_stats" title="Permalink to this definition">¶</a></dt>
 <dd><p>Summarize statistics across ranks, and then across frames</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="paraview.benchmark.logparser.write_stats_to_file">
-<code class="descclassname">paraview.benchmark.logparser.</code><code class="descname">write_stats_to_file</code><span class="sig-paren">(</span><em>stats</em>, <em>indent=0</em>, <em>outfile=&lt;open file '&lt;stdout&gt;'</em>, <em>mode 'w'&gt;</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/benchmark/logparser.html#write_stats_to_file"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.benchmark.logparser.write_stats_to_file" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">paraview.benchmark.logparser.</code><code class="descname">write_stats_to_file</code><span class="sig-paren">(</span><em>stats</em>, <em>indent=0</em>, <em>outfile=&lt;open file '&lt;stdout&gt;'</em>, <em>mode 'w'&gt;</em><span class="sig-paren">)</span><a class="reference internal" href="modules/paraview/benchmark/logparser.html#write_stats_to_file"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.benchmark.logparser.write_stats_to_file" title="Permalink to this definition">¶</a></dt>
 <dd><p>Print the statics for a given frame</p>
 </dd></dl>
 

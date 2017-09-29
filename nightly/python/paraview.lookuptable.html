@@ -12,7 +12,7 @@
 
   
   
-    <link rel="shortcut icon" href="_static/pvIcon.ico"/>
+    <link rel="shortcut icon" href="static/pvIcon.ico"/>
   
 
   
@@ -30,9 +30,9 @@
         HAS_SOURCE:  true
       };
     </script>
-      <script type="text/javascript" src="_static/jquery.js"></script>
-      <script type="text/javascript" src="_static/underscore.js"></script>
-      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="static/jquery.js"></script>
+      <script type="text/javascript" src="static/underscore.js"></script>
+      <script type="text/javascript" src="static/doctools.js"></script>
 
     
 
@@ -40,8 +40,8 @@
 
   
   
-    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-    <script type="text/javascript" src="_static/js/theme.js"></script>
+    <link rel="stylesheet" href="static/css/theme.css" type="text/css" />
+    <script type="text/javascript" src="static/js/theme.js"></script>
   
 
   
@@ -66,7 +66,7 @@
       <div class="wy-side-nav-search">
         <ul>
           <li> <a href="index.html">
-            <img src="_static/paraview-logo-small.png"
+            <img src="static/paraview-logo-small.png"
             alt="ParaView/Python"></img></a> </li>
           <li class="version"> version 5.4.1-616-g387a7b18ba</li>
         </ul>
@@ -544,7 +544,7 @@
 This module is intended for use with by simple.py.</p>
 <dl class="class">
 <dt id="paraview.lookuptable.vtkPVLUTReader">
-<em class="property">class </em><code class="descclassname">paraview.lookuptable.</code><code class="descname">vtkPVLUTReader</code><span class="sig-paren">(</span><em>ns=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/lookuptable.html#vtkPVLUTReader"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.lookuptable.vtkPVLUTReader" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">paraview.lookuptable.</code><code class="descname">vtkPVLUTReader</code><span class="sig-paren">(</span><em>ns=None</em><span class="sig-paren">)</span><a class="reference internal" href="modules/paraview/lookuptable.html#vtkPVLUTReader"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.lookuptable.vtkPVLUTReader" title="Permalink to this definition">¶</a></dt>
 <dd><p>Reader and container for ParaView’s XML based lookup tables.
 Once lookup tables are loaded you access them by name. When
 accessing you must provide the array instance, which you may
@@ -596,13 +596,13 @@ number of ParaView’s “ColorMap” elements define LUT entries.</p>
 </div>
 <dl class="method">
 <dt id="paraview.lookuptable.vtkPVLUTReader.Clear">
-<code class="descname">Clear</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/lookuptable.html#vtkPVLUTReader.Clear"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.lookuptable.vtkPVLUTReader.Clear" title="Permalink to this definition">¶</a></dt>
+<code class="descname">Clear</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="modules/paraview/lookuptable.html#vtkPVLUTReader.Clear"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.lookuptable.vtkPVLUTReader.Clear" title="Permalink to this definition">¶</a></dt>
 <dd><p>Clear internal data structures.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="paraview.lookuptable.vtkPVLUTReader.GetLUT">
-<code class="descname">GetLUT</code><span class="sig-paren">(</span><em>aArray</em>, <em>aLutName</em>, <em>aRangeOveride=[]</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/lookuptable.html#vtkPVLUTReader.GetLUT"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.lookuptable.vtkPVLUTReader.GetLUT" title="Permalink to this definition">¶</a></dt>
+<code class="descname">GetLUT</code><span class="sig-paren">(</span><em>aArray</em>, <em>aLutName</em>, <em>aRangeOveride=[]</em><span class="sig-paren">)</span><a class="reference internal" href="modules/paraview/lookuptable.html#vtkPVLUTReader.GetLUT"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.lookuptable.vtkPVLUTReader.GetLUT" title="Permalink to this definition">¶</a></dt>
 <dd><p>Given an array and lookup table name assign the LUT
 to the given array and return the LUT. If aRangeOveride
 is specified then LUT will be mapped through that
@@ -611,19 +611,19 @@ range rather than the array’s actual range.</p>
 
 <dl class="method">
 <dt id="paraview.lookuptable.vtkPVLUTReader.GetLUTNames">
-<code class="descname">GetLUTNames</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/lookuptable.html#vtkPVLUTReader.GetLUTNames"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.lookuptable.vtkPVLUTReader.GetLUTNames" title="Permalink to this definition">¶</a></dt>
+<code class="descname">GetLUTNames</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="modules/paraview/lookuptable.html#vtkPVLUTReader.GetLUTNames"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.lookuptable.vtkPVLUTReader.GetLUTNames" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return a list of the currently available LUT’s names.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="paraview.lookuptable.vtkPVLUTReader.Print">
-<code class="descname">Print</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/lookuptable.html#vtkPVLUTReader.Print"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.lookuptable.vtkPVLUTReader.Print" title="Permalink to this definition">¶</a></dt>
+<code class="descname">Print</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="modules/paraview/lookuptable.html#vtkPVLUTReader.Print"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.lookuptable.vtkPVLUTReader.Print" title="Permalink to this definition">¶</a></dt>
 <dd><p>Print the available list of LUT’s.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="paraview.lookuptable.vtkPVLUTReader.Read">
-<code class="descname">Read</code><span class="sig-paren">(</span><em>aFileName</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/lookuptable.html#vtkPVLUTReader.Read"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.lookuptable.vtkPVLUTReader.Read" title="Permalink to this definition">¶</a></dt>
+<code class="descname">Read</code><span class="sig-paren">(</span><em>aFileName</em><span class="sig-paren">)</span><a class="reference internal" href="modules/paraview/lookuptable.html#vtkPVLUTReader.Read"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.lookuptable.vtkPVLUTReader.Read" title="Permalink to this definition">¶</a></dt>
 <dd><p>Read in the LUT’s defined in the named file. Each
 call to read extends the internal list of LUTs.</p>
 </dd></dl>

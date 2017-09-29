@@ -12,7 +12,7 @@
 
   
   
-    <link rel="shortcut icon" href="_static/pvIcon.ico"/>
+    <link rel="shortcut icon" href="static/pvIcon.ico"/>
   
 
   
@@ -30,9 +30,9 @@
         HAS_SOURCE:  true
       };
     </script>
-      <script type="text/javascript" src="_static/jquery.js"></script>
-      <script type="text/javascript" src="_static/underscore.js"></script>
-      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="static/jquery.js"></script>
+      <script type="text/javascript" src="static/underscore.js"></script>
+      <script type="text/javascript" src="static/doctools.js"></script>
 
     
 
@@ -40,8 +40,8 @@
 
   
   
-    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-    <script type="text/javascript" src="_static/js/theme.js"></script>
+    <link rel="stylesheet" href="static/css/theme.css" type="text/css" />
+    <script type="text/javascript" src="static/js/theme.js"></script>
   
 
   
@@ -66,7 +66,7 @@
       <div class="wy-side-nav-search">
         <ul>
           <li> <a href="index.html">
-            <img src="_static/paraview-logo-small.png"
+            <img src="static/paraview-logo-small.png"
             alt="ParaView/Python"></img></a> </li>
           <li class="version"> version 5.4.1-616-g387a7b18ba</li>
         </ul>
@@ -549,18 +549,18 @@ or return a value of appropriate form so old code doesn’t fail. Otherwise
 message.</p>
 <dl class="exception">
 <dt id="paraview._backwardscompatibilityhelper.Continue">
-<em class="property">exception </em><code class="descclassname">paraview._backwardscompatibilityhelper.</code><code class="descname">Continue</code><a class="reference internal" href="_modules/paraview/_backwardscompatibilityhelper.html#Continue"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview._backwardscompatibilityhelper.Continue" title="Permalink to this definition">¶</a></dt>
+<em class="property">exception </em><code class="descclassname">paraview._backwardscompatibilityhelper.</code><code class="descname">Continue</code><a class="reference internal" href="modules/paraview/_backwardscompatibilityhelper.html#Continue"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview._backwardscompatibilityhelper.Continue" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">exceptions.Exception</span></code></p>
 </dd></dl>
 
 <dl class="function">
 <dt id="paraview._backwardscompatibilityhelper.GetProxy">
-<code class="descclassname">paraview._backwardscompatibilityhelper.</code><code class="descname">GetProxy</code><span class="sig-paren">(</span><em>module</em>, <em>key</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/_backwardscompatibilityhelper.html#GetProxy"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview._backwardscompatibilityhelper.GetProxy" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">paraview._backwardscompatibilityhelper.</code><code class="descname">GetProxy</code><span class="sig-paren">(</span><em>module</em>, <em>key</em><span class="sig-paren">)</span><a class="reference internal" href="modules/paraview/_backwardscompatibilityhelper.html#GetProxy"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview._backwardscompatibilityhelper.GetProxy" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="function">
 <dt id="paraview._backwardscompatibilityhelper.getattr">
-<code class="descclassname">paraview._backwardscompatibilityhelper.</code><code class="descname">getattr</code><span class="sig-paren">(</span><em>proxy</em>, <em>pname</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/_backwardscompatibilityhelper.html#getattr"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview._backwardscompatibilityhelper.getattr" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">paraview._backwardscompatibilityhelper.</code><code class="descname">getattr</code><span class="sig-paren">(</span><em>proxy</em>, <em>pname</em><span class="sig-paren">)</span><a class="reference internal" href="modules/paraview/_backwardscompatibilityhelper.html#getattr"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview._backwardscompatibilityhelper.getattr" title="Permalink to this definition">¶</a></dt>
 <dd><p>Attempts to emulate getattr() when called using a deprecated property name
 for a proxy.</p>
 <p>Will return a <em>reasonable</em> stand-in if the property was
@@ -575,7 +575,7 @@ paths.</p>
 
 <dl class="function">
 <dt id="paraview._backwardscompatibilityhelper.setattr">
-<code class="descclassname">paraview._backwardscompatibilityhelper.</code><code class="descname">setattr</code><span class="sig-paren">(</span><em>proxy</em>, <em>pname</em>, <em>value</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/_backwardscompatibilityhelper.html#setattr"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview._backwardscompatibilityhelper.setattr" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">paraview._backwardscompatibilityhelper.</code><code class="descname">setattr</code><span class="sig-paren">(</span><em>proxy</em>, <em>pname</em>, <em>value</em><span class="sig-paren">)</span><a class="reference internal" href="modules/paraview/_backwardscompatibilityhelper.html#setattr"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview._backwardscompatibilityhelper.setattr" title="Permalink to this definition">¶</a></dt>
 <dd><p>Attempts to emulate setattr() when called using a deprecated name for a
 proxy property.</p>
 <p>For properties that are no longer present on a proxy, the code should do the

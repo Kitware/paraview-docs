@@ -12,7 +12,7 @@
 
   
   
-    <link rel="shortcut icon" href="_static/pvIcon.ico"/>
+    <link rel="shortcut icon" href="static/pvIcon.ico"/>
   
 
   
@@ -30,9 +30,9 @@
         HAS_SOURCE:  true
       };
     </script>
-      <script type="text/javascript" src="_static/jquery.js"></script>
-      <script type="text/javascript" src="_static/underscore.js"></script>
-      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="static/jquery.js"></script>
+      <script type="text/javascript" src="static/underscore.js"></script>
+      <script type="text/javascript" src="static/doctools.js"></script>
 
     
 
@@ -40,8 +40,8 @@
 
   
   
-    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-    <script type="text/javascript" src="_static/js/theme.js"></script>
+    <link rel="stylesheet" href="static/css/theme.css" type="text/css" />
+    <script type="text/javascript" src="static/js/theme.js"></script>
   
 
   
@@ -66,7 +66,7 @@
       <div class="wy-side-nav-search">
         <ul>
           <li> <a href="index.html">
-            <img src="_static/paraview-logo-small.png"
+            <img src="static/paraview-logo-small.png"
             alt="ParaView/Python"></img></a> </li>
           <li class="version"> version 5.4.1-616-g387a7b18ba</li>
         </ul>
@@ -571,7 +571,7 @@ more user friendly API.</p>
 </div>
 <dl class="function">
 <dt id="paraview.servermanager.AnimateReader">
-<code class="descclassname">paraview.servermanager.</code><code class="descname">AnimateReader</code><span class="sig-paren">(</span><em>reader</em>, <em>view</em>, <em>filename=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/servermanager.html#AnimateReader"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.AnimateReader" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">paraview.servermanager.</code><code class="descname">AnimateReader</code><span class="sig-paren">(</span><em>reader</em>, <em>view</em>, <em>filename=None</em><span class="sig-paren">)</span><a class="reference internal" href="modules/paraview/servermanager.html#AnimateReader"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.AnimateReader" title="Permalink to this definition">¶</a></dt>
 <dd><p>This is a utility function that, given a reader and a view
 animates over all time steps of the reader. If the optional
 filename is provided, a movie is created (type depends on the
@@ -580,7 +580,7 @@ extension of the filename.</p>
 
 <dl class="class">
 <dt id="paraview.servermanager.ArrayInformation">
-<em class="property">class </em><code class="descclassname">paraview.servermanager.</code><code class="descname">ArrayInformation</code><span class="sig-paren">(</span><em>proxy</em>, <em>field</em>, <em>name</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/servermanager.html#ArrayInformation"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.ArrayInformation" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">paraview.servermanager.</code><code class="descname">ArrayInformation</code><span class="sig-paren">(</span><em>proxy</em>, <em>field</em>, <em>name</em><span class="sig-paren">)</span><a class="reference internal" href="modules/paraview/servermanager.html#ArrayInformation"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.ArrayInformation" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
 <p>Meta-information associated with an array. Use the Name
 attribute to get the array name.</p>
@@ -591,7 +591,7 @@ See the doxygen based documentation of the vtkPVArrayInformation C++
 class for a full list.</p>
 <dl class="method">
 <dt id="paraview.servermanager.ArrayInformation.GetRange">
-<code class="descname">GetRange</code><span class="sig-paren">(</span><em>component=0</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/servermanager.html#ArrayInformation.GetRange"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.ArrayInformation.GetRange" title="Permalink to this definition">¶</a></dt>
+<code class="descname">GetRange</code><span class="sig-paren">(</span><em>component=0</em><span class="sig-paren">)</span><a class="reference internal" href="modules/paraview/servermanager.html#ArrayInformation.GetRange"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.ArrayInformation.GetRange" title="Permalink to this definition">¶</a></dt>
 <dd><p>Given a component, returns its value range as a tuple of 2 values.</p>
 </dd></dl>
 
@@ -599,7 +599,7 @@ class for a full list.</p>
 
 <dl class="class">
 <dt id="paraview.servermanager.ArrayListProperty">
-<em class="property">class </em><code class="descclassname">paraview.servermanager.</code><code class="descname">ArrayListProperty</code><span class="sig-paren">(</span><em>proxy</em>, <em>smproperty</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/servermanager.html#ArrayListProperty"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.ArrayListProperty" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">paraview.servermanager.</code><code class="descname">ArrayListProperty</code><span class="sig-paren">(</span><em>proxy</em>, <em>smproperty</em><span class="sig-paren">)</span><a class="reference internal" href="modules/paraview/servermanager.html#ArrayListProperty"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.ArrayListProperty" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#paraview.servermanager.VectorProperty" title="paraview.servermanager.VectorProperty"><code class="xref py py-class docutils literal"><span class="pre">paraview.servermanager.VectorProperty</span></code></a></p>
 <p>This property provides a simpler interface for selecting arrays.
 Simply assign a list of arrays that should be loaded by the reader.
@@ -612,31 +612,31 @@ Use the Available property to get a list of available arrays.</p>
 
 <dl class="method">
 <dt id="paraview.servermanager.ArrayListProperty.DeselectAll">
-<code class="descname">DeselectAll</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/servermanager.html#ArrayListProperty.DeselectAll"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.ArrayListProperty.DeselectAll" title="Permalink to this definition">¶</a></dt>
+<code class="descname">DeselectAll</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="modules/paraview/servermanager.html#ArrayListProperty.DeselectAll"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.ArrayListProperty.DeselectAll" title="Permalink to this definition">¶</a></dt>
 <dd><p>Deselects all arrays.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="paraview.servermanager.ArrayListProperty.GetAvailable">
-<code class="descname">GetAvailable</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/servermanager.html#ArrayListProperty.GetAvailable"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.ArrayListProperty.GetAvailable" title="Permalink to this definition">¶</a></dt>
+<code class="descname">GetAvailable</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="modules/paraview/servermanager.html#ArrayListProperty.GetAvailable"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.ArrayListProperty.GetAvailable" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the list of available arrays</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="paraview.servermanager.ArrayListProperty.GetData">
-<code class="descname">GetData</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/servermanager.html#ArrayListProperty.GetData"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.ArrayListProperty.GetData" title="Permalink to this definition">¶</a></dt>
+<code class="descname">GetData</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="modules/paraview/servermanager.html#ArrayListProperty.GetData"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.ArrayListProperty.GetData" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns all elements as a list.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="paraview.servermanager.ArrayListProperty.SelectAll">
-<code class="descname">SelectAll</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/servermanager.html#ArrayListProperty.SelectAll"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.ArrayListProperty.SelectAll" title="Permalink to this definition">¶</a></dt>
+<code class="descname">SelectAll</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="modules/paraview/servermanager.html#ArrayListProperty.SelectAll"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.ArrayListProperty.SelectAll" title="Permalink to this definition">¶</a></dt>
 <dd><p>Selects all arrays.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="paraview.servermanager.ArrayListProperty.SetData">
-<code class="descname">SetData</code><span class="sig-paren">(</span><em>values</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/servermanager.html#ArrayListProperty.SetData"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.ArrayListProperty.SetData" title="Permalink to this definition">¶</a></dt>
+<code class="descname">SetData</code><span class="sig-paren">(</span><em>values</em><span class="sig-paren">)</span><a class="reference internal" href="modules/paraview/servermanager.html#ArrayListProperty.SetData"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.ArrayListProperty.SetData" title="Permalink to this definition">¶</a></dt>
 <dd><p>Allows setting of all values at once. Requires a single value,
 a tuple or list.</p>
 </dd></dl>
@@ -645,29 +645,29 @@ a tuple or list.</p>
 
 <dl class="class">
 <dt id="paraview.servermanager.ArraySelectionProperty">
-<em class="property">class </em><code class="descclassname">paraview.servermanager.</code><code class="descname">ArraySelectionProperty</code><span class="sig-paren">(</span><em>proxy</em>, <em>smproperty</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/servermanager.html#ArraySelectionProperty"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.ArraySelectionProperty" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">paraview.servermanager.</code><code class="descname">ArraySelectionProperty</code><span class="sig-paren">(</span><em>proxy</em>, <em>smproperty</em><span class="sig-paren">)</span><a class="reference internal" href="modules/paraview/servermanager.html#ArraySelectionProperty"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.ArraySelectionProperty" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#paraview.servermanager.VectorProperty" title="paraview.servermanager.VectorProperty"><code class="xref py py-class docutils literal"><span class="pre">paraview.servermanager.VectorProperty</span></code></a></p>
 <p>Property to select an array to be processed by a filter.</p>
 <dl class="method">
 <dt id="paraview.servermanager.ArraySelectionProperty.GetArrayName">
-<code class="descname">GetArrayName</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/servermanager.html#ArraySelectionProperty.GetArrayName"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.ArraySelectionProperty.GetArrayName" title="Permalink to this definition">¶</a></dt>
+<code class="descname">GetArrayName</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="modules/paraview/servermanager.html#ArraySelectionProperty.GetArrayName"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.ArraySelectionProperty.GetArrayName" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
 <dt id="paraview.servermanager.ArraySelectionProperty.GetAssociation">
-<code class="descname">GetAssociation</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/servermanager.html#ArraySelectionProperty.GetAssociation"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.ArraySelectionProperty.GetAssociation" title="Permalink to this definition">¶</a></dt>
+<code class="descname">GetAssociation</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="modules/paraview/servermanager.html#ArraySelectionProperty.GetAssociation"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.ArraySelectionProperty.GetAssociation" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
 <dt id="paraview.servermanager.ArraySelectionProperty.SetData">
-<code class="descname">SetData</code><span class="sig-paren">(</span><em>values</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/servermanager.html#ArraySelectionProperty.SetData"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.ArraySelectionProperty.SetData" title="Permalink to this definition">¶</a></dt>
+<code class="descname">SetData</code><span class="sig-paren">(</span><em>values</em><span class="sig-paren">)</span><a class="reference internal" href="modules/paraview/servermanager.html#ArraySelectionProperty.SetData"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.ArraySelectionProperty.SetData" title="Permalink to this definition">¶</a></dt>
 <dd><p>Allows setting of all values at once. Requires a single value,
 a tuple or list.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="paraview.servermanager.ArraySelectionProperty.UpdateDefault">
-<code class="descname">UpdateDefault</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/servermanager.html#ArraySelectionProperty.UpdateDefault"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.ArraySelectionProperty.UpdateDefault" title="Permalink to this definition">¶</a></dt>
+<code class="descname">UpdateDefault</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="modules/paraview/servermanager.html#ArraySelectionProperty.UpdateDefault"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.ArraySelectionProperty.UpdateDefault" title="Permalink to this definition">¶</a></dt>
 <dd><p>Helper method to set default values.</p>
 </dd></dl>
 
@@ -675,7 +675,7 @@ a tuple or list.</p>
 
 <dl class="function">
 <dt id="paraview.servermanager.Connect">
-<code class="descclassname">paraview.servermanager.</code><code class="descname">Connect</code><span class="sig-paren">(</span><em>ds_host=None</em>, <em>ds_port=11111</em>, <em>rs_host=None</em>, <em>rs_port=22221</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/servermanager.html#Connect"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.Connect" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">paraview.servermanager.</code><code class="descname">Connect</code><span class="sig-paren">(</span><em>ds_host=None</em>, <em>ds_port=11111</em>, <em>rs_host=None</em>, <em>rs_port=22221</em><span class="sig-paren">)</span><a class="reference internal" href="modules/paraview/servermanager.html#Connect"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.Connect" title="Permalink to this definition">¶</a></dt>
 <dd><p>Use this function call to create a new session. On success,
 it returns a vtkSMSession object that abstracts the connection.
 Otherwise, it returns None.</p>
@@ -694,45 +694,45 @@ render server on rs_host: rs_port.</li>
 
 <dl class="class">
 <dt id="paraview.servermanager.Connection">
-<em class="property">class </em><code class="descclassname">paraview.servermanager.</code><code class="descname">Connection</code><span class="sig-paren">(</span><em>connectionId</em>, <em>session</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/servermanager.html#Connection"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.Connection" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">paraview.servermanager.</code><code class="descname">Connection</code><span class="sig-paren">(</span><em>connectionId</em>, <em>session</em><span class="sig-paren">)</span><a class="reference internal" href="modules/paraview/servermanager.html#Connection"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.Connection" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
 <p>This is a python representation for a session/connection.</p>
 <dl class="method">
 <dt id="paraview.servermanager.Connection.AttachDefinitionUpdater">
-<code class="descname">AttachDefinitionUpdater</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/servermanager.html#Connection.AttachDefinitionUpdater"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.Connection.AttachDefinitionUpdater" title="Permalink to this definition">¶</a></dt>
+<code class="descname">AttachDefinitionUpdater</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="modules/paraview/servermanager.html#Connection.AttachDefinitionUpdater"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.Connection.AttachDefinitionUpdater" title="Permalink to this definition">¶</a></dt>
 <dd><p>Attach observer to automatically update modules when needed.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="paraview.servermanager.Connection.GetNumberOfDataPartitions">
-<code class="descname">GetNumberOfDataPartitions</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/servermanager.html#Connection.GetNumberOfDataPartitions"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.Connection.GetNumberOfDataPartitions" title="Permalink to this definition">¶</a></dt>
+<code class="descname">GetNumberOfDataPartitions</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="modules/paraview/servermanager.html#Connection.GetNumberOfDataPartitions"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.Connection.GetNumberOfDataPartitions" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the number of partitions on the data server for this
 connection</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="paraview.servermanager.Connection.GetURI">
-<code class="descname">GetURI</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/servermanager.html#Connection.GetURI"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.Connection.GetURI" title="Permalink to this definition">¶</a></dt>
+<code class="descname">GetURI</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="modules/paraview/servermanager.html#Connection.GetURI"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.Connection.GetURI" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get URI of the connection</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="paraview.servermanager.Connection.IsRemote">
-<code class="descname">IsRemote</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/servermanager.html#Connection.IsRemote"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.Connection.IsRemote" title="Permalink to this definition">¶</a></dt>
+<code class="descname">IsRemote</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="modules/paraview/servermanager.html#Connection.IsRemote"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.Connection.IsRemote" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns True if the connection to a remote server, False if
 it is local (built-in)</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="paraview.servermanager.Connection.close">
-<code class="descname">close</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/servermanager.html#Connection.close"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.Connection.close" title="Permalink to this definition">¶</a></dt>
+<code class="descname">close</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="modules/paraview/servermanager.html#Connection.close"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.Connection.close" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
 <dl class="function">
 <dt id="paraview.servermanager.CreateProxy">
-<code class="descclassname">paraview.servermanager.</code><code class="descname">CreateProxy</code><span class="sig-paren">(</span><em>xml_group</em>, <em>xml_name</em>, <em>session=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/servermanager.html#CreateProxy"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.CreateProxy" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">paraview.servermanager.</code><code class="descname">CreateProxy</code><span class="sig-paren">(</span><em>xml_group</em>, <em>xml_name</em>, <em>session=None</em><span class="sig-paren">)</span><a class="reference internal" href="modules/paraview/servermanager.html#CreateProxy"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.CreateProxy" title="Permalink to this definition">¶</a></dt>
 <dd><p>Creates a proxy. If session is set, the proxy’s session is
 set accordingly. If session is None, the current Session is used, if
 present. You should not have to use method normally. Instantiate the
@@ -742,7 +742,7 @@ sph = servermanager.sources.SphereSource()</p>
 
 <dl class="function">
 <dt id="paraview.servermanager.CreateRenderView">
-<code class="descclassname">paraview.servermanager.</code><code class="descname">CreateRenderView</code><span class="sig-paren">(</span><em>session=None</em>, <em>**extraArgs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/servermanager.html#CreateRenderView"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.CreateRenderView" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">paraview.servermanager.</code><code class="descname">CreateRenderView</code><span class="sig-paren">(</span><em>session=None</em>, <em>**extraArgs</em><span class="sig-paren">)</span><a class="reference internal" href="modules/paraview/servermanager.html#CreateRenderView"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.CreateRenderView" title="Permalink to this definition">¶</a></dt>
 <dd><p>Creates a render window on the particular session. If session
 is not specified, then the active session is used, if available.</p>
 <p>This method can also be used to initialize properties by passing
@@ -754,7 +754,7 @@ manager.</p>
 
 <dl class="function">
 <dt id="paraview.servermanager.CreateRepresentation">
-<code class="descclassname">paraview.servermanager.</code><code class="descname">CreateRepresentation</code><span class="sig-paren">(</span><em>aProxy</em>, <em>view</em>, <em>**extraArgs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/servermanager.html#CreateRepresentation"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.CreateRepresentation" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">paraview.servermanager.</code><code class="descname">CreateRepresentation</code><span class="sig-paren">(</span><em>aProxy</em>, <em>view</em>, <em>**extraArgs</em><span class="sig-paren">)</span><a class="reference internal" href="modules/paraview/servermanager.html#CreateRepresentation"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.CreateRepresentation" title="Permalink to this definition">¶</a></dt>
 <dd><p>Creates a representation for the proxy and adds it to the render
 module.</p>
 <p>This method can also be used to initialize properties by passing
@@ -769,7 +769,7 @@ proxy in the given view. Additionally, the user can specify proxyName
 
 <dl class="class">
 <dt id="paraview.servermanager.DataInformation">
-<em class="property">class </em><code class="descclassname">paraview.servermanager.</code><code class="descname">DataInformation</code><span class="sig-paren">(</span><em>dataInformation</em>, <em>proxy</em>, <em>idx</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/servermanager.html#DataInformation"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.DataInformation" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">paraview.servermanager.</code><code class="descname">DataInformation</code><span class="sig-paren">(</span><em>dataInformation</em>, <em>proxy</em>, <em>idx</em><span class="sig-paren">)</span><a class="reference internal" href="modules/paraview/servermanager.html#DataInformation"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.DataInformation" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
 <p>DataInformation is a contained for meta-data associated with an
 output data.</p>
@@ -784,20 +784,20 @@ See also the doxygen based documentation of the vtkPVDataInformation C++
 class.</p>
 <dl class="method">
 <dt id="paraview.servermanager.DataInformation.GetDataSetType">
-<code class="descname">GetDataSetType</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/servermanager.html#DataInformation.GetDataSetType"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.DataInformation.GetDataSetType" title="Permalink to this definition">¶</a></dt>
+<code class="descname">GetDataSetType</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="modules/paraview/servermanager.html#DataInformation.GetDataSetType"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.DataInformation.GetDataSetType" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the dataset type as defined in vtkDataObjectTypes.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="paraview.servermanager.DataInformation.GetDataSetTypeAsString">
-<code class="descname">GetDataSetTypeAsString</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/servermanager.html#DataInformation.GetDataSetTypeAsString"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.DataInformation.GetDataSetTypeAsString" title="Permalink to this definition">¶</a></dt>
+<code class="descname">GetDataSetTypeAsString</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="modules/paraview/servermanager.html#DataInformation.GetDataSetTypeAsString"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.DataInformation.GetDataSetTypeAsString" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the dataset type as a user-friendly string. This is
 not the same as the enumaration used by VTK</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="paraview.servermanager.DataInformation.Update">
-<code class="descname">Update</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/servermanager.html#DataInformation.Update"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.DataInformation.Update" title="Permalink to this definition">¶</a></dt>
+<code class="descname">Update</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="modules/paraview/servermanager.html#DataInformation.Update"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.DataInformation.Update" title="Permalink to this definition">¶</a></dt>
 <dd><p><strong>**Deprecated**</strong> There is no reason anymore to use this method
 explicitly, it is called automatically when one gets any value from the
 data information object.
@@ -810,37 +810,37 @@ cases, you may have to call UpdatePipeline() on the proxy.</p>
 
 <dl class="function">
 <dt id="paraview.servermanager.Disconnect">
-<code class="descclassname">paraview.servermanager.</code><code class="descname">Disconnect</code><span class="sig-paren">(</span><em>connection=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/servermanager.html#Disconnect"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.Disconnect" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">paraview.servermanager.</code><code class="descname">Disconnect</code><span class="sig-paren">(</span><em>connection=None</em><span class="sig-paren">)</span><a class="reference internal" href="modules/paraview/servermanager.html#Disconnect"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.Disconnect" title="Permalink to this definition">¶</a></dt>
 <dd><p>Disconnects the connection. Make sure to clear the proxy manager
 first.</p>
 </dd></dl>
 
 <dl class="class">
 <dt id="paraview.servermanager.DoubleMapProperty">
-<em class="property">class </em><code class="descclassname">paraview.servermanager.</code><code class="descname">DoubleMapProperty</code><span class="sig-paren">(</span><em>proxy</em>, <em>smproperty</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/servermanager.html#DoubleMapProperty"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.DoubleMapProperty" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">paraview.servermanager.</code><code class="descname">DoubleMapProperty</code><span class="sig-paren">(</span><em>proxy</em>, <em>smproperty</em><span class="sig-paren">)</span><a class="reference internal" href="modules/paraview/servermanager.html#DoubleMapProperty"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.DoubleMapProperty" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#paraview.servermanager.Property" title="paraview.servermanager.Property"><code class="xref py py-class docutils literal"><span class="pre">paraview.servermanager.Property</span></code></a></p>
 <p>A DoubleMapProperty provides access to a map of double vector values.</p>
 <dl class="method">
 <dt id="paraview.servermanager.DoubleMapProperty.Clear">
-<code class="descname">Clear</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/servermanager.html#DoubleMapProperty.Clear"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.DoubleMapProperty.Clear" title="Permalink to this definition">¶</a></dt>
+<code class="descname">Clear</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="modules/paraview/servermanager.html#DoubleMapProperty.Clear"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.DoubleMapProperty.Clear" title="Permalink to this definition">¶</a></dt>
 <dd><p>Removes all elements.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="paraview.servermanager.DoubleMapProperty.GetData">
-<code class="descname">GetData</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/servermanager.html#DoubleMapProperty.GetData"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.DoubleMapProperty.GetData" title="Permalink to this definition">¶</a></dt>
+<code class="descname">GetData</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="modules/paraview/servermanager.html#DoubleMapProperty.GetData"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.DoubleMapProperty.GetData" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns all the elements as a dictionary</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="paraview.servermanager.DoubleMapProperty.SetData">
-<code class="descname">SetData</code><span class="sig-paren">(</span><em>elements</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/servermanager.html#DoubleMapProperty.SetData"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.DoubleMapProperty.SetData" title="Permalink to this definition">¶</a></dt>
+<code class="descname">SetData</code><span class="sig-paren">(</span><em>elements</em><span class="sig-paren">)</span><a class="reference internal" href="modules/paraview/servermanager.html#DoubleMapProperty.SetData"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.DoubleMapProperty.SetData" title="Permalink to this definition">¶</a></dt>
 <dd><p>Sets all the elements at once.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="paraview.servermanager.DoubleMapProperty.keys">
-<code class="descname">keys</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/servermanager.html#DoubleMapProperty.keys"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.DoubleMapProperty.keys" title="Permalink to this definition">¶</a></dt>
+<code class="descname">keys</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="modules/paraview/servermanager.html#DoubleMapProperty.keys"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.DoubleMapProperty.keys" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the keys.</p>
 </dd></dl>
 
@@ -848,7 +848,7 @@ first.</p>
 
 <dl class="class">
 <dt id="paraview.servermanager.EnumerationProperty">
-<em class="property">class </em><code class="descclassname">paraview.servermanager.</code><code class="descname">EnumerationProperty</code><span class="sig-paren">(</span><em>proxy</em>, <em>smproperty</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/servermanager.html#EnumerationProperty"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.EnumerationProperty" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">paraview.servermanager.</code><code class="descname">EnumerationProperty</code><span class="sig-paren">(</span><em>proxy</em>, <em>smproperty</em><span class="sig-paren">)</span><a class="reference internal" href="modules/paraview/servermanager.html#EnumerationProperty"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.EnumerationProperty" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#paraview.servermanager.VectorProperty" title="paraview.servermanager.VectorProperty"><code class="xref py py-class docutils literal"><span class="pre">paraview.servermanager.VectorProperty</span></code></a></p>
 <p>Subclass of VectorProperty that is applicable for enumeration type
 properties.</p>
@@ -860,19 +860,19 @@ properties.</p>
 
 <dl class="method">
 <dt id="paraview.servermanager.EnumerationProperty.ConvertValue">
-<code class="descname">ConvertValue</code><span class="sig-paren">(</span><em>value</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/servermanager.html#EnumerationProperty.ConvertValue"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.EnumerationProperty.ConvertValue" title="Permalink to this definition">¶</a></dt>
+<code class="descname">ConvertValue</code><span class="sig-paren">(</span><em>value</em><span class="sig-paren">)</span><a class="reference internal" href="modules/paraview/servermanager.html#EnumerationProperty.ConvertValue"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.EnumerationProperty.ConvertValue" title="Permalink to this definition">¶</a></dt>
 <dd><p>Converts value to type suitable for vtSMProperty::SetElement()</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="paraview.servermanager.EnumerationProperty.GetAvailable">
-<code class="descname">GetAvailable</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/servermanager.html#EnumerationProperty.GetAvailable"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.EnumerationProperty.GetAvailable" title="Permalink to this definition">¶</a></dt>
+<code class="descname">GetAvailable</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="modules/paraview/servermanager.html#EnumerationProperty.GetAvailable"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.EnumerationProperty.GetAvailable" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the list of available values for the property.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="paraview.servermanager.EnumerationProperty.GetElement">
-<code class="descname">GetElement</code><span class="sig-paren">(</span><em>index</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/servermanager.html#EnumerationProperty.GetElement"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.EnumerationProperty.GetElement" title="Permalink to this definition">¶</a></dt>
+<code class="descname">GetElement</code><span class="sig-paren">(</span><em>index</em><span class="sig-paren">)</span><a class="reference internal" href="modules/paraview/servermanager.html#EnumerationProperty.GetElement"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.EnumerationProperty.GetElement" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the text for the given element if available. Returns
 the numerical values otherwise.</p>
 </dd></dl>
@@ -881,25 +881,25 @@ the numerical values otherwise.</p>
 
 <dl class="class">
 <dt id="paraview.servermanager.ExodusIIReaderProxy">
-<em class="property">class </em><code class="descclassname">paraview.servermanager.</code><code class="descname">ExodusIIReaderProxy</code><span class="sig-paren">(</span><em>**args</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/servermanager.html#ExodusIIReaderProxy"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.ExodusIIReaderProxy" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">paraview.servermanager.</code><code class="descname">ExodusIIReaderProxy</code><span class="sig-paren">(</span><em>**args</em><span class="sig-paren">)</span><a class="reference internal" href="modules/paraview/servermanager.html#ExodusIIReaderProxy"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.ExodusIIReaderProxy" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#paraview.servermanager.SourceProxy" title="paraview.servermanager.SourceProxy"><code class="xref py py-class docutils literal"><span class="pre">paraview.servermanager.SourceProxy</span></code></a></p>
 <p>Special class to define convenience functions for array
 selection.</p>
 <dl class="method">
 <dt id="paraview.servermanager.ExodusIIReaderProxy.DeselectAllVariables">
-<code class="descname">DeselectAllVariables</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/servermanager.html#ExodusIIReaderProxy.DeselectAllVariables"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.ExodusIIReaderProxy.DeselectAllVariables" title="Permalink to this definition">¶</a></dt>
+<code class="descname">DeselectAllVariables</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="modules/paraview/servermanager.html#ExodusIIReaderProxy.DeselectAllVariables"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.ExodusIIReaderProxy.DeselectAllVariables" title="Permalink to this definition">¶</a></dt>
 <dd><p>Deselects all variables.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="paraview.servermanager.ExodusIIReaderProxy.FileNameChanged">
-<code class="descname">FileNameChanged</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/servermanager.html#ExodusIIReaderProxy.FileNameChanged"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.ExodusIIReaderProxy.FileNameChanged" title="Permalink to this definition">¶</a></dt>
+<code class="descname">FileNameChanged</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="modules/paraview/servermanager.html#ExodusIIReaderProxy.FileNameChanged"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.ExodusIIReaderProxy.FileNameChanged" title="Permalink to this definition">¶</a></dt>
 <dd><p>Called when the filename changes. Selects all variables.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="paraview.servermanager.ExodusIIReaderProxy.SelectAllVariables">
-<code class="descname">SelectAllVariables</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/servermanager.html#ExodusIIReaderProxy.SelectAllVariables"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.ExodusIIReaderProxy.SelectAllVariables" title="Permalink to this definition">¶</a></dt>
+<code class="descname">SelectAllVariables</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="modules/paraview/servermanager.html#ExodusIIReaderProxy.SelectAllVariables"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.ExodusIIReaderProxy.SelectAllVariables" title="Permalink to this definition">¶</a></dt>
 <dd><p>Select all available variables for reading.</p>
 </dd></dl>
 
@@ -907,7 +907,7 @@ selection.</p>
 
 <dl class="function">
 <dt id="paraview.servermanager.Fetch">
-<code class="descclassname">paraview.servermanager.</code><code class="descname">Fetch</code><span class="sig-paren">(</span><em>input</em>, <em>arg1=None</em>, <em>arg2=None</em>, <em>idx=0</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/servermanager.html#Fetch"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.Fetch" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">paraview.servermanager.</code><code class="descname">Fetch</code><span class="sig-paren">(</span><em>input</em>, <em>arg1=None</em>, <em>arg2=None</em>, <em>idx=0</em><span class="sig-paren">)</span><a class="reference internal" href="modules/paraview/servermanager.html#Fetch"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.Fetch" title="Permalink to this definition">¶</a></dt>
 <dd><p>A convenience method that moves data from the server to the client,
 optionally performing some operation on the data as it moves.
 The input argument is the name of the (proxy for a) source or filter
@@ -935,7 +935,7 @@ data from. Default is port 0.</p>
 
 <dl class="class">
 <dt id="paraview.servermanager.FieldDataInformation">
-<em class="property">class </em><code class="descclassname">paraview.servermanager.</code><code class="descname">FieldDataInformation</code><span class="sig-paren">(</span><em>proxy</em>, <em>idx</em>, <em>field</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/servermanager.html#FieldDataInformation"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.FieldDataInformation" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">paraview.servermanager.</code><code class="descname">FieldDataInformation</code><span class="sig-paren">(</span><em>proxy</em>, <em>idx</em>, <em>field</em><span class="sig-paren">)</span><a class="reference internal" href="modules/paraview/servermanager.html#FieldDataInformation"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.FieldDataInformation" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
 <p>Meta-data for a field of an output object (point data, cell data etc…).
 Provides easy access to the arrays using the slice interface:
@@ -951,21 +951,21 @@ where arrays is a list.</p>
 property.</p>
 <dl class="method">
 <dt id="paraview.servermanager.FieldDataInformation.GetArray">
-<code class="descname">GetArray</code><span class="sig-paren">(</span><em>idx</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/servermanager.html#FieldDataInformation.GetArray"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.FieldDataInformation.GetArray" title="Permalink to this definition">¶</a></dt>
+<code class="descname">GetArray</code><span class="sig-paren">(</span><em>idx</em><span class="sig-paren">)</span><a class="reference internal" href="modules/paraview/servermanager.html#FieldDataInformation.GetArray"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.FieldDataInformation.GetArray" title="Permalink to this definition">¶</a></dt>
 <dd><p>Given an index or a string, returns an array information.
 Raises IndexError if the index is out of bounds.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="paraview.servermanager.FieldDataInformation.GetFieldData">
-<code class="descname">GetFieldData</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/servermanager.html#FieldDataInformation.GetFieldData"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.FieldDataInformation.GetFieldData" title="Permalink to this definition">¶</a></dt>
+<code class="descname">GetFieldData</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="modules/paraview/servermanager.html#FieldDataInformation.GetFieldData"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.FieldDataInformation.GetFieldData" title="Permalink to this definition">¶</a></dt>
 <dd><p>Convenience method to get the underlying
 vtkPVDataSetAttributesInformation</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="paraview.servermanager.FieldDataInformation.GetNumberOfArrays">
-<code class="descname">GetNumberOfArrays</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/servermanager.html#FieldDataInformation.GetNumberOfArrays"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.FieldDataInformation.GetNumberOfArrays" title="Permalink to this definition">¶</a></dt>
+<code class="descname">GetNumberOfArrays</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="modules/paraview/servermanager.html#FieldDataInformation.GetNumberOfArrays"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.FieldDataInformation.GetNumberOfArrays" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the number of arrays.</p>
 </dd></dl>
 
@@ -977,31 +977,31 @@ vtkPVDataSetAttributesInformation</p>
 
 <dl class="method">
 <dt id="paraview.servermanager.FieldDataInformation.has_key">
-<code class="descname">has_key</code><span class="sig-paren">(</span><em>key</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/servermanager.html#FieldDataInformation.has_key"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.FieldDataInformation.has_key" title="Permalink to this definition">¶</a></dt>
+<code class="descname">has_key</code><span class="sig-paren">(</span><em>key</em><span class="sig-paren">)</span><a class="reference internal" href="modules/paraview/servermanager.html#FieldDataInformation.has_key"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.FieldDataInformation.has_key" title="Permalink to this definition">¶</a></dt>
 <dd><p>Implementation of the PY2 dictionary API</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="paraview.servermanager.FieldDataInformation.items">
-<code class="descname">items</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/servermanager.html#FieldDataInformation.items"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.FieldDataInformation.items" title="Permalink to this definition">¶</a></dt>
+<code class="descname">items</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="modules/paraview/servermanager.html#FieldDataInformation.items"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.FieldDataInformation.items" title="Permalink to this definition">¶</a></dt>
 <dd><p>Implementation of the dictionary API</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="paraview.servermanager.FieldDataInformation.iteritems">
-<code class="descname">iteritems</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/servermanager.html#FieldDataInformation.iteritems"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.FieldDataInformation.iteritems" title="Permalink to this definition">¶</a></dt>
+<code class="descname">iteritems</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="modules/paraview/servermanager.html#FieldDataInformation.iteritems"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.FieldDataInformation.iteritems" title="Permalink to this definition">¶</a></dt>
 <dd><p>Implementation of the PY2 dictionary API</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="paraview.servermanager.FieldDataInformation.keys">
-<code class="descname">keys</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/servermanager.html#FieldDataInformation.keys"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.FieldDataInformation.keys" title="Permalink to this definition">¶</a></dt>
+<code class="descname">keys</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="modules/paraview/servermanager.html#FieldDataInformation.keys"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.FieldDataInformation.keys" title="Permalink to this definition">¶</a></dt>
 <dd><p>Implementation of the dictionary API</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="paraview.servermanager.FieldDataInformation.values">
-<code class="descname">values</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/servermanager.html#FieldDataInformation.values"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.FieldDataInformation.values" title="Permalink to this definition">¶</a></dt>
+<code class="descname">values</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="modules/paraview/servermanager.html#FieldDataInformation.values"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.FieldDataInformation.values" title="Permalink to this definition">¶</a></dt>
 <dd><p>Implementation of the dictionary API</p>
 </dd></dl>
 
@@ -1009,19 +1009,19 @@ vtkPVDataSetAttributesInformation</p>
 
 <dl class="class">
 <dt id="paraview.servermanager.FieldDataInformationIterator">
-<em class="property">class </em><code class="descclassname">paraview.servermanager.</code><code class="descname">FieldDataInformationIterator</code><span class="sig-paren">(</span><em>info</em>, <em>items=False</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/servermanager.html#FieldDataInformationIterator"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.FieldDataInformationIterator" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">paraview.servermanager.</code><code class="descname">FieldDataInformationIterator</code><span class="sig-paren">(</span><em>info</em>, <em>items=False</em><span class="sig-paren">)</span><a class="reference internal" href="modules/paraview/servermanager.html#FieldDataInformationIterator"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.FieldDataInformationIterator" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
 <p>Iterator for FieldDataInformation</p>
 <dl class="method">
 <dt id="paraview.servermanager.FieldDataInformationIterator.next">
-<code class="descname">next</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/servermanager.html#FieldDataInformationIterator.next"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.FieldDataInformationIterator.next" title="Permalink to this definition">¶</a></dt>
+<code class="descname">next</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="modules/paraview/servermanager.html#FieldDataInformationIterator.next"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.FieldDataInformationIterator.next" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
 <dl class="class">
 <dt id="paraview.servermanager.FileNameProperty">
-<em class="property">class </em><code class="descclassname">paraview.servermanager.</code><code class="descname">FileNameProperty</code><span class="sig-paren">(</span><em>proxy</em>, <em>smproperty</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/servermanager.html#FileNameProperty"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.FileNameProperty" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">paraview.servermanager.</code><code class="descname">FileNameProperty</code><span class="sig-paren">(</span><em>proxy</em>, <em>smproperty</em><span class="sig-paren">)</span><a class="reference internal" href="modules/paraview/servermanager.html#FileNameProperty"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.FileNameProperty" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#paraview.servermanager.VectorProperty" title="paraview.servermanager.VectorProperty"><code class="xref py py-class docutils literal"><span class="pre">paraview.servermanager.VectorProperty</span></code></a></p>
 <p>Property to set/get one or more file names.
 This property updates the pipeline information everytime its value changes.
@@ -1030,79 +1030,79 @@ This is used to keep the array lists up to date.</p>
 
 <dl class="function">
 <dt id="paraview.servermanager.Finalize">
-<code class="descclassname">paraview.servermanager.</code><code class="descname">Finalize</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/servermanager.html#Finalize"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.Finalize" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">paraview.servermanager.</code><code class="descname">Finalize</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="modules/paraview/servermanager.html#Finalize"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.Finalize" title="Permalink to this definition">¶</a></dt>
 <dd><p>Although not required, this can be called at exit to cleanup.</p>
 </dd></dl>
 
 <dl class="class">
 <dt id="paraview.servermanager.GenericIterator">
-<em class="property">class </em><code class="descclassname">paraview.servermanager.</code><code class="descname">GenericIterator</code><span class="sig-paren">(</span><em>obj</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/servermanager.html#GenericIterator"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.GenericIterator" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">paraview.servermanager.</code><code class="descname">GenericIterator</code><span class="sig-paren">(</span><em>obj</em><span class="sig-paren">)</span><a class="reference internal" href="modules/paraview/servermanager.html#GenericIterator"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.GenericIterator" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
 <p>Iterator for container type objects</p>
 <dl class="method">
 <dt id="paraview.servermanager.GenericIterator.next">
-<code class="descname">next</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/servermanager.html#GenericIterator.next"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.GenericIterator.next" title="Permalink to this definition">¶</a></dt>
+<code class="descname">next</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="modules/paraview/servermanager.html#GenericIterator.next"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.GenericIterator.next" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
 <dl class="function">
 <dt id="paraview.servermanager.GetAssociationAsString">
-<code class="descclassname">paraview.servermanager.</code><code class="descname">GetAssociationAsString</code><span class="sig-paren">(</span><em>val</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/servermanager.html#GetAssociationAsString"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.GetAssociationAsString" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">paraview.servermanager.</code><code class="descname">GetAssociationAsString</code><span class="sig-paren">(</span><em>val</em><span class="sig-paren">)</span><a class="reference internal" href="modules/paraview/servermanager.html#GetAssociationAsString"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.GetAssociationAsString" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns array association string from its integer value</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="paraview.servermanager.GetAssociationFromString">
-<code class="descclassname">paraview.servermanager.</code><code class="descname">GetAssociationFromString</code><span class="sig-paren">(</span><em>val</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/servermanager.html#GetAssociationFromString"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.GetAssociationFromString" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">paraview.servermanager.</code><code class="descname">GetAssociationFromString</code><span class="sig-paren">(</span><em>val</em><span class="sig-paren">)</span><a class="reference internal" href="modules/paraview/servermanager.html#GetAssociationFromString"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.GetAssociationFromString" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns array association interger value from its string representation</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="paraview.servermanager.GetConnectionFromId">
-<code class="descclassname">paraview.servermanager.</code><code class="descname">GetConnectionFromId</code><span class="sig-paren">(</span><em>id</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/servermanager.html#GetConnectionFromId"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.GetConnectionFromId" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">paraview.servermanager.</code><code class="descname">GetConnectionFromId</code><span class="sig-paren">(</span><em>id</em><span class="sig-paren">)</span><a class="reference internal" href="modules/paraview/servermanager.html#GetConnectionFromId"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.GetConnectionFromId" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the Connection object corresponding a connection identified by
 the id.</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="paraview.servermanager.GetConnectionFromSession">
-<code class="descclassname">paraview.servermanager.</code><code class="descname">GetConnectionFromSession</code><span class="sig-paren">(</span><em>session</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/servermanager.html#GetConnectionFromSession"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.GetConnectionFromSession" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">paraview.servermanager.</code><code class="descname">GetConnectionFromSession</code><span class="sig-paren">(</span><em>session</em><span class="sig-paren">)</span><a class="reference internal" href="modules/paraview/servermanager.html#GetConnectionFromSession"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.GetConnectionFromSession" title="Permalink to this definition">¶</a></dt>
 <dd><p>Retuns the Connection object corresponding to a vtkSMSession instance.</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="paraview.servermanager.GetContextViews">
-<code class="descclassname">paraview.servermanager.</code><code class="descname">GetContextViews</code><span class="sig-paren">(</span><em>connection=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/servermanager.html#GetContextViews"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.GetContextViews" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">paraview.servermanager.</code><code class="descname">GetContextViews</code><span class="sig-paren">(</span><em>connection=None</em><span class="sig-paren">)</span><a class="reference internal" href="modules/paraview/servermanager.html#GetContextViews"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.GetContextViews" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the set of all context views.</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="paraview.servermanager.GetProgressPrintingIsEnabled">
-<code class="descclassname">paraview.servermanager.</code><code class="descname">GetProgressPrintingIsEnabled</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/servermanager.html#GetProgressPrintingIsEnabled"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.GetProgressPrintingIsEnabled" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">paraview.servermanager.</code><code class="descname">GetProgressPrintingIsEnabled</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="modules/paraview/servermanager.html#GetProgressPrintingIsEnabled"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.GetProgressPrintingIsEnabled" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="function">
 <dt id="paraview.servermanager.GetRenderView">
-<code class="descclassname">paraview.servermanager.</code><code class="descname">GetRenderView</code><span class="sig-paren">(</span><em>connection=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/servermanager.html#GetRenderView"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.GetRenderView" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">paraview.servermanager.</code><code class="descname">GetRenderView</code><span class="sig-paren">(</span><em>connection=None</em><span class="sig-paren">)</span><a class="reference internal" href="modules/paraview/servermanager.html#GetRenderView"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.GetRenderView" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the render view in use.  If more than one render view is in
 use, return the first one.</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="paraview.servermanager.GetRenderViews">
-<code class="descclassname">paraview.servermanager.</code><code class="descname">GetRenderViews</code><span class="sig-paren">(</span><em>connection=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/servermanager.html#GetRenderViews"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.GetRenderViews" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">paraview.servermanager.</code><code class="descname">GetRenderViews</code><span class="sig-paren">(</span><em>connection=None</em><span class="sig-paren">)</span><a class="reference internal" href="modules/paraview/servermanager.html#GetRenderViews"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.GetRenderViews" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the set of all render views.</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="paraview.servermanager.GetRepresentation">
-<code class="descclassname">paraview.servermanager.</code><code class="descname">GetRepresentation</code><span class="sig-paren">(</span><em>aProxy</em>, <em>view</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/servermanager.html#GetRepresentation"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.GetRepresentation" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">paraview.servermanager.</code><code class="descname">GetRepresentation</code><span class="sig-paren">(</span><em>aProxy</em>, <em>view</em><span class="sig-paren">)</span><a class="reference internal" href="modules/paraview/servermanager.html#GetRepresentation"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.GetRepresentation" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="class">
 <dt id="paraview.servermanager.InputProperty">
-<em class="property">class </em><code class="descclassname">paraview.servermanager.</code><code class="descname">InputProperty</code><span class="sig-paren">(</span><em>proxy</em>, <em>smproperty</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/servermanager.html#InputProperty"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.InputProperty" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">paraview.servermanager.</code><code class="descname">InputProperty</code><span class="sig-paren">(</span><em>proxy</em>, <em>smproperty</em><span class="sig-paren">)</span><a class="reference internal" href="modules/paraview/servermanager.html#InputProperty"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.InputProperty" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#paraview.servermanager.ProxyProperty" title="paraview.servermanager.ProxyProperty"><code class="xref py py-class docutils literal"><span class="pre">paraview.servermanager.ProxyProperty</span></code></a></p>
 <p>An InputProperty allows making pipeline connections. You can set either
 a source proxy or an OutputProperty to an input property:</p>
@@ -1114,21 +1114,21 @@ or
 &gt; property.append(OutputPort(proxy, 0))</p>
 <dl class="method">
 <dt id="paraview.servermanager.InputProperty.GetData">
-<code class="descname">GetData</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/servermanager.html#InputProperty.GetData"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.InputProperty.GetData" title="Permalink to this definition">¶</a></dt>
+<code class="descname">GetData</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="modules/paraview/servermanager.html#InputProperty.GetData"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.InputProperty.GetData" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns all elements as either a list of OutputPort objects or
 a single OutputPort object.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="paraview.servermanager.InputProperty.SetData">
-<code class="descname">SetData</code><span class="sig-paren">(</span><em>values</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/servermanager.html#InputProperty.SetData"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.InputProperty.SetData" title="Permalink to this definition">¶</a></dt>
+<code class="descname">SetData</code><span class="sig-paren">(</span><em>values</em><span class="sig-paren">)</span><a class="reference internal" href="modules/paraview/servermanager.html#InputProperty.SetData"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.InputProperty.SetData" title="Permalink to this definition">¶</a></dt>
 <dd><p>Allows setting of all values at once. Requires a single value,
 a tuple or list. Accepts Proxy or OutputPort objects.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="paraview.servermanager.InputProperty.append">
-<code class="descname">append</code><span class="sig-paren">(</span><em>value</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/servermanager.html#InputProperty.append"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.InputProperty.append" title="Permalink to this definition">¶</a></dt>
+<code class="descname">append</code><span class="sig-paren">(</span><em>value</em><span class="sig-paren">)</span><a class="reference internal" href="modules/paraview/servermanager.html#InputProperty.append"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.InputProperty.append" title="Permalink to this definition">¶</a></dt>
 <dd><p>Appends the given proxy to the property values.
 Accepts Proxy or OutputPort objects.</p>
 </dd></dl>
@@ -1137,7 +1137,7 @@ Accepts Proxy or OutputPort objects.</p>
 
 <dl class="function">
 <dt id="paraview.servermanager.LoadPlugin">
-<code class="descclassname">paraview.servermanager.</code><code class="descname">LoadPlugin</code><span class="sig-paren">(</span><em>filename</em>, <em>remote=True</em>, <em>connection=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/servermanager.html#LoadPlugin"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.LoadPlugin" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">paraview.servermanager.</code><code class="descname">LoadPlugin</code><span class="sig-paren">(</span><em>filename</em>, <em>remote=True</em>, <em>connection=None</em><span class="sig-paren">)</span><a class="reference internal" href="modules/paraview/servermanager.html#LoadPlugin"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.LoadPlugin" title="Permalink to this definition">¶</a></dt>
 <dd><p>Given a filename and a session (optional, otherwise uses
 ActiveConnection), loads a plugin. It then updates the sources,
 filters and rendering modules.</p>
@@ -1145,27 +1145,27 @@ filters and rendering modules.</p>
 
 <dl class="function">
 <dt id="paraview.servermanager.LoadState">
-<code class="descclassname">paraview.servermanager.</code><code class="descname">LoadState</code><span class="sig-paren">(</span><em>filename</em>, <em>connection=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/servermanager.html#LoadState"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.LoadState" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">paraview.servermanager.</code><code class="descname">LoadState</code><span class="sig-paren">(</span><em>filename</em>, <em>connection=None</em><span class="sig-paren">)</span><a class="reference internal" href="modules/paraview/servermanager.html#LoadState"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.LoadState" title="Permalink to this definition">¶</a></dt>
 <dd><p>Given a state filename and an optional connection, loads the server
 manager state.</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="paraview.servermanager.LoadXML">
-<code class="descclassname">paraview.servermanager.</code><code class="descname">LoadXML</code><span class="sig-paren">(</span><em>xmlstring</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/servermanager.html#LoadXML"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.LoadXML" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">paraview.servermanager.</code><code class="descname">LoadXML</code><span class="sig-paren">(</span><em>xmlstring</em><span class="sig-paren">)</span><a class="reference internal" href="modules/paraview/servermanager.html#LoadXML"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.LoadXML" title="Permalink to this definition">¶</a></dt>
 <dd><p>DEPRECATED. Given a server manager XML as a string, parse and process it.</p>
 </dd></dl>
 
 <dl class="exception">
 <dt id="paraview.servermanager.MissingProxy">
-<em class="property">exception </em><code class="descclassname">paraview.servermanager.</code><code class="descname">MissingProxy</code><a class="reference internal" href="_modules/paraview/servermanager.html#MissingProxy"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.MissingProxy" title="Permalink to this definition">¶</a></dt>
+<em class="property">exception </em><code class="descclassname">paraview.servermanager.</code><code class="descname">MissingProxy</code><a class="reference internal" href="modules/paraview/servermanager.html#MissingProxy"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.MissingProxy" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">exceptions.Exception</span></code></p>
 <p>Exception fired when the requested proxy is missing.</p>
 </dd></dl>
 
 <dl class="exception">
 <dt id="paraview.servermanager.MissingRegistrationInformation">
-<em class="property">exception </em><code class="descclassname">paraview.servermanager.</code><code class="descname">MissingRegistrationInformation</code><a class="reference internal" href="_modules/paraview/servermanager.html#MissingRegistrationInformation"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.MissingRegistrationInformation" title="Permalink to this definition">¶</a></dt>
+<em class="property">exception </em><code class="descclassname">paraview.servermanager.</code><code class="descname">MissingRegistrationInformation</code><a class="reference internal" href="modules/paraview/servermanager.html#MissingRegistrationInformation"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.MissingRegistrationInformation" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">exceptions.Exception</span></code></p>
 <p>Exception for missing registration information. Raised when a name or group
 is not specified or when a group cannot be deduced.</p>
@@ -1173,18 +1173,18 @@ is not specified or when a group cannot be deduced.</p>
 
 <dl class="function">
 <dt id="paraview.servermanager.OutputPort">
-<code class="descclassname">paraview.servermanager.</code><code class="descname">OutputPort</code><span class="sig-paren">(</span><em>proxy</em>, <em>outputPort=0</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/servermanager.html#OutputPort"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.OutputPort" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">paraview.servermanager.</code><code class="descname">OutputPort</code><span class="sig-paren">(</span><em>proxy</em>, <em>outputPort=0</em><span class="sig-paren">)</span><a class="reference internal" href="modules/paraview/servermanager.html#OutputPort"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.OutputPort" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="class">
 <dt id="paraview.servermanager.PVModule">
-<em class="property">class </em><code class="descclassname">paraview.servermanager.</code><code class="descname">PVModule</code><a class="reference internal" href="_modules/paraview/servermanager.html#PVModule"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.PVModule" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">paraview.servermanager.</code><code class="descname">PVModule</code><a class="reference internal" href="modules/paraview/servermanager.html#PVModule"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.PVModule" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
 </dd></dl>
 
 <dl class="class">
 <dt id="paraview.servermanager.ParaViewPipelineController">
-<em class="property">class </em><code class="descclassname">paraview.servermanager.</code><code class="descname">ParaViewPipelineController</code><a class="reference internal" href="_modules/paraview/servermanager.html#ParaViewPipelineController"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.ParaViewPipelineController" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">paraview.servermanager.</code><code class="descname">ParaViewPipelineController</code><a class="reference internal" href="modules/paraview/servermanager.html#ParaViewPipelineController"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.ParaViewPipelineController" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
 <p>ParaViewPipelineController wraps vtkSMParaViewPipelineController class
 to manage conversion of arguments passed around from Pyhton Proxy objects to
@@ -1193,7 +1193,7 @@ vtkSMProxy instances are vice-versa.</p>
 
 <dl class="class">
 <dt id="paraview.servermanager.Property">
-<em class="property">class </em><code class="descclassname">paraview.servermanager.</code><code class="descname">Property</code><span class="sig-paren">(</span><em>proxy</em>, <em>smproperty</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/servermanager.html#Property"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.Property" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">paraview.servermanager.</code><code class="descname">Property</code><span class="sig-paren">(</span><em>proxy</em>, <em>smproperty</em><span class="sig-paren">)</span><a class="reference internal" href="modules/paraview/servermanager.html#Property"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.Property" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
 <p>Generic property object that provides access to one of the properties of
 a server object. This class does not allow setting/getting any values but
@@ -1223,7 +1223,7 @@ of the vtkSMProperty C++ class.</p>
 
 <dl class="class">
 <dt id="paraview.servermanager.PropertyIterator">
-<em class="property">class </em><code class="descclassname">paraview.servermanager.</code><code class="descname">PropertyIterator</code><span class="sig-paren">(</span><em>aProxy</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/servermanager.html#PropertyIterator"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.PropertyIterator" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">paraview.servermanager.</code><code class="descname">PropertyIterator</code><span class="sig-paren">(</span><em>aProxy</em><span class="sig-paren">)</span><a class="reference internal" href="modules/paraview/servermanager.html#PropertyIterator"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.PropertyIterator" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
 <p>Wrapper for a vtkSMPropertyIterator class to satisfy
 the python iterator protocol. Note that the list of
@@ -1233,34 +1233,34 @@ See the doxygen documentation for vtkSMPropertyIterator C++
 class for details.</p>
 <dl class="method">
 <dt id="paraview.servermanager.PropertyIterator.GetKey">
-<code class="descname">GetKey</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/servermanager.html#PropertyIterator.GetKey"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.PropertyIterator.GetKey" title="Permalink to this definition">¶</a></dt>
+<code class="descname">GetKey</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="modules/paraview/servermanager.html#PropertyIterator.GetKey"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.PropertyIterator.GetKey" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the key for the property last returned by the call to
 ‘next()’</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="paraview.servermanager.PropertyIterator.GetProperty">
-<code class="descname">GetProperty</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/servermanager.html#PropertyIterator.GetProperty"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.PropertyIterator.GetProperty" title="Permalink to this definition">¶</a></dt>
+<code class="descname">GetProperty</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="modules/paraview/servermanager.html#PropertyIterator.GetProperty"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.PropertyIterator.GetProperty" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the property last returned by the call to ‘next()’</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="paraview.servermanager.PropertyIterator.GetProxy">
-<code class="descname">GetProxy</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/servermanager.html#PropertyIterator.GetProxy"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.PropertyIterator.GetProxy" title="Permalink to this definition">¶</a></dt>
+<code class="descname">GetProxy</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="modules/paraview/servermanager.html#PropertyIterator.GetProxy"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.PropertyIterator.GetProxy" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the proxy for the property last returned by the call to
 ‘next()’</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="paraview.servermanager.PropertyIterator.next">
-<code class="descname">next</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/servermanager.html#PropertyIterator.next"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.PropertyIterator.next" title="Permalink to this definition">¶</a></dt>
+<code class="descname">next</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="modules/paraview/servermanager.html#PropertyIterator.next"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.PropertyIterator.next" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
 <dl class="class">
 <dt id="paraview.servermanager.Proxy">
-<em class="property">class </em><code class="descclassname">paraview.servermanager.</code><code class="descname">Proxy</code><span class="sig-paren">(</span><em>**args</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/servermanager.html#Proxy"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.Proxy" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">paraview.servermanager.</code><code class="descname">Proxy</code><span class="sig-paren">(</span><em>**args</em><span class="sig-paren">)</span><a class="reference internal" href="modules/paraview/servermanager.html#Proxy"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.Proxy" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
 <p>one or more server manager objects. It also provides an interface
 to set and get the properties of the server side objects. These
@@ -1338,52 +1338,52 @@ see also <code class="docutils literal"><span class="pre">dir(proxy.SMProxy)</sp
 of the <code class="docutils literal"><span class="pre">vtkSMProxy</span></code> C++ class.</p>
 <dl class="method">
 <dt id="paraview.servermanager.Proxy.GetProperty">
-<code class="descname">GetProperty</code><span class="sig-paren">(</span><em>name</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/servermanager.html#Proxy.GetProperty"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.Proxy.GetProperty" title="Permalink to this definition">¶</a></dt>
+<code class="descname">GetProperty</code><span class="sig-paren">(</span><em>name</em><span class="sig-paren">)</span><a class="reference internal" href="modules/paraview/servermanager.html#Proxy.GetProperty"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.Proxy.GetProperty" title="Permalink to this definition">¶</a></dt>
 <dd><p>Given a property name, returns the property object.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="paraview.servermanager.Proxy.GetPropertyValue">
-<code class="descname">GetPropertyValue</code><span class="sig-paren">(</span><em>name</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/servermanager.html#Proxy.GetPropertyValue"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.Proxy.GetPropertyValue" title="Permalink to this definition">¶</a></dt>
+<code class="descname">GetPropertyValue</code><span class="sig-paren">(</span><em>name</em><span class="sig-paren">)</span><a class="reference internal" href="modules/paraview/servermanager.html#Proxy.GetPropertyValue"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.Proxy.GetPropertyValue" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns a scalar for properties with 1 elements, the property
 itself for vectors.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="paraview.servermanager.Proxy.Initialize">
-<code class="descname">Initialize</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/servermanager.html#Proxy.Initialize"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.Proxy.Initialize" title="Permalink to this definition">¶</a></dt>
+<code class="descname">Initialize</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="modules/paraview/servermanager.html#Proxy.Initialize"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.Proxy.Initialize" title="Permalink to this definition">¶</a></dt>
 <dd><p>Overridden by the subclass created automatically</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="paraview.servermanager.Proxy.InitializeFromProxy">
-<code class="descname">InitializeFromProxy</code><span class="sig-paren">(</span><em>aProxy</em>, <em>update=True</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/servermanager.html#Proxy.InitializeFromProxy"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.Proxy.InitializeFromProxy" title="Permalink to this definition">¶</a></dt>
+<code class="descname">InitializeFromProxy</code><span class="sig-paren">(</span><em>aProxy</em>, <em>update=True</em><span class="sig-paren">)</span><a class="reference internal" href="modules/paraview/servermanager.html#Proxy.InitializeFromProxy"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.Proxy.InitializeFromProxy" title="Permalink to this definition">¶</a></dt>
 <dd><p>Constructor. Assigns proxy to self.SMProxy, updates the server
 object as well as register the proxy in _pyproxies dictionary.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="paraview.servermanager.Proxy.ListProperties">
-<code class="descname">ListProperties</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/servermanager.html#Proxy.ListProperties"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.Proxy.ListProperties" title="Permalink to this definition">¶</a></dt>
+<code class="descname">ListProperties</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="modules/paraview/servermanager.html#Proxy.ListProperties"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.Proxy.ListProperties" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns a list of all property names on this proxy.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="paraview.servermanager.Proxy.SetPropertyWithName">
-<code class="descname">SetPropertyWithName</code><span class="sig-paren">(</span><em>pname</em>, <em>arg</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/servermanager.html#Proxy.SetPropertyWithName"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.Proxy.SetPropertyWithName" title="Permalink to this definition">¶</a></dt>
+<code class="descname">SetPropertyWithName</code><span class="sig-paren">(</span><em>pname</em>, <em>arg</em><span class="sig-paren">)</span><a class="reference internal" href="modules/paraview/servermanager.html#Proxy.SetPropertyWithName"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.Proxy.SetPropertyWithName" title="Permalink to this definition">¶</a></dt>
 <dd><p>Generic method for setting the value of a property.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="paraview.servermanager.Proxy.add_attribute">
-<code class="descname">add_attribute</code><span class="sig-paren">(</span><em>name</em>, <em>value</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/servermanager.html#Proxy.add_attribute"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.Proxy.add_attribute" title="Permalink to this definition">¶</a></dt>
+<code class="descname">add_attribute</code><span class="sig-paren">(</span><em>name</em>, <em>value</em><span class="sig-paren">)</span><a class="reference internal" href="modules/paraview/servermanager.html#Proxy.add_attribute"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.Proxy.add_attribute" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
 <dl class="class">
 <dt id="paraview.servermanager.ProxyDefinitionIterator">
-<em class="property">class </em><code class="descclassname">paraview.servermanager.</code><code class="descname">ProxyDefinitionIterator</code><span class="sig-paren">(</span><em>iter</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/servermanager.html#ProxyDefinitionIterator"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.ProxyDefinitionIterator" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">paraview.servermanager.</code><code class="descname">ProxyDefinitionIterator</code><span class="sig-paren">(</span><em>iter</em><span class="sig-paren">)</span><a class="reference internal" href="modules/paraview/servermanager.html#ProxyDefinitionIterator"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.ProxyDefinitionIterator" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
 <p>Wrapper for a vtkPVProxyDefinitionIterator class to satisfy
 the python iterator protocol.
@@ -1391,28 +1391,28 @@ See the doxygen documentation of the vtkPVProxyDefinitionIterator
 C++ class for more information.</p>
 <dl class="method">
 <dt id="paraview.servermanager.ProxyDefinitionIterator.GetGroup">
-<code class="descname">GetGroup</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/servermanager.html#ProxyDefinitionIterator.GetGroup"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.ProxyDefinitionIterator.GetGroup" title="Permalink to this definition">¶</a></dt>
+<code class="descname">GetGroup</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="modules/paraview/servermanager.html#ProxyDefinitionIterator.GetGroup"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.ProxyDefinitionIterator.GetGroup" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the group for the proxy definition last returned by the
 call to ‘next()’</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="paraview.servermanager.ProxyDefinitionIterator.GetProxyName">
-<code class="descname">GetProxyName</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/servermanager.html#ProxyDefinitionIterator.GetProxyName"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.ProxyDefinitionIterator.GetProxyName" title="Permalink to this definition">¶</a></dt>
+<code class="descname">GetProxyName</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="modules/paraview/servermanager.html#ProxyDefinitionIterator.GetProxyName"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.ProxyDefinitionIterator.GetProxyName" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the key for the proxy definition last returned by the call
 to ‘next()’</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="paraview.servermanager.ProxyDefinitionIterator.next">
-<code class="descname">next</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/servermanager.html#ProxyDefinitionIterator.next"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.ProxyDefinitionIterator.next" title="Permalink to this definition">¶</a></dt>
+<code class="descname">next</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="modules/paraview/servermanager.html#ProxyDefinitionIterator.next"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.ProxyDefinitionIterator.next" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
 <dl class="class">
 <dt id="paraview.servermanager.ProxyIterator">
-<em class="property">class </em><code class="descclassname">paraview.servermanager.</code><code class="descname">ProxyIterator</code><a class="reference internal" href="_modules/paraview/servermanager.html#ProxyIterator"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.ProxyIterator" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">paraview.servermanager.</code><code class="descname">ProxyIterator</code><a class="reference internal" href="modules/paraview/servermanager.html#ProxyIterator"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.ProxyIterator" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
 <p>Wrapper for a vtkSMProxyIterator class to satisfy the
 python iterator protocol.
@@ -1420,34 +1420,34 @@ See the doxygen documentation of vtkSMProxyIterator C++ class for
 more information.</p>
 <dl class="method">
 <dt id="paraview.servermanager.ProxyIterator.GetGroup">
-<code class="descname">GetGroup</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/servermanager.html#ProxyIterator.GetGroup"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.ProxyIterator.GetGroup" title="Permalink to this definition">¶</a></dt>
+<code class="descname">GetGroup</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="modules/paraview/servermanager.html#ProxyIterator.GetGroup"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.ProxyIterator.GetGroup" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the group for the proxy last returned by the call to
 ‘next()’</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="paraview.servermanager.ProxyIterator.GetKey">
-<code class="descname">GetKey</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/servermanager.html#ProxyIterator.GetKey"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.ProxyIterator.GetKey" title="Permalink to this definition">¶</a></dt>
+<code class="descname">GetKey</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="modules/paraview/servermanager.html#ProxyIterator.GetKey"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.ProxyIterator.GetKey" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the key for the proxy last returned by the call to
 ‘next()’</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="paraview.servermanager.ProxyIterator.GetProxy">
-<code class="descname">GetProxy</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/servermanager.html#ProxyIterator.GetProxy"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.ProxyIterator.GetProxy" title="Permalink to this definition">¶</a></dt>
+<code class="descname">GetProxy</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="modules/paraview/servermanager.html#ProxyIterator.GetProxy"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.ProxyIterator.GetProxy" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the proxy last returned by the call to ‘next()’</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="paraview.servermanager.ProxyIterator.next">
-<code class="descname">next</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/servermanager.html#ProxyIterator.next"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.ProxyIterator.next" title="Permalink to this definition">¶</a></dt>
+<code class="descname">next</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="modules/paraview/servermanager.html#ProxyIterator.next"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.ProxyIterator.next" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
 <dl class="class">
 <dt id="paraview.servermanager.ProxyManager">
-<em class="property">class </em><code class="descclassname">paraview.servermanager.</code><code class="descname">ProxyManager</code><span class="sig-paren">(</span><em>session=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/servermanager.html#ProxyManager"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.ProxyManager" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">paraview.servermanager.</code><code class="descname">ProxyManager</code><span class="sig-paren">(</span><em>session=None</em><span class="sig-paren">)</span><a class="reference internal" href="modules/paraview/servermanager.html#ProxyManager"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.ProxyManager" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
 <p>When running scripts from the python shell in the ParaView application,
 registering proxies with the proxy manager is the only mechanism to
@@ -1472,7 +1472,7 @@ see also dir(proxy.SMProxyManager). See also the doxygen based documentation
 of the vtkSMProxyManager C++ class.</p>
 <dl class="method">
 <dt id="paraview.servermanager.ProxyManager.GetPrototypeProxy">
-<code class="descname">GetPrototypeProxy</code><span class="sig-paren">(</span><em>group</em>, <em>name</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/servermanager.html#ProxyManager.GetPrototypeProxy"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.ProxyManager.GetPrototypeProxy" title="Permalink to this definition">¶</a></dt>
+<code class="descname">GetPrototypeProxy</code><span class="sig-paren">(</span><em>group</em>, <em>name</em><span class="sig-paren">)</span><a class="reference internal" href="modules/paraview/servermanager.html#ProxyManager.GetPrototypeProxy"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.ProxyManager.GetPrototypeProxy" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns a prototype proxy given a group and name. This is an
 SMProxy. This is a low-level method. You should not normally
 have to call it.</p>
@@ -1480,7 +1480,7 @@ have to call it.</p>
 
 <dl class="method">
 <dt id="paraview.servermanager.ProxyManager.GetProxies">
-<code class="descname">GetProxies</code><span class="sig-paren">(</span><em>groupname</em>, <em>proxyname</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/servermanager.html#ProxyManager.GetProxies"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.ProxyManager.GetProxies" title="Permalink to this definition">¶</a></dt>
+<code class="descname">GetProxies</code><span class="sig-paren">(</span><em>groupname</em>, <em>proxyname</em><span class="sig-paren">)</span><a class="reference internal" href="modules/paraview/servermanager.html#ProxyManager.GetProxies"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.ProxyManager.GetProxies" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns all proxies registered under the given group with the
 given name. Note that it is possible to register more than one
 proxy with the same name in the same group. Because the proxies
@@ -1491,24 +1491,24 @@ with this name.</p>
 
 <dl class="method">
 <dt id="paraview.servermanager.ProxyManager.GetProxiesInGroup">
-<code class="descname">GetProxiesInGroup</code><span class="sig-paren">(</span><em>groupname</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/servermanager.html#ProxyManager.GetProxiesInGroup"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.ProxyManager.GetProxiesInGroup" title="Permalink to this definition">¶</a></dt>
+<code class="descname">GetProxiesInGroup</code><span class="sig-paren">(</span><em>groupname</em><span class="sig-paren">)</span><a class="reference internal" href="modules/paraview/servermanager.html#ProxyManager.GetProxiesInGroup"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.ProxyManager.GetProxiesInGroup" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns a map of proxies in a particular group.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="paraview.servermanager.ProxyManager.GetProxy">
-<code class="descname">GetProxy</code><span class="sig-paren">(</span><em>group</em>, <em>name</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/servermanager.html#ProxyManager.GetProxy"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.ProxyManager.GetProxy" title="Permalink to this definition">¶</a></dt>
+<code class="descname">GetProxy</code><span class="sig-paren">(</span><em>group</em>, <em>name</em><span class="sig-paren">)</span><a class="reference internal" href="modules/paraview/servermanager.html#ProxyManager.GetProxy"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.ProxyManager.GetProxy" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns a Proxy registered under a group and name</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="paraview.servermanager.ProxyManager.LoadState">
-<code class="descname">LoadState</code><span class="sig-paren">(</span><em>filename</em>, <em>loader=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/servermanager.html#ProxyManager.LoadState"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.ProxyManager.LoadState" title="Permalink to this definition">¶</a></dt>
+<code class="descname">LoadState</code><span class="sig-paren">(</span><em>filename</em>, <em>loader=None</em><span class="sig-paren">)</span><a class="reference internal" href="modules/paraview/servermanager.html#ProxyManager.LoadState"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.ProxyManager.LoadState" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
 <dt id="paraview.servermanager.ProxyManager.NewDefinitionIterator">
-<code class="descname">NewDefinitionIterator</code><span class="sig-paren">(</span><em>groupname=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/servermanager.html#ProxyManager.NewDefinitionIterator"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.ProxyManager.NewDefinitionIterator" title="Permalink to this definition">¶</a></dt>
+<code class="descname">NewDefinitionIterator</code><span class="sig-paren">(</span><em>groupname=None</em><span class="sig-paren">)</span><a class="reference internal" href="modules/paraview/servermanager.html#ProxyManager.NewDefinitionIterator"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.ProxyManager.NewDefinitionIterator" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns an iterator that can be used to iterate over
 all groups and types of proxies that the proxy manager
 can create.</p>
@@ -1516,7 +1516,7 @@ can create.</p>
 
 <dl class="method">
 <dt id="paraview.servermanager.ProxyManager.NewGroupIterator">
-<code class="descname">NewGroupIterator</code><span class="sig-paren">(</span><em>group_name</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/servermanager.html#ProxyManager.NewGroupIterator"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.ProxyManager.NewGroupIterator" title="Permalink to this definition">¶</a></dt>
+<code class="descname">NewGroupIterator</code><span class="sig-paren">(</span><em>group_name</em><span class="sig-paren">)</span><a class="reference internal" href="modules/paraview/servermanager.html#ProxyManager.NewGroupIterator"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.ProxyManager.NewGroupIterator" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns a ProxyIterator for a group. The resulting object
 can be used to traverse the proxies that are in the given
 group.</p>
@@ -1524,7 +1524,7 @@ group.</p>
 
 <dl class="method">
 <dt id="paraview.servermanager.ProxyManager.NewProxy">
-<code class="descname">NewProxy</code><span class="sig-paren">(</span><em>group</em>, <em>name</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/servermanager.html#ProxyManager.NewProxy"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.ProxyManager.NewProxy" title="Permalink to this definition">¶</a></dt>
+<code class="descname">NewProxy</code><span class="sig-paren">(</span><em>group</em>, <em>name</em><span class="sig-paren">)</span><a class="reference internal" href="modules/paraview/servermanager.html#ProxyManager.NewProxy"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.ProxyManager.NewProxy" title="Permalink to this definition">¶</a></dt>
 <dd><p>Creates a new proxy of given group and name and returns an SMProxy.
 Note that this is a server manager object. You should normally create
 proxies using the class objects. For example:
@@ -1533,19 +1533,19 @@ obj = servermanager.sources.SphereSource()</p>
 
 <dl class="method">
 <dt id="paraview.servermanager.ProxyManager.RegisterProxy">
-<code class="descname">RegisterProxy</code><span class="sig-paren">(</span><em>group</em>, <em>name</em>, <em>aProxy</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/servermanager.html#ProxyManager.RegisterProxy"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.ProxyManager.RegisterProxy" title="Permalink to this definition">¶</a></dt>
+<code class="descname">RegisterProxy</code><span class="sig-paren">(</span><em>group</em>, <em>name</em>, <em>aProxy</em><span class="sig-paren">)</span><a class="reference internal" href="modules/paraview/servermanager.html#ProxyManager.RegisterProxy"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.ProxyManager.RegisterProxy" title="Permalink to this definition">¶</a></dt>
 <dd><p>Registers a proxy (either SMProxy or proxy) with the
 server manager</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="paraview.servermanager.ProxyManager.SaveState">
-<code class="descname">SaveState</code><span class="sig-paren">(</span><em>filename</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/servermanager.html#ProxyManager.SaveState"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.ProxyManager.SaveState" title="Permalink to this definition">¶</a></dt>
+<code class="descname">SaveState</code><span class="sig-paren">(</span><em>filename</em><span class="sig-paren">)</span><a class="reference internal" href="modules/paraview/servermanager.html#ProxyManager.SaveState"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.ProxyManager.SaveState" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
 <dt id="paraview.servermanager.ProxyManager.UnRegisterProxy">
-<code class="descname">UnRegisterProxy</code><span class="sig-paren">(</span><em>groupname</em>, <em>proxyname</em>, <em>aProxy</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/servermanager.html#ProxyManager.UnRegisterProxy"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.ProxyManager.UnRegisterProxy" title="Permalink to this definition">¶</a></dt>
+<code class="descname">UnRegisterProxy</code><span class="sig-paren">(</span><em>groupname</em>, <em>proxyname</em>, <em>aProxy</em><span class="sig-paren">)</span><a class="reference internal" href="modules/paraview/servermanager.html#ProxyManager.UnRegisterProxy"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.ProxyManager.UnRegisterProxy" title="Permalink to this definition">¶</a></dt>
 <dd><p>Unregisters a proxy.</p>
 </dd></dl>
 
@@ -1553,7 +1553,7 @@ server manager</p>
 
 <dl class="class">
 <dt id="paraview.servermanager.ProxyProperty">
-<em class="property">class </em><code class="descclassname">paraview.servermanager.</code><code class="descname">ProxyProperty</code><span class="sig-paren">(</span><em>proxy</em>, <em>smproperty</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/servermanager.html#ProxyProperty"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.ProxyProperty" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">paraview.servermanager.</code><code class="descname">ProxyProperty</code><span class="sig-paren">(</span><em>proxy</em>, <em>smproperty</em><span class="sig-paren">)</span><a class="reference internal" href="modules/paraview/servermanager.html#ProxyProperty"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.ProxyProperty" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#paraview.servermanager.Property" title="paraview.servermanager.Property"><code class="xref py py-class docutils literal"><span class="pre">paraview.servermanager.Property</span></code></a></p>
 <p>A ProxyProperty provides access to one or more proxies. You can use
 a slice to get one or more property values:
@@ -1581,13 +1581,13 @@ such list domain, the array is empty.</p>
 
 <dl class="method">
 <dt id="paraview.servermanager.ProxyProperty.Clear">
-<code class="descname">Clear</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/servermanager.html#ProxyProperty.Clear"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.ProxyProperty.Clear" title="Permalink to this definition">¶</a></dt>
+<code class="descname">Clear</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="modules/paraview/servermanager.html#ProxyProperty.Clear"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.ProxyProperty.Clear" title="Permalink to this definition">¶</a></dt>
 <dd><p>Removes all elements.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="paraview.servermanager.ProxyProperty.GetAvailable">
-<code class="descname">GetAvailable</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/servermanager.html#ProxyProperty.GetAvailable"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.ProxyProperty.GetAvailable" title="Permalink to this definition">¶</a></dt>
+<code class="descname">GetAvailable</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="modules/paraview/servermanager.html#ProxyProperty.GetAvailable"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.ProxyProperty.GetAvailable" title="Permalink to this definition">¶</a></dt>
 <dd><p>If this proxy has a list domain, then this function returns the
 strings you can use to select from the domain.  If there is no such
 list domain, the returned list is empty.</p>
@@ -1595,31 +1595,31 @@ list domain, the returned list is empty.</p>
 
 <dl class="method">
 <dt id="paraview.servermanager.ProxyProperty.GetData">
-<code class="descname">GetData</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/servermanager.html#ProxyProperty.GetData"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.ProxyProperty.GetData" title="Permalink to this definition">¶</a></dt>
+<code class="descname">GetData</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="modules/paraview/servermanager.html#ProxyProperty.GetData"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.ProxyProperty.GetData" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns all elements as either a list or a single value.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="paraview.servermanager.ProxyProperty.SetData">
-<code class="descname">SetData</code><span class="sig-paren">(</span><em>values</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/servermanager.html#ProxyProperty.SetData"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.ProxyProperty.SetData" title="Permalink to this definition">¶</a></dt>
+<code class="descname">SetData</code><span class="sig-paren">(</span><em>values</em><span class="sig-paren">)</span><a class="reference internal" href="modules/paraview/servermanager.html#ProxyProperty.SetData"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.ProxyProperty.SetData" title="Permalink to this definition">¶</a></dt>
 <dd><p>Allows setting of all values at once. Requires a single value,
 a tuple or list.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="paraview.servermanager.ProxyProperty.append">
-<code class="descname">append</code><span class="sig-paren">(</span><em>proxy</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/servermanager.html#ProxyProperty.append"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.ProxyProperty.append" title="Permalink to this definition">¶</a></dt>
+<code class="descname">append</code><span class="sig-paren">(</span><em>proxy</em><span class="sig-paren">)</span><a class="reference internal" href="modules/paraview/servermanager.html#ProxyProperty.append"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.ProxyProperty.append" title="Permalink to this definition">¶</a></dt>
 <dd><p>Appends the given proxy to the property values.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="paraview.servermanager.ProxyProperty.index">
-<code class="descname">index</code><span class="sig-paren">(</span><em>proxy</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/servermanager.html#ProxyProperty.index"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.ProxyProperty.index" title="Permalink to this definition">¶</a></dt>
+<code class="descname">index</code><span class="sig-paren">(</span><em>proxy</em><span class="sig-paren">)</span><a class="reference internal" href="modules/paraview/servermanager.html#ProxyProperty.index"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.ProxyProperty.index" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
 <dt id="paraview.servermanager.ProxyProperty.remove">
-<code class="descname">remove</code><span class="sig-paren">(</span><em>proxy</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/servermanager.html#ProxyProperty.remove"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.ProxyProperty.remove" title="Permalink to this definition">¶</a></dt>
+<code class="descname">remove</code><span class="sig-paren">(</span><em>proxy</em><span class="sig-paren">)</span><a class="reference internal" href="modules/paraview/servermanager.html#ProxyProperty.remove"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.ProxyProperty.remove" title="Permalink to this definition">¶</a></dt>
 <dd><p>Removes the first occurence of the proxy from the property.</p>
 </dd></dl>
 
@@ -1627,7 +1627,7 @@ a tuple or list.</p>
 
 <dl class="function">
 <dt id="paraview.servermanager.Register">
-<code class="descclassname">paraview.servermanager.</code><code class="descname">Register</code><span class="sig-paren">(</span><em>proxy</em>, <em>**extraArgs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/servermanager.html#Register"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.Register" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">paraview.servermanager.</code><code class="descname">Register</code><span class="sig-paren">(</span><em>proxy</em>, <em>**extraArgs</em><span class="sig-paren">)</span><a class="reference internal" href="modules/paraview/servermanager.html#Register"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.Register" title="Permalink to this definition">¶</a></dt>
 <dd><p>Registers a proxy with the proxy manager. If no ‘registrationGroup’ is
 specified, then the group is inferred from the type of the proxy.
 ‘registrationName’ may be specified to register with a particular name
@@ -1636,7 +1636,7 @@ otherwise a default name will be created.</p>
 
 <dl class="function">
 <dt id="paraview.servermanager.ReverseConnect">
-<code class="descclassname">paraview.servermanager.</code><code class="descname">ReverseConnect</code><span class="sig-paren">(</span><em>port=11111</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/servermanager.html#ReverseConnect"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.ReverseConnect" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">paraview.servermanager.</code><code class="descname">ReverseConnect</code><span class="sig-paren">(</span><em>port=11111</em><span class="sig-paren">)</span><a class="reference internal" href="modules/paraview/servermanager.html#ReverseConnect"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.ReverseConnect" title="Permalink to this definition">¶</a></dt>
 <dd><p>Use this function call to create a new session. On success,
 it returns a Session object that abstracts the connection.
 Otherwise, it returns None.
@@ -1649,14 +1649,14 @@ The optional port specified the port to listen to.</p>
 
 <dl class="function">
 <dt id="paraview.servermanager.SaveState">
-<code class="descclassname">paraview.servermanager.</code><code class="descname">SaveState</code><span class="sig-paren">(</span><em>filename</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/servermanager.html#SaveState"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.SaveState" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">paraview.servermanager.</code><code class="descname">SaveState</code><span class="sig-paren">(</span><em>filename</em><span class="sig-paren">)</span><a class="reference internal" href="modules/paraview/servermanager.html#SaveState"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.SaveState" title="Permalink to this definition">¶</a></dt>
 <dd><p>Given a state filename, saves the state of objects registered
 with the proxy manager.</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="paraview.servermanager.SetActiveConnection">
-<code class="descclassname">paraview.servermanager.</code><code class="descname">SetActiveConnection</code><span class="sig-paren">(</span><em>connection=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/servermanager.html#SetActiveConnection"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.SetActiveConnection" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">paraview.servermanager.</code><code class="descname">SetActiveConnection</code><span class="sig-paren">(</span><em>connection=None</em><span class="sig-paren">)</span><a class="reference internal" href="modules/paraview/servermanager.html#SetActiveConnection"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.SetActiveConnection" title="Permalink to this definition">¶</a></dt>
 <dd><p>Set the active connection. If the process was run without multi-server
 enabled and this method is called with a non-None argument while an
 ActiveConnection is present, it will raise a RuntimeError.</p>
@@ -1664,7 +1664,7 @@ ActiveConnection is present, it will raise a RuntimeError.</p>
 
 <dl class="function">
 <dt id="paraview.servermanager.SetProgressPrintingEnabled">
-<code class="descclassname">paraview.servermanager.</code><code class="descname">SetProgressPrintingEnabled</code><span class="sig-paren">(</span><em>value</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/servermanager.html#SetProgressPrintingEnabled"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.SetProgressPrintingEnabled" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">paraview.servermanager.</code><code class="descname">SetProgressPrintingEnabled</code><span class="sig-paren">(</span><em>value</em><span class="sig-paren">)</span><a class="reference internal" href="modules/paraview/servermanager.html#SetProgressPrintingEnabled"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.SetProgressPrintingEnabled" title="Permalink to this definition">¶</a></dt>
 <dd><p>Turn on/off printing of progress (by default, it is on). You can
 always turn progress off and add your own observer to the process
 module to handle progress in a custom way. See _printProgress for
@@ -1673,7 +1673,7 @@ an example event observer.</p>
 
 <dl class="class">
 <dt id="paraview.servermanager.SourceProxy">
-<em class="property">class </em><code class="descclassname">paraview.servermanager.</code><code class="descname">SourceProxy</code><span class="sig-paren">(</span><em>**args</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/servermanager.html#SourceProxy"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.SourceProxy" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">paraview.servermanager.</code><code class="descname">SourceProxy</code><span class="sig-paren">(</span><em>**args</em><span class="sig-paren">)</span><a class="reference internal" href="modules/paraview/servermanager.html#SourceProxy"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.SourceProxy" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#paraview.servermanager.Proxy" title="paraview.servermanager.Proxy"><code class="xref py py-class docutils literal"><span class="pre">paraview.servermanager.Proxy</span></code></a></p>
 <p>Proxy for a source object. This class adds a few methods to Proxy
 that are specific to sources. It also provides access to the output
@@ -1695,32 +1695,32 @@ or
 
 <dl class="method">
 <dt id="paraview.servermanager.SourceProxy.FileNameChanged">
-<code class="descname">FileNameChanged</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/servermanager.html#SourceProxy.FileNameChanged"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.SourceProxy.FileNameChanged" title="Permalink to this definition">¶</a></dt>
+<code class="descname">FileNameChanged</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="modules/paraview/servermanager.html#SourceProxy.FileNameChanged"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.SourceProxy.FileNameChanged" title="Permalink to this definition">¶</a></dt>
 <dd><p>Called when the filename of a source proxy is changed.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="paraview.servermanager.SourceProxy.GetCellDataInformation">
-<code class="descname">GetCellDataInformation</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/servermanager.html#SourceProxy.GetCellDataInformation"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.SourceProxy.GetCellDataInformation" title="Permalink to this definition">¶</a></dt>
+<code class="descname">GetCellDataInformation</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="modules/paraview/servermanager.html#SourceProxy.GetCellDataInformation"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.SourceProxy.GetCellDataInformation" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the associated cell data information.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="paraview.servermanager.SourceProxy.GetDataInformation">
-<code class="descname">GetDataInformation</code><span class="sig-paren">(</span><em>idx=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/servermanager.html#SourceProxy.GetDataInformation"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.SourceProxy.GetDataInformation" title="Permalink to this definition">¶</a></dt>
+<code class="descname">GetDataInformation</code><span class="sig-paren">(</span><em>idx=None</em><span class="sig-paren">)</span><a class="reference internal" href="modules/paraview/servermanager.html#SourceProxy.GetDataInformation"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.SourceProxy.GetDataInformation" title="Permalink to this definition">¶</a></dt>
 <dd><p>This method returns a DataInformation wrapper around a
 vtkPVDataInformation</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="paraview.servermanager.SourceProxy.GetFieldDataInformation">
-<code class="descname">GetFieldDataInformation</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/servermanager.html#SourceProxy.GetFieldDataInformation"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.SourceProxy.GetFieldDataInformation" title="Permalink to this definition">¶</a></dt>
+<code class="descname">GetFieldDataInformation</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="modules/paraview/servermanager.html#SourceProxy.GetFieldDataInformation"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.SourceProxy.GetFieldDataInformation" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the associated cell data information.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="paraview.servermanager.SourceProxy.GetPointDataInformation">
-<code class="descname">GetPointDataInformation</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/servermanager.html#SourceProxy.GetPointDataInformation"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.SourceProxy.GetPointDataInformation" title="Permalink to this definition">¶</a></dt>
+<code class="descname">GetPointDataInformation</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="modules/paraview/servermanager.html#SourceProxy.GetPointDataInformation"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.SourceProxy.GetPointDataInformation" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the associated point data information.</p>
 </dd></dl>
 
@@ -1732,7 +1732,7 @@ vtkPVDataInformation</p>
 
 <dl class="method">
 <dt id="paraview.servermanager.SourceProxy.UpdatePipeline">
-<code class="descname">UpdatePipeline</code><span class="sig-paren">(</span><em>time=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/servermanager.html#SourceProxy.UpdatePipeline"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.SourceProxy.UpdatePipeline" title="Permalink to this definition">¶</a></dt>
+<code class="descname">UpdatePipeline</code><span class="sig-paren">(</span><em>time=None</em><span class="sig-paren">)</span><a class="reference internal" href="modules/paraview/servermanager.html#SourceProxy.UpdatePipeline"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.SourceProxy.UpdatePipeline" title="Permalink to this definition">¶</a></dt>
 <dd><p>This method updates the server-side VTK pipeline and the associated
 data information. Make sure to update a source to validate the output
 meta-data.</p>
@@ -1740,7 +1740,7 @@ meta-data.</p>
 
 <dl class="method">
 <dt id="paraview.servermanager.SourceProxy.UpdatePipelineInformation">
-<code class="descname">UpdatePipelineInformation</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/servermanager.html#SourceProxy.UpdatePipelineInformation"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.SourceProxy.UpdatePipelineInformation" title="Permalink to this definition">¶</a></dt>
+<code class="descname">UpdatePipelineInformation</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="modules/paraview/servermanager.html#SourceProxy.UpdatePipelineInformation"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.SourceProxy.UpdatePipelineInformation" title="Permalink to this definition">¶</a></dt>
 <dd><p>This method updates the meta-data of the server-side VTK pipeline and
 the associated information properties</p>
 </dd></dl>
@@ -1749,7 +1749,7 @@ the associated information properties</p>
 
 <dl class="class">
 <dt id="paraview.servermanager.SubsetInclusionLatticeProperty">
-<em class="property">class </em><code class="descclassname">paraview.servermanager.</code><code class="descname">SubsetInclusionLatticeProperty</code><span class="sig-paren">(</span><em>proxy</em>, <em>smproperty</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/servermanager.html#SubsetInclusionLatticeProperty"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.SubsetInclusionLatticeProperty" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">paraview.servermanager.</code><code class="descname">SubsetInclusionLatticeProperty</code><span class="sig-paren">(</span><em>proxy</em>, <em>smproperty</em><span class="sig-paren">)</span><a class="reference internal" href="modules/paraview/servermanager.html#SubsetInclusionLatticeProperty"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.SubsetInclusionLatticeProperty" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#paraview.servermanager.ArrayListProperty" title="paraview.servermanager.ArrayListProperty"><code class="xref py py-class docutils literal"><span class="pre">paraview.servermanager.ArrayListProperty</span></code></a></p>
 <p>This property provides a simpler interface for selecting blocks on a
 property with a <cite>vtkSMSubsetInclusionLatticeDomain</cite>.</p>
@@ -1757,19 +1757,19 @@ property with a <cite>vtkSMSubsetInclusionLatticeDomain</cite>.</p>
 
 <dl class="function">
 <dt id="paraview.servermanager.ToggleProgressPrinting">
-<code class="descclassname">paraview.servermanager.</code><code class="descname">ToggleProgressPrinting</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/servermanager.html#ToggleProgressPrinting"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.ToggleProgressPrinting" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">paraview.servermanager.</code><code class="descname">ToggleProgressPrinting</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="modules/paraview/servermanager.html#ToggleProgressPrinting"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.ToggleProgressPrinting" title="Permalink to this definition">¶</a></dt>
 <dd><p>Turn on/off printing of progress.  See SetProgressPrintingEnabled.</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="paraview.servermanager.UnRegister">
-<code class="descclassname">paraview.servermanager.</code><code class="descname">UnRegister</code><span class="sig-paren">(</span><em>proxy</em>, <em>**extraArgs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/servermanager.html#UnRegister"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.UnRegister" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">paraview.servermanager.</code><code class="descname">UnRegister</code><span class="sig-paren">(</span><em>proxy</em>, <em>**extraArgs</em><span class="sig-paren">)</span><a class="reference internal" href="modules/paraview/servermanager.html#UnRegister"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.UnRegister" title="Permalink to this definition">¶</a></dt>
 <dd><p>UnRegisters proxies registered using Register().</p>
 </dd></dl>
 
 <dl class="class">
 <dt id="paraview.servermanager.VectorProperty">
-<em class="property">class </em><code class="descclassname">paraview.servermanager.</code><code class="descname">VectorProperty</code><span class="sig-paren">(</span><em>proxy</em>, <em>smproperty</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/servermanager.html#VectorProperty"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.VectorProperty" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">paraview.servermanager.</code><code class="descname">VectorProperty</code><span class="sig-paren">(</span><em>proxy</em>, <em>smproperty</em><span class="sig-paren">)</span><a class="reference internal" href="modules/paraview/servermanager.html#VectorProperty"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.VectorProperty" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#paraview.servermanager.Property" title="paraview.servermanager.Property"><code class="xref py py-class docutils literal"><span class="pre">paraview.servermanager.Property</span></code></a></p>
 <p>A VectorProperty provides access to one or more values. You can use
 a slice to get one or more property values:
@@ -1782,29 +1782,29 @@ or
 &gt; property[1:3] = (1,2)</p>
 <dl class="method">
 <dt id="paraview.servermanager.VectorProperty.Clear">
-<code class="descname">Clear</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/servermanager.html#VectorProperty.Clear"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.VectorProperty.Clear" title="Permalink to this definition">¶</a></dt>
+<code class="descname">Clear</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="modules/paraview/servermanager.html#VectorProperty.Clear"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.VectorProperty.Clear" title="Permalink to this definition">¶</a></dt>
 <dd><p>Removes all elements.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="paraview.servermanager.VectorProperty.ConvertValue">
-<code class="descname">ConvertValue</code><span class="sig-paren">(</span><em>value</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/servermanager.html#VectorProperty.ConvertValue"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.VectorProperty.ConvertValue" title="Permalink to this definition">¶</a></dt>
+<code class="descname">ConvertValue</code><span class="sig-paren">(</span><em>value</em><span class="sig-paren">)</span><a class="reference internal" href="modules/paraview/servermanager.html#VectorProperty.ConvertValue"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.VectorProperty.ConvertValue" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
 <dt id="paraview.servermanager.VectorProperty.GetData">
-<code class="descname">GetData</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/servermanager.html#VectorProperty.GetData"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.VectorProperty.GetData" title="Permalink to this definition">¶</a></dt>
+<code class="descname">GetData</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="modules/paraview/servermanager.html#VectorProperty.GetData"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.VectorProperty.GetData" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns all elements as either a list or a single value.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="paraview.servermanager.VectorProperty.GetElement">
-<code class="descname">GetElement</code><span class="sig-paren">(</span><em>index</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/servermanager.html#VectorProperty.GetElement"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.VectorProperty.GetElement" title="Permalink to this definition">¶</a></dt>
+<code class="descname">GetElement</code><span class="sig-paren">(</span><em>index</em><span class="sig-paren">)</span><a class="reference internal" href="modules/paraview/servermanager.html#VectorProperty.GetElement"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.VectorProperty.GetElement" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
 <dt id="paraview.servermanager.VectorProperty.SetData">
-<code class="descname">SetData</code><span class="sig-paren">(</span><em>values</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/servermanager.html#VectorProperty.SetData"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.VectorProperty.SetData" title="Permalink to this definition">¶</a></dt>
+<code class="descname">SetData</code><span class="sig-paren">(</span><em>values</em><span class="sig-paren">)</span><a class="reference internal" href="modules/paraview/servermanager.html#VectorProperty.SetData"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.VectorProperty.SetData" title="Permalink to this definition">¶</a></dt>
 <dd><p>Allows setting of all values at once. Requires a single value or
 a iterable object.</p>
 </dd></dl>
@@ -1813,24 +1813,24 @@ a iterable object.</p>
 
 <dl class="class">
 <dt id="paraview.servermanager.ViewLayoutProxy">
-<em class="property">class </em><code class="descclassname">paraview.servermanager.</code><code class="descname">ViewLayoutProxy</code><span class="sig-paren">(</span><em>**args</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/servermanager.html#ViewLayoutProxy"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.ViewLayoutProxy" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">paraview.servermanager.</code><code class="descname">ViewLayoutProxy</code><span class="sig-paren">(</span><em>**args</em><span class="sig-paren">)</span><a class="reference internal" href="modules/paraview/servermanager.html#ViewLayoutProxy"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.ViewLayoutProxy" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#paraview.servermanager.Proxy" title="paraview.servermanager.Proxy"><code class="xref py py-class docutils literal"><span class="pre">paraview.servermanager.Proxy</span></code></a></p>
 <p>Special class to define convenience methods for View Layout</p>
 <dl class="method">
 <dt id="paraview.servermanager.ViewLayoutProxy.AssignView">
-<code class="descname">AssignView</code><span class="sig-paren">(</span><em>location</em>, <em>view</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/servermanager.html#ViewLayoutProxy.AssignView"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.ViewLayoutProxy.AssignView" title="Permalink to this definition">¶</a></dt>
+<code class="descname">AssignView</code><span class="sig-paren">(</span><em>location</em>, <em>view</em><span class="sig-paren">)</span><a class="reference internal" href="modules/paraview/servermanager.html#ViewLayoutProxy.AssignView"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.ViewLayoutProxy.AssignView" title="Permalink to this definition">¶</a></dt>
 <dd><p>Assign a view at a particular location. Note that the view’s position may
 be changed by subsequent Split() calls. Returns true on success.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="paraview.servermanager.ViewLayoutProxy.GetViewLocation">
-<code class="descname">GetViewLocation</code><span class="sig-paren">(</span><em>view</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/servermanager.html#ViewLayoutProxy.GetViewLocation"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.ViewLayoutProxy.GetViewLocation" title="Permalink to this definition">¶</a></dt>
+<code class="descname">GetViewLocation</code><span class="sig-paren">(</span><em>view</em><span class="sig-paren">)</span><a class="reference internal" href="modules/paraview/servermanager.html#ViewLayoutProxy.GetViewLocation"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.ViewLayoutProxy.GetViewLocation" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
 <dt id="paraview.servermanager.ViewLayoutProxy.SplitViewHorizontal">
-<code class="descname">SplitViewHorizontal</code><span class="sig-paren">(</span><em>view</em>, <em>fraction=0.5</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/servermanager.html#ViewLayoutProxy.SplitViewHorizontal"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.ViewLayoutProxy.SplitViewHorizontal" title="Permalink to this definition">¶</a></dt>
+<code class="descname">SplitViewHorizontal</code><span class="sig-paren">(</span><em>view</em>, <em>fraction=0.5</em><span class="sig-paren">)</span><a class="reference internal" href="modules/paraview/servermanager.html#ViewLayoutProxy.SplitViewHorizontal"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.ViewLayoutProxy.SplitViewHorizontal" title="Permalink to this definition">¶</a></dt>
 <dd><p>Split the cell containing the specified view horizontally.
 If no fraction is specified, the frame is split into equal parts.
 On success returns a positve number that identifying the new cell
@@ -1840,7 +1840,7 @@ Return -1 on failure.</p>
 
 <dl class="method">
 <dt id="paraview.servermanager.ViewLayoutProxy.SplitViewVertical">
-<code class="descname">SplitViewVertical</code><span class="sig-paren">(</span><em>view=None</em>, <em>fraction=0.5</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/servermanager.html#ViewLayoutProxy.SplitViewVertical"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.ViewLayoutProxy.SplitViewVertical" title="Permalink to this definition">¶</a></dt>
+<code class="descname">SplitViewVertical</code><span class="sig-paren">(</span><em>view=None</em>, <em>fraction=0.5</em><span class="sig-paren">)</span><a class="reference internal" href="modules/paraview/servermanager.html#ViewLayoutProxy.SplitViewVertical"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.ViewLayoutProxy.SplitViewVertical" title="Permalink to this definition">¶</a></dt>
 <dd><p>Split the cell containing the specified view horizontally.
 If no view is specified, active view is used.
 If no fraction is specified, the frame is split into equal parts.
@@ -1853,14 +1853,14 @@ Return -1 on failure.</p>
 
 <dl class="function">
 <dt id="paraview.servermanager.createModule">
-<code class="descclassname">paraview.servermanager.</code><code class="descname">createModule</code><span class="sig-paren">(</span><em>groupName</em>, <em>mdl=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/servermanager.html#createModule"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.createModule" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">paraview.servermanager.</code><code class="descname">createModule</code><span class="sig-paren">(</span><em>groupName</em>, <em>mdl=None</em><span class="sig-paren">)</span><a class="reference internal" href="modules/paraview/servermanager.html#createModule"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.createModule" title="Permalink to this definition">¶</a></dt>
 <dd><p>Populates a module with proxy classes defined in the given group.
 If mdl is not specified, it also creates the module</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="paraview.servermanager.demo1">
-<code class="descclassname">paraview.servermanager.</code><code class="descname">demo1</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/servermanager.html#demo1"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.demo1" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">paraview.servermanager.</code><code class="descname">demo1</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="modules/paraview/servermanager.html#demo1"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.demo1" title="Permalink to this definition">¶</a></dt>
 <dd><p>This simple demonstration creates a sphere, renders it and delivers
 it to the client using Fetch. It returns a tuple of (data, render
 view)</p>
@@ -1868,7 +1868,7 @@ view)</p>
 
 <dl class="function">
 <dt id="paraview.servermanager.demo2">
-<code class="descclassname">paraview.servermanager.</code><code class="descname">demo2</code><span class="sig-paren">(</span><em>fname='/Users/berk/Work/ParaViewData/Data/disk_out_ref.ex2'</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/servermanager.html#demo2"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.demo2" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">paraview.servermanager.</code><code class="descname">demo2</code><span class="sig-paren">(</span><em>fname='/Users/berk/Work/ParaViewData/Data/disk_out_ref.ex2'</em><span class="sig-paren">)</span><a class="reference internal" href="modules/paraview/servermanager.html#demo2"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.demo2" title="Permalink to this definition">¶</a></dt>
 <dd><p>This method demonstrates the user of a reader, representation and
 view. It also demonstrates how meta-data can be obtained using proxies.
 Make sure to pass the full path to an exodus file. Also note that certain
@@ -1878,7 +1878,7 @@ in ParaViewData. This method returns the render view.</p>
 
 <dl class="function">
 <dt id="paraview.servermanager.demo3">
-<code class="descclassname">paraview.servermanager.</code><code class="descname">demo3</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/servermanager.html#demo3"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.demo3" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">paraview.servermanager.</code><code class="descname">demo3</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="modules/paraview/servermanager.html#demo3"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.demo3" title="Permalink to this definition">¶</a></dt>
 <dd><p>This method demonstrates the use of servermanager with numpy as
 well as pylab for plotting. It creates an artificial data sources,
 probes it with a line, delivers the result to the client using Fetch
@@ -1888,20 +1888,20 @@ It returns a tuple of (data, render view).</p>
 
 <dl class="function">
 <dt id="paraview.servermanager.demo4">
-<code class="descclassname">paraview.servermanager.</code><code class="descname">demo4</code><span class="sig-paren">(</span><em>fname='/Users/berk/Work/ParaViewData/Data/can.ex2'</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/servermanager.html#demo4"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.demo4" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">paraview.servermanager.</code><code class="descname">demo4</code><span class="sig-paren">(</span><em>fname='/Users/berk/Work/ParaViewData/Data/can.ex2'</em><span class="sig-paren">)</span><a class="reference internal" href="modules/paraview/servermanager.html#demo4"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.demo4" title="Permalink to this definition">¶</a></dt>
 <dd><p>This method demonstrates the user of AnimateReader for
 creating animations.</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="paraview.servermanager.demo5">
-<code class="descclassname">paraview.servermanager.</code><code class="descname">demo5</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/servermanager.html#demo5"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.demo5" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">paraview.servermanager.</code><code class="descname">demo5</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="modules/paraview/servermanager.html#demo5"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.demo5" title="Permalink to this definition">¶</a></dt>
 <dd><p>Simple sphere animation</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="paraview.servermanager.updateModules">
-<code class="descclassname">paraview.servermanager.</code><code class="descname">updateModules</code><span class="sig-paren">(</span><em>m</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/servermanager.html#updateModules"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.updateModules" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">paraview.servermanager.</code><code class="descname">updateModules</code><span class="sig-paren">(</span><em>m</em><span class="sig-paren">)</span><a class="reference internal" href="modules/paraview/servermanager.html#updateModules"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.updateModules" title="Permalink to this definition">¶</a></dt>
 <dd><p>Called when a plugin is loaded, this method updates
 the proxy class object in all known modules.</p>
 </dd></dl>
