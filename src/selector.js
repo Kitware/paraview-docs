@@ -1,92 +1,84 @@
-// borrowed from cmake-docs/Utilities/Sphinx/version-switch.js
-(function() {
-  'use strict';
+const urlRegExp = /paraview-docs\/(nightly|(v\d\.\d))\/(cxx|python)\//;
 
-  // Sphinx and Doxygen generated documentation includes jQuery
-  // use current URL pattern for subsitution.
-  var url_re = /Doc\/(Nightly|(v\d\.\d))\/www\/(cxx|py)-doc\//;
-  var flavor = 'cxx';
-  var htmlRoot = null;
-  var all_versions = {
-    'Nightly': 'latest nightly',
-    'v5.4': '5.4',
-  };
+// ----------------------------------------------------------------------------
 
-  function build_select(current_version, current_release) {
-    var buf = ['<select>'];
+function fetchText(url) {
+  return new Promise((resolve, reject) => {
+    const xhr = new XMLHttpRequest();
 
-    Object.keys(all_versions).forEach(function(version) {
-      var title = all_versions[version];
-      buf.push('<option value="' + version + '"');
-      if (version == current_version) {
-        buf.push(' selected="selected">');
-        if (version[0] == 'v') {
-          buf.push(current_release ? current_release : current_version);
+    xhr.onreadystatechange = (e) => {
+      if (xhr.readyState === 4) {
+        if (xhr.status === 200 || xhr.status === 0) {
+          resolve(xhr.response);
         } else {
-          buf.push(title + ' (' + (current_release ? current_release : current_version) + ')');
+          reject(xhr, e);
         }
-      } else {
-        buf.push('>' + title);
       }
-      buf.push('</option>');
-    });
+    };
 
-    buf.push('</select>');
-    return buf.join('');
-  }
-
-  function patch_url(url, new_version) {
-    return url.replace(url_re, 'Doc/' + new_version + '/www/' + flavor + '-doc/');
-  }
-
-  function on_switch() {
-    var selected = $(this).children('option:selected').attr('value');
-
-    var url = window.location.href,
-        new_url = patch_url(url, selected);
-
-    if (new_url != url) {
-      // check beforehand if url exists, else redirect to version's start page
-      $.ajax({
-        url: new_url,
-        success: function() {
-           window.location.href = new_url;
-        },
-        error: function() {
-           window.location.href = (htmlRoot ? htmlRoot : 'https://www.paraview.org/ParaView/Doc/') + selected + '/www/' + flavor + '-doc/';
-        }
-      });
-    }
-  }
-
-  $(document).ready(function() {
-    var match = url_re.exec(window.location.href);
-    if (match) {
-      // set global root, flavor for this docset.
-      // console.log(match[1], match[2], match[3]);
-      flavor = match[3];
-      // get the base URL, including the Doc/ parent dir.
-      htmlRoot = match.input.slice(0, match.index) + 'Doc/';
-      // set by Sphinx in generated documentation:
-      var release = typeof(DOCUMENTATION_OPTIONS) !== "undefined" ? DOCUMENTATION_OPTIONS.VERSION: null;
-      var version = match[1];
-      var select = build_select(version, release);
-      if (flavor === 'py') {
-        $('.wy-side-nav-search li.version').html(select);
-        $('.wy-side-nav-search li.version select').bind('change', on_switch);
-      } else if (flavor === 'cxx') {
-        // create a div, add to header
-        var selectContainer = $('<div/>', {
-          class: 'versionSwitch',
-          css: {
-            display: "inline-block",
-            "margin-left": "15px",
-          }
-        });
-        selectContainer.appendTo('#projectname');
-        selectContainer.append(select);
-        $('#projectname select').bind('change', on_switch);
-      }
-    }
+    // Make request
+    xhr.open('GET', url, true);
+    xhr.responseType = 'text';
+    xhr.send();
   });
-})();
+}
+
+// ----------------------------------------------------------------------------
+
+function buildDropDown(versions, active) {
+  var buf = ['<select>'];
+  versions.forEach(function(version) {
+    buf.push(`<option value="${version}" ${version == active ? 'selected="selected"' : ''}>${version}</option>`);
+  });
+  buf.push('</select>');
+  return buf.join('');
+}
+
+// ----------------------------------------------------------------------------
+
+function patchURL(url, new_version) {
+  const lang = urlRegExp.exec(window.location.href)[3];
+  return url.replace(urlRegExp, `paraview-docs/${new_version}/${lang}/`);
+}
+
+// ----------------------------------------------------------------------------
+
+function onSwitch(event) {
+  var selected = event.target.value;
+  var url = window.location.href;
+  const newURL = patchURL(url, selected);
+
+  if (newURL != url) {
+    window.location.href = newURL;
+  }
+}
+
+// ----------------------------------------------------------------------------
+
+fetchText('/paraview-docs/versions')
+  .then(
+    (txt) => {
+      console.log('fetchText');
+      const versions = txt.split('\n').filter(str => str.length);
+      versions.sort();
+      const match = urlRegExp.exec(window.location.href);
+      if (match) {
+        const activeVersion = match[1];
+        var selectHTML = buildDropDown(versions, activeVersion);
+        if (match[3] === 'python') {
+          const container = document.querySelector('.wy-side-nav-search li.version');
+          container.innerHTML = selectHTML;
+          container.querySelector('select').addEventListener('change', onSwitch);
+        } else if (match[3] === 'cxx') {
+          // create a div, add to header
+          const projectContainer = document.querySelector('#projectname');
+          const selectContainer = document.createElement('div');
+          selectContainer.setAttribute('class', 'versionSwitch');
+          selectContainer.setAttribute('style', 'display: inline-block; margin-left: 15px;');
+          selectContainer.innerHTML = selectHTML;
+
+          projectContainer.appendChild(selectContainer);
+          selectContainer.querySelector('select').addEventListener('change', onSwitch);
+        }
+      }
+    });

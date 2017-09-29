@@ -2,10 +2,10 @@
   "name": "paraview-docs",
   "version": "1.0.0",
   "description": "Version selector for ParaView documentation",
-  "main": "src/index.js",
+  "main": "dist/paraview-version.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack"
+    "build": "webpack",
+    "build:release": "webpack -p"
   },
   "repository": {
     "type": "git",
@@ -17,7 +17,11 @@
     "url": "https://github.com/Kitware/paraview-docs/issues"
   },
   "homepage": "https://github.com/Kitware/paraview-docs#readme",
-  "devDependencies": {
-    "webpack": "3.5.3"
+  "devDependencies": {},
+  "dependencies": {
+    "babel-core": "6.26.0",
+    "babel-loader": "7.1.2",
+    "babel-preset-es2015": "6.24.1",
+    "webpack": "3.6.0"
   }
 }
