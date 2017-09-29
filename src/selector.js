@@ -1,4 +1,5 @@
 const urlRegExp = /paraview-docs\/(nightly|(v\d\.\d))\/(cxx|python)\//;
+const langageMap = { python: 'cxx', cxx: 'python' };
 
 // ----------------------------------------------------------------------------
 
@@ -25,20 +26,27 @@ function fetchText(url) {
 
 // ----------------------------------------------------------------------------
 
-function buildDropDown(versions, active) {
+function buildDropDown(versions, active, otherLang) {
   var buf = ['<select>'];
   versions.forEach(function(version) {
     buf.push(`<option value="${version}" ${version == active ? 'selected="selected"' : ''}>${version}</option>`);
   });
   buf.push('</select>');
+  buf.push(`<img class="toggleLangage" data-url="/paraview-docs/${active}/${otherLang}" src="/paraview-docs/${otherLang}.png" style="width: 40px; height: 20px; display: inline-block; margin: 5px;">`);
   return buf.join('');
 }
 
 // ----------------------------------------------------------------------------
 
-function patchURL(url, new_version) {
-  const lang = urlRegExp.exec(window.location.href)[3];
+function patchURL(url, new_version, new_lang) {
+  const lang = new_lang || urlRegExp.exec(window.location.href)[3];
   return url.replace(urlRegExp, `paraview-docs/${new_version}/${lang}/`);
+}
+
+// ----------------------------------------------------------------------------
+
+function toggleLangage(e) {
+  window.location.href = e.target.dataset.url;
 }
 
 // ----------------------------------------------------------------------------
@@ -63,22 +71,26 @@ fetchText('/paraview-docs/versions')
       versions.sort();
       const match = urlRegExp.exec(window.location.href);
       if (match) {
+        const lang = match[3];
+        const otherLang = langageMap[lang] || 'cxx';
         const activeVersion = match[1];
-        var selectHTML = buildDropDown(versions, activeVersion);
-        if (match[3] === 'python') {
+        var selectHTML = buildDropDown(versions, activeVersion, otherLang);
+        if (lang === 'python') {
           const container = document.querySelector('.wy-side-nav-search li.version');
           container.innerHTML = selectHTML;
           container.querySelector('select').addEventListener('change', onSwitch);
-        } else if (match[3] === 'cxx') {
+          container.querySelector('.toggleLangage').addEventListener('click', toggleLangage);
+        } else if (lang === 'cxx') {
           // create a div, add to header
           const projectContainer = document.querySelector('#projectname');
           const selectContainer = document.createElement('div');
           selectContainer.setAttribute('class', 'versionSwitch');
-          selectContainer.setAttribute('style', 'display: inline-block; margin-left: 15px;');
+          selectContainer.setAttribute('style', 'display: inline-flex; align-items: center; margin-left: 15px;');
           selectContainer.innerHTML = selectHTML;
 
           projectContainer.appendChild(selectContainer);
           selectContainer.querySelector('select').addEventListener('change', onSwitch);
+          selectContainer.querySelector('.toggleLangage').addEventListener('click', toggleLangage);
         }
       }
     });
