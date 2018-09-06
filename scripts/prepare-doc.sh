@@ -43,13 +43,14 @@ rm -rf "${WORK_DIR}/paraview-docs/${VERSION}/python/.doctrees"
 # -----------------------------------------------------------------------------
 # update available `versions` file.
 # -----------------------------------------------------------------------------
-cd ..
-find . -type d -depth 1 | grep -v git | cut -d "/" -f 2 > versions
+cd "${WORK_DIR}/paraview-docs/"
+ls -d */ | cut -d "/"  -f 1 > versions
 
 # -----------------------------------------------------------------------------
 # Commit to server
 # -----------------------------------------------------------------------------
 
 cd "${WORK_DIR}/paraview-docs/"
-git commit -m "Update documentation"
+git add "$VERSION"
+git commit -a -m "Update documentation for version $VERSION"
 git push origin gh-pages
