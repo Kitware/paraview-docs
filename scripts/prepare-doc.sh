@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 PV_SRC=$1
 PV_BUILD=$2
 WORK_DIR=$3
@@ -33,25 +34,15 @@ git checkout gh-pages
 # -----------------------------------------------------------------------------
 # Copy Documentation to target
 # -----------------------------------------------------------------------------
-
 rm -rf "${WORK_DIR}/paraview-docs/${VERSION}"
 mkdir -p "${WORK_DIR}/paraview-docs/${VERSION}"
 cp -r "${PV_BUILD}/www/cxx-doc" "${WORK_DIR}/paraview-docs/${VERSION}/cxx"
 cp -r "${PV_BUILD}/www/py-doc" "${WORK_DIR}/paraview-docs/${VERSION}/python"
-mv "${WORK_DIR}/paraview-docs/${VERSION}/python/_static" "${WORK_DIR}/paraview-docs/${VERSION}/python/static"
-mv "${WORK_DIR}/paraview-docs/${VERSION}/python/_sources" "${WORK_DIR}/paraview-docs/${VERSION}/python/sources"
-mv "${WORK_DIR}/paraview-docs/${VERSION}/python/_modules" "${WORK_DIR}/paraview-docs/${VERSION}/python/modules"
 rm -rf "${WORK_DIR}/paraview-docs/${VERSION}/python/.doctrees"
 
 # -----------------------------------------------------------------------------
-# Patch documentation
+# update available `versions` file.
 # -----------------------------------------------------------------------------
-
-cd "${WORK_DIR}/paraview-docs/${VERSION}"
-find . -type f -name \*.html -exec sed -i '' -e "s:</body>:<script type="text/javascript" src="/paraview-docs/paraview-version.js"></script></body>:g" {} \;
-find ./python -type f -name \*.html -exec sed -i '' -e "s/_static/static/g" {} \;
-find ./python -type f -name \*.html -exec sed -i '' -e "s/_modules/modules/g" {} \;
-find ./python -type f -name \*.html -exec sed -i '' -e "s/_sources/sources/g" {} \;
 cd ..
 find . -type d -depth 1 | grep -v git | cut -d "/" -f 2 > versions
 
