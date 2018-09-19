@@ -1,24 +1,37 @@
-const path = require('path');
-const entry = path.resolve(__dirname, 'src', 'selector.js');
+const path = require("path");
+const entry = path.resolve(__dirname, "src", "selector.js");
 
 module.exports = {
   entry,
   output: {
-    path: path.resolve(__dirname, 'dist'),
-    filename: 'paraview-version.js',
+    path: path.resolve(__dirname, "dist"),
+    filename: "paraview-version.js"
   },
   module: {
     rules: [
       {
         test: entry,
-        loader: 'expose-loader?PV',
+        loader: "expose-loader?PV"
       },
       {
         test: /\.js$/,
-        use: [
-          { loader: 'babel-loader', options: { presets: ['es2015'] } },
-        ],
+        use: [{ loader: "babel-loader", options: { presets: ["es2015"] } }]
       },
-    ],
-  },
+      {
+        test: /\.css$/,
+        use: [{ loader: "style-loader" }, { loader: "css-loader" }]
+      },
+      {
+        test: /\.(png|jpg|gif)$/,
+        use: [
+          {
+            loader: "file-loader",
+            options: {
+              limit: 60000,
+            }
+          }
+        ]
+      }
+    ]
+  }
 };
