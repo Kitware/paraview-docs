@@ -1,1 +1,208 @@
-!function(e){function t(r){if(n[r])return n[r].exports;var o=n[r]={i:r,l:!1,exports:{}};return e[r].call(o.exports,o,o.exports,t),o.l=!0,o.exports}var n={};t.m=e,t.c=n,t.d=function(e,n,r){t.o(e,n)||Object.defineProperty(e,n,{configurable:!1,enumerable:!0,get:r})},t.n=function(e){var n=e&&e.__esModule?function(){return e.default}:function(){return e};return t.d(n,"a",n),n},t.o=function(e,t){return Object.prototype.hasOwnProperty.call(e,t)},t.p="",t(t.s=0)}([function(e,t,n){"use strict";function r(e,t,n){var r=["<select>"];return e.forEach(function(e){r.push('<option value="'+e+'" '+(e==t?'selected="selected"':"")+">"+e+"</option>")}),r.push("</select>"),r.push('<a href="/paraview-docs/'+t+"/"+n+'" style="display: inline-block; margin-left: 10px; color: black;">Go to '+n+" documentation</a>"),r.join("")}function o(e,t,n){var r=n||i.exec(window.location.href)[3];return e.replace(i,"paraview-docs/"+t+"/"+r+"/")}function c(e){var t=e.target.value,n=window.location.href,r=o(n,t);r!=n&&(window.location.href=r)}var i=/paraview-docs\/(nightly|(v\d\.\d))\/(cxx|python)\//,a={python:"cxx",cxx:"python"};(function(e){return new Promise(function(t,n){var r=new XMLHttpRequest;r.onreadystatechange=function(e){4===r.readyState&&(200===r.status||0===r.status?t(r.response):n(r,e))},r.open("GET",e,!0),r.responseType="text",r.send()})})("/paraview-docs/versions").then(function(e){console.log("fetchText");var t=e.split("\n").filter(function(e){return e.length});t.sort();var n=i.exec(window.location.href);if(n){var o=n[3],s=a[o]||"cxx",l=n[1],u=r(t,l,s);if("python"===o){var p=document.querySelector(".wy-side-nav-search li.version");p.innerHTML=u,p.querySelector("select").addEventListener("change",c)}else if("cxx"===o){var f=document.querySelector("#projectname"),d=document.createElement("div");d.setAttribute("class","versionSwitch"),d.setAttribute("style","display: inline-flex; align-items: center; margin-left: 15px;"),d.innerHTML=u,f.appendChild(d),d.querySelector("select").addEventListener("change",c)}}})}]);
+/******/ (function(modules) { // webpackBootstrap
+/******/ 	// The module cache
+/******/ 	var installedModules = {};
+/******/
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/
+/******/ 		// Check if module is in cache
+/******/ 		if(installedModules[moduleId]) {
+/******/ 			return installedModules[moduleId].exports;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = installedModules[moduleId] = {
+/******/ 			i: moduleId,
+/******/ 			l: false,
+/******/ 			exports: {}
+/******/ 		};
+/******/
+/******/ 		// Execute the module function
+/******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
+/******/
+/******/ 		// Flag the module as loaded
+/******/ 		module.l = true;
+/******/
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/
+/******/
+/******/ 	// expose the modules object (__webpack_modules__)
+/******/ 	__webpack_require__.m = modules;
+/******/
+/******/ 	// expose the module cache
+/******/ 	__webpack_require__.c = installedModules;
+/******/
+/******/ 	// define getter function for harmony exports
+/******/ 	__webpack_require__.d = function(exports, name, getter) {
+/******/ 		if(!__webpack_require__.o(exports, name)) {
+/******/ 			Object.defineProperty(exports, name, {
+/******/ 				configurable: false,
+/******/ 				enumerable: true,
+/******/ 				get: getter
+/******/ 			});
+/******/ 		}
+/******/ 	};
+/******/
+/******/ 	// getDefaultExport function for compatibility with non-harmony modules
+/******/ 	__webpack_require__.n = function(module) {
+/******/ 		var getter = module && module.__esModule ?
+/******/ 			function getDefault() { return module['default']; } :
+/******/ 			function getModuleExports() { return module; };
+/******/ 		__webpack_require__.d(getter, 'a', getter);
+/******/ 		return getter;
+/******/ 	};
+/******/
+/******/ 	// Object.prototype.hasOwnProperty.call
+/******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
+/******/
+/******/ 	// __webpack_public_path__
+/******/ 	__webpack_require__.p = "";
+/******/
+/******/ 	// Load entry module and return exports
+/******/ 	return __webpack_require__(__webpack_require__.s = 0);
+/******/ })
+/************************************************************************/
+/******/ ([
+/* 0 */
+/***/ (function(module, exports, __webpack_require__) {
+
+/* WEBPACK VAR INJECTION */(function(global) {module.exports = global["PV"] = __webpack_require__(2);
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
+
+/***/ }),
+/* 1 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
+
+var g;
+
+// This works in non-strict mode
+g = function () {
+	return this;
+}();
+
+try {
+	// This works if eval is allowed (see CSP)
+	g = g || Function("return this")() || (1, eval)("this");
+} catch (e) {
+	// This works if the window reference is available
+	if ((typeof window === "undefined" ? "undefined" : _typeof(window)) === "object") g = window;
+}
+
+// g can still be undefined, but nothing to do about it...
+// We return undefined, instead of nothing here, so it's
+// easier to handle this case. if(!global) { ...}
+
+module.exports = g;
+
+/***/ }),
+/* 2 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.updateDropDown = updateDropDown;
+var urlRegExp = /paraview-docs\/(nightly|(v\d\.\d))\/(cxx|python)\//;
+var langageMap = { python: "cxx", cxx: "python" };
+
+// ----------------------------------------------------------------------------
+
+function fetchText(url) {
+  return new Promise(function (resolve, reject) {
+    var xhr = new XMLHttpRequest();
+
+    xhr.onreadystatechange = function (e) {
+      if (xhr.readyState === 4) {
+        if (xhr.status === 200 || xhr.status === 0) {
+          resolve(xhr.response);
+        } else {
+          reject(xhr, e);
+        }
+      }
+    };
+
+    // Make request
+    xhr.open("GET", url, true);
+    xhr.responseType = "text";
+    xhr.send();
+  });
+}
+
+// ----------------------------------------------------------------------------
+
+function buildDropDown(versions, active, otherLang) {
+  var buf = ["<select>"];
+  versions.forEach(function (version) {
+    buf.push("<option value=\"" + version + "\" " + (version == active ? 'selected="selected"' : "") + ">" + version + "</option>");
+  });
+  buf.push("</select>");
+  buf.push("<a href=\"/paraview-docs/" + active + "/" + otherLang + "\" style=\"display: inline-block; margin-left: 10px; color: black;\">Go to " + otherLang + " documentation</a>");
+  return buf.join("");
+}
+
+// ----------------------------------------------------------------------------
+
+function patchURL(url, new_version, new_lang) {
+  var lang = new_lang || urlRegExp.exec(window.location.href)[3];
+  return url.replace(urlRegExp, "paraview-docs/" + new_version + "/" + lang + "/");
+}
+
+// ----------------------------------------------------------------------------
+
+function onSwitch(event) {
+  var selected = event.target.value;
+  var url = window.location.href;
+  var newURL = patchURL(url, selected);
+
+  if (newURL != url) {
+    window.location.href = newURL;
+  }
+}
+
+// ----------------------------------------------------------------------------
+
+function updateDropDown() {
+  fetchText("/paraview-docs/versions").then(function (txt) {
+    console.log("fetchText");
+    var versions = txt.split("\n").filter(function (str) {
+      return str.length;
+    });
+    versions.sort();
+    var match = urlRegExp.exec(window.location.href);
+    if (match) {
+      var lang = match[3];
+      var otherLang = langageMap[lang] || "cxx";
+      var activeVersion = match[1];
+      var selectHTML = buildDropDown(versions, activeVersion, otherLang);
+      if (lang === "python") {
+        var container = document.querySelector(".wy-side-nav-search li.version");
+        container.innerHTML = selectHTML;
+        container.querySelector("select").addEventListener("change", onSwitch);
+      } else if (lang === "cxx") {
+        // create a div, add to header
+        var projectContainer = document.querySelector("#projectname");
+        var selectContainer = document.createElement("div");
+        selectContainer.setAttribute("class", "versionSwitch");
+        selectContainer.setAttribute("style", "display: inline-flex; align-items: center; margin-left: 15px;");
+        selectContainer.innerHTML = selectHTML;
+
+        projectContainer.appendChild(selectContainer);
+        selectContainer.querySelector("select").addEventListener("change", onSwitch);
+      }
+    }
+  });
+}
+
+setTimeout(updateDropDown, 500);
+
+/***/ })
+/******/ ]);
