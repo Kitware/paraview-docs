@@ -111,7 +111,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.updateDropDown = updateDropDown;
-var urlRegExp = /paraview-docs\/(nightly|(v\d\.\d))\/(cxx|python)\//;
+var urlRegExp = /paraview-docs\/([^\/]+)\/(cxx|python)\//;
 var langageMap = { python: "cxx", cxx: "python" };
 
 // ----------------------------------------------------------------------------
@@ -177,7 +177,9 @@ function updateDropDown() {
       return str.length;
     });
     versions.sort();
+    console.log(versions);
     var match = urlRegExp.exec(window.location.href);
+    console.log(match);
     if (match) {
       var lang = match[3];
       var otherLang = langageMap[lang] || "cxx";
