@@ -9,7 +9,7 @@ const langageMap = { python: "cxx", cxx: "python" };
 
 function patchCPP(selectHTML, toggleLangHTML) {
   const mainContainer = document.querySelector("#titlearea");
-  mainContainer.innerHTML = `<div class="pv-title-cpp title-line"><div class="title-line"><img class="pv-logo" src="paraview-logo.png" />${selectHTML}</div><div class="langSwitch title-line">${toggleLangHTML}</div></div>`;
+  mainContainer.innerHTML = `<div class="pv-title-cpp title-line"><div class="title-line"><img class="pv-logo" src="paraview-logo-small.png" />${selectHTML}</div><div class="langSwitch title-line">${toggleLangHTML}</div></div>`;
   mainContainer.querySelector("select").addEventListener("change", onSwitch);
 }
 
