@@ -56,9 +56,9 @@ function buildDropDown(versions, active, lang, otherLang) {
   var buf = [`<select class="versionSelector ${lang}">`];
   versions.forEach(function(version) {
     buf.push(
-      `<option value="${version}" ${
-        version == active ? 'selected="selected"' : ""
-      }>${version}</option>`
+      `<option value="${version.value}" ${
+        version.value == active ? 'selected="selected"' : ""
+      }>${version.label}</option>`
     );
   });
   buf.push("</select>");
@@ -93,9 +93,8 @@ function onSwitch(event) {
 // ----------------------------------------------------------------------------
 
 export function updateDropDown() {
-  fetchText("/paraview-docs/versions").then(txt => {
-    const versions = txt.split("\n").filter(str => str.length);
-    versions.sort();
+  fetchText("/paraview-docs/versions.json").then(txt => {
+    const versions = JSON.parse(txt);
     const match = urlRegExp.exec(window.location.href);
     if (match) {
       const lang = match[2];
