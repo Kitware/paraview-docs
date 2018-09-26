@@ -1,0 +1,780 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Quick-Start : A Tutorial &mdash; ParaView/Python 5.5.2 documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="_static/pvIcon.ico"/>
+  
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  
+  
+
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:'./',
+        VERSION:'5.5.2',
+        COLLAPSE_INDEX:false,
+        FILE_SUFFIX:'.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="ParaView/Python 5.5.2 documentation" href="index.html"/>
+        <link rel="next" title="paraview Package" href="paraview.html"/>
+        <link rel="prev" title="ParaView’s Python documentation!" href="index.html"/> 
+
+  <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        <ul>
+          <li> <a href="index.html">
+            <img src="_static/paraview-logo-small.png"
+            alt="ParaView/Python"></img></a> </li>
+          <li class="version"> version 5.5.2</li>
+        </ul>
+        <form id ="rtd-search-form" class="wy-form" action="search.html" method="get">
+  <input type="text" name="q" placeholder="Search docs" />
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix">
+        
+        
+            <ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Quick-Start :  A Tutorial</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#getting-started">Getting Started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#creating-a-pipeline">Creating a Pipeline</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#rendering">Rendering</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="paraview.html">The ParaView Python Package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="paraview.html#id1"><code class="docutils literal"><span class="pre">paraview</span></code> Package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.html#modules">Modules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.html#subpackages">Subpackages</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="paraview.simple.html">simple</a></li>
+<li class="toctree-l1"><a class="reference internal" href="paraview.servermanager.html">servermanager</a></li>
+<li class="toctree-l1"><a class="reference internal" href="paraview.coprocessing.html">coprocessing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="paraview.benchmark.html">benchmark</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="paraview.benchmark.html#id1"><code class="docutils literal"><span class="pre">benchmark</span></code> Package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.benchmark.html#modules">Modules</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="paraview.servermanager_proxies.html">Available readers, sources, writers, filters and animation cues</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.AMRConnectivity.html">paraview.simple.AMRConnectivity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.AMRContour.html">paraview.simple.AMRContour</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.AMRCutPlane.html">paraview.simple.AMRCutPlane</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.AMRDualClip.html">paraview.simple.AMRDualClip</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.AMRFragmentIntegration.html">paraview.simple.AMRFragmentIntegration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.AMRFragmentsFilter.html">paraview.simple.AMRFragmentsFilter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.AMRGaussianPulseSource.html">paraview.simple.AMRGaussianPulseSource</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.AMReXParticlesReader.html">paraview.simple.AMReXParticlesReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.AVSUCDReader.html">paraview.simple.AVSUCDReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.AddFieldArrays.html">paraview.simple.AddFieldArrays</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.AggregateDataset.html">paraview.simple.AggregateDataset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.AngularPeriodicFilter.html">paraview.simple.AngularPeriodicFilter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.AnimationCueBase.html">paraview.simple.AnimationCueBase</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.AnimationScene.html">paraview.simple.AnimationScene</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.AnnotateAttributeData.html">paraview.simple.AnnotateAttributeData</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.AnnotateGlobalData.html">paraview.simple.AnnotateGlobalData</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.AnnotateTime.html">paraview.simple.AnnotateTime</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.AnnotateTimeFilter.html">paraview.simple.AnnotateTimeFilter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.AppendArcLength.html">paraview.simple.AppendArcLength</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.AppendAttributes.html">paraview.simple.AppendAttributes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.AppendDatasets.html">paraview.simple.AppendDatasets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.AppendGeometry.html">paraview.simple.AppendGeometry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.AppendReduce.html">paraview.simple.AppendReduce</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.Arrow.html">paraview.simple.Arrow</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.Axes.html">paraview.simple.Axes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.BYUReader.html">paraview.simple.BYUReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.BlockScalars.html">paraview.simple.BlockScalars</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.BlockSelectionSource.html">paraview.simple.BlockSelectionSource</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.BooleanKeyFrame.html">paraview.simple.BooleanKeyFrame</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.BoundingRuler.html">paraview.simple.BoundingRuler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.Box.html">paraview.simple.Box</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.CGNSSeriesReader.html">paraview.simple.CGNSSeriesReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.CMLMoleculeReader.html">paraview.simple.CMLMoleculeReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.CSVReader.html">paraview.simple.CSVReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.CSVWriter.html">paraview.simple.CSVWriter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.CTHSurface.html">paraview.simple.CTHSurface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.Calculator.html">paraview.simple.Calculator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.CameraAnimationCue.html">paraview.simple.CameraAnimationCue</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.CameraKeyFrame.html">paraview.simple.CameraKeyFrame</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.CellCenters.html">paraview.simple.CellCenters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.CellDatatoPointData.html">paraview.simple.CellDatatoPointData</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.CellSize.html">paraview.simple.CellSize</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.CinemaDatabasePipelineObjectFilter.html">paraview.simple.CinemaDatabasePipelineObjectFilter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.CinemaDatabasePipelineObjectReader.html">paraview.simple.CinemaDatabasePipelineObjectReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.Clean.html">paraview.simple.Clean</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.CleanCellstoGrid.html">paraview.simple.CleanCellstoGrid</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.CleantoGrid.html">paraview.simple.CleantoGrid</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.ClientServerMoveData.html">paraview.simple.ClientServerMoveData</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.Clip.html">paraview.simple.Clip</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.ClipClosedSurface.html">paraview.simple.ClipClosedSurface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.ClipGenericDataset.html">paraview.simple.ClipGenericDataset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.ColorByArray.html">paraview.simple.ColorByArray</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.ComparativeAnimationCue.html">paraview.simple.ComparativeAnimationCue</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.CompositeDataIDSelectionSource.html">paraview.simple.CompositeDataIDSelectionSource</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.CompositeKeyFrame.html">paraview.simple.CompositeKeyFrame</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.ComputeDerivatives.html">paraview.simple.ComputeDerivatives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.ComputeQuartiles.html">paraview.simple.ComputeQuartiles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.Cone.html">paraview.simple.Cone</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.Connectivity.html">paraview.simple.Connectivity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.ContingencyStatistics.html">paraview.simple.ContingencyStatistics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.Contour.html">paraview.simple.Contour</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.ContourGenericDataset.html">paraview.simple.ContourGenericDataset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.ConvertAMRdatasettoMultiblock.html">paraview.simple.ConvertAMRdatasettoMultiblock</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.ConvertSelection.html">paraview.simple.ConvertSelection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.CountCellFaces.html">paraview.simple.CountCellFaces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.CountCellVertices.html">paraview.simple.CountCellVertices</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.Crop.html">paraview.simple.Crop</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.Curvature.html">paraview.simple.Curvature</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.Cylinder.html">paraview.simple.Cylinder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.D3.html">paraview.simple.D3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.DEMReader.html">paraview.simple.DEMReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.DICOMReaderSingleFile.html">paraview.simple.DICOMReaderSingleFile</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.DICOMReaderdirectory.html">paraview.simple.DICOMReaderdirectory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.DataObjectGenerator.html">paraview.simple.DataObjectGenerator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.DataSetCSVWriter.html">paraview.simple.DataSetCSVWriter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.DataSetWriter.html">paraview.simple.DataSetWriter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.Decimate.html">paraview.simple.Decimate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.DecimatePolyline.html">paraview.simple.DecimatePolyline</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.Delaunay2D.html">paraview.simple.Delaunay2D</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.Delaunay3D.html">paraview.simple.Delaunay3D</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.DescriptiveStatistics.html">paraview.simple.DescriptiveStatistics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.Disk.html">paraview.simple.Disk</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.DistributedTrivialProducer.html">paraview.simple.DistributedTrivialProducer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.ENZOAMRParticlesReader.html">paraview.simple.ENZOAMRParticlesReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.Elevation.html">paraview.simple.Elevation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.EnSightMasterServerReader.html">paraview.simple.EnSightMasterServerReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.EnSightReader.html">paraview.simple.EnSightReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.EnSightWriter.html">paraview.simple.EnSightWriter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.EnsembleDataReader.html">paraview.simple.EnsembleDataReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.EnvironmentAnnotation.html">paraview.simple.EnvironmentAnnotation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.EnzoReader.html">paraview.simple.EnzoReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.EvenlySpacedStreamlines2D.html">paraview.simple.EvenlySpacedStreamlines2D</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.ExodusIIReader.html">paraview.simple.ExodusIIReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.ExodusIIWriter.html">paraview.simple.ExodusIIWriter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.ExponentialKeyFrame.html">paraview.simple.ExponentialKeyFrame</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.ExtractAMRBlocks.html">paraview.simple.ExtractAMRBlocks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.ExtractAttributes.html">paraview.simple.ExtractAttributes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.ExtractBagPlots.html">paraview.simple.ExtractBagPlots</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.ExtractBlock.html">paraview.simple.ExtractBlock</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.ExtractCTHParts.html">paraview.simple.ExtractCTHParts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.ExtractCellsByRegion.html">paraview.simple.ExtractCellsByRegion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.ExtractComponent.html">paraview.simple.ExtractComponent</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.ExtractEdges.html">paraview.simple.ExtractEdges</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.ExtractGenericDatasetSurface.html">paraview.simple.ExtractGenericDatasetSurface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.ExtractLevel.html">paraview.simple.ExtractLevel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.ExtractLocation.html">paraview.simple.ExtractLocation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.ExtractRegionSurface.html">paraview.simple.ExtractRegionSurface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.ExtractSelection.html">paraview.simple.ExtractSelection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.ExtractSelectioninternal.html">paraview.simple.ExtractSelectioninternal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.ExtractSubset.html">paraview.simple.ExtractSubset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.ExtractSurface.html">paraview.simple.ExtractSurface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.ExtractTimeSteps.html">paraview.simple.ExtractTimeSteps</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.FFTOfSelectionOverTime.html">paraview.simple.FFTOfSelectionOverTime</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.FLASHAMRParticlesReader.html">paraview.simple.FLASHAMRParticlesReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.FacetReader.html">paraview.simple.FacetReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.FeatureEdges.html">paraview.simple.FeatureEdges</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.FlashReader.html">paraview.simple.FlashReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.FlattenFilter.html">paraview.simple.FlattenFilter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.FluentCaseReader.html">paraview.simple.FluentCaseReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.ForceTime.html">paraview.simple.ForceTime</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.FrustumSelectionSource.html">paraview.simple.FrustumSelectionSource</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.GaussianCubeReader.html">paraview.simple.GaussianCubeReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.GaussianResampling.html">paraview.simple.GaussianResampling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.GenerateIds.html">paraview.simple.GenerateIds</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.GenerateQuadraturePoints.html">paraview.simple.GenerateQuadraturePoints</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.GenerateQuadratureSchemeDictionary.html">paraview.simple.GenerateQuadratureSchemeDictionary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.GenerateSurfaceNormals.html">paraview.simple.GenerateSurfaceNormals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.GeometryFilter.html">paraview.simple.GeometryFilter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.GhostCellsGenerator.html">paraview.simple.GhostCellsGenerator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.GlobalIDSelectionSource.html">paraview.simple.GlobalIDSelectionSource</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.Glyph.html">paraview.simple.Glyph</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.GlyphWithCustomSource.html">paraview.simple.GlyphWithCustomSource</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.Gradient.html">paraview.simple.Gradient</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.GradientMagnitude.html">paraview.simple.GradientMagnitude</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.GradientOfUnstructuredDataSet.html">paraview.simple.GradientOfUnstructuredDataSet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.GridConnectivity.html">paraview.simple.GridConnectivity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.GroupDatasets.html">paraview.simple.GroupDatasets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.GroupTimeSteps.html">paraview.simple.GroupTimeSteps</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.H5PartReader.html">paraview.simple.H5PartReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.HierarchicalDataIDSelectionSource.html">paraview.simple.HierarchicalDataIDSelectionSource</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.HierarchicalFractal.html">paraview.simple.HierarchicalFractal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.Histogram.html">paraview.simple.Histogram</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.HoudiniWriter.html">paraview.simple.HoudiniWriter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.HyperTreeGrid.html">paraview.simple.HyperTreeGrid</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.HyperTreeGridContour.html">paraview.simple.HyperTreeGridContour</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.HyperTreeGridReader.html">paraview.simple.HyperTreeGridReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.HyperTreeGridThreshold.html">paraview.simple.HyperTreeGridThreshold</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.HyperTreeGridToUnstructuredGrid.html">paraview.simple.HyperTreeGridToUnstructuredGrid</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.HyperTreeGridWriter.html">paraview.simple.HyperTreeGridWriter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.IDSelectionSource.html">paraview.simple.IDSelectionSource</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.ImageDataToAMR.html">paraview.simple.ImageDataToAMR</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.ImageDataToUniformGrid.html">paraview.simple.ImageDataToUniformGrid</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.ImageDatatoPointSet.html">paraview.simple.ImageDatatoPointSet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.ImageReader.html">paraview.simple.ImageReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.ImageResampling.html">paraview.simple.ImageResampling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.ImageShrink.html">paraview.simple.ImageShrink</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.InSituParticlePath.html">paraview.simple.InSituParticlePath</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.IntegrateVariables.html">paraview.simple.IntegrateVariables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.InterpolatetoQuadraturePoints.html">paraview.simple.InterpolatetoQuadraturePoints</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.IntersectFragments.html">paraview.simple.IntersectFragments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.IsoVolume.html">paraview.simple.IsoVolume</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.JPEGSeriesReader.html">paraview.simple.JPEGSeriesReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.JPEGWriter.html">paraview.simple.JPEGWriter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.JSONImageWriter.html">paraview.simple.JSONImageWriter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.KMeans.html">paraview.simple.KMeans</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.KeyFrame.html">paraview.simple.KeyFrame</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.KeyFrameAnimationCue.html">paraview.simple.KeyFrameAnimationCue</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.LSDynaReader.html">paraview.simple.LSDynaReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.LegacyArbitrarySourceGlyph.html">paraview.simple.LegacyArbitrarySourceGlyph</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.LegacyGlyph.html">paraview.simple.LegacyGlyph</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.LegacyResampleWithDataset.html">paraview.simple.LegacyResampleWithDataset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.LegacyVTKReader.html">paraview.simple.LegacyVTKReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.LevelScalarsNonOverlappingAMR.html">paraview.simple.LevelScalarsNonOverlappingAMR</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.LevelScalarsOverlappingAMR.html">paraview.simple.LevelScalarsOverlappingAMR</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.Line.html">paraview.simple.Line</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.LinearExtrusion.html">paraview.simple.LinearExtrusion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.LocationSelectionSource.html">paraview.simple.LocationSelectionSource</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.LoopSubdivision.html">paraview.simple.LoopSubdivision</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.MFIXReader.html">paraview.simple.MFIXReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.MPIMoveData.html">paraview.simple.MPIMoveData</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.MRCSeriesReader.html">paraview.simple.MRCSeriesReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.Mandelbrot.html">paraview.simple.Mandelbrot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.MaskPoints.html">paraview.simple.MaskPoints</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.MaterialInterfaceFilter.html">paraview.simple.MaterialInterfaceFilter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.Median.html">paraview.simple.Median</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.MergeBlocks.html">paraview.simple.MergeBlocks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.MeshQuality.html">paraview.simple.MeshQuality</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.MetaFileSeriesReader.html">paraview.simple.MetaFileSeriesReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.MetaImageWriter.html">paraview.simple.MetaImageWriter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.MinMax.html">paraview.simple.MinMax</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.MulticorrelativeStatistics.html">paraview.simple.MulticorrelativeStatistics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.NetCDFCAMreader.html">paraview.simple.NetCDFCAMreader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.NetCDFMPASreader.html">paraview.simple.NetCDFMPASreader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.NetCDFPOPreader.html">paraview.simple.NetCDFPOPreader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.NetCDFReader.html">paraview.simple.NetCDFReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.NetworkImageSource.html">paraview.simple.NetworkImageSource</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.NormalGlyphs.html">paraview.simple.NormalGlyphs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.NrrdReader.html">paraview.simple.NrrdReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.OpenFOAMReader.html">paraview.simple.OpenFOAMReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.OrderedCompositeDistributor.html">paraview.simple.OrderedCompositeDistributor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.Outline.html">paraview.simple.Outline</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.Outline.html">paraview.simple.Outline</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.OutlineCorners.html">paraview.simple.OutlineCorners</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.OutlineCurvilinearDataSet.html">paraview.simple.OutlineCurvilinearDataSet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.OutlineGenericDataSet.html">paraview.simple.OutlineGenericDataSet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.PDBReader.html">paraview.simple.PDBReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.PDataSetWriterPolyData.html">paraview.simple.PDataSetWriterPolyData</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.PDataSetWriterUnstructuredGrid.html">paraview.simple.PDataSetWriterUnstructuredGrid</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.PLOT3DMetaFileReader.html">paraview.simple.PLOT3DMetaFileReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.PLOT3DReader.html">paraview.simple.PLOT3DReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.PLYReader.html">paraview.simple.PLYReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.PNGSeriesReader.html">paraview.simple.PNGSeriesReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.PNGWriter.html">paraview.simple.PNGWriter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.PPLYWriter.html">paraview.simple.PPLYWriter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.PSTLWriter.html">paraview.simple.PSTLWriter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.PTSReader.html">paraview.simple.PTSReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.PVDReader.html">paraview.simple.PVDReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.PVTrivialProducer.html">paraview.simple.PVTrivialProducer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.ParallelNetCDFPOPreader.html">paraview.simple.ParallelNetCDFPOPreader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.ParticlePath.html">paraview.simple.ParticlePath</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.ParticleTracer.html">paraview.simple.ParticleTracer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.ParticlesReader.html">paraview.simple.ParticlesReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.PartitionedLegacyVTKReader.html">paraview.simple.PartitionedLegacyVTKReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.PassArrays.html">paraview.simple.PassArrays</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.PassThrough.html">paraview.simple.PassThrough</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.PedigreeIDSelectionSource.html">paraview.simple.PedigreeIDSelectionSource</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.PhastaReader.html">paraview.simple.PhastaReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.Plane.html">paraview.simple.Plane</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.PlotData.html">paraview.simple.PlotData</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.PlotDataOverTime.html">paraview.simple.PlotDataOverTime</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.PlotGlobalVariablesOverTime.html">paraview.simple.PlotGlobalVariablesOverTime</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.PlotOnIntersectionCurves.html">paraview.simple.PlotOnIntersectionCurves</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.PlotOnSortedLines.html">paraview.simple.PlotOnSortedLines</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.PlotOverLine.html">paraview.simple.PlotOverLine</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.PlotSelectionOverTime.html">paraview.simple.PlotSelectionOverTime</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.PointDatasetInterpolator.html">paraview.simple.PointDatasetInterpolator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.PointDatatoCellData.html">paraview.simple.PointDatatoCellData</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.PointInterpolator.html">paraview.simple.PointInterpolator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.PointLineInterpolator.html">paraview.simple.PointLineInterpolator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.PointPlaneInterpolator.html">paraview.simple.PointPlaneInterpolator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.PointSource.html">paraview.simple.PointSource</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.PointVolumeInterpolator.html">paraview.simple.PointVolumeInterpolator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.PolyLineSource.html">paraview.simple.PolyLineSource</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.PolyLineToRectilinearGrid.html">paraview.simple.PolyLineToRectilinearGrid</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.PrincipalComponentAnalysis.html">paraview.simple.PrincipalComponentAnalysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.ProbeLocation.html">paraview.simple.ProbeLocation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.ProcessIdScalars.html">paraview.simple.ProcessIdScalars</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.ProgrammableFilter.html">paraview.simple.ProgrammableFilter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.ProgrammableSource.html">paraview.simple.ProgrammableSource</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.PythonAnimationCue.html">paraview.simple.PythonAnimationCue</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.PythonAnnotation.html">paraview.simple.PythonAnnotation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.PythonCalculator.html">paraview.simple.PythonCalculator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.QuadricClustering.html">paraview.simple.QuadricClustering</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.RTXMLPolyDataReader.html">paraview.simple.RTXMLPolyDataReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.RampKeyFrame.html">paraview.simple.RampKeyFrame</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.RandomAttributes.html">paraview.simple.RandomAttributes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.RandomVectors.html">paraview.simple.RandomVectors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.RectilinearDatatoPointSet.html">paraview.simple.RectilinearDatatoPointSet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.RectilinearGridConnectivity.html">paraview.simple.RectilinearGridConnectivity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.RectilinearGridGeometryFilter.html">paraview.simple.RectilinearGridGeometryFilter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.ReductionFilter.html">paraview.simple.ReductionFilter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.Reflect.html">paraview.simple.Reflect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.RemoteSourceProxy.html">paraview.simple.RemoteSourceProxy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.RemoveGhostInformation.html">paraview.simple.RemoveGhostInformation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.ResampleAMR.html">paraview.simple.ResampleAMR</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.ResampleToImage.html">paraview.simple.ResampleToImage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.ResampleWithDataset.html">paraview.simple.ResampleWithDataset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.RestartedSimExodusReader.html">paraview.simple.RestartedSimExodusReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.RestartedSimSpyPlotReader.html">paraview.simple.RestartedSimSpyPlotReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.Ribbon.html">paraview.simple.Ribbon</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.RotationalExtrusion.html">paraview.simple.RotationalExtrusion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.Ruler.html">paraview.simple.Ruler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.SLACDataReader.html">paraview.simple.SLACDataReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.SLACParticleDataReader.html">paraview.simple.SLACParticleDataReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.SPHDatasetInterpolator.html">paraview.simple.SPHDatasetInterpolator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.SPHInterpolator.html">paraview.simple.SPHInterpolator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.SPHLineInterpolator.html">paraview.simple.SPHLineInterpolator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.SPHPlaneInterpolator.html">paraview.simple.SPHPlaneInterpolator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.SPHVolumeInterpolator.html">paraview.simple.SPHVolumeInterpolator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.STLReader.html">paraview.simple.STLReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.ScatterPlot.html">paraview.simple.ScatterPlot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.SelectionQuerySource.html">paraview.simple.SelectionQuerySource</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.SelectionSourceBase.html">paraview.simple.SelectionSourceBase</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.Shrink.html">paraview.simple.Shrink</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.SinusoidKeyFrame.html">paraview.simple.SinusoidKeyFrame</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.Slice.html">paraview.simple.Slice</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.SliceAMRdata.html">paraview.simple.SliceAMRdata</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.SliceAlongPolyLine.html">paraview.simple.SliceAlongPolyLine</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.SliceGenericDataset.html">paraview.simple.SliceGenericDataset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.SliceWithPlane.html">paraview.simple.SliceWithPlane</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.Slicedemanddrivencomposite.html">paraview.simple.Slicedemanddrivencomposite</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.Smooth.html">paraview.simple.Smooth</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.Sphere.html">paraview.simple.Sphere</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.SplineSource.html">paraview.simple.SplineSource</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.SpyPlotReader.html">paraview.simple.SpyPlotReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.StreakLine.html">paraview.simple.StreakLine</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.StreamTracer.html">paraview.simple.StreamTracer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.StreamTracerForGenericDatasets.html">paraview.simple.StreamTracerForGenericDatasets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.StreamTracerWithCustomSource.html">paraview.simple.StreamTracerWithCustomSource</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.Subdivide.html">paraview.simple.Subdivide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.Superquadric.html">paraview.simple.Superquadric</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.SurfaceFlow.html">paraview.simple.SurfaceFlow</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.SurfaceVectors.html">paraview.simple.SurfaceVectors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.SynchronizeTime.html">paraview.simple.SynchronizeTime</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.TIFFReader.html">paraview.simple.TIFFReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.TIFFSeriesReader.html">paraview.simple.TIFFSeriesReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.TIFFWriter.html">paraview.simple.TIFFWriter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.TRUCHASReader.html">paraview.simple.TRUCHASReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.TableFFT.html">paraview.simple.TableFFT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.TableToPoints.html">paraview.simple.TableToPoints</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.TableToStructuredGrid.html">paraview.simple.TableToStructuredGrid</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.TecplotReader.html">paraview.simple.TecplotReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.TecplotTableReader.html">paraview.simple.TecplotTableReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.TemporalArrayOperator.html">paraview.simple.TemporalArrayOperator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.TemporalCache.html">paraview.simple.TemporalCache</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.TemporalInterpolator.html">paraview.simple.TemporalInterpolator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.TemporalParticlesToPathlines.html">paraview.simple.TemporalParticlesToPathlines</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.TemporalShiftScale.html">paraview.simple.TemporalShiftScale</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.TemporalSnaptoTimeStep.html">paraview.simple.TemporalSnaptoTimeStep</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.TemporalStatistics.html">paraview.simple.TemporalStatistics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.TensorGlyph.html">paraview.simple.TensorGlyph</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.Tessellate.html">paraview.simple.Tessellate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.TessellateGenericDataset.html">paraview.simple.TessellateGenericDataset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.Test3DWidget.html">paraview.simple.Test3DWidget</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.Tetrahedralize.html">paraview.simple.Tetrahedralize</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.Text.html">paraview.simple.Text</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.TextureMaptoCylinder.html">paraview.simple.TextureMaptoCylinder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.TextureMaptoPlane.html">paraview.simple.TextureMaptoPlane</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.TextureMaptoSphere.html">paraview.simple.TextureMaptoSphere</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.Threshold.html">paraview.simple.Threshold</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.ThresholdSelectionSource.html">paraview.simple.ThresholdSelectionSource</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.TimeAnimationCue.html">paraview.simple.TimeAnimationCue</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.TimeSource.html">paraview.simple.TimeSource</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.TimeStepProgressBar.html">paraview.simple.TimeStepProgressBar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.Transform.html">paraview.simple.Transform</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.TransposeTable.html">paraview.simple.TransposeTable</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.TriangleStrips.html">paraview.simple.TriangleStrips</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.Triangulate.html">paraview.simple.Triangulate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.TrivialProducer.html">paraview.simple.TrivialProducer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.Tube.html">paraview.simple.Tube</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.UnstructuredCellTypes.html">paraview.simple.UnstructuredCellTypes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.UnstructuredNetCDFPOPreader.html">paraview.simple.UnstructuredNetCDFPOPreader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.VASPAnimationReader.html">paraview.simple.VASPAnimationReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.VASPTessellationReader.html">paraview.simple.VASPTessellationReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.VPICReader.html">paraview.simple.VPICReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.VRMLReader.html">paraview.simple.VRMLReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.WarpByScalar.html">paraview.simple.WarpByScalar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.WarpByVector.html">paraview.simple.WarpByVector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.WavefrontOBJReader.html">paraview.simple.WavefrontOBJReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.Wavelet.html">paraview.simple.Wavelet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.WindBladereader.html">paraview.simple.WindBladereader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.XDMFReader.html">paraview.simple.XDMFReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.XMLDataObjectWriterBase.html">paraview.simple.XMLDataObjectWriterBase</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.XMLHierarchicalBoxDataWriter.html">paraview.simple.XMLHierarchicalBoxDataWriter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.XMLHierarchicalBoxDatareader.html">paraview.simple.XMLHierarchicalBoxDatareader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.XMLImageDataReader.html">paraview.simple.XMLImageDataReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.XMLImageDataWriter.html">paraview.simple.XMLImageDataWriter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.XMLMultiBlockDataReader.html">paraview.simple.XMLMultiBlockDataReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.XMLMultiBlockDataWriter.html">paraview.simple.XMLMultiBlockDataWriter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.XMLPImageDataWriter.html">paraview.simple.XMLPImageDataWriter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.XMLPPolyDataWriter.html">paraview.simple.XMLPPolyDataWriter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.XMLPRectilinearGridWriter.html">paraview.simple.XMLPRectilinearGridWriter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.XMLPStructuredGridWriter.html">paraview.simple.XMLPStructuredGridWriter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.XMLPTableWriter.html">paraview.simple.XMLPTableWriter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.XMLPUnstructuredGridWriter.html">paraview.simple.XMLPUnstructuredGridWriter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.XMLPVAnimationWriter.html">paraview.simple.XMLPVAnimationWriter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.XMLPVDWriter.html">paraview.simple.XMLPVDWriter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.XMLPartitionedImageDataReader.html">paraview.simple.XMLPartitionedImageDataReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.XMLPartitionedPolydataReader.html">paraview.simple.XMLPartitionedPolydataReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.XMLPartitionedRectilinearGridReader.html">paraview.simple.XMLPartitionedRectilinearGridReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.XMLPartitionedStructuredGridReader.html">paraview.simple.XMLPartitionedStructuredGridReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.XMLPartitionedTableReader.html">paraview.simple.XMLPartitionedTableReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.XMLPartitionedUnstructuredGridReader.html">paraview.simple.XMLPartitionedUnstructuredGridReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.XMLPolyDataReader.html">paraview.simple.XMLPolyDataReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.XMLPolyDataWriter.html">paraview.simple.XMLPolyDataWriter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.XMLRectilinearGridReader.html">paraview.simple.XMLRectilinearGridReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.XMLRectilinearGridWriter.html">paraview.simple.XMLRectilinearGridWriter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.XMLStructuredGridReader.html">paraview.simple.XMLStructuredGridReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.XMLStructuredGridWriter.html">paraview.simple.XMLStructuredGridWriter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.XMLTableReader.html">paraview.simple.XMLTableReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.XMLTableWriter.html">paraview.simple.XMLTableWriter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.XMLUniformGridAMRReader.html">paraview.simple.XMLUniformGridAMRReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.XMLUniformGridAMRWriter.html">paraview.simple.XMLUniformGridAMRWriter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.XMLUnstructuredGridReader.html">paraview.simple.XMLUnstructuredGridReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.XMLUnstructuredGridWriter.html">paraview.simple.XMLUnstructuredGridWriter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.XYZReader.html">paraview.simple.XYZReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.XdmfWriter.html">paraview.simple.XdmfWriter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.YoungsMaterialInterface.html">paraview.simple.YoungsMaterialInterface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.a2DGlyph.html">paraview.simple.a2DGlyph</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.a3DText.html">paraview.simple.a3DText</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.plyreader.html">paraview.simple.plyreader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.proSTARSTARCDReader.html">paraview.simple.proSTARSTARCDReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.spcthhistoryreader.html">paraview.simple.spcthhistoryreader</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="python-2-vs-3.html">Python Version 2 versus 3</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="python-2-vs-3.html#print-is-a-function"><code class="docutils literal"><span class="pre">print</span></code> is a function</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python-2-vs-3.html#exceptions">Exceptions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python-2-vs-3.html#iterables">Iterables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python-2-vs-3.html#iterators-not-lists">Iterators, not lists</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python-2-vs-3.html#submodule-import">Submodule import</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python-2-vs-3.html#new-modules">New modules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python-2-vs-3.html#references">References</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="api-changes.html">API Changes between ParaView versions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="api-changes.html#changes-in-5-5">Changes in 5.5</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-changes.html#changes-in-5-1">Changes in 5.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-changes.html#changes-in-4-2">Changes in 4.2</a></li>
+</ul>
+</li>
+</ul>
+
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top">
+        <i data-toggle="wy-nav-top" class="icon icon-reorder"></i>
+        <a href="index.html">ParaView/Python</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <ul class="wy-breadcrumbs">
+  <li><a href="index.html">Docs</a> &raquo;</li>
+  <a href="genindex.html" class="float-right">Index</a> 
+  <li><a href="">Quick-Start :  A Tutorial</a></li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+</ul>
+<hr/>
+          
+  <div class="section" id="quick-start-a-tutorial">
+<h1>Quick-Start :  A Tutorial<a class="headerlink" href="#quick-start-a-tutorial" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="getting-started">
+<h2>Getting Started<a class="headerlink" href="#getting-started" title="Permalink to this headline">¶</a></h2>
+<p>To start interacting with the Server Manager, you have to load the “simple”
+module. This module can be loaded from any python interpreter as long as the
+necessary files are in PYTHONPATH. These files are the shared libraries located
+in the paraview binary directory and python modules in the paraview directory:
+paraview/simple.py, paraview/vtk.py etc. You can also use either pvpython (for
+stand-alone or client/server execution), pvbatch (for non-interactive,
+distributed batch processing) or the python shell invoked from Tools|Python
+Shell using the ParaView client to execute Python scripts. You do not have to
+set PYTHONPATH when using these.</p>
+<p>This tutorial will be using the python integrated development environment IDLE.
+PYTHONPATH is set to the following:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">Users</span><span class="o">/</span><span class="n">berk</span><span class="o">/</span><span class="n">work</span><span class="o">/</span><span class="n">paraview3</span><span class="o">-</span><span class="n">build</span><span class="o">/</span><span class="n">lib</span><span class="p">:</span><span class="o">/</span><span class="n">Users</span><span class="o">/</span><span class="n">berk</span><span class="o">/</span><span class="n">work</span><span class="o">/</span><span class="n">paraview3</span><span class="o">-</span><span class="n">build</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">site</span><span class="o">-</span><span class="n">packages</span>
+</pre></div>
+</div>
+<p>You may also need to set your path variable for searching for shared libraries
+(i.e. PATH on Windows and LD_LIBRARY_PATH on Unix/Linux/Mac). The corresponding
+LD_LIBRARY_PATH would be:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">Users</span><span class="o">/</span><span class="n">berk</span><span class="o">/</span><span class="n">work</span><span class="o">/</span><span class="n">paraview3</span><span class="o">-</span><span class="n">build</span><span class="o">/</span><span class="n">lib</span> <span class="p">(</span><span class="o">/</span><span class="n">Users</span><span class="o">/</span><span class="n">berk</span><span class="o">/</span><span class="n">work</span><span class="o">/</span><span class="n">paraview3</span><span class="o">-</span><span class="n">build</span><span class="o">/</span><span class="nb">bin</span> <span class="k">for</span> <span class="n">versions</span> <span class="n">before</span> <span class="mf">3.98</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>(Under WindowsXP for a debug build of paraview, set both PATH and PYTHONPATH
+environment variables to include ${BUILD}/lib/Debug and
+${BUILD}/lib/site-packages to make it work.)</p>
+<p>When using a Mac to use the build tree in IDLE, start by loading the
+servermanager module:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">paraview.simple</span> <span class="k">import</span> <span class="o">*</span>
+</pre></div>
+</div>
+<p>Importing the paraview module directly is deprecated, although still
+possible for backwards compatibility. This document refers to the simple module
+alone.</p>
+<p>In this example, we will use ParaView in the stand-alone mode. Connecting to a
+ParaView server running on a cluster is covered later in this document.</p>
+<div class="section" id="tab-completion">
+<h3>Tab-completion<a class="headerlink" href="#tab-completion" title="Permalink to this headline">¶</a></h3>
+<p>The Python shell in the ParaView Qt client provides auto-completion. One can
+also use IDLE, for example to enable auto-completion. To use auto-completion in
+pvpython, one can use the tips provided at <a class="reference external" href="http://www.razorvine.net/blog/user/irmen/article/2004-11-22/17">TabCompletion</a>.</p>
+<p>In summary, you need to create a variable PYTHONSTARTUP as (in bash):</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">export</span> <span class="n">PYTHONSTARTUP</span> <span class="o">=</span> <span class="o">/</span><span class="n">home</span><span class="o">/&lt;</span><span class="n">username</span><span class="o">&gt;/.</span><span class="n">pythonrc</span>
+</pre></div>
+</div>
+<p>where .pythonrc is:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># ~/.pythonrc</span>
+<span class="c1"># enable syntax completion</span>
+<span class="k">try</span><span class="p">:</span>
+    <span class="kn">import</span> <span class="nn">readline</span>
+<span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
+    <span class="nb">print</span> <span class="s2">&quot;Module readline not available.&quot;</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="kn">import</span> <span class="nn">rlcompleter</span>
+    <span class="n">readline</span><span class="o">.</span><span class="n">parse_and_bind</span><span class="p">(</span><span class="s2">&quot;tab: complete&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>That is it. Tab completion works just as in any other shell.</p>
+</div>
+</div>
+<div class="section" id="creating-a-pipeline">
+<h2>Creating a Pipeline<a class="headerlink" href="#creating-a-pipeline" title="Permalink to this headline">¶</a></h2>
+<p>The simple module contains many functions to instantiate sources, filters, and
+other related objects. You can get a list of objects this module can create from
+ParaView’s online help (from help menu or here:
+<a class="reference external" href="http://paraview.org/OnlineHelpCurrent/">http://paraview.org/OnlineHelpCurrent/</a>)</p>
+<p>Start by creating a Cone object:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">cone</span> <span class="o">=</span> <span class="n">Cone</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>You can get some documentation about the cone object using help().</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">help</span><span class="p">(</span><span class="n">cone</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Help on Cone in module paraview.servermanager object:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Cone</span><span class="p">(</span><span class="n">SourceProxy</span><span class="p">)</span>
+ <span class="o">|</span>  <span class="n">The</span> <span class="n">Cone</span> <span class="n">source</span> <span class="n">can</span> <span class="n">be</span> <span class="n">used</span> <span class="n">to</span> <span class="n">add</span> <span class="n">a</span> <span class="n">polygonal</span> <span class="n">cone</span> <span class="n">to</span> <span class="n">the</span> <span class="mi">3</span><span class="n">D</span> <span class="n">scene</span><span class="o">.</span> <span class="n">The</span> <span class="n">output</span> <span class="n">of</span> <span class="n">the</span>
+ <span class="n">Cone</span> <span class="n">source</span> <span class="ow">is</span> <span class="n">polygonal</span> <span class="n">data</span><span class="o">.</span>
+ <span class="o">|</span>
+ <span class="o">|</span>  <span class="n">Method</span> <span class="n">resolution</span> <span class="n">order</span><span class="p">:</span>
+ <span class="o">|</span>      <span class="n">Cone</span>
+ <span class="o">|</span>      <span class="n">SourceProxy</span>
+ <span class="o">|</span>      <span class="n">Proxy</span>
+ <span class="o">|</span>      <span class="n">__builtin__</span><span class="o">.</span><span class="n">object</span>
+ <span class="o">|</span>
+ <span class="o">|</span>  <span class="n">Methods</span> <span class="n">defined</span> <span class="n">here</span><span class="p">:</span>
+ <span class="o">|</span>
+ <span class="o">|</span>  <span class="n">Initialize</span> <span class="o">=</span> <span class="n">aInitialize</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">connection</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+ <span class="o">|</span>
+ <span class="o">|</span>  <span class="o">----------------------------------------------------------------------</span>
+ <span class="o">|</span>  <span class="n">Data</span> <span class="n">descriptors</span> <span class="n">defined</span> <span class="n">here</span><span class="p">:</span>
+ <span class="o">|</span>
+ <span class="o">|</span>  <span class="n">Capping</span>
+ <span class="o">|</span>      <span class="n">If</span> <span class="n">this</span> <span class="nb">property</span> <span class="ow">is</span> <span class="nb">set</span> <span class="n">to</span> <span class="mi">1</span><span class="p">,</span> <span class="n">the</span> <span class="n">base</span> <span class="n">of</span> <span class="n">the</span> <span class="n">cone</span> <span class="n">will</span> <span class="n">be</span> <span class="n">capped</span> <span class="k">with</span> <span class="n">a</span> <span class="n">filled</span> <span class="n">polygon</span><span class="o">.</span>
+ <span class="n">Otherwise</span><span class="p">,</span> <span class="n">the</span> <span class="n">base</span> <span class="n">of</span> <span class="n">the</span> <span class="n">cone</span> <span class="n">will</span> <span class="n">be</span> <span class="nb">open</span><span class="o">.</span>
+ <span class="o">|</span>
+ <span class="o">|</span>  <span class="n">Center</span>
+ <span class="o">|</span>      <span class="n">This</span> <span class="nb">property</span> <span class="n">specifies</span> <span class="n">the</span> <span class="n">center</span> <span class="n">of</span> <span class="n">the</span> <span class="n">cone</span><span class="o">.</span>
+ <span class="o">|</span>
+ <span class="o">|</span>  <span class="n">Direction</span>
+ <span class="o">|</span>      <span class="n">Set</span> <span class="n">the</span> <span class="n">orientation</span> <span class="n">vector</span> <span class="n">of</span> <span class="n">the</span> <span class="n">cone</span><span class="o">.</span>  <span class="n">The</span> <span class="n">vector</span> <span class="n">does</span> <span class="ow">not</span> <span class="n">have</span> <span class="n">to</span> <span class="n">be</span> <span class="n">normalized</span><span class="o">.</span>  <span class="n">The</span> <span class="n">cone</span>
+ <span class="n">will</span> <span class="n">point</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">direction</span> <span class="n">specified</span><span class="o">.</span>
+ <span class="o">|</span>
+ <span class="o">|</span>  <span class="n">Height</span>
+ <span class="o">|</span>      <span class="n">This</span> <span class="nb">property</span> <span class="n">specifies</span> <span class="n">the</span> <span class="n">height</span> <span class="n">of</span> <span class="n">the</span> <span class="n">cone</span><span class="o">.</span>
+ <span class="o">|</span>
+ <span class="o">|</span>  <span class="n">Radius</span>
+ <span class="o">|</span>      <span class="n">This</span> <span class="nb">property</span> <span class="n">specifies</span> <span class="n">the</span> <span class="n">radius</span> <span class="n">of</span> <span class="n">the</span> <span class="n">base</span> <span class="n">of</span> <span class="n">the</span> <span class="n">cone</span><span class="o">.</span>
+ <span class="o">|</span>
+ <span class="o">|</span>  <span class="n">Resolution</span>
+ <span class="o">|</span>      <span class="n">This</span> <span class="nb">property</span> <span class="n">indicates</span> <span class="n">the</span> <span class="n">number</span> <span class="n">of</span> <span class="n">divisions</span> <span class="n">around</span> <span class="n">the</span> <span class="n">cone</span><span class="o">.</span> <span class="n">The</span> <span class="n">higher</span> <span class="n">this</span> <span class="n">number</span><span class="p">,</span> <span class="n">the</span>
+ <span class="n">closer</span> <span class="n">the</span> <span class="n">polygonal</span> <span class="n">approximation</span> <span class="n">will</span> <span class="n">come</span> <span class="n">to</span> <span class="n">representing</span> <span class="n">a</span> <span class="n">cone</span><span class="p">,</span> <span class="ow">and</span> <span class="n">the</span> <span class="n">more</span> <span class="n">polygons</span> <span class="n">it</span> <span class="n">will</span>
+ <span class="n">contain</span><span class="o">.</span>
+ <span class="o">|</span>
+ <span class="o">|</span> <span class="o">...</span>
+</pre></div>
+</div>
+<p>This gives you a full list of properties. Check what the resolution property is set to:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">cone</span><span class="o">.</span><span class="n">Resolution</span>
+<span class="go">6</span>
+</pre></div>
+</div>
+<p>You can increase the resolution as shown below:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">cone</span><span class="o">.</span><span class="n">Resolution</span> <span class="o">=</span> <span class="mi">32</span>
+</pre></div>
+</div>
+<p>Alternatively, we could have specified a value for resolution when creating the object:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">cone</span> <span class="o">=</span> <span class="n">Cone</span><span class="p">(</span><span class="n">Resolution</span><span class="o">=</span><span class="mi">32</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>You can assign values to any number of properties during construction using
+keyword arguments: You can also change the center.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">cone</span><span class="o">.</span><span class="n">Center</span>
+<span class="go">[0.0, 0.0, 0.0]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">cone</span><span class="o">.</span><span class="n">Center</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Vector properties such as this one support setting and retrieval of individual elements, as well as slices (ranges of elements):</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">cone</span><span class="o">.</span><span class="n">Center</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">cone</span><span class="o">.</span><span class="n">Center</span>
+<span class="go">[2.0, 4.0, 3.0]</span>
+</pre></div>
+</div>
+<p>Next, apply a shrink filter to the cone:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">shrinkFilter</span> <span class="o">=</span> <span class="n">Shrink</span><span class="p">(</span><span class="n">cone</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">shrinkFilter</span><span class="o">.</span><span class="n">Input</span>
+<span class="go">&lt;paraview.servermanager.Cone object at 0xaf701f0&gt;</span>
+</pre></div>
+</div>
+<p>At this point, if you are interested in getting some information about the
+output of the shrink filter, you can force it to update (which will also cause
+the execution of the cone source). For details about VTK’s demand-driven
+pipeline model used by ParaView, see one of the VTK books.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">shrinkFilter</span><span class="o">.</span><span class="n">UpdatePipeline</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">shrinkFilter</span><span class="o">.</span><span class="n">GetDataInformation</span><span class="p">()</span><span class="o">.</span><span class="n">GetNumberOfCells</span><span class="p">()</span>
+<span class="go">33L</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">shrinkFilter</span><span class="o">.</span><span class="n">GetDataInformation</span><span class="p">()</span><span class="o">.</span><span class="n">GetNumberOfPoints</span><span class="p">()</span>
+<span class="go">128L</span>
+</pre></div>
+</div>
+<p>We will cover the DataInformation class in more detail later.</p>
+</div>
+<div class="section" id="rendering">
+<h2>Rendering<a class="headerlink" href="#rendering" title="Permalink to this headline">¶</a></h2>
+<p>Now that you’ve created a small pipeline, render the result. You will need two
+objects to render the output of an algorithm in a scene: a representation and a
+view. A representation is responsible for taking a data object and rendering it
+in a view. A view is responsible for managing a render context and a collection
+of representations. Simple creates a view by default. The representation object
+is created automatically with Show().</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">Show</span><span class="p">(</span><span class="n">shrinkFilter</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">Render</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>In this example the value returned by Cone() and Shrink() was assigned
+to Python variables and used to build the pipeline. ParaView keeps track of the
+last pipeline object created by the user. This allows you to accomplish
+everything you did above using the following code:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">paraview.simple</span> <span class="k">import</span> <span class="o">*</span>
+<span class="go"># Create a cone and assign it as the active object</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">Cone</span><span class="p">()</span>
+<span class="go">&lt;paraview.servermanager.Cone object at 0x2910f0&gt;</span>
+<span class="go"># Set a property of the active object</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">SetProperties</span><span class="p">(</span><span class="n">Resolution</span><span class="o">=</span><span class="mi">32</span><span class="p">)</span>
+<span class="go"># Apply the shrink filter to the active object</span>
+<span class="go"># Shrink is now active</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">Shrink</span><span class="p">()</span>
+<span class="go">&lt;paraview.servermanager.Shrink object at 0xaf64050&gt;</span>
+<span class="go"># Show shrink</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">Show</span><span class="p">()</span>
+<span class="go">&lt;paraview.servermanager.UnstructuredGridRepresentation object at 0xaf57f90&gt;</span>
+<span class="go"># Render the active view</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">Render</span><span class="p">()</span>
+<span class="go">&lt;paraview.servermanager.RenderView object at 0xaf57ff0&gt;</span>
+</pre></div>
+</div>
+<p>This was a quick introduction to the paraview.simple module. In the following
+sections, we will discuss the Python interface in more detail and introduce more
+advanced concepts.</p>
+</div>
+</div>
+
+
+          <footer>
+  
+    <div class="rst-footer-buttons">
+      
+        <a href="paraview.html" class="btn btn-neutral float-right" title="paraview Package"/>Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral" title="ParaView’s Python documentation!"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <p>
+      &copy; Copyright 2013, Kitware, Inc..
+  </p>
+
+  <a href="https://www.github.com/snide/sphinx_rtd_theme">Sphinx theme</a> provided by <a href="http://readthedocs.org">Read the Docs</a>
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+</body>
+</html>
