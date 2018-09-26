@@ -1,0 +1,1103 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>paraview._backwardscompatibilityhelper &mdash; ParaView/Python 5.6.0-RC1-93-ge1ecf860d6 documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/pvIcon.ico"/>
+  
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  
+  
+
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:'../../',
+        VERSION:'5.6.0-RC1-93-ge1ecf860d6',
+        COLLAPSE_INDEX:false,
+        FILE_SUFFIX:'.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+        <link rel="index" title="Index"
+              href="../../genindex.html"/>
+        <link rel="search" title="Search" href="../../search.html"/>
+    <link rel="top" title="ParaView/Python 5.6.0-RC1-93-ge1ecf860d6 documentation" href="../../index.html"/>
+        <link rel="up" title="Module code" href="../index.html"/> 
+
+  <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        <ul>
+          <li> <a href="../../index.html">
+            <img src="../../_static/paraview-logo-small.png"
+            alt="ParaView/Python"></img></a> </li>
+          <li class="version"> version 5.6.0-RC1-93-ge1ecf860d6</li>
+        </ul>
+        <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+  <input type="text" name="q" placeholder="Search docs" />
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix">
+        
+        
+            <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../quick-start.html">Quick-Start :  A Tutorial</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../quick-start.html#getting-started">Getting Started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../quick-start.html#creating-a-pipeline">Creating a Pipeline</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../quick-start.html#rendering">Rendering</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../paraview.html">The ParaView Python Package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.html#id1"><code class="docutils literal"><span class="pre">paraview</span></code> Package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.html#modules">Modules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.html#subpackages">Subpackages</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../paraview.simple.html">simple</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../paraview.servermanager.html">servermanager</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../paraview.coprocessing.html">coprocessing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../paraview.benchmark.html">benchmark</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.benchmark.html#id1"><code class="docutils literal"><span class="pre">benchmark</span></code> Package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.benchmark.html#modules">Modules</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../paraview.servermanager_proxies.html">Available readers, sources, writers, filters and animation cues</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.AMRConnectivity.html">paraview.simple.AMRConnectivity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.AMRContour.html">paraview.simple.AMRContour</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.AMRCutPlane.html">paraview.simple.AMRCutPlane</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.AMRDualClip.html">paraview.simple.AMRDualClip</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.AMRFragmentIntegration.html">paraview.simple.AMRFragmentIntegration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.AMRFragmentsFilter.html">paraview.simple.AMRFragmentsFilter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.AMRGaussianPulseSource.html">paraview.simple.AMRGaussianPulseSource</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.AMReXParticlesReader.html">paraview.simple.AMReXParticlesReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.AVSUCDReader.html">paraview.simple.AVSUCDReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.AddFieldArrays.html">paraview.simple.AddFieldArrays</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.AggregateDataset.html">paraview.simple.AggregateDataset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.AngularPeriodicFilter.html">paraview.simple.AngularPeriodicFilter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.AnimationCueBase.html">paraview.simple.AnimationCueBase</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.AnimationScene.html">paraview.simple.AnimationScene</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.AnnotateAttributeData.html">paraview.simple.AnnotateAttributeData</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.AnnotateGlobalData.html">paraview.simple.AnnotateGlobalData</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.AnnotateTime.html">paraview.simple.AnnotateTime</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.AnnotateTimeFilter.html">paraview.simple.AnnotateTimeFilter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.AppendArcLength.html">paraview.simple.AppendArcLength</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.AppendAttributes.html">paraview.simple.AppendAttributes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.AppendDatasets.html">paraview.simple.AppendDatasets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.AppendGeometry.html">paraview.simple.AppendGeometry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.AppendMolecule.html">paraview.simple.AppendMolecule</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.AppendReduce.html">paraview.simple.AppendReduce</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.Arrow.html">paraview.simple.Arrow</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.Axes.html">paraview.simple.Axes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.BYUReader.html">paraview.simple.BYUReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.BlockScalars.html">paraview.simple.BlockScalars</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.BlockSelectionSource.html">paraview.simple.BlockSelectionSource</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.BooleanKeyFrame.html">paraview.simple.BooleanKeyFrame</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.BoundingRuler.html">paraview.simple.BoundingRuler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.Box.html">paraview.simple.Box</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.CGNSSeriesReader.html">paraview.simple.CGNSSeriesReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.CGNSWriter.html">paraview.simple.CGNSWriter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.CMLMoleculeReader.html">paraview.simple.CMLMoleculeReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.CSVReader.html">paraview.simple.CSVReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.CSVWriter.html">paraview.simple.CSVWriter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.CTHSurface.html">paraview.simple.CTHSurface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.Calculator.html">paraview.simple.Calculator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.CameraAnimationCue.html">paraview.simple.CameraAnimationCue</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.CameraKeyFrame.html">paraview.simple.CameraKeyFrame</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.CellCenters.html">paraview.simple.CellCenters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.CellDatatoPointData.html">paraview.simple.CellDatatoPointData</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.CellSize.html">paraview.simple.CellSize</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.CinemaDatabasePipelineObjectFilter.html">paraview.simple.CinemaDatabasePipelineObjectFilter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.CinemaDatabasePipelineObjectReader.html">paraview.simple.CinemaDatabasePipelineObjectReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.Cinemaimageoptions.html">paraview.simple.Cinemaimageoptions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.Clean.html">paraview.simple.Clean</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.CleanCellstoGrid.html">paraview.simple.CleanCellstoGrid</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.CleantoGrid.html">paraview.simple.CleantoGrid</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.ClientServerMoveData.html">paraview.simple.ClientServerMoveData</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.Clip.html">paraview.simple.Clip</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.ClipClosedSurface.html">paraview.simple.ClipClosedSurface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.ClipGenericDataset.html">paraview.simple.ClipGenericDataset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.ColorByArray.html">paraview.simple.ColorByArray</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.ComparativeAnimationCue.html">paraview.simple.ComparativeAnimationCue</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.CompositeDataIDSelectionSource.html">paraview.simple.CompositeDataIDSelectionSource</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.CompositeKeyFrame.html">paraview.simple.CompositeKeyFrame</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.ComputeDerivatives.html">paraview.simple.ComputeDerivatives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.ComputeMoleculeBonds.html">paraview.simple.ComputeMoleculeBonds</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.ComputeQuartiles.html">paraview.simple.ComputeQuartiles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.Cone.html">paraview.simple.Cone</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.Connectivity.html">paraview.simple.Connectivity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.ContingencyStatistics.html">paraview.simple.ContingencyStatistics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.Contour.html">paraview.simple.Contour</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.ContourGenericDataset.html">paraview.simple.ContourGenericDataset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.ConvertAMRdatasettoMultiblock.html">paraview.simple.ConvertAMRdatasettoMultiblock</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.ConvertIntoMolecule.html">paraview.simple.ConvertIntoMolecule</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.ConvertSelection.html">paraview.simple.ConvertSelection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.CountCellFaces.html">paraview.simple.CountCellFaces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.CountCellVertices.html">paraview.simple.CountCellVertices</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.Crop.html">paraview.simple.Crop</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.Curvature.html">paraview.simple.Curvature</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.Cylinder.html">paraview.simple.Cylinder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.D3.html">paraview.simple.D3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.DEMReader.html">paraview.simple.DEMReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.DICOMReaderSingleFile.html">paraview.simple.DICOMReaderSingleFile</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.DICOMReaderdirectory.html">paraview.simple.DICOMReaderdirectory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.DataObjectGenerator.html">paraview.simple.DataObjectGenerator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.DataSetCSVWriter.html">paraview.simple.DataSetCSVWriter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.DataSetWriter.html">paraview.simple.DataSetWriter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.Decimate.html">paraview.simple.Decimate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.DecimatePolyline.html">paraview.simple.DecimatePolyline</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.Delaunay2D.html">paraview.simple.Delaunay2D</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.Delaunay3D.html">paraview.simple.Delaunay3D</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.DescriptiveStatistics.html">paraview.simple.DescriptiveStatistics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.Disk.html">paraview.simple.Disk</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.DistributePoints.html">paraview.simple.DistributePoints</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.DistributedTrivialProducer.html">paraview.simple.DistributedTrivialProducer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.ENZOAMRParticlesReader.html">paraview.simple.ENZOAMRParticlesReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.Elevation.html">paraview.simple.Elevation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.EnSightMasterServerReader.html">paraview.simple.EnSightMasterServerReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.EnSightReader.html">paraview.simple.EnSightReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.EnSightWriter.html">paraview.simple.EnSightWriter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.EnsembleDataReader.html">paraview.simple.EnsembleDataReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.EnvironmentAnnotation.html">paraview.simple.EnvironmentAnnotation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.EnzoReader.html">paraview.simple.EnzoReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.EvenlySpacedStreamlines2D.html">paraview.simple.EvenlySpacedStreamlines2D</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.ExodusIIReader.html">paraview.simple.ExodusIIReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.ExodusIIWriter.html">paraview.simple.ExodusIIWriter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.ExponentialKeyFrame.html">paraview.simple.ExponentialKeyFrame</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.ExtractAMRBlocks.html">paraview.simple.ExtractAMRBlocks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.ExtractAttributes.html">paraview.simple.ExtractAttributes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.ExtractBagPlots.html">paraview.simple.ExtractBagPlots</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.ExtractBlock.html">paraview.simple.ExtractBlock</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.ExtractCTHParts.html">paraview.simple.ExtractCTHParts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.ExtractCellsByRegion.html">paraview.simple.ExtractCellsByRegion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.ExtractComponent.html">paraview.simple.ExtractComponent</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.ExtractEdges.html">paraview.simple.ExtractEdges</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.ExtractEnclosedPoints.html">paraview.simple.ExtractEnclosedPoints</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.ExtractGenericDatasetSurface.html">paraview.simple.ExtractGenericDatasetSurface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.ExtractLevel.html">paraview.simple.ExtractLevel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.ExtractLocation.html">paraview.simple.ExtractLocation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.ExtractRegionSurface.html">paraview.simple.ExtractRegionSurface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.ExtractSelection.html">paraview.simple.ExtractSelection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.ExtractSelectioninternal.html">paraview.simple.ExtractSelectioninternal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.ExtractSubset.html">paraview.simple.ExtractSubset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.ExtractSurface.html">paraview.simple.ExtractSurface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.ExtractTimeSteps.html">paraview.simple.ExtractTimeSteps</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.FFTOfSelectionOverTime.html">paraview.simple.FFTOfSelectionOverTime</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.FLASHAMRParticlesReader.html">paraview.simple.FLASHAMRParticlesReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.FacetReader.html">paraview.simple.FacetReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.FeatureEdges.html">paraview.simple.FeatureEdges</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.FlashReader.html">paraview.simple.FlashReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.FlattenFilter.html">paraview.simple.FlattenFilter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.FluentCaseReader.html">paraview.simple.FluentCaseReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.ForceTime.html">paraview.simple.ForceTime</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.FrustumSelectionSource.html">paraview.simple.FrustumSelectionSource</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.GaussianCubeReader.html">paraview.simple.GaussianCubeReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.GaussianResampling.html">paraview.simple.GaussianResampling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.GenerateIds.html">paraview.simple.GenerateIds</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.GenerateQuadraturePoints.html">paraview.simple.GenerateQuadraturePoints</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.GenerateQuadratureSchemeDictionary.html">paraview.simple.GenerateQuadratureSchemeDictionary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.GenerateSurfaceNormals.html">paraview.simple.GenerateSurfaceNormals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.GeometryFilter.html">paraview.simple.GeometryFilter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.GhostCellsGenerator.html">paraview.simple.GhostCellsGenerator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.GlobalIDSelectionSource.html">paraview.simple.GlobalIDSelectionSource</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.Glyph.html">paraview.simple.Glyph</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.GlyphLegacy.html">paraview.simple.GlyphLegacy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.GlyphWithCustomSource.html">paraview.simple.GlyphWithCustomSource</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.GlyphWithCustomSourceLegacy.html">paraview.simple.GlyphWithCustomSourceLegacy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.Gradient.html">paraview.simple.Gradient</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.GradientMagnitude.html">paraview.simple.GradientMagnitude</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.GradientOfUnstructuredDataSet.html">paraview.simple.GradientOfUnstructuredDataSet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.GridConnectivity.html">paraview.simple.GridConnectivity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.GroupDatasets.html">paraview.simple.GroupDatasets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.GroupTimeSteps.html">paraview.simple.GroupTimeSteps</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.H5PartReader.html">paraview.simple.H5PartReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.HierarchicalDataIDSelectionSource.html">paraview.simple.HierarchicalDataIDSelectionSource</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.HierarchicalFractal.html">paraview.simple.HierarchicalFractal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.Histogram.html">paraview.simple.Histogram</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.HoudiniWriter.html">paraview.simple.HoudiniWriter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.HyperTreeGrid.html">paraview.simple.HyperTreeGrid</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.HyperTreeGridAxisClip.html">paraview.simple.HyperTreeGridAxisClip</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.HyperTreeGridAxisCut.html">paraview.simple.HyperTreeGridAxisCut</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.HyperTreeGridAxisReflection.html">paraview.simple.HyperTreeGridAxisReflection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.HyperTreeGridCellCenters.html">paraview.simple.HyperTreeGridCellCenters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.HyperTreeGridContour.html">paraview.simple.HyperTreeGridContour</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.HyperTreeGridDepthLimiter.html">paraview.simple.HyperTreeGridDepthLimiter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.HyperTreeGridGeometryFilter.html">paraview.simple.HyperTreeGridGeometryFilter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.HyperTreeGridRandom.html">paraview.simple.HyperTreeGridRandom</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.HyperTreeGridReader.html">paraview.simple.HyperTreeGridReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.HyperTreeGridSliceWithPlane.html">paraview.simple.HyperTreeGridSliceWithPlane</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.HyperTreeGridThreshold.html">paraview.simple.HyperTreeGridThreshold</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.HyperTreeGridToUnstructuredGrid.html">paraview.simple.HyperTreeGridToUnstructuredGrid</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.HyperTreeGridWriter.html">paraview.simple.HyperTreeGridWriter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.IDSelectionSource.html">paraview.simple.IDSelectionSource</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.ImageDataToAMR.html">paraview.simple.ImageDataToAMR</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.ImageDataToUniformGrid.html">paraview.simple.ImageDataToUniformGrid</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.ImageDatatoPointSet.html">paraview.simple.ImageDatatoPointSet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.ImageReader.html">paraview.simple.ImageReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.ImageResampling.html">paraview.simple.ImageResampling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.ImageShrink.html">paraview.simple.ImageShrink</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.InSituParticlePath.html">paraview.simple.InSituParticlePath</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.IntegrateVariables.html">paraview.simple.IntegrateVariables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.InterpolatetoQuadraturePoints.html">paraview.simple.InterpolatetoQuadraturePoints</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.IntersectFragments.html">paraview.simple.IntersectFragments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.IsoVolume.html">paraview.simple.IsoVolume</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.JPEGSeriesReader.html">paraview.simple.JPEGSeriesReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.JPEGWriter.html">paraview.simple.JPEGWriter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.JSONImageWriter.html">paraview.simple.JSONImageWriter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.KMeans.html">paraview.simple.KMeans</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.KeyFrame.html">paraview.simple.KeyFrame</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.KeyFrameAnimationCue.html">paraview.simple.KeyFrameAnimationCue</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.LSDynaReader.html">paraview.simple.LSDynaReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.LegacyResampleWithDataset.html">paraview.simple.LegacyResampleWithDataset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.LegacyVTKReader.html">paraview.simple.LegacyVTKReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.LevelScalarsNonOverlappingAMR.html">paraview.simple.LevelScalarsNonOverlappingAMR</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.LevelScalarsOverlappingAMR.html">paraview.simple.LevelScalarsOverlappingAMR</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.Line.html">paraview.simple.Line</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.LinearExtrusion.html">paraview.simple.LinearExtrusion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.LiveProgrammableSource.html">paraview.simple.LiveProgrammableSource</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.LocationSelectionSource.html">paraview.simple.LocationSelectionSource</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.LoopSubdivision.html">paraview.simple.LoopSubdivision</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.MFIXReader.html">paraview.simple.MFIXReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.MPIMoveData.html">paraview.simple.MPIMoveData</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.MRCSeriesReader.html">paraview.simple.MRCSeriesReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.Mandelbrot.html">paraview.simple.Mandelbrot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.MaskPoints.html">paraview.simple.MaskPoints</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.MaterialInterfaceFilter.html">paraview.simple.MaterialInterfaceFilter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.Median.html">paraview.simple.Median</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.MergeBlocks.html">paraview.simple.MergeBlocks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.MeshQuality.html">paraview.simple.MeshQuality</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.MetaFileSeriesReader.html">paraview.simple.MetaFileSeriesReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.MetaImageWriter.html">paraview.simple.MetaImageWriter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.MinMax.html">paraview.simple.MinMax</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.MoleculeToLines.html">paraview.simple.MoleculeToLines</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.MotionFXCFGReader.html">paraview.simple.MotionFXCFGReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.MulticorrelativeStatistics.html">paraview.simple.MulticorrelativeStatistics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.NetCDFCAMreader.html">paraview.simple.NetCDFCAMreader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.NetCDFMPASreader.html">paraview.simple.NetCDFMPASreader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.NetCDFPOPreader.html">paraview.simple.NetCDFPOPreader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.NetCDFReader.html">paraview.simple.NetCDFReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.NetworkImageSource.html">paraview.simple.NetworkImageSource</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.NormalGlyphs.html">paraview.simple.NormalGlyphs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.NrrdReader.html">paraview.simple.NrrdReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.OpenFOAMReader.html">paraview.simple.OpenFOAMReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.OrderedCompositeDistributor.html">paraview.simple.OrderedCompositeDistributor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.Outline.html">paraview.simple.Outline</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.Outline.html">paraview.simple.Outline</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.OutlineCorners.html">paraview.simple.OutlineCorners</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.OutlineCurvilinearDataSet.html">paraview.simple.OutlineCurvilinearDataSet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.OutlineGenericDataSet.html">paraview.simple.OutlineGenericDataSet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.PDBReader.html">paraview.simple.PDBReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.PDataSetWriterPolyData.html">paraview.simple.PDataSetWriterPolyData</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.PDataSetWriterUnstructuredGrid.html">paraview.simple.PDataSetWriterUnstructuredGrid</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.PLOT3DMetaFileReader.html">paraview.simple.PLOT3DMetaFileReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.PLOT3DReader.html">paraview.simple.PLOT3DReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.PLYReader.html">paraview.simple.PLYReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.PNGSeriesReader.html">paraview.simple.PNGSeriesReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.PNGWriter.html">paraview.simple.PNGWriter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.POBJWriter.html">paraview.simple.POBJWriter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.PPLYWriter.html">paraview.simple.PPLYWriter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.PSTLWriter.html">paraview.simple.PSTLWriter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.PTSReader.html">paraview.simple.PTSReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.PVDReader.html">paraview.simple.PVDReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.PVTrivialProducer.html">paraview.simple.PVTrivialProducer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.ParallelNetCDFPOPreader.html">paraview.simple.ParallelNetCDFPOPreader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.ParticlePath.html">paraview.simple.ParticlePath</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.ParticleTracer.html">paraview.simple.ParticleTracer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.ParticlesReader.html">paraview.simple.ParticlesReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.PartitionedLegacyVTKReader.html">paraview.simple.PartitionedLegacyVTKReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.PassArrays.html">paraview.simple.PassArrays</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.PassThrough.html">paraview.simple.PassThrough</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.PedigreeIDSelectionSource.html">paraview.simple.PedigreeIDSelectionSource</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.PhastaReader.html">paraview.simple.PhastaReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.Plane.html">paraview.simple.Plane</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.PlotData.html">paraview.simple.PlotData</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.PlotDataOverTime.html">paraview.simple.PlotDataOverTime</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.PlotGlobalVariablesOverTime.html">paraview.simple.PlotGlobalVariablesOverTime</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.PlotOnIntersectionCurves.html">paraview.simple.PlotOnIntersectionCurves</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.PlotOnSortedLines.html">paraview.simple.PlotOnSortedLines</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.PlotOverLine.html">paraview.simple.PlotOverLine</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.PlotSelectionOverTime.html">paraview.simple.PlotSelectionOverTime</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.PointDatasetInterpolator.html">paraview.simple.PointDatasetInterpolator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.PointDatatoCellData.html">paraview.simple.PointDatatoCellData</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.PointInterpolator.html">paraview.simple.PointInterpolator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.PointLineInterpolator.html">paraview.simple.PointLineInterpolator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.PointPlaneInterpolator.html">paraview.simple.PointPlaneInterpolator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.PointSource.html">paraview.simple.PointSource</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.PointVolumeInterpolator.html">paraview.simple.PointVolumeInterpolator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.PolyLineSource.html">paraview.simple.PolyLineSource</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.PolyLineToRectilinearGrid.html">paraview.simple.PolyLineToRectilinearGrid</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.PrincipalComponentAnalysis.html">paraview.simple.PrincipalComponentAnalysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.ProbeLocation.html">paraview.simple.ProbeLocation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.ProcessIdScalars.html">paraview.simple.ProcessIdScalars</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.ProgrammableFilter.html">paraview.simple.ProgrammableFilter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.ProgrammableSource.html">paraview.simple.ProgrammableSource</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.PythonAnimationCue.html">paraview.simple.PythonAnimationCue</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.PythonAnnotation.html">paraview.simple.PythonAnnotation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.PythonCalculator.html">paraview.simple.PythonCalculator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.QuadricClustering.html">paraview.simple.QuadricClustering</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.RTXMLPolyDataReader.html">paraview.simple.RTXMLPolyDataReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.RampKeyFrame.html">paraview.simple.RampKeyFrame</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.RandomAttributes.html">paraview.simple.RandomAttributes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.RandomVectors.html">paraview.simple.RandomVectors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.RectilinearDatatoPointSet.html">paraview.simple.RectilinearDatatoPointSet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.RectilinearGridConnectivity.html">paraview.simple.RectilinearGridConnectivity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.RectilinearGridGeometryFilter.html">paraview.simple.RectilinearGridGeometryFilter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.ReductionFilter.html">paraview.simple.ReductionFilter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.Reflect.html">paraview.simple.Reflect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.RemoteSourceProxy.html">paraview.simple.RemoteSourceProxy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.RemoveGhostInformation.html">paraview.simple.RemoveGhostInformation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.ResampleAMR.html">paraview.simple.ResampleAMR</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.ResampleToImage.html">paraview.simple.ResampleToImage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.ResampleWithDataset.html">paraview.simple.ResampleWithDataset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.RestartedSimExodusReader.html">paraview.simple.RestartedSimExodusReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.RestartedSimSpyPlotReader.html">paraview.simple.RestartedSimSpyPlotReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.Ribbon.html">paraview.simple.Ribbon</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.RotationalExtrusion.html">paraview.simple.RotationalExtrusion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.Ruler.html">paraview.simple.Ruler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.SLACDataReader.html">paraview.simple.SLACDataReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.SLACParticleDataReader.html">paraview.simple.SLACParticleDataReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.SPHDatasetInterpolator.html">paraview.simple.SPHDatasetInterpolator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.SPHInterpolator.html">paraview.simple.SPHInterpolator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.SPHLineInterpolator.html">paraview.simple.SPHLineInterpolator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.SPHPlaneInterpolator.html">paraview.simple.SPHPlaneInterpolator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.SPHVolumeInterpolator.html">paraview.simple.SPHVolumeInterpolator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.STLReader.html">paraview.simple.STLReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.ScatterPlot.html">paraview.simple.ScatterPlot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.SegYReader.html">paraview.simple.SegYReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.SelectionQuerySource.html">paraview.simple.SelectionQuerySource</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.SelectionSourceBase.html">paraview.simple.SelectionSourceBase</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.Shrink.html">paraview.simple.Shrink</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.SimpleImage.html">paraview.simple.SimpleImage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.SinusoidKeyFrame.html">paraview.simple.SinusoidKeyFrame</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.Slice.html">paraview.simple.Slice</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.SliceAMRdata.html">paraview.simple.SliceAMRdata</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.SliceAlongPolyLine.html">paraview.simple.SliceAlongPolyLine</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.SliceGenericDataset.html">paraview.simple.SliceGenericDataset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.SliceWithPlane.html">paraview.simple.SliceWithPlane</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.Slicedemanddrivencomposite.html">paraview.simple.Slicedemanddrivencomposite</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.Smooth.html">paraview.simple.Smooth</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.Sphere.html">paraview.simple.Sphere</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.SplineSource.html">paraview.simple.SplineSource</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.SpyPlotReader.html">paraview.simple.SpyPlotReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.StreakLine.html">paraview.simple.StreakLine</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.StreamTracer.html">paraview.simple.StreamTracer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.StreamTracerForGenericDatasets.html">paraview.simple.StreamTracerForGenericDatasets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.StreamTracerWithCustomSource.html">paraview.simple.StreamTracerWithCustomSource</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.Subdivide.html">paraview.simple.Subdivide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.Superquadric.html">paraview.simple.Superquadric</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.SurfaceFlow.html">paraview.simple.SurfaceFlow</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.SurfaceVectors.html">paraview.simple.SurfaceVectors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.SynchronizeTime.html">paraview.simple.SynchronizeTime</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.TIFFReader.html">paraview.simple.TIFFReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.TIFFSeriesReader.html">paraview.simple.TIFFSeriesReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.TIFFWriter.html">paraview.simple.TIFFWriter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.TRUCHASReader.html">paraview.simple.TRUCHASReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.TableFFT.html">paraview.simple.TableFFT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.TableToPoints.html">paraview.simple.TableToPoints</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.TableToStructuredGrid.html">paraview.simple.TableToStructuredGrid</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.TecplotReader.html">paraview.simple.TecplotReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.TecplotTableReader.html">paraview.simple.TecplotTableReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.TemporalArrayOperator.html">paraview.simple.TemporalArrayOperator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.TemporalCache.html">paraview.simple.TemporalCache</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.TemporalInterpolator.html">paraview.simple.TemporalInterpolator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.TemporalParticlesToPathlines.html">paraview.simple.TemporalParticlesToPathlines</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.TemporalShiftScale.html">paraview.simple.TemporalShiftScale</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.TemporalSnaptoTimeStep.html">paraview.simple.TemporalSnaptoTimeStep</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.TemporalStatistics.html">paraview.simple.TemporalStatistics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.TensorGlyph.html">paraview.simple.TensorGlyph</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.Tessellate.html">paraview.simple.Tessellate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.TessellateGenericDataset.html">paraview.simple.TessellateGenericDataset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.Test3DWidget.html">paraview.simple.Test3DWidget</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.Tetrahedralize.html">paraview.simple.Tetrahedralize</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.Text.html">paraview.simple.Text</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.TextureMaptoCylinder.html">paraview.simple.TextureMaptoCylinder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.TextureMaptoPlane.html">paraview.simple.TextureMaptoPlane</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.TextureMaptoSphere.html">paraview.simple.TextureMaptoSphere</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.Threshold.html">paraview.simple.Threshold</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.ThresholdSelectionSource.html">paraview.simple.ThresholdSelectionSource</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.TimeAnimationCue.html">paraview.simple.TimeAnimationCue</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.TimeSource.html">paraview.simple.TimeSource</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.TimeStepProgressBar.html">paraview.simple.TimeStepProgressBar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.Transform.html">paraview.simple.Transform</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.TransposeTable.html">paraview.simple.TransposeTable</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.TriangleStrips.html">paraview.simple.TriangleStrips</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.Triangulate.html">paraview.simple.Triangulate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.TrivialProducer.html">paraview.simple.TrivialProducer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.Tube.html">paraview.simple.Tube</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.UnstructuredCellTypes.html">paraview.simple.UnstructuredCellTypes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.UnstructuredNetCDFPOPreader.html">paraview.simple.UnstructuredNetCDFPOPreader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.VASPAnimationReader.html">paraview.simple.VASPAnimationReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.VASPTessellationReader.html">paraview.simple.VASPTessellationReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.VERAOUTReader.html">paraview.simple.VERAOUTReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.VPICReader.html">paraview.simple.VPICReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.VRMLReader.html">paraview.simple.VRMLReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.ValidateCells.html">paraview.simple.ValidateCells</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.WarpByScalar.html">paraview.simple.WarpByScalar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.WarpByVector.html">paraview.simple.WarpByVector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.WavefrontOBJReader.html">paraview.simple.WavefrontOBJReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.Wavelet.html">paraview.simple.Wavelet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.WindBladereader.html">paraview.simple.WindBladereader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.XDMFReader.html">paraview.simple.XDMFReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.XMLDataObjectWriterBase.html">paraview.simple.XMLDataObjectWriterBase</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.XMLHierarchicalBoxDataWriter.html">paraview.simple.XMLHierarchicalBoxDataWriter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.XMLHierarchicalBoxDatareader.html">paraview.simple.XMLHierarchicalBoxDatareader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.XMLImageDataReader.html">paraview.simple.XMLImageDataReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.XMLImageDataWriter.html">paraview.simple.XMLImageDataWriter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.XMLMultiBlockDataReader.html">paraview.simple.XMLMultiBlockDataReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.XMLMultiBlockDataWriter.html">paraview.simple.XMLMultiBlockDataWriter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.XMLPImageDataWriter.html">paraview.simple.XMLPImageDataWriter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.XMLPPolyDataWriter.html">paraview.simple.XMLPPolyDataWriter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.XMLPRectilinearGridWriter.html">paraview.simple.XMLPRectilinearGridWriter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.XMLPStructuredGridWriter.html">paraview.simple.XMLPStructuredGridWriter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.XMLPTableWriter.html">paraview.simple.XMLPTableWriter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.XMLPUnstructuredGridWriter.html">paraview.simple.XMLPUnstructuredGridWriter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.XMLPVAnimationWriter.html">paraview.simple.XMLPVAnimationWriter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.XMLPVDWriter.html">paraview.simple.XMLPVDWriter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.XMLPartitionedImageDataReader.html">paraview.simple.XMLPartitionedImageDataReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.XMLPartitionedPolydataReader.html">paraview.simple.XMLPartitionedPolydataReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.XMLPartitionedRectilinearGridReader.html">paraview.simple.XMLPartitionedRectilinearGridReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.XMLPartitionedStructuredGridReader.html">paraview.simple.XMLPartitionedStructuredGridReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.XMLPartitionedTableReader.html">paraview.simple.XMLPartitionedTableReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.XMLPartitionedUnstructuredGridReader.html">paraview.simple.XMLPartitionedUnstructuredGridReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.XMLPolyDataReader.html">paraview.simple.XMLPolyDataReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.XMLPolyDataWriter.html">paraview.simple.XMLPolyDataWriter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.XMLRectilinearGridReader.html">paraview.simple.XMLRectilinearGridReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.XMLRectilinearGridWriter.html">paraview.simple.XMLRectilinearGridWriter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.XMLStructuredGridReader.html">paraview.simple.XMLStructuredGridReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.XMLStructuredGridWriter.html">paraview.simple.XMLStructuredGridWriter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.XMLTableReader.html">paraview.simple.XMLTableReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.XMLTableWriter.html">paraview.simple.XMLTableWriter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.XMLUniformGridAMRReader.html">paraview.simple.XMLUniformGridAMRReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.XMLUniformGridAMRWriter.html">paraview.simple.XMLUniformGridAMRWriter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.XMLUnstructuredGridReader.html">paraview.simple.XMLUnstructuredGridReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.XMLUnstructuredGridWriter.html">paraview.simple.XMLUnstructuredGridWriter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.XYZReader.html">paraview.simple.XYZReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.XdmfWriter.html">paraview.simple.XdmfWriter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.YoungsMaterialInterface.html">paraview.simple.YoungsMaterialInterface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.a2DGlyph.html">paraview.simple.a2DGlyph</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.a3DText.html">paraview.simple.a3DText</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.plyreader.html">paraview.simple.plyreader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.proSTARSTARCDReader.html">paraview.simple.proSTARSTARCDReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.spcthhistoryreader.html">paraview.simple.spcthhistoryreader</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../python-2-vs-3.html">Python Version 2 versus 3</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../python-2-vs-3.html#print-is-a-function"><code class="docutils literal"><span class="pre">print</span></code> is a function</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../python-2-vs-3.html#exceptions">Exceptions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../python-2-vs-3.html#iterables">Iterables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../python-2-vs-3.html#iterators-not-lists">Iterators, not lists</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../python-2-vs-3.html#submodule-import">Submodule import</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../python-2-vs-3.html#new-modules">New modules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../python-2-vs-3.html#references">References</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../api-changes.html">API Changes between ParaView versions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../api-changes.html#changes-in-5-5">Changes in 5.5</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-changes.html#changes-in-5-1">Changes in 5.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-changes.html#changes-in-4-2">Changes in 4.2</a></li>
+</ul>
+</li>
+</ul>
+
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top">
+        <i data-toggle="wy-nav-top" class="icon icon-reorder"></i>
+        <a href="../../index.html">ParaView/Python</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <ul class="wy-breadcrumbs">
+  <li><a href="../../index.html">Docs</a> &raquo;</li>
+  <a href="../../genindex.html" class="float-right">Index</a> 
+  <li><a href="">paraview._backwardscompatibilityhelper</a></li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+</ul>
+<hr/>
+          
+  <h1>Source code for paraview._backwardscompatibilityhelper</h1><div class="highlight"><pre>
+<span></span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Internal module used by paraview.servermanager to help warn about properties</span>
+<span class="sd">changed or removed.</span>
+
+<span class="sd">If the compatibility version is less than the version where a particular</span>
+<span class="sd">property was removed, `check_attr` should ideally continue to work as before</span>
+<span class="sd">or return a value of appropriate form so old code doesn&#39;t fail. Otherwise</span>
+<span class="sd">`check_attr` should throw the NotSupportedException with appropriate debug</span>
+<span class="sd">message.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="kn">import</span> <span class="nn">paraview</span>
+
+<span class="n">NotSupportedException</span> <span class="o">=</span> <span class="n">paraview</span><span class="o">.</span><span class="n">NotSupportedException</span>
+
+<div class="viewcode-block" id="Continue"><a class="viewcode-back" href="../../paraview._backwardscompatibilityhelper.html#paraview._backwardscompatibilityhelper.Continue">[docs]</a><span class="k">class</span> <span class="nc">Continue</span><span class="p">(</span><span class="ne">Exception</span><span class="p">):</span>
+    <span class="k">pass</span></div>
+
+<span class="k">class</span> <span class="nc">_CubeAxesHelper</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">CubeAxesVisibility</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">CubeAxesColor</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">CubeAxesCornerOffset</span> <span class="o">=</span> <span class="mf">0.0</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">CubeAxesFlyMode</span> <span class="o">=</span> <span class="mi">1</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">CubeAxesInertia</span> <span class="o">=</span> <span class="mi">1</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">CubeAxesTickLocation</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">CubeAxesXAxisMinorTickVisibility</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">CubeAxesXAxisTickVisibility</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">CubeAxesXAxisVisibility</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">CubeAxesXGridLines</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">CubeAxesXTitle</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">CubeAxesUseDefaultXTitle</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">CubeAxesYAxisMinorTickVisibility</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">CubeAxesYAxisTickVisibility</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">CubeAxesYAxisVisibility</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">CubeAxesYGridLines</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">CubeAxesYTitle</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">CubeAxesUseDefaultYTitle</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">CubeAxesZAxisMinorTickVisibility</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">CubeAxesZAxisTickVisibility</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">CubeAxesZAxisVisibility</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">CubeAxesZGridLines</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">CubeAxesZTitle</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">CubeAxesUseDefaultZTitle</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">CubeAxesGridLineLocation</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">DataBounds</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">CustomBounds</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">CustomBoundsActive</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">OriginalBoundsRangeActive</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">CustomRange</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">CustomRangeActive</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">UseAxesOrigin</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">AxesOrigin</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">CubeAxesXLabelFormat</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">CubeAxesYLabelFormat</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">CubeAxesZLabelFormat</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">StickyAxes</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">CenterStickyAxes</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">_ACubeAxesHelper</span> <span class="o">=</span> <span class="n">_CubeAxesHelper</span><span class="p">()</span>
+
+<div class="viewcode-block" id="setattr"><a class="viewcode-back" href="../../paraview._backwardscompatibilityhelper.html#paraview._backwardscompatibilityhelper.setattr">[docs]</a><span class="k">def</span> <span class="nf">setattr</span><span class="p">(</span><span class="n">proxy</span><span class="p">,</span> <span class="n">pname</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Attempts to emulate setattr() when called using a deprecated name for a</span>
+<span class="sd">    proxy property.</span>
+
+<span class="sd">    For properties that are no longer present on a proxy, the code should do the</span>
+<span class="sd">    following:</span>
+
+<span class="sd">    1. If `paraview.compatibility.GetVersion()` is less than the version in</span>
+<span class="sd">       which the property was removed, attempt to handle the request and raise</span>
+<span class="sd">       `Continue` to indicate that the request has been handled. If it is too</span>
+<span class="sd">       complicated to support the old API, then it is acceptable to raise</span>
+<span class="sd">       a warning message, but don&#39;t raise an exception.</span>
+
+<span class="sd">    2. If compatibility version is &gt;= the version in which the property was</span>
+<span class="sd">       removed, raise `NotSupportedException` with details including suggestions</span>
+<span class="sd">       to update the script.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">version</span> <span class="o">=</span> <span class="n">paraview</span><span class="o">.</span><span class="n">compatibility</span><span class="o">.</span><span class="n">GetVersion</span><span class="p">()</span>
+
+    <span class="k">if</span> <span class="n">pname</span> <span class="o">==</span> <span class="s2">&quot;ColorAttributeType&quot;</span> <span class="ow">and</span> <span class="n">proxy</span><span class="o">.</span><span class="n">SMProxy</span><span class="o">.</span><span class="n">GetProperty</span><span class="p">(</span><span class="s2">&quot;ColorArrayName&quot;</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">paraview</span><span class="o">.</span><span class="n">compatibility</span><span class="o">.</span><span class="n">GetVersion</span><span class="p">()</span> <span class="o">&lt;=</span> <span class="mf">4.1</span><span class="p">:</span>
+            <span class="c1"># set ColorAttributeType on ColorArrayName property instead.</span>
+            <span class="n">caProp</span> <span class="o">=</span> <span class="n">proxy</span><span class="o">.</span><span class="n">GetProperty</span><span class="p">(</span><span class="s2">&quot;ColorArrayName&quot;</span><span class="p">)</span>
+            <span class="n">proxy</span><span class="o">.</span><span class="n">GetProperty</span><span class="p">(</span><span class="s2">&quot;ColorArrayName&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">SetData</span><span class="p">((</span><span class="n">value</span><span class="p">,</span> <span class="n">caProp</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span>
+            <span class="k">raise</span> <span class="n">Continue</span><span class="p">()</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="c1"># if ColorAttributeType is being used, raise NotSupportedException.</span>
+            <span class="k">raise</span> <span class="n">NotSupportedException</span><span class="p">(</span>
+                    <span class="s2">&quot;&#39;ColorAttributeType&#39; is obsolete as of ParaView 4.2. Simply use &#39;ColorArrayName&#39; &quot;</span>\
+                    <span class="s2">&quot;instead. Refer to ParaView Python API changes documentation online.&quot;</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">pname</span> <span class="o">==</span> <span class="s2">&quot;AspectRatio&quot;</span> <span class="ow">and</span> <span class="n">proxy</span><span class="o">.</span><span class="n">SMProxy</span><span class="o">.</span><span class="n">GetProperty</span><span class="p">(</span><span class="s2">&quot;ScalarBarThickness&quot;</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">paraview</span><span class="o">.</span><span class="n">compatibility</span><span class="o">.</span><span class="n">GetVersion</span><span class="p">()</span> <span class="o">&lt;=</span> <span class="mf">5.3</span><span class="p">:</span>
+            <span class="c1"># We can&#39;t do this perfectly, so we set the ScalarBarThickness</span>
+            <span class="c1"># property instead. Assume a reasonable modern screen size of</span>
+            <span class="c1"># 1280x1024 with a Render view size of 1000x600. Even if we had</span>
+            <span class="c1"># access to the View proxy to get the screen size, there is no</span>
+            <span class="c1"># guarantee that the view size will remain the same later on in the</span>
+            <span class="c1"># Python script.</span>
+            <span class="n">span</span> <span class="o">=</span> <span class="mi">600</span> <span class="c1"># vertical</span>
+            <span class="k">if</span> <span class="n">proxy</span><span class="o">.</span><span class="n">GetProperty</span><span class="p">(</span><span class="s2">&quot;Orientation&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">GetData</span><span class="p">()</span> <span class="o">==</span> <span class="s2">&quot;Horizontal&quot;</span><span class="p">:</span>
+                <span class="n">span</span> <span class="o">=</span> <span class="mi">1000</span>
+
+            <span class="c1"># Assume a scalar bar length 40% of the span.</span>
+            <span class="n">thickness</span> <span class="o">=</span> <span class="mf">0.4</span> <span class="o">*</span> <span class="n">span</span> <span class="o">/</span> <span class="n">value</span>
+
+            <span class="n">proxy</span><span class="o">.</span><span class="n">GetProperty</span><span class="p">(</span><span class="s2">&quot;ScalarBarThickness&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">SetData</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">thickness</span><span class="p">))</span>
+            <span class="k">raise</span> <span class="n">Continue</span><span class="p">()</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="c1">#if AspectRatio is being used, raise NotSupportedException</span>
+            <span class="k">raise</span> <span class="n">NotSupportedException</span><span class="p">(</span>\
+                <span class="s2">&quot;&#39;AspectRatio&#39; is obsolete as of ParaView 5.4. Use the &quot;</span>\
+                <span class="s2">&quot;&#39;ScalarBarThickness&#39; property to set the width instead.&quot;</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">pname</span> <span class="o">==</span> <span class="s2">&quot;Position2&quot;</span> <span class="ow">and</span> <span class="n">proxy</span><span class="o">.</span><span class="n">SMProxy</span><span class="o">.</span><span class="n">GetProperty</span><span class="p">(</span><span class="s2">&quot;ScalarBarLength&quot;</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">paraview</span><span class="o">.</span><span class="n">compatibility</span><span class="o">.</span><span class="n">GetVersion</span><span class="p">()</span> <span class="o">&lt;=</span> <span class="mf">5.3</span><span class="p">:</span>
+            <span class="c1"># The scalar bar length corresponds to Position2[0] when the</span>
+            <span class="c1"># orientation is horizontal and Position2[1] when the orientation</span>
+            <span class="c1"># is vertical.</span>
+            <span class="n">length</span> <span class="o">=</span> <span class="n">value</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+            <span class="k">if</span> <span class="n">proxy</span><span class="o">.</span><span class="n">Orientation</span> <span class="o">==</span> <span class="s2">&quot;Vertical&quot;</span><span class="p">:</span>
+                <span class="n">length</span> <span class="o">=</span> <span class="n">value</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+
+            <span class="n">proxy</span><span class="o">.</span><span class="n">GetProperty</span><span class="p">(</span><span class="s2">&quot;ScalarBarLength&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">SetData</span><span class="p">(</span><span class="n">length</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="c1">#if Position2 is being used, raise NotSupportedException</span>
+            <span class="k">raise</span> <span class="n">NotSupportedException</span><span class="p">(</span>\
+                <span class="s2">&quot;&#39;Position2&#39; is obsolete as of ParaView 5.4. Use the &quot;</span>\
+                <span class="s2">&quot;&#39;ScalarBarLength&#39; property to set the length instead.&quot;</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">pname</span> <span class="o">==</span> <span class="s2">&quot;LockScalarRange&quot;</span> <span class="ow">and</span> <span class="n">proxy</span><span class="o">.</span><span class="n">SMProxy</span><span class="o">.</span><span class="n">GetProperty</span><span class="p">(</span><span class="s2">&quot;AutomaticRescaleRangeMode&quot;</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">paraview</span><span class="o">.</span><span class="n">compatibility</span><span class="o">.</span><span class="n">GetVersion</span><span class="p">()</span> <span class="o">&lt;=</span> <span class="mf">5.4</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">value</span><span class="p">:</span>
+                <span class="kn">from</span> <span class="nn">vtkmodules.vtkPVServerManagerRendering</span> <span class="k">import</span> <span class="n">vtkSMTransferFunctionManager</span>
+                <span class="n">proxy</span><span class="o">.</span><span class="n">GetProperty</span><span class="p">(</span><span class="s2">&quot;AutomaticRescaleRangeMode&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">SetData</span><span class="p">(</span><span class="n">vtkSMTransferFunctionManager</span><span class="o">.</span><span class="n">NEVER</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">pxm</span> <span class="o">=</span> <span class="n">proxy</span><span class="o">.</span><span class="n">SMProxy</span><span class="o">.</span><span class="n">GetSessionProxyManager</span><span class="p">()</span>
+                <span class="n">settingsProxy</span> <span class="o">=</span> <span class="n">pxm</span><span class="o">.</span><span class="n">GetProxy</span><span class="p">(</span><span class="s2">&quot;settings&quot;</span><span class="p">,</span> <span class="s2">&quot;GeneralSettings&quot;</span><span class="p">)</span>
+                <span class="n">mode</span> <span class="o">=</span> <span class="n">settingsProxy</span><span class="o">.</span><span class="n">GetProperty</span><span class="p">(</span><span class="s2">&quot;TransferFunctionResetMode&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">GetElement</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+                <span class="n">proxy</span><span class="o">.</span><span class="n">GetProperty</span><span class="p">(</span><span class="s2">&quot;AutomaticRescaleRangeMode&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">SetData</span><span class="p">(</span><span class="n">mode</span><span class="p">)</span>
+
+            <span class="k">raise</span> <span class="n">Continue</span><span class="p">()</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">NotSupportedException</span><span class="p">(</span>
+                    <span class="s2">&quot;&#39;LockScalarRange&#39; is obsolete as of ParaView 5.5. Use &quot;</span>\
+                    <span class="s2">&quot;&#39;AutomaticRescaleRangeMode&#39; property instead.&quot;</span><span class="p">)</span>
+
+    <span class="c1"># In 5.5, we changed the vtkArrayCalculator to use a different set of constants to control which</span>
+    <span class="c1"># data it operates on.  This change changed the method and property name from AttributeMode to</span>
+    <span class="c1"># AttributeType</span>
+    <span class="k">if</span> <span class="n">pname</span> <span class="o">==</span> <span class="s2">&quot;AttributeMode&quot;</span> <span class="ow">and</span> <span class="n">proxy</span><span class="o">.</span><span class="n">SMProxy</span><span class="o">.</span><span class="n">GetXMLName</span><span class="p">()</span> <span class="o">==</span> <span class="s2">&quot;Calculator&quot;</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">paraview</span><span class="o">.</span><span class="n">compatibility</span><span class="o">.</span><span class="n">GetVersion</span><span class="p">()</span> <span class="o">&lt;=</span> <span class="mf">5.4</span><span class="p">:</span>
+            <span class="c1"># The Attribute type uses enumeration values from vtkDataObject::AttributeTypes</span>
+            <span class="c1"># rather than custom constants for the calculator.  For the values supported by</span>
+            <span class="c1"># ParaView before this change, the conversion works out to subtracting 1 if value</span>
+            <span class="c1"># is an integer. If value is an enumerated string we use that as is since it matches</span>
+            <span class="c1"># the previous enumerated string options.</span>
+            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="nb">int</span><span class="p">):</span>
+                <span class="n">proxy</span><span class="o">.</span><span class="n">GetProperty</span><span class="p">(</span><span class="s2">&quot;AttributeType&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">SetData</span><span class="p">(</span><span class="n">value</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">proxy</span><span class="o">.</span><span class="n">GetProperty</span><span class="p">(</span><span class="s2">&quot;AttributeType&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">SetData</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+            <span class="k">raise</span> <span class="n">Continue</span><span class="p">()</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">NotSupportedException</span><span class="p">(</span>\
+                <span class="s2">&quot;&#39;AttributeMode&#39; is obsolete.  Use &#39;AttributeType&#39; property of Calculator filter instead.&quot;</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">pname</span> <span class="o">==</span> <span class="s2">&quot;UseOffscreenRenderingForScreenshots&quot;</span> <span class="ow">and</span> <span class="n">proxy</span><span class="o">.</span><span class="n">SMProxy</span><span class="o">.</span><span class="n">IsA</span><span class="p">(</span><span class="s2">&quot;vtkSMViewProxy&quot;</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">paraview</span><span class="o">.</span><span class="n">compatibility</span><span class="o">.</span><span class="n">GetVersion</span><span class="p">()</span> <span class="o">&lt;=</span> <span class="mf">5.4</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">Continue</span><span class="p">()</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">NotSupportedException</span><span class="p">(</span>\
+                    <span class="s2">&quot;&#39;UseOffscreenRenderingForScreenshots&#39; is obsolete. Simply remove it from your script.&quot;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">pname</span> <span class="o">==</span> <span class="s2">&quot;UseOffscreenRendering&quot;</span> <span class="ow">and</span> <span class="n">proxy</span><span class="o">.</span><span class="n">SMProxy</span><span class="o">.</span><span class="n">IsA</span><span class="p">(</span><span class="s2">&quot;vtkSMViewProxy&quot;</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">paraview</span><span class="o">.</span><span class="n">compatibility</span><span class="o">.</span><span class="n">GetVersion</span><span class="p">()</span> <span class="o">&lt;=</span> <span class="mf">5.4</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">Continue</span><span class="p">()</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">NotSupportedException</span><span class="p">(</span>\
+                    <span class="s2">&quot;&#39;UseOffscreenRendering&#39; is obsolete. Simply remove it from your script.&quot;</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">proxy</span><span class="o">.</span><span class="n">SMProxy</span> <span class="ow">and</span> <span class="n">proxy</span><span class="o">.</span><span class="n">SMProxy</span><span class="o">.</span><span class="n">GetXMLName</span><span class="p">()</span> <span class="o">==</span> <span class="s2">&quot;CGNSSeriesReader&quot;</span><span class="p">:</span>
+        <span class="c1"># in 5.5, CGNS reader had some changes. &quot;BaseStatus&quot;, &quot;FamilyStatus&quot;,</span>
+        <span class="c1"># &quot;LoadBndPatch&quot;, and &quot;LoadMesh&quot; properties were removed.</span>
+        <span class="k">if</span> <span class="n">pname</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;LoadBndPatch&quot;</span><span class="p">,</span> <span class="s2">&quot;LoadMesh&quot;</span><span class="p">,</span> <span class="s2">&quot;BaseStatus&quot;</span><span class="p">,</span> <span class="s2">&quot;FamilyStatus&quot;</span><span class="p">]:</span>
+            <span class="k">if</span> <span class="n">paraview</span><span class="o">.</span><span class="n">compatibility</span><span class="o">.</span><span class="n">GetVersion</span><span class="p">()</span> <span class="o">&lt;=</span> <span class="mf">5.4</span><span class="p">:</span>
+                <span class="n">paraview</span><span class="o">.</span><span class="n">print_warning</span><span class="p">(</span>\
+                  <span class="s2">&quot;&#39;</span><span class="si">%s</span><span class="s2">&#39; is no longer supported and will have no effect. &quot;</span>\
+                  <span class="s2">&quot;Please use `Blocks` property to specify blocks to load.&quot;</span> <span class="o">%</span> <span class="n">pname</span><span class="p">)</span>
+                <span class="k">raise</span> <span class="n">Continue</span><span class="p">()</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="n">NotSupportedException</span><span class="p">(</span><span class="s2">&quot;&#39;</span><span class="si">%s</span><span class="s2">&#39; is obsolete. Use the `Blocks` &quot;</span>\
+                        <span class="s2">&quot;property to select blocks using SIL instead.&quot;</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">pname</span> <span class="o">==</span> <span class="s2">&quot;DataBoundsInflateFactor&quot;</span> <span class="ow">and</span> <span class="n">proxy</span><span class="o">.</span><span class="n">SMProxy</span><span class="o">.</span><span class="n">GetProperty</span><span class="p">(</span><span class="s2">&quot;DataBoundsScaleFactor&quot;</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">paraview</span><span class="o">.</span><span class="n">compatibility</span><span class="o">.</span><span class="n">GetVersion</span><span class="p">()</span> <span class="o">&lt;=</span> <span class="mf">5.4</span><span class="p">:</span>
+            <span class="c1"># In 5.5, The axes grid data bounds inflate factor have been</span>
+            <span class="c1"># translated by 1 to become the scale factor.</span>
+            <span class="n">proxy</span><span class="o">.</span><span class="n">GetProperty</span><span class="p">(</span><span class="s2">&quot;DataBoundsScaleFactor&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">SetData</span><span class="p">(</span><span class="n">value</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="c1">#if inflat factor is being used, raise NotSupportedException</span>
+            <span class="k">raise</span> <span class="n">NotSupportedException</span><span class="p">(</span>\
+                <span class="s2">&quot;&#39;DataBoundsInflateFactor&#39; is obsolete as of ParaView 5.5. Use the &quot;</span>\
+                <span class="s2">&quot;&#39;DataBoundsScaleFactor&#39; property to modify the axes gris data bounds instead.&quot;</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">proxy</span><span class="o">.</span><span class="n">SMProxy</span> <span class="ow">and</span> <span class="n">proxy</span><span class="o">.</span><span class="n">SMProxy</span><span class="o">.</span><span class="n">GetXMLName</span><span class="p">()</span> <span class="o">==</span> <span class="s2">&quot;AnnotateAttributeData&quot;</span><span class="p">:</span>
+        <span class="c1"># in 5.5, Annotate Attribute Data changed how it sets the array to annotate</span>
+        <span class="k">if</span> <span class="n">pname</span> <span class="o">==</span> <span class="s2">&quot;ArrayAssociation&quot;</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">paraview</span><span class="o">.</span><span class="n">compatibility</span><span class="o">.</span><span class="n">GetVersion</span><span class="p">()</span> <span class="o">&lt;=</span> <span class="mf">5.4</span><span class="p">:</span>
+                <span class="n">paraview</span><span class="o">.</span><span class="n">print_warning</span><span class="p">(</span>\
+                <span class="s2">&quot;&#39;ArrayAssociation&#39; is obsolete.  Use &#39;SelectInputArray&#39; property of AnnotateAttributeData instead.&quot;</span><span class="p">)</span>
+
+                <span class="k">if</span> <span class="n">value</span> <span class="o">==</span> <span class="s2">&quot;Point Data&quot;</span><span class="p">:</span>
+                    <span class="n">value</span> <span class="o">=</span> <span class="s2">&quot;POINTS&quot;</span>
+                <span class="k">elif</span> <span class="n">value</span> <span class="o">==</span> <span class="s2">&quot;Cell Data&quot;</span><span class="p">:</span>
+                    <span class="n">value</span> <span class="o">=</span> <span class="s2">&quot;CELLS&quot;</span>
+                <span class="k">elif</span> <span class="n">value</span> <span class="o">==</span> <span class="s2">&quot;Field Data&quot;</span><span class="p">:</span>
+                    <span class="n">value</span> <span class="o">=</span> <span class="s2">&quot;FIELD&quot;</span>
+                <span class="k">elif</span> <span class="n">value</span> <span class="o">==</span> <span class="s2">&quot;Row Data&quot;</span><span class="p">:</span>
+                    <span class="n">value</span> <span class="o">=</span> <span class="s2">&quot;ROWS&quot;</span>
+
+                <span class="n">arrayProp</span> <span class="o">=</span> <span class="n">proxy</span><span class="o">.</span><span class="n">GetProperty</span><span class="p">(</span><span class="s2">&quot;SelectInputArray&quot;</span><span class="p">)</span>
+                <span class="n">proxy</span><span class="o">.</span><span class="n">GetProperty</span><span class="p">(</span><span class="s2">&quot;SelectInputArray&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">SetData</span><span class="p">((</span><span class="n">value</span><span class="p">,</span> <span class="n">arrayProp</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span>
+                <span class="k">raise</span> <span class="n">Continue</span><span class="p">()</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="n">NotSupportedException</span><span class="p">(</span>\
+                    <span class="s2">&quot;&#39;ArrayAssociation&#39; is obsolete as of ParaView 5.5.  Use &#39;SelectInputArray&#39; instead.&quot;</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">pname</span> <span class="o">==</span> <span class="s2">&quot;ArrayName&quot;</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">paraview</span><span class="o">.</span><span class="n">compatibility</span><span class="o">.</span><span class="n">GetVersion</span><span class="p">()</span> <span class="o">&lt;=</span> <span class="mf">5.4</span><span class="p">:</span>
+                <span class="n">paraview</span><span class="o">.</span><span class="n">print_warning</span><span class="p">(</span>\
+                <span class="s2">&quot;&#39;ArrayName&#39; is obsolete.  Use &#39;SelectInputArray&#39; property of AnnotateAttributeData instead.&quot;</span><span class="p">)</span>
+
+                <span class="n">arrayProp</span> <span class="o">=</span> <span class="n">proxy</span><span class="o">.</span><span class="n">GetProperty</span><span class="p">(</span><span class="s2">&quot;SelectInputArray&quot;</span><span class="p">)</span>
+                <span class="n">proxy</span><span class="o">.</span><span class="n">GetProperty</span><span class="p">(</span><span class="s2">&quot;SelectInputArray&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">SetData</span><span class="p">((</span><span class="n">arrayProp</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">value</span><span class="p">))</span>
+                <span class="k">raise</span> <span class="n">Continue</span><span class="p">()</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="n">NotSupportedException</span><span class="p">(</span>\
+                    <span class="s2">&quot;&#39;ArrayName&#39; is obsolete as of ParaView 5.5.  Use &#39;SelectInputArray&#39; instead.&quot;</span><span class="p">)</span>
+
+    <span class="c1"># In 5.5, we changed the Clip to be inverted from what it was before and changed the InsideOut</span>
+    <span class="c1"># property to be called Invert to be clearer.</span>
+    <span class="k">if</span> <span class="n">pname</span> <span class="o">==</span> <span class="s2">&quot;InsideOut&quot;</span> <span class="ow">and</span> <span class="n">proxy</span><span class="o">.</span><span class="n">SMProxy</span><span class="o">.</span><span class="n">GetXMLName</span><span class="p">()</span> <span class="o">==</span> <span class="s2">&quot;Clip&quot;</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">paraview</span><span class="o">.</span><span class="n">compatibility</span><span class="o">.</span><span class="n">GetVersion</span><span class="p">()</span> <span class="o">&lt;=</span> <span class="mf">5.4</span><span class="p">:</span>
+            <span class="n">proxy</span><span class="o">.</span><span class="n">GetProperty</span><span class="p">(</span><span class="s2">&quot;Invert&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">SetData</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">value</span><span class="p">)</span>
+            <span class="k">raise</span> <span class="n">Continue</span><span class="p">()</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">NotSupportedException</span><span class="p">(</span>\
+                <span class="s2">&quot;&#39;InsideOut&#39; is obsolete.  Use &#39;Invert&#39; property of Clip filter instead.&quot;</span><span class="p">)</span>
+
+    <span class="c1"># In 5.6, we changed the &quot;SpreadSheetRepresentation&quot; proxy to no longer have</span>
+    <span class="c1"># the &quot;FieldAssociation&quot; and &quot;GenerateCellConnectivity&quot; properties. They are</span>
+    <span class="c1"># now moved to the view.</span>
+    <span class="k">if</span> <span class="n">pname</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;FieldAssociation&quot;</span><span class="p">,</span> <span class="s2">&quot;GenerateCellConnectivity&quot;</span><span class="p">]</span> <span class="ow">and</span> <span class="n">proxy</span><span class="o">.</span><span class="n">SMProxy</span><span class="o">.</span><span class="n">GetXMLName</span><span class="p">()</span> <span class="o">==</span> <span class="s2">&quot;SpreadSheetRepresentation&quot;</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">paraview</span><span class="o">.</span><span class="n">compatibility</span><span class="o">.</span><span class="n">GetVersion</span><span class="p">()</span> <span class="o">&lt;=</span> <span class="mf">5.5</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">Continue</span><span class="p">()</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">NotSupportedException</span><span class="p">(</span>
+                  <span class="s2">&quot;&#39;</span><span class="si">%s</span><span class="s2">&#39; is obsolete on SpreadSheetRepresentation as of ParaView 5.6 and has been migrated to the view.&quot;</span> <span class="o">%</span> <span class="n">pname</span><span class="p">)</span>
+
+
+    <span class="k">if</span> <span class="ow">not</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">proxy</span><span class="p">,</span> <span class="n">pname</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="ne">AttributeError</span><span class="p">()</span>
+    <span class="n">proxy</span><span class="o">.</span><span class="vm">__dict__</span><span class="p">[</span><span class="n">pname</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span>
+
+    <span class="k">raise</span> <span class="n">Continue</span><span class="p">()</span></div>
+
+<div class="viewcode-block" id="setattr_fix_value"><a class="viewcode-back" href="../../paraview._backwardscompatibilityhelper.html#paraview._backwardscompatibilityhelper.setattr_fix_value">[docs]</a><span class="k">def</span> <span class="nf">setattr_fix_value</span><span class="p">(</span><span class="n">proxy</span><span class="p">,</span> <span class="n">pname</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">setter_func</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">pname</span> <span class="o">==</span> <span class="s2">&quot;ShaderPreset&quot;</span> <span class="ow">and</span> <span class="n">proxy</span><span class="o">.</span><span class="n">SMProxy</span><span class="o">.</span><span class="n">GetXMLName</span><span class="p">()</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">&quot;Representation&quot;</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">value</span> <span class="o">==</span> <span class="s2">&quot;Gaussian Blur (Default)&quot;</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">paraview</span><span class="o">.</span><span class="n">compatibility</span><span class="o">.</span><span class="n">GetVersion</span><span class="p">()</span> <span class="o">&lt;=</span> <span class="mf">5.5</span><span class="p">:</span>
+                <span class="n">paraview</span><span class="o">.</span><span class="n">print_warning</span><span class="p">(</span>\
+                    <span class="s2">&quot;The &#39;Gaussian Blur (Default)&#39; option has been renamed to &#39;Gaussian Blur&#39;.  Please use that instead.&quot;</span><span class="p">)</span>
+                <span class="n">setter_func</span><span class="p">(</span><span class="n">proxy</span><span class="p">,</span> <span class="s2">&quot;Gaussian Blur&quot;</span><span class="p">)</span>
+                <span class="k">raise</span> <span class="n">Continue</span><span class="p">()</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="n">NotSupportedException</span><span class="p">(</span><span class="s2">&quot;&#39;Gaussian Blur (Default)&#39; is an obsolete value for ShaderPreset. &quot;</span>\
+                    <span class="s2">&quot; Use &#39;Gaussian Blur&#39; instead.&quot;</span><span class="p">)</span>
+    <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;&#39;</span><span class="si">%s</span><span class="s2">&#39; is not a valid value for </span><span class="si">%s</span><span class="s2">!&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">pname</span><span class="p">))</span></div>
+
+<span class="n">_fgetattr</span> <span class="o">=</span> <span class="nb">getattr</span>
+
+<div class="viewcode-block" id="getattr"><a class="viewcode-back" href="../../paraview._backwardscompatibilityhelper.html#paraview._backwardscompatibilityhelper.getattr">[docs]</a><span class="k">def</span> <span class="nf">getattr</span><span class="p">(</span><span class="n">proxy</span><span class="p">,</span> <span class="n">pname</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Attempts to emulate getattr() when called using a deprecated property name</span>
+<span class="sd">    for a proxy.</span>
+
+<span class="sd">    Will return a *reasonable* stand-in if the property was</span>
+<span class="sd">    deprecated and the paraview compatibility version was set to a version older</span>
+<span class="sd">    than when the property was deprecated.</span>
+
+<span class="sd">    Will raise ``NotSupportedException`` if the property was deprecated and</span>
+<span class="sd">    paraview compatibility version is newer than that deprecation version.</span>
+
+<span class="sd">    Will raise ``Continue`` to indicate the property name is unaffected by</span>
+<span class="sd">    any API deprecation and the caller should follow normal code execution</span>
+<span class="sd">    paths.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">version</span> <span class="o">=</span> <span class="n">paraview</span><span class="o">.</span><span class="n">compatibility</span><span class="o">.</span><span class="n">GetVersion</span><span class="p">()</span>
+
+    <span class="c1"># In 4.2, we removed ColorAttributeType property. One is expected to use</span>
+    <span class="c1"># ColorArrayName to specify the attribute type as well.</span>
+    <span class="k">if</span> <span class="n">pname</span> <span class="o">==</span> <span class="s2">&quot;ColorAttributeType&quot;</span> <span class="ow">and</span> <span class="n">proxy</span><span class="o">.</span><span class="n">SMProxy</span><span class="o">.</span><span class="n">GetProperty</span><span class="p">(</span><span class="s2">&quot;ColorArrayName&quot;</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">version</span> <span class="o">&lt;=</span> <span class="mf">4.1</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">proxy</span><span class="o">.</span><span class="n">GetProperty</span><span class="p">(</span><span class="s2">&quot;ColorArrayName&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;CELLS&quot;</span><span class="p">:</span>
+                <span class="k">return</span> <span class="s2">&quot;CELL_DATA&quot;</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">return</span> <span class="s2">&quot;POINT_DATA&quot;</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="c1"># if ColorAttributeType is being used, warn.</span>
+            <span class="k">raise</span> <span class="n">NotSupportedException</span><span class="p">(</span>
+                <span class="s2">&quot;&#39;ColorAttributeType&#39; is obsolete. Simply use &#39;ColorArrayName&#39; instead.  Refer to ParaView Python API changes documentation online.&quot;</span><span class="p">)</span>
+
+    <span class="c1"># In 5.1, we removed CameraClippingRange property. It was not of any use</span>
+    <span class="c1"># since we added support to render view to automatically reset clipping</span>
+    <span class="c1"># range for each render.</span>
+    <span class="k">if</span> <span class="n">pname</span> <span class="o">==</span> <span class="s2">&quot;CameraClippingRange&quot;</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">proxy</span><span class="o">.</span><span class="n">SMProxy</span><span class="o">.</span><span class="n">GetProperty</span><span class="p">(</span><span class="s2">&quot;CameraClippingRange&quot;</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">version</span> <span class="o">&lt;=</span> <span class="mf">5.0</span><span class="p">:</span>
+            <span class="k">return</span> <span class="p">[</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">NotSupportedException</span><span class="p">(</span>
+                    <span class="s1">&#39;CameraClippingRange is obsolete. Please remove &#39;</span>\
+                    <span class="s1">&#39;it from your script. You no longer need it.&#39;</span><span class="p">)</span>
+
+    <span class="c1"># In 5.1, we remove support for Cube Axes and related properties.</span>
+    <span class="k">global</span> <span class="n">_ACubeAxesHelper</span>
+    <span class="k">if</span> <span class="n">proxy</span><span class="o">.</span><span class="n">SMProxy</span><span class="o">.</span><span class="n">IsA</span><span class="p">(</span><span class="s2">&quot;vtkSMPVRepresentationProxy&quot;</span><span class="p">)</span> <span class="ow">and</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">_ACubeAxesHelper</span><span class="p">,</span> <span class="n">pname</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">version</span> <span class="o">&lt;=</span> <span class="mf">5.0</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">_fgetattr</span><span class="p">(</span><span class="n">_ACubeAxesHelper</span><span class="p">,</span> <span class="n">pname</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">NotSupportedException</span><span class="p">(</span>
+                    <span class="s1">&#39;Cube Axes and related properties are now obsolete. Please &#39;</span>\
+                    <span class="s1">&#39;remove them from your script.&#39;</span><span class="p">)</span>
+
+    <span class="c1"># In 5.4, we removed the AspectRatio property and replaced it with the</span>
+    <span class="c1"># ScalarBarThickness property.</span>
+    <span class="k">if</span> <span class="n">pname</span> <span class="o">==</span> <span class="s2">&quot;AspectRatio&quot;</span> <span class="ow">and</span> <span class="n">proxy</span><span class="o">.</span><span class="n">SMProxy</span><span class="o">.</span><span class="n">GetProperty</span><span class="p">(</span><span class="s2">&quot;ScalarBarThickness&quot;</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">version</span> <span class="o">&lt;=</span> <span class="mf">5.3</span><span class="p">:</span>
+            <span class="k">return</span> <span class="mf">20.0</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">NotSupportedException</span><span class="p">(</span>
+                    <span class="s1">&#39;The AspectRatio property has been removed in ParaView &#39;</span>\
+                    <span class="s1">&#39;5.4. Please use the ScalarBarThickness property instead &#39;</span>\
+                    <span class="s1">&#39;to set the thickness in terms of points.&#39;</span><span class="p">)</span>
+
+    <span class="c1"># In 5.4, we removed the Position2 property and replaced it with the</span>
+    <span class="c1"># ScalarBarLength property.</span>
+    <span class="k">if</span> <span class="n">pname</span> <span class="o">==</span> <span class="s2">&quot;Position2&quot;</span> <span class="ow">and</span> <span class="n">proxy</span><span class="o">.</span><span class="n">SMProxy</span><span class="o">.</span><span class="n">GetProperty</span><span class="p">(</span><span class="s2">&quot;ScalarBarLength&quot;</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">version</span> <span class="o">&lt;=</span> <span class="mf">5.3</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">proxy</span><span class="o">.</span><span class="n">GetProperty</span><span class="p">(</span><span class="s2">&quot;Orientation&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">GetData</span><span class="p">()</span> <span class="o">==</span> <span class="s2">&quot;Horizontal&quot;</span><span class="p">:</span>
+                <span class="k">return</span> <span class="p">[</span><span class="mf">0.05</span><span class="p">,</span> <span class="n">proxy</span><span class="o">.</span><span class="n">GetProperty</span><span class="p">(</span><span class="s2">&quot;ScalarBarLength&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">GetData</span><span class="p">()]</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">return</span> <span class="p">[</span><span class="n">proxy</span><span class="o">.</span><span class="n">GetProperty</span><span class="p">(</span><span class="s2">&quot;ScalarBarLength&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">GetData</span><span class="p">(),</span> <span class="mf">0.05</span><span class="p">]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">NotSupportedException</span><span class="p">(</span>
+                    <span class="s1">&#39;The Position2 property has been removed in ParaView &#39;</span>\
+                    <span class="s1">&#39;5.4. Please set the ScalarBarLength property instead.&#39;</span><span class="p">)</span>
+
+    <span class="c1"># In 5.5, we removed the PVLookupTable.LockScalarRange boolean property and</span>
+    <span class="c1"># replaced it with the enumeration AutomaticRescaleRangeMode.</span>
+    <span class="k">if</span> <span class="n">pname</span> <span class="o">==</span> <span class="s2">&quot;LockScalarRange&quot;</span> <span class="ow">and</span> <span class="n">proxy</span><span class="o">.</span><span class="n">SMProxy</span><span class="o">.</span><span class="n">GetProperty</span><span class="p">(</span><span class="s2">&quot;AutomaticRescaleRangeMode&quot;</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">version</span> <span class="o">&lt;=</span> <span class="mf">5.4</span><span class="p">:</span>
+            <span class="kn">from</span> <span class="nn">vtkmodules.vtkPVServerManagerRendering</span> <span class="k">import</span> <span class="n">vtkSMTransferFunctionManager</span>
+            <span class="k">if</span> <span class="n">proxy</span><span class="o">.</span><span class="n">GetProperty</span><span class="p">(</span><span class="s2">&quot;AutomaticRescaleRangeMode&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">GetData</span><span class="p">()</span> <span class="o">==</span> <span class="s2">&quot;Never&quot;</span><span class="p">:</span>
+                <span class="k">return</span> <span class="mi">1</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">return</span> <span class="mi">0</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">NotSupportedException</span><span class="p">(</span>
+                    <span class="s1">&#39;The PVLookupTable.LockScalarRange property has been removed &#39;</span>\
+                    <span class="s1">&#39;in ParaView 5.5. Please set the AutomaticRescaleRangeMode property &#39;</span>\
+                    <span class="s1">&#39;instead.&#39;</span><span class="p">)</span>
+    <span class="c1"># In 5.5, we changed the vtkArrayCalculator to use a different set of constants to control which</span>
+    <span class="c1"># data it operates on.  This change changed the method and property name from AttributeMode to</span>
+    <span class="c1"># AttributeType</span>
+    <span class="k">if</span> <span class="n">pname</span> <span class="o">==</span> <span class="s2">&quot;AttributeMode&quot;</span> <span class="ow">and</span> <span class="n">proxy</span><span class="o">.</span><span class="n">SMProxy</span><span class="o">.</span><span class="n">GetName</span><span class="p">()</span> <span class="o">==</span> <span class="s2">&quot;Calculator&quot;</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">paraview</span><span class="o">.</span><span class="n">compatibility</span><span class="o">.</span><span class="n">GetVersion</span><span class="p">()</span> <span class="o">&lt;=</span> <span class="mf">5.4</span><span class="p">:</span>
+            <span class="c1"># The Attribute type uses enumeration values from vtkDataObject::AttributeTypes</span>
+            <span class="c1"># rather than custom constants for the calculator.  For the values supported by</span>
+            <span class="c1"># ParaView before this change, the conversion works out to adding 1 if it is an</span>
+            <span class="c1"># integer. If the value is an enumerated string we use that as is since it matches</span>
+            <span class="c1"># the previous enumerated string options.</span>
+            <span class="n">value</span> <span class="o">=</span> <span class="n">proxy</span><span class="o">.</span><span class="n">GetProperty</span><span class="p">(</span><span class="s2">&quot;AttributeType&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">GetData</span><span class="p">()</span>
+            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="nb">int</span><span class="p">):</span>
+                <span class="k">return</span> <span class="n">value</span> <span class="o">+</span> <span class="mi">1</span>
+            <span class="k">return</span> <span class="n">value</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">NotSupportedException</span><span class="p">(</span>
+                    <span class="s1">&#39;The Calculator.AttributeMode property has been removed in ParaView 5.5. &#39;</span>\
+                    <span class="s1">&#39;Please set the AttributeType property instead. Note that different &#39;</span>\
+                    <span class="s1">&#39;constants are needed for the two properties.&#39;</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">pname</span> <span class="o">==</span> <span class="s2">&quot;UseOffscreenRenderingForScreenshots&quot;</span> <span class="ow">and</span> <span class="n">proxy</span><span class="o">.</span><span class="n">SMProxy</span><span class="o">.</span><span class="n">IsA</span><span class="p">(</span><span class="s2">&quot;vtkSMViewProxy&quot;</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">version</span> <span class="o">&lt;=</span> <span class="mf">5.4</span><span class="p">:</span>
+            <span class="k">return</span> <span class="mi">0</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">NotSupportedException</span><span class="p">(</span><span class="s1">&#39;`UseOffscreenRenderingForScreenshots` &#39;</span>\
+                    <span class="s1">&#39;is no longer supported. Please remove it.&#39;</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">pname</span> <span class="o">==</span> <span class="s2">&quot;UseOffscreenRendering&quot;</span> <span class="ow">and</span> <span class="n">proxy</span><span class="o">.</span><span class="n">SMProxy</span><span class="o">.</span><span class="n">IsA</span><span class="p">(</span><span class="s2">&quot;vtkSMViewProxy&quot;</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">version</span> <span class="o">&lt;=</span> <span class="mf">5.4</span><span class="p">:</span>
+            <span class="k">return</span> <span class="mi">0</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">NotSupportedException</span><span class="p">(</span>\
+                    <span class="s1">&#39;`UseOffscreenRendering` is no longer supported. Please remove it.&#39;</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">proxy</span><span class="o">.</span><span class="n">SMProxy</span><span class="o">.</span><span class="n">GetXMLName</span><span class="p">()</span> <span class="o">==</span> <span class="s2">&quot;CGNSSeriesReader&quot;</span> <span class="ow">and</span>\
+            <span class="n">pname</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;LoadBndPatch&quot;</span><span class="p">,</span> <span class="s2">&quot;LoadMesh&quot;</span><span class="p">,</span> <span class="s2">&quot;BaseStatus&quot;</span><span class="p">,</span> <span class="s2">&quot;FamilyStatus&quot;</span><span class="p">]:</span>
+        <span class="k">if</span> <span class="n">version</span> <span class="o">&lt;</span> <span class="mf">5.5</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">pname</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;LoadMesh&quot;</span><span class="p">,</span> <span class="s2">&quot;LoadBndPatch&quot;</span><span class="p">]:</span>
+                <span class="k">return</span> <span class="mi">0</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">paraview</span><span class="o">.</span><span class="n">print_warning</span><span class="p">(</span>\
+                  <span class="s2">&quot;&#39;</span><span class="si">%s</span><span class="s2">&#39; is no longer supported and will have no effect. &quot;</span>\
+                  <span class="s2">&quot;Please use `Blocks` property to specify blocks to load.&quot;</span> <span class="o">%</span> <span class="n">pname</span><span class="p">)</span>
+                <span class="k">return</span> <span class="p">[]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">NotSupportedException</span><span class="p">(</span>\
+              <span class="s2">&quot;&#39;</span><span class="si">%s</span><span class="s2">&#39; is obsolete. Use `Blocks` to make block based selection.&quot;</span> <span class="o">%</span> <span class="n">pname</span><span class="p">)</span>
+
+    <span class="c1"># In 5.5, we removed the DataBoundsInflateFactor property and replaced it with the</span>
+    <span class="c1"># DataBoundsScaleFactor property.</span>
+    <span class="k">if</span> <span class="n">pname</span> <span class="o">==</span> <span class="s2">&quot;DataBoundsInflateFactor&quot;</span> <span class="ow">and</span> <span class="n">proxy</span><span class="o">.</span><span class="n">SMProxy</span><span class="o">.</span><span class="n">GetProperty</span><span class="p">(</span><span class="s2">&quot;DataBoundsScaleFactor&quot;</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">version</span> <span class="o">&lt;=</span> <span class="mf">5.4</span><span class="p">:</span>
+            <span class="n">inflateValue</span> <span class="o">=</span> <span class="n">proxy</span><span class="o">.</span><span class="n">GetProperty</span><span class="p">(</span><span class="s2">&quot;DataBoundsScaleFactor&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">GetData</span><span class="p">()</span> <span class="o">-</span> <span class="mi">1</span>
+            <span class="k">if</span> <span class="n">inflateValue</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="k">return</span> <span class="n">inflateValue</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">return</span> <span class="mi">0</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">NotSupportedException</span><span class="p">(</span>
+                    <span class="s1">&#39;The  DataBoundsInflateFactorproperty has been removed in ParaView &#39;</span>\
+                    <span class="s1">&#39;5.4. Please use the DataBoundsScaleFactor property instead.&#39;</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">proxy</span><span class="o">.</span><span class="n">SMProxy</span> <span class="ow">and</span> <span class="n">proxy</span><span class="o">.</span><span class="n">SMProxy</span><span class="o">.</span><span class="n">GetXMLName</span><span class="p">()</span> <span class="o">==</span> <span class="s2">&quot;AnnotateAttributeData&quot;</span><span class="p">:</span>
+        <span class="c1"># in 5.5, Annotate Attribute Data changed how it sets the array to annotate</span>
+        <span class="k">if</span> <span class="n">pname</span> <span class="o">==</span> <span class="s2">&quot;ArrayAssociation&quot;</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">paraview</span><span class="o">.</span><span class="n">compatibility</span><span class="o">.</span><span class="n">GetVersion</span><span class="p">()</span> <span class="o">&lt;=</span> <span class="mf">5.4</span><span class="p">:</span>
+                <span class="n">paraview</span><span class="o">.</span><span class="n">print_warning</span><span class="p">(</span>\
+                <span class="s2">&quot;&#39;ArrayAssociation&#39; is obsolete.  Use &#39;SelectInputArray&#39; property of AnnotateAttributeData instead.&quot;</span><span class="p">)</span>
+
+                <span class="n">value</span> <span class="o">=</span> <span class="n">proxy</span><span class="o">.</span><span class="n">GetProperty</span><span class="p">(</span><span class="s2">&quot;SelectInputArray&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+                <span class="k">if</span> <span class="n">value</span> <span class="o">==</span> <span class="s2">&quot;CELLS&quot;</span><span class="p">:</span>
+                    <span class="k">return</span> <span class="s2">&quot;Cell Data&quot;</span>
+                <span class="k">elif</span> <span class="n">value</span> <span class="o">==</span> <span class="s2">&quot;FIELD&quot;</span><span class="p">:</span>
+                    <span class="k">return</span> <span class="s2">&quot;Field Data&quot;</span>
+                <span class="k">elif</span> <span class="n">value</span> <span class="o">==</span> <span class="s2">&quot;ROWS&quot;</span><span class="p">:</span>
+                    <span class="k">return</span> <span class="s2">&quot;Row Data&quot;</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="k">return</span> <span class="s2">&quot;Point Data&quot;</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="n">NotSupportedException</span><span class="p">(</span>\
+                    <span class="s2">&quot;&#39;ArrayAssociation&#39; is obsolete as of ParaView 5.5.  Use &#39;SelectInputArray&#39; instead.&quot;</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">pname</span> <span class="o">==</span> <span class="s2">&quot;ArrayName&quot;</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">paraview</span><span class="o">.</span><span class="n">compatibility</span><span class="o">.</span><span class="n">GetVersion</span><span class="p">()</span> <span class="o">&lt;=</span> <span class="mf">5.4</span><span class="p">:</span>
+                <span class="n">paraview</span><span class="o">.</span><span class="n">print_warning</span><span class="p">(</span>\
+                <span class="s2">&quot;&#39;ArrayName&#39; is obsolete.  Use &#39;SelectInputArray&#39; property of AnnotateAttributeData instead.&quot;</span><span class="p">)</span>
+                <span class="k">return</span> <span class="n">proxy</span><span class="o">.</span><span class="n">GetProperty</span><span class="p">(</span><span class="s2">&quot;SelectInputArray&quot;</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="n">NotSupportedException</span><span class="p">(</span>\
+                    <span class="s2">&quot;&#39;ArrayName&#39; is obsolete as of ParaView 5.5.  Use &#39;SelectInputArray&#39; instead.&quot;</span><span class="p">)</span>
+
+    <span class="c1"># In 5.5, we changed the Clip to be inverted from what it was before and changed the InsideOut</span>
+    <span class="c1"># property to be called Invert to be clearer.</span>
+    <span class="k">if</span> <span class="n">pname</span> <span class="o">==</span> <span class="s2">&quot;InsideOut&quot;</span> <span class="ow">and</span> <span class="n">proxy</span><span class="o">.</span><span class="n">SMProxy</span><span class="o">.</span><span class="n">GetName</span><span class="p">()</span> <span class="o">==</span> <span class="s2">&quot;Clip&quot;</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">paraview</span><span class="o">.</span><span class="n">compatibility</span><span class="o">.</span><span class="n">GetVersion</span><span class="p">()</span> <span class="o">&lt;=</span> <span class="mf">5.4</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">proxy</span><span class="o">.</span><span class="n">GetProperty</span><span class="p">(</span><span class="s2">&quot;Invert&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">GetData</span><span class="p">()</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">NotSupportedException</span><span class="p">(</span>
+                    <span class="s1">&#39;The Clip.InsideOut property has been changed in ParaView 5.5. &#39;</span>\
+                    <span class="s1">&#39;Please set the Invert property instead.&#39;</span><span class="p">)</span>
+
+    <span class="c1"># In 5.6, we changed the &quot;SpreadSheetRepresentation&quot; proxy to no longer have</span>
+    <span class="c1"># the &quot;FieldAssociation&quot; and &quot;GenerateCellConnectivity&quot; properties. They are</span>
+    <span class="c1"># now moved to the view.</span>
+    <span class="k">if</span> <span class="n">pname</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;FieldAssociation&quot;</span><span class="p">,</span> <span class="s2">&quot;GenerateCellConnectivity&quot;</span><span class="p">]</span> <span class="ow">and</span> <span class="n">proxy</span><span class="o">.</span><span class="n">SMProxy</span><span class="o">.</span><span class="n">GetXMLName</span><span class="p">()</span> <span class="o">==</span> <span class="s2">&quot;SpreadSheetRepresentation&quot;</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">paraview</span><span class="o">.</span><span class="n">compatibility</span><span class="o">.</span><span class="n">GetVersion</span><span class="p">()</span> <span class="o">&lt;=</span> <span class="mf">5.5</span><span class="p">:</span>
+            <span class="k">return</span> <span class="mi">0</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">NotSupportedException</span><span class="p">(</span>
+                  <span class="s2">&quot;&#39;</span><span class="si">%s</span><span class="s2">&#39; is obsolete on SpreadSheetRepresentation as of ParaView 5.6 and has been migrated to the view.&quot;</span> <span class="o">%</span> <span class="n">pname</span><span class="p">)</span>
+    <span class="k">raise</span> <span class="n">Continue</span><span class="p">()</span></div>
+
+<div class="viewcode-block" id="GetProxy"><a class="viewcode-back" href="../../paraview._backwardscompatibilityhelper.html#paraview._backwardscompatibilityhelper.GetProxy">[docs]</a><span class="k">def</span> <span class="nf">GetProxy</span><span class="p">(</span><span class="n">module</span><span class="p">,</span> <span class="n">key</span><span class="p">):</span>
+    <span class="n">version</span> <span class="o">=</span> <span class="n">paraview</span><span class="o">.</span><span class="n">compatibility</span><span class="o">.</span><span class="n">GetVersion</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">version</span> <span class="o">&lt;</span> <span class="mf">5.2</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">key</span> <span class="o">==</span> <span class="s2">&quot;ResampleWithDataset&quot;</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">module</span><span class="o">.</span><span class="vm">__dict__</span><span class="p">[</span><span class="s2">&quot;LegacyResampleWithDataset&quot;</span><span class="p">]()</span>
+    <span class="k">if</span> <span class="n">version</span> <span class="o">&lt;</span> <span class="mf">5.3</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">key</span> <span class="o">==</span> <span class="s2">&quot;PLYReader&quot;</span><span class="p">:</span>
+            <span class="c1"># note the case. The old reader didn&#39;t support `FileNames` property,</span>
+            <span class="c1"># only `FileName`.</span>
+            <span class="k">return</span> <span class="n">module</span><span class="o">.</span><span class="vm">__dict__</span><span class="p">[</span><span class="s2">&quot;plyreader&quot;</span><span class="p">]()</span>
+    <span class="k">if</span> <span class="n">version</span> <span class="o">&lt;</span> <span class="mf">5.5</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">key</span> <span class="o">==</span> <span class="s2">&quot;Clip&quot;</span><span class="p">:</span>
+            <span class="c1"># in PV 5.5 we changed the default for Clip&#39;s InsideOut property to 1 instead of 0</span>
+            <span class="c1"># also InsideOut was changed to Invert in 5.5</span>
+            <span class="n">clip</span> <span class="o">=</span> <span class="n">module</span><span class="o">.</span><span class="vm">__dict__</span><span class="p">[</span><span class="n">key</span><span class="p">]()</span>
+            <span class="n">clip</span><span class="o">.</span><span class="n">Invert</span> <span class="o">=</span> <span class="mi">0</span>
+            <span class="k">return</span> <span class="n">clip</span>
+    <span class="k">if</span> <span class="n">version</span> <span class="o">&lt;</span> <span class="mf">5.6</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">key</span> <span class="o">==</span> <span class="s2">&quot;Glyph&quot;</span><span class="p">:</span>
+            <span class="c1"># In PV 5.6, we replaced the Glyph filter with a new implementation that has a</span>
+            <span class="c1"># different set of properties. The previous implementation was renamed to</span>
+            <span class="c1"># GlyphLegacy.</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Creating GlyphLegacy&quot;</span><span class="p">)</span>
+            <span class="n">glyph</span> <span class="o">=</span> <span class="n">module</span><span class="o">.</span><span class="vm">__dict__</span><span class="p">[</span><span class="s2">&quot;GlyphLegacy&quot;</span><span class="p">]()</span>
+            <span class="nb">print</span><span class="p">(</span><span class="n">glyph</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">glyph</span>
+    <span class="k">return</span> <span class="n">module</span><span class="o">.</span><span class="vm">__dict__</span><span class="p">[</span><span class="n">key</span><span class="p">]()</span></div>
+</pre></div>
+
+          <footer>
+  
+
+  <hr/>
+
+  <p>
+      &copy; Copyright 2013, Kitware, Inc..
+  </p>
+
+  <a href="https://www.github.com/snide/sphinx_rtd_theme">Sphinx theme</a> provided by <a href="http://readthedocs.org">Read the Docs</a>
+  <!-- KW:BEGIN -->
+  <script type="text/javascript" src="/paraview-docs/paraview-version.js"></script>
+  <!-- KW:END -->
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+</body>
+</html>

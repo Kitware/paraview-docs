@@ -1,0 +1,1793 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>simple Module &mdash; ParaView/Python 5.6.0-RC1-93-ge1ecf860d6 documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="_static/pvIcon.ico"/>
+  
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  
+  
+
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:'./',
+        VERSION:'5.6.0-RC1-93-ge1ecf860d6',
+        COLLAPSE_INDEX:false,
+        FILE_SUFFIX:'.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="ParaView/Python 5.6.0-RC1-93-ge1ecf860d6 documentation" href="index.html"/>
+        <link rel="up" title="paraview Package" href="paraview.html"/>
+        <link rel="next" title="Available readers, sources, writers, filters and animation cues" href="paraview.servermanager_proxies.html"/>
+        <link rel="prev" title="servermanager Module" href="paraview.servermanager.html"/> 
+
+  <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        <ul>
+          <li> <a href="index.html">
+            <img src="_static/paraview-logo-small.png"
+            alt="ParaView/Python"></img></a> </li>
+          <li class="version"> version 5.6.0-RC1-93-ge1ecf860d6</li>
+        </ul>
+        <form id ="rtd-search-form" class="wy-form" action="search.html" method="get">
+  <input type="text" name="q" placeholder="Search docs" />
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix">
+        
+        
+            <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="quick-start.html">Quick-Start :  A Tutorial</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="quick-start.html#getting-started">Getting Started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="quick-start.html#creating-a-pipeline">Creating a Pipeline</a></li>
+<li class="toctree-l2"><a class="reference internal" href="quick-start.html#rendering">Rendering</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="reference internal" href="paraview.html">The ParaView Python Package</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="paraview.html#id1"><code class="docutils literal"><span class="pre">paraview</span></code> Package</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="paraview.html#modules">Modules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.html#subpackages">Subpackages</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">simple</a></li>
+<li class="toctree-l1"><a class="reference internal" href="paraview.servermanager.html">servermanager</a></li>
+<li class="toctree-l1"><a class="reference internal" href="paraview.coprocessing.html">coprocessing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="paraview.benchmark.html">benchmark</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="paraview.benchmark.html#id1"><code class="docutils literal"><span class="pre">benchmark</span></code> Package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.benchmark.html#modules">Modules</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="paraview.servermanager_proxies.html">Available readers, sources, writers, filters and animation cues</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.AMRConnectivity.html">paraview.simple.AMRConnectivity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.AMRContour.html">paraview.simple.AMRContour</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.AMRCutPlane.html">paraview.simple.AMRCutPlane</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.AMRDualClip.html">paraview.simple.AMRDualClip</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.AMRFragmentIntegration.html">paraview.simple.AMRFragmentIntegration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.AMRFragmentsFilter.html">paraview.simple.AMRFragmentsFilter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.AMRGaussianPulseSource.html">paraview.simple.AMRGaussianPulseSource</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.AMReXParticlesReader.html">paraview.simple.AMReXParticlesReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.AVSUCDReader.html">paraview.simple.AVSUCDReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.AddFieldArrays.html">paraview.simple.AddFieldArrays</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.AggregateDataset.html">paraview.simple.AggregateDataset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.AngularPeriodicFilter.html">paraview.simple.AngularPeriodicFilter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.AnimationCueBase.html">paraview.simple.AnimationCueBase</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.AnimationScene.html">paraview.simple.AnimationScene</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.AnnotateAttributeData.html">paraview.simple.AnnotateAttributeData</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.AnnotateGlobalData.html">paraview.simple.AnnotateGlobalData</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.AnnotateTime.html">paraview.simple.AnnotateTime</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.AnnotateTimeFilter.html">paraview.simple.AnnotateTimeFilter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.AppendArcLength.html">paraview.simple.AppendArcLength</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.AppendAttributes.html">paraview.simple.AppendAttributes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.AppendDatasets.html">paraview.simple.AppendDatasets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.AppendGeometry.html">paraview.simple.AppendGeometry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.AppendMolecule.html">paraview.simple.AppendMolecule</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.AppendReduce.html">paraview.simple.AppendReduce</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.Arrow.html">paraview.simple.Arrow</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.Axes.html">paraview.simple.Axes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.BYUReader.html">paraview.simple.BYUReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.BlockScalars.html">paraview.simple.BlockScalars</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.BlockSelectionSource.html">paraview.simple.BlockSelectionSource</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.BooleanKeyFrame.html">paraview.simple.BooleanKeyFrame</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.BoundingRuler.html">paraview.simple.BoundingRuler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.Box.html">paraview.simple.Box</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.CGNSSeriesReader.html">paraview.simple.CGNSSeriesReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.CGNSWriter.html">paraview.simple.CGNSWriter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.CMLMoleculeReader.html">paraview.simple.CMLMoleculeReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.CSVReader.html">paraview.simple.CSVReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.CSVWriter.html">paraview.simple.CSVWriter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.CTHSurface.html">paraview.simple.CTHSurface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.Calculator.html">paraview.simple.Calculator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.CameraAnimationCue.html">paraview.simple.CameraAnimationCue</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.CameraKeyFrame.html">paraview.simple.CameraKeyFrame</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.CellCenters.html">paraview.simple.CellCenters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.CellDatatoPointData.html">paraview.simple.CellDatatoPointData</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.CellSize.html">paraview.simple.CellSize</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.CinemaDatabasePipelineObjectFilter.html">paraview.simple.CinemaDatabasePipelineObjectFilter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.CinemaDatabasePipelineObjectReader.html">paraview.simple.CinemaDatabasePipelineObjectReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.Cinemaimageoptions.html">paraview.simple.Cinemaimageoptions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.Clean.html">paraview.simple.Clean</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.CleanCellstoGrid.html">paraview.simple.CleanCellstoGrid</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.CleantoGrid.html">paraview.simple.CleantoGrid</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.ClientServerMoveData.html">paraview.simple.ClientServerMoveData</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.Clip.html">paraview.simple.Clip</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.ClipClosedSurface.html">paraview.simple.ClipClosedSurface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.ClipGenericDataset.html">paraview.simple.ClipGenericDataset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.ColorByArray.html">paraview.simple.ColorByArray</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.ComparativeAnimationCue.html">paraview.simple.ComparativeAnimationCue</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.CompositeDataIDSelectionSource.html">paraview.simple.CompositeDataIDSelectionSource</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.CompositeKeyFrame.html">paraview.simple.CompositeKeyFrame</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.ComputeDerivatives.html">paraview.simple.ComputeDerivatives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.ComputeMoleculeBonds.html">paraview.simple.ComputeMoleculeBonds</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.ComputeQuartiles.html">paraview.simple.ComputeQuartiles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.Cone.html">paraview.simple.Cone</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.Connectivity.html">paraview.simple.Connectivity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.ContingencyStatistics.html">paraview.simple.ContingencyStatistics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.Contour.html">paraview.simple.Contour</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.ContourGenericDataset.html">paraview.simple.ContourGenericDataset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.ConvertAMRdatasettoMultiblock.html">paraview.simple.ConvertAMRdatasettoMultiblock</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.ConvertIntoMolecule.html">paraview.simple.ConvertIntoMolecule</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.ConvertSelection.html">paraview.simple.ConvertSelection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.CountCellFaces.html">paraview.simple.CountCellFaces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.CountCellVertices.html">paraview.simple.CountCellVertices</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.Crop.html">paraview.simple.Crop</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.Curvature.html">paraview.simple.Curvature</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.Cylinder.html">paraview.simple.Cylinder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.D3.html">paraview.simple.D3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.DEMReader.html">paraview.simple.DEMReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.DICOMReaderSingleFile.html">paraview.simple.DICOMReaderSingleFile</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.DICOMReaderdirectory.html">paraview.simple.DICOMReaderdirectory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.DataObjectGenerator.html">paraview.simple.DataObjectGenerator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.DataSetCSVWriter.html">paraview.simple.DataSetCSVWriter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.DataSetWriter.html">paraview.simple.DataSetWriter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.Decimate.html">paraview.simple.Decimate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.DecimatePolyline.html">paraview.simple.DecimatePolyline</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.Delaunay2D.html">paraview.simple.Delaunay2D</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.Delaunay3D.html">paraview.simple.Delaunay3D</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.DescriptiveStatistics.html">paraview.simple.DescriptiveStatistics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.Disk.html">paraview.simple.Disk</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.DistributePoints.html">paraview.simple.DistributePoints</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.DistributedTrivialProducer.html">paraview.simple.DistributedTrivialProducer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.ENZOAMRParticlesReader.html">paraview.simple.ENZOAMRParticlesReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.Elevation.html">paraview.simple.Elevation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.EnSightMasterServerReader.html">paraview.simple.EnSightMasterServerReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.EnSightReader.html">paraview.simple.EnSightReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.EnSightWriter.html">paraview.simple.EnSightWriter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.EnsembleDataReader.html">paraview.simple.EnsembleDataReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.EnvironmentAnnotation.html">paraview.simple.EnvironmentAnnotation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.EnzoReader.html">paraview.simple.EnzoReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.EvenlySpacedStreamlines2D.html">paraview.simple.EvenlySpacedStreamlines2D</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.ExodusIIReader.html">paraview.simple.ExodusIIReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.ExodusIIWriter.html">paraview.simple.ExodusIIWriter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.ExponentialKeyFrame.html">paraview.simple.ExponentialKeyFrame</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.ExtractAMRBlocks.html">paraview.simple.ExtractAMRBlocks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.ExtractAttributes.html">paraview.simple.ExtractAttributes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.ExtractBagPlots.html">paraview.simple.ExtractBagPlots</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.ExtractBlock.html">paraview.simple.ExtractBlock</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.ExtractCTHParts.html">paraview.simple.ExtractCTHParts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.ExtractCellsByRegion.html">paraview.simple.ExtractCellsByRegion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.ExtractComponent.html">paraview.simple.ExtractComponent</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.ExtractEdges.html">paraview.simple.ExtractEdges</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.ExtractEnclosedPoints.html">paraview.simple.ExtractEnclosedPoints</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.ExtractGenericDatasetSurface.html">paraview.simple.ExtractGenericDatasetSurface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.ExtractLevel.html">paraview.simple.ExtractLevel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.ExtractLocation.html">paraview.simple.ExtractLocation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.ExtractRegionSurface.html">paraview.simple.ExtractRegionSurface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.ExtractSelection.html">paraview.simple.ExtractSelection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.ExtractSelectioninternal.html">paraview.simple.ExtractSelectioninternal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.ExtractSubset.html">paraview.simple.ExtractSubset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.ExtractSurface.html">paraview.simple.ExtractSurface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.ExtractTimeSteps.html">paraview.simple.ExtractTimeSteps</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.FFTOfSelectionOverTime.html">paraview.simple.FFTOfSelectionOverTime</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.FLASHAMRParticlesReader.html">paraview.simple.FLASHAMRParticlesReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.FacetReader.html">paraview.simple.FacetReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.FeatureEdges.html">paraview.simple.FeatureEdges</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.FlashReader.html">paraview.simple.FlashReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.FlattenFilter.html">paraview.simple.FlattenFilter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.FluentCaseReader.html">paraview.simple.FluentCaseReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.ForceTime.html">paraview.simple.ForceTime</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.FrustumSelectionSource.html">paraview.simple.FrustumSelectionSource</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.GaussianCubeReader.html">paraview.simple.GaussianCubeReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.GaussianResampling.html">paraview.simple.GaussianResampling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.GenerateIds.html">paraview.simple.GenerateIds</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.GenerateQuadraturePoints.html">paraview.simple.GenerateQuadraturePoints</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.GenerateQuadratureSchemeDictionary.html">paraview.simple.GenerateQuadratureSchemeDictionary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.GenerateSurfaceNormals.html">paraview.simple.GenerateSurfaceNormals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.GeometryFilter.html">paraview.simple.GeometryFilter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.GhostCellsGenerator.html">paraview.simple.GhostCellsGenerator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.GlobalIDSelectionSource.html">paraview.simple.GlobalIDSelectionSource</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.Glyph.html">paraview.simple.Glyph</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.GlyphLegacy.html">paraview.simple.GlyphLegacy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.GlyphWithCustomSource.html">paraview.simple.GlyphWithCustomSource</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.GlyphWithCustomSourceLegacy.html">paraview.simple.GlyphWithCustomSourceLegacy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.Gradient.html">paraview.simple.Gradient</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.GradientMagnitude.html">paraview.simple.GradientMagnitude</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.GradientOfUnstructuredDataSet.html">paraview.simple.GradientOfUnstructuredDataSet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.GridConnectivity.html">paraview.simple.GridConnectivity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.GroupDatasets.html">paraview.simple.GroupDatasets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.GroupTimeSteps.html">paraview.simple.GroupTimeSteps</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.H5PartReader.html">paraview.simple.H5PartReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.HierarchicalDataIDSelectionSource.html">paraview.simple.HierarchicalDataIDSelectionSource</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.HierarchicalFractal.html">paraview.simple.HierarchicalFractal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.Histogram.html">paraview.simple.Histogram</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.HoudiniWriter.html">paraview.simple.HoudiniWriter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.HyperTreeGrid.html">paraview.simple.HyperTreeGrid</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.HyperTreeGridAxisClip.html">paraview.simple.HyperTreeGridAxisClip</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.HyperTreeGridAxisCut.html">paraview.simple.HyperTreeGridAxisCut</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.HyperTreeGridAxisReflection.html">paraview.simple.HyperTreeGridAxisReflection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.HyperTreeGridCellCenters.html">paraview.simple.HyperTreeGridCellCenters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.HyperTreeGridContour.html">paraview.simple.HyperTreeGridContour</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.HyperTreeGridDepthLimiter.html">paraview.simple.HyperTreeGridDepthLimiter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.HyperTreeGridGeometryFilter.html">paraview.simple.HyperTreeGridGeometryFilter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.HyperTreeGridRandom.html">paraview.simple.HyperTreeGridRandom</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.HyperTreeGridReader.html">paraview.simple.HyperTreeGridReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.HyperTreeGridSliceWithPlane.html">paraview.simple.HyperTreeGridSliceWithPlane</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.HyperTreeGridThreshold.html">paraview.simple.HyperTreeGridThreshold</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.HyperTreeGridToUnstructuredGrid.html">paraview.simple.HyperTreeGridToUnstructuredGrid</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.HyperTreeGridWriter.html">paraview.simple.HyperTreeGridWriter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.IDSelectionSource.html">paraview.simple.IDSelectionSource</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.ImageDataToAMR.html">paraview.simple.ImageDataToAMR</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.ImageDataToUniformGrid.html">paraview.simple.ImageDataToUniformGrid</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.ImageDatatoPointSet.html">paraview.simple.ImageDatatoPointSet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.ImageReader.html">paraview.simple.ImageReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.ImageResampling.html">paraview.simple.ImageResampling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.ImageShrink.html">paraview.simple.ImageShrink</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.InSituParticlePath.html">paraview.simple.InSituParticlePath</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.IntegrateVariables.html">paraview.simple.IntegrateVariables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.InterpolatetoQuadraturePoints.html">paraview.simple.InterpolatetoQuadraturePoints</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.IntersectFragments.html">paraview.simple.IntersectFragments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.IsoVolume.html">paraview.simple.IsoVolume</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.JPEGSeriesReader.html">paraview.simple.JPEGSeriesReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.JPEGWriter.html">paraview.simple.JPEGWriter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.JSONImageWriter.html">paraview.simple.JSONImageWriter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.KMeans.html">paraview.simple.KMeans</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.KeyFrame.html">paraview.simple.KeyFrame</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.KeyFrameAnimationCue.html">paraview.simple.KeyFrameAnimationCue</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.LSDynaReader.html">paraview.simple.LSDynaReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.LegacyResampleWithDataset.html">paraview.simple.LegacyResampleWithDataset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.LegacyVTKReader.html">paraview.simple.LegacyVTKReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.LevelScalarsNonOverlappingAMR.html">paraview.simple.LevelScalarsNonOverlappingAMR</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.LevelScalarsOverlappingAMR.html">paraview.simple.LevelScalarsOverlappingAMR</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.Line.html">paraview.simple.Line</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.LinearExtrusion.html">paraview.simple.LinearExtrusion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.LiveProgrammableSource.html">paraview.simple.LiveProgrammableSource</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.LocationSelectionSource.html">paraview.simple.LocationSelectionSource</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.LoopSubdivision.html">paraview.simple.LoopSubdivision</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.MFIXReader.html">paraview.simple.MFIXReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.MPIMoveData.html">paraview.simple.MPIMoveData</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.MRCSeriesReader.html">paraview.simple.MRCSeriesReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.Mandelbrot.html">paraview.simple.Mandelbrot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.MaskPoints.html">paraview.simple.MaskPoints</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.MaterialInterfaceFilter.html">paraview.simple.MaterialInterfaceFilter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.Median.html">paraview.simple.Median</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.MergeBlocks.html">paraview.simple.MergeBlocks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.MeshQuality.html">paraview.simple.MeshQuality</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.MetaFileSeriesReader.html">paraview.simple.MetaFileSeriesReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.MetaImageWriter.html">paraview.simple.MetaImageWriter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.MinMax.html">paraview.simple.MinMax</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.MoleculeToLines.html">paraview.simple.MoleculeToLines</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.MotionFXCFGReader.html">paraview.simple.MotionFXCFGReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.MulticorrelativeStatistics.html">paraview.simple.MulticorrelativeStatistics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.NetCDFCAMreader.html">paraview.simple.NetCDFCAMreader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.NetCDFMPASreader.html">paraview.simple.NetCDFMPASreader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.NetCDFPOPreader.html">paraview.simple.NetCDFPOPreader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.NetCDFReader.html">paraview.simple.NetCDFReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.NetworkImageSource.html">paraview.simple.NetworkImageSource</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.NormalGlyphs.html">paraview.simple.NormalGlyphs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.NrrdReader.html">paraview.simple.NrrdReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.OpenFOAMReader.html">paraview.simple.OpenFOAMReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.OrderedCompositeDistributor.html">paraview.simple.OrderedCompositeDistributor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.Outline.html">paraview.simple.Outline</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.Outline.html">paraview.simple.Outline</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.OutlineCorners.html">paraview.simple.OutlineCorners</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.OutlineCurvilinearDataSet.html">paraview.simple.OutlineCurvilinearDataSet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.OutlineGenericDataSet.html">paraview.simple.OutlineGenericDataSet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.PDBReader.html">paraview.simple.PDBReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.PDataSetWriterPolyData.html">paraview.simple.PDataSetWriterPolyData</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.PDataSetWriterUnstructuredGrid.html">paraview.simple.PDataSetWriterUnstructuredGrid</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.PLOT3DMetaFileReader.html">paraview.simple.PLOT3DMetaFileReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.PLOT3DReader.html">paraview.simple.PLOT3DReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.PLYReader.html">paraview.simple.PLYReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.PNGSeriesReader.html">paraview.simple.PNGSeriesReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.PNGWriter.html">paraview.simple.PNGWriter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.POBJWriter.html">paraview.simple.POBJWriter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.PPLYWriter.html">paraview.simple.PPLYWriter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.PSTLWriter.html">paraview.simple.PSTLWriter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.PTSReader.html">paraview.simple.PTSReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.PVDReader.html">paraview.simple.PVDReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.PVTrivialProducer.html">paraview.simple.PVTrivialProducer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.ParallelNetCDFPOPreader.html">paraview.simple.ParallelNetCDFPOPreader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.ParticlePath.html">paraview.simple.ParticlePath</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.ParticleTracer.html">paraview.simple.ParticleTracer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.ParticlesReader.html">paraview.simple.ParticlesReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.PartitionedLegacyVTKReader.html">paraview.simple.PartitionedLegacyVTKReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.PassArrays.html">paraview.simple.PassArrays</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.PassThrough.html">paraview.simple.PassThrough</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.PedigreeIDSelectionSource.html">paraview.simple.PedigreeIDSelectionSource</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.PhastaReader.html">paraview.simple.PhastaReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.Plane.html">paraview.simple.Plane</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.PlotData.html">paraview.simple.PlotData</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.PlotDataOverTime.html">paraview.simple.PlotDataOverTime</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.PlotGlobalVariablesOverTime.html">paraview.simple.PlotGlobalVariablesOverTime</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.PlotOnIntersectionCurves.html">paraview.simple.PlotOnIntersectionCurves</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.PlotOnSortedLines.html">paraview.simple.PlotOnSortedLines</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.PlotOverLine.html">paraview.simple.PlotOverLine</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.PlotSelectionOverTime.html">paraview.simple.PlotSelectionOverTime</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.PointDatasetInterpolator.html">paraview.simple.PointDatasetInterpolator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.PointDatatoCellData.html">paraview.simple.PointDatatoCellData</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.PointInterpolator.html">paraview.simple.PointInterpolator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.PointLineInterpolator.html">paraview.simple.PointLineInterpolator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.PointPlaneInterpolator.html">paraview.simple.PointPlaneInterpolator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.PointSource.html">paraview.simple.PointSource</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.PointVolumeInterpolator.html">paraview.simple.PointVolumeInterpolator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.PolyLineSource.html">paraview.simple.PolyLineSource</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.PolyLineToRectilinearGrid.html">paraview.simple.PolyLineToRectilinearGrid</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.PrincipalComponentAnalysis.html">paraview.simple.PrincipalComponentAnalysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.ProbeLocation.html">paraview.simple.ProbeLocation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.ProcessIdScalars.html">paraview.simple.ProcessIdScalars</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.ProgrammableFilter.html">paraview.simple.ProgrammableFilter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.ProgrammableSource.html">paraview.simple.ProgrammableSource</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.PythonAnimationCue.html">paraview.simple.PythonAnimationCue</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.PythonAnnotation.html">paraview.simple.PythonAnnotation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.PythonCalculator.html">paraview.simple.PythonCalculator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.QuadricClustering.html">paraview.simple.QuadricClustering</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.RTXMLPolyDataReader.html">paraview.simple.RTXMLPolyDataReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.RampKeyFrame.html">paraview.simple.RampKeyFrame</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.RandomAttributes.html">paraview.simple.RandomAttributes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.RandomVectors.html">paraview.simple.RandomVectors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.RectilinearDatatoPointSet.html">paraview.simple.RectilinearDatatoPointSet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.RectilinearGridConnectivity.html">paraview.simple.RectilinearGridConnectivity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.RectilinearGridGeometryFilter.html">paraview.simple.RectilinearGridGeometryFilter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.ReductionFilter.html">paraview.simple.ReductionFilter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.Reflect.html">paraview.simple.Reflect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.RemoteSourceProxy.html">paraview.simple.RemoteSourceProxy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.RemoveGhostInformation.html">paraview.simple.RemoveGhostInformation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.ResampleAMR.html">paraview.simple.ResampleAMR</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.ResampleToImage.html">paraview.simple.ResampleToImage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.ResampleWithDataset.html">paraview.simple.ResampleWithDataset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.RestartedSimExodusReader.html">paraview.simple.RestartedSimExodusReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.RestartedSimSpyPlotReader.html">paraview.simple.RestartedSimSpyPlotReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.Ribbon.html">paraview.simple.Ribbon</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.RotationalExtrusion.html">paraview.simple.RotationalExtrusion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.Ruler.html">paraview.simple.Ruler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.SLACDataReader.html">paraview.simple.SLACDataReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.SLACParticleDataReader.html">paraview.simple.SLACParticleDataReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.SPHDatasetInterpolator.html">paraview.simple.SPHDatasetInterpolator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.SPHInterpolator.html">paraview.simple.SPHInterpolator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.SPHLineInterpolator.html">paraview.simple.SPHLineInterpolator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.SPHPlaneInterpolator.html">paraview.simple.SPHPlaneInterpolator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.SPHVolumeInterpolator.html">paraview.simple.SPHVolumeInterpolator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.STLReader.html">paraview.simple.STLReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.ScatterPlot.html">paraview.simple.ScatterPlot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.SegYReader.html">paraview.simple.SegYReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.SelectionQuerySource.html">paraview.simple.SelectionQuerySource</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.SelectionSourceBase.html">paraview.simple.SelectionSourceBase</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.Shrink.html">paraview.simple.Shrink</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.SimpleImage.html">paraview.simple.SimpleImage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.SinusoidKeyFrame.html">paraview.simple.SinusoidKeyFrame</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.Slice.html">paraview.simple.Slice</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.SliceAMRdata.html">paraview.simple.SliceAMRdata</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.SliceAlongPolyLine.html">paraview.simple.SliceAlongPolyLine</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.SliceGenericDataset.html">paraview.simple.SliceGenericDataset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.SliceWithPlane.html">paraview.simple.SliceWithPlane</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.Slicedemanddrivencomposite.html">paraview.simple.Slicedemanddrivencomposite</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.Smooth.html">paraview.simple.Smooth</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.Sphere.html">paraview.simple.Sphere</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.SplineSource.html">paraview.simple.SplineSource</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.SpyPlotReader.html">paraview.simple.SpyPlotReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.StreakLine.html">paraview.simple.StreakLine</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.StreamTracer.html">paraview.simple.StreamTracer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.StreamTracerForGenericDatasets.html">paraview.simple.StreamTracerForGenericDatasets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.StreamTracerWithCustomSource.html">paraview.simple.StreamTracerWithCustomSource</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.Subdivide.html">paraview.simple.Subdivide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.Superquadric.html">paraview.simple.Superquadric</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.SurfaceFlow.html">paraview.simple.SurfaceFlow</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.SurfaceVectors.html">paraview.simple.SurfaceVectors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.SynchronizeTime.html">paraview.simple.SynchronizeTime</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.TIFFReader.html">paraview.simple.TIFFReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.TIFFSeriesReader.html">paraview.simple.TIFFSeriesReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.TIFFWriter.html">paraview.simple.TIFFWriter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.TRUCHASReader.html">paraview.simple.TRUCHASReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.TableFFT.html">paraview.simple.TableFFT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.TableToPoints.html">paraview.simple.TableToPoints</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.TableToStructuredGrid.html">paraview.simple.TableToStructuredGrid</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.TecplotReader.html">paraview.simple.TecplotReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.TecplotTableReader.html">paraview.simple.TecplotTableReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.TemporalArrayOperator.html">paraview.simple.TemporalArrayOperator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.TemporalCache.html">paraview.simple.TemporalCache</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.TemporalInterpolator.html">paraview.simple.TemporalInterpolator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.TemporalParticlesToPathlines.html">paraview.simple.TemporalParticlesToPathlines</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.TemporalShiftScale.html">paraview.simple.TemporalShiftScale</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.TemporalSnaptoTimeStep.html">paraview.simple.TemporalSnaptoTimeStep</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.TemporalStatistics.html">paraview.simple.TemporalStatistics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.TensorGlyph.html">paraview.simple.TensorGlyph</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.Tessellate.html">paraview.simple.Tessellate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.TessellateGenericDataset.html">paraview.simple.TessellateGenericDataset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.Test3DWidget.html">paraview.simple.Test3DWidget</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.Tetrahedralize.html">paraview.simple.Tetrahedralize</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.Text.html">paraview.simple.Text</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.TextureMaptoCylinder.html">paraview.simple.TextureMaptoCylinder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.TextureMaptoPlane.html">paraview.simple.TextureMaptoPlane</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.TextureMaptoSphere.html">paraview.simple.TextureMaptoSphere</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.Threshold.html">paraview.simple.Threshold</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.ThresholdSelectionSource.html">paraview.simple.ThresholdSelectionSource</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.TimeAnimationCue.html">paraview.simple.TimeAnimationCue</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.TimeSource.html">paraview.simple.TimeSource</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.TimeStepProgressBar.html">paraview.simple.TimeStepProgressBar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.Transform.html">paraview.simple.Transform</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.TransposeTable.html">paraview.simple.TransposeTable</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.TriangleStrips.html">paraview.simple.TriangleStrips</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.Triangulate.html">paraview.simple.Triangulate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.TrivialProducer.html">paraview.simple.TrivialProducer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.Tube.html">paraview.simple.Tube</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.UnstructuredCellTypes.html">paraview.simple.UnstructuredCellTypes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.UnstructuredNetCDFPOPreader.html">paraview.simple.UnstructuredNetCDFPOPreader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.VASPAnimationReader.html">paraview.simple.VASPAnimationReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.VASPTessellationReader.html">paraview.simple.VASPTessellationReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.VERAOUTReader.html">paraview.simple.VERAOUTReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.VPICReader.html">paraview.simple.VPICReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.VRMLReader.html">paraview.simple.VRMLReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.ValidateCells.html">paraview.simple.ValidateCells</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.WarpByScalar.html">paraview.simple.WarpByScalar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.WarpByVector.html">paraview.simple.WarpByVector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.WavefrontOBJReader.html">paraview.simple.WavefrontOBJReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.Wavelet.html">paraview.simple.Wavelet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.WindBladereader.html">paraview.simple.WindBladereader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.XDMFReader.html">paraview.simple.XDMFReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.XMLDataObjectWriterBase.html">paraview.simple.XMLDataObjectWriterBase</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.XMLHierarchicalBoxDataWriter.html">paraview.simple.XMLHierarchicalBoxDataWriter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.XMLHierarchicalBoxDatareader.html">paraview.simple.XMLHierarchicalBoxDatareader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.XMLImageDataReader.html">paraview.simple.XMLImageDataReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.XMLImageDataWriter.html">paraview.simple.XMLImageDataWriter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.XMLMultiBlockDataReader.html">paraview.simple.XMLMultiBlockDataReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.XMLMultiBlockDataWriter.html">paraview.simple.XMLMultiBlockDataWriter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.XMLPImageDataWriter.html">paraview.simple.XMLPImageDataWriter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.XMLPPolyDataWriter.html">paraview.simple.XMLPPolyDataWriter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.XMLPRectilinearGridWriter.html">paraview.simple.XMLPRectilinearGridWriter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.XMLPStructuredGridWriter.html">paraview.simple.XMLPStructuredGridWriter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.XMLPTableWriter.html">paraview.simple.XMLPTableWriter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.XMLPUnstructuredGridWriter.html">paraview.simple.XMLPUnstructuredGridWriter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.XMLPVAnimationWriter.html">paraview.simple.XMLPVAnimationWriter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.XMLPVDWriter.html">paraview.simple.XMLPVDWriter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.XMLPartitionedImageDataReader.html">paraview.simple.XMLPartitionedImageDataReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.XMLPartitionedPolydataReader.html">paraview.simple.XMLPartitionedPolydataReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.XMLPartitionedRectilinearGridReader.html">paraview.simple.XMLPartitionedRectilinearGridReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.XMLPartitionedStructuredGridReader.html">paraview.simple.XMLPartitionedStructuredGridReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.XMLPartitionedTableReader.html">paraview.simple.XMLPartitionedTableReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.XMLPartitionedUnstructuredGridReader.html">paraview.simple.XMLPartitionedUnstructuredGridReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.XMLPolyDataReader.html">paraview.simple.XMLPolyDataReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.XMLPolyDataWriter.html">paraview.simple.XMLPolyDataWriter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.XMLRectilinearGridReader.html">paraview.simple.XMLRectilinearGridReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.XMLRectilinearGridWriter.html">paraview.simple.XMLRectilinearGridWriter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.XMLStructuredGridReader.html">paraview.simple.XMLStructuredGridReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.XMLStructuredGridWriter.html">paraview.simple.XMLStructuredGridWriter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.XMLTableReader.html">paraview.simple.XMLTableReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.XMLTableWriter.html">paraview.simple.XMLTableWriter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.XMLUniformGridAMRReader.html">paraview.simple.XMLUniformGridAMRReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.XMLUniformGridAMRWriter.html">paraview.simple.XMLUniformGridAMRWriter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.XMLUnstructuredGridReader.html">paraview.simple.XMLUnstructuredGridReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.XMLUnstructuredGridWriter.html">paraview.simple.XMLUnstructuredGridWriter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.XYZReader.html">paraview.simple.XYZReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.XdmfWriter.html">paraview.simple.XdmfWriter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.YoungsMaterialInterface.html">paraview.simple.YoungsMaterialInterface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.a2DGlyph.html">paraview.simple.a2DGlyph</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.a3DText.html">paraview.simple.a3DText</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.plyreader.html">paraview.simple.plyreader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.proSTARSTARCDReader.html">paraview.simple.proSTARSTARCDReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.spcthhistoryreader.html">paraview.simple.spcthhistoryreader</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="python-2-vs-3.html">Python Version 2 versus 3</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="python-2-vs-3.html#print-is-a-function"><code class="docutils literal"><span class="pre">print</span></code> is a function</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python-2-vs-3.html#exceptions">Exceptions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python-2-vs-3.html#iterables">Iterables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python-2-vs-3.html#iterators-not-lists">Iterators, not lists</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python-2-vs-3.html#submodule-import">Submodule import</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python-2-vs-3.html#new-modules">New modules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python-2-vs-3.html#references">References</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="api-changes.html">API Changes between ParaView versions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="api-changes.html#changes-in-5-5">Changes in 5.5</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-changes.html#changes-in-5-1">Changes in 5.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-changes.html#changes-in-4-2">Changes in 4.2</a></li>
+</ul>
+</li>
+</ul>
+
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top">
+        <i data-toggle="wy-nav-top" class="icon icon-reorder"></i>
+        <a href="index.html">ParaView/Python</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <ul class="wy-breadcrumbs">
+  <li><a href="index.html">Docs</a> &raquo;</li>
+  <a href="genindex.html" class="float-right">Index</a> 
+  <li><a href="">simple Module</a></li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+</ul>
+<hr/>
+          
+  <div class="section" id="simple-module">
+<h1>simple Module<a class="headerlink" href="#simple-module" title="Permalink to this headline">¶</a></h1>
+<p>For generated server-side proxies, please refer to <a class="reference internal" href="paraview.servermanager_proxies.html"><span class="doc">Available readers, sources, writers, filters and animation cues</span></a></p>
+<span class="target" id="module-paraview.simple"></span><p>simple is a module for using paraview server manager in Python. It
+provides a simple convenience layer to functionality provided by the
+C++ classes wrapped to Python as well as the servermanager module.</p>
+<p>A simple example:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">paraview.simple</span> <span class="k">import</span> <span class="o">*</span>
+
+<span class="c1"># Create a new sphere proxy on the active connection and register it</span>
+<span class="c1"># in the sources group.</span>
+<span class="n">sphere</span> <span class="o">=</span> <span class="n">Sphere</span><span class="p">(</span><span class="n">ThetaResolution</span><span class="o">=</span><span class="mi">16</span><span class="p">,</span> <span class="n">PhiResolution</span><span class="o">=</span><span class="mi">32</span><span class="p">)</span>
+
+<span class="c1"># Apply a shrink filter</span>
+<span class="n">shrink</span> <span class="o">=</span> <span class="n">Shrink</span><span class="p">(</span><span class="n">sphere</span><span class="p">)</span>
+
+<span class="c1"># Turn the visibility of the shrink object on.</span>
+<span class="n">Show</span><span class="p">(</span><span class="n">shrink</span><span class="p">)</span>
+
+<span class="c1"># Render the scene</span>
+<span class="n">Render</span><span class="p">()</span>
+</pre></div>
+</div>
+<dl class="function">
+<dt id="paraview.simple.AddCameraLink">
+<code class="descclassname">paraview.simple.</code><code class="descname">AddCameraLink</code><span class="sig-paren">(</span><em>viewProxy</em>, <em>viewProxyOther</em>, <em>linkName</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#AddCameraLink"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.AddCameraLink" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a camera link between two view proxies.  A name must be given
+so that the link can be referred to by name.  If a link with the given
+name already exists it will be removed first.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="paraview.simple.AddLight">
+<code class="descclassname">paraview.simple.</code><code class="descname">AddLight</code><span class="sig-paren">(</span><em>view=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#AddLight"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.AddLight" title="Permalink to this definition">¶</a></dt>
+<dd><p>Makes a new vtkLight and adds it to the designated or active view.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="paraview.simple.AnimateReader">
+<code class="descclassname">paraview.simple.</code><code class="descname">AnimateReader</code><span class="sig-paren">(</span><em>reader=None</em>, <em>view=None</em>, <em>filename=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#AnimateReader"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.AnimateReader" title="Permalink to this definition">¶</a></dt>
+<dd><p>This is a utility function that, given a reader and a view
+animates over all time steps of the reader. If the optional
+filename is provided, a movie is created (type depends on the
+extension of the filename.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="paraview.simple.AssignLookupTable">
+<code class="descclassname">paraview.simple.</code><code class="descname">AssignLookupTable</code><span class="sig-paren">(</span><em>arrayObject</em>, <em>LUTName</em>, <em>rangeOveride=[]</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#AssignLookupTable"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.AssignLookupTable" title="Permalink to this definition">¶</a></dt>
+<dd><p>Assign a lookup table to an array by lookup table name. The array
+may ber obtained from a ParaView source in it’s point or cell data.
+The lookup tables available in ParaView’s GUI are loaded by default.
+To get a list of the available lookup table names see GetLookupTableNames.
+To load a custom lookup table see LoadLookupTable.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="paraview.simple.ClearSelection">
+<code class="descclassname">paraview.simple.</code><code class="descname">ClearSelection</code><span class="sig-paren">(</span><em>proxy=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#ClearSelection"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.ClearSelection" title="Permalink to this definition">¶</a></dt>
+<dd><p>Clears the selection on the active source.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="paraview.simple.ColorBy">
+<code class="descclassname">paraview.simple.</code><code class="descname">ColorBy</code><span class="sig-paren">(</span><em>rep=None</em>, <em>value=None</em>, <em>separate=False</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#ColorBy"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.ColorBy" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set scalar color. This will automatically setup the color maps and others
+necessary state for the representations. ‘rep’ must be the display
+properties proxy i.e. the value returned by GetDisplayProperties() function.
+If none is provided the display properties for the active source will be
+used, if possible. Set separate to True in order to use a separate color
+map for this representation</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="paraview.simple.Connect">
+<code class="descclassname">paraview.simple.</code><code class="descname">Connect</code><span class="sig-paren">(</span><em>ds_host=None</em>, <em>ds_port=11111</em>, <em>rs_host=None</em>, <em>rs_port=11111</em>, <em>timeout=60</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#Connect"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.Connect" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates a connection to a server. Example usage:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="n">Connect</span><span class="p">(</span><span class="s2">&quot;amber&quot;</span><span class="p">)</span> <span class="c1"># Connect to a single server at default port</span>
+<span class="o">&gt;</span> <span class="n">Connect</span><span class="p">(</span><span class="s2">&quot;amber&quot;</span><span class="p">,</span> <span class="mi">12345</span><span class="p">)</span> <span class="c1"># Connect to a single server at port 12345</span>
+<span class="o">&gt;</span> <span class="n">Connect</span><span class="p">(</span><span class="s2">&quot;amber&quot;</span><span class="p">,</span> <span class="mi">11111</span><span class="p">,</span> <span class="s2">&quot;vis_cluster&quot;</span><span class="p">,</span> <span class="mi">11111</span><span class="p">)</span> <span class="c1"># connect to data server, render server pair</span>
+<span class="o">&gt;</span> <span class="n">Connect</span><span class="p">(</span><span class="s2">&quot;amber&quot;</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="mi">30</span><span class="p">)</span> <span class="c1"># Connect to a single server at default port with a 30s timeout instead of default 60s</span>
+<span class="o">&gt;</span> <span class="n">Connect</span><span class="p">(</span><span class="s2">&quot;amber&quot;</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span> <span class="c1"># Connect to a single server at default port with no timeout instead of default 60s</span>
+<span class="o">&gt;</span> <span class="n">Connect</span><span class="p">(</span><span class="s2">&quot;amber&quot;</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>  <span class="c1"># Connect to a single server at default port without retrying instead of retrying for the default 60s</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="paraview.simple.Create2DRenderView">
+<code class="descclassname">paraview.simple.</code><code class="descname">Create2DRenderView</code><span class="sig-paren">(</span><em>detachedFromLayout=False</em>, <em>**params</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#Create2DRenderView"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.Create2DRenderView" title="Permalink to this definition">¶</a></dt>
+<dd><p>“Create the standard 3D render view with the 2D interaction mode turned ON.
+See CreateView for arguments documentation</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="paraview.simple.CreateBarChartView">
+<code class="descclassname">paraview.simple.</code><code class="descname">CreateBarChartView</code><span class="sig-paren">(</span><em>detachedFromLayout=False</em>, <em>**params</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#CreateBarChartView"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.CreateBarChartView" title="Permalink to this definition">¶</a></dt>
+<dd><p>“Create Bar Chart view.
+See CreateView for arguments documentation</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="paraview.simple.CreateComparativeBarChartView">
+<code class="descclassname">paraview.simple.</code><code class="descname">CreateComparativeBarChartView</code><span class="sig-paren">(</span><em>detachedFromLayout=False</em>, <em>**params</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#CreateComparativeBarChartView"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.CreateComparativeBarChartView" title="Permalink to this definition">¶</a></dt>
+<dd><p>“Create comparative Bar Chart view.
+See CreateView for arguments documentation</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="paraview.simple.CreateComparativeRenderView">
+<code class="descclassname">paraview.simple.</code><code class="descname">CreateComparativeRenderView</code><span class="sig-paren">(</span><em>detachedFromLayout=False</em>, <em>**params</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#CreateComparativeRenderView"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.CreateComparativeRenderView" title="Permalink to this definition">¶</a></dt>
+<dd><p>“Create Comparative view.
+See CreateView for arguments documentation</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="paraview.simple.CreateComparativeXYPlotView">
+<code class="descclassname">paraview.simple.</code><code class="descname">CreateComparativeXYPlotView</code><span class="sig-paren">(</span><em>detachedFromLayout=False</em>, <em>**params</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#CreateComparativeXYPlotView"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.CreateComparativeXYPlotView" title="Permalink to this definition">¶</a></dt>
+<dd><p>“Create comparative XY plot Chart view.
+See CreateView for arguments documentation</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="paraview.simple.CreateLayout">
+<code class="descclassname">paraview.simple.</code><code class="descname">CreateLayout</code><span class="sig-paren">(</span><em>name=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#CreateLayout"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.CreateLayout" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a new layout with no active view.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="paraview.simple.CreateLight">
+<code class="descclassname">paraview.simple.</code><code class="descname">CreateLight</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#CreateLight"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.CreateLight" title="Permalink to this definition">¶</a></dt>
+<dd><p>Makes a new vtkLight, unattached to a view.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="paraview.simple.CreateLookupTable">
+<code class="descclassname">paraview.simple.</code><code class="descname">CreateLookupTable</code><span class="sig-paren">(</span><em>**params</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#CreateLookupTable"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.CreateLookupTable" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create and return a lookup table.  Optionally, parameters can be given
+to assign to the lookup table.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="paraview.simple.CreateParallelCoordinatesChartView">
+<code class="descclassname">paraview.simple.</code><code class="descname">CreateParallelCoordinatesChartView</code><span class="sig-paren">(</span><em>detachedFromLayout=False</em>, <em>**params</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#CreateParallelCoordinatesChartView"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.CreateParallelCoordinatesChartView" title="Permalink to this definition">¶</a></dt>
+<dd><p>“Create Parallele coordinate Chart view.
+See CreateView for arguments documentation</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="paraview.simple.CreatePiecewiseFunction">
+<code class="descclassname">paraview.simple.</code><code class="descname">CreatePiecewiseFunction</code><span class="sig-paren">(</span><em>**params</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#CreatePiecewiseFunction"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.CreatePiecewiseFunction" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create and return a piecewise function.  Optionally, parameters can be
+given to assign to the piecewise function.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="paraview.simple.CreateRenderView">
+<code class="descclassname">paraview.simple.</code><code class="descname">CreateRenderView</code><span class="sig-paren">(</span><em>detachedFromLayout=False</em>, <em>**params</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#CreateRenderView"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.CreateRenderView" title="Permalink to this definition">¶</a></dt>
+<dd><p>“Create standard 3D render view.
+See CreateView for arguments documentation</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="paraview.simple.CreateScalarBar">
+<code class="descclassname">paraview.simple.</code><code class="descname">CreateScalarBar</code><span class="sig-paren">(</span><em>**params</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#CreateScalarBar"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.CreateScalarBar" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create and return a scalar bar widget.  The returned widget may
+be added to a render view by appending it to the view’s representations
+The widget must have a valid lookup table before it is added to a view.
+It is possible to pass the lookup table (and other properties) as arguments
+to this method:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">lt</span> <span class="o">=</span> <span class="n">MakeBlueToRedLt</span><span class="p">(</span><span class="mf">3.5</span><span class="p">,</span> <span class="mf">7.5</span><span class="p">)</span>
+<span class="n">bar</span> <span class="o">=</span> <span class="n">CreateScalarBar</span><span class="p">(</span><span class="n">LookupTable</span><span class="o">=</span><span class="n">lt</span><span class="p">,</span> <span class="n">Title</span><span class="o">=</span><span class="s2">&quot;Velocity&quot;</span><span class="p">)</span>
+<span class="n">GetRenderView</span><span class="p">()</span><span class="o">.</span><span class="n">Representations</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">bar</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>By default the returned widget is selectable and resizable.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="paraview.simple.CreateView">
+<code class="descclassname">paraview.simple.</code><code class="descname">CreateView</code><span class="sig-paren">(</span><em>view_xml_name</em>, <em>detachedFromLayout=False</em>, <em>**params</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#CreateView"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.CreateView" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates and returns the specified proxy view based on its name/label.
+If detachedFromLayout is true, the view will no be grabbed by the layout
+hence not visible unless it is attached after. This also set params keywords
+arguments as view properties.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="paraview.simple.CreateWriter">
+<code class="descclassname">paraview.simple.</code><code class="descname">CreateWriter</code><span class="sig-paren">(</span><em>filename</em>, <em>proxy=None</em>, <em>**extraArgs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#CreateWriter"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.CreateWriter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates a writer that can write the data produced by the source proxy in
+the given file format (identified by the extension). If no source is
+provided, then the active source is used. This doesn’t actually write the
+data, it simply creates the writer and returns it.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="paraview.simple.CreateXYPlotView">
+<code class="descclassname">paraview.simple.</code><code class="descname">CreateXYPlotView</code><span class="sig-paren">(</span><em>detachedFromLayout=False</em>, <em>**params</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#CreateXYPlotView"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.CreateXYPlotView" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create XY plot Chart view.
+See CreateView for arguments documentation</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="paraview.simple.CreateXYPointPlotView">
+<code class="descclassname">paraview.simple.</code><code class="descname">CreateXYPointPlotView</code><span class="sig-paren">(</span><em>detachedFromLayout=False</em>, <em>**params</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#CreateXYPointPlotView"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.CreateXYPointPlotView" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create XY plot point Chart view.
+See CreateView for arguments documentation</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="paraview.simple.Delete">
+<code class="descclassname">paraview.simple.</code><code class="descname">Delete</code><span class="sig-paren">(</span><em>proxy=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#Delete"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.Delete" title="Permalink to this definition">¶</a></dt>
+<dd><p>Deletes the given pipeline object or the active source if no argument
+is specified.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="paraview.simple.Disconnect">
+<code class="descclassname">paraview.simple.</code><code class="descname">Disconnect</code><span class="sig-paren">(</span><em>ns=None</em>, <em>force=True</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#Disconnect"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.Disconnect" title="Permalink to this definition">¶</a></dt>
+<dd><p>Free the current active session</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="paraview.simple.ExportView">
+<code class="descclassname">paraview.simple.</code><code class="descname">ExportView</code><span class="sig-paren">(</span><em>filename</em>, <em>view=None</em>, <em>**params</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#ExportView"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.ExportView" title="Permalink to this definition">¶</a></dt>
+<dd><p>Export a view to the specified output file.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="paraview.simple.ExtendFileSeries">
+<code class="descclassname">paraview.simple.</code><code class="descname">ExtendFileSeries</code><span class="sig-paren">(</span><em>proxy=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#ExtendFileSeries"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.ExtendFileSeries" title="Permalink to this definition">¶</a></dt>
+<dd><p>For a reader <cite>proxy</cite> that supports reading files series, detect any new files
+added to the series and update the reader’s filename property.
+If no <cite>proxy</cite> is provided, active source is used.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="paraview.simple.FastUniformGrid">
+<code class="descclassname">paraview.simple.</code><code class="descname">FastUniformGrid</code><span class="sig-paren">(</span><em>*input</em>, <em>**params</em><span class="sig-paren">)</span><a class="headerlink" href="#paraview.simple.FastUniformGrid" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="docutils">
+<dt>The</dt>
+<dd>Fast Uniform Grid source can be used to create a uniform
+grid with scalar values derived from relatively light
+computations. The active scalar array is named “X”, and
+is set to the X coordinate for each pixel. There are two
+additional point data sets. The data array named
+“DistanceSquared” is computed as the squared distance from
+each pixel to the origin. The data array named “Swirl”
+is a vector field computed as (Y,Z,X) at each pixel.</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="paraview.simple.FindSource">
+<code class="descclassname">paraview.simple.</code><code class="descname">FindSource</code><span class="sig-paren">(</span><em>name</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#FindSource"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.FindSource" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a proxy base on the name that was used to register it
+into the ProxyManager.
+Example usage:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Cone</span><span class="p">(</span><span class="n">guiName</span><span class="o">=</span><span class="s1">&#39;MySuperCone&#39;</span><span class="p">)</span>
+<span class="n">Show</span><span class="p">()</span>
+<span class="n">Render</span><span class="p">()</span>
+<span class="n">myCone</span> <span class="o">=</span> <span class="n">FindSource</span><span class="p">(</span><span class="s1">&#39;MySuperCone&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="paraview.simple.FindView">
+<code class="descclassname">paraview.simple.</code><code class="descname">FindView</code><span class="sig-paren">(</span><em>name</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#FindView"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.FindView" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a view proxy on the name that was used to register it
+into the ProxyManager.
+Example usage:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">CreateRenderView</span><span class="p">(</span><span class="n">guiName</span><span class="o">=</span><span class="s1">&#39;RenderView1&#39;</span><span class="p">)</span>
+<span class="n">myView</span> <span class="o">=</span> <span class="n">FindSource</span><span class="p">(</span><span class="s1">&#39;RenderView1&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="paraview.simple.FindViewOrCreate">
+<code class="descclassname">paraview.simple.</code><code class="descname">FindViewOrCreate</code><span class="sig-paren">(</span><em>name</em>, <em>viewtype</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#FindViewOrCreate"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.FindViewOrCreate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the view, if a view with the given name exists and is of the
+the given type, otherwise creates a new view of the requested type.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="paraview.simple.GetActiveCamera">
+<code class="descclassname">paraview.simple.</code><code class="descname">GetActiveCamera</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#GetActiveCamera"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.GetActiveCamera" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the active camera for the active view. The returned object
+is an instance of vtkCamera.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="paraview.simple.GetActiveSource">
+<code class="descclassname">paraview.simple.</code><code class="descname">GetActiveSource</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#GetActiveSource"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.GetActiveSource" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the active source.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="paraview.simple.GetActiveView">
+<code class="descclassname">paraview.simple.</code><code class="descname">GetActiveView</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#GetActiveView"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.GetActiveView" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the active view.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="paraview.simple.GetActiveViewOrCreate">
+<code class="descclassname">paraview.simple.</code><code class="descname">GetActiveViewOrCreate</code><span class="sig-paren">(</span><em>viewtype</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#GetActiveViewOrCreate"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.GetActiveViewOrCreate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the active view, if the active view is of the given type,
+otherwise creates a new view of the requested type.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="paraview.simple.GetAnimationScene">
+<code class="descclassname">paraview.simple.</code><code class="descname">GetAnimationScene</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#GetAnimationScene"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.GetAnimationScene" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the application-wide animation scene. ParaView has only one
+global animation scene. This method provides access to that. Users are
+free to create additional animation scenes directly, but those scenes
+won’t be shown in the ParaView GUI.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="paraview.simple.GetAnimationTrack">
+<code class="descclassname">paraview.simple.</code><code class="descname">GetAnimationTrack</code><span class="sig-paren">(</span><em>propertyname_or_property</em>, <em>index=None</em>, <em>proxy=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#GetAnimationTrack"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.GetAnimationTrack" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns an animation cue for the property. If one doesn’t exist then a
+new one will be created.
+Typical usage:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">track</span> <span class="o">=</span> <span class="n">GetAnimationTrack</span><span class="p">(</span><span class="s2">&quot;Center&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">sphere</span><span class="p">)</span> <span class="ow">or</span>
+<span class="n">track</span> <span class="o">=</span> <span class="n">GetAnimationTrack</span><span class="p">(</span><span class="n">sphere</span><span class="o">.</span><span class="n">GetProperty</span><span class="p">(</span><span class="s2">&quot;Radius&quot;</span><span class="p">))</span> <span class="ow">or</span>
+
+<span class="c1"># this returns the track to animate visibility of the active source in</span>
+<span class="c1"># all views.</span>
+<span class="n">track</span> <span class="o">=</span> <span class="n">GetAnimationTrack</span><span class="p">(</span><span class="s2">&quot;Visibility&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>For animating properties on implicit planes etc., use the following
+signatures:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">track</span> <span class="o">=</span> <span class="n">GetAnimationTrack</span><span class="p">(</span><span class="nb">slice</span><span class="o">.</span><span class="n">SliceType</span><span class="o">.</span><span class="n">GetProperty</span><span class="p">(</span><span class="s2">&quot;Origin&quot;</span><span class="p">),</span> <span class="mi">0</span><span class="p">)</span> <span class="ow">or</span>
+<span class="n">track</span> <span class="o">=</span> <span class="n">GetAnimationTrack</span><span class="p">(</span><span class="s2">&quot;Origin&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="nb">slice</span><span class="o">.</span><span class="n">SliceType</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="paraview.simple.GetCameraTrack">
+<code class="descclassname">paraview.simple.</code><code class="descname">GetCameraTrack</code><span class="sig-paren">(</span><em>view=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#GetCameraTrack"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.GetCameraTrack" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the camera animation track for the given view. If no view is
+specified, active view will be used. If no existing camera animation track
+is found, a new one will be created.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="paraview.simple.GetColorTransferFunction">
+<code class="descclassname">paraview.simple.</code><code class="descname">GetColorTransferFunction</code><span class="sig-paren">(</span><em>arrayname</em>, <em>representation=None</em>, <em>separate=False</em>, <em>**params</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#GetColorTransferFunction"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.GetColorTransferFunction" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the color transfer function used to mapping a data array with the
+given name to colors. Representation is used to modify the array name
+when using a separate color transfer function. separate can be used to recover
+the separate color transfer function even if it is not used currently by the representation.
+This may create a new color transfer function if none exists, or return an existing one</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="paraview.simple.GetDisplayProperties">
+<code class="descclassname">paraview.simple.</code><code class="descname">GetDisplayProperties</code><span class="sig-paren">(</span><em>proxy=None</em>, <em>view=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#GetDisplayProperties"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.GetDisplayProperties" title="Permalink to this definition">¶</a></dt>
+<dd><p>“Given a pipeline object and view, returns the corresponding representation object.
+If pipeline object and/or view are not specified, active objects are used.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="paraview.simple.GetDisplayProperty">
+<code class="descclassname">paraview.simple.</code><code class="descname">GetDisplayProperty</code><span class="sig-paren">(</span><em>*arguments</em>, <em>**keywords</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#GetDisplayProperty"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.GetDisplayProperty" title="Permalink to this definition">¶</a></dt>
+<dd><p>Same as GetProperty, except that if no ‘proxy’ is passed, it will use
+the active display properties, rather than the active source</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="paraview.simple.GetLayout">
+<code class="descclassname">paraview.simple.</code><code class="descname">GetLayout</code><span class="sig-paren">(</span><em>view=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#GetLayout"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.GetLayout" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the layout containing the give view, if any.
+If no view is specified, active view is used.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="paraview.simple.GetLayoutByName">
+<code class="descclassname">paraview.simple.</code><code class="descname">GetLayoutByName</code><span class="sig-paren">(</span><em>name</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#GetLayoutByName"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.GetLayoutByName" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the first layout with the given name, if any.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="paraview.simple.GetLayouts">
+<code class="descclassname">paraview.simple.</code><code class="descname">GetLayouts</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#GetLayouts"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.GetLayouts" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the layout proxies on the active session.
+Layout proxies are used to place views in a grid.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="paraview.simple.GetLight">
+<code class="descclassname">paraview.simple.</code><code class="descname">GetLight</code><span class="sig-paren">(</span><em>number</em>, <em>view=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#GetLight"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.GetLight" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a handle on a previously added light</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="paraview.simple.GetLookupTableForArray">
+<code class="descclassname">paraview.simple.</code><code class="descname">GetLookupTableForArray</code><span class="sig-paren">(</span><em>arrayname</em>, <em>num_components</em>, <em>**params</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#GetLookupTableForArray"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.GetLookupTableForArray" title="Permalink to this definition">¶</a></dt>
+<dd><p>Used to get an existing lookuptable for a array or to create one if none
+exists. Keyword arguments can be passed in to initialize the LUT if a new
+one is created.
+<strong>* DEPRECATED *</strong>: Use GetColorTransferFunction instead</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="paraview.simple.GetLookupTableNames">
+<code class="descclassname">paraview.simple.</code><code class="descname">GetLookupTableNames</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#GetLookupTableNames"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.GetLookupTableNames" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a list containing the currently available lookup table names.
+A name maybe used to assign a lookup table to an array. See
+AssignLookupTable.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="paraview.simple.GetMaterialLibrary">
+<code class="descclassname">paraview.simple.</code><code class="descname">GetMaterialLibrary</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#GetMaterialLibrary"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.GetMaterialLibrary" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the material library for the active session.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="paraview.simple.GetOpacityTransferFunction">
+<code class="descclassname">paraview.simple.</code><code class="descname">GetOpacityTransferFunction</code><span class="sig-paren">(</span><em>arrayname</em>, <em>representation=None</em>, <em>separate=False</em>, <em>**params</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#GetOpacityTransferFunction"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.GetOpacityTransferFunction" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the opacity transfer function used to mapping a data array with the
+given name to opacity. Representation is used to modify the array name
+when using a separate opacity transfer function. separate can be used to recover
+the separate opacity transfer function even if it is not used currently by the representation.
+This may create a new opacity transfer function if none exists, or return an existing one</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="paraview.simple.GetParaViewSourceVersion">
+<code class="descclassname">paraview.simple.</code><code class="descname">GetParaViewSourceVersion</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#GetParaViewSourceVersion"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.GetParaViewSourceVersion" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the paraview source version string e.g.
+‘paraview version x.x.x, Date: YYYY-MM-DD’.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="paraview.simple.GetParaViewVersion">
+<code class="descclassname">paraview.simple.</code><code class="descname">GetParaViewVersion</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#GetParaViewVersion"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.GetParaViewVersion" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the version of the ParaView build</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="paraview.simple.GetProperty">
+<code class="descclassname">paraview.simple.</code><code class="descname">GetProperty</code><span class="sig-paren">(</span><em>*arguments</em>, <em>**keywords</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#GetProperty"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.GetProperty" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get one property of the given pipeline object. If keywords are used,
+you can set the proxy and the name of the property that you want to get
+as shown in the following example:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">GetProperty</span><span class="p">({</span><span class="n">proxy</span><span class="o">=</span><span class="n">sphere</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;Radius&quot;</span><span class="p">})</span>
+</pre></div>
+</div>
+<p>If arguments are used, then you have two cases:</p>
+<ul class="simple">
+<li>if only one argument is used that argument will be
+the property name.</li>
+<li>if two arguments are used then the first one will be
+the proxy and the second one the property name.</li>
+</ul>
+<p>Several example are given below:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">GetProperty</span><span class="p">({</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;Radius&quot;</span><span class="p">})</span>
+<span class="n">GetProperty</span><span class="p">({</span><span class="n">proxy</span><span class="o">=</span><span class="n">sphereProxy</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;Radius&quot;</span><span class="p">})</span>
+<span class="n">GetProperty</span><span class="p">(</span> <span class="n">sphereProxy</span><span class="p">,</span> <span class="s2">&quot;Radius&quot;</span> <span class="p">)</span>
+<span class="n">GetProperty</span><span class="p">(</span> <span class="s2">&quot;Radius&quot;</span> <span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="paraview.simple.GetRenderView">
+<code class="descclassname">paraview.simple.</code><code class="descname">GetRenderView</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#GetRenderView"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.GetRenderView" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the active view if there is one. Else creates and returns a new view.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="paraview.simple.GetRenderViews">
+<code class="descclassname">paraview.simple.</code><code class="descname">GetRenderViews</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#GetRenderViews"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.GetRenderViews" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns all render views as a list.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="paraview.simple.GetRepresentation">
+<code class="descclassname">paraview.simple.</code><code class="descname">GetRepresentation</code><span class="sig-paren">(</span><em>proxy=None</em>, <em>view=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#GetRepresentation"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.GetRepresentation" title="Permalink to this definition">¶</a></dt>
+<dd><p>“Given a pipeline object and view, returns the corresponding representation object.
+If pipeline object and view are not specified, active objects are used.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="paraview.simple.GetRepresentations">
+<code class="descclassname">paraview.simple.</code><code class="descname">GetRepresentations</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#GetRepresentations"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.GetRepresentations" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns all representations (display properties).</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="paraview.simple.GetScalarBar">
+<code class="descclassname">paraview.simple.</code><code class="descname">GetScalarBar</code><span class="sig-paren">(</span><em>ctf</em>, <em>view=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#GetScalarBar"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.GetScalarBar" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the scalar bar for color transfer function in the given view.
+If view is None, the active view will be used, if possible.
+This will either return an existing scalar bar or create a new one.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="paraview.simple.GetSources">
+<code class="descclassname">paraview.simple.</code><code class="descname">GetSources</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#GetSources"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.GetSources" title="Permalink to this definition">¶</a></dt>
+<dd><p>Given the name of a source, return its Python object.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="paraview.simple.GetTimeKeeper">
+<code class="descclassname">paraview.simple.</code><code class="descname">GetTimeKeeper</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#GetTimeKeeper"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.GetTimeKeeper" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the time-keeper for the active session. Timekeeper is often used
+to manage time step information known to the ParaView application.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="paraview.simple.GetTimeTrack">
+<code class="descclassname">paraview.simple.</code><code class="descname">GetTimeTrack</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#GetTimeTrack"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.GetTimeTrack" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the animation track used to control the time requested from all
+readers/filters during playback.
+This is the “TimeKeeper - Time” track shown in ParaView’s ‘Animation View’.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="paraview.simple.GetViewForLight">
+<code class="descclassname">paraview.simple.</code><code class="descname">GetViewForLight</code><span class="sig-paren">(</span><em>proxy</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#GetViewForLight"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.GetViewForLight" title="Permalink to this definition">¶</a></dt>
+<dd><p>Given a light proxy, find which view it belongs to</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="paraview.simple.GetViewProperties">
+<code class="descclassname">paraview.simple.</code><code class="descname">GetViewProperties</code><span class="sig-paren">(</span><em>view=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#GetViewProperties"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.GetViewProperties" title="Permalink to this definition">¶</a></dt>
+<dd><p>“Same as GetActiveView(), this API is provided just for consistency with
+GetDisplayProperties().</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="paraview.simple.GetViewProperty">
+<code class="descclassname">paraview.simple.</code><code class="descname">GetViewProperty</code><span class="sig-paren">(</span><em>*arguments</em>, <em>**keywords</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#GetViewProperty"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.GetViewProperty" title="Permalink to this definition">¶</a></dt>
+<dd><p>Same as GetProperty, except that if no ‘proxy’ is passed, it will use
+the active view properties, rather than the active source</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="paraview.simple.GetViews">
+<code class="descclassname">paraview.simple.</code><code class="descname">GetViews</code><span class="sig-paren">(</span><em>viewtype=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#GetViews"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.GetViews" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns all views. If viewtype is specified, only the views of the
+specified type are returned</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="paraview.simple.GetViewsInLayout">
+<code class="descclassname">paraview.simple.</code><code class="descname">GetViewsInLayout</code><span class="sig-paren">(</span><em>layout=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#GetViewsInLayout"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.GetViewsInLayout" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a list of views in the given layout. If not layout is specified,
+the layout for the active view is used, if possible.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="paraview.simple.Hide">
+<code class="descclassname">paraview.simple.</code><code class="descname">Hide</code><span class="sig-paren">(</span><em>proxy=None</em>, <em>view=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#Hide"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.Hide" title="Permalink to this definition">¶</a></dt>
+<dd><p>Turns the visibility of a given pipeline object off in the given view.
+If pipeline object and/or view are not specified, active objects are used.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="paraview.simple.Hide3DWidgets">
+<code class="descclassname">paraview.simple.</code><code class="descname">Hide3DWidgets</code><span class="sig-paren">(</span><em>proxy=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#Hide3DWidgets"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.Hide3DWidgets" title="Permalink to this definition">¶</a></dt>
+<dd><p>If possible in the current environment, this method will
+request the application to hide the 3D widget(s) for proxy</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="paraview.simple.HideAll">
+<code class="descclassname">paraview.simple.</code><code class="descname">HideAll</code><span class="sig-paren">(</span><em>view=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#HideAll"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.HideAll" title="Permalink to this definition">¶</a></dt>
+<dd><p>Hide all pipeline sources in the given view.
+If view is not specified, active view is used.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="paraview.simple.HideScalarBarIfNotNeeded">
+<code class="descclassname">paraview.simple.</code><code class="descname">HideScalarBarIfNotNeeded</code><span class="sig-paren">(</span><em>lut</em>, <em>view=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#HideScalarBarIfNotNeeded"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.HideScalarBarIfNotNeeded" title="Permalink to this definition">¶</a></dt>
+<dd><p>Hides the given scalar bar if it is not used by any of the displayed data.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="paraview.simple.HideUnusedScalarBars">
+<code class="descclassname">paraview.simple.</code><code class="descname">HideUnusedScalarBars</code><span class="sig-paren">(</span><em>view=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#HideUnusedScalarBars"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.HideUnusedScalarBars" title="Permalink to this definition">¶</a></dt>
+<dd><p>Hides all unused scalar bars from the view. A scalar bar is used if some
+data is shown in that view that is coloring using the transfer function
+shown by the scalar bar.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="paraview.simple.ImportCinema">
+<code class="descclassname">paraview.simple.</code><code class="descname">ImportCinema</code><span class="sig-paren">(</span><em>filename</em>, <em>view=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#ImportCinema"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.ImportCinema" title="Permalink to this definition">¶</a></dt>
+<dd><p>Import a cinema database. This can potentially create multiple
+sources/filters for visualizable objects in the Cinema database.
+Returns True on success. If view is provided, then the cinema sources
+are shown in that view as indicated in the database.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="paraview.simple.ImportPresets">
+<code class="descclassname">paraview.simple.</code><code class="descname">ImportPresets</code><span class="sig-paren">(</span><em>filename</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#ImportPresets"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.ImportPresets" title="Permalink to this definition">¶</a></dt>
+<dd><p>Import presets from a file. The file can be in the legacy color map xml
+format or in the new JSON format. Returns True on success.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="paraview.simple.Interact">
+<code class="descclassname">paraview.simple.</code><code class="descname">Interact</code><span class="sig-paren">(</span><em>view=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#Interact"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.Interact" title="Permalink to this definition">¶</a></dt>
+<dd><p>Call this method to start interacting with a view. This method will
+block till the interaction is done. This method will simply return
+if the local process cannot support interactions.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="paraview.simple.LoadCustomFilters">
+<code class="descclassname">paraview.simple.</code><code class="descname">LoadCustomFilters</code><span class="sig-paren">(</span><em>filename</em>, <em>ns=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#LoadCustomFilters"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.LoadCustomFilters" title="Permalink to this definition">¶</a></dt>
+<dd><p>Loads a custom filter XML file and updates this module with new
+constructors if any. If you loaded the simple module with
+<code class="docutils literal"><span class="pre">from</span> <span class="pre">paraview.simple</span> <span class="pre">import</span> <span class="pre">*</span></code>, make sure to pass <code class="docutils literal"><span class="pre">globals()</span></code> as an
+argument.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="paraview.simple.LoadDistributedPlugin">
+<code class="descclassname">paraview.simple.</code><code class="descname">LoadDistributedPlugin</code><span class="sig-paren">(</span><em>pluginname</em>, <em>remote=True</em>, <em>ns=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#LoadDistributedPlugin"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.LoadDistributedPlugin" title="Permalink to this definition">¶</a></dt>
+<dd><p>Loads a plugin that’s distributed with the executable. This uses the
+information known about plugins distributed with ParaView to locate the
+shared library for the plugin to load. Raises a RuntimeError if the plugin
+was not found.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="paraview.simple.LoadLookupTable">
+<code class="descclassname">paraview.simple.</code><code class="descname">LoadLookupTable</code><span class="sig-paren">(</span><em>fileName</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#LoadLookupTable"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.LoadLookupTable" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read the lookup tables in the named file and append them to the
+global collection of lookup tables. The newly loaded lookup tables
+may then be used with AssignLookupTable function.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="paraview.simple.LoadPalette">
+<code class="descclassname">paraview.simple.</code><code class="descname">LoadPalette</code><span class="sig-paren">(</span><em>paletteName</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#LoadPalette"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.LoadPalette" title="Permalink to this definition">¶</a></dt>
+<dd><p>Load a color palette to override the default foreground and background
+colors used by ParaView views.  The current global palette’s colors are set
+to the colors in the loaded palette.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="paraview.simple.LoadPlugin">
+<code class="descclassname">paraview.simple.</code><code class="descname">LoadPlugin</code><span class="sig-paren">(</span><em>filename</em>, <em>remote=True</em>, <em>ns=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#LoadPlugin"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.LoadPlugin" title="Permalink to this definition">¶</a></dt>
+<dd><p>Loads a ParaView plugin and updates this module with new constructors
+if any. The remote argument (default to <code class="docutils literal"><span class="pre">True</span></code>) is to specify whether
+the plugin will be loaded on client (<code class="docutils literal"><span class="pre">remote=False</span></code>) or on server
+(<code class="docutils literal"><span class="pre">remote=True</span></code>).
+If you loaded the simple module with <code class="docutils literal"><span class="pre">from</span> <span class="pre">paraview.simple</span> <span class="pre">import</span> <span class="pre">*</span></code>,
+make sure to pass <code class="docutils literal"><span class="pre">globals()</span></code> as an argument:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">LoadPlugin</span><span class="p">(</span><span class="s2">&quot;myplugin&quot;</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="nb">globals</span><span class="p">())</span> <span class="c1"># to load on client</span>
+<span class="n">LoadPlugin</span><span class="p">(</span><span class="s2">&quot;myplugin&quot;</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="nb">globals</span><span class="p">())</span>  <span class="c1"># to load on server</span>
+<span class="n">LoadPlugin</span><span class="p">(</span><span class="s2">&quot;myplugin&quot;</span><span class="p">,</span> <span class="n">ns</span><span class="o">=</span><span class="nb">globals</span><span class="p">())</span>     <span class="c1"># to load on server</span>
+</pre></div>
+</div>
+<p>Otherwise, the new functions will not appear in the global namespace.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="paraview.simple.LoadState">
+<code class="descclassname">paraview.simple.</code><code class="descname">LoadState</code><span class="sig-paren">(</span><em>filename</em>, <em>connection=None</em>, <em>**extraArgs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#LoadState"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.LoadState" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="paraview.simple.LoadXML">
+<code class="descclassname">paraview.simple.</code><code class="descname">LoadXML</code><span class="sig-paren">(</span><em>xmlstring</em>, <em>ns=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#LoadXML"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.LoadXML" title="Permalink to this definition">¶</a></dt>
+<dd><p>Given a server manager XML as a string, parse and process it.
+If you loaded the simple module with <code class="docutils literal"><span class="pre">from</span> <span class="pre">paraview.simple</span> <span class="pre">import</span> <span class="pre">*</span></code>,
+make sure to pass <code class="docutils literal"><span class="pre">globals()</span></code> as the second arguments:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">LoadXML</span><span class="p">(</span><span class="n">xmlstring</span><span class="p">,</span> <span class="nb">globals</span><span class="p">())</span>
+</pre></div>
+</div>
+<p>Otherwise, the new functions will not appear in the global namespace.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="paraview.simple.LocateView">
+<code class="descclassname">paraview.simple.</code><code class="descname">LocateView</code><span class="sig-paren">(</span><em>displayProperties=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#LocateView"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.LocateView" title="Permalink to this definition">¶</a></dt>
+<dd><p>Given a displayProperties object i.e. the object returned by
+GetDisplayProperties() or Show() functions, this function will locate a view
+to which the displayProperties object corresponds.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="paraview.simple.MakeBlueToRedLT">
+<code class="descclassname">paraview.simple.</code><code class="descname">MakeBlueToRedLT</code><span class="sig-paren">(</span><em>min</em>, <em>max</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#MakeBlueToRedLT"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.MakeBlueToRedLT" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a LookupTable that go from blue to red using the scalar range
+provided by the min and max arguments.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="paraview.simple.OpenDataFile">
+<code class="descclassname">paraview.simple.</code><code class="descname">OpenDataFile</code><span class="sig-paren">(</span><em>filename</em>, <em>**extraArgs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#OpenDataFile"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.OpenDataFile" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates a reader to read the give file, if possible.
+This uses extension matching to determine the best reader possible.
+If a reader cannot be identified, then this returns None.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="paraview.simple.ReloadFiles">
+<code class="descclassname">paraview.simple.</code><code class="descname">ReloadFiles</code><span class="sig-paren">(</span><em>proxy=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#ReloadFiles"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.ReloadFiles" title="Permalink to this definition">¶</a></dt>
+<dd><p>Forces the <cite>proxy</cite> to reload the data files. If no <cite>proxy</cite> is provided,
+active source is used.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="paraview.simple.RemoveCameraLink">
+<code class="descclassname">paraview.simple.</code><code class="descname">RemoveCameraLink</code><span class="sig-paren">(</span><em>linkName</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#RemoveCameraLink"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.RemoveCameraLink" title="Permalink to this definition">¶</a></dt>
+<dd><p>Remove a camera link with the given name.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="paraview.simple.RemoveLayout">
+<code class="descclassname">paraview.simple.</code><code class="descname">RemoveLayout</code><span class="sig-paren">(</span><em>proxy=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#RemoveLayout"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.RemoveLayout" title="Permalink to this definition">¶</a></dt>
+<dd><p>Remove the provided layout, if none is provided,
+remove the layout containing the active view.
+If it is the last layout it will create a new
+one with the same name as the removed one.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="paraview.simple.RemoveLight">
+<code class="descclassname">paraview.simple.</code><code class="descname">RemoveLight</code><span class="sig-paren">(</span><em>light</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#RemoveLight"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.RemoveLight" title="Permalink to this definition">¶</a></dt>
+<dd><p>Removes an existing vtkLight from its view.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="paraview.simple.RemoveViewsAndLayouts">
+<code class="descclassname">paraview.simple.</code><code class="descname">RemoveViewsAndLayouts</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#RemoveViewsAndLayouts"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.RemoveViewsAndLayouts" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="paraview.simple.RenameLayout">
+<code class="descclassname">paraview.simple.</code><code class="descname">RenameLayout</code><span class="sig-paren">(</span><em>newName</em>, <em>proxy=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#RenameLayout"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.RenameLayout" title="Permalink to this definition">¶</a></dt>
+<dd><p>Renames the given layout.  If the given proxy is not registered
+in the layout group this method will have no effect.  If no layout is
+provided, the active layout is used.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="paraview.simple.RenameProxy">
+<code class="descclassname">paraview.simple.</code><code class="descname">RenameProxy</code><span class="sig-paren">(</span><em>proxy</em>, <em>group</em>, <em>newName</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#RenameProxy"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.RenameProxy" title="Permalink to this definition">¶</a></dt>
+<dd><p>Renames the given proxy.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="paraview.simple.RenameSource">
+<code class="descclassname">paraview.simple.</code><code class="descname">RenameSource</code><span class="sig-paren">(</span><em>newName</em>, <em>proxy=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#RenameSource"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.RenameSource" title="Permalink to this definition">¶</a></dt>
+<dd><p>Renames the given source.  If the given proxy is not registered
+in the sources group this method will have no effect.  If no source is
+provided, the active source is used.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="paraview.simple.RenameView">
+<code class="descclassname">paraview.simple.</code><code class="descname">RenameView</code><span class="sig-paren">(</span><em>newName</em>, <em>proxy=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#RenameView"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.RenameView" title="Permalink to this definition">¶</a></dt>
+<dd><p>Renames the given view.  If the given proxy is not registered
+in the views group this method will have no effect.  If no view is
+provided, the active view is used.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="paraview.simple.Render">
+<code class="descclassname">paraview.simple.</code><code class="descname">Render</code><span class="sig-paren">(</span><em>view=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#Render"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.Render" title="Permalink to this definition">¶</a></dt>
+<dd><p>Renders the given view (default value is active view)</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="paraview.simple.RenderAllViews">
+<code class="descclassname">paraview.simple.</code><code class="descname">RenderAllViews</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#RenderAllViews"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.RenderAllViews" title="Permalink to this definition">¶</a></dt>
+<dd><p>Render all views</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="paraview.simple.ResetCamera">
+<code class="descclassname">paraview.simple.</code><code class="descname">ResetCamera</code><span class="sig-paren">(</span><em>view=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#ResetCamera"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.ResetCamera" title="Permalink to this definition">¶</a></dt>
+<dd><p>Resets the settings of the camera to preserver orientation but include
+the whole scene. If an argument is not provided, the active view is
+used.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="paraview.simple.ResetProperty">
+<code class="descclassname">paraview.simple.</code><code class="descname">ResetProperty</code><span class="sig-paren">(</span><em>propertyName</em>, <em>proxy=None</em>, <em>restoreFromSettings=True</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#ResetProperty"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.ResetProperty" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="paraview.simple.ResetSession">
+<code class="descclassname">paraview.simple.</code><code class="descname">ResetSession</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#ResetSession"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.ResetSession" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reset the session to its initial state.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="paraview.simple.ReverseConnect">
+<code class="descclassname">paraview.simple.</code><code class="descname">ReverseConnect</code><span class="sig-paren">(</span><em>port=11111</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#ReverseConnect"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.ReverseConnect" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a reverse connection to a server.  Listens on port and waits for
+an incoming connection from the server.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="paraview.simple.SaveAnimation">
+<code class="descclassname">paraview.simple.</code><code class="descname">SaveAnimation</code><span class="sig-paren">(</span><em>filename</em>, <em>viewOrLayout=None</em>, <em>scene=None</em>, <em>**params</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#SaveAnimation"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.SaveAnimation" title="Permalink to this definition">¶</a></dt>
+<dd><p>Save animation as a movie file or series of images.</p>
+<p><cite>SaveAnimation</cite> is used to save an animation as a movie file (avi or ogv) or
+a series of images.</p>
+<p><strong>Parameters</strong></p>
+<blockquote>
+<div><dl class="docutils">
+<dt>filename (str)</dt>
+<dd>Name of the output file. The extension is used to determine the type
+of the output. Supported extensions are <cite>png</cite>, <cite>jpg</cite>, <cite>tif</cite>, <cite>bmp</cite>,
+and <cite>ppm</cite>. Based on platform (and build) configuration, <cite>avi</cite> and
+<cite>ogv</cite> may be supported as well.</dd>
+<dt>viewOrLayout (<code class="docutils literal"><span class="pre">proxy</span></code>, optional)</dt>
+<dd>The view or layout to save image from, defaults to None. If None, then
+the active view is used, if available. To save image from a single
+view, this must be set to a view, to save an image from all views in a
+layout, pass the layout.</dd>
+<dt>scene (<code class="docutils literal"><span class="pre">proxy</span></code>, optional)</dt>
+<dd>Animation scene to save. If None, then the active scene returned by
+<cite>GetAnimationScene</cite> is used.</dd>
+</dl>
+</div></blockquote>
+<p><strong>Keyword Parameters (optional)</strong></p>
+<blockquote>
+<div><p><cite>SaveAnimation</cite> supports all keyword parameters supported by
+<cite>SaveScreenshot</cite>. In addition, the following parameters are supported:</p>
+<dl class="docutils">
+<dt>FrameRate (int):</dt>
+<dd>Frame rate in frames per second for the output. This only affects the
+output when generated movies (<cite>avi</cite> or <cite>ogv</cite>), and not when saving the
+animation out as a series of images.</dd>
+<dt>FrameWindow (tuple(int,int))</dt>
+<dd>To save a part of the animation, provide the range in frames or
+timesteps index.</dd>
+</dl>
+</div></blockquote>
+<p>In addition, several format-specific keyword parameters can be specified.
+The format is chosen based on the file extension.</p>
+<p>For Image-based file-formats that save series of images e.g. PNG, JPEG,
+following parameters are available.</p>
+<blockquote>
+<div><dl class="docutils">
+<dt>SuffixFormat (string):</dt>
+<dd>Format string used to convert the frame number to file name suffix.</dd>
+</dl>
+</div></blockquote>
+<p>FFMPEG avi file format supports following parameters.</p>
+<blockquote>
+<div><dl class="docutils">
+<dt>Compression (int)</dt>
+<dd>Set to 1 or True to enable compression.</dd>
+<dt>Quality:</dt>
+<dd>When compression is 1 (or True), this specifies the compression
+quality. <cite>0</cite> is worst quality (smallest file size) and <cite>2</cite> is best
+quality (largest file size).</dd>
+</dl>
+</div></blockquote>
+<p>VideoForWindows (VFW) avi file format supports following parameters.</p>
+<blockquote>
+<div><dl class="docutils">
+<dt>Quality:</dt>
+<dd>This specifies the compression quality. <cite>0</cite> is worst quality
+(smallest file size) and <cite>2</cite> is best quality (largest file size).</dd>
+</dl>
+</div></blockquote>
+<p>OGG/Theora file format supports following parameters.</p>
+<blockquote>
+<div><dl class="docutils">
+<dt>Quality:</dt>
+<dd>This specifies the compression quality. <cite>0</cite> is worst quality
+(smallest file size) and <cite>2</cite> is best quality (largest file size).</dd>
+<dt>UseSubsampling:</dt>
+<dd>When set to 1 (or True), the video will be encoded using 4:2:0
+subsampling for the color channels.</dd>
+</dl>
+</div></blockquote>
+<p><strong>Obsolete Parameters</strong></p>
+<blockquote>
+<div><dl class="docutils">
+<dt>DisconnectAndSave (int):</dt>
+<dd>This mode is no longer supported as of ParaView 5.5, and will be
+ignored.</dd>
+<dt>ImageQuality (int)</dt>
+<dd>For ParaView 5.4, the following parameters were available, however
+it is ignored starting with ParaView 5.5. Instead, it is recommended
+to use format-specific quality parameters based on the file format being used.</dd>
+</dl>
+</div></blockquote>
+</dd></dl>
+
+<dl class="function">
+<dt id="paraview.simple.SaveData">
+<code class="descclassname">paraview.simple.</code><code class="descname">SaveData</code><span class="sig-paren">(</span><em>filename</em>, <em>proxy=None</em>, <em>**extraArgs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#SaveData"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.SaveData" title="Permalink to this definition">¶</a></dt>
+<dd><p>Save data produced by ‘proxy’ in a file. If no proxy is specified the
+active source is used. Properties to configure the writer can be passed in
+as keyword arguments. Example usage:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">SaveData</span><span class="p">(</span><span class="s2">&quot;sample.pvtp&quot;</span><span class="p">,</span> <span class="n">source0</span><span class="p">)</span>
+<span class="n">SaveData</span><span class="p">(</span><span class="s2">&quot;sample.csv&quot;</span><span class="p">,</span> <span class="n">FieldAssociation</span><span class="o">=</span><span class="s2">&quot;Points&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="paraview.simple.SaveScreenshot">
+<code class="descclassname">paraview.simple.</code><code class="descname">SaveScreenshot</code><span class="sig-paren">(</span><em>filename</em>, <em>viewOrLayout=None</em>, <em>**params</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#SaveScreenshot"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.SaveScreenshot" title="Permalink to this definition">¶</a></dt>
+<dd><p>Save screenshot for a view or layout (collection of views) to an image.</p>
+<p><cite>SaveScreenshot</cite> is used to save the rendering results to an image.</p>
+<p><strong>Parameters</strong></p>
+<blockquote>
+<div><dl class="docutils">
+<dt>filename (str)</dt>
+<dd>Name of the image file to save to. The filename extension is used to
+determine the type of image file generated. Supported extensions are
+<cite>png</cite>, <cite>jpg</cite>, <cite>tif</cite>, <cite>bmp</cite>, and <cite>ppm</cite>.</dd>
+<dt>viewOrLayout (<code class="docutils literal"><span class="pre">proxy</span></code>, optional):</dt>
+<dd>The view or layout to save image from, defaults to None. If None, then
+the active view is used, if available. To save image from a single
+view, this must be set to a view, to save an image from all views in a
+layout, pass the layout.</dd>
+</dl>
+</div></blockquote>
+<p><strong>Keyword Parameters (optional)</strong></p>
+<blockquote>
+<div><dl class="docutils">
+<dt>ImageResolution (tuple(int, int))</dt>
+<dd>A 2-tuple to specify the output image resolution in pixels as
+<cite>(width, height)</cite>. If not specified, the view (or layout) size is
+used.</dd>
+<dt>FontScaling (str)</dt>
+<dd>Specify whether to scale fonts proportionally (<cite>“Scale fonts
+proportionally”</cite>) or not (<cite>“Do not scale fonts”</cite>). Defaults to
+<cite>“Scale fonts proportionally”</cite>.</dd>
+<dt>SeparatorWidth (int)</dt>
+<dd>When saving multiple views in a layout, specify the width (in
+approximate pixels) for a separator between views in the generated
+image.</dd>
+<dt>SeparatorColor (tuple(float, float, float))</dt>
+<dd>Specify the color for separator between views, if applicable.</dd>
+<dt>OverrideColorPalette (:obj:str, optional)</dt>
+<dd>Name of the color palette to use, if any. If none specified, current
+color palette remains unchanged.</dd>
+<dt>StereoMode (str)</dt>
+<dd>Stereo mode to use, if any. Available values are <cite>“No stereo”</cite>,
+<cite>“Red-Blue”</cite>, <cite>“Interlaced”</cite>, <cite>“Left Eye Only”</cite>, <cite>“Right Eye Only”</cite>,
+<cite>“Dresden”</cite>, <cite>“Anaglyph”</cite>, <cite>“Checkerboard”</cite>,
+<cite>“Side-by-Side Horizontal”</cite>, and the default <cite>“No change”</cite>.</dd>
+<dt>TransparentBackground (int)</dt>
+<dd>Set to 1 (or True) to save an image with background set to alpha=0, if
+supported by the output image format.</dd>
+</dl>
+</div></blockquote>
+<p>In addition, several format-specific keyword parameters can be specified.
+The format is chosen based on the file extension.</p>
+<p>For JPEG (<cite>*.jpg</cite>), the following parameters are available (optional)</p>
+<blockquote>
+<div><dl class="docutils">
+<dt>Quality (int) [0, 100]</dt>
+<dd>Specify the JPEG compression quality. <cite>O</cite> is low quality (maximum compression)
+and <cite>100</cite> is high quality (least compression).</dd>
+<dt>Progressive (int):</dt>
+<dd>Set to 1 (or True) to save progressive JPEG.</dd>
+</dl>
+</div></blockquote>
+<p>For PNG (<cite>*.png</cite>), the following parameters are available (optional)</p>
+<blockquote>
+<div><dl class="docutils">
+<dt>CompressionLevel (int) [0, 9]</dt>
+<dd>Specify the <em>zlib</em> compression level. <cite>0</cite> is no compression, while <cite>9</cite> is
+maximum compression.</dd>
+</dl>
+</div></blockquote>
+<p><strong>Legacy Parameters</strong></p>
+<blockquote>
+<div><p>Prior to ParaView version 5.4, the following parameters were available
+and are still supported. However, they cannot be used together with
+other keyword parameters documented earlier.</p>
+<dl class="docutils">
+<dt>view (proxy)</dt>
+<dd>Single view to save image from.</dd>
+<dt>layout (proxy)</dt>
+<dd>Layout to save image from.</dd>
+<dt>magnification (int)</dt>
+<dd>Magnification factor to use to save the output image. The current view
+(or layout) size is scaled by the magnification factor provided.</dd>
+<dt>quality (int)</dt>
+<dd>Output image quality, a number in the range [0, 100].</dd>
+<dt>ImageQuality (int)</dt>
+<dd>For ParaView 5.4, the following parameters were available, however
+it is ignored starting with ParaView 5.5. Instead, it is recommended
+to use format-specific quality parameters based on the file format being used.</dd>
+</dl>
+</div></blockquote>
+</dd></dl>
+
+<dl class="function">
+<dt id="paraview.simple.SaveState">
+<code class="descclassname">paraview.simple.</code><code class="descname">SaveState</code><span class="sig-paren">(</span><em>filename</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#SaveState"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.SaveState" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="paraview.simple.SelectCells">
+<code class="descclassname">paraview.simple.</code><code class="descname">SelectCells</code><span class="sig-paren">(</span><em>query=None</em>, <em>proxy=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#SelectCells"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.SelectCells" title="Permalink to this definition">¶</a></dt>
+<dd><p>Select cells satisfying the query. If query is None, then all cells are
+selected. If proxy is None, then the active source is used.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="paraview.simple.SelectPoints">
+<code class="descclassname">paraview.simple.</code><code class="descname">SelectPoints</code><span class="sig-paren">(</span><em>query=None</em>, <em>proxy=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#SelectPoints"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.SelectPoints" title="Permalink to this definition">¶</a></dt>
+<dd><p>Select points satisfying the query. If query is None, then all points are
+selected. If proxy is None, then the active source is used.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="paraview.simple.SetActiveConnection">
+<code class="descclassname">paraview.simple.</code><code class="descname">SetActiveConnection</code><span class="sig-paren">(</span><em>connection=None</em>, <em>ns=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#SetActiveConnection"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.SetActiveConnection" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the active connection. If the process was run without multi-server
+enabled and this method is called with a non-None argument while an
+ActiveConnection is present, it will raise a RuntimeError.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="paraview.simple.SetActiveSource">
+<code class="descclassname">paraview.simple.</code><code class="descname">SetActiveSource</code><span class="sig-paren">(</span><em>source</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#SetActiveSource"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.SetActiveSource" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the active source.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="paraview.simple.SetActiveView">
+<code class="descclassname">paraview.simple.</code><code class="descname">SetActiveView</code><span class="sig-paren">(</span><em>view</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#SetActiveView"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.SetActiveView" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the active view.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="paraview.simple.SetDisplayProperties">
+<code class="descclassname">paraview.simple.</code><code class="descname">SetDisplayProperties</code><span class="sig-paren">(</span><em>proxy=None</em>, <em>view=None</em>, <em>**params</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#SetDisplayProperties"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.SetDisplayProperties" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets one or more display properties of the given pipeline object. If an argument
+is not provided, the active source is used. Pass a list of property_name=value
+pairs to this function to set property values. For example:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">SetProperties</span><span class="p">(</span><span class="n">Color</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">LineWidth</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="paraview.simple.SetProperties">
+<code class="descclassname">paraview.simple.</code><code class="descname">SetProperties</code><span class="sig-paren">(</span><em>proxy=None</em>, <em>**params</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#SetProperties"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.SetProperties" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets one or more properties of the given pipeline object. If an argument
+is not provided, the active source is used. Pass a list of property_name=value
+pairs to this function to set property values. For example:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">SetProperties</span><span class="p">(</span><span class="n">Center</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="n">Radius</span><span class="o">=</span><span class="mf">3.5</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="paraview.simple.SetViewProperties">
+<code class="descclassname">paraview.simple.</code><code class="descname">SetViewProperties</code><span class="sig-paren">(</span><em>view=None</em>, <em>**params</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#SetViewProperties"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.SetViewProperties" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets one or more properties of the given view. If an argument
+is not provided, the active view is used. Pass a list of property_name=value
+pairs to this function to set property values. For example:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">SetProperties</span><span class="p">(</span><span class="n">Background</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">UseImmediateMode</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="paraview.simple.Show">
+<code class="descclassname">paraview.simple.</code><code class="descname">Show</code><span class="sig-paren">(</span><em>proxy=None</em>, <em>view=None</em>, <em>**params</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#Show"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.Show" title="Permalink to this definition">¶</a></dt>
+<dd><p>Turns the visibility of a given pipeline object on in the given view.
+If pipeline object and/or view are not specified, active objects are used.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="paraview.simple.Show3DWidgets">
+<code class="descclassname">paraview.simple.</code><code class="descname">Show3DWidgets</code><span class="sig-paren">(</span><em>proxy=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#Show3DWidgets"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.Show3DWidgets" title="Permalink to this definition">¶</a></dt>
+<dd><p>If possible in the current environment, this method will
+request the application to show the 3D widget(s) for proxy</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="paraview.simple.ShowAll">
+<code class="descclassname">paraview.simple.</code><code class="descname">ShowAll</code><span class="sig-paren">(</span><em>view=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#ShowAll"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.ShowAll" title="Permalink to this definition">¶</a></dt>
+<dd><p>Show all pipeline sources in the given view.
+If view is not specified, active view is used.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="paraview.simple.UpdatePipeline">
+<code class="descclassname">paraview.simple.</code><code class="descname">UpdatePipeline</code><span class="sig-paren">(</span><em>time=None</em>, <em>proxy=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#UpdatePipeline"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.UpdatePipeline" title="Permalink to this definition">¶</a></dt>
+<dd><p>Updates (executes) the given pipeline object for the given time as
+necessary (i.e. if it did not already execute). If no source is provided,
+the active source is used instead.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="paraview.simple.UpdateScalarBars">
+<code class="descclassname">paraview.simple.</code><code class="descname">UpdateScalarBars</code><span class="sig-paren">(</span><em>view=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#UpdateScalarBars"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.UpdateScalarBars" title="Permalink to this definition">¶</a></dt>
+<dd><p>Hides all unused scalar bar and shows used scalar bars. A scalar bar is used
+if some data is shown in that view that is coloring using the transfer function
+shown by the scalar bar.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="paraview.simple.UpdateScalarBarsComponentTitle">
+<code class="descclassname">paraview.simple.</code><code class="descname">UpdateScalarBarsComponentTitle</code><span class="sig-paren">(</span><em>ctf</em>, <em>representation=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#UpdateScalarBarsComponentTitle"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.UpdateScalarBarsComponentTitle" title="Permalink to this definition">¶</a></dt>
+<dd><p>Update all scalar bars using the provided lookup table. The representation is used to recover
+the array from which the component title was obtained. If None is provided the representation
+of the active source in the active view is used.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="paraview.simple.WriteAnimation">
+<code class="descclassname">paraview.simple.</code><code class="descname">WriteAnimation</code><span class="sig-paren">(</span><em>filename</em>, <em>**params</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#WriteAnimation"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.WriteAnimation" title="Permalink to this definition">¶</a></dt>
+<dd><p>::deprecated:: 5.3
+Use <a class="reference internal" href="#paraview.simple.SaveAnimation" title="paraview.simple.SaveAnimation"><code class="xref py py-func docutils literal"><span class="pre">SaveAnimation()</span></code></a> instead.</p>
+<p>This function can still be used to save an animation, but using
+:func: <cite>SaveAnimation</cite> is strongly recommended as it provides more
+flexibility.</p>
+<p>The following parameters are currently supported.</p>
+<p><strong>Parameters</strong></p>
+<blockquote>
+<div><dl class="docutils">
+<dt>filename (str)</dt>
+<dd>Name of the output file.</dd>
+</dl>
+</div></blockquote>
+<p><strong>Keyword Parameters (optional)</strong></p>
+<blockquote>
+<div><dl class="docutils">
+<dt>Magnification (int):</dt>
+<dd>Magnification factor for the saved animation.</dd>
+<dt>Quality (int)</dt>
+<dd>int in range [0,2].</dd>
+<dt>FrameRate (int)</dt>
+<dd>Frame rate.</dd>
+</dl>
+</div></blockquote>
+<p>The following parameters are no longer supported and are ignored:
+Subsampling, BackgroundColor, FrameRate, StartFileCount, PlaybackTimeWindow</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="paraview.simple.WriteAnimationGeometry">
+<code class="descclassname">paraview.simple.</code><code class="descname">WriteAnimationGeometry</code><span class="sig-paren">(</span><em>filename</em>, <em>view=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#WriteAnimationGeometry"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.WriteAnimationGeometry" title="Permalink to this definition">¶</a></dt>
+<dd><p>Save the animation geometry from a specific view to a file specified.
+The animation geometry is written out as a PVD file. If no view is
+specified, the active view will be used of possible.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="paraview.simple.WriteImage">
+<code class="descclassname">paraview.simple.</code><code class="descname">WriteImage</code><span class="sig-paren">(</span><em>filename</em>, <em>view=None</em>, <em>**params</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#WriteImage"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.WriteImage" title="Permalink to this definition">¶</a></dt>
+<dd><p>::deprecated:: 4.2
+Use <a class="reference internal" href="#paraview.simple.SaveScreenshot" title="paraview.simple.SaveScreenshot"><code class="xref py py-func docutils literal"><span class="pre">SaveScreenshot()</span></code></a> instead.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="paraview.simple.demo1">
+<code class="descclassname">paraview.simple.</code><code class="descname">demo1</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#demo1"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.demo1" title="Permalink to this definition">¶</a></dt>
+<dd><p>Simple demo that create the following pipeline:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">sphere</span> <span class="o">-</span> <span class="n">shrink</span> <span class="o">+</span>
+<span class="n">cone</span>            <span class="o">+</span> <span class="o">&gt;</span> <span class="n">append</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="paraview.simple.demo2">
+<code class="descclassname">paraview.simple.</code><code class="descname">demo2</code><span class="sig-paren">(</span><em>fname='/Users/berk/Work/ParaView/ParaViewData/Data/disk_out_ref.ex2'</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#demo2"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.demo2" title="Permalink to this definition">¶</a></dt>
+<dd><p>This demo shows the use of readers, data information and display
+properties.</p>
+</dd></dl>
+
+</div>
+
+
+          <footer>
+  
+    <div class="rst-footer-buttons">
+      
+        <a href="paraview.servermanager_proxies.html" class="btn btn-neutral float-right" title="Available readers, sources, writers, filters and animation cues"/>Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="paraview.servermanager.html" class="btn btn-neutral" title="servermanager Module"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <p>
+      &copy; Copyright 2013, Kitware, Inc..
+  </p>
+
+  <a href="https://www.github.com/snide/sphinx_rtd_theme">Sphinx theme</a> provided by <a href="http://readthedocs.org">Read the Docs</a>
+  <!-- KW:BEGIN -->
+  <script type="text/javascript" src="/paraview-docs/paraview-version.js"></script>
+  <!-- KW:END -->
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+</body>
+</html>
