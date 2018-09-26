@@ -16,7 +16,10 @@ Proxies generated for server side objects under :doc:`paraview.simple`
     paraview.simple.AMRFragmentsFilter
     paraview.simple.AMRGaussianPulseSource
     paraview.simple.AMReXParticlesReader
+    paraview.simple.ANLHaloFinder
+    paraview.simple.ANLSubhaloFinder
     paraview.simple.AVSUCDReader
+    paraview.simple.AdaptiveCosmoCore
     paraview.simple.AddFieldArrays
     paraview.simple.AggregateDataset
     paraview.simple.AngularPeriodicFilter
@@ -54,7 +57,6 @@ Proxies generated for server side objects under :doc:`paraview.simple`
     paraview.simple.CellSize
     paraview.simple.CinemaDatabasePipelineObjectFilter
     paraview.simple.CinemaDatabasePipelineObjectReader
-    paraview.simple.Cinemaimageoptions
     paraview.simple.Clean
     paraview.simple.CleanCellstoGrid
     paraview.simple.CleantoGrid
@@ -77,6 +79,7 @@ Proxies generated for server side objects under :doc:`paraview.simple`
     paraview.simple.ConvertAMRdatasettoMultiblock
     paraview.simple.ConvertIntoMolecule
     paraview.simple.ConvertSelection
+    paraview.simple.CosmoReader
     paraview.simple.CountCellFaces
     paraview.simple.CountCellVertices
     paraview.simple.Crop
@@ -130,6 +133,7 @@ Proxies generated for server side objects under :doc:`paraview.simple`
     paraview.simple.FFTOfSelectionOverTime
     paraview.simple.FLASHAMRParticlesReader
     paraview.simple.FacetReader
+    paraview.simple.FastUniformGrid
     paraview.simple.FeatureEdges
     paraview.simple.FlashReader
     paraview.simple.FlattenFilter
@@ -142,6 +146,9 @@ Proxies generated for server side objects under :doc:`paraview.simple`
     paraview.simple.GenerateQuadraturePoints
     paraview.simple.GenerateQuadratureSchemeDictionary
     paraview.simple.GenerateSurfaceNormals
+    paraview.simple.GenericIOMultiBlockReader
+    paraview.simple.GenericIOReader
+    paraview.simple.GenericIOWriter
     paraview.simple.GeometryFilter
     paraview.simple.GhostCellsGenerator
     paraview.simple.GlobalIDSelectionSource
@@ -192,6 +199,7 @@ Proxies generated for server side objects under :doc:`paraview.simple`
     paraview.simple.KMeans
     paraview.simple.KeyFrame
     paraview.simple.KeyFrameAnimationCue
+    paraview.simple.LANLFOFSODHaloFinder
     paraview.simple.LSDynaReader
     paraview.simple.LegacyResampleWithDataset
     paraview.simple.LegacyVTKReader
@@ -214,8 +222,10 @@ Proxies generated for server side objects under :doc:`paraview.simple`
     paraview.simple.MetaFileSeriesReader
     paraview.simple.MetaImageWriter
     paraview.simple.MinMax
+    paraview.simple.MinkowskiFilter
     paraview.simple.MoleculeToLines
     paraview.simple.MotionFXCFGReader
+    paraview.simple.MultiResGenericIO
     paraview.simple.MulticorrelativeStatistics
     paraview.simple.NetCDFCAMreader
     paraview.simple.NetCDFMPASreader
@@ -312,7 +322,6 @@ Proxies generated for server side objects under :doc:`paraview.simple`
     paraview.simple.SelectionQuerySource
     paraview.simple.SelectionSourceBase
     paraview.simple.Shrink
-    paraview.simple.SimpleImage
     paraview.simple.SinusoidKeyFrame
     paraview.simple.Slice
     paraview.simple.SliceAMRdata
@@ -377,6 +386,76 @@ Proxies generated for server side objects under :doc:`paraview.simple`
     paraview.simple.VPICReader
     paraview.simple.VRMLReader
     paraview.simple.ValidateCells
+    paraview.simple.VisItANSYSReader
+    paraview.simple.VisItAUXFileReader
+    paraview.simple.VisItBOVReader
+    paraview.simple.VisItCEAucdReader
+    paraview.simple.VisItCMATReader
+    paraview.simple.VisItCTRLReader
+    paraview.simple.VisItChomboReader
+    paraview.simple.VisItClawReader
+    paraview.simple.VisItCurve2DReader
+    paraview.simple.VisItDDCMDReader
+    paraview.simple.VisItDyna3DReader
+    paraview.simple.VisItExtrudedVolReader
+    paraview.simple.VisItFLASHReader
+    paraview.simple.VisItFluentReader
+    paraview.simple.VisItGGCMReader
+    paraview.simple.VisItGTCReader
+    paraview.simple.VisItGULPReader
+    paraview.simple.VisItGadgetReader
+    paraview.simple.VisItH5NimrodReader
+    paraview.simple.VisItImageReader
+    paraview.simple.VisItLAMMPSDumpReader
+    paraview.simple.VisItLAMMPSStructureReader
+    paraview.simple.VisItLinesReader
+    paraview.simple.VisItM3DC1Reader
+    paraview.simple.VisItM3DReader
+    paraview.simple.VisItMFIXCDFReader
+    paraview.simple.VisItMFIXReader
+    paraview.simple.VisItMM5Reader
+    paraview.simple.VisItMirandaReader
+    paraview.simple.VisItNASTRANReader
+    paraview.simple.VisItNek5000Reader
+    paraview.simple.VisItNetCDFADAPTReader
+    paraview.simple.VisItNetCDFCCSM_MTSDReader
+    paraview.simple.VisItNetCDFCCSM_STSDReader
+    paraview.simple.VisItNetCDFFVCOMParticleReader
+    paraview.simple.VisItNetCDFFVCOM_MTMDReader
+    paraview.simple.VisItNetCDFFVCOM_MTSDReader
+    paraview.simple.VisItNetCDFFVCOM_STSDReader
+    paraview.simple.VisItNetCDFLODIParticleReader
+    paraview.simple.VisItNetCDFLODIReader
+    paraview.simple.VisItOVERFLOWReader
+    paraview.simple.VisItOpenFOAMReader
+    paraview.simple.VisItPATRANReader
+    paraview.simple.VisItPFLOTRANReader
+    paraview.simple.VisItPLOT2DReader
+    paraview.simple.VisItPLOT3DReader
+    paraview.simple.VisItParaDisReader
+    paraview.simple.VisItParaDisTecplotReader
+    paraview.simple.VisItPixieReader
+    paraview.simple.VisItPoint3DReader
+    paraview.simple.VisItProteinDataBankReader
+    paraview.simple.VisItRAWReader
+    paraview.simple.VisItSAMRAIReader
+    paraview.simple.VisItSARReader
+    paraview.simple.VisItSASReader
+    paraview.simple.VisItSpheralReader
+    paraview.simple.VisItTFTReader
+    paraview.simple.VisItTSurfReader
+    paraview.simple.VisItTecplotBinaryReader
+    paraview.simple.VisItTecplotReader
+    paraview.simple.VisItTetradReader
+    paraview.simple.VisItUNICReader
+    paraview.simple.VisItVASPCHGCARReader
+    paraview.simple.VisItVASPOUTCARReader
+    paraview.simple.VisItVASPPOSCARReader
+    paraview.simple.VisItVelodyneReader
+    paraview.simple.VisItVsReader
+    paraview.simple.VisItXYZReader
+    paraview.simple.VisItXmdvReader
+    paraview.simple.VoronoiMergeConnected
     paraview.simple.WarpByScalar
     paraview.simple.WarpByVector
     paraview.simple.WavefrontOBJReader
@@ -417,6 +496,9 @@ Proxies generated for server side objects under :doc:`paraview.simple`
     paraview.simple.XMLUnstructuredGridReader
     paraview.simple.XMLUnstructuredGridWriter
     paraview.simple.XYZReader
+    paraview.simple.Xdmf3ReaderS
+    paraview.simple.Xdmf3ReaderT
+    paraview.simple.Xdmf3Writer
     paraview.simple.XdmfWriter
     paraview.simple.YoungsMaterialInterface
     paraview.simple.a2DGlyph
@@ -436,7 +518,10 @@ Proxies generated for server side objects under :doc:`paraview.simple`
     AMRFragmentsFilter
     AMRGaussianPulseSource
     AMReXParticlesReader
+    ANLHaloFinder
+    ANLSubhaloFinder
     AVSUCDReader
+    AdaptiveCosmoCore
     AddFieldArrays
     AggregateDataset
     AngularPeriodicFilter
@@ -474,7 +559,6 @@ Proxies generated for server side objects under :doc:`paraview.simple`
     CellSize
     CinemaDatabasePipelineObjectFilter
     CinemaDatabasePipelineObjectReader
-    Cinemaimageoptions
     Clean
     CleanCellstoGrid
     CleantoGrid
@@ -497,6 +581,7 @@ Proxies generated for server side objects under :doc:`paraview.simple`
     ConvertAMRdatasettoMultiblock
     ConvertIntoMolecule
     ConvertSelection
+    CosmoReader
     CountCellFaces
     CountCellVertices
     Crop
@@ -550,6 +635,7 @@ Proxies generated for server side objects under :doc:`paraview.simple`
     FFTOfSelectionOverTime
     FLASHAMRParticlesReader
     FacetReader
+    FastUniformGrid
     FeatureEdges
     FlashReader
     FlattenFilter
@@ -562,6 +648,9 @@ Proxies generated for server side objects under :doc:`paraview.simple`
     GenerateQuadraturePoints
     GenerateQuadratureSchemeDictionary
     GenerateSurfaceNormals
+    GenericIOMultiBlockReader
+    GenericIOReader
+    GenericIOWriter
     GeometryFilter
     GhostCellsGenerator
     GlobalIDSelectionSource
@@ -612,6 +701,7 @@ Proxies generated for server side objects under :doc:`paraview.simple`
     KMeans
     KeyFrame
     KeyFrameAnimationCue
+    LANLFOFSODHaloFinder
     LSDynaReader
     LegacyResampleWithDataset
     LegacyVTKReader
@@ -634,8 +724,10 @@ Proxies generated for server side objects under :doc:`paraview.simple`
     MetaFileSeriesReader
     MetaImageWriter
     MinMax
+    MinkowskiFilter
     MoleculeToLines
     MotionFXCFGReader
+    MultiResGenericIO
     MulticorrelativeStatistics
     NetCDFCAMreader
     NetCDFMPASreader
@@ -732,7 +824,6 @@ Proxies generated for server side objects under :doc:`paraview.simple`
     SelectionQuerySource
     SelectionSourceBase
     Shrink
-    SimpleImage
     SinusoidKeyFrame
     Slice
     SliceAMRdata
@@ -797,6 +888,76 @@ Proxies generated for server side objects under :doc:`paraview.simple`
     VPICReader
     VRMLReader
     ValidateCells
+    VisItANSYSReader
+    VisItAUXFileReader
+    VisItBOVReader
+    VisItCEAucdReader
+    VisItCMATReader
+    VisItCTRLReader
+    VisItChomboReader
+    VisItClawReader
+    VisItCurve2DReader
+    VisItDDCMDReader
+    VisItDyna3DReader
+    VisItExtrudedVolReader
+    VisItFLASHReader
+    VisItFluentReader
+    VisItGGCMReader
+    VisItGTCReader
+    VisItGULPReader
+    VisItGadgetReader
+    VisItH5NimrodReader
+    VisItImageReader
+    VisItLAMMPSDumpReader
+    VisItLAMMPSStructureReader
+    VisItLinesReader
+    VisItM3DC1Reader
+    VisItM3DReader
+    VisItMFIXCDFReader
+    VisItMFIXReader
+    VisItMM5Reader
+    VisItMirandaReader
+    VisItNASTRANReader
+    VisItNek5000Reader
+    VisItNetCDFADAPTReader
+    VisItNetCDFCCSM_MTSDReader
+    VisItNetCDFCCSM_STSDReader
+    VisItNetCDFFVCOMParticleReader
+    VisItNetCDFFVCOM_MTMDReader
+    VisItNetCDFFVCOM_MTSDReader
+    VisItNetCDFFVCOM_STSDReader
+    VisItNetCDFLODIParticleReader
+    VisItNetCDFLODIReader
+    VisItOVERFLOWReader
+    VisItOpenFOAMReader
+    VisItPATRANReader
+    VisItPFLOTRANReader
+    VisItPLOT2DReader
+    VisItPLOT3DReader
+    VisItParaDisReader
+    VisItParaDisTecplotReader
+    VisItPixieReader
+    VisItPoint3DReader
+    VisItProteinDataBankReader
+    VisItRAWReader
+    VisItSAMRAIReader
+    VisItSARReader
+    VisItSASReader
+    VisItSpheralReader
+    VisItTFTReader
+    VisItTSurfReader
+    VisItTecplotBinaryReader
+    VisItTecplotReader
+    VisItTetradReader
+    VisItUNICReader
+    VisItVASPCHGCARReader
+    VisItVASPOUTCARReader
+    VisItVASPPOSCARReader
+    VisItVelodyneReader
+    VisItVsReader
+    VisItXYZReader
+    VisItXmdvReader
+    VoronoiMergeConnected
     WarpByScalar
     WarpByVector
     WavefrontOBJReader
@@ -837,6 +998,9 @@ Proxies generated for server side objects under :doc:`paraview.simple`
     XMLUnstructuredGridReader
     XMLUnstructuredGridWriter
     XYZReader
+    Xdmf3ReaderS
+    Xdmf3ReaderT
+    Xdmf3Writer
     XdmfWriter
     YoungsMaterialInterface
     a2DGlyph
