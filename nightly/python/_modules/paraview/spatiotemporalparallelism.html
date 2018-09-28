@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>paraview.spatiotemporalparallelism &mdash; ParaView/Python 5.6.0-RC2-147-g3d9a9d236e documentation</title>
+  <title>paraview.spatiotemporalparallelism &mdash; ParaView/Python 5.6.0-RC2-159-gc9f911c877 documentation</title>
   
 
   
@@ -24,7 +24,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:'../../',
-        VERSION:'5.6.0-RC2-147-g3d9a9d236e',
+        VERSION:'5.6.0-RC2-159-gc9f911c877',
         COLLAPSE_INDEX:false,
         FILE_SUFFIX:'.html',
         HAS_SOURCE:  true
@@ -48,7 +48,7 @@
         <link rel="index" title="Index"
               href="../../genindex.html"/>
         <link rel="search" title="Search" href="../../search.html"/>
-    <link rel="top" title="ParaView/Python 5.6.0-RC2-147-g3d9a9d236e documentation" href="../../index.html"/>
+    <link rel="top" title="ParaView/Python 5.6.0-RC2-159-gc9f911c877 documentation" href="../../index.html"/>
         <link rel="up" title="Module code" href="../index.html"/> 
 
   <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
@@ -66,7 +66,7 @@
           <li> <a href="../../index.html">
             <img src="../../_static/paraview-logo-small.png"
             alt="ParaView/Python"></img></a> </li>
-          <li class="version"> version 5.6.0-RC2-147-g3d9a9d236e</li>
+          <li class="version"> version 5.6.0-RC2-159-gc9f911c877</li>
         </ul>
         <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
   <input type="text" name="q" placeholder="Search docs" />
@@ -654,6 +654,12 @@
 <span class="kn">import</span> <span class="nn">os</span>
 <span class="kn">import</span> <span class="nn">paraview</span>
 <span class="kn">import</span> <span class="nn">paraview.simple</span> <span class="k">as</span> <span class="nn">pvsimple</span>
+<span class="n">can_savecinema</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="k">try</span><span class="p">:</span>
+    <span class="kn">from</span> <span class="nn">vtkmodules.numpy_interface.algorithms</span> <span class="k">import</span> <span class="o">*</span>
+    <span class="kn">from</span> <span class="nn">mpi4py</span> <span class="k">import</span> <span class="n">MPI</span>
+<span class="k">except</span><span class="p">:</span>
+    <span class="n">can_savecinema</span> <span class="o">=</span> <span class="kc">False</span>
 
 <span class="n">paraview</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">batch</span> <span class="o">=</span> <span class="kc">True</span> <span class="c1"># this may not be necessary</span>
 <span class="n">paraview</span><span class="o">.</span><span class="n">simple</span><span class="o">.</span><span class="n">_DisableFirstRenderCameraReset</span><span class="p">()</span>
@@ -698,20 +704,34 @@
     <span class="k">return</span> <span class="n">globalController</span><span class="p">,</span> <span class="n">temporalController</span><span class="p">,</span> <span class="n">timeCompartmentSize</span></div>
 
 <div class="viewcode-block" id="WriteImages"><a class="viewcode-back" href="../../paraview.spatiotemporalparallelism.html#paraview.spatiotemporalparallelism.WriteImages">[docs]</a><span class="k">def</span> <span class="nf">WriteImages</span><span class="p">(</span><span class="n">currentTimeStep</span><span class="p">,</span> <span class="n">currentTime</span><span class="p">,</span> <span class="n">views</span><span class="p">):</span>
+    <span class="n">cinemaLines</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">cnt</span> <span class="o">=</span> <span class="mi">0</span>
     <span class="k">for</span> <span class="n">view</span> <span class="ow">in</span> <span class="n">views</span><span class="p">:</span>
         <span class="n">filename</span> <span class="o">=</span> <span class="n">view</span><span class="o">.</span><span class="n">tpFileName</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;%t&quot;</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">currentTimeStep</span><span class="p">))</span>
         <span class="n">view</span><span class="o">.</span><span class="n">ViewTime</span> <span class="o">=</span> <span class="n">currentTime</span>
-        <span class="n">pvsimple</span><span class="o">.</span><span class="n">WriteImage</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">view</span><span class="p">,</span> <span class="n">Magnification</span><span class="o">=</span><span class="n">view</span><span class="o">.</span><span class="n">tpMagnification</span><span class="p">)</span></div>
+        <span class="n">cinemaLines</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">currentTime</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;,&quot;</span> <span class="o">+</span> <span class="n">view</span><span class="o">.</span><span class="n">GetXMLName</span><span class="p">()</span><span class="o">+</span><span class="s2">&quot;_&quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">cnt</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;,&quot;</span> <span class="o">+</span> <span class="n">filename</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">pvsimple</span><span class="o">.</span><span class="n">WriteImage</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">view</span><span class="p">,</span> <span class="n">Magnification</span><span class="o">=</span><span class="n">view</span><span class="o">.</span><span class="n">tpMagnification</span><span class="p">)</span>
+        <span class="n">cnt</span> <span class="o">=</span> <span class="n">cnt</span> <span class="o">+</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="n">cinemaLines</span></div>
 
 <div class="viewcode-block" id="WriteFiles"><a class="viewcode-back" href="../../paraview.spatiotemporalparallelism.html#paraview.spatiotemporalparallelism.WriteFiles">[docs]</a><span class="k">def</span> <span class="nf">WriteFiles</span><span class="p">(</span><span class="n">currentTimeStep</span><span class="p">,</span> <span class="n">currentTime</span><span class="p">,</span> <span class="n">writers</span><span class="p">):</span>
+    <span class="n">cinemaLines</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">cnt</span> <span class="o">=</span> <span class="mi">0</span>
     <span class="k">for</span> <span class="n">writer</span> <span class="ow">in</span> <span class="n">writers</span><span class="p">:</span>
         <span class="n">originalfilename</span> <span class="o">=</span> <span class="n">writer</span><span class="o">.</span><span class="n">FileName</span>
         <span class="n">fname</span> <span class="o">=</span> <span class="n">originalfilename</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;%t&quot;</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">currentTimeStep</span><span class="p">))</span>
         <span class="n">writer</span><span class="o">.</span><span class="n">FileName</span> <span class="o">=</span> <span class="n">fname</span>
+        <span class="n">cinemaLines</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">currentTime</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;,&quot;</span> <span class="o">+</span> <span class="n">writer</span><span class="o">.</span><span class="n">GetXMLName</span><span class="p">()</span><span class="o">+</span><span class="s2">&quot;_&quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">cnt</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;,&quot;</span> <span class="o">+</span> <span class="n">fname</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
         <span class="n">writer</span><span class="o">.</span><span class="n">UpdatePipeline</span><span class="p">(</span><span class="n">currentTime</span><span class="p">)</span>
-        <span class="n">writer</span><span class="o">.</span><span class="n">FileName</span> <span class="o">=</span> <span class="n">originalfilename</span></div>
+        <span class="n">writer</span><span class="o">.</span><span class="n">FileName</span> <span class="o">=</span> <span class="n">originalfilename</span>
+        <span class="n">cnt</span> <span class="o">=</span> <span class="n">cnt</span> <span class="o">+</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="n">cinemaLines</span></div>
 
-<div class="viewcode-block" id="IterateOverTimeSteps"><a class="viewcode-back" href="../../paraview.spatiotemporalparallelism.html#paraview.spatiotemporalparallelism.IterateOverTimeSteps">[docs]</a><span class="k">def</span> <span class="nf">IterateOverTimeSteps</span><span class="p">(</span><span class="n">globalController</span><span class="p">,</span> <span class="n">timeCompartmentSize</span><span class="p">,</span> <span class="n">timeSteps</span><span class="p">,</span> <span class="n">writers</span><span class="p">,</span> <span class="n">views</span><span class="p">):</span>
+<div class="viewcode-block" id="IterateOverTimeSteps"><a class="viewcode-back" href="../../paraview.spatiotemporalparallelism.html#paraview.spatiotemporalparallelism.IterateOverTimeSteps">[docs]</a><span class="k">def</span> <span class="nf">IterateOverTimeSteps</span><span class="p">(</span><span class="n">globalController</span><span class="p">,</span> <span class="n">timeCompartmentSize</span><span class="p">,</span> <span class="n">timeSteps</span><span class="p">,</span> <span class="n">writers</span><span class="p">,</span> <span class="n">views</span><span class="p">,</span> <span class="n">make_cinema_table</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">make_cinema_table</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">can_savecinema</span><span class="p">:</span>
+        <span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;WARNING: Can not save cinema table because MPI4PY is not available.&quot;</span><span class="p">)</span>
+        <span class="n">make_cinema_table</span> <span class="o">=</span> <span class="kc">False</span>
+
     <span class="n">numProcs</span> <span class="o">=</span> <span class="n">globalController</span><span class="o">.</span><span class="n">GetNumberOfProcesses</span><span class="p">()</span>
     <span class="n">numTimeCompartments</span> <span class="o">=</span> <span class="n">numProcs</span><span class="o">//</span><span class="n">timeCompartmentSize</span>
     <span class="n">tpp</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">timeSteps</span><span class="p">)</span><span class="o">/</span><span class="n">numTimeCompartments</span>
@@ -726,17 +746,45 @@
         <span class="n">myStartTimeStep</span> <span class="o">=</span> <span class="n">myStartTimeStep</span><span class="o">+</span><span class="n">remainder</span>
         <span class="n">myEndTimeStep</span> <span class="o">=</span> <span class="n">myStartTimeStep</span><span class="o">+</span><span class="n">tpp</span>
 
+    <span class="n">myStartTimeStep</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">myStartTimeStep</span><span class="p">)</span>
+    <span class="n">myEndTimeStep</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">myEndTimeStep</span><span class="p">)</span>
+    <span class="n">cinemaLines</span> <span class="o">=</span> <span class="p">[]</span>
     <span class="k">for</span> <span class="n">currentTimeStep</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">myStartTimeStep</span><span class="p">,</span><span class="n">myEndTimeStep</span><span class="p">):</span>
         <span class="c1">#print (globalController.GetLocalProcessId(), &quot; is working on &quot;, currentTimeStep)</span>
-        <span class="n">WriteImages</span><span class="p">(</span><span class="n">currentTimeStep</span><span class="p">,</span> <span class="n">timeSteps</span><span class="p">[</span><span class="n">currentTimeStep</span><span class="p">],</span> <span class="n">views</span><span class="p">)</span>
-        <span class="n">WriteFiles</span><span class="p">(</span><span class="n">currentTimeStep</span><span class="p">,</span> <span class="n">timeSteps</span><span class="p">[</span><span class="n">currentTimeStep</span><span class="p">],</span> <span class="n">writers</span><span class="p">)</span></div>
+        <span class="n">ret</span> <span class="o">=</span> <span class="n">WriteImages</span><span class="p">(</span><span class="n">currentTimeStep</span><span class="p">,</span> <span class="n">timeSteps</span><span class="p">[</span><span class="n">currentTimeStep</span><span class="p">],</span> <span class="n">views</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">ret</span><span class="p">:</span>
+            <span class="n">cinemaLines</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">ret</span><span class="p">)</span>
+        <span class="n">ret</span> <span class="o">=</span> <span class="n">WriteFiles</span><span class="p">(</span><span class="n">currentTimeStep</span><span class="p">,</span> <span class="n">timeSteps</span><span class="p">[</span><span class="n">currentTimeStep</span><span class="p">],</span> <span class="n">writers</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">ret</span><span class="p">:</span>
+            <span class="n">cinemaLines</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">ret</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">make_cinema_table</span><span class="p">:</span>
+        <span class="c1"># gather the file list from each time compartment to the root and save it</span>
+        <span class="n">myGID</span> <span class="o">=</span> <span class="n">globalController</span><span class="o">.</span><span class="n">GetLocalProcessId</span><span class="p">()</span>
+        <span class="n">myLID</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">myGID</span><span class="p">)</span> <span class="o">%</span> <span class="nb">int</span><span class="p">(</span><span class="n">timeCompartmentSize</span><span class="p">)</span>
+        <span class="n">mystring</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+        <span class="c1"># only one node per time compartment should participate</span>
+        <span class="k">if</span> <span class="n">myLID</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">mystring</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">cinemaLines</span><span class="p">)</span>
+        <span class="n">mylen</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">mystring</span><span class="p">)</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+        <span class="n">comm</span> <span class="o">=</span> <span class="n">vtkMPI4PyCommunicator</span><span class="o">.</span><span class="n">ConvertToPython</span><span class="p">(</span><span class="n">globalController</span><span class="o">.</span><span class="n">GetCommunicator</span><span class="p">())</span>
+        <span class="n">gathered_lines</span> <span class="o">=</span> <span class="n">comm</span><span class="o">.</span><span class="n">gather</span><span class="p">(</span><span class="n">mystring</span><span class="p">,</span> <span class="n">root</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">myGID</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="c1"># root writes the file, prepending header</span>
+            <span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;data.csv&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span>
+            <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;timestep,producer,FILE</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">gathered_lines</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">x</span><span class="p">:</span>
+                    <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+            <span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span></div>
 
 <div class="viewcode-block" id="CreateReader"><a class="viewcode-back" href="../../paraview.spatiotemporalparallelism.html#paraview.spatiotemporalparallelism.CreateReader">[docs]</a><span class="k">def</span> <span class="nf">CreateReader</span><span class="p">(</span><span class="n">ctor</span><span class="p">,</span> <span class="n">fileInfo</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
     <span class="s2">&quot;Creates a reader, checks if it can be used, and sets the filenames&quot;</span>
     <span class="kn">import</span> <span class="nn">glob</span>
     <span class="n">files</span> <span class="o">=</span> <span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="n">fileInfo</span><span class="p">)</span>
     <span class="n">files</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span> <span class="c1"># assume there is a logical ordering of the filenames that corresponds to time ordering</span>
-    <span class="n">reader</span> <span class="o">=</span> <span class="n">ctor</span><span class="p">(</span><span class="n">FileName</span><span class="o">=</span><span class="n">files</span><span class="p">)</span>
+    <span class="n">reader</span> <span class="o">=</span> <span class="n">paraview</span><span class="o">.</span><span class="n">simple</span><span class="o">.</span><span class="n">OpenDataFile</span><span class="p">(</span><span class="n">files</span><span class="p">)</span>
     <span class="n">CheckReader</span><span class="p">(</span><span class="n">reader</span><span class="p">)</span>
     <span class="k">if</span> <span class="n">kwargs</span><span class="p">:</span>
         <span class="n">pvsimple</span><span class="o">.</span><span class="n">SetProperties</span><span class="p">(</span><span class="n">reader</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
@@ -755,7 +803,7 @@
     <span class="n">view</span> <span class="o">=</span> <span class="n">proxy_ctor</span><span class="p">()</span>
     <span class="k">return</span> <span class="n">RegisterView</span><span class="p">(</span><span class="n">view</span><span class="p">,</span> <span class="n">filename</span><span class="p">,</span> <span class="n">magnification</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">,</span> <span class="n">tp_views</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="RegisterView"><a class="viewcode-back" href="../../paraview.spatiotemporalparallelism.html#paraview.spatiotemporalparallelism.RegisterView">[docs]</a><span class="k">def</span> <span class="nf">RegisterView</span><span class="p">(</span><span class="n">view</span><span class="p">,</span> <span class="n">filename</span><span class="p">,</span> <span class="n">magnification</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">,</span> <span class="n">tp_views</span><span class="p">):</span>
+<div class="viewcode-block" id="RegisterView"><a class="viewcode-back" href="../../paraview.spatiotemporalparallelism.html#paraview.spatiotemporalparallelism.RegisterView">[docs]</a><span class="k">def</span> <span class="nf">RegisterView</span><span class="p">(</span><span class="n">view</span><span class="p">,</span> <span class="n">filename</span><span class="o">=</span><span class="s1">&#39;filename_%t.vti&#39;</span><span class="p">,</span> <span class="n">magnification</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">1024</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">1024</span><span class="p">,</span> <span class="n">tp_views</span><span class="o">=</span><span class="p">[]):</span>
     <span class="n">view</span><span class="o">.</span><span class="n">add_attribute</span><span class="p">(</span><span class="s2">&quot;tpFileName&quot;</span><span class="p">,</span> <span class="n">filename</span><span class="p">)</span>
     <span class="n">view</span><span class="o">.</span><span class="n">add_attribute</span><span class="p">(</span><span class="s2">&quot;tpMagnification&quot;</span><span class="p">,</span> <span class="n">magnification</span><span class="p">)</span>
     <span class="n">tp_views</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">view</span><span class="p">)</span>

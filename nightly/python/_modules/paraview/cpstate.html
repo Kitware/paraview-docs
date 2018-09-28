@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>paraview.cpstate &mdash; ParaView/Python 5.6.0-RC2-147-g3d9a9d236e documentation</title>
+  <title>paraview.cpstate &mdash; ParaView/Python 5.6.0-RC2-159-gc9f911c877 documentation</title>
   
 
   
@@ -24,7 +24,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:'../../',
-        VERSION:'5.6.0-RC2-147-g3d9a9d236e',
+        VERSION:'5.6.0-RC2-159-gc9f911c877',
         COLLAPSE_INDEX:false,
         FILE_SUFFIX:'.html',
         HAS_SOURCE:  true
@@ -48,7 +48,7 @@
         <link rel="index" title="Index"
               href="../../genindex.html"/>
         <link rel="search" title="Search" href="../../search.html"/>
-    <link rel="top" title="ParaView/Python 5.6.0-RC2-147-g3d9a9d236e documentation" href="../../index.html"/>
+    <link rel="top" title="ParaView/Python 5.6.0-RC2-159-gc9f911c877 documentation" href="../../index.html"/>
         <link rel="up" title="Module code" href="../index.html"/> 
 
   <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
@@ -66,7 +66,7 @@
           <li> <a href="../../index.html">
             <img src="../../_static/paraview-logo-small.png"
             alt="ParaView/Python"></img></a> </li>
-          <li class="version"> version 5.6.0-RC2-147-g3d9a9d236e</li>
+          <li class="version"> version 5.6.0-RC2-159-gc9f911c877</li>
         </ul>
         <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
   <input type="text" name="q" placeholder="Search docs" />
@@ -980,8 +980,9 @@
     <span class="sd">&quot;&quot;&quot;Helper to dump configured writer proxies, which are not in the pipeline,</span>
 <span class="sd">    into the script.&quot;&quot;&quot;</span>
 
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">make_temporal_script</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">__cnt</span> <span class="o">=</span> <span class="mi">1</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__make_temporal_script</span> <span class="o">=</span> <span class="n">make_temporal_script</span>
 
     <span class="k">def</span> <span class="nf">__make_name</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
@@ -1043,8 +1044,12 @@
                 <span class="n">varname</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__make_name</span><span class="p">(</span><span class="n">prototype</span><span class="o">.</span><span class="n">GetXMLLabel</span><span class="p">())</span>
             <span class="n">f</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">%s</span><span class="s2"> = servermanager.writers.</span><span class="si">%s</span><span class="s2">(Input=</span><span class="si">%s</span><span class="s2">)&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">varname</span><span class="p">,</span> <span class="n">writername</span><span class="p">,</span> <span class="n">inputname</span><span class="p">)</span>
             <span class="n">res</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
-            <span class="n">f</span> <span class="o">=</span> <span class="s2">&quot;coprocessor.RegisterWriter(</span><span class="si">%s</span><span class="s2">, filename=&#39;</span><span class="si">%s</span><span class="s2">&#39;, freq=</span><span class="si">%s</span><span class="s2">, paddingamount=</span><span class="si">%s</span><span class="s2">)&quot;</span> <span class="o">%</span> <span class="p">(</span>
-                <span class="n">varname</span><span class="p">,</span> <span class="n">filename</span><span class="p">,</span> <span class="n">write_frequency</span><span class="p">,</span> <span class="n">padding_amount</span><span class="p">)</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">__make_temporal_script</span><span class="p">:</span>
+                <span class="n">f</span> <span class="o">=</span> <span class="s2">&quot;STP.RegisterWriter(</span><span class="si">%s</span><span class="s2">, &#39;</span><span class="si">%s</span><span class="s2">&#39;, tp_writers)&quot;</span> <span class="o">%</span> <span class="p">(</span>
+                    <span class="n">varname</span><span class="p">,</span> <span class="n">filename</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">f</span> <span class="o">=</span> <span class="s2">&quot;coprocessor.RegisterWriter(</span><span class="si">%s</span><span class="s2">, filename=&#39;</span><span class="si">%s</span><span class="s2">&#39;, freq=</span><span class="si">%s</span><span class="s2">, paddingamount=</span><span class="si">%s</span><span class="s2">)&quot;</span> <span class="o">%</span> <span class="p">(</span>
+                    <span class="n">varname</span><span class="p">,</span> <span class="n">filename</span><span class="p">,</span> <span class="n">write_frequency</span><span class="p">,</span> <span class="n">padding_amount</span><span class="p">)</span>
             <span class="n">res</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
             <span class="n">res</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
         <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">res</span><span class="p">)</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
