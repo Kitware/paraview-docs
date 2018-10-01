@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>paraview.simple.GlyphWithCustomSource &mdash; ParaView/Python 5.6.0-RC2-174-g17f35bc30d documentation</title>
+  <title>paraview.simple.GlyphWithCustomSource &mdash; ParaView/Python 5.6.0-RC2-193-gccf067e99c documentation</title>
   
 
   
@@ -24,7 +24,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:'./',
-        VERSION:'5.6.0-RC2-174-g17f35bc30d',
+        VERSION:'5.6.0-RC2-193-gccf067e99c',
         COLLAPSE_INDEX:false,
         FILE_SUFFIX:'.html',
         HAS_SOURCE:  true
@@ -48,7 +48,7 @@
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="ParaView/Python 5.6.0-RC2-174-g17f35bc30d documentation" href="index.html"/>
+    <link rel="top" title="ParaView/Python 5.6.0-RC2-193-gccf067e99c documentation" href="index.html"/>
         <link rel="up" title="Available readers, sources, writers, filters and animation cues" href="paraview.servermanager_proxies.html"/>
         <link rel="next" title="paraview.simple.GlyphWithCustomSourceLegacy" href="paraview.simple.GlyphWithCustomSourceLegacy.html"/>
         <link rel="prev" title="paraview.simple.GlyphLegacy" href="paraview.simple.GlyphLegacy.html"/> 
@@ -68,7 +68,7 @@
           <li> <a href="index.html">
             <img src="_static/paraview-logo-small.png"
             alt="ParaView/Python"></img></a> </li>
-          <li class="version"> version 5.6.0-RC2-174-g17f35bc30d</li>
+          <li class="version"> version 5.6.0-RC2-193-gccf067e99c</li>
         </ul>
         <form id ="rtd-search-form" class="wy-form" action="search.html" method="get">
   <input type="text" name="q" placeholder="Search docs" />
@@ -656,71 +656,58 @@
 <dl class="function">
 <dt id="paraview.simple.GlyphWithCustomSource">
 <code class="descclassname">paraview.simple.</code><code class="descname">GlyphWithCustomSource</code><span class="sig-paren">(</span><em>*input</em>, <em>**params</em><span class="sig-paren">)</span><a class="headerlink" href="#paraview.simple.GlyphWithCustomSource" title="Permalink to this definition">¶</a></dt>
-<dd><p>The Glyph filter generates a glyph (i.e., an arrow, cone, cube, cylinder, line,
-sphere, or 2D glyph) at each point or cell in the input dataset. The glyphs can be
+<dd><p>The <strong>Glyph With Custom Source</strong> filter generates a glyph specified as the <strong>Source</strong>
+input to this filter at each point in the input dataset. The glyphs can be
 oriented and scaled by the input scalar and vector arrays. If the arrays are
 point-centered, glyphs are placed at points in the input dataset. If the arrays
 are cell-centered, glyphs are placed at the center of cells in the input dataset.
 A transform that applies to the glyph source can be modified to change the shape
-of the glyph. This filter operates on any type of data set. Its output is polygonal.</p>
-<p>To use this filter, select the <strong>Scale Array</strong> to control glyph scaling
-and <strong>Orientation Array</strong> to orient the glyphs if desired - each array
-can be set to ‘None’ if scaling or orientation is not desired. When scaling
+of the glyph. This filter operates on any type of data set. Its output is a polygonal
+dataset.</p>
+<p>To use this filter, select the <strong>Orientation Array</strong> to orient the glyphs and the
+<strong>Scale Array</strong> to control glyph scaling if desired - each array
+can be set to ‘No array’ if orientation or scaling is not desired. When scaling
 by a 3-element vector array, the <strong>Vector Scale Mode</strong> can be set to either
 ‘Scale by Magnitude’, which scales glyphs according to the vector magnitude,
-or ‘Scale by Components’, which treats a each component as a separate scaling
+or ‘Scale by Components’, which treats each component as a separate scaling
 factor in the corresponding dimension, i.e., the first component is the
 scaling factor in the x-dimension, the second component scales the y-dimension,
-and the third component scales the z-dimension.</p>
-<p>When the <strong>Rescale Glyphs</strong> option is on, data in the <strong>Scale Array</strong> will be
-mapped linearly from the <strong>Glyph Data Range</strong> to the range [0, <strong>Maximum Glyph Size</strong>].
-If, however, the <strong>Vector Scale Mode</strong> property is set to ‘Scale by Components’,
-the glyphs will be scaled according to each vector component without this remapping.</p>
+and the third component scales the z-dimension. An overall constant <strong>Scale Factor</strong>
+is applied following the scaling controlled by other properties of this filter.</p>
 <p>The <strong>Glyph Mode</strong> property controls which points in the input dataset
-are selected for glyphing (since in most cases, glyphing all points in
+are selected for glyphing since in most cases, glyphing all points in
 the input dataset can be both performance impeding as well as visually
-cluttered).</p>
+cluttered.</p>
 </dd></dl>
 
 <div class="section" id="data-descriptors">
 <h2>Data Descriptors<a class="headerlink" href="#data-descriptors" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><dl class="docutils">
-<dt>GlyphDataRange</dt>
-<dd>The range of the data. The first element defines the value that maps
-to a glyph size of zero, and the second element defines the value that maps to the
-maximum glyph size. Data values inside the range are mapped linearly between 0 and
-the **Maximum Glyph Size**, while data values outside this range will be clamped to this
-range prior to mapping to the glyph size.</dd>
 <dt>GlyphMode</dt>
 <dd>This property indicates the mode that will be used to generate
 glyphs from the dataset.</dd>
 <dt>GlyphSource</dt>
-<dd>This property determines which type of glyph will be
-placed at the points in the input dataset.</dd>
+<dd>This property determines which glyph will be placed at the
+points in the input dataset.</dd>
 <dt>GlyphTransform</dt>
 <dd>The values in this property allow you to specify the transform
 (translation, rotation, and scaling) to apply to the glyph
 source.</dd>
 <dt>Input</dt>
-<dd>This property specifies the input to this filter.  This is the
-dataset from which the points are selected to be glyphed.</dd>
-<dt>MaximumGlyphSize</dt>
-<dd>Sets the maximum glyph size. The upper data value specified in the **Glyph Data Range**
-will map to this glyph size while the lower data value will map to zero glyph size.</dd>
+<dd>This property specifies the input to this filter. This is the
+dataset from which the locations are selected to be glyphed.</dd>
 <dt>MaximumNumberOfSamplePoints</dt>
 <dd>This property specifies the maximum number of sample points to use
 when sampling the space when Uniform Spatial Distribution is used.</dd>
 <dt>OrientationArray</dt>
 <dd>Select the input array to use for orienting the glyphs.</dd>
-<dt>RescaleGlyphs</dt>
-<dd>Enable rescaling the glyph scale factor to the value specified by **Glyph Size Range**.
-If off, the glyph scale factor will be taken directly from the Scale Array, if one is
-selected.</dd>
 <dt>ScaleArray</dt>
 <dd>Select the input array to be used for scaling the glyphs. If the scale
 array is a vector array, you can control how the glyphs are scaled with
 the **Vector Scale Mode** property.</dd>
+<dt>ScaleFactor</dt>
+<dd>Specify the constant multiplier to use to scale the glyphs.</dd>
 <dt>Seed</dt>
 <dd>This property specifies the seed that will be used for generating a
 uniform distribution of glyph points when a Uniform Spatial
