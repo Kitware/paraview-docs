@@ -10,13 +10,6 @@ Data Descriptors
 
 
    
-   GlyphDataRange
-       The range of the data. The first element defines the value that maps
-       to a glyph size of zero, and the second element defines the value that maps to the
-       maximum glyph size. Data values inside the range are mapped linearly between 0 and
-       the \*\*Maximum Glyph Size\*\*, while data values outside this range will be clamped to this
-       range prior to mapping to the glyph size.
-   
    GlyphMode
        This property indicates the mode that will be used to generate
        glyphs from the dataset.
@@ -34,10 +27,6 @@ Data Descriptors
        This property specifies the input to this filter. This is the
        dataset from which the locations are selected to be glyphed.
    
-   MaximumGlyphSize
-       Sets the maximum glyph size. The upper data value specified in the \*\*Glyph Data Range\*\*
-       will map to this glyph size while the lower data value will map to zero glyph size.
-   
    MaximumNumberOfSamplePoints
        This property specifies the maximum number of sample points to use
        when sampling the space when Uniform Spatial Distribution is used.
@@ -45,15 +34,13 @@ Data Descriptors
    OrientationArray
        Select the input array to use for orienting the glyphs.
    
-   RescaleGlyphs
-       Enable rescaling the glyph scale factor to the value specified by \*\*Glyph Size Range\*\*.
-       If off, the glyph scale factor will be taken directly from the Scale Array, if one is
-       selected.
-   
    ScaleArray
        Select the input array to be used for scaling the glyphs. If the scale
        array is a vector array, you can control how the glyphs are scaled with
        the \*\*Vector Scale Mode\*\* property.
+   
+   ScaleFactor
+       Specify the constant multiplier to use to scale the glyphs.
    
    Seed
        This property specifies the seed that will be used for generating a
