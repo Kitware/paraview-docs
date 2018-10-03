@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>paraview.web.protocols &mdash; ParaView/Python 5.6.0-RC2-42-gfc1fee96d0 documentation</title>
+  <title>paraview.web.protocols &mdash; ParaView/Python 5.6.0-RC2-52-g3479e29e4c documentation</title>
   
 
   
@@ -24,7 +24,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:'../../../',
-        VERSION:'5.6.0-RC2-42-gfc1fee96d0',
+        VERSION:'5.6.0-RC2-52-g3479e29e4c',
         COLLAPSE_INDEX:false,
         FILE_SUFFIX:'.html',
         HAS_SOURCE:  true
@@ -48,7 +48,7 @@
         <link rel="index" title="Index"
               href="../../../genindex.html"/>
         <link rel="search" title="Search" href="../../../search.html"/>
-    <link rel="top" title="ParaView/Python 5.6.0-RC2-42-gfc1fee96d0 documentation" href="../../../index.html"/>
+    <link rel="top" title="ParaView/Python 5.6.0-RC2-52-g3479e29e4c documentation" href="../../../index.html"/>
         <link rel="up" title="Module code" href="../../index.html"/> 
 
   <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
@@ -66,7 +66,7 @@
           <li> <a href="../../../index.html">
             <img src="../../../_static/paraview-logo-small.png"
             alt="ParaView/Python"></img></a> </li>
-          <li class="version"> version 5.6.0-RC2-42-gfc1fee96d0</li>
+          <li class="version"> version 5.6.0-RC2-52-g3479e29e4c</li>
         </ul>
         <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
   <input type="text" name="q" placeholder="Search docs" />
@@ -676,13 +676,14 @@
 <span class="kn">from</span> <span class="nn">vtkmodules.web.render_window_serializer</span> <span class="k">import</span> <span class="n">SynchronizationContext</span><span class="p">,</span> <span class="n">initializeSerializers</span><span class="p">,</span> <span class="n">serializeInstance</span><span class="p">,</span> <span class="n">getReferenceId</span>
 <span class="kn">from</span> <span class="nn">paraview.web.decorators</span> <span class="k">import</span> <span class="o">*</span>
 
-<span class="kn">from</span> <span class="nn">vtkmodules.vtkCommonDataModel</span>          <span class="k">import</span> <span class="n">vtkImageData</span>
-<span class="kn">from</span> <span class="nn">vtkmodules.vtkCommonCore</span>               <span class="k">import</span> <span class="n">vtkUnsignedCharArray</span><span class="p">,</span> <span class="n">vtkCollection</span>
-<span class="kn">from</span> <span class="nn">vtkmodules.vtkWebCore</span>                  <span class="k">import</span> <span class="n">vtkDataEncoder</span><span class="p">,</span> <span class="n">vtkWebInteractionEvent</span>
-<span class="kn">from</span> <span class="nn">vtkmodules.vtkPVServerManagerRendering</span> <span class="k">import</span> <span class="n">vtkSMPVRepresentationProxy</span><span class="p">,</span> <span class="n">vtkSMTransferFunctionProxy</span><span class="p">,</span> <span class="n">vtkSMTransferFunctionManager</span>
-<span class="kn">from</span> <span class="nn">vtkmodules.vtkPVServerManagerCore</span>      <span class="k">import</span> <span class="n">vtkSMProxyManager</span>
-<span class="kn">from</span> <span class="nn">vtkmodules.vtkCommonDataModel</span>          <span class="k">import</span> <span class="n">vtkDataObject</span>
-<span class="kn">from</span> <span class="nn">vtkmodules.vtkPVClientServerCoreCore</span>   <span class="k">import</span> <span class="n">vtkProcessModule</span>
+<span class="kn">from</span> <span class="nn">vtkmodules.vtkCommonDataModel</span>             <span class="k">import</span> <span class="n">vtkImageData</span>
+<span class="kn">from</span> <span class="nn">vtkmodules.vtkCommonCore</span>                  <span class="k">import</span> <span class="n">vtkUnsignedCharArray</span><span class="p">,</span> <span class="n">vtkCollection</span>
+<span class="kn">from</span> <span class="nn">vtkmodules.vtkWebCore</span>                     <span class="k">import</span> <span class="n">vtkDataEncoder</span><span class="p">,</span> <span class="n">vtkWebInteractionEvent</span>
+<span class="kn">from</span> <span class="nn">vtkmodules.vtkPVServerManagerRendering</span>    <span class="k">import</span> <span class="n">vtkSMPVRepresentationProxy</span><span class="p">,</span> <span class="n">vtkSMTransferFunctionProxy</span><span class="p">,</span> <span class="n">vtkSMTransferFunctionManager</span>
+<span class="kn">from</span> <span class="nn">vtkmodules.vtkPVServerManagerCore</span>         <span class="k">import</span> <span class="n">vtkSMProxyManager</span>
+<span class="kn">from</span> <span class="nn">vtkmodules.vtkCommonDataModel</span>             <span class="k">import</span> <span class="n">vtkDataObject</span>
+<span class="kn">from</span> <span class="nn">vtkmodules.vtkPVClientServerCoreCore</span>      <span class="k">import</span> <span class="n">vtkProcessModule</span>
+<span class="kn">from</span> <span class="nn">vtkmodules.vtkPVClientServerCoreRendering</span> <span class="k">import</span> <span class="n">vtkPVRenderView</span>
 
 <span class="k">if</span> <span class="n">sys</span><span class="o">.</span><span class="n">version_info</span> <span class="o">&gt;=</span> <span class="p">(</span><span class="mi">3</span><span class="p">,):</span>
     <span class="n">xrange</span> <span class="o">=</span> <span class="nb">range</span>
@@ -956,19 +957,30 @@
 
     <span class="c1"># RpcName: updateCamera =&gt; viewport.camera.update</span>
 <div class="viewcode-block" id="ParaViewWebViewPort.updateCamera"><a class="viewcode-back" href="../../../paraview.web.protocols.html#paraview.web.protocols.ParaViewWebViewPort.updateCamera">[docs]</a>    <span class="nd">@exportRpc</span><span class="p">(</span><span class="s2">&quot;viewport.camera.update&quot;</span><span class="p">)</span>
-    <span class="k">def</span> <span class="nf">updateCamera</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">view_id</span><span class="p">,</span> <span class="n">focal_point</span><span class="p">,</span> <span class="n">view_up</span><span class="p">,</span> <span class="n">position</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">updateCamera</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">view_id</span><span class="p">,</span> <span class="n">focal_point</span><span class="p">,</span> <span class="n">view_up</span><span class="p">,</span> <span class="n">position</span><span class="p">,</span> <span class="n">forceUpdate</span> <span class="o">=</span> <span class="kc">True</span><span class="p">):</span>
         <span class="n">view</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">getView</span><span class="p">(</span><span class="n">view_id</span><span class="p">)</span>
 
         <span class="n">view</span><span class="o">.</span><span class="n">CameraFocalPoint</span> <span class="o">=</span> <span class="n">focal_point</span>
         <span class="n">view</span><span class="o">.</span><span class="n">CameraViewUp</span> <span class="o">=</span> <span class="n">view_up</span>
         <span class="n">view</span><span class="o">.</span><span class="n">CameraPosition</span> <span class="o">=</span> <span class="n">position</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">getApplication</span><span class="p">()</span><span class="o">.</span><span class="n">InvalidateCache</span><span class="p">(</span><span class="n">view</span><span class="o">.</span><span class="n">SMProxy</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">getApplication</span><span class="p">()</span><span class="o">.</span><span class="n">InvokeEvent</span><span class="p">(</span><span class="s1">&#39;UpdateEvent&#39;</span><span class="p">)</span></div>
+
+        <span class="k">if</span> <span class="n">forceUpdate</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">getApplication</span><span class="p">()</span><span class="o">.</span><span class="n">InvalidateCache</span><span class="p">(</span><span class="n">view</span><span class="o">.</span><span class="n">SMProxy</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">getApplication</span><span class="p">()</span><span class="o">.</span><span class="n">InvokeEvent</span><span class="p">(</span><span class="s1">&#39;UpdateEvent&#39;</span><span class="p">)</span></div>
+
 
 <div class="viewcode-block" id="ParaViewWebViewPort.getCamera"><a class="viewcode-back" href="../../../paraview.web.protocols.html#paraview.web.protocols.ParaViewWebViewPort.getCamera">[docs]</a>    <span class="nd">@exportRpc</span><span class="p">(</span><span class="s2">&quot;viewport.camera.get&quot;</span><span class="p">)</span>
     <span class="k">def</span> <span class="nf">getCamera</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">view_id</span><span class="p">):</span>
         <span class="n">view</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">getView</span><span class="p">(</span><span class="n">view_id</span><span class="p">)</span>
+        <span class="n">bounds</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+
+        <span class="k">if</span> <span class="n">view</span> <span class="ow">and</span> <span class="n">view</span><span class="o">.</span><span class="n">GetClientSideView</span><span class="p">()</span><span class="o">.</span><span class="n">GetClassName</span><span class="p">()</span> <span class="o">==</span> <span class="s1">&#39;vtkPVRenderView&#39;</span><span class="p">:</span>
+            <span class="n">rr</span> <span class="o">=</span> <span class="n">view</span><span class="o">.</span><span class="n">GetClientSideView</span><span class="p">()</span><span class="o">.</span><span class="n">GetRenderer</span><span class="p">()</span>
+            <span class="n">bounds</span> <span class="o">=</span> <span class="n">rr</span><span class="o">.</span><span class="n">ComputeVisiblePropBounds</span><span class="p">()</span>
+
         <span class="k">return</span> <span class="p">{</span>
+            <span class="s1">&#39;bounds&#39;</span><span class="p">:</span> <span class="n">bounds</span><span class="p">,</span>
+            <span class="s1">&#39;center&#39;</span><span class="p">:</span> <span class="nb">list</span><span class="p">(</span><span class="n">view</span><span class="o">.</span><span class="n">CenterOfRotation</span><span class="p">),</span>
             <span class="s1">&#39;focal&#39;</span><span class="p">:</span> <span class="nb">list</span><span class="p">(</span><span class="n">view</span><span class="o">.</span><span class="n">CameraFocalPoint</span><span class="p">),</span>
             <span class="s1">&#39;up&#39;</span><span class="p">:</span> <span class="nb">list</span><span class="p">(</span><span class="n">view</span><span class="o">.</span><span class="n">CameraViewUp</span><span class="p">),</span>
             <span class="s1">&#39;position&#39;</span><span class="p">:</span> <span class="nb">list</span><span class="p">(</span><span class="n">view</span><span class="o">.</span><span class="n">CameraPosition</span><span class="p">)</span>
