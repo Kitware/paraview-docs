@@ -39,6 +39,7 @@ $(function() {
 <a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pro-methods">Protected Member Functions</a> &#124;
+<a href="#pro-static-methods">Static Protected Member Functions</a> &#124;
 <a href="classpqServerConfiguration-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">pqServerConfiguration Class Reference</div>  </div>
@@ -82,12 +83,18 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a283748a4850f24fb0efcfe95a17aff48"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns true if the name for this configuration is the default one i.e.  <a href="#a283748a4850f24fb0efcfe95a17aff48">More...</a><br /></td></tr>
 <tr class="separator:a283748a4850f24fb0efcfe95a17aff48"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a09030d0bbaa2a11056c806fab0f1ced9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classpqServerResource.html">pqServerResource</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpqServerConfiguration.html#a09030d0bbaa2a11056c806fab0f1ced9">resource</a> () const</td></tr>
-<tr class="memdesc:a09030d0bbaa2a11056c806fab0f1ced9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get/Set the URI that describes the server scheme, hostname(s) and port(s).  <a href="#a09030d0bbaa2a11056c806fab0f1ced9">More...</a><br /></td></tr>
+<tr class="memdesc:a09030d0bbaa2a11056c806fab0f1ced9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get/Set the resource that describes the server scheme, hostname(s) and port(s).  <a href="#a09030d0bbaa2a11056c806fab0f1ced9">More...</a><br /></td></tr>
 <tr class="separator:a09030d0bbaa2a11056c806fab0f1ced9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa60a0929f07b9a8c5bf60ed36a2171ed"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpqServerConfiguration.html#aa60a0929f07b9a8c5bf60ed36a2171ed">setResource</a> (const <a class="el" href="classpqServerResource.html">pqServerResource</a> &amp;)</td></tr>
-<tr class="separator:aa60a0929f07b9a8c5bf60ed36a2171ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aab54f18faca329d8bc786d60e7e53899"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpqServerConfiguration.html#aab54f18faca329d8bc786d60e7e53899">setResource</a> (const QString &amp;)</td></tr>
 <tr class="separator:aab54f18faca329d8bc786d60e7e53899"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa60a0929f07b9a8c5bf60ed36a2171ed"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpqServerConfiguration.html#aa60a0929f07b9a8c5bf60ed36a2171ed">setResource</a> (const <a class="el" href="classpqServerResource.html">pqServerResource</a> &amp;)</td></tr>
+<tr class="separator:aa60a0929f07b9a8c5bf60ed36a2171ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a374096c1f18c7bff47556c9e77ef81ac"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classpqServerResource.html">pqServerResource</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpqServerConfiguration.html#a374096c1f18c7bff47556c9e77ef81ac">actualResource</a> () const</td></tr>
+<tr class="memdesc:a374096c1f18c7bff47556c9e77ef81ac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the actual resource that describes the server scheme, hostname(s) and port(s).  <a href="#a374096c1f18c7bff47556c9e77ef81ac">More...</a><br /></td></tr>
+<tr class="separator:a374096c1f18c7bff47556c9e77ef81ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1af13f78d21c241d44f2b064234a9c29"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpqServerConfiguration.html#a1af13f78d21c241d44f2b064234a9c29">URI</a> () const</td></tr>
+<tr class="memdesc:a1af13f78d21c241d44f2b064234a9c29"><td class="mdescLeft">&#160;</td><td class="mdescRight">get the resource URI  <a href="#a1af13f78d21c241d44f2b064234a9c29">More...</a><br /></td></tr>
+<tr class="separator:a1af13f78d21c241d44f2b064234a9c29"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abcee103ee408dcf121c7e4a2545929a5"><td class="memItemLeft" align="right" valign="top"><a class="elRef" doxygen="/home/kitware/dashboards/buildbot/paraview-vall-linux-shared-debug_doc_extdeps_gui_mpi_python_python3/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkShaderProgram2_8h.html#a61569f2965b7a369eb10b6d75d410d11">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpqServerConfiguration.html#abcee103ee408dcf121c7e4a2545929a5">connectionTimeout</a> () const</td></tr>
 <tr class="memdesc:abcee103ee408dcf121c7e4a2545929a5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get/Set the timeout in seconds that will be used when connecting 0 means no retry and -1 means infinite retries.  <a href="#abcee103ee408dcf121c7e4a2545929a5">More...</a><br /></td></tr>
 <tr class="separator:abcee103ee408dcf121c7e4a2545929a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -97,8 +104,11 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a434301b191a6716db85cf9c4ce8c0455"><td class="mdescLeft">&#160;</td><td class="mdescRight">returns the startup type for this configuration.  <a href="#a434301b191a6716db85cf9c4ce8c0455">More...</a><br /></td></tr>
 <tr class="separator:a434301b191a6716db85cf9c4ce8c0455"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1323d174f68c70dee4816bc887e7e2fa"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpqServerConfiguration.html#a1323d174f68c70dee4816bc887e7e2fa">command</a> (<a class="elRef" doxygen="/home/kitware/dashboards/buildbot/paraview-vall-linux-shared-debug_doc_extdeps_gui_mpi_python_python3/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkVectorOperators_8h.html#a45c855d65dd0e2b57b08024500ff9159">double</a> &amp;timeout, <a class="elRef" doxygen="/home/kitware/dashboards/buildbot/paraview-vall-linux-shared-debug_doc_extdeps_gui_mpi_python_python3/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkVectorOperators_8h.html#a45c855d65dd0e2b57b08024500ff9159">double</a> &amp;delay) const</td></tr>
-<tr class="memdesc:a1323d174f68c70dee4816bc887e7e2fa"><td class="mdescLeft">&#160;</td><td class="mdescRight">If <a class="el" href="classpqServerConfiguration.html#a434301b191a6716db85cf9c4ce8c0455" title="returns the startup type for this configuration. ">startupType()</a> == COMMAND, then this method can be used to obtain the command for the startup.  <a href="#a1323d174f68c70dee4816bc887e7e2fa">More...</a><br /></td></tr>
+<tr class="memdesc:a1323d174f68c70dee4816bc887e7e2fa"><td class="mdescLeft">&#160;</td><td class="mdescRight">If <a class="el" href="classpqServerConfiguration.html#a434301b191a6716db85cf9c4ce8c0455" title="returns the startup type for this configuration. ">startupType()</a> == COMMAND, then this method can be used to obtain the command for the startup, from the client side.  <a href="#a1323d174f68c70dee4816bc887e7e2fa">More...</a><br /></td></tr>
 <tr class="separator:a1323d174f68c70dee4816bc887e7e2fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2c591222b5fbf22dd2d0f7ff5a9b06b8"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpqServerConfiguration.html#a2c591222b5fbf22dd2d0f7ff5a9b06b8">execCommand</a> (<a class="elRef" doxygen="/home/kitware/dashboards/buildbot/paraview-vall-linux-shared-debug_doc_extdeps_gui_mpi_python_python3/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkVectorOperators_8h.html#a45c855d65dd0e2b57b08024500ff9159">double</a> &amp;timeout, <a class="elRef" doxygen="/home/kitware/dashboards/buildbot/paraview-vall-linux-shared-debug_doc_extdeps_gui_mpi_python_python3/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkVectorOperators_8h.html#a45c855d65dd0e2b57b08024500ff9159">double</a> &amp;delay) const</td></tr>
+<tr class="memdesc:a2c591222b5fbf22dd2d0f7ff5a9b06b8"><td class="mdescLeft">&#160;</td><td class="mdescRight">If <a class="el" href="classpqServerConfiguration.html#a434301b191a6716db85cf9c4ce8c0455" title="returns the startup type for this configuration. ">startupType()</a> == COMMAND, then this method can be used to obtain the command for the startup, on the remote server, contained in the exec attributes.  <a href="#a2c591222b5fbf22dd2d0f7ff5a9b06b8">More...</a><br /></td></tr>
+<tr class="separator:a2c591222b5fbf22dd2d0f7ff5a9b06b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa7adadcff3c19180cb3a935334d05a98"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpqServerConfiguration.html#aa7adadcff3c19180cb3a935334d05a98">setStartupToManual</a> ()</td></tr>
 <tr class="memdesc:aa7adadcff3c19180cb3a935334d05a98"><td class="mdescLeft">&#160;</td><td class="mdescRight">changes the startup type to manual.  <a href="#aa7adadcff3c19180cb3a935334d05a98">More...</a><br /></td></tr>
 <tr class="separator:aa7adadcff3c19180cb3a935334d05a98"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -117,17 +127,36 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a49438e5cb77254761d236d07c00ee128"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classvtkPVXMLElement.html">vtkPVXMLElement</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpqServerConfiguration.html#a49438e5cb77254761d236d07c00ee128">hintsXML</a> () const</td></tr>
 <tr class="memdesc:a49438e5cb77254761d236d07c00ee128"><td class="mdescLeft">&#160;</td><td class="mdescRight">returns the &lt;Hints&gt; element, if any.  <a href="#a49438e5cb77254761d236d07c00ee128">More...</a><br /></td></tr>
 <tr class="separator:a49438e5cb77254761d236d07c00ee128"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2b29ac18b10dea7c7f2be5a8514022af"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpqServerConfiguration.html#a2b29ac18b10dea7c7f2be5a8514022af">isPortForwarding</a> () const</td></tr>
+<tr class="memdesc:a2b29ac18b10dea7c7f2be5a8514022af"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get if this is a port forwarding configuration.  <a href="#a2b29ac18b10dea7c7f2be5a8514022af">More...</a><br /></td></tr>
+<tr class="separator:a2b29ac18b10dea7c7f2be5a8514022af"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6335f2e29cbde9d5af1987c16fbab239"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpqServerConfiguration.html#a6335f2e29cbde9d5af1987c16fbab239">portForwardingLocalPort</a> () const</td></tr>
+<tr class="memdesc:a6335f2e29cbde9d5af1987c16fbab239"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the port forwarding local port.  <a href="#a6335f2e29cbde9d5af1987c16fbab239">More...</a><br /></td></tr>
+<tr class="separator:a6335f2e29cbde9d5af1987c16fbab239"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
 <tr class="memitem:a80848ade2b1f09939ca4ec6c546013e0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classvtkPVXMLElement.html">vtkPVXMLElement</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpqServerConfiguration.html#a80848ade2b1f09939ca4ec6c546013e0">startupXML</a> () const</td></tr>
 <tr class="separator:a80848ade2b1f09939ca4ec6c546013e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a008a4f0a633b76a1a8ebca990e63f77e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpqServerConfiguration.html#a008a4f0a633b76a1a8ebca990e63f77e">parseSshPortForwardingXML</a> ()</td></tr>
+<tr class="separator:a008a4f0a633b76a1a8ebca990e63f77e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a70f86558a57d0302238070112b5d6acb"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpqServerConfiguration.html#a70f86558a57d0302238070112b5d6acb">sshFullCommand</a> (QString <a class="el" href="classpqServerConfiguration.html#aefca0ae18627ecb493cf17c231089097">sshCommand</a>, <a class="el" href="classvtkPVXMLElement.html">vtkPVXMLElement</a> *sshConfigXML) const</td></tr>
+<tr class="separator:a70f86558a57d0302238070112b5d6acb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-static-methods"></a>
+Static Protected Member Functions</h2></td></tr>
+<tr class="memitem:a70b48dfc8ed7dacf94291354485736c6"><td class="memItemLeft" align="right" valign="top">static QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpqServerConfiguration.html#a70b48dfc8ed7dacf94291354485736c6">termCommand</a> ()</td></tr>
+<tr class="separator:a70b48dfc8ed7dacf94291354485736c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aefca0ae18627ecb493cf17c231089097"><td class="memItemLeft" align="right" valign="top">static QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpqServerConfiguration.html#aefca0ae18627ecb493cf17c231089097">sshCommand</a> ()</td></tr>
+<tr class="separator:aefca0ae18627ecb493cf17c231089097"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a419c72464adaf1f61d13385e7342ae29"><td class="memItemLeft" align="right" valign="top">static QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpqServerConfiguration.html#a419c72464adaf1f61d13385e7342ae29">lookForCommand</a> (QString <a class="el" href="classpqServerConfiguration.html#a1323d174f68c70dee4816bc887e7e2fa">command</a>)</td></tr>
+<tr class="separator:a419c72464adaf1f61d13385e7342ae29"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p><a class="el" href="classpqServerConfiguration.html" title="pqServerConfiguration corresponds to a server connection configuration. ">pqServerConfiguration</a> corresponds to a server connection configuration. </p>
 <p>These are typically read from pvsc files. </p>
 
-<p class="definition">Definition at line <a class="el" href="pqServerConfiguration_8h_source.html#l00047">47</a> of file <a class="el" href="pqServerConfiguration_8h_source.html">pqServerConfiguration.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="pqServerConfiguration_8h_source.html#l00048">48</a> of file <a class="el" href="pqServerConfiguration_8h_source.html">pqServerConfiguration.h</a>.</p>
 </div><h2 class="groupheader">Member Enumeration Documentation</h2>
 <a id="ab1ba4691321af2966848fa0a3b68f0df"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ab1ba4691321af2966848fa0a3b68f0df">&#9670;&nbsp;</a></span>StartupType</h2>
@@ -148,7 +177,7 @@ Protected Member Functions</h2></td></tr>
 <tr><td class="fieldname"><a id="ab1ba4691321af2966848fa0a3b68f0dfa7311fac5a92633c266dfac6253487a63"></a>COMMAND&#160;</td><td class="fielddoc"></td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="pqServerConfiguration_8h_source.html#l00096">96</a> of file <a class="el" href="pqServerConfiguration_8h_source.html">pqServerConfiguration.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="pqServerConfiguration_8h_source.html#l00113">113</a> of file <a class="el" href="pqServerConfiguration_8h_source.html">pqServerConfiguration.h</a>.</p>
 
 </div>
 </div>
@@ -245,7 +274,7 @@ Protected Member Functions</h2></td></tr>
 <p>Get/Set whether the configuration is mutable. </p>
 <p>This variable is not serialized. </p>
 
-<p class="definition">Definition at line <a class="el" href="pqServerConfiguration_8h_source.html#l00063">63</a> of file <a class="el" href="pqServerConfiguration_8h_source.html">pqServerConfiguration.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="pqServerConfiguration_8h_source.html#l00064">64</a> of file <a class="el" href="pqServerConfiguration_8h_source.html">pqServerConfiguration.h</a>.</p>
 
 </div>
 </div>
@@ -273,7 +302,7 @@ Protected Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="pqServerConfiguration_8h_source.html#l00064">64</a> of file <a class="el" href="pqServerConfiguration_8h_source.html">pqServerConfiguration.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="pqServerConfiguration_8h_source.html#l00065">65</a> of file <a class="el" href="pqServerConfiguration_8h_source.html">pqServerConfiguration.h</a>.</p>
 
 </div>
 </div>
@@ -349,12 +378,30 @@ Protected Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Get/Set the URI that describes the server scheme, hostname(s) and port(s). </p>
+<p>Get/Set the resource that describes the server scheme, hostname(s) and port(s). </p>
+
+</div>
+</div>
+<a id="aab54f18faca329d8bc786d60e7e53899"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aab54f18faca329d8bc786d60e7e53899">&#9670;&nbsp;</a></span>setResource() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void pqServerConfiguration::setResource </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
 
 </div>
 </div>
 <a id="aa60a0929f07b9a8c5bf60ed36a2171ed"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa60a0929f07b9a8c5bf60ed36a2171ed">&#9670;&nbsp;</a></span>setResource() <span class="overload">[1/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#aa60a0929f07b9a8c5bf60ed36a2171ed">&#9670;&nbsp;</a></span>setResource() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -371,21 +418,42 @@ Protected Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="aab54f18faca329d8bc786d60e7e53899"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aab54f18faca329d8bc786d60e7e53899">&#9670;&nbsp;</a></span>setResource() <span class="overload">[2/2]</span></h2>
+<a id="a374096c1f18c7bff47556c9e77ef81ac"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a374096c1f18c7bff47556c9e77ef81ac">&#9670;&nbsp;</a></span>actualResource()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void pqServerConfiguration::setResource </td>
+          <td class="memname"><a class="el" href="classpqServerResource.html">pqServerResource</a> pqServerConfiguration::actualResource </td>
           <td>(</td>
-          <td class="paramtype">const QString &amp;&#160;</td>
           <td class="paramname"></td><td>)</td>
-          <td></td>
+          <td> const</td>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Get the actual resource that describes the server scheme, hostname(s) and port(s). </p>
+<p>Can be different from <a class="el" href="classpqServerConfiguration.html#a09030d0bbaa2a11056c806fab0f1ced9" title="Get/Set the resource that describes the server scheme, hostname(s) and port(s). ">resource()</a> when using SSH Port Forwarding as it will point to ip and port actually used for the tcp connection, which can be different than the server where the pvserver is running. eg. it will give you localhost:8080, instead of serverip:serverport when using port forwarding. Using this method is needed only when using low level tcp api. ressource() method should be used in any other cases. </p>
+
+</div>
+</div>
+<a id="a1af13f78d21c241d44f2b064234a9c29"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1af13f78d21c241d44f2b064234a9c29">&#9670;&nbsp;</a></span>URI()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString pqServerConfiguration::URI </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>get the resource URI </p>
 
 </div>
 </div>
@@ -472,8 +540,39 @@ Protected Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>If <a class="el" href="classpqServerConfiguration.html#a434301b191a6716db85cf9c4ce8c0455" title="returns the startup type for this configuration. ">startupType()</a> == COMMAND, then this method can be used to obtain the command for the startup. </p>
-<p>Note that this does not include any information options etc. that may be specified in the startup. </p>
+<p>If <a class="el" href="classpqServerConfiguration.html#a434301b191a6716db85cf9c4ce8c0455" title="returns the startup type for this configuration. ">startupType()</a> == COMMAND, then this method can be used to obtain the command for the startup, from the client side. </p>
+<p>Note that this does not include any information options etc. that may be specified in the startup. This is the full command to be executed on the client, which includes xterm, ssh... </p>
+
+</div>
+</div>
+<a id="a2c591222b5fbf22dd2d0f7ff5a9b06b8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2c591222b5fbf22dd2d0f7ff5a9b06b8">&#9670;&nbsp;</a></span>execCommand()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString pqServerConfiguration::execCommand </td>
+          <td>(</td>
+          <td class="paramtype"><a class="elRef" doxygen="/home/kitware/dashboards/buildbot/paraview-vall-linux-shared-debug_doc_extdeps_gui_mpi_python_python3/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkVectorOperators_8h.html#a45c855d65dd0e2b57b08024500ff9159">double</a> &amp;&#160;</td>
+          <td class="paramname"><em>timeout</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="elRef" doxygen="/home/kitware/dashboards/buildbot/paraview-vall-linux-shared-debug_doc_extdeps_gui_mpi_python_python3/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkVectorOperators_8h.html#a45c855d65dd0e2b57b08024500ff9159">double</a> &amp;&#160;</td>
+          <td class="paramname"><em>delay</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>If <a class="el" href="classpqServerConfiguration.html#a434301b191a6716db85cf9c4ce8c0455" title="returns the startup type for this configuration. ">startupType()</a> == COMMAND, then this method can be used to obtain the command for the startup, on the remote server, contained in the exec attributes. </p>
+<p>Note that this does not include any information options etc. that may be specified in the startup. This also recovers timeout and delay attributes. </p>
 
 </div>
 </div>
@@ -609,6 +708,56 @@ Protected Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="a2b29ac18b10dea7c7f2be5a8514022af"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2b29ac18b10dea7c7f2be5a8514022af">&#9670;&nbsp;</a></span>isPortForwarding()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool pqServerConfiguration::isPortForwarding </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get if this is a port forwarding configuration. </p>
+<p>PortForwardingConfiguration uses SSH tunneling and is configured directly in xml server file </p>
+
+<p class="definition">Definition at line <a class="el" href="pqServerConfiguration_8h_source.html#l00181">181</a> of file <a class="el" href="pqServerConfiguration_8h_source.html">pqServerConfiguration.h</a>.</p>
+
+</div>
+</div>
+<a id="a6335f2e29cbde9d5af1987c16fbab239"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6335f2e29cbde9d5af1987c16fbab239">&#9670;&nbsp;</a></span>portForwardingLocalPort()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString pqServerConfiguration::portForwardingLocalPort </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the port forwarding local port. </p>
+<p>Initialized by the server xml if port forwarding is used. Equal to the ressource port if port forwarding is not used. </p>
+
+</div>
+</div>
 <a id="a80848ade2b1f09939ca4ec6c546013e0"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a80848ade2b1f09939ca4ec6c546013e0">&#9670;&nbsp;</a></span>startupXML()</h2>
 
@@ -628,6 +777,143 @@ Protected Member Functions</h2></td></tr>
   </td>
   <td class="mlabels-right">
 <span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a008a4f0a633b76a1a8ebca990e63f77e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a008a4f0a633b76a1a8ebca990e63f77e">&#9670;&nbsp;</a></span>parseSshPortForwardingXML()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void pqServerConfiguration::parseSshPortForwardingXML </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a70f86558a57d0302238070112b5d6acb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a70f86558a57d0302238070112b5d6acb">&#9670;&nbsp;</a></span>sshFullCommand()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString pqServerConfiguration::sshFullCommand </td>
+          <td>(</td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>sshCommand</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classvtkPVXMLElement.html">vtkPVXMLElement</a> *&#160;</td>
+          <td class="paramname"><em>sshConfigXML</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a70b48dfc8ed7dacf94291354485736c6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a70b48dfc8ed7dacf94291354485736c6">&#9670;&nbsp;</a></span>termCommand()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static QString pqServerConfiguration::termCommand </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aefca0ae18627ecb493cf17c231089097"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aefca0ae18627ecb493cf17c231089097">&#9670;&nbsp;</a></span>sshCommand()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static QString pqServerConfiguration::sshCommand </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a419c72464adaf1f61d13385e7342ae29"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a419c72464adaf1f61d13385e7342ae29">&#9670;&nbsp;</a></span>lookForCommand()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static QString pqServerConfiguration::lookForCommand </td>
+          <td>(</td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>command</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
