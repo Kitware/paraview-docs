@@ -105,12 +105,6 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ad7ddc506a3957123ace33b107259d02d"><td class="memItemLeft" align="right" valign="top"><a class="elRef" doxygen="/home/kitware/dashboards/buildbot/paraview-vall-linux-shared-debug_doc_extdeps_gui_mpi_python_python3/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkShaderProgram2_8h.html#a61569f2965b7a369eb10b6d75d410d11">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpqDoubleLineEdit.html#ad7ddc506a3957123ace33b107259d02d">precision</a> () const</td></tr>
 <tr class="memdesc:ad7ddc506a3957123ace33b107259d02d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the precision used to display the number.  <a href="#ad7ddc506a3957123ace33b107259d02d">More...</a><br /></td></tr>
 <tr class="separator:ad7ddc506a3957123ace33b107259d02d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a84eed42d36f883948acd7678d3b8f7d8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpqDoubleLineEdit.html#a84eed42d36f883948acd7678d3b8f7d8">setDoubleValidator</a> (QDoubleValidator *validator)</td></tr>
-<tr class="memdesc:a84eed42d36f883948acd7678d3b8f7d8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set a new instance of input validator.  <a href="#a84eed42d36f883948acd7678d3b8f7d8">More...</a><br /></td></tr>
-<tr class="separator:a84eed42d36f883948acd7678d3b8f7d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a39034d81e35b3249be92ee08a4c60d04"><td class="memItemLeft" align="right" valign="top">const QDoubleValidator *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpqDoubleLineEdit.html#a39034d81e35b3249be92ee08a4c60d04">doubleValidator</a> () const</td></tr>
-<tr class="memdesc:a39034d81e35b3249be92ee08a4c60d04"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return a pointer to the current input validator.  <a href="#a39034d81e35b3249be92ee08a4c60d04">More...</a><br /></td></tr>
-<tr class="separator:a39034d81e35b3249be92ee08a4c60d04"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0311fb88b424a76932b16642e217ed98"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpqDoubleLineEdit.html#a0311fb88b424a76932b16642e217ed98">useGlobalPrecisionAndNotation</a> () const</td></tr>
 <tr class="memdesc:a0311fb88b424a76932b16642e217ed98"><td class="mdescLeft">&#160;</td><td class="mdescRight"><code>useGlobalPrecisionAndNotation</code> indicates if the <a class="el" href="classpqDoubleLineEdit.html" title="pqDoubleLineEdit allows to edit a real number in full precision and display a simpified version...">pqDoubleLineEdit</a> should use global precision and notation values instead of the parameters specified on this instance.  <a href="#a0311fb88b424a76932b16642e217ed98">More...</a><br /></td></tr>
 <tr class="separator:a0311fb88b424a76932b16642e217ed98"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -142,8 +136,6 @@ Protected Member Functions</h2></td></tr>
 <tr class="separator:a7d8b45434a3ff92e8acc89b6991bc32a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a102475cbfae5fe972b612323fc7b863a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpqDoubleLineEdit.html#a102475cbfae5fe972b612323fc7b863a">focusInEvent</a> (QFocusEvent *event) override</td></tr>
 <tr class="separator:a102475cbfae5fe972b612323fc7b863a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acdf055226b9a0eab9947449a1c0bc8ba"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpqDoubleLineEdit.html#acdf055226b9a0eab9947449a1c0bc8ba">updateFullPrecisionText</a> ()</td></tr>
-<tr class="separator:acdf055226b9a0eab9947449a1c0bc8ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae9472cd5b36c1538eb5d0979182d37a0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpqDoubleLineEdit.html#ae9472cd5b36c1538eb5d0979182d37a0">updateLimitedPrecisionText</a> ()</td></tr>
 <tr class="separator:ae9472cd5b36c1538eb5d0979182d37a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -165,9 +157,10 @@ Friends</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p><a class="el" href="classpqDoubleLineEdit.html" title="pqDoubleLineEdit allows to edit a real number in full precision and display a simpified version...">pqDoubleLineEdit</a> allows to edit a real number in full precision and display a simpified version. </p>
-<p>The precision and notation associated with the displayed number can be configured using the corresponding properties. </p>
+<p>The precision and notation associated with the displayed number can be configured using the corresponding properties.</p>
+<p>In its constructor, <a class="el" href="classpqDoubleLineEdit.html" title="pqDoubleLineEdit allows to edit a real number in full precision and display a simpified version...">pqDoubleLineEdit</a> sets up a QDoubleValidator as the validator for the line edit. </p>
 
-<p class="definition">Definition at line <a class="el" href="pqDoubleLineEdit_8h_source.html#l00050">50</a> of file <a class="el" href="pqDoubleLineEdit_8h_source.html">pqDoubleLineEdit.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="pqDoubleLineEdit_8h_source.html#l00051">51</a> of file <a class="el" href="pqDoubleLineEdit_8h_source.html">pqDoubleLineEdit.h</a>.</p>
 </div><h2 class="groupheader">Member Enumeration Documentation</h2>
 <a id="a1607fb4589250eefa4a82f645e86a3ef"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a1607fb4589250eefa4a82f645e86a3ef">&#9670;&nbsp;</a></span>RealNumberNotation</h2>
@@ -188,7 +181,7 @@ Friends</h2></td></tr>
 <tr><td class="fieldname"><a id="a1607fb4589250eefa4a82f645e86a3efa404a19ef2d5c9ecd24dbc5b01d7b44f1"></a>FixedNotation&#160;</td><td class="fielddoc"></td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="pqDoubleLineEdit_8h_source.html#l00075">75</a> of file <a class="el" href="pqDoubleLineEdit_8h_source.html">pqDoubleLineEdit.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="pqDoubleLineEdit_8h_source.html#l00076">76</a> of file <a class="el" href="pqDoubleLineEdit_8h_source.html">pqDoubleLineEdit.h</a>.</p>
 
 </div>
 </div>
@@ -294,47 +287,6 @@ Friends</h2></td></tr>
 
 <p>Return the precision used to display the number. </p>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="classpqDoubleLineEdit.html#ae653c09ca58014a43ffdc6448c8b728f" title="Set the precision used to display the number. ">setPrecision()</a> </dd></dl>
-
-</div>
-</div>
-<a id="a84eed42d36f883948acd7678d3b8f7d8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a84eed42d36f883948acd7678d3b8f7d8">&#9670;&nbsp;</a></span>setDoubleValidator()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void pqDoubleLineEdit::setDoubleValidator </td>
-          <td>(</td>
-          <td class="paramtype">QDoubleValidator *&#160;</td>
-          <td class="paramname"><em>validator</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Set a new instance of input validator. </p>
-<p>Note that setting a null pointer has no effect and that the ownership of the validator is transfer to this <a class="el" href="classpqDoubleLineEdit.html" title="pqDoubleLineEdit allows to edit a real number in full precision and display a simpified version...">pqDoubleLineEdit</a> instance. </p><dl class="section see"><dt>See also</dt><dd><a class="el" href="classpqDoubleLineEdit.html#a39034d81e35b3249be92ee08a4c60d04" title="Return a pointer to the current input validator. ">doubleValidator()</a> </dd></dl>
-
-</div>
-</div>
-<a id="a39034d81e35b3249be92ee08a4c60d04"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a39034d81e35b3249be92ee08a4c60d04">&#9670;&nbsp;</a></span>doubleValidator()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">const QDoubleValidator* pqDoubleLineEdit::doubleValidator </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Return a pointer to the current input validator. </p>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="classpqDoubleLineEdit.html#a84eed42d36f883948acd7678d3b8f7d8" title="Set a new instance of input validator. ">setDoubleValidator()</a> </dd></dl>
 
 </div>
 </div>
@@ -730,31 +682,6 @@ Friends</h2></td></tr>
 
 </div>
 </div>
-<a id="acdf055226b9a0eab9947449a1c0bc8ba"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acdf055226b9a0eab9947449a1c0bc8ba">&#9670;&nbsp;</a></span>updateFullPrecisionText()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void pqDoubleLineEdit::updateFullPrecisionText </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <a id="ae9472cd5b36c1538eb5d0979182d37a0"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ae9472cd5b36c1538eb5d0979182d37a0">&#9670;&nbsp;</a></span>updateLimitedPrecisionText()</h2>
 
@@ -801,7 +728,7 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="pqDoubleLineEdit_8h_source.html#l00173">173</a> of file <a class="el" href="pqDoubleLineEdit_8h_source.html">pqDoubleLineEdit.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="pqDoubleLineEdit_8h_source.html#l00161">161</a> of file <a class="el" href="pqDoubleLineEdit_8h_source.html">pqDoubleLineEdit.h</a>.</p>
 
 </div>
 </div>
@@ -826,7 +753,7 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="pqDoubleLineEdit_8h_source.html#l00054">54</a> of file <a class="el" href="pqDoubleLineEdit_8h_source.html">pqDoubleLineEdit.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="pqDoubleLineEdit_8h_source.html#l00055">55</a> of file <a class="el" href="pqDoubleLineEdit_8h_source.html">pqDoubleLineEdit.h</a>.</p>
 
 </div>
 </div>
@@ -850,7 +777,7 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="pqDoubleLineEdit_8h_source.html#l00055">55</a> of file <a class="el" href="pqDoubleLineEdit_8h_source.html">pqDoubleLineEdit.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="pqDoubleLineEdit_8h_source.html#l00056">56</a> of file <a class="el" href="pqDoubleLineEdit_8h_source.html">pqDoubleLineEdit.h</a>.</p>
 
 </div>
 </div>
@@ -874,7 +801,7 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="pqDoubleLineEdit_8h_source.html#l00056">56</a> of file <a class="el" href="pqDoubleLineEdit_8h_source.html">pqDoubleLineEdit.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="pqDoubleLineEdit_8h_source.html#l00057">57</a> of file <a class="el" href="pqDoubleLineEdit_8h_source.html">pqDoubleLineEdit.h</a>.</p>
 
 </div>
 </div>
@@ -898,7 +825,7 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="pqDoubleLineEdit_8h_source.html#l00058">58</a> of file <a class="el" href="pqDoubleLineEdit_8h_source.html">pqDoubleLineEdit.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="pqDoubleLineEdit_8h_source.html#l00059">59</a> of file <a class="el" href="pqDoubleLineEdit_8h_source.html">pqDoubleLineEdit.h</a>.</p>
 
 </div>
 </div>
