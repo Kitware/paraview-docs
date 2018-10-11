@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>paraview.web.protocols &mdash; ParaView/Python 5.6.0-RC2-70-geed584b1e7 documentation</title>
+  <title>paraview.web.protocols &mdash; ParaView/Python 5.6.0-RC2-79-g9ee22766ed documentation</title>
   
 
   
@@ -24,7 +24,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:'../../../',
-        VERSION:'5.6.0-RC2-70-geed584b1e7',
+        VERSION:'5.6.0-RC2-79-g9ee22766ed',
         COLLAPSE_INDEX:false,
         FILE_SUFFIX:'.html',
         HAS_SOURCE:  true
@@ -48,7 +48,7 @@
         <link rel="index" title="Index"
               href="../../../genindex.html"/>
         <link rel="search" title="Search" href="../../../search.html"/>
-    <link rel="top" title="ParaView/Python 5.6.0-RC2-70-geed584b1e7 documentation" href="../../../index.html"/>
+    <link rel="top" title="ParaView/Python 5.6.0-RC2-79-g9ee22766ed documentation" href="../../../index.html"/>
         <link rel="up" title="Module code" href="../../index.html"/> 
 
   <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
@@ -66,7 +66,7 @@
           <li> <a href="../../../index.html">
             <img src="../../../_static/paraview-logo-small.png"
             alt="ParaView/Python"></img></a> </li>
-          <li class="version"> version 5.6.0-RC2-70-geed584b1e7</li>
+          <li class="version"> version 5.6.0-RC2-79-g9ee22766ed</li>
         </ul>
         <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
   <input type="text" name="q" placeholder="Search docs" />
@@ -698,11 +698,21 @@
     <span class="k">except</span><span class="p">:</span>
         <span class="k">return</span> <span class="n">s</span></div>
 
+
 <div class="viewcode-block" id="alphanum_key"><a class="viewcode-back" href="../../../paraview.web.protocols.html#paraview.web.protocols.alphanum_key">[docs]</a><span class="k">def</span> <span class="nf">alphanum_key</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot; Turn a string into a list of string and number chunks.</span>
 <span class="sd">        &quot;z23a&quot; -&gt; [&quot;z&quot;, 23, &quot;a&quot;]</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="p">[</span> <span class="n">tryint</span><span class="p">(</span><span class="n">c</span><span class="p">)</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">re</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;([0-9]+)&#39;</span><span class="p">,</span> <span class="n">s</span><span class="p">)</span> <span class="p">]</span></div>
+
+
+<div class="viewcode-block" id="sanitizeKeys"><a class="viewcode-back" href="../../../paraview.web.protocols.html#paraview.web.protocols.sanitizeKeys">[docs]</a><span class="k">def</span> <span class="nf">sanitizeKeys</span><span class="p">(</span><span class="n">mapObj</span><span class="p">):</span>
+    <span class="n">output</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">mapObj</span><span class="p">:</span>
+        <span class="n">sanitizeKey</span> <span class="o">=</span> <span class="n">servermanager</span><span class="o">.</span><span class="n">_make_name_valid</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
+        <span class="n">output</span><span class="p">[</span><span class="n">sanitizeKey</span><span class="p">]</span> <span class="o">=</span> <span class="n">mapObj</span><span class="p">[</span><span class="n">key</span><span class="p">]</span>
+
+    <span class="k">return</span> <span class="n">output</span></div>
 
 
 <span class="c1"># =============================================================================</span>
@@ -3157,8 +3167,9 @@
             <span class="n">pid</span> <span class="o">=</span> <span class="s1">&#39;0&#39;</span>
 
         <span class="c1"># Create new source/filter</span>
+        <span class="n">sanitizedInitialValues</span> <span class="o">=</span> <span class="n">sanitizeKeys</span><span class="p">(</span><span class="n">initialValues</span><span class="p">)</span>
         <span class="n">allowed</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">allowedProxies</span><span class="p">[</span><span class="n">name</span><span class="p">]</span>
-        <span class="n">newProxy</span> <span class="o">=</span> <span class="n">paraview</span><span class="o">.</span><span class="n">simple</span><span class="o">.</span><span class="vm">__dict__</span><span class="p">[</span><span class="n">allowed</span><span class="p">](</span><span class="o">**</span><span class="n">initialValues</span><span class="p">)</span>
+        <span class="n">newProxy</span> <span class="o">=</span> <span class="n">paraview</span><span class="o">.</span><span class="n">simple</span><span class="o">.</span><span class="vm">__dict__</span><span class="p">[</span><span class="n">allowed</span><span class="p">](</span><span class="o">**</span><span class="n">sanitizedInitialValues</span><span class="p">)</span>
 
         <span class="c1"># Update subproxy values</span>
         <span class="k">if</span> <span class="n">newProxy</span><span class="p">:</span>
@@ -3167,7 +3178,11 @@
                 <span class="k">if</span> <span class="n">subProxy</span><span class="p">:</span>
                     <span class="k">for</span> <span class="n">propName</span> <span class="ow">in</span> <span class="n">subProxyValues</span><span class="p">[</span><span class="n">subProxyName</span><span class="p">]:</span>
                         <span class="n">prop</span> <span class="o">=</span> <span class="n">subProxy</span><span class="o">.</span><span class="n">SMProxy</span><span class="o">.</span><span class="n">GetProperty</span><span class="p">(</span><span class="n">propName</span><span class="p">)</span>
-                        <span class="n">prop</span><span class="o">.</span><span class="n">SetElements</span><span class="p">(</span><span class="n">subProxyValues</span><span class="p">[</span><span class="n">subProxyName</span><span class="p">][</span><span class="n">propName</span><span class="p">])</span>
+                        <span class="n">value</span> <span class="o">=</span> <span class="n">subProxyValues</span><span class="p">[</span><span class="n">subProxyName</span><span class="p">][</span><span class="n">propName</span><span class="p">]</span>
+                        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="nb">list</span><span class="p">):</span>
+                            <span class="n">prop</span><span class="o">.</span><span class="n">SetElements</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+                        <span class="k">else</span><span class="p">:</span>
+                            <span class="n">prop</span><span class="o">.</span><span class="n">SetElements</span><span class="p">([</span><span class="n">value</span><span class="p">])</span>
                     <span class="n">subProxy</span><span class="o">.</span><span class="n">UpdateVTKObjects</span><span class="p">()</span>
 
         <span class="c1"># To make WebGL export work</span>
