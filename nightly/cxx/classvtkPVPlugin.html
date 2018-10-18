@@ -81,6 +81,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ab3b884f43b42635098538b8caeb4fe1b"><td class="memItemLeft" align="right" valign="top">virtual const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkPVPlugin.html#ab3b884f43b42635098538b8caeb4fe1b">GetRequiredPlugins</a> ()=0</td></tr>
 <tr class="memdesc:ab3b884f43b42635098538b8caeb4fe1b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a ';' separated list of plugin names required by this plugin.  <a href="#ab3b884f43b42635098538b8caeb4fe1b">More...</a><br /></td></tr>
 <tr class="separator:ab3b884f43b42635098538b8caeb4fe1b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a328b9e87e3addcef340f0e42252b4d48"><td class="memItemLeft" align="right" valign="top">virtual const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkPVPlugin.html#a328b9e87e3addcef340f0e42252b4d48">GetDescription</a> ()=0</td></tr>
+<tr class="memdesc:a328b9e87e3addcef340f0e42252b4d48"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a description of this plugin.  <a href="#a328b9e87e3addcef340f0e42252b4d48">More...</a><br /></td></tr>
+<tr class="separator:a328b9e87e3addcef340f0e42252b4d48"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6e83c21a74a622ad4829d291c6529d96"><td class="memItemLeft" align="right" valign="top">virtual const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkPVPlugin.html#a6e83c21a74a622ad4829d291c6529d96">GetEULA</a> ()=0</td></tr>
 <tr class="memdesc:a6e83c21a74a622ad4829d291c6529d96"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns EULA for the plugin, if any.  <a href="#a6e83c21a74a622ad4829d291c6529d96">More...</a><br /></td></tr>
 <tr class="separator:a6e83c21a74a622ad4829d291c6529d96"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -132,7 +135,7 @@ Friends</h2></td></tr>
 
 <p>Type for EULAConfirmationCallback. </p>
 
-<p class="definition">Definition at line <a class="el" href="vtkPVPlugin_8h_source.html#l00114">114</a> of file <a class="el" href="vtkPVPlugin_8h_source.html">vtkPVPlugin.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vtkPVPlugin_8h_source.html#l00119">119</a> of file <a class="el" href="vtkPVPlugin_8h_source.html">vtkPVPlugin.h</a>.</p>
 
 </div>
 </div>
@@ -352,6 +355,35 @@ Friends</h2></td></tr>
 
 </div>
 </div>
+<a id="a328b9e87e3addcef340f0e42252b4d48"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a328b9e87e3addcef340f0e42252b4d48">&#9670;&nbsp;</a></span>GetDescription()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual const char* vtkPVPlugin::GetDescription </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns a description of this plugin. </p>
+
+<p>Implemented in <a class="el" href="classvtkPVPythonAlgorithmPlugin.html#a8683053885f73545d8c80c2054900e6d">vtkPVPythonAlgorithmPlugin</a>.</p>
+
+</div>
+</div>
 <a id="a6e83c21a74a622ad4829d291c6529d96"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a6e83c21a74a622ad4829d291c6529d96">&#9670;&nbsp;</a></span>GetEULA()</h2>
 
@@ -547,7 +579,7 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="vtkPVPlugin_8h_source.html#l00144">144</a> of file <a class="el" href="vtkPVPlugin_8h_source.html">vtkPVPlugin.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vtkPVPlugin_8h_source.html#l00149">149</a> of file <a class="el" href="vtkPVPlugin_8h_source.html">vtkPVPlugin.h</a>.</p>
 
 </div>
 </div>
