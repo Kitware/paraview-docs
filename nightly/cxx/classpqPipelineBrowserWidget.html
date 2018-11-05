@@ -244,6 +244,9 @@ Protected Member Functions</h2></td></tr>
 <tr class="separator:a8e2880a511da69e6a8d8a4d4cad65ca3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adcf43e18f7a5bed5f1569beb271d5164"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpqPipelineBrowserWidget.html#adcf43e18f7a5bed5f1569beb271d5164">contextMenuEvent</a> (QContextMenuEvent *e) override</td></tr>
 <tr class="separator:adcf43e18f7a5bed5f1569beb271d5164"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a38b471b4066f09aaf04b68445b2bd2d4"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpqPipelineBrowserWidget.html#a38b471b4066f09aaf04b68445b2bd2d4">viewportEvent</a> (QEvent *e) override</td></tr>
+<tr class="memdesc:a38b471b4066f09aaf04b68445b2bd2d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Overridden to pass changed font to <a class="el" href="classpqPipelineModel.html" title="This class is the model for the PipelineLine browser tree view. ">pqPipelineModel</a>.  <a href="#a38b471b4066f09aaf04b68445b2bd2d4">More...</a><br /></td></tr>
+<tr class="separator:a38b471b4066f09aaf04b68445b2bd2d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_methods_classpqFlatTreeView"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_classpqFlatTreeView')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="classpqFlatTreeView.html">pqFlatTreeView</a></td></tr>
 <tr class="memitem:a96044048cc121905830e3c89007900c5 inherit pro_methods_classpqFlatTreeView"><td class="memItemLeft" align="right" valign="top"><a class="elRef" doxygen="/home/kitware/dashboards/buildbot/paraview-vall-linux-shared-debug_doc_extdeps_gui_mpi_python_python3/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkShaderProgram2_8h.html#a61569f2965b7a369eb10b6d75d410d11">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpqFlatTreeView.html#a96044048cc121905830e3c89007900c5">horizontalOffset</a> () const</td></tr>
 <tr class="separator:a96044048cc121905830e3c89007900c5 inherit pro_methods_classpqFlatTreeView"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -771,6 +774,34 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
+<a id="a38b471b4066f09aaf04b68445b2bd2d4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a38b471b4066f09aaf04b68445b2bd2d4">&#9670;&nbsp;</a></span>viewportEvent()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool pqPipelineBrowserWidget::viewportEvent </td>
+          <td>(</td>
+          <td class="paramtype">QEvent *&#160;</td>
+          <td class="paramname"><em>e</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Overridden to pass changed font to <a class="el" href="classpqPipelineModel.html" title="This class is the model for the PipelineLine browser tree view. ">pqPipelineModel</a>. </p>
+
+</div>
+</div>
 <h2 class="groupheader">Member Data Documentation</h2>
 <a id="adbd66058ec10126b988cd8e24d4094a1"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#adbd66058ec10126b988cd8e24d4094a1">&#9670;&nbsp;</a></span>PipelineModel</h2>
@@ -792,7 +823,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="pqPipelineBrowserWidget_8h_source.html#l00140">140</a> of file <a class="el" href="pqPipelineBrowserWidget_8h_source.html">pqPipelineBrowserWidget.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="pqPipelineBrowserWidget_8h_source.html#l00145">145</a> of file <a class="el" href="pqPipelineBrowserWidget_8h_source.html">pqPipelineBrowserWidget.h</a>.</p>
 
 </div>
 </div>
@@ -816,7 +847,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="pqPipelineBrowserWidget_8h_source.html#l00141">141</a> of file <a class="el" href="pqPipelineBrowserWidget_8h_source.html">pqPipelineBrowserWidget.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="pqPipelineBrowserWidget_8h_source.html#l00146">146</a> of file <a class="el" href="pqPipelineBrowserWidget_8h_source.html">pqPipelineBrowserWidget.h</a>.</p>
 
 </div>
 </div>
@@ -840,7 +871,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="pqPipelineBrowserWidget_8h_source.html#l00142">142</a> of file <a class="el" href="pqPipelineBrowserWidget_8h_source.html">pqPipelineBrowserWidget.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="pqPipelineBrowserWidget_8h_source.html#l00147">147</a> of file <a class="el" href="pqPipelineBrowserWidget_8h_source.html">pqPipelineBrowserWidget.h</a>.</p>
 
 </div>
 </div>
