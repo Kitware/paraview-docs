@@ -17,6 +17,20 @@ Data Descriptors
        using their family names. \*\*Grids\*\* and \*\*Patches\*\* allows loading grids or
        bc-patches for specific zones.
    
+   CacheConnectivity
+       Toggle whether to cache mesh connectivity for unstructured meshes.
+       If unchecked, mesh connectivity are read at every time step.
+       If checked, mesh connectivity are store in the cache. When loading a new iteration,
+       the mesh connectivity will be retrieved from the cache.
+       Changing this property may impact the loading performance.
+   
+   CacheMesh
+       Toggle whether to cache mesh points.
+       If unchecked, mesh coordinates are read at every time step.
+       If checked, mesh coordinates are store in the cache. When loading a new iteration,
+       the mesh coordinates will be retrieved from the cache.
+       Changing this property may impact the loading performance.
+   
    CellArrayStatus
        This property contains a list of the cell-centered arrays to read.
    
