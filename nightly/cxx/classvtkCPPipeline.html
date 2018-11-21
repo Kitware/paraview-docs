@@ -55,11 +55,13 @@ Inheritance diagram for vtkCPPipeline:</div>
 <div class="dyncontent">
 <div class="center"><img src="classvtkCPPipeline__inherit__graph.png" border="0" usemap="#vtkCPPipeline_inherit__map" alt="Inheritance graph"/></div>
 <map name="vtkCPPipeline_inherit__map" id="vtkCPPipeline_inherit__map">
-<area shape="rect" id="node4" href="classvtkCPPythonScriptPipeline.html" title="Class that creates a coprocessing pipeline starting from a coprocessing script. " alt="" coords="5,229,200,256"/>
-<area shape="rect" id="node5" href="classvtkCPXMLPWriterPipeline.html" title="Generic PXML writer pipeline to write out the full Catalyst input datasets. " alt="" coords="224,229,411,256"/>
-<area shape="rect" id="node6" href="classvtkParticlePipeline.html" title="vtkParticlePipeline" alt="" coords="435,229,578,256"/>
-<area shape="rect" id="node2" doxygen="/home/kitware/dashboards/buildbot/paraview-vall-linux-shared-debug_doc_extdeps_gui_mpi_python_python3/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/classvtkObject.html" title="vtkObject" alt="" coords="275,80,360,107"/>
-<area shape="rect" id="node3" doxygen="/home/kitware/dashboards/buildbot/paraview-vall-linux-shared-debug_doc_extdeps_gui_mpi_python_python3/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/classvtkObjectBase.html" title="vtkObjectBase" alt="" coords="259,5,376,32"/>
+<area shape="rect" id="node4" href="classvtkCPPythonPipeline.html" title="Abstract class that takes care of initializing Catalyst Python pipelines for all concrete implementat..." alt="" coords="133,229,291,256"/>
+<area shape="rect" id="node7" href="classvtkCPXMLPWriterPipeline.html" title="Generic PXML writer pipeline to write out the full Catalyst input datasets. " alt="" coords="315,229,501,256"/>
+<area shape="rect" id="node8" href="classvtkParticlePipeline.html" title="vtkParticlePipeline" alt="" coords="526,229,669,256"/>
+<area shape="rect" id="node2" doxygen="/home/kitware/dashboards/buildbot/paraview-vall-linux-shared-debug_doc_extdeps_gui_mpi_python_python3/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/classvtkObject.html" title="vtkObject" alt="" coords="365,80,451,107"/>
+<area shape="rect" id="node3" doxygen="/home/kitware/dashboards/buildbot/paraview-vall-linux-shared-debug_doc_extdeps_gui_mpi_python_python3/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/classvtkObjectBase.html" title="vtkObjectBase" alt="" coords="349,5,467,32"/>
+<area shape="rect" id="node5" href="classvtkCPPythonScriptPipeline.html" title="Class that creates a coprocessing pipeline starting from a coprocessing script. " alt="" coords="5,304,200,331"/>
+<area shape="rect" id="node6" href="classvtkCPPythonStringPipeline.html" title="Class that creates a coprocessing pipeline from a coprocessing string. " alt="" coords="224,304,419,331"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <div class="dynheader">
@@ -395,7 +397,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Reimplemented in <a class="el" href="classvtkCPPythonScriptPipeline.html#a832f24940aa60c861728a8f9fcadd99f">vtkCPPythonScriptPipeline</a>, <a class="el" href="classvtkCPXMLPWriterPipeline.html#a22c5c60ce093663e04c472590c27ea6e">vtkCPXMLPWriterPipeline</a>, and <a class="el" href="classvtkParticlePipeline.html#ae8c63395283110ffb6e398b9f45cdc96">vtkParticlePipeline</a>.</p>
+<p>Reimplemented in <a class="el" href="classvtkCPPythonScriptPipeline.html#a832f24940aa60c861728a8f9fcadd99f">vtkCPPythonScriptPipeline</a>, <a class="el" href="classvtkCPXMLPWriterPipeline.html#a22c5c60ce093663e04c472590c27ea6e">vtkCPXMLPWriterPipeline</a>, <a class="el" href="classvtkCPPythonPipeline.html#a24e9fb034dd61ccbe23b0e9d6cbbe014">vtkCPPythonPipeline</a>, <a class="el" href="classvtkCPPythonStringPipeline.html#a4045ba1b737136b2f64d64de4cfcc7c4">vtkCPPythonStringPipeline</a>, and <a class="el" href="classvtkParticlePipeline.html#ae8c63395283110ffb6e398b9f45cdc96">vtkParticlePipeline</a>.</p>
 
 </div>
 </div>
@@ -451,7 +453,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Reimplemented from <a class="elRef" doxygen="/home/kitware/dashboards/buildbot/paraview-vall-linux-shared-debug_doc_extdeps_gui_mpi_python_python3/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/classvtkObjectBase.html#a44ecbcd4243dc6d6cbf619c9f983a438">vtkObjectBase</a>.</p>
 
-<p>Reimplemented in <a class="el" href="classvtkCPPythonScriptPipeline.html#aca72e5262391eac3cbfdf47799962f24">vtkCPPythonScriptPipeline</a>, <a class="el" href="classvtkCPXMLPWriterPipeline.html#af30e0c9d233351fcfcaf58dc41df2cd9">vtkCPXMLPWriterPipeline</a>, and <a class="el" href="classvtkParticlePipeline.html#afb782c6bd98ee63ee5450becc86e53cb">vtkParticlePipeline</a>.</p>
+<p>Reimplemented in <a class="el" href="classvtkCPPythonScriptPipeline.html#aca72e5262391eac3cbfdf47799962f24">vtkCPPythonScriptPipeline</a>, <a class="el" href="classvtkCPXMLPWriterPipeline.html#af30e0c9d233351fcfcaf58dc41df2cd9">vtkCPXMLPWriterPipeline</a>, <a class="el" href="classvtkCPPythonPipeline.html#ab003e2051418f6a13559d10346b40e74">vtkCPPythonPipeline</a>, <a class="el" href="classvtkCPPythonStringPipeline.html#a6ba13e51b3abf3b84e5237d7b1c46375">vtkCPPythonStringPipeline</a>, and <a class="el" href="classvtkParticlePipeline.html#afb782c6bd98ee63ee5450becc86e53cb">vtkParticlePipeline</a>.</p>
 
 </div>
 </div>
@@ -517,7 +519,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Reimplemented from <a class="elRef" doxygen="/home/kitware/dashboards/buildbot/paraview-vall-linux-shared-debug_doc_extdeps_gui_mpi_python_python3/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/classvtkObject.html#aaad76ea8f6abbbc0a8ffda1215ab691c">vtkObject</a>.</p>
 
-<p>Reimplemented in <a class="el" href="classvtkCPPythonScriptPipeline.html#a25cda3757ff3aab35fa0a7635ebd486f">vtkCPPythonScriptPipeline</a>, and <a class="el" href="classvtkCPXMLPWriterPipeline.html#a0fe194e808533fb6a0654b828b4169a6">vtkCPXMLPWriterPipeline</a>.</p>
+<p>Reimplemented in <a class="el" href="classvtkCPPythonScriptPipeline.html#ae9887b7f3b879eacf820cef06161a9a3">vtkCPPythonScriptPipeline</a>, <a class="el" href="classvtkCPXMLPWriterPipeline.html#a0fe194e808533fb6a0654b828b4169a6">vtkCPXMLPWriterPipeline</a>, and <a class="el" href="classvtkCPPythonStringPipeline.html#a14b8860ca8aff4f899de6f58b5d7a19a">vtkCPPythonStringPipeline</a>.</p>
 
 </div>
 </div>
@@ -548,7 +550,7 @@ Additional Inherited Members</h2></td></tr>
 <p>Configuration Step: The coprocessor first determines if any coprocessing needs to be done at this TimeStep/Time combination returning 1 if it does and 0 otherwise. </p>
 <p>If coprocessing does need to be performed this time step it fills in the FieldNames array that the coprocessor requires in order to fulfill all the coprocessing requests for this TimeStep/Time combination. </p>
 
-<p>Implemented in <a class="el" href="classvtkCPPythonScriptPipeline.html#a7d42da1ffd0a568736d852fe99cf5bda">vtkCPPythonScriptPipeline</a>, <a class="el" href="classvtkCPXMLPWriterPipeline.html#aa60a91daea435be01d00b101ca39d7c6">vtkCPXMLPWriterPipeline</a>, and <a class="el" href="classvtkParticlePipeline.html#a4bcc4573518f05333278fab95e743f73">vtkParticlePipeline</a>.</p>
+<p>Implemented in <a class="el" href="classvtkCPPythonScriptPipeline.html#a5cca800f5eef219207846bd37edf88df">vtkCPPythonScriptPipeline</a>, <a class="el" href="classvtkCPPythonStringPipeline.html#ac1be52b78f07eec7f9d285e45ce9caea">vtkCPPythonStringPipeline</a>, <a class="el" href="classvtkCPXMLPWriterPipeline.html#aa60a91daea435be01d00b101ca39d7c6">vtkCPXMLPWriterPipeline</a>, and <a class="el" href="classvtkParticlePipeline.html#a4bcc4573518f05333278fab95e743f73">vtkParticlePipeline</a>.</p>
 
 </div>
 </div>
@@ -578,7 +580,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Execute the pipeline. Returns 1 for success and 0 for failure. </p>
 
-<p>Implemented in <a class="el" href="classvtkCPPythonScriptPipeline.html#a3679c8828652f5c812fbfb9a5fb333f9">vtkCPPythonScriptPipeline</a>, <a class="el" href="classvtkCPXMLPWriterPipeline.html#a374c868822891cc541c9df779c4914f8">vtkCPXMLPWriterPipeline</a>, and <a class="el" href="classvtkParticlePipeline.html#a2889b5aca7c50cca3b0f6f7f14143132">vtkParticlePipeline</a>.</p>
+<p>Implemented in <a class="el" href="classvtkCPPythonScriptPipeline.html#a11b2f3bb3111770e5e7f7691d6c5cfaf">vtkCPPythonScriptPipeline</a>, <a class="el" href="classvtkCPPythonStringPipeline.html#a4b966a1ca48d1ae11d304617064cb221">vtkCPPythonStringPipeline</a>, <a class="el" href="classvtkCPXMLPWriterPipeline.html#a374c868822891cc541c9df779c4914f8">vtkCPXMLPWriterPipeline</a>, and <a class="el" href="classvtkParticlePipeline.html#a2889b5aca7c50cca3b0f6f7f14143132">vtkParticlePipeline</a>.</p>
 
 </div>
 </div>
@@ -608,7 +610,7 @@ Additional Inherited Members</h2></td></tr>
 <p>Finalize the pipeline before deleting it. </p>
 <p>A default no-op implementation is given. Returns 1 for success and 0 for failure. </p>
 
-<p>Reimplemented in <a class="el" href="classvtkCPPythonScriptPipeline.html#a16840a8c8a2c17a997e8903dc11ea98d">vtkCPPythonScriptPipeline</a>.</p>
+<p>Reimplemented in <a class="el" href="classvtkCPPythonScriptPipeline.html#a1817ede1adebc579c7a07a66f533b091">vtkCPPythonScriptPipeline</a>, and <a class="el" href="classvtkCPPythonStringPipeline.html#a5be94e2c94cb23adbc3477fdb599e982">vtkCPPythonStringPipeline</a>.</p>
 
 </div>
 </div>
