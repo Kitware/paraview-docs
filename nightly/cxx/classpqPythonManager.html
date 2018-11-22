@@ -38,8 +38,6 @@ $(function() {
   <div class="summary">
 <a href="#pub-slots">Public Slots</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pro-slots">Protected Slots</a> &#124;
-<a href="#pro-methods">Protected Member Functions</a> &#124;
 <a href="classpqPythonManager-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">pqPythonManager Class Reference</div>  </div>
@@ -74,12 +72,6 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a79828cb4e24dba7992a6bded8d13943c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpqPythonManager.html#a79828cb4e24dba7992a6bded8d13943c">interpreterIsInitialized</a> ()</td></tr>
 <tr class="memdesc:a79828cb4e24dba7992a6bded8d13943c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns true if the interpreter has been initialized.  <a href="#a79828cb4e24dba7992a6bded8d13943c">More...</a><br /></td></tr>
 <tr class="separator:a79828cb4e24dba7992a6bded8d13943c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a178e7fc2a5f8e64ff571a9abae370981"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classpqPythonDialog.html">pqPythonDialog</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpqPythonManager.html#a178e7fc2a5f8e64ff571a9abae370981">pythonShellDialog</a> ()</td></tr>
-<tr class="memdesc:a178e7fc2a5f8e64ff571a9abae370981"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the python shell dialog.  <a href="#a178e7fc2a5f8e64ff571a9abae370981">More...</a><br /></td></tr>
-<tr class="separator:a178e7fc2a5f8e64ff571a9abae370981"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae95d2a6d9194a480f5478eb6397a6ad4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpqPythonManager.html#ae95d2a6d9194a480f5478eb6397a6ad4">editTrace</a> (const QString &amp;txt=QString(), bool update=false)</td></tr>
-<tr class="memdesc:ae95d2a6d9194a480f5478eb6397a6ad4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Show the python editor with the trace in it.  <a href="#ae95d2a6d9194a480f5478eb6397a6ad4">More...</a><br /></td></tr>
-<tr class="separator:ae95d2a6d9194a480f5478eb6397a6ad4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2bba549cffc58f89c16f22db6d2f273d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpqPythonManager.html#a2bba549cffc58f89c16f22db6d2f273d">addMacro</a> (const QString &amp;fileName)</td></tr>
 <tr class="memdesc:a2bba549cffc58f89c16f22db6d2f273d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Save the macro in ParaView configuration and update widget automatically.  <a href="#a2bba549cffc58f89c16f22db6d2f273d">More...</a><br /></td></tr>
 <tr class="separator:a2bba549cffc58f89c16f22db6d2f273d"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -96,17 +88,6 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a09662dff1936f2f13ee56c7f5e9736ab"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpqPythonManager.html#a09662dff1936f2f13ee56c7f5e9736ab">addWidgetForDeleteMacros</a> (QWidget *widget)</td></tr>
 <tr class="memdesc:a09662dff1936f2f13ee56c7f5e9736ab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add a widget to be given macro actions.  <a href="#a09662dff1936f2f13ee56c7f5e9736ab">More...</a><br /></td></tr>
 <tr class="separator:a09662dff1936f2f13ee56c7f5e9736ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-slots"></a>
-Protected Slots</h2></td></tr>
-<tr class="memitem:a99b83865a930b50c83efac22c9f8d3f7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpqPythonManager.html#a99b83865a930b50c83efac22c9f8d3f7">onRemovingServer</a> (<a class="el" href="classpqServer.html">pqServer</a> *server)</td></tr>
-<tr class="memdesc:a99b83865a930b50c83efac22c9f8d3f7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whenever we are about to disconnect from a server, we "reset" the Python shell, if created.  <a href="#a99b83865a930b50c83efac22c9f8d3f7">More...</a><br /></td></tr>
-<tr class="separator:a99b83865a930b50c83efac22c9f8d3f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
-Protected Member Functions</h2></td></tr>
-<tr class="memitem:afd5ce3f579ffcfbbcf459a67f1bd274a"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpqPythonManager.html#afd5ce3f579ffcfbbcf459a67f1bd274a">getTraceString</a> ()</td></tr>
-<tr class="separator:afd5ce3f579ffcfbbcf459a67f1bd274a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p><a class="el" href="classpqPythonManager.html" title="pqPythonManager is a class to facilitate the use of a python interpreter by various paraview GUI comp...">pqPythonManager</a> is a class to facilitate the use of a python interpreter by various paraview GUI components. </p>
@@ -114,7 +95,7 @@ Protected Member Functions</h2></td></tr>
 Roadmap</h1>
 <p><a class="el" href="classpqPythonManager.html" title="pqPythonManager is a class to facilitate the use of a python interpreter by various paraview GUI comp...">pqPythonManager</a> is slated for deprecation. It's unclear there's a need for such a manager anymore since Python interpreter is globally accessible via vtkPythonInterpreter. </p>
 
-<p class="definition">Definition at line <a class="el" href="pqPythonManager_8h_source.html#l00055">55</a> of file <a class="el" href="pqPythonManager_8h_source.html">pqPythonManager.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="pqPythonManager_8h_source.html#l00054">54</a> of file <a class="el" href="pqPythonManager_8h_source.html">pqPythonManager.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a30cd36ec5fb039ff9630a35e71d49ee2"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a30cd36ec5fb039ff9630a35e71d49ee2">&#9670;&nbsp;</a></span>pqPythonManager()</h2>
@@ -180,26 +161,6 @@ Roadmap</h1>
 
 </div>
 </div>
-<a id="a178e7fc2a5f8e64ff571a9abae370981"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a178e7fc2a5f8e64ff571a9abae370981">&#9670;&nbsp;</a></span>pythonShellDialog()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classpqPythonDialog.html">pqPythonDialog</a>* pqPythonManager::pythonShellDialog </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Return the python shell dialog. </p>
-<p>This will cause the interpreter to be initialized if it has not been already. </p><dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000026">Deprecated:</a></b></dt><dd>ParaView 5.5. Applications should directly create <a class="el" href="classpqPythonShell.html" title="Widget for a Python shell. ">pqPythonShell</a> as needed. </dd></dl>
-
-</div>
-</div>
 <a id="a234dac48f0a614c60aecbe3f772f4f07"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a234dac48f0a614c60aecbe3f772f4f07">&#9670;&nbsp;</a></span>addWidgetForRunMacros()</h2>
 
@@ -260,37 +221,6 @@ Roadmap</h1>
 
 <p>Add a widget to be given macro actions. </p>
 <p>QActions representing script macros will be added to the widget. This could be a QToolBar, QMenu, or other type of widget. </p>
-
-</div>
-</div>
-<a id="ae95d2a6d9194a480f5478eb6397a6ad4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae95d2a6d9194a480f5478eb6397a6ad4">&#9670;&nbsp;</a></span>editTrace()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void pqPythonManager::editTrace </td>
-          <td>(</td>
-          <td class="paramtype">const QString &amp;&#160;</td>
-          <td class="paramname"><em>txt</em> = <code>QString()</code>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">bool&#160;</td>
-          <td class="paramname"><em>update</em> = <code>false</code>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Show the python editor with the trace in it. </p>
-<p>If txt is empty, the editor will obtain the state from active <a class="el" href="classvtkSMTrace.html" title="vtkSMTrace is used to produce Python trace in the ParaView application. ">vtkSMTrace</a> instance, if any. </p><dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000027">Deprecated:</a></b></dt><dd>ParaView 5.5. Applications should directly create and use <a class="el" href="classpqPythonScriptEditor.html">pqPythonScriptEditor</a> as needed. </dd></dl>
 
 </div>
 </div>
@@ -416,60 +346,6 @@ Roadmap</h1>
 </div><div class="memdoc">
 
 <p>Launch python editor to edit the macro. </p>
-
-</div>
-</div>
-<a id="a99b83865a930b50c83efac22c9f8d3f7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a99b83865a930b50c83efac22c9f8d3f7">&#9670;&nbsp;</a></span>onRemovingServer</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void pqPythonManager::onRemovingServer </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="classpqServer.html">pqServer</a> *&#160;</td>
-          <td class="paramname"><em>server</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">slot</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Whenever we are about to disconnect from a server, we "reset" the Python shell, if created. </p>
-<p>This will ensure all Python objects created by the shell are released. </p>
-
-</div>
-</div>
-<a id="afd5ce3f579ffcfbbcf459a67f1bd274a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afd5ce3f579ffcfbbcf459a67f1bd274a">&#9670;&nbsp;</a></span>getTraceString()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">QString pqPythonManager::getTraceString </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
 
 </div>
 </div>

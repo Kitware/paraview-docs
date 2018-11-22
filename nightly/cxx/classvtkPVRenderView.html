@@ -327,10 +327,6 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:adfc9e33716fa76c51d82cc4d359aed6d"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkPVRenderView.html#adfc9e33716fa76c51d82cc4d359aed6d">UpdateLOD</a> ()</td></tr>
 <tr class="memdesc:adfc9e33716fa76c51d82cc4d359aed6d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Asks representations to update their LOD geometries.  <a href="#adfc9e33716fa76c51d82cc4d359aed6d">More...</a><br /></td></tr>
 <tr class="separator:adfc9e33716fa76c51d82cc4d359aed6d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6e968f10182bd26d0e36bf717e33ebe4"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkPVRenderView.html#a6e968f10182bd26d0e36bf717e33ebe4">GetUseDistributedRenderingForStillRender</a> ()</td></tr>
-<tr class="separator:a6e968f10182bd26d0e36bf717e33ebe4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7bb8c8782969625b528ffd4b806adf4c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkPVRenderView.html#a7bb8c8782969625b528ffd4b806adf4c">GetUseDistributedRenderingForInteractiveRender</a> ()</td></tr>
-<tr class="separator:a7bb8c8782969625b528ffd4b806adf4c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af5148794273f8b2edc092766ee708f0a"><td class="memItemLeft" align="right" valign="top"><a class="elRef" doxygen="/home/kitware/dashboards/buildbot/paraview-vall-linux-shared-debug_doc_extdeps_gui_mpi_python_python3/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkShaderProgram2_8h.html#a61569f2965b7a369eb10b6d75d410d11">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkPVRenderView.html#af5148794273f8b2edc092766ee708f0a">GetDataDistributionMode</a> (bool use_remote_rendering)</td></tr>
 <tr class="memdesc:af5148794273f8b2edc092766ee708f0a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the data distribution mode to use.  <a href="#af5148794273f8b2edc092766ee708f0a">More...</a><br /></td></tr>
 <tr class="separator:af5148794273f8b2edc092766ee708f0a"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -6031,25 +6027,6 @@ this must be called on all processes, however it will have any effect only the d
 
 </div>
 </div>
-<a id="a6e968f10182bd26d0e36bf717e33ebe4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6e968f10182bd26d0e36bf717e33ebe4">&#9670;&nbsp;</a></span>GetUseDistributedRenderingForStillRender()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool vtkPVRenderView::GetUseDistributedRenderingForStillRender </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000010">Deprecated:</a></b></dt><dd>ParaView 5.6.</dd></dl>
-<p>Please use <code>GetUseDistributedRenderingForRender</code> instead. The change was done to make the name better reflect the implementation. </p>
-
-</div>
-</div>
 <a id="a1efbb00c3d6f537e50dbe1bffe191a34"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a1efbb00c3d6f537e50dbe1bffe191a34">&#9670;&nbsp;</a></span>GetUseDistributedRenderingForLODRender()</h2>
 
@@ -6075,25 +6052,6 @@ this must be called on all processes, however it will have any effect only the d
 
 <p>Returns whether the view will use distributed rendering for the next low-resolution render. </p>
 <p>This uses the low-resolution (or LOD) geometry sizes as determined by the most recent call to <code>UpdateLOD</code>. </p>
-
-</div>
-</div>
-<a id="a7bb8c8782969625b528ffd4b806adf4c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7bb8c8782969625b528ffd4b806adf4c">&#9670;&nbsp;</a></span>GetUseDistributedRenderingForInteractiveRender()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool vtkPVRenderView::GetUseDistributedRenderingForInteractiveRender </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000011">Deprecated:</a></b></dt><dd>ParaView 5.6.</dd></dl>
-<p>Please use <code>GetUseDistributedRenderingForLODRender</code> instead. The change was done to make the name better reflect the implementation. </p>
 
 </div>
 </div>
@@ -6475,7 +6433,7 @@ this must be called on all processes, however it will have any effect only the d
 
 <p>Provides access to the time when <a class="el" href="classvtkPVRenderView.html#a994e45817d333099d9d0919e91b64790" title="Overridden to synchronize information among processes whenever data changes. ">Update()</a> was last called. </p>
 
-<p class="definition">Definition at line <a class="el" href="vtkPVRenderView_8h_source.html#l00801">801</a> of file <a class="el" href="vtkPVRenderView_8h_source.html">vtkPVRenderView.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vtkPVRenderView_8h_source.html#l00785">785</a> of file <a class="el" href="vtkPVRenderView_8h_source.html">vtkPVRenderView.h</a>.</p>
 
 </div>
 </div>
@@ -7527,7 +7485,7 @@ this must be called on all processes, however it will have any effect only the d
 
 <p>Reimplemented in <a class="el" href="classvtkPVOrthographicSliceView.html#a500dd11d1b57f6cec40c928cebae2fac">vtkPVOrthographicSliceView</a>, and <a class="el" href="classvtkPVMultiSliceView.html#a3baebf41696181e611e207aeb712255d">vtkPVMultiSliceView</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="vtkPVRenderView_8h_source.html#l01003">1003</a> of file <a class="el" href="vtkPVRenderView_8h_source.html">vtkPVRenderView.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vtkPVRenderView_8h_source.html#l00987">987</a> of file <a class="el" href="vtkPVRenderView_8h_source.html">vtkPVRenderView.h</a>.</p>
 
 </div>
 </div>
@@ -7956,7 +7914,7 @@ this must be called on all processes, however it will have any effect only the d
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="vtkPVRenderView_8h_source.html#l01091">1091</a> of file <a class="el" href="vtkPVRenderView_8h_source.html">vtkPVRenderView.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vtkPVRenderView_8h_source.html#l01075">1075</a> of file <a class="el" href="vtkPVRenderView_8h_source.html">vtkPVRenderView.h</a>.</p>
 
 </div>
 </div>
@@ -7980,7 +7938,7 @@ this must be called on all processes, however it will have any effect only the d
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="vtkPVRenderView_8h_source.html#l01092">1092</a> of file <a class="el" href="vtkPVRenderView_8h_source.html">vtkPVRenderView.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vtkPVRenderView_8h_source.html#l01076">1076</a> of file <a class="el" href="vtkPVRenderView_8h_source.html">vtkPVRenderView.h</a>.</p>
 
 </div>
 </div>
@@ -8004,7 +7962,7 @@ this must be called on all processes, however it will have any effect only the d
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="vtkPVRenderView_8h_source.html#l01093">1093</a> of file <a class="el" href="vtkPVRenderView_8h_source.html">vtkPVRenderView.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vtkPVRenderView_8h_source.html#l01077">1077</a> of file <a class="el" href="vtkPVRenderView_8h_source.html">vtkPVRenderView.h</a>.</p>
 
 </div>
 </div>
@@ -8028,7 +7986,7 @@ this must be called on all processes, however it will have any effect only the d
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="vtkPVRenderView_8h_source.html#l01094">1094</a> of file <a class="el" href="vtkPVRenderView_8h_source.html">vtkPVRenderView.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vtkPVRenderView_8h_source.html#l01078">1078</a> of file <a class="el" href="vtkPVRenderView_8h_source.html">vtkPVRenderView.h</a>.</p>
 
 </div>
 </div>
@@ -8052,7 +8010,7 @@ this must be called on all processes, however it will have any effect only the d
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="vtkPVRenderView_8h_source.html#l01095">1095</a> of file <a class="el" href="vtkPVRenderView_8h_source.html">vtkPVRenderView.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vtkPVRenderView_8h_source.html#l01079">1079</a> of file <a class="el" href="vtkPVRenderView_8h_source.html">vtkPVRenderView.h</a>.</p>
 
 </div>
 </div>
@@ -8076,7 +8034,7 @@ this must be called on all processes, however it will have any effect only the d
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="vtkPVRenderView_8h_source.html#l01096">1096</a> of file <a class="el" href="vtkPVRenderView_8h_source.html">vtkPVRenderView.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vtkPVRenderView_8h_source.html#l01080">1080</a> of file <a class="el" href="vtkPVRenderView_8h_source.html">vtkPVRenderView.h</a>.</p>
 
 </div>
 </div>
@@ -8100,7 +8058,7 @@ this must be called on all processes, however it will have any effect only the d
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="vtkPVRenderView_8h_source.html#l01097">1097</a> of file <a class="el" href="vtkPVRenderView_8h_source.html">vtkPVRenderView.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vtkPVRenderView_8h_source.html#l01081">1081</a> of file <a class="el" href="vtkPVRenderView_8h_source.html">vtkPVRenderView.h</a>.</p>
 
 </div>
 </div>
@@ -8124,7 +8082,7 @@ this must be called on all processes, however it will have any effect only the d
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="vtkPVRenderView_8h_source.html#l01098">1098</a> of file <a class="el" href="vtkPVRenderView_8h_source.html">vtkPVRenderView.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vtkPVRenderView_8h_source.html#l01082">1082</a> of file <a class="el" href="vtkPVRenderView_8h_source.html">vtkPVRenderView.h</a>.</p>
 
 </div>
 </div>
@@ -8148,7 +8106,7 @@ this must be called on all processes, however it will have any effect only the d
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="vtkPVRenderView_8h_source.html#l01099">1099</a> of file <a class="el" href="vtkPVRenderView_8h_source.html">vtkPVRenderView.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vtkPVRenderView_8h_source.html#l01083">1083</a> of file <a class="el" href="vtkPVRenderView_8h_source.html">vtkPVRenderView.h</a>.</p>
 
 </div>
 </div>
@@ -8172,7 +8130,7 @@ this must be called on all processes, however it will have any effect only the d
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="vtkPVRenderView_8h_source.html#l01100">1100</a> of file <a class="el" href="vtkPVRenderView_8h_source.html">vtkPVRenderView.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vtkPVRenderView_8h_source.html#l01084">1084</a> of file <a class="el" href="vtkPVRenderView_8h_source.html">vtkPVRenderView.h</a>.</p>
 
 </div>
 </div>
@@ -8196,7 +8154,7 @@ this must be called on all processes, however it will have any effect only the d
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="vtkPVRenderView_8h_source.html#l01101">1101</a> of file <a class="el" href="vtkPVRenderView_8h_source.html">vtkPVRenderView.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vtkPVRenderView_8h_source.html#l01085">1085</a> of file <a class="el" href="vtkPVRenderView_8h_source.html">vtkPVRenderView.h</a>.</p>
 
 </div>
 </div>
@@ -8220,7 +8178,7 @@ this must be called on all processes, however it will have any effect only the d
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="vtkPVRenderView_8h_source.html#l01102">1102</a> of file <a class="el" href="vtkPVRenderView_8h_source.html">vtkPVRenderView.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vtkPVRenderView_8h_source.html#l01086">1086</a> of file <a class="el" href="vtkPVRenderView_8h_source.html">vtkPVRenderView.h</a>.</p>
 
 </div>
 </div>
@@ -8244,7 +8202,7 @@ this must be called on all processes, however it will have any effect only the d
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="vtkPVRenderView_8h_source.html#l01103">1103</a> of file <a class="el" href="vtkPVRenderView_8h_source.html">vtkPVRenderView.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vtkPVRenderView_8h_source.html#l01087">1087</a> of file <a class="el" href="vtkPVRenderView_8h_source.html">vtkPVRenderView.h</a>.</p>
 
 </div>
 </div>
@@ -8268,7 +8226,7 @@ this must be called on all processes, however it will have any effect only the d
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="vtkPVRenderView_8h_source.html#l01105">1105</a> of file <a class="el" href="vtkPVRenderView_8h_source.html">vtkPVRenderView.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vtkPVRenderView_8h_source.html#l01089">1089</a> of file <a class="el" href="vtkPVRenderView_8h_source.html">vtkPVRenderView.h</a>.</p>
 
 </div>
 </div>
@@ -8292,7 +8250,7 @@ this must be called on all processes, however it will have any effect only the d
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="vtkPVRenderView_8h_source.html#l01106">1106</a> of file <a class="el" href="vtkPVRenderView_8h_source.html">vtkPVRenderView.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vtkPVRenderView_8h_source.html#l01090">1090</a> of file <a class="el" href="vtkPVRenderView_8h_source.html">vtkPVRenderView.h</a>.</p>
 
 </div>
 </div>
@@ -8316,7 +8274,7 @@ this must be called on all processes, however it will have any effect only the d
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="vtkPVRenderView_8h_source.html#l01107">1107</a> of file <a class="el" href="vtkPVRenderView_8h_source.html">vtkPVRenderView.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vtkPVRenderView_8h_source.html#l01091">1091</a> of file <a class="el" href="vtkPVRenderView_8h_source.html">vtkPVRenderView.h</a>.</p>
 
 </div>
 </div>
@@ -8340,7 +8298,7 @@ this must be called on all processes, however it will have any effect only the d
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="vtkPVRenderView_8h_source.html#l01108">1108</a> of file <a class="el" href="vtkPVRenderView_8h_source.html">vtkPVRenderView.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vtkPVRenderView_8h_source.html#l01092">1092</a> of file <a class="el" href="vtkPVRenderView_8h_source.html">vtkPVRenderView.h</a>.</p>
 
 </div>
 </div>
@@ -8364,7 +8322,7 @@ this must be called on all processes, however it will have any effect only the d
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="vtkPVRenderView_8h_source.html#l01109">1109</a> of file <a class="el" href="vtkPVRenderView_8h_source.html">vtkPVRenderView.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vtkPVRenderView_8h_source.html#l01093">1093</a> of file <a class="el" href="vtkPVRenderView_8h_source.html">vtkPVRenderView.h</a>.</p>
 
 </div>
 </div>
@@ -8388,7 +8346,7 @@ this must be called on all processes, however it will have any effect only the d
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="vtkPVRenderView_8h_source.html#l01118">1118</a> of file <a class="el" href="vtkPVRenderView_8h_source.html">vtkPVRenderView.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vtkPVRenderView_8h_source.html#l01102">1102</a> of file <a class="el" href="vtkPVRenderView_8h_source.html">vtkPVRenderView.h</a>.</p>
 
 </div>
 </div>
@@ -8412,7 +8370,7 @@ this must be called on all processes, however it will have any effect only the d
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="vtkPVRenderView_8h_source.html#l01121">1121</a> of file <a class="el" href="vtkPVRenderView_8h_source.html">vtkPVRenderView.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vtkPVRenderView_8h_source.html#l01105">1105</a> of file <a class="el" href="vtkPVRenderView_8h_source.html">vtkPVRenderView.h</a>.</p>
 
 </div>
 </div>
@@ -8436,7 +8394,7 @@ this must be called on all processes, however it will have any effect only the d
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="vtkPVRenderView_8h_source.html#l01122">1122</a> of file <a class="el" href="vtkPVRenderView_8h_source.html">vtkPVRenderView.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vtkPVRenderView_8h_source.html#l01106">1106</a> of file <a class="el" href="vtkPVRenderView_8h_source.html">vtkPVRenderView.h</a>.</p>
 
 </div>
 </div>
@@ -8460,7 +8418,7 @@ this must be called on all processes, however it will have any effect only the d
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="vtkPVRenderView_8h_source.html#l01125">1125</a> of file <a class="el" href="vtkPVRenderView_8h_source.html">vtkPVRenderView.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vtkPVRenderView_8h_source.html#l01109">1109</a> of file <a class="el" href="vtkPVRenderView_8h_source.html">vtkPVRenderView.h</a>.</p>
 
 </div>
 </div>
@@ -8484,7 +8442,7 @@ this must be called on all processes, however it will have any effect only the d
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="vtkPVRenderView_8h_source.html#l01127">1127</a> of file <a class="el" href="vtkPVRenderView_8h_source.html">vtkPVRenderView.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vtkPVRenderView_8h_source.html#l01111">1111</a> of file <a class="el" href="vtkPVRenderView_8h_source.html">vtkPVRenderView.h</a>.</p>
 
 </div>
 </div>
@@ -8508,7 +8466,7 @@ this must be called on all processes, however it will have any effect only the d
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="vtkPVRenderView_8h_source.html#l01131">1131</a> of file <a class="el" href="vtkPVRenderView_8h_source.html">vtkPVRenderView.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vtkPVRenderView_8h_source.html#l01115">1115</a> of file <a class="el" href="vtkPVRenderView_8h_source.html">vtkPVRenderView.h</a>.</p>
 
 </div>
 </div>
@@ -8532,7 +8490,7 @@ this must be called on all processes, however it will have any effect only the d
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="vtkPVRenderView_8h_source.html#l01134">1134</a> of file <a class="el" href="vtkPVRenderView_8h_source.html">vtkPVRenderView.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vtkPVRenderView_8h_source.html#l01118">1118</a> of file <a class="el" href="vtkPVRenderView_8h_source.html">vtkPVRenderView.h</a>.</p>
 
 </div>
 </div>
@@ -8556,7 +8514,7 @@ this must be called on all processes, however it will have any effect only the d
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="vtkPVRenderView_8h_source.html#l01135">1135</a> of file <a class="el" href="vtkPVRenderView_8h_source.html">vtkPVRenderView.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vtkPVRenderView_8h_source.html#l01119">1119</a> of file <a class="el" href="vtkPVRenderView_8h_source.html">vtkPVRenderView.h</a>.</p>
 
 </div>
 </div>
@@ -8580,7 +8538,7 @@ this must be called on all processes, however it will have any effect only the d
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="vtkPVRenderView_8h_source.html#l01136">1136</a> of file <a class="el" href="vtkPVRenderView_8h_source.html">vtkPVRenderView.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vtkPVRenderView_8h_source.html#l01120">1120</a> of file <a class="el" href="vtkPVRenderView_8h_source.html">vtkPVRenderView.h</a>.</p>
 
 </div>
 </div>
@@ -8604,7 +8562,7 @@ this must be called on all processes, however it will have any effect only the d
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="vtkPVRenderView_8h_source.html#l01138">1138</a> of file <a class="el" href="vtkPVRenderView_8h_source.html">vtkPVRenderView.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vtkPVRenderView_8h_source.html#l01122">1122</a> of file <a class="el" href="vtkPVRenderView_8h_source.html">vtkPVRenderView.h</a>.</p>
 
 </div>
 </div>
@@ -8628,7 +8586,7 @@ this must be called on all processes, however it will have any effect only the d
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="vtkPVRenderView_8h_source.html#l01139">1139</a> of file <a class="el" href="vtkPVRenderView_8h_source.html">vtkPVRenderView.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vtkPVRenderView_8h_source.html#l01123">1123</a> of file <a class="el" href="vtkPVRenderView_8h_source.html">vtkPVRenderView.h</a>.</p>
 
 </div>
 </div>
@@ -8652,7 +8610,7 @@ this must be called on all processes, however it will have any effect only the d
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="vtkPVRenderView_8h_source.html#l01140">1140</a> of file <a class="el" href="vtkPVRenderView_8h_source.html">vtkPVRenderView.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vtkPVRenderView_8h_source.html#l01124">1124</a> of file <a class="el" href="vtkPVRenderView_8h_source.html">vtkPVRenderView.h</a>.</p>
 
 </div>
 </div>
@@ -8676,7 +8634,7 @@ this must be called on all processes, however it will have any effect only the d
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="vtkPVRenderView_8h_source.html#l01142">1142</a> of file <a class="el" href="vtkPVRenderView_8h_source.html">vtkPVRenderView.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vtkPVRenderView_8h_source.html#l01126">1126</a> of file <a class="el" href="vtkPVRenderView_8h_source.html">vtkPVRenderView.h</a>.</p>
 
 </div>
 </div>
@@ -8700,7 +8658,7 @@ this must be called on all processes, however it will have any effect only the d
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="vtkPVRenderView_8h_source.html#l01143">1143</a> of file <a class="el" href="vtkPVRenderView_8h_source.html">vtkPVRenderView.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vtkPVRenderView_8h_source.html#l01127">1127</a> of file <a class="el" href="vtkPVRenderView_8h_source.html">vtkPVRenderView.h</a>.</p>
 
 </div>
 </div>
@@ -8724,7 +8682,7 @@ this must be called on all processes, however it will have any effect only the d
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="vtkPVRenderView_8h_source.html#l01145">1145</a> of file <a class="el" href="vtkPVRenderView_8h_source.html">vtkPVRenderView.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vtkPVRenderView_8h_source.html#l01129">1129</a> of file <a class="el" href="vtkPVRenderView_8h_source.html">vtkPVRenderView.h</a>.</p>
 
 </div>
 </div>
@@ -8748,7 +8706,7 @@ this must be called on all processes, however it will have any effect only the d
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="vtkPVRenderView_8h_source.html#l01146">1146</a> of file <a class="el" href="vtkPVRenderView_8h_source.html">vtkPVRenderView.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vtkPVRenderView_8h_source.html#l01130">1130</a> of file <a class="el" href="vtkPVRenderView_8h_source.html">vtkPVRenderView.h</a>.</p>
 
 </div>
 </div>
@@ -8772,7 +8730,7 @@ this must be called on all processes, however it will have any effect only the d
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="vtkPVRenderView_8h_source.html#l01148">1148</a> of file <a class="el" href="vtkPVRenderView_8h_source.html">vtkPVRenderView.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vtkPVRenderView_8h_source.html#l01132">1132</a> of file <a class="el" href="vtkPVRenderView_8h_source.html">vtkPVRenderView.h</a>.</p>
 
 </div>
 </div>
@@ -8796,7 +8754,7 @@ this must be called on all processes, however it will have any effect only the d
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="vtkPVRenderView_8h_source.html#l01149">1149</a> of file <a class="el" href="vtkPVRenderView_8h_source.html">vtkPVRenderView.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vtkPVRenderView_8h_source.html#l01133">1133</a> of file <a class="el" href="vtkPVRenderView_8h_source.html">vtkPVRenderView.h</a>.</p>
 
 </div>
 </div>
@@ -8820,7 +8778,7 @@ this must be called on all processes, however it will have any effect only the d
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="vtkPVRenderView_8h_source.html#l01150">1150</a> of file <a class="el" href="vtkPVRenderView_8h_source.html">vtkPVRenderView.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vtkPVRenderView_8h_source.html#l01134">1134</a> of file <a class="el" href="vtkPVRenderView_8h_source.html">vtkPVRenderView.h</a>.</p>
 
 </div>
 </div>
@@ -8844,7 +8802,7 @@ this must be called on all processes, however it will have any effect only the d
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="vtkPVRenderView_8h_source.html#l01151">1151</a> of file <a class="el" href="vtkPVRenderView_8h_source.html">vtkPVRenderView.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vtkPVRenderView_8h_source.html#l01135">1135</a> of file <a class="el" href="vtkPVRenderView_8h_source.html">vtkPVRenderView.h</a>.</p>
 
 </div>
 </div>
@@ -8868,7 +8826,7 @@ this must be called on all processes, however it will have any effect only the d
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="vtkPVRenderView_8h_source.html#l01152">1152</a> of file <a class="el" href="vtkPVRenderView_8h_source.html">vtkPVRenderView.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vtkPVRenderView_8h_source.html#l01136">1136</a> of file <a class="el" href="vtkPVRenderView_8h_source.html">vtkPVRenderView.h</a>.</p>
 
 </div>
 </div>
@@ -8892,7 +8850,7 @@ this must be called on all processes, however it will have any effect only the d
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="vtkPVRenderView_8h_source.html#l01154">1154</a> of file <a class="el" href="vtkPVRenderView_8h_source.html">vtkPVRenderView.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vtkPVRenderView_8h_source.html#l01138">1138</a> of file <a class="el" href="vtkPVRenderView_8h_source.html">vtkPVRenderView.h</a>.</p>
 
 </div>
 </div>
@@ -8916,7 +8874,7 @@ this must be called on all processes, however it will have any effect only the d
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="vtkPVRenderView_8h_source.html#l01155">1155</a> of file <a class="el" href="vtkPVRenderView_8h_source.html">vtkPVRenderView.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vtkPVRenderView_8h_source.html#l01139">1139</a> of file <a class="el" href="vtkPVRenderView_8h_source.html">vtkPVRenderView.h</a>.</p>
 
 </div>
 </div>
@@ -8942,7 +8900,7 @@ this must be called on all processes, however it will have any effect only the d
 
 <p>Keeps track of the time when <a class="el" href="classvtkPVRenderView.html#a994e45817d333099d9d0919e91b64790" title="Overridden to synchronize information among processes whenever data changes. ">vtkPVRenderView::Update()</a> was called. </p>
 
-<p class="definition">Definition at line <a class="el" href="vtkPVRenderView_8h_source.html#l01160">1160</a> of file <a class="el" href="vtkPVRenderView_8h_source.html">vtkPVRenderView.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vtkPVRenderView_8h_source.html#l01144">1144</a> of file <a class="el" href="vtkPVRenderView_8h_source.html">vtkPVRenderView.h</a>.</p>
 
 </div>
 </div>
@@ -8968,7 +8926,7 @@ this must be called on all processes, however it will have any effect only the d
 
 <p>Keeps track of the time when the priority-queue for streaming was generated. </p>
 
-<p class="definition">Definition at line <a class="el" href="vtkPVRenderView_8h_source.html#l01166">1166</a> of file <a class="el" href="vtkPVRenderView_8h_source.html">vtkPVRenderView.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vtkPVRenderView_8h_source.html#l01150">1150</a> of file <a class="el" href="vtkPVRenderView_8h_source.html">vtkPVRenderView.h</a>.</p>
 
 </div>
 </div>
@@ -8992,7 +8950,7 @@ this must be called on all processes, however it will have any effect only the d
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="vtkPVRenderView_8h_source.html#l01168">1168</a> of file <a class="el" href="vtkPVRenderView_8h_source.html">vtkPVRenderView.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vtkPVRenderView_8h_source.html#l01152">1152</a> of file <a class="el" href="vtkPVRenderView_8h_source.html">vtkPVRenderView.h</a>.</p>
 
 </div>
 </div>

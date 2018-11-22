@@ -249,9 +249,6 @@ Static Public Member Functions</h2></td></tr>
 <tr class="separator:af9bc1cb68892d913a7feff307bccf24f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a65c86665e98d2a26936053685ec7c520"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classvtkPVPluginLoader.html">vtkPVPluginLoader</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkPVPluginLoader.html#a65c86665e98d2a26936053685ec7c520">SafeDownCast</a> (<a class="elRef" doxygen="/home/kitware/dashboards/buildbot/paraview-vall-linux-shared-debug_doc_extdeps_gui_mpi_python_python3/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/classvtkObject.html">vtkObject</a> *o)</td></tr>
 <tr class="separator:a65c86665e98d2a26936053685ec7c520"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab94f8d61e1b77222da9a0ab69243dc9d"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkPVPluginLoader.html#ab94f8d61e1b77222da9a0ab69243dc9d">SetStaticPluginLoadFunction</a> (<a class="el" href="vtkPVPluginLoader_8h.html#a6e59e17243b1c1c1403cf78080af6dcc">vtkPluginLoadFunction</a> <a class="elRef" doxygen="/home/kitware/dashboards/buildbot/paraview-vall-linux-shared-debug_doc_extdeps_gui_mpi_python_python3/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/namespacevtkX3D.html#ac6551f7bf833e8254b2b3ecdaea0d210a4a5f695df710396c5e1755b0a5ab62a3">function</a>)</td></tr>
-<tr class="memdesc:ab94f8d61e1b77222da9a0ab69243dc9d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the function used to load static plugins.  <a href="#ab94f8d61e1b77222da9a0ab69243dc9d">More...</a><br /></td></tr>
-<tr class="separator:ab94f8d61e1b77222da9a0ab69243dc9d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af8a1d0ed1179c0fff364287fbe4a9021"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkPVPluginLoader.html#af8a1d0ed1179c0fff364287fbe4a9021">PluginLibraryUnloaded</a> (const char *pluginname)</td></tr>
 <tr class="memdesc:af8a1d0ed1179c0fff364287fbe4a9021"><td class="mdescLeft">&#160;</td><td class="mdescRight">Internal method used in pqParaViewPlugin.cxx.in to tell the <a class="el" href="classvtkPVPluginLoader.html" title="Used to load ParaView plugins. ">vtkPVPluginLoader</a> that a library was unloaded so it doesn't try to unload it again.  <a href="#af8a1d0ed1179c0fff364287fbe4a9021">More...</a><br /></td></tr>
 <tr class="separator:af8a1d0ed1179c0fff364287fbe4a9021"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -375,7 +372,7 @@ Protected Attributes</h2></td></tr>
 <div class="textblock"><p>Used to load ParaView plugins. </p>
 <p><a class="el" href="classvtkPVPluginLoader.html" title="Used to load ParaView plugins. ">vtkPVPluginLoader</a> can be used to load plugins for ParaView. <a class="el" href="classvtkPVPluginLoader.html" title="Used to load ParaView plugins. ">vtkPVPluginLoader</a> loads the plugin on the local process. For verbose details during the process of loading the plugin, try setting the environment variable PV_PLUGIN_DEBUG. This class only needed when loading plugins from shared libraries dynamically. For statically importing plugins, one directly uses <a class="el" href="vtkPVPlugin_8h.html#a3005344ae5073a225a658ff339fea705">PV_PLUGIN_IMPORT()</a> macro defined in <a class="el" href="vtkPVPlugin_8h.html">vtkPVPlugin.h</a>. </p>
 
-<p class="definition">Definition at line <a class="el" href="vtkPVPluginLoader_8h_source.html#l00043">43</a> of file <a class="el" href="vtkPVPluginLoader_8h_source.html">vtkPVPluginLoader.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vtkPVPluginLoader_8h_source.html#l00037">37</a> of file <a class="el" href="vtkPVPluginLoader_8h_source.html">vtkPVPluginLoader.h</a>.</p>
 </div><h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="af49b97cac037eb3774a08b15c91fbe5c"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#af49b97cac037eb3774a08b15c91fbe5c">&#9670;&nbsp;</a></span>Superclass</h2>
@@ -389,7 +386,7 @@ Protected Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="vtkPVPluginLoader_8h_source.html#l00047">47</a> of file <a class="el" href="vtkPVPluginLoader_8h_source.html">vtkPVPluginLoader.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vtkPVPluginLoader_8h_source.html#l00041">41</a> of file <a class="el" href="vtkPVPluginLoader_8h_source.html">vtkPVPluginLoader.h</a>.</p>
 
 </div>
 </div>
@@ -405,7 +402,7 @@ Protected Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="vtkPVPluginLoader_8h_source.html#l00141">141</a> of file <a class="el" href="vtkPVPluginLoader_8h_source.html">vtkPVPluginLoader.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vtkPVPluginLoader_8h_source.html#l00135">135</a> of file <a class="el" href="vtkPVPluginLoader_8h_source.html">vtkPVPluginLoader.h</a>.</p>
 
 </div>
 </div>
@@ -655,7 +652,7 @@ Protected Attributes</h2></td></tr>
 
 <p>Tries to the load the plugin given the path to the plugin file. </p>
 
-<p class="definition">Definition at line <a class="el" href="vtkPVPluginLoader_8h_source.html#l00053">53</a> of file <a class="el" href="vtkPVPluginLoader_8h_source.html">vtkPVPluginLoader.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vtkPVPluginLoader_8h_source.html#l00047">47</a> of file <a class="el" href="vtkPVPluginLoader_8h_source.html">vtkPVPluginLoader.h</a>.</p>
 
 </div>
 </div>
@@ -683,7 +680,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="vtkPVPluginLoader_8h_source.html#l00054">54</a> of file <a class="el" href="vtkPVPluginLoader_8h_source.html">vtkPVPluginLoader.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vtkPVPluginLoader_8h_source.html#l00048">48</a> of file <a class="el" href="vtkPVPluginLoader_8h_source.html">vtkPVPluginLoader.h</a>.</p>
 
 </div>
 </div>
@@ -983,35 +980,6 @@ Protected Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="ab94f8d61e1b77222da9a0ab69243dc9d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab94f8d61e1b77222da9a0ab69243dc9d">&#9670;&nbsp;</a></span>SetStaticPluginLoadFunction()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static void vtkPVPluginLoader::SetStaticPluginLoadFunction </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="vtkPVPluginLoader_8h.html#a6e59e17243b1c1c1403cf78080af6dcc">vtkPluginLoadFunction</a>&#160;</td>
-          <td class="paramname"><em>function</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Sets the function used to load static plugins. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000004">Deprecated:</a></b></dt><dd>ParaView 5.6. Please use <code>RegisterLoadPluginCallback</code> instead which supports adding multiple callbacks. </dd></dl>
-
-</div>
-</div>
 <a id="af8a1d0ed1179c0fff364287fbe4a9021"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#af8a1d0ed1179c0fff364287fbe4a9021">&#9670;&nbsp;</a></span>PluginLibraryUnloaded()</h2>
 
@@ -1255,7 +1223,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="vtkPVPluginLoader_8h_source.html#l00176">176</a> of file <a class="el" href="vtkPVPluginLoader_8h_source.html">vtkPVPluginLoader.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vtkPVPluginLoader_8h_source.html#l00163">163</a> of file <a class="el" href="vtkPVPluginLoader_8h_source.html">vtkPVPluginLoader.h</a>.</p>
 
 </div>
 </div>
@@ -1279,7 +1247,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="vtkPVPluginLoader_8h_source.html#l00179">179</a> of file <a class="el" href="vtkPVPluginLoader_8h_source.html">vtkPVPluginLoader.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vtkPVPluginLoader_8h_source.html#l00166">166</a> of file <a class="el" href="vtkPVPluginLoader_8h_source.html">vtkPVPluginLoader.h</a>.</p>
 
 </div>
 </div>
@@ -1303,7 +1271,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="vtkPVPluginLoader_8h_source.html#l00180">180</a> of file <a class="el" href="vtkPVPluginLoader_8h_source.html">vtkPVPluginLoader.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vtkPVPluginLoader_8h_source.html#l00167">167</a> of file <a class="el" href="vtkPVPluginLoader_8h_source.html">vtkPVPluginLoader.h</a>.</p>
 
 </div>
 </div>
@@ -1327,7 +1295,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="vtkPVPluginLoader_8h_source.html#l00181">181</a> of file <a class="el" href="vtkPVPluginLoader_8h_source.html">vtkPVPluginLoader.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vtkPVPluginLoader_8h_source.html#l00168">168</a> of file <a class="el" href="vtkPVPluginLoader_8h_source.html">vtkPVPluginLoader.h</a>.</p>
 
 </div>
 </div>
@@ -1351,7 +1319,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="vtkPVPluginLoader_8h_source.html#l00182">182</a> of file <a class="el" href="vtkPVPluginLoader_8h_source.html">vtkPVPluginLoader.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vtkPVPluginLoader_8h_source.html#l00169">169</a> of file <a class="el" href="vtkPVPluginLoader_8h_source.html">vtkPVPluginLoader.h</a>.</p>
 
 </div>
 </div>
@@ -1375,7 +1343,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="vtkPVPluginLoader_8h_source.html#l00183">183</a> of file <a class="el" href="vtkPVPluginLoader_8h_source.html">vtkPVPluginLoader.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vtkPVPluginLoader_8h_source.html#l00170">170</a> of file <a class="el" href="vtkPVPluginLoader_8h_source.html">vtkPVPluginLoader.h</a>.</p>
 
 </div>
 </div>
@@ -1399,7 +1367,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="vtkPVPluginLoader_8h_source.html#l00184">184</a> of file <a class="el" href="vtkPVPluginLoader_8h_source.html">vtkPVPluginLoader.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vtkPVPluginLoader_8h_source.html#l00171">171</a> of file <a class="el" href="vtkPVPluginLoader_8h_source.html">vtkPVPluginLoader.h</a>.</p>
 
 </div>
 </div>
