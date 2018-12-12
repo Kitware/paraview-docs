@@ -53,11 +53,12 @@ Inheritance diagram for pqPropertyGroupWidget:</div>
 <div class="dyncontent">
 <div class="center"><img src="classpqPropertyGroupWidget__inherit__graph.png" border="0" usemap="#pqPropertyGroupWidget_inherit__map" alt="Inheritance graph"/></div>
 <map name="pqPropertyGroupWidget_inherit__map" id="pqPropertyGroupWidget_inherit__map">
-<area shape="rect" id="node3" href="classpqBackgroundEditorWidget.html" title="pqBackgroundEditorWidget" alt="" coords="5,155,204,181"/>
-<area shape="rect" id="node4" href="classpqFontPropertyWidget.html" title="pqFontPropertyWidget is a pqPropertyWidget that can be used to set properties relating to fonts..." alt="" coords="228,155,395,181"/>
-<area shape="rect" id="node5" href="classpqLightsEditor.html" title="pqLightsEditor" alt="" coords="419,155,534,181"/>
-<area shape="rect" id="node6" href="classpqPropertyGroupButton.html" title="pqPropertyGroupButton" alt="" coords="559,155,733,181"/>
-<area shape="rect" id="node2" href="classpqPropertyWidget.html" title="pqPropertyWidget represents a widget created for each property of a proxy on the pqPropertiesPanel (f..." alt="" coords="325,5,463,32"/>
+<area shape="rect" id="node3" href="classpqBackgroundEditorWidget.html" title="pqBackgroundEditorWidget" alt="" coords="419,5,617,32"/>
+<area shape="rect" id="node4" href="classpqFontPropertyWidget.html" title="pqFontPropertyWidget is a pqPropertyWidget that can be used to set properties relating to fonts..." alt="" coords="435,56,601,83"/>
+<area shape="rect" id="node5" href="classpqLightsEditor.html" title="pqLightsEditor" alt="" coords="461,107,575,133"/>
+<area shape="rect" id="node6" href="classpqMoleculePropertyWidget.html" title="Expose molecule mapper parameters to the user. " alt="" coords="419,157,617,184"/>
+<area shape="rect" id="node7" href="classpqPropertyGroupButton.html" title="pqPropertyGroupButton" alt="" coords="431,208,605,235"/>
+<area shape="rect" id="node2" href="classpqPropertyWidget.html" title="pqPropertyWidget represents a widget created for each property of a proxy on the pqPropertiesPanel (f..." alt="" coords="5,107,144,133"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <div class="dynheader">
@@ -110,6 +111,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a208de809197837594bf33af5758202f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6b08fcf37c19dae7eab5aa7d1531f1e3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpqPropertyGroupWidget.html#a6b08fcf37c19dae7eab5aa7d1531f1e3">addPropertyLink</a> (<a class="el" href="classpqColorChooserButton.html">pqColorChooserButton</a> *<a class="elRef" doxygen="/home/kitware/dashboards/buildbot/paraview-vall-linux-shared-debug_doc_extdeps_gui_mpi_python_python3/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/namespacevtkX3D.html#ac6551f7bf833e8254b2b3ecdaea0d210aab06a058f9ffb559855ff8495aa7e53e">color</a>, const char *propertyName, <a class="elRef" doxygen="/home/kitware/dashboards/buildbot/paraview-vall-linux-shared-debug_doc_extdeps_gui_mpi_python_python3/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkShaderProgram2_8h.html#a61569f2965b7a369eb10b6d75d410d11">int</a> smindex=-1)</td></tr>
 <tr class="separator:a6b08fcf37c19dae7eab5aa7d1531f1e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a69242bfeabad5f7c2b993bf2698098e8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpqPropertyGroupWidget.html#a69242bfeabad5f7c2b993bf2698098e8">addPropertyLink</a> (<a class="el" href="classpqDoubleSliderWidget.html">pqDoubleSliderWidget</a> *slider, const char *propertyName, <a class="elRef" doxygen="/home/kitware/dashboards/buildbot/paraview-vall-linux-shared-debug_doc_extdeps_gui_mpi_python_python3/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkShaderProgram2_8h.html#a61569f2965b7a369eb10b6d75d410d11">int</a> smindex=-1)</td></tr>
+<tr class="separator:a69242bfeabad5f7c2b993bf2698098e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad8249b57d0b8f9381940a3a62710aa0b"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpqPropertyGroupWidget.html#ad8249b57d0b8f9381940a3a62710aa0b">panelVisibility</a> () const override</td></tr>
 <tr class="memdesc:ad8249b57d0b8f9381940a3a62710aa0b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Overwrite <a class="el" href="classpqPropertyWidget.html" title="pqPropertyWidget represents a widget created for each property of a proxy on the pqPropertiesPanel (f...">pqPropertyWidget</a> to forward calls to <a class="el" href="classvtkSMPropertyGroup.html">vtkSMPropertyGroup</a>.  <a href="#ad8249b57d0b8f9381940a3a62710aa0b">More...</a><br /></td></tr>
 <tr class="separator:ad8249b57d0b8f9381940a3a62710aa0b"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -196,7 +199,7 @@ Additional Inherited Members</h2></td></tr>
 <div class="textblock"><p><a class="el" href="classpqPropertyGroupWidget.html" title="pqPropertyGroupWidget is a (custom) widget created for a PropertyGroup. ">pqPropertyGroupWidget</a> is a (custom) widget created for a PropertyGroup. </p>
 <p>It provides functions for linking standard controls with Server Manager properties as well as storing the property group. </p><dl class="section see"><dt>See also</dt><dd><a class="el" href="classvtkSMPropertyGroup.html">vtkSMPropertyGroup</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="pqPropertyGroupWidget_8h_source.html#l00056">56</a> of file <a class="el" href="pqPropertyGroupWidget_8h_source.html">pqPropertyGroupWidget.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="pqPropertyGroupWidget_8h_source.html#l00057">57</a> of file <a class="el" href="pqPropertyGroupWidget_8h_source.html">pqPropertyGroupWidget.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="aa44638f54bf2fcd2e58d268ffd418382"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aa44638f54bf2fcd2e58d268ffd418382">&#9670;&nbsp;</a></span>pqPropertyGroupWidget()</h2>
@@ -256,12 +259,12 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="pqPropertyGroupWidget_8h_source.html#l00063">63</a> of file <a class="el" href="pqPropertyGroupWidget_8h_source.html">pqPropertyGroupWidget.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="pqPropertyGroupWidget_8h_source.html#l00064">64</a> of file <a class="el" href="pqPropertyGroupWidget_8h_source.html">pqPropertyGroupWidget.h</a>.</p>
 
 </div>
 </div>
 <a id="a8268525da1f7df98622a559fae47aa03"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8268525da1f7df98622a559fae47aa03">&#9670;&nbsp;</a></span>addPropertyLink() <span class="overload">[1/10]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a8268525da1f7df98622a559fae47aa03">&#9670;&nbsp;</a></span>addPropertyLink() <span class="overload">[1/11]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -295,7 +298,7 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <a id="ae28351f28323048f469dd77ca2b13b35"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae28351f28323048f469dd77ca2b13b35">&#9670;&nbsp;</a></span>addPropertyLink() <span class="overload">[2/10]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ae28351f28323048f469dd77ca2b13b35">&#9670;&nbsp;</a></span>addPropertyLink() <span class="overload">[2/11]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -329,7 +332,7 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <a id="a37d041f017dcc63648716b866f1061cb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a37d041f017dcc63648716b866f1061cb">&#9670;&nbsp;</a></span>addPropertyLink() <span class="overload">[3/10]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a37d041f017dcc63648716b866f1061cb">&#9670;&nbsp;</a></span>addPropertyLink() <span class="overload">[3/11]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -363,7 +366,7 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <a id="aa58b1618d296d276e04111914eab03e2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa58b1618d296d276e04111914eab03e2">&#9670;&nbsp;</a></span>addPropertyLink() <span class="overload">[4/10]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#aa58b1618d296d276e04111914eab03e2">&#9670;&nbsp;</a></span>addPropertyLink() <span class="overload">[4/11]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -397,7 +400,7 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <a id="aac4f09a083b2ef5d570d86e37becd4da"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aac4f09a083b2ef5d570d86e37becd4da">&#9670;&nbsp;</a></span>addPropertyLink() <span class="overload">[5/10]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#aac4f09a083b2ef5d570d86e37becd4da">&#9670;&nbsp;</a></span>addPropertyLink() <span class="overload">[5/11]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -431,7 +434,7 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <a id="ae695c3803cfc476cae33ca48b558bd8d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae695c3803cfc476cae33ca48b558bd8d">&#9670;&nbsp;</a></span>addPropertyLink() <span class="overload">[6/10]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ae695c3803cfc476cae33ca48b558bd8d">&#9670;&nbsp;</a></span>addPropertyLink() <span class="overload">[6/11]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -465,7 +468,7 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <a id="a208de809197837594bf33af5758202f8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a208de809197837594bf33af5758202f8">&#9670;&nbsp;</a></span>addPropertyLink() <span class="overload">[7/10]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a208de809197837594bf33af5758202f8">&#9670;&nbsp;</a></span>addPropertyLink() <span class="overload">[7/11]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -499,7 +502,7 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <a id="a6b08fcf37c19dae7eab5aa7d1531f1e3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6b08fcf37c19dae7eab5aa7d1531f1e3">&#9670;&nbsp;</a></span>addPropertyLink() <span class="overload">[8/10]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a6b08fcf37c19dae7eab5aa7d1531f1e3">&#9670;&nbsp;</a></span>addPropertyLink() <span class="overload">[8/11]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -509,6 +512,40 @@ Additional Inherited Members</h2></td></tr>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classpqColorChooserButton.html">pqColorChooserButton</a> *&#160;</td>
           <td class="paramname"><em>color</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>propertyName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="elRef" doxygen="/home/kitware/dashboards/buildbot/paraview-vall-linux-shared-debug_doc_extdeps_gui_mpi_python_python3/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkShaderProgram2_8h.html#a61569f2965b7a369eb10b6d75d410d11">int</a>&#160;</td>
+          <td class="paramname"><em>smindex</em> = <code>-1</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a69242bfeabad5f7c2b993bf2698098e8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a69242bfeabad5f7c2b993bf2698098e8">&#9670;&nbsp;</a></span>addPropertyLink() <span class="overload">[9/11]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void pqPropertyGroupWidget::addPropertyLink </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classpqDoubleSliderWidget.html">pqDoubleSliderWidget</a> *&#160;</td>
+          <td class="paramname"><em>slider</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -590,7 +627,7 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <a id="a302805362731eae74b5265ad16247e03"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a302805362731eae74b5265ad16247e03">&#9670;&nbsp;</a></span>addPropertyLink() <span class="overload">[9/10]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a302805362731eae74b5265ad16247e03">&#9670;&nbsp;</a></span>addPropertyLink() <span class="overload">[10/11]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -604,7 +641,7 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <a id="a0a9e5ecffc42f4bc39317908912f15e8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0a9e5ecffc42f4bc39317908912f15e8">&#9670;&nbsp;</a></span>addPropertyLink() <span class="overload">[10/10]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a0a9e5ecffc42f4bc39317908912f15e8">&#9670;&nbsp;</a></span>addPropertyLink() <span class="overload">[11/11]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
