@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>paraview.smtrace &mdash; ParaView/Python 5.6.0-445-g4444c57133 documentation</title>
+  <title>paraview.smtrace &mdash; ParaView/Python 5.6.0-447-gec25409029 documentation</title>
   
 
   
@@ -24,7 +24,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:'../../',
-        VERSION:'5.6.0-445-g4444c57133',
+        VERSION:'5.6.0-447-gec25409029',
         COLLAPSE_INDEX:false,
         FILE_SUFFIX:'.html',
         HAS_SOURCE:  true
@@ -48,7 +48,7 @@
         <link rel="index" title="Index"
               href="../../genindex.html"/>
         <link rel="search" title="Search" href="../../search.html"/>
-    <link rel="top" title="ParaView/Python 5.6.0-445-g4444c57133 documentation" href="../../index.html"/>
+    <link rel="top" title="ParaView/Python 5.6.0-447-gec25409029 documentation" href="../../index.html"/>
         <link rel="up" title="Module code" href="../index.html"/> 
 
   <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
@@ -66,7 +66,7 @@
           <li> <a href="../../index.html">
             <img src="../../_static/paraview-logo-small.png"
             alt="ParaView/Python"></img></a> </li>
-          <li class="version"> version 5.6.0-445-g4444c57133</li>
+          <li class="version"> version 5.6.0-447-gec25409029</li>
         </ul>
         <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
   <input type="text" name="q" placeholder="Search docs" />
@@ -1555,6 +1555,14 @@
         <span class="kn">import</span> <span class="nn">gc</span>
         <span class="n">gc</span><span class="o">.</span><span class="n">collect</span><span class="p">()</span></div></div>
 
+<div class="viewcode-block" id="BlockTraceItems"><a class="viewcode-back" href="../../paraview.smtrace.html#paraview.smtrace.BlockTraceItems">[docs]</a><span class="k">class</span> <span class="nc">BlockTraceItems</span><span class="p">(</span><span class="n">NestableTraceItem</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Item to block further creation of trace items, even</span>
+<span class="sd">    those that are `NestableTraceItem`. Simply create this and</span>
+<span class="sd">    no trace items will be created by `_create_trace_item_internal`</span>
+<span class="sd">    until this instance is cleaned up.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">pass</span></div>
+
 <div class="viewcode-block" id="PropertiesModified"><a class="viewcode-back" href="../../paraview.smtrace.html#paraview.smtrace.PropertiesModified">[docs]</a><span class="k">class</span> <span class="nc">PropertiesModified</span><span class="p">(</span><span class="n">NestableTraceItem</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Traces properties modified on a specific proxy.&quot;&quot;&quot;</span>
     <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">proxy</span><span class="p">,</span> <span class="n">comment</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
@@ -2141,7 +2149,11 @@
         <span class="n">args</span> <span class="o">=</span> <span class="n">args</span> <span class="k">if</span> <span class="n">args</span> <span class="k">else</span> <span class="p">[]</span>
         <span class="n">kwargs</span> <span class="o">=</span> <span class="n">kwargs</span> <span class="k">if</span> <span class="n">kwargs</span> <span class="k">else</span> <span class="p">{}</span>
         <span class="n">traceitemtype</span> <span class="o">=</span> <span class="n">g</span><span class="p">[</span><span class="n">key</span><span class="p">]</span>
-        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">__ActiveTraceItems</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">or</span> <span class="nb">issubclass</span><span class="p">(</span><span class="n">traceitemtype</span><span class="p">,</span> <span class="n">NestableTraceItem</span><span class="p">):</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">__ActiveTraceItems</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">or</span> \
+                <span class="nb">issubclass</span><span class="p">(</span><span class="n">traceitemtype</span><span class="p">,</span> <span class="n">NestableTraceItem</span><span class="p">):</span>
+            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">__ActiveTraceItems</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="ow">and</span> \
+                    <span class="nb">isinstance</span><span class="p">(</span><span class="n">__ActiveTraceItems</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">](),</span> <span class="n">BlockTraceItems</span><span class="p">):</span>
+                <span class="k">raise</span> <span class="n">Untraceable</span><span class="p">(</span><span class="s2">&quot;Not tracing since `BlockTraceItems` is active.&quot;</span><span class="p">)</span>
             <span class="n">instance</span> <span class="o">=</span> <span class="n">traceitemtype</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
             <span class="k">if</span> <span class="ow">not</span> <span class="nb">issubclass</span><span class="p">(</span><span class="n">traceitemtype</span><span class="p">,</span> <span class="n">BookkeepingItem</span><span class="p">):</span>
                 <span class="n">__ActiveTraceItems</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">weakref</span><span class="o">.</span><span class="n">ref</span><span class="p">(</span><span class="n">instance</span><span class="p">))</span>

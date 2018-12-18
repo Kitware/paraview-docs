@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>smtrace Module &mdash; ParaView/Python 5.6.0-445-g4444c57133 documentation</title>
+  <title>smtrace Module &mdash; ParaView/Python 5.6.0-447-gec25409029 documentation</title>
   
 
   
@@ -24,7 +24,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:'./',
-        VERSION:'5.6.0-445-g4444c57133',
+        VERSION:'5.6.0-447-gec25409029',
         COLLAPSE_INDEX:false,
         FILE_SUFFIX:'.html',
         HAS_SOURCE:  true
@@ -48,7 +48,7 @@
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="ParaView/Python 5.6.0-445-g4444c57133 documentation" href="index.html"/>
+    <link rel="top" title="ParaView/Python 5.6.0-447-gec25409029 documentation" href="index.html"/>
         <link rel="up" title="paraview Package" href="paraview.html"/>
         <link rel="next" title="spatiotemporalparallelism Module" href="paraview.spatiotemporalparallelism.html"/>
         <link rel="prev" title="smtesting Module" href="paraview.smtesting.html"/> 
@@ -68,7 +68,7 @@
           <li> <a href="index.html">
             <img src="_static/paraview-logo-small.png"
             alt="ParaView/Python"></img></a> </li>
-          <li class="version"> version 5.6.0-445-g4444c57133</li>
+          <li class="version"> version 5.6.0-447-gec25409029</li>
         </ul>
         <form id ="rtd-search-form" class="wy-form" action="search.html" method="get">
   <input type="text" name="q" placeholder="Search docs" />
@@ -731,6 +731,16 @@ garbage collected since there’s no reference to it.</p>
 <code class="descname">should_never_trace</code><span class="sig-paren">(</span><em>prop</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/smtrace.html#AnimationProxyFilter.should_never_trace"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.smtrace.AnimationProxyFilter.should_never_trace" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
+</dd></dl>
+
+<dl class="class">
+<dt id="paraview.smtrace.BlockTraceItems">
+<em class="property">class </em><code class="descclassname">paraview.smtrace.</code><code class="descname">BlockTraceItems</code><a class="reference internal" href="_modules/paraview/smtrace.html#BlockTraceItems"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.smtrace.BlockTraceItems" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#paraview.smtrace.NestableTraceItem" title="paraview.smtrace.NestableTraceItem"><code class="xref py py-class docutils literal notranslate"><span class="pre">paraview.smtrace.NestableTraceItem</span></code></a></p>
+<p>Item to block further creation of trace items, even
+those that are <cite>NestableTraceItem</cite>. Simply create this and
+no trace items will be created by <cite>_create_trace_item_internal</cite>
+until this instance is cleaned up.</p>
 </dd></dl>
 
 <dl class="class">
