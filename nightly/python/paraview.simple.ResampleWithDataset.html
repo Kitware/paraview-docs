@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>paraview.simple.ResampleWithDataset &mdash; ParaView/Python 5.6.0-451-g9632405e66 documentation</title>
+  <title>paraview.simple.ResampleWithDataset &mdash; ParaView/Python 5.6.0-470-g9457eecb56 documentation</title>
   
 
   
@@ -24,7 +24,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:'./',
-        VERSION:'5.6.0-451-g9632405e66',
+        VERSION:'5.6.0-470-g9457eecb56',
         COLLAPSE_INDEX:false,
         FILE_SUFFIX:'.html',
         HAS_SOURCE:  true
@@ -48,7 +48,7 @@
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="ParaView/Python 5.6.0-451-g9632405e66 documentation" href="index.html"/>
+    <link rel="top" title="ParaView/Python 5.6.0-470-g9457eecb56 documentation" href="index.html"/>
         <link rel="up" title="Available readers, sources, writers, filters and animation cues" href="paraview.servermanager_proxies.html"/>
         <link rel="next" title="paraview.simple.RestartedSimExodusReader" href="paraview.simple.RestartedSimExodusReader.html"/>
         <link rel="prev" title="paraview.simple.ResampleToImage" href="paraview.simple.ResampleToImage.html"/> 
@@ -68,7 +68,7 @@
           <li> <a href="index.html">
             <img src="_static/paraview-logo-small.png"
             alt="ParaView/Python"></img></a> </li>
-          <li class="version"> version 5.6.0-451-g9632405e66</li>
+          <li class="version"> version 5.6.0-470-g9457eecb56</li>
         </ul>
         <form id ="rtd-search-form" class="wy-form" action="search.html" method="get">
   <input type="text" name="q" placeholder="Search docs" />
@@ -404,6 +404,7 @@
 <li class="toctree-l2"><a class="reference internal" href="paraview.simple.Ribbon.html">paraview.simple.Ribbon</a></li>
 <li class="toctree-l2"><a class="reference internal" href="paraview.simple.RotationalExtrusion.html">paraview.simple.RotationalExtrusion</a></li>
 <li class="toctree-l2"><a class="reference internal" href="paraview.simple.Ruler.html">paraview.simple.Ruler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.SEPReader.html">paraview.simple.SEPReader</a></li>
 <li class="toctree-l2"><a class="reference internal" href="paraview.simple.SLACDataReader.html">paraview.simple.SLACDataReader</a></li>
 <li class="toctree-l2"><a class="reference internal" href="paraview.simple.SLACParticleDataReader.html">paraview.simple.SLACParticleDataReader</a></li>
 <li class="toctree-l2"><a class="reference internal" href="paraview.simple.SPHDatasetInterpolator.html">paraview.simple.SPHDatasetInterpolator</a></li>
@@ -658,10 +659,11 @@
 <dt id="paraview.simple.ResampleWithDataset">
 <code class="descclassname">paraview.simple.</code><code class="descname">ResampleWithDataset</code><span class="sig-paren">(</span><em>*input</em>, <em>**params</em><span class="sig-paren">)</span><a class="headerlink" href="#paraview.simple.ResampleWithDataset" title="Permalink to this definition">¶</a></dt>
 <dd><blockquote>
-<div>This filter takes two inputs - Input and Source, and samples the
-point and cell values of Input on to the point locations of Source.
-The output has the same structure as Source but its point data
-have the resampled values from Input.”</div></blockquote>
+<div>This filter takes two inputs - <strong>Source Data Arrays</strong>, and samples the
+point and cell values of this input onto the point locations of the
+<strong>Destination Geometry</strong> input. The output has the same structure as the
+<strong>Destination Geometry</strong> input, but its point data has the resampled values from
+the <strong>Source Data Arrays</strong>.”</div></blockquote>
 </dd></dl>
 
 <div class="section" id="data-descriptors">
@@ -678,9 +680,10 @@ interpolation scheme rather than by linear interpolation.</dd>
 <dt>ComputeTolerance</dt>
 <dd>Set whether to compute the tolerance or to use a user provided
 value. On by default.</dd>
-<dt>Input</dt>
-<dd>This property specifies the dataset from which to obtain
-probe values. The data attributes come from this dataset.</dd>
+<dt>DestinationMesh</dt>
+<dd>This property specifies the dataset whose geometry will
+be used in determining positions to probe. The mesh comes from this
+dataset.</dd>
 <dt>MarkBlankPointsAndCells</dt>
 <dd>When set, points that did not get valid values during resampling, and
 cells containing such points, are marked as blank.</dd>
@@ -691,10 +694,9 @@ cells containing such points, are marked as blank.</dd>
 providing the geometry to the output. On by default.</dd>
 <dt>PassPointArrays</dt>
 <dd>When set the input’s point data arrays are shallow copied to the output.</dd>
-<dt>Source</dt>
-<dd>This property specifies the dataset whose geometry will
-be used in determining positions to probe. The mesh comes from this
-dataset.</dd>
+<dt>SourceDataArrays</dt>
+<dd>This property specifies the dataset from which to obtain
+probe values. The data attributes come from this dataset.</dd>
 <dt>Tolerance</dt>
 <dd>Set the tolerance to use for
 vtkDataSet::FindCell</dd>

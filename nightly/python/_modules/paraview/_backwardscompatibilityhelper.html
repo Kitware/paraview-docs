@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>paraview._backwardscompatibilityhelper &mdash; ParaView/Python 5.6.0-451-g9632405e66 documentation</title>
+  <title>paraview._backwardscompatibilityhelper &mdash; ParaView/Python 5.6.0-470-g9457eecb56 documentation</title>
   
 
   
@@ -24,7 +24,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:'../../',
-        VERSION:'5.6.0-451-g9632405e66',
+        VERSION:'5.6.0-470-g9457eecb56',
         COLLAPSE_INDEX:false,
         FILE_SUFFIX:'.html',
         HAS_SOURCE:  true
@@ -48,7 +48,7 @@
         <link rel="index" title="Index"
               href="../../genindex.html"/>
         <link rel="search" title="Search" href="../../search.html"/>
-    <link rel="top" title="ParaView/Python 5.6.0-451-g9632405e66 documentation" href="../../index.html"/>
+    <link rel="top" title="ParaView/Python 5.6.0-470-g9457eecb56 documentation" href="../../index.html"/>
         <link rel="up" title="Module code" href="../index.html"/> 
 
   <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
@@ -66,7 +66,7 @@
           <li> <a href="../../index.html">
             <img src="../../_static/paraview-logo-small.png"
             alt="ParaView/Python"></img></a> </li>
-          <li class="version"> version 5.6.0-451-g9632405e66</li>
+          <li class="version"> version 5.6.0-470-g9457eecb56</li>
         </ul>
         <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
   <input type="text" name="q" placeholder="Search docs" />
@@ -402,6 +402,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.Ribbon.html">paraview.simple.Ribbon</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.RotationalExtrusion.html">paraview.simple.RotationalExtrusion</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.Ruler.html">paraview.simple.Ruler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.SEPReader.html">paraview.simple.SEPReader</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.SLACDataReader.html">paraview.simple.SLACDataReader</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.SLACParticleDataReader.html">paraview.simple.SLACParticleDataReader</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.SPHDatasetInterpolator.html">paraview.simple.SPHDatasetInterpolator</a></li>
@@ -909,6 +910,25 @@
             <span class="k">raise</span> <span class="n">NotSupportedException</span><span class="p">(</span>
                   <span class="s2">&quot;&#39;</span><span class="si">%s</span><span class="s2">&#39; is obsolete on SpreadSheetRepresentation as of ParaView 5.6 and has been migrated to the view.&quot;</span> <span class="o">%</span> <span class="n">pname</span><span class="p">)</span>
 
+    <span class="c1"># In 5.7, we changed to the names of the input proxies in ResampleWithDataset to clarify what</span>
+    <span class="c1"># each source does.</span>
+    <span class="k">if</span> <span class="n">pname</span> <span class="o">==</span> <span class="s2">&quot;Input&quot;</span> <span class="ow">and</span> <span class="n">proxy</span><span class="o">.</span><span class="n">SMProxy</span><span class="o">.</span><span class="n">GetXMLName</span><span class="p">()</span> <span class="o">==</span> <span class="s2">&quot;ResampleWithDataset&quot;</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">paraview</span><span class="o">.</span><span class="n">compatibility</span><span class="o">.</span><span class="n">GetVersion</span><span class="p">()</span> <span class="o">&lt;</span> <span class="mf">5.7</span><span class="p">:</span>
+            <span class="n">proxy</span><span class="o">.</span><span class="n">GetProperty</span><span class="p">(</span><span class="s2">&quot;SourceDataArrays&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">SetData</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+            <span class="k">raise</span> <span class="n">Continue</span><span class="p">()</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">NotSupportedException</span><span class="p">(</span>
+                <span class="s1">&#39;The ResampleWithDataset.Input property has been changed in ParaView 5.7. &#39;</span>\
+                <span class="s1">&#39;Please set the SourceDataArrays property instead.&#39;</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">pname</span> <span class="o">==</span> <span class="s2">&quot;Source&quot;</span> <span class="ow">and</span> <span class="n">proxy</span><span class="o">.</span><span class="n">SMProxy</span><span class="o">.</span><span class="n">GetXMLName</span><span class="p">()</span> <span class="o">==</span> <span class="s2">&quot;ResampleWithDataset&quot;</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">paraview</span><span class="o">.</span><span class="n">compatibility</span><span class="o">.</span><span class="n">GetVersion</span><span class="p">()</span> <span class="o">&lt;</span> <span class="mf">5.7</span><span class="p">:</span>
+            <span class="n">proxy</span><span class="o">.</span><span class="n">GetProperty</span><span class="p">(</span><span class="s2">&quot;DestinationMesh&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">SetData</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+            <span class="k">raise</span> <span class="n">Continue</span><span class="p">()</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">NotSupportedException</span><span class="p">(</span>
+                <span class="s1">&#39;The ResampleWithDataset.Source property has been changed in ParaView 5.7. &#39;</span>\
+                <span class="s1">&#39;Please set the DestinationMesh property instead.&#39;</span><span class="p">)</span>
 
     <span class="k">if</span> <span class="ow">not</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">proxy</span><span class="p">,</span> <span class="n">pname</span><span class="p">):</span>
         <span class="k">raise</span> <span class="ne">AttributeError</span><span class="p">()</span>
@@ -1113,7 +1133,7 @@
 
     <span class="c1"># In 5.5, we changed the Clip to be inverted from what it was before and changed the InsideOut</span>
     <span class="c1"># property to be called Invert to be clearer.</span>
-    <span class="k">if</span> <span class="n">pname</span> <span class="o">==</span> <span class="s2">&quot;InsideOut&quot;</span> <span class="ow">and</span> <span class="n">proxy</span><span class="o">.</span><span class="n">SMProxy</span><span class="o">.</span><span class="n">GetName</span><span class="p">()</span> <span class="o">==</span> <span class="s2">&quot;Clip&quot;</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">pname</span> <span class="o">==</span> <span class="s2">&quot;InsideOut&quot;</span> <span class="ow">and</span> <span class="n">proxy</span><span class="o">.</span><span class="n">SMProxy</span><span class="o">.</span><span class="n">GetXMLName</span><span class="p">()</span> <span class="o">==</span> <span class="s2">&quot;Clip&quot;</span><span class="p">:</span>
         <span class="k">if</span> <span class="n">paraview</span><span class="o">.</span><span class="n">compatibility</span><span class="o">.</span><span class="n">GetVersion</span><span class="p">()</span> <span class="o">&lt;=</span> <span class="mf">5.4</span><span class="p">:</span>
             <span class="k">return</span> <span class="n">proxy</span><span class="o">.</span><span class="n">GetProperty</span><span class="p">(</span><span class="s2">&quot;Invert&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">GetData</span><span class="p">()</span>
         <span class="k">else</span><span class="p">:</span>
@@ -1130,6 +1150,25 @@
         <span class="k">else</span><span class="p">:</span>
             <span class="k">raise</span> <span class="n">NotSupportedException</span><span class="p">(</span>
                   <span class="s2">&quot;&#39;</span><span class="si">%s</span><span class="s2">&#39; is obsolete on SpreadSheetRepresentation as of ParaView 5.6 and has been migrated to the view.&quot;</span> <span class="o">%</span> <span class="n">pname</span><span class="p">)</span>
+
+    <span class="c1"># In 5.7, we changed to the names of the input proxies in ResampleWithDataset to clarify what</span>
+    <span class="c1"># each source does.</span>
+    <span class="k">if</span> <span class="n">pname</span> <span class="o">==</span> <span class="s2">&quot;Input&quot;</span> <span class="ow">and</span> <span class="n">proxy</span><span class="o">.</span><span class="n">SMProxy</span><span class="o">.</span><span class="n">GetXMLName</span><span class="p">()</span> <span class="o">==</span> <span class="s2">&quot;ResampleWithDataset&quot;</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">paraview</span><span class="o">.</span><span class="n">compatibility</span><span class="o">.</span><span class="n">GetVersion</span><span class="p">()</span> <span class="o">&lt;</span> <span class="mf">5.7</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">proxy</span><span class="o">.</span><span class="n">GetProperty</span><span class="p">(</span><span class="s2">&quot;SourceDataArrays&quot;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">NotSupportedException</span><span class="p">(</span>
+                <span class="s1">&#39;The ResampleWithDataset.Input property has been changed in ParaView 5.7. &#39;</span>\
+                <span class="s1">&#39;Please access the SourceDataArrays property instead.&#39;</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">pname</span> <span class="o">==</span> <span class="s2">&quot;Source&quot;</span> <span class="ow">and</span> <span class="n">proxy</span><span class="o">.</span><span class="n">SMProxy</span><span class="o">.</span><span class="n">GetXMLName</span><span class="p">()</span> <span class="o">==</span> <span class="s2">&quot;ResampleWithDataset&quot;</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">paraview</span><span class="o">.</span><span class="n">compatibility</span><span class="o">.</span><span class="n">GetVersion</span><span class="p">()</span> <span class="o">&lt;</span> <span class="mf">5.7</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">proxy</span><span class="o">.</span><span class="n">GetProperty</span><span class="p">(</span><span class="s2">&quot;DestinationMesh&quot;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">NotSupportedException</span><span class="p">(</span>
+                <span class="s1">&#39;The ResampleWithDataset.Source property has been changed in ParaView 5.7. &#39;</span>\
+                <span class="s1">&#39;Please access the DestinationMesh property instead.&#39;</span><span class="p">)</span>
+
     <span class="k">raise</span> <span class="n">Continue</span><span class="p">()</span></div>
 
 <div class="viewcode-block" id="GetProxy"><a class="viewcode-back" href="../../paraview._backwardscompatibilityhelper.html#paraview._backwardscompatibilityhelper.GetProxy">[docs]</a><span class="k">def</span> <span class="nf">GetProxy</span><span class="p">(</span><span class="n">module</span><span class="p">,</span> <span class="n">key</span><span class="p">):</span>

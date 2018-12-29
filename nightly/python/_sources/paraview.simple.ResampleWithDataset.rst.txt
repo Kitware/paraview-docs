@@ -23,9 +23,10 @@ Data Descriptors
        Set whether to compute the tolerance or to use a user provided
        value. On by default.
    
-   Input
-       This property specifies the dataset from which to obtain
-       probe values. The data attributes come from this dataset.
+   DestinationMesh
+       This property specifies the dataset whose geometry will
+       be used in determining positions to probe. The mesh comes from this
+       dataset.
    
    MarkBlankPointsAndCells
        When set, points that did not get valid values during resampling, and
@@ -41,10 +42,9 @@ Data Descriptors
    PassPointArrays
        When set the input's point data arrays are shallow copied to the output.
    
-   Source
-       This property specifies the dataset whose geometry will
-       be used in determining positions to probe. The mesh comes from this
-       dataset.
+   SourceDataArrays
+       This property specifies the dataset from which to obtain
+       probe values. The data attributes come from this dataset.
    
    Tolerance
        Set the tolerance to use for
