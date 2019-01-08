@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>paraview.simple.PythonAnnotation &mdash; ParaView/Python 5.6.0-476-gbcf278c803 documentation</title>
+  <title>paraview.simple.PythonAnnotation &mdash; ParaView/Python 5.6.0-482-g62223d4cad documentation</title>
   
 
   
@@ -24,7 +24,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:'./',
-        VERSION:'5.6.0-476-gbcf278c803',
+        VERSION:'5.6.0-482-g62223d4cad',
         COLLAPSE_INDEX:false,
         FILE_SUFFIX:'.html',
         HAS_SOURCE:  true
@@ -48,7 +48,7 @@
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="ParaView/Python 5.6.0-476-gbcf278c803 documentation" href="index.html"/>
+    <link rel="top" title="ParaView/Python 5.6.0-482-g62223d4cad documentation" href="index.html"/>
         <link rel="up" title="Available readers, sources, writers, filters and animation cues" href="paraview.servermanager_proxies.html"/>
         <link rel="next" title="paraview.simple.PythonCalculator" href="paraview.simple.PythonCalculator.html"/>
         <link rel="prev" title="paraview.simple.PythonAnimationCue" href="paraview.simple.PythonAnimationCue.html"/> 
@@ -68,7 +68,7 @@
           <li> <a href="index.html">
             <img src="_static/paraview-logo-small.png"
             alt="ParaView/Python"></img></a> </li>
-          <li class="version"> version 5.6.0-476-gbcf278c803</li>
+          <li class="version"> version 5.6.0-482-g62223d4cad</li>
         </ul>
         <form id ="rtd-search-form" class="wy-form" action="search.html" method="get">
   <input type="text" name="q" placeholder="Search docs" />
@@ -659,7 +659,8 @@
 <dt id="paraview.simple.PythonAnnotation">
 <code class="descclassname">paraview.simple.</code><code class="descname">PythonAnnotation</code><span class="sig-paren">(</span><em>*input</em>, <em>**params</em><span class="sig-paren">)</span><a class="headerlink" href="#paraview.simple.PythonAnnotation" title="Permalink to this definition">¶</a></dt>
 <dd><blockquote>
-<div>This filter uses Python to calculate an expression. It
+<div>This filter uses Python to calculate an expression and display
+the result as an annotation in the render view. It
 depends heavily on the numpy and paraview.vtk modules. To
 use the parallel functions, mpi4py is also necessary. The
 expression is evaluated and the resulting scalar value or
@@ -669,8 +670,12 @@ functions. This filter tries to make it easy for the user
 to write expressions by defining certain variables. The
 filter tries to assign each array to a variable of the
 same name. If the name of the array is not a valid Python
-variable, it has to be accessed through a dictionary
-called arrays (i.e. arrays[‘array_name’]).</div></blockquote>
+variable, it may be accessed through a variable with a
+sanitized version of that array name consisting of only
+‘_’ and the alphanumeric characters in the name joined
+together with no spaces. Point coordinates from datasets
+that explicitly define them can be accessed using the variable
+named ‘points’.</div></blockquote>
 </dd></dl>
 
 <div class="section" id="data-descriptors">
@@ -678,10 +683,10 @@ called arrays (i.e. arrays[‘array_name’]).</div></blockquote>
 <blockquote>
 <div><dl class="docutils">
 <dt>ArrayAssociation</dt>
-<dd>Select the attribute to use to popular array names from.</dd>
+<dd>Select the attribute to use to populate array names.</dd>
 <dt>Expression</dt>
 <dd>The Python expression evaluated during execution.
-FieldData arrays are direclty available through their name. Set of
+FieldData arrays are directly available through their name. Set of
 provided variables [input, t_value, t_steps, t_range, t_index,
 FieldData, PointData, CellData] (i.e.: “Momentum: (%f, %f, %f)” %
 (XMOM[t_index,0], YMOM[t_index,0], ZMOM[t_index,0]) )</dd>
