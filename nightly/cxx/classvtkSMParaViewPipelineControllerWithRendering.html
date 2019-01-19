@@ -117,6 +117,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a85813f80557334cc3559519d4d49a94e"><td class="memItemLeft" align="right" valign="top">virtual const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkSMParaViewPipelineControllerWithRendering.html#a85813f80557334cc3559519d4d49a94e">GetPreferredViewType</a> (<a class="el" href="classvtkSMSourceProxy.html">vtkSMSourceProxy</a> *producer, <a class="elRef" doxygen="/home/kitware/dashboards/buildbot/paraview-vall-linux-shared-debug_doc_extdeps_gui_mpi_python_python3/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkShaderProgram2_8h.html#a61569f2965b7a369eb10b6d75d410d11">int</a> outputPort)</td></tr>
 <tr class="memdesc:a85813f80557334cc3559519d4d49a94e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the name for the preferred view type, if there is any.  <a href="#a85813f80557334cc3559519d4d49a94e">More...</a><br /></td></tr>
 <tr class="separator:a85813f80557334cc3559519d4d49a94e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a29179b7b8d90be1384c3e5c9c760a435"><td class="memItemLeft" align="right" valign="top">virtual const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkSMParaViewPipelineControllerWithRendering.html#a29179b7b8d90be1384c3e5c9c760a435">GetPipelineIcon</a> (<a class="el" href="classvtkSMSourceProxy.html">vtkSMSourceProxy</a> *producer, <a class="elRef" doxygen="/home/kitware/dashboards/buildbot/paraview-vall-linux-shared-debug_doc_extdeps_gui_mpi_python_python3/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkShaderProgram2_8h.html#a61569f2965b7a369eb10b6d75d410d11">int</a> outputPort)</td></tr>
+<tr class="memdesc:a29179b7b8d90be1384c3e5c9c760a435"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the pipeline icon to use with the provided producer.  <a href="#a29179b7b8d90be1384c3e5c9c760a435">More...</a><br /></td></tr>
+<tr class="separator:a29179b7b8d90be1384c3e5c9c760a435"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a16f02ead2ffe0c1c4cdcff1fd426a697"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkSMParaViewPipelineControllerWithRendering.html#a16f02ead2ffe0c1c4cdcff1fd426a697">RegisterRepresentationProxy</a> (<a class="el" href="classvtkSMProxy.html">vtkSMProxy</a> *proxy) override</td></tr>
 <tr class="memdesc:a16f02ead2ffe0c1c4cdcff1fd426a697"><td class="mdescLeft">&#160;</td><td class="mdescRight">Overridden to create color and opacity transfer functions if applicable.  <a href="#a16f02ead2ffe0c1c4cdcff1fd426a697">More...</a><br /></td></tr>
 <tr class="separator:a16f02ead2ffe0c1c4cdcff1fd426a697"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -1088,6 +1091,50 @@ Additional Inherited Members</h2></td></tr>
  If the data type for the generated data is <code><a class="elRef" doxygen="/home/kitware/dashboards/buildbot/paraview-vall-linux-shared-debug_doc_extdeps_gui_mpi_python_python3/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/classvtkTable.html">vtkTable</a></code>, then the preferred view (if none provided) is assumed to be <code>SpreadSheetView</code>.</li>
 </ol>
 <dl class="section return"><dt>Returns</dt><dd>XML name for the preferred view proxy. It is assumed to be defined in the "views" group. </dd></dl>
+
+</div>
+</div>
+<a id="a29179b7b8d90be1384c3e5c9c760a435"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a29179b7b8d90be1384c3e5c9c760a435">&#9670;&nbsp;</a></span>GetPipelineIcon()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual const char* vtkSMParaViewPipelineControllerWithRendering::GetPipelineIcon </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classvtkSMSourceProxy.html">vtkSMSourceProxy</a> *&#160;</td>
+          <td class="paramname"><em>producer</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="elRef" doxygen="/home/kitware/dashboards/buildbot/paraview-vall-linux-shared-debug_doc_extdeps_gui_mpi_python_python3/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkShaderProgram2_8h.html#a61569f2965b7a369eb10b6d75d410d11">int</a>&#160;</td>
+          <td class="paramname"><em>outputPort</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Return the pipeline icon to use with the provided producer. </p>
+<p>It can be either a view type name, an existing icon resource or nullptr. Here is the strategy to determine the pipeline icon.</p>
+<h1>Using XML hints.</h1>
+<p>A producer proxy can provide XML hints to define the pipeline icon to use of each (or all) of its output ports. This is done as follows:</p>
+<div class="fragment"><div class="line">&lt;<span class="keywordtype">SourceProxy</span>&gt;</div><div class="line">  &lt;<span class="keywordtype">Hints</span>&gt;</div><div class="line">    &lt;<span class="keywordtype">PipelineIcon</span> <span class="keyword">name</span>=<span class="stringliteral">&quot;&lt;view name or icon resource&gt;&quot;</span> <span class="keyword">port</span>=<span class="stringliteral">&quot;&lt;output port number&gt;&quot;</span> /&gt;</div><div class="line">  &lt;/<span class="keywordtype">Hints</span>&gt;</div><div class="line">&lt;/<span class="keywordtype">SourceProxy</span>&gt;</div></div><!-- fragment --><p>Attribute <code>port</code> is optional and only needed to explicitly specify different view types for different output ports.</p>
+<h1>Using GetPreferredViewType</h1>
+<p>If no PipelineIcon as been provided, we fall back to using GetPreferredViewType. </p>
 
 </div>
 </div>

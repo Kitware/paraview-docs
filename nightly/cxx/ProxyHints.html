@@ -50,8 +50,7 @@ $(function() {
 &lt;/RepresentationProxy&gt;
 </pre><h2>WarnOnCreate </h2>
 <p>Warn the user when creating the filter or source in the UI.</p>
-<p>The motivation behind this hint is to warn the user when executing filters like <b>Temporal Statistics</b> filter since they can potentially take a long time for large file series.</p>
-<pre class="fragment">&lt;SourceProxy ...&gt;
+<p>The motivation behind this hint is to warn the user when executing filters like <b>Temporal Statistics</b> filter since they can potentially take a long time for large file series. </p><pre class="fragment">&lt;SourceProxy ...&gt;
   ...
   &lt;Hints&gt;
     &lt;WarnOnCreate title="Potentially slow operations"&gt;
@@ -97,6 +96,57 @@ $(function() {
     &lt;View type="None" /&gt;
   &lt;/Hints&gt;
 &lt;/SourceProxy&gt;
+</pre><h2>PipelineIcon </h2>
+<p>Specify the pipeline icon view to use in the pipeline browser for this source/filter proxy.</p>
+<p>This hint is used to indicate the icon to use in the pipeline browser. It can be either the full name of a qt resource icon or the name of a view type for which an icon as already been defined. </p><pre class="fragment">&lt;SourceProxy ...&gt;
+  ...
+  &lt;Hints&gt;
+    &lt;PipelineIcon name="XYChartView" /&gt;
+  &lt;/Hints&gt;
+&lt;/SourceProxy&gt;
+</pre><p>If the source/filter has more than 1 output port, you can choose which port the hint corresponds to by using the optional <code>port</code> attribute. </p><pre class="fragment">&lt;SourceProxy ...&gt;
+  ...
+  &lt;Hints&gt;
+    &lt;PipelineIcon name="XYChartView" port="1" /&gt;
+  &lt;/Hints&gt;
+&lt;/SourceProxy&gt;
+</pre><p>At the time of writing, the supported stock icon names were:</p><ul>
+<li>"SERVER"</li>
+<li>"SECURE_SERVER"</li>
+<li>"LINK"</li>
+<li>"GEOMETRY"</li>
+<li>"XYBagChartView"</li>
+<li>"XYChartView"</li>
+<li>"XYBarChartView"</li>
+<li>"XYFunctionnalBagChartView"</li>
+<li>"XYHistogramChartView"</li>
+<li>"BoxChartView"</li>
+<li>"SpreadSheetView"</li>
+<li>"INDETERMINATE"</li>
+<li>"None"</li>
+<li>"EYEBALL"</li>
+<li>"EYEBALL_GRAY"</li>
+<li>"INSITU_EXTRACT"</li>
+<li>"INSITU_EXTRACT_GRAY"</li>
+<li>"INSITU_SERVER_RUNNING"</li>
+<li>"INSITU_SERVER_PAUSED"</li>
+<li>"INSITU_BREAKPOINT"</li>
+<li>"INSITU_WRITER_PARAMETERS"</li>
+<li>"CINEMA_MARK"</li>
+</ul>
+<p>If the desired icon is not present in the list, it is possible to use a Qt resource icon name directly. </p><pre class="fragment">&lt;SourceProxy ...&gt;
+  ...
+  &lt;Hints&gt;
+    &lt;PipelineIcon name=":/pqWidgets/Icons/pqCalculator24.png" /&gt;
+  &lt;/Hints&gt;
+&lt;/SourceProxy&gt;
+</pre><p>Available icons are visible in the sources of ParaView</p>
+<p>If the desired icon is not present, it can be added, for example in the context of a plugin, using GUI_RESOURCES in your ADD_PARAVIEW_PLUGIN macro, a .qrc file and your own icon file. </p><pre class="fragment">&lt;SourceProxy ...&gt;
+  ...
+  &lt;Hints&gt;
+    &lt;PipelineIcon name=":/MyPluginQtResource/Icons/myIcon.png" /&gt;
+  &lt;/Hints&gt;
+&lt;/SourceProxy&gt;
 </pre><h2>Plotable </h2>
 <p>Mark output data as plotable in 2D chart views.</p>
 <p>Chart views in ParaView e.g. <b>Bar Chart View</b>, <b>Line Chart View</b>, support plotting data of any type. However, since such plots don't use distributed rendering techniques, to avoid accidentally plotting large datasets, the plots by default can only show sources/filters that produce <code><a class="elRef" doxygen="/home/kitware/dashboards/buildbot/paraview-vall-linux-shared-debug_doc_extdeps_gui_mpi_python_python3/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/classvtkTable.html">vtkTable</a></code> as the output. If a source/filter doesn't produce a <code><a class="elRef" doxygen="/home/kitware/dashboards/buildbot/paraview-vall-linux-shared-debug_doc_extdeps_gui_mpi_python_python3/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/classvtkTable.html">vtkTable</a></code>, but produces data that should indeed be plotted by such views, one can use this hint. </p><pre class="fragment">&lt;SourceProxy ...&gt;
@@ -129,18 +179,11 @@ $(function() {
 <p>The ShowProxyDocumentationInPanel take one optional attribute <b>type</b>. The possible values are:</p><ol type="1">
 <li><em>description</em>: (default) to use <a class="el" href="classvtkSMDocumentation.html#acef487d91492039623e190482578619c" title="Returns the description text, if any. ">vtkSMDocumentation::GetDescription()</a>,</li>
 <li><em>short_help</em>: to use <a class="el" href="classvtkSMDocumentation.html#afc150700a3f58f3f8227aae8fc976cab" title="Returns the text for short help, if any. ">vtkSMDocumentation::GetShortHelp()</a>, and</li>
-<li><em>long_help</em>: to use <a class="el" href="classvtkSMDocumentation.html#a20f8294badc5856f78109da90a90d063" title="Returns the text for long help, if any. ">vtkSMDocumentation::GetLongHelp()</a>.</li>
+<li><p class="startli"><em>long_help</em>: to use <a class="el" href="classvtkSMDocumentation.html#a20f8294badc5856f78109da90a90d063" title="Returns the text for long help, if any. ">vtkSMDocumentation::GetLongHelp()</a>.</p>
+<p class="startli">&lt;SourceProxy ...&gt; &lt;Documentation&gt; Some text that will be shown in the label. &lt;/Documentation&gt; ... &lt;Hints&gt; &lt;ShowProxyDocumentationInPanel type="description"&gt; &lt;/Hints&gt; &lt;/SourceProxy&gt;</p>
+</li>
 </ol>
-<pre class="fragment">&lt;SourceProxy ...&gt;
-  &lt;Documentation&gt;
-    Some text that will be shown in the label.
-  &lt;/Documentation&gt;
-  ...
-  &lt;Hints&gt;
-    &lt;ShowProxyDocumentationInPanel type="description"/&gt;
-  &lt;/Hints&gt;
-&lt;/SourceProxy&gt;
-</pre><h2>ReloadFiles </h2>
+<h2>ReloadFiles </h2>
 <p>Indicate the property on a reader to use to refresh (or reload) the reader to make it re-read the data files.</p>
 <p>This hint can be used for readers that support "smart refresh" to re-read files when they are changed. Otherwise, ParaView will use the default mechanism which simply recreated the reader thus forgoing any previous data cached by the reader. The attribute <b>property</b> indicates the name of the property on the reader proxy to invoke to make the reader refresh. </p><pre class="fragment">&lt;SourceProxy&gt;
 ...

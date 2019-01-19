@@ -122,6 +122,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ada3764ea459a55fe945b92afa319223c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkPVXMLElement.html#ada3764ea459a55fe945b92afa319223c">RemoveNestedElement</a> (<a class="el" href="classvtkPVXMLElement.html">vtkPVXMLElement</a> *)</td></tr>
 <tr class="memdesc:ada3764ea459a55fe945b92afa319223c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remove a particular element.  <a href="#ada3764ea459a55fe945b92afa319223c">More...</a><br /></td></tr>
 <tr class="separator:ada3764ea459a55fe945b92afa319223c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a14213435cc637fe283624101467fabc6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkPVXMLElement.html#a14213435cc637fe283624101467fabc6">ReplaceNestedElement</a> (<a class="el" href="classvtkPVXMLElement.html">vtkPVXMLElement</a> *elementToReplace, <a class="el" href="classvtkPVXMLElement.html">vtkPVXMLElement</a> *element)</td></tr>
+<tr class="memdesc:a14213435cc637fe283624101467fabc6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Replace a particular element with another.  <a href="#a14213435cc637fe283624101467fabc6">More...</a><br /></td></tr>
+<tr class="separator:a14213435cc637fe283624101467fabc6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4f5b6577d9fda12c1f92ca5760b08822"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classvtkPVXMLElement.html">vtkPVXMLElement</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkPVXMLElement.html#a4f5b6577d9fda12c1f92ca5760b08822">LookupElement</a> (const char *id)</td></tr>
 <tr class="memdesc:a4f5b6577d9fda12c1f92ca5760b08822"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lookup the element with the given id, starting at this scope.  <a href="#a4f5b6577d9fda12c1f92ca5760b08822">More...</a><br /></td></tr>
 <tr class="separator:a4f5b6577d9fda12c1f92ca5760b08822"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -1356,6 +1359,36 @@ Friends</h2></td></tr>
 
 </div>
 </div>
+<a id="a14213435cc637fe283624101467fabc6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a14213435cc637fe283624101467fabc6">&#9670;&nbsp;</a></span>ReplaceNestedElement()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void vtkPVXMLElement::ReplaceNestedElement </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classvtkPVXMLElement.html">vtkPVXMLElement</a> *&#160;</td>
+          <td class="paramname"><em>elementToReplace</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classvtkPVXMLElement.html">vtkPVXMLElement</a> *&#160;</td>
+          <td class="paramname"><em>element</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Replace a particular element with another. </p>
+
+</div>
+</div>
 <a id="a4f5b6577d9fda12c1f92ca5760b08822"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a4f5b6577d9fda12c1f92ca5760b08822">&#9670;&nbsp;</a></span>LookupElement()</h2>
 
@@ -2059,7 +2092,7 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="vtkPVXMLElement_8h_source.html#l00282">282</a> of file <a class="el" href="vtkPVXMLElement_8h_source.html">vtkPVXMLElement.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vtkPVXMLElement_8h_source.html#l00287">287</a> of file <a class="el" href="vtkPVXMLElement_8h_source.html">vtkPVXMLElement.h</a>.</p>
 
 </div>
 </div>
@@ -2084,7 +2117,7 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="vtkPVXMLElement_8h_source.html#l00264">264</a> of file <a class="el" href="vtkPVXMLElement_8h_source.html">vtkPVXMLElement.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vtkPVXMLElement_8h_source.html#l00269">269</a> of file <a class="el" href="vtkPVXMLElement_8h_source.html">vtkPVXMLElement.h</a>.</p>
 
 </div>
 </div>
@@ -2108,7 +2141,7 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="vtkPVXMLElement_8h_source.html#l00266">266</a> of file <a class="el" href="vtkPVXMLElement_8h_source.html">vtkPVXMLElement.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vtkPVXMLElement_8h_source.html#l00271">271</a> of file <a class="el" href="vtkPVXMLElement_8h_source.html">vtkPVXMLElement.h</a>.</p>
 
 </div>
 </div>
@@ -2132,7 +2165,7 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="vtkPVXMLElement_8h_source.html#l00267">267</a> of file <a class="el" href="vtkPVXMLElement_8h_source.html">vtkPVXMLElement.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vtkPVXMLElement_8h_source.html#l00272">272</a> of file <a class="el" href="vtkPVXMLElement_8h_source.html">vtkPVXMLElement.h</a>.</p>
 
 </div>
 </div>
@@ -2156,7 +2189,7 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="vtkPVXMLElement_8h_source.html#l00270">270</a> of file <a class="el" href="vtkPVXMLElement_8h_source.html">vtkPVXMLElement.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vtkPVXMLElement_8h_source.html#l00275">275</a> of file <a class="el" href="vtkPVXMLElement_8h_source.html">vtkPVXMLElement.h</a>.</p>
 
 </div>
 </div>
