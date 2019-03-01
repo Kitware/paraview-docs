@@ -115,10 +115,8 @@ $(function() {
 <li>"SECURE_SERVER"</li>
 <li>"LINK"</li>
 <li>"GEOMETRY"</li>
-<li>"XYBagChartView"</li>
 <li>"XYChartView"</li>
 <li>"XYBarChartView"</li>
-<li>"XYFunctionnalBagChartView"</li>
 <li>"XYHistogramChartView"</li>
 <li>"BoxChartView"</li>
 <li>"SpreadSheetView"</li>
@@ -149,7 +147,7 @@ $(function() {
 &lt;/SourceProxy&gt;
 </pre><h2>Plotable </h2>
 <p>Mark output data as plotable in 2D chart views.</p>
-<p>Chart views in ParaView e.g. <b>Bar Chart View</b>, <b>Line Chart View</b>, support plotting data of any type. However, since such plots don't use distributed rendering techniques, to avoid accidentally plotting large datasets, the plots by default can only show sources/filters that produce <code><a class="elRef" doxygen="/home/kitware/dashboards/buildbot/paraview-vall-linux-shared-debug_doc_extdeps_gui_mpi_python_python3/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/classvtkTable.html">vtkTable</a></code> as the output. If a source/filter doesn't produce a <code><a class="elRef" doxygen="/home/kitware/dashboards/buildbot/paraview-vall-linux-shared-debug_doc_extdeps_gui_mpi_python_python3/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/classvtkTable.html">vtkTable</a></code>, but produces data that should indeed be plotted by such views, one can use this hint. </p><pre class="fragment">&lt;SourceProxy ...&gt;
+<p>Chart views in ParaView e.g. <b>Bar Chart View</b>, <b>Line Chart View</b>, support plotting data of any type. However, since such plots don't use distributed rendering techniques, to avoid accidentally plotting large datasets, the plots by default can only show sources/filters that produce <code><a class="elRef" doxygen="/home/kitware/dashboards/buildbot/paraview_master-vall-linux-shared-debug_doc_extdeps_gui_mpi_python3/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/classvtkTable.html">vtkTable</a></code> as the output. If a source/filter doesn't produce a <code><a class="elRef" doxygen="/home/kitware/dashboards/buildbot/paraview_master-vall-linux-shared-debug_doc_extdeps_gui_mpi_python3/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/classvtkTable.html">vtkTable</a></code>, but produces data that should indeed be plotted by such views, one can use this hint. </p><pre class="fragment">&lt;SourceProxy ...&gt;
   &lt;Hints&gt;
     &lt;Plotable /&gt;
   &lt;/Hints&gt;
