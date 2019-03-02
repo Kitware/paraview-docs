@@ -240,6 +240,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a2f2c2da4b62cc54cdb6f257cc9dff87f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpqRenderView.html#a2f2c2da4b62cc54cdb6f257cc9dff87f">canRedo</a> () const override</td></tr>
 <tr class="memdesc:a2f2c2da4b62cc54cdb6f257cc9dff87f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns true if redo can be done.  <a href="#a2f2c2da4b62cc54cdb6f257cc9dff87f">More...</a><br /></td></tr>
 <tr class="separator:a2f2c2da4b62cc54cdb6f257cc9dff87f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abebd8e14ce08438d2af1422ecffbe84c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpqRenderView.html#abebd8e14ce08438d2af1422ecffbe84c">supportsCapture</a> () const override</td></tr>
+<tr class="memdesc:abebd8e14ce08438d2af1422ecffbe84c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns if this view module can support image capture.  <a href="#abebd8e14ce08438d2af1422ecffbe84c">More...</a><br /></td></tr>
+<tr class="separator:abebd8e14ce08438d2af1422ecffbe84c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afd6b7de4faee6cf4f7800117f60b9143"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpqRenderView.html#afd6b7de4faee6cf4f7800117f60b9143">linkUndoStack</a> (<a class="el" href="classpqRenderView.html">pqRenderView</a> *other)</td></tr>
 <tr class="memdesc:afd6b7de4faee6cf4f7800117f60b9143"><td class="mdescLeft">&#160;</td><td class="mdescRight">For linking of interaction undo stacks.  <a href="#afd6b7de4faee6cf4f7800117f60b9143">More...</a><br /></td></tr>
 <tr class="separator:afd6b7de4faee6cf4f7800117f60b9143"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -1073,6 +1076,38 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
+<a id="abebd8e14ce08438d2af1422ecffbe84c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abebd8e14ce08438d2af1422ecffbe84c">&#9670;&nbsp;</a></span>supportsCapture()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool pqRenderView::supportsCapture </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns if this view module can support image capture. </p>
+<p>Returns false by default. Subclassess must override if that's not the case. </p>
+
+<p>Reimplemented from <a class="el" href="classpqView.html#ab02a365b39bd3893e1c516fb4cf43596">pqView</a>.</p>
+
+<p class="definition">Definition at line <a class="el" href="pqRenderView_8h_source.html#l00155">155</a> of file <a class="el" href="pqRenderView_8h_source.html">pqRenderView.h</a>.</p>
+
+</div>
+</div>
 <a id="afd6b7de4faee6cf4f7800117f60b9143"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#afd6b7de4faee6cf4f7800117f60b9143">&#9670;&nbsp;</a></span>linkUndoStack()</h2>
 
@@ -1754,7 +1789,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="pqRenderView_8h_source.html#l00250">250</a> of file <a class="el" href="pqRenderView_8h_source.html">pqRenderView.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="pqRenderView_8h_source.html#l00257">257</a> of file <a class="el" href="pqRenderView_8h_source.html">pqRenderView.h</a>.</p>
 
 </div>
 </div>
@@ -1836,7 +1871,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Get/Set whether <a class="el" href="classpqRenderView.html#a50dd8f95eb704e0c127a083ae4197c38" title="Resets the camera to include all visible data. ">resetCamera()</a> resets the center of rotation as well. </p>
 
-<p class="definition">Definition at line <a class="el" href="pqRenderView_8h_source.html#l00265">265</a> of file <a class="el" href="pqRenderView_8h_source.html">pqRenderView.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="pqRenderView_8h_source.html#l00272">272</a> of file <a class="el" href="pqRenderView_8h_source.html">pqRenderView.h</a>.</p>
 
 </div>
 </div>
@@ -1866,7 +1901,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Set whether selection will be done on multiple representations. </p>
 
-<p class="definition">Definition at line <a class="el" href="pqRenderView_8h_source.html#l00270">270</a> of file <a class="el" href="pqRenderView_8h_source.html">pqRenderView.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="pqRenderView_8h_source.html#l00277">277</a> of file <a class="el" href="pqRenderView_8h_source.html">pqRenderView.h</a>.</p>
 
 </div>
 </div>
@@ -1978,7 +2013,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Resets center of rotation if this-&gt;ResetCenterWithCamera is true. </p>
 
-<p class="definition">Definition at line <a class="el" href="pqRenderView_8h_source.html#l00295">295</a> of file <a class="el" href="pqRenderView_8h_source.html">pqRenderView.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="pqRenderView_8h_source.html#l00302">302</a> of file <a class="el" href="pqRenderView_8h_source.html">pqRenderView.h</a>.</p>
 
 </div>
 </div>
@@ -2237,7 +2272,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="pqRenderView_8h_source.html#l00344">344</a> of file <a class="el" href="pqRenderView_8h_source.html">pqRenderView.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="pqRenderView_8h_source.html#l00351">351</a> of file <a class="el" href="pqRenderView_8h_source.html">pqRenderView.h</a>.</p>
 
 </div>
 </div>
@@ -2261,7 +2296,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="pqRenderView_8h_source.html#l00347">347</a> of file <a class="el" href="pqRenderView_8h_source.html">pqRenderView.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="pqRenderView_8h_source.html#l00354">354</a> of file <a class="el" href="pqRenderView_8h_source.html">pqRenderView.h</a>.</p>
 
 </div>
 </div>

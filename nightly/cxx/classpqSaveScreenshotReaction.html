@@ -40,6 +40,7 @@ $(function() {
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-static-methods">Static Public Member Functions</a> &#124;
 <a href="#pro-methods">Protected Member Functions</a> &#124;
+<a href="#pro-attribs">Protected Attributes</a> &#124;
 <a href="classpqSaveScreenshotReaction-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">pqSaveScreenshotReaction Class Reference<div class="ingroups"><a class="el" href="group__Reactions.html">ParaView Reactions</a></div></div>  </div>
@@ -75,9 +76,9 @@ Public Slots</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a14f43f25d9861bb9a6ce297cf9805d2e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpqSaveScreenshotReaction.html#a14f43f25d9861bb9a6ce297cf9805d2e">pqSaveScreenshotReaction</a> (QAction *parent)</td></tr>
-<tr class="memdesc:a14f43f25d9861bb9a6ce297cf9805d2e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="#a14f43f25d9861bb9a6ce297cf9805d2e">More...</a><br /></td></tr>
-<tr class="separator:a14f43f25d9861bb9a6ce297cf9805d2e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aea227fbe558d1842d80f865d4166b52e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpqSaveScreenshotReaction.html#aea227fbe558d1842d80f865d4166b52e">pqSaveScreenshotReaction</a> (QAction *parent, bool clipboardMode=false)</td></tr>
+<tr class="memdesc:aea227fbe558d1842d80f865d4166b52e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="#aea227fbe558d1842d80f865d4166b52e">More...</a><br /></td></tr>
+<tr class="separator:aea227fbe558d1842d80f865d4166b52e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classpqReaction"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classpqReaction')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classpqReaction.html">pqReaction</a></td></tr>
 <tr class="memitem:a3de708f86d468b88fb56c8245be2faa0 inherit pub_methods_classpqReaction"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpqReaction.html#a3de708f86d468b88fb56c8245be2faa0">pqReaction</a> (QAction *parent, Qt::ConnectionType <a class="elRef" doxygen="/home/kitware/dashboards/buildbot/paraview_master-vall-linux-shared-debug_doc_extdeps_gui_mpi_python3/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/namespacevtkX3D.html#ac6551f7bf833e8254b2b3ecdaea0d210a8e7f81709ed57920a45c02a954726847">type</a>=Qt::AutoConnection)</td></tr>
 <tr class="memdesc:a3de708f86d468b88fb56c8245be2faa0 inherit pub_methods_classpqReaction"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="classpqReaction.html#a3de708f86d468b88fb56c8245be2faa0">More...</a><br /></td></tr>
@@ -90,12 +91,18 @@ Public Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:a53159ec635912456ecff31c209897185"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpqSaveScreenshotReaction.html#a53159ec635912456ecff31c209897185">saveScreenshot</a> ()</td></tr>
-<tr class="memdesc:a53159ec635912456ecff31c209897185"><td class="mdescLeft">&#160;</td><td class="mdescRight">Saves the screenshot.  <a href="#a53159ec635912456ecff31c209897185">More...</a><br /></td></tr>
-<tr class="separator:a53159ec635912456ecff31c209897185"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad799c64aa0ea65a69871f52e925352e9"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpqSaveScreenshotReaction.html#ad799c64aa0ea65a69871f52e925352e9">saveScreenshot</a> (bool clipboardMode=false)</td></tr>
+<tr class="memdesc:ad799c64aa0ea65a69871f52e925352e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Saves the screenshot.  <a href="#ad799c64aa0ea65a69871f52e925352e9">More...</a><br /></td></tr>
+<tr class="separator:ad799c64aa0ea65a69871f52e925352e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a721879cc8ef27529a5d6289cb717c4c0"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpqSaveScreenshotReaction.html#a721879cc8ef27529a5d6289cb717c4c0">saveScreenshot</a> (const QString &amp;filename, const QSize &amp;<a class="elRef" doxygen="/home/kitware/dashboards/buildbot/paraview_master-vall-linux-shared-debug_doc_extdeps_gui_mpi_python3/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/namespacevtkX3D.html#ac6551f7bf833e8254b2b3ecdaea0d210ae3d5e7c015dff08d8daf72a0102e1444">size</a>, <a class="elRef" doxygen="/home/kitware/dashboards/buildbot/paraview_master-vall-linux-shared-debug_doc_extdeps_gui_mpi_python3/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkShaderProgram2_8h.html#a61569f2965b7a369eb10b6d75d410d11">int</a> quality, bool all_views=false)</td></tr>
 <tr class="memdesc:a721879cc8ef27529a5d6289cb717c4c0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Save a screenshot given the filename and image properties.  <a href="#a721879cc8ef27529a5d6289cb717c4c0">More...</a><br /></td></tr>
 <tr class="separator:a721879cc8ef27529a5d6289cb717c4c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac8085062959c0c391c84dec3e81d8bd9"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpqSaveScreenshotReaction.html#ac8085062959c0c391c84dec3e81d8bd9">copyScreenshotToClipboard</a> (const QSize &amp;<a class="elRef" doxygen="/home/kitware/dashboards/buildbot/paraview_master-vall-linux-shared-debug_doc_extdeps_gui_mpi_python3/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/namespacevtkX3D.html#ac6551f7bf833e8254b2b3ecdaea0d210ae3d5e7c015dff08d8daf72a0102e1444">size</a>, bool all_views=false)</td></tr>
+<tr class="memdesc:ac8085062959c0c391c84dec3e81d8bd9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy a screenshot to the clipboard.  <a href="#ac8085062959c0c391c84dec3e81d8bd9">More...</a><br /></td></tr>
+<tr class="separator:ac8085062959c0c391c84dec3e81d8bd9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a33da918b23a79bf622fd1e0233e70887"><td class="memItemLeft" align="right" valign="top">static <a class="elRef" doxygen="/home/kitware/dashboards/buildbot/paraview_master-vall-linux-shared-debug_doc_extdeps_gui_mpi_python3/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/classvtkSmartPointer.html">vtkSmartPointer</a>&lt; <a class="elRef" doxygen="/home/kitware/dashboards/buildbot/paraview_master-vall-linux-shared-debug_doc_extdeps_gui_mpi_python3/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/classvtkImageData.html">vtkImageData</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpqSaveScreenshotReaction.html#a33da918b23a79bf622fd1e0233e70887">takeScreenshot</a> (const QSize &amp;<a class="elRef" doxygen="/home/kitware/dashboards/buildbot/paraview_master-vall-linux-shared-debug_doc_extdeps_gui_mpi_python3/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/namespacevtkX3D.html#ac6551f7bf833e8254b2b3ecdaea0d210ae3d5e7c015dff08d8daf72a0102e1444">size</a>, bool all_views=false)</td></tr>
+<tr class="memdesc:a33da918b23a79bf622fd1e0233e70887"><td class="mdescLeft">&#160;</td><td class="mdescRight">Take a screenshot of the active view or all the views at the given size and return it as a <a class="elRef" doxygen="/home/kitware/dashboards/buildbot/paraview_master-vall-linux-shared-debug_doc_extdeps_gui_mpi_python3/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/classvtkImageData.html">vtkImageData</a>.  <a href="#a33da918b23a79bf622fd1e0233e70887">More...</a><br /></td></tr>
+<tr class="separator:a33da918b23a79bf622fd1e0233e70887"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5679e7104f1b846e70f24d3077c3e5db"><td class="memItemLeft" align="right" valign="top">static QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpqSaveScreenshotReaction.html#a5679e7104f1b846e70f24d3077c3e5db">promptFileName</a> (<a class="el" href="classvtkSMSaveScreenshotProxy.html">vtkSMSaveScreenshotProxy</a> *saveProxy, const QString &amp;defaultExtension)</td></tr>
 <tr class="memdesc:a5679e7104f1b846e70f24d3077c3e5db"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prompt user for filename using the various format proxies listed for the given proxy.  <a href="#a5679e7104f1b846e70f24d3077c3e5db">More...</a><br /></td></tr>
 <tr class="separator:a5679e7104f1b846e70f24d3077c3e5db"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -106,6 +113,14 @@ Protected Member Functions</h2></td></tr>
 <tr class="memdesc:a313a5f025b1631bd85b810bb720f34da"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called when the action is triggered.  <a href="#a313a5f025b1631bd85b810bb720f34da">More...</a><br /></td></tr>
 <tr class="separator:a313a5f025b1631bd85b810bb720f34da"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
+Protected Attributes</h2></td></tr>
+<tr class="memitem:a2557f90e58adf726cbe406fa9e351e7b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpqSaveScreenshotReaction.html#a2557f90e58adf726cbe406fa9e351e7b">ClipboardMode</a></td></tr>
+<tr class="separator:a2557f90e58adf726cbe406fa9e351e7b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pro_attribs_classpqReaction"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_classpqReaction')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="classpqReaction.html">pqReaction</a></td></tr>
+<tr class="memitem:a2ee00ad6db3f950623b26bc13bcd07e9 inherit pro_attribs_classpqReaction"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpqReaction.html#a2ee00ad6db3f950623b26bc13bcd07e9">IsMaster</a></td></tr>
+<tr class="separator:a2ee00ad6db3f950623b26bc13bcd07e9 inherit pro_attribs_classpqReaction"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
 <tr class="inherit_header pro_slots_classpqReaction"><td colspan="2" onclick="javascript:toggleInherit('pro_slots_classpqReaction')"><img src="closed.png" alt="-"/>&#160;Protected Slots inherited from <a class="el" href="classpqReaction.html">pqReaction</a></td></tr>
@@ -113,18 +128,15 @@ Additional Inherited Members</h2></td></tr>
 <tr class="separator:abb2c5febc7d32adcaf627d9211663ede inherit pro_slots_classpqReaction"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa10a23edce169e3f9574c4ebf24bbe9f inherit pro_slots_classpqReaction"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpqReaction.html#aa10a23edce169e3f9574c4ebf24bbe9f">updateMasterEnableState</a> (bool)</td></tr>
 <tr class="separator:aa10a23edce169e3f9574c4ebf24bbe9f inherit pro_slots_classpqReaction"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="inherit_header pro_attribs_classpqReaction"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_classpqReaction')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="classpqReaction.html">pqReaction</a></td></tr>
-<tr class="memitem:a2ee00ad6db3f950623b26bc13bcd07e9 inherit pro_attribs_classpqReaction"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpqReaction.html#a2ee00ad6db3f950623b26bc13bcd07e9">IsMaster</a></td></tr>
-<tr class="separator:a2ee00ad6db3f950623b26bc13bcd07e9 inherit pro_attribs_classpqReaction"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Reaction to save a screenshot. </p>
 <p><a class="el" href="classpqSaveScreenshotReaction.html" title="Reaction to save a screenshot. ">pqSaveScreenshotReaction</a> can be connected to a QAction to prompt user and save screenshots or captures from views using the <code>("misc", "SaveScreenshot")</code> proxy. </p>
 
-<p class="definition">Definition at line <a class="el" href="pqSaveScreenshotReaction_8h_source.html#l00047">47</a> of file <a class="el" href="pqSaveScreenshotReaction_8h_source.html">pqSaveScreenshotReaction.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="pqSaveScreenshotReaction_8h_source.html#l00050">50</a> of file <a class="el" href="pqSaveScreenshotReaction_8h_source.html">pqSaveScreenshotReaction.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a14f43f25d9861bb9a6ce297cf9805d2e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a14f43f25d9861bb9a6ce297cf9805d2e">&#9670;&nbsp;</a></span>pqSaveScreenshotReaction()</h2>
+<a id="aea227fbe558d1842d80f865d4166b52e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aea227fbe558d1842d80f865d4166b52e">&#9670;&nbsp;</a></span>pqSaveScreenshotReaction()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -133,8 +145,18 @@ Additional Inherited Members</h2></td></tr>
           <td class="memname">pqSaveScreenshotReaction::pqSaveScreenshotReaction </td>
           <td>(</td>
           <td class="paramtype">QAction *&#160;</td>
-          <td class="paramname"><em>parent</em></td><td>)</td>
+          <td class="paramname"><em>parent</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>clipboardMode</em> = <code>false</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -145,8 +167,8 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a53159ec635912456ecff31c209897185"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a53159ec635912456ecff31c209897185">&#9670;&nbsp;</a></span>saveScreenshot() <span class="overload">[1/2]</span></h2>
+<a id="ad799c64aa0ea65a69871f52e925352e9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad799c64aa0ea65a69871f52e925352e9">&#9670;&nbsp;</a></span>saveScreenshot() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -157,7 +179,8 @@ Additional Inherited Members</h2></td></tr>
         <tr>
           <td class="memname">static void pqSaveScreenshotReaction::saveScreenshot </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>clipboardMode</em> = <code>false</code></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -169,7 +192,7 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Saves the screenshot. </p>
-<p>Note that this method is static. Applications can simply use this without having to create a reaction instance. </p>
+<p>Note that this method is static. Applications can simply use this without having to create a reaction instance. If clipboardMode is true, no advanced options are requested and the screenshot is copied to the clipboard </p>
 
 </div>
 </div>
@@ -221,6 +244,82 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Save a screenshot given the filename and image properties. </p>
 <p>This method is provided only for convenience. This doesn't expose any of the advanced options available to users when saving screenshots. </p>
+
+</div>
+</div>
+<a id="ac8085062959c0c391c84dec3e81d8bd9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac8085062959c0c391c84dec3e81d8bd9">&#9670;&nbsp;</a></span>copyScreenshotToClipboard()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static bool pqSaveScreenshotReaction::copyScreenshotToClipboard </td>
+          <td>(</td>
+          <td class="paramtype">const QSize &amp;&#160;</td>
+          <td class="paramname"><em>size</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>all_views</em> = <code>false</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Copy a screenshot to the clipboard. </p>
+
+</div>
+</div>
+<a id="a33da918b23a79bf622fd1e0233e70887"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a33da918b23a79bf622fd1e0233e70887">&#9670;&nbsp;</a></span>takeScreenshot()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="elRef" doxygen="/home/kitware/dashboards/buildbot/paraview_master-vall-linux-shared-debug_doc_extdeps_gui_mpi_python3/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/classvtkSmartPointer.html">vtkSmartPointer</a>&lt;<a class="elRef" doxygen="/home/kitware/dashboards/buildbot/paraview_master-vall-linux-shared-debug_doc_extdeps_gui_mpi_python3/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/classvtkImageData.html">vtkImageData</a>&gt; pqSaveScreenshotReaction::takeScreenshot </td>
+          <td>(</td>
+          <td class="paramtype">const QSize &amp;&#160;</td>
+          <td class="paramname"><em>size</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>all_views</em> = <code>false</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Take a screenshot of the active view or all the views at the given size and return it as a <a class="elRef" doxygen="/home/kitware/dashboards/buildbot/paraview_master-vall-linux-shared-debug_doc_extdeps_gui_mpi_python3/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/classvtkImageData.html">vtkImageData</a>. </p>
 
 </div>
 </div>
@@ -317,7 +416,32 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Reimplemented from <a class="el" href="classpqReaction.html#a2735bd351e012725300ac26579b0d62b">pqReaction</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="pqSaveScreenshotReaction_8h_source.html#l00091">91</a> of file <a class="el" href="pqSaveScreenshotReaction_8h_source.html">pqSaveScreenshotReaction.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="pqSaveScreenshotReaction_8h_source.html#l00107">107</a> of file <a class="el" href="pqSaveScreenshotReaction_8h_source.html">pqSaveScreenshotReaction.h</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="a2557f90e58adf726cbe406fa9e351e7b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2557f90e58adf726cbe406fa9e351e7b">&#9670;&nbsp;</a></span>ClipboardMode</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool pqSaveScreenshotReaction::ClipboardMode</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="pqSaveScreenshotReaction_8h_source.html#l00109">109</a> of file <a class="el" href="pqSaveScreenshotReaction_8h_source.html">pqSaveScreenshotReaction.h</a>.</p>
 
 </div>
 </div>

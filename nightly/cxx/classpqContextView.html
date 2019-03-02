@@ -92,6 +92,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:abca7fcfaeb95b847874401ded85e5ea3"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpqContextView.html#abca7fcfaeb95b847874401ded85e5ea3">supportsSelection</a> () const</td></tr>
 <tr class="memdesc:abca7fcfaeb95b847874401ded85e5ea3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns true if selection can be done.  <a href="#abca7fcfaeb95b847874401ded85e5ea3">More...</a><br /></td></tr>
 <tr class="separator:abca7fcfaeb95b847874401ded85e5ea3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3677969192f8e280282a56ee122a6c9c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpqContextView.html#a3677969192f8e280282a56ee122a6c9c">supportsCapture</a> () const override</td></tr>
+<tr class="memdesc:a3677969192f8e280282a56ee122a6c9c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns if this view module can support image capture.  <a href="#a3677969192f8e280282a56ee122a6c9c">More...</a><br /></td></tr>
+<tr class="separator:a3677969192f8e280282a56ee122a6c9c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adec73e4736e6032c2ba048305e218fe2"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpqContextView.html#adec73e4736e6032c2ba048305e218fe2">setSelectionAction</a> (<a class="elRef" doxygen="/home/kitware/dashboards/buildbot/paraview_master-vall-linux-shared-debug_doc_extdeps_gui_mpi_python3/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkShaderProgram2_8h.html#a61569f2965b7a369eb10b6d75d410d11">int</a> selAction)</td></tr>
 <tr class="memdesc:adec73e4736e6032c2ba048305e218fe2"><td class="mdescLeft">&#160;</td><td class="mdescRight">set/get the selection action in the context view, defined by <a class="elRef" doxygen="/home/kitware/dashboards/buildbot/paraview_master-vall-linux-shared-debug_doc_extdeps_gui_mpi_python3/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/classvtkChart.html">vtkChart</a> enumeration from SELECT to SELECT_POLYGON.  <a href="#adec73e4736e6032c2ba048305e218fe2">More...</a><br /></td></tr>
 <tr class="separator:adec73e4736e6032c2ba048305e218fe2"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -537,6 +540,38 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
+<a id="a3677969192f8e280282a56ee122a6c9c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3677969192f8e280282a56ee122a6c9c">&#9670;&nbsp;</a></span>supportsCapture()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool pqContextView::supportsCapture </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns if this view module can support image capture. </p>
+<p>Returns false by default. Subclassess must override if that's not the case. </p>
+
+<p>Reimplemented from <a class="el" href="classpqView.html#ab02a365b39bd3893e1c516fb4cf43596">pqView</a>.</p>
+
+<p class="definition">Definition at line <a class="el" href="pqContextView_8h_source.html#l00076">76</a> of file <a class="el" href="pqContextView_8h_source.html">pqContextView.h</a>.</p>
+
+</div>
+</div>
 <a id="adec73e4736e6032c2ba048305e218fe2"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#adec73e4736e6032c2ba048305e218fe2">&#9670;&nbsp;</a></span>setSelectionAction()</h2>
 
@@ -781,7 +816,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="pqContextView_8h_source.html#l00123">123</a> of file <a class="el" href="pqContextView_8h_source.html">pqContextView.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="pqContextView_8h_source.html#l00130">130</a> of file <a class="el" href="pqContextView_8h_source.html">pqContextView.h</a>.</p>
 
 </div>
 </div>

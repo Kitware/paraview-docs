@@ -63,7 +63,7 @@ Friends</h2></td></tr>
 <div class="textblock"><p>This defines a stream manipulator for the <a class="el" href="classvtkClientServerStream.html" title="Store messages for the interpreter. ">vtkClientServerStream</a> that can be used to indicate to the interpreter that the placeholder is to be replaced by the <a class="elRef" doxygen="/home/kitware/dashboards/buildbot/paraview_master-vall-linux-shared-debug_doc_extdeps_gui_mpi_python3/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/classvtkObject.html">vtkObject</a> instance for the given <a class="el" href="classvtkSMProxy.html" title="proxy for a VTK object(s) on a server ">vtkSMProxy</a> instance. </p>
 <p>e.g. </p><div class="fragment"><div class="line"><a class="code" href="classvtkClientServerStream.html">vtkClientServerStream</a> stream;</div><div class="line">stream &lt;&lt; <a class="code" href="classvtkClientServerStream.html#a7b23d824f9c111f4f1df5478b8fe0cc1abbe3aa7f2653176732b6bc6b070641c6">vtkClientServerStream::Invoke</a></div><div class="line">       &lt;&lt; <a class="code" href="classVTKOBJECT.html#a570bfdda6a0c590791aba76a9b8ee7da">VTKOBJECT</a>(proxyA)</div><div class="line">       &lt;&lt; <span class="stringliteral">&quot;MethodName&quot;</span></div><div class="line">       &lt;&lt; <a class="code" href="classvtkClientServerStream.html#af7830844c84af47a8d4abae6364bfc93ac2af6e5d0ffc4cd2a444044314e3c038">vtkClientServerStream::End</a>;</div></div><!-- fragment --><p> Will result in calling the vtkClassName::MethodName() when the stream in interpreted where vtkClassName is the type for the VTKObject which the proxyA represents. </p>
 
-<p class="definition">Definition at line <a class="el" href="vtkSMProxy_8h_source.html#l01002">1002</a> of file <a class="el" href="vtkSMProxy_8h_source.html">vtkSMProxy.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vtkSMProxy_8h_source.html#l01037">1037</a> of file <a class="el" href="vtkSMProxy_8h_source.html">vtkSMProxy.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a570bfdda6a0c590791aba76a9b8ee7da"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a570bfdda6a0c590791aba76a9b8ee7da">&#9670;&nbsp;</a></span>VTKOBJECT()</h2>
@@ -89,7 +89,7 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="vtkSMProxy_8h_source.html#l01009">1009</a> of file <a class="el" href="vtkSMProxy_8h_source.html">vtkSMProxy.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vtkSMProxy_8h_source.html#l01044">1044</a> of file <a class="el" href="vtkSMProxy_8h_source.html">vtkSMProxy.h</a>.</p>
 
 </div>
 </div>

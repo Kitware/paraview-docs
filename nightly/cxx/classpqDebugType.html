@@ -44,9 +44,6 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
-<p><a class="el" href="classpqDebugType.html" title="pqDebugType provides a mechanism for application to define categories for debugging various component...">pqDebugType</a> provides a mechanism for application to define categories for debugging various components of the UI.  
- <a href="classpqDebugType.html#details">More...</a></p>
-
 <p><code>#include &lt;<a class="el" href="pqDebug_8h_source.html">pqDebug.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
@@ -64,9 +61,10 @@ Protected Attributes</h2></td></tr>
 <tr class="separator:a3d844bc1d62c22fd4e59db5a32f25c7e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p><a class="el" href="classpqDebugType.html" title="pqDebugType provides a mechanism for application to define categories for debugging various component...">pqDebugType</a> provides a mechanism for application to define categories for debugging various components of the UI. </p>
-<p>By passing an appropriate name for the envVariable in the constructor, the debug output will only be generated when that variable is set. For example, if you want to put out debug messages when an environment variable MY_DEBUG_FOO is defined, you can do the following: </p><div class="fragment"><div class="line"><a class="code" href="pqDebug_8h.html#a5f85e5f1568a2a5139a37e889bcf8d67">pqDebug</a>(<span class="stringliteral">&quot;MY_DEBUG_FOO&quot;</span>) &lt;&lt; <span class="stringliteral">&quot;This will be printed when MY_DEBUG_FOO &quot;</span></div><div class="line">                        &lt;&lt; <span class="stringliteral">&quot;is defined.&quot;</span>;</div></div><!-- fragment --> 
-<p class="definition">Definition at line <a class="el" href="pqDebug_8h_source.html#l00050">50</a> of file <a class="el" href="pqDebug_8h_source.html">pqDebug.h</a>.</p>
+<div class="textblock"><dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000006">Deprecated:</a></b></dt><dd>in ParaView 5.7.</dd></dl>
+<p>Use vtkLogger / <a class="el" href="classvtkPVLogger.html" title="defines various logging categories for ParaView ">vtkPVLogger</a> instead. </p>
+
+<p class="definition">Definition at line <a class="el" href="pqDebug_8h_source.html#l00044">44</a> of file <a class="el" href="pqDebug_8h_source.html">pqDebug.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="abec6bf5b359eb21569d36323e1121877"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#abec6bf5b359eb21569d36323e1121877">&#9670;&nbsp;</a></span>pqDebugType()</h2>
@@ -135,7 +133,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="pqDebug_8h_source.html#l00062">62</a> of file <a class="el" href="pqDebug_8h_source.html">pqDebug.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="pqDebug_8h_source.html#l00055">55</a> of file <a class="el" href="pqDebug_8h_source.html">pqDebug.h</a>.</p>
 
 </div>
 </div>
@@ -160,7 +158,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="pqDebug_8h_source.html#l00053">53</a> of file <a class="el" href="pqDebug_8h_source.html">pqDebug.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="pqDebug_8h_source.html#l00047">47</a> of file <a class="el" href="pqDebug_8h_source.html">pqDebug.h</a>.</p>
 
 </div>
 </div>

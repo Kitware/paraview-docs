@@ -295,6 +295,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:abe93b18b159b8bcc0784e54a09aa7156"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkSMProxy.html#abe93b18b159b8bcc0784e54a09aa7156">GetNumberOfPropertyGroups</a> () const</td></tr>
 <tr class="memdesc:abe93b18b159b8bcc0784e54a09aa7156"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the number of property groups that the proxy contains.  <a href="#abe93b18b159b8bcc0784e54a09aa7156">More...</a><br /></td></tr>
 <tr class="separator:abe93b18b159b8bcc0784e54a09aa7156"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab2d1b6c68b2e5ba5f5f0afaf1fe1028b"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkSMProxy.html#ab2d1b6c68b2e5ba5f5f0afaf1fe1028b">GetLogNameOrDefault</a> ()</td></tr>
+<tr class="memdesc:ab2d1b6c68b2e5ba5f5f0afaf1fe1028b"><td class="mdescLeft">&#160;</td><td class="mdescRight">A helper that makes up an default name if none is provided.  <a href="#ab2d1b6c68b2e5ba5f5f0afaf1fe1028b">More...</a><br /></td></tr>
+<tr class="separator:ab2d1b6c68b2e5ba5f5f0afaf1fe1028b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr><td colspan="2"><div class="groupHeader"></div></td></tr>
 <tr class="memitem:af5c227af88f8339e98a98bd08f52b170"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkSMProxy.html#af5c227af88f8339e98a98bd08f52b170">UpdateProperty</a> (const char *<a class="elRef" doxygen="/home/kitware/dashboards/buildbot/paraview_master-vall-linux-shared-debug_doc_extdeps_gui_mpi_python3/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/namespacevtkX3D.html#ac6551f7bf833e8254b2b3ecdaea0d210ac713735f1d46c2694d66e85217207be2">name</a>)</td></tr>
 <tr class="memdesc:af5c227af88f8339e98a98bd08f52b170"><td class="mdescLeft">&#160;</td><td class="mdescRight">Update the value of one property (pushed to the server) if it is modified.  <a href="#af5c227af88f8339e98a98bd08f52b170">More...</a><br /></td></tr>
@@ -361,6 +364,13 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:aa345570ac22d63390a81c2e91899171b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkSMProxy.html#aa345570ac22d63390a81c2e91899171b">SetPrototype</a> (bool undo) override</td></tr>
 <tr class="memdesc:aa345570ac22d63390a81c2e91899171b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allow user to set the remote object to be discard for Undo/Redo action.  <a href="#aa345570ac22d63390a81c2e91899171b">More...</a><br /></td></tr>
 <tr class="separator:aa345570ac22d63390a81c2e91899171b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr><td colspan="2"><div class="groupHeader"></div></td></tr>
+<tr class="memitem:a94c0f7559ae64a081df32870ae3c49f0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkSMProxy.html#a94c0f7559ae64a081df32870ae3c49f0">SetLogName</a> (const char *<a class="elRef" doxygen="/home/kitware/dashboards/buildbot/paraview_master-vall-linux-shared-debug_doc_extdeps_gui_mpi_python3/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/namespacevtkX3D.html#ac6551f7bf833e8254b2b3ecdaea0d210ac713735f1d46c2694d66e85217207be2">name</a>)</td></tr>
+<tr class="memdesc:a94c0f7559ae64a081df32870ae3c49f0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Log name is a name for this proxy that will be used when logging status messages.  <a href="#a94c0f7559ae64a081df32870ae3c49f0">More...</a><br /></td></tr>
+<tr class="separator:a94c0f7559ae64a081df32870ae3c49f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa9eadff2d037fd2ae1efa1e117511692"><td class="memItemLeft" align="right" valign="top">virtual char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkSMProxy.html#aa9eadff2d037fd2ae1efa1e117511692">GetLogName</a> ()</td></tr>
+<tr class="memdesc:aa9eadff2d037fd2ae1efa1e117511692"><td class="mdescLeft">&#160;</td><td class="mdescRight">Log name is a name for this proxy that will be used when logging status messages.  <a href="#aa9eadff2d037fd2ae1efa1e117511692">More...</a><br /></td></tr>
+<tr class="separator:aa9eadff2d037fd2ae1efa1e117511692"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classvtkSMRemoteObject"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classvtkSMRemoteObject')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classvtkSMRemoteObject.html">vtkSMRemoteObject</a></td></tr>
 <tr class="memitem:ae67198d54c9f1c9f7a12c481449b7c40 inherit pub_methods_classvtkSMRemoteObject"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkSMRemoteObject.html#ae67198d54c9f1c9f7a12c481449b7c40">PrintSelf</a> (ostream &amp;os, <a class="elRef" doxygen="/home/kitware/dashboards/buildbot/paraview_master-vall-linux-shared-debug_doc_extdeps_gui_mpi_python3/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/classvtkIndent.html">vtkIndent</a> indent) override</td></tr>
 <tr class="separator:ae67198d54c9f1c9f7a12c481449b7c40 inherit pub_methods_classvtkSMRemoteObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -659,6 +669,9 @@ Protected Member Functions</h2></td></tr>
 <tr class="memitem:ac52303ddc7c415bea63781d5b926e130"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkSMProxy.html#ac52303ddc7c415bea63781d5b926e130">RebuildStateForProperties</a> ()</td></tr>
 <tr class="memdesc:ac52303ddc7c415bea63781d5b926e130"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classvtkSMProxy.html" title="proxy for a VTK object(s) on a server ">vtkSMProxy</a> tracks state of properties on this proxy in an internal State object.  <a href="#ac52303ddc7c415bea63781d5b926e130">More...</a><br /></td></tr>
 <tr class="separator:ac52303ddc7c415bea63781d5b926e130"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a332c96f836f7ba6db8cd78e4bb593157"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkSMProxy.html#a332c96f836f7ba6db8cd78e4bb593157">SetLogNameInternal</a> (const char *<a class="elRef" doxygen="/home/kitware/dashboards/buildbot/paraview_master-vall-linux-shared-debug_doc_extdeps_gui_mpi_python3/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/namespacevtkX3D.html#ac6551f7bf833e8254b2b3ecdaea0d210ac713735f1d46c2694d66e85217207be2">name</a>, bool propagate_to_subproxies, bool propagate_to_proxylistdomains)</td></tr>
+<tr class="memdesc:a332c96f836f7ba6db8cd78e4bb593157"><td class="mdescLeft">&#160;</td><td class="mdescRight">Internal method used by <code>SetLogName</code>  <a href="#a332c96f836f7ba6db8cd78e4bb593157">More...</a><br /></td></tr>
+<tr class="separator:a332c96f836f7ba6db8cd78e4bb593157"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a779de6d211add8e205412ab9e3d23ab7"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkSMProxy.html#a779de6d211add8e205412ab9e3d23ab7">ArePropertiesModified</a> ()</td></tr>
 <tr class="memdesc:a779de6d211add8e205412ab9e3d23ab7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates if any properties are modified.  <a href="#a779de6d211add8e205412ab9e3d23ab7">More...</a><br /></td></tr>
 <tr class="separator:a779de6d211add8e205412ab9e3d23ab7"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -903,6 +916,9 @@ Friends</h2></td></tr>
 <tr class="memitem:aaee77187ec57ddd6799cc6413f09b407"><td class="memItemLeft" align="right" valign="top">class&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkSMProxy.html#aaee77187ec57ddd6799cc6413f09b407">vtkSMMultiServerSourceProxy</a></td></tr>
 <tr class="memdesc:aaee77187ec57ddd6799cc6413f09b407"><td class="mdescLeft">&#160;</td><td class="mdescRight">These classes have been declared as friends to minimize the public interface exposed by <a class="el" href="classvtkSMProxy.html" title="proxy for a VTK object(s) on a server ">vtkSMProxy</a>.  <a href="#aaee77187ec57ddd6799cc6413f09b407">More...</a><br /></td></tr>
 <tr class="separator:aaee77187ec57ddd6799cc6413f09b407"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa309a59e9a1e80f2bdd4993d1cb28a4b"><td class="memItemLeft" align="right" valign="top">class&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkSMProxy.html#aa309a59e9a1e80f2bdd4993d1cb28a4b">vtkSMStateLoader</a></td></tr>
+<tr class="memdesc:aa309a59e9a1e80f2bdd4993d1cb28a4b"><td class="mdescLeft">&#160;</td><td class="mdescRight">These classes have been declared as friends to minimize the public interface exposed by <a class="el" href="classvtkSMProxy.html" title="proxy for a VTK object(s) on a server ">vtkSMProxy</a>.  <a href="#aa309a59e9a1e80f2bdd4993d1cb28a4b">More...</a><br /></td></tr>
+<tr class="separator:aa309a59e9a1e80f2bdd4993d1cb28a4b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9b94dda967c465977df2effb1945a68f"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkSMProxy.html#a9b94dda967c465977df2effb1945a68f">SIClassName</a></td></tr>
 <tr class="memdesc:a9b94dda967c465977df2effb1945a68f"><td class="mdescLeft">&#160;</td><td class="mdescRight">SIClassName identifies the classname for the helper on the server side.  <a href="#a9b94dda967c465977df2effb1945a68f">More...</a><br /></td></tr>
 <tr class="separator:a9b94dda967c465977df2effb1945a68f"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -2910,6 +2926,80 @@ Friends</h2></td></tr>
 
 </div>
 </div>
+<a id="a94c0f7559ae64a081df32870ae3c49f0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a94c0f7559ae64a081df32870ae3c49f0">&#9670;&nbsp;</a></span>SetLogName()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void vtkSMProxy::SetLogName </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>name</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Log name is a name for this proxy that will be used when logging status messages. </p>
+<p>This helps make the log more user friendly by making sure it uses names that the user can easily map to objects shown in the user interface.</p>
+<p>This method will set the log name for this proxy and iterate over all subproxies and set log name for each using the provided <code>name</code> as prefix.</p>
+<p>Furthermore, for all properties with <a class="el" href="classvtkSMProxyListDomain.html" title="union of proxies. ">vtkSMProxyListDomain</a>, it will set log name for proxies in those domains to use the provided <code>name</code> as prefix as well.</p>
+<dl class="section note"><dt>Note</dt><dd>The use of this name for any other purpose than logging is strictly discouraged. </dd></dl>
+
+</div>
+</div>
+<a id="aa9eadff2d037fd2ae1efa1e117511692"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa9eadff2d037fd2ae1efa1e117511692">&#9670;&nbsp;</a></span>GetLogName()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual char* vtkSMProxy::GetLogName </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Log name is a name for this proxy that will be used when logging status messages. </p>
+<p>This helps make the log more user friendly by making sure it uses names that the user can easily map to objects shown in the user interface.</p>
+<p>This method will set the log name for this proxy and iterate over all subproxies and set log name for each using the provided <code>name</code> as prefix.</p>
+<p>Furthermore, for all properties with <a class="el" href="classvtkSMProxyListDomain.html" title="union of proxies. ">vtkSMProxyListDomain</a>, it will set log name for proxies in those domains to use the provided <code>name</code> as prefix as well.</p>
+<dl class="section note"><dt>Note</dt><dd>The use of this name for any other purpose than logging is strictly discouraged. </dd></dl>
+
+</div>
+</div>
+<a id="ab2d1b6c68b2e5ba5f5f0afaf1fe1028b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab2d1b6c68b2e5ba5f5f0afaf1fe1028b">&#9670;&nbsp;</a></span>GetLogNameOrDefault()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char* vtkSMProxy::GetLogNameOrDefault </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>A helper that makes up an default name if none is provided. </p>
+
+</div>
+</div>
 <a id="aff7935bc005d280d05948c75d579fc2f"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aff7935bc005d280d05948c75d579fc2f">&#9670;&nbsp;</a></span>ExecuteStream()</h2>
 
@@ -4292,6 +4382,50 @@ Friends</h2></td></tr>
 
 </div>
 </div>
+<a id="a332c96f836f7ba6db8cd78e4bb593157"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a332c96f836f7ba6db8cd78e4bb593157">&#9670;&nbsp;</a></span>SetLogNameInternal()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void vtkSMProxy::SetLogNameInternal </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>propagate_to_subproxies</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>propagate_to_proxylistdomains</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Internal method used by <code>SetLogName</code> </p>
+
+</div>
+</div>
 <a id="a3234684003cdae11c5fb27c33bd1d076"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a3234684003cdae11c5fb27c33bd1d076">&#9670;&nbsp;</a></span>SetSIClassName()</h2>
 
@@ -4502,7 +4636,7 @@ Friends</h2></td></tr>
 <p>These classes have been declared as friends to minimize the public interface exposed by <a class="el" href="classvtkSMProxy.html" title="proxy for a VTK object(s) on a server ">vtkSMProxy</a>. </p>
 <p>Each of these classes use a small subset of protected methods. This should be kept as such. </p>
 
-<p class="definition">Definition at line <a class="el" href="vtkSMProxy_8h_source.html#l00647">647</a> of file <a class="el" href="vtkSMProxy_8h_source.html">vtkSMProxy.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vtkSMProxy_8h_source.html#l00672">672</a> of file <a class="el" href="vtkSMProxy_8h_source.html">vtkSMProxy.h</a>.</p>
 
 </div>
 </div>
@@ -4529,7 +4663,7 @@ Friends</h2></td></tr>
 <p>These classes have been declared as friends to minimize the public interface exposed by <a class="el" href="classvtkSMProxy.html" title="proxy for a VTK object(s) on a server ">vtkSMProxy</a>. </p>
 <p>Each of these classes use a small subset of protected methods. This should be kept as such. </p>
 
-<p class="definition">Definition at line <a class="el" href="vtkSMProxy_8h_source.html#l00648">648</a> of file <a class="el" href="vtkSMProxy_8h_source.html">vtkSMProxy.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vtkSMProxy_8h_source.html#l00673">673</a> of file <a class="el" href="vtkSMProxy_8h_source.html">vtkSMProxy.h</a>.</p>
 
 </div>
 </div>
@@ -4556,7 +4690,7 @@ Friends</h2></td></tr>
 <p>These classes have been declared as friends to minimize the public interface exposed by <a class="el" href="classvtkSMProxy.html" title="proxy for a VTK object(s) on a server ">vtkSMProxy</a>. </p>
 <p>Each of these classes use a small subset of protected methods. This should be kept as such. </p>
 
-<p class="definition">Definition at line <a class="el" href="vtkSMProxy_8h_source.html#l00649">649</a> of file <a class="el" href="vtkSMProxy_8h_source.html">vtkSMProxy.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vtkSMProxy_8h_source.html#l00674">674</a> of file <a class="el" href="vtkSMProxy_8h_source.html">vtkSMProxy.h</a>.</p>
 
 </div>
 </div>
@@ -4583,7 +4717,7 @@ Friends</h2></td></tr>
 <p>These classes have been declared as friends to minimize the public interface exposed by <a class="el" href="classvtkSMProxy.html" title="proxy for a VTK object(s) on a server ">vtkSMProxy</a>. </p>
 <p>Each of these classes use a small subset of protected methods. This should be kept as such. </p>
 
-<p class="definition">Definition at line <a class="el" href="vtkSMProxy_8h_source.html#l00650">650</a> of file <a class="el" href="vtkSMProxy_8h_source.html">vtkSMProxy.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vtkSMProxy_8h_source.html#l00675">675</a> of file <a class="el" href="vtkSMProxy_8h_source.html">vtkSMProxy.h</a>.</p>
 
 </div>
 </div>
@@ -4610,7 +4744,7 @@ Friends</h2></td></tr>
 <p>These classes have been declared as friends to minimize the public interface exposed by <a class="el" href="classvtkSMProxy.html" title="proxy for a VTK object(s) on a server ">vtkSMProxy</a>. </p>
 <p>Each of these classes use a small subset of protected methods. This should be kept as such. </p>
 
-<p class="definition">Definition at line <a class="el" href="vtkSMProxy_8h_source.html#l00651">651</a> of file <a class="el" href="vtkSMProxy_8h_source.html">vtkSMProxy.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vtkSMProxy_8h_source.html#l00676">676</a> of file <a class="el" href="vtkSMProxy_8h_source.html">vtkSMProxy.h</a>.</p>
 
 </div>
 </div>
@@ -4637,7 +4771,7 @@ Friends</h2></td></tr>
 <p>These classes have been declared as friends to minimize the public interface exposed by <a class="el" href="classvtkSMProxy.html" title="proxy for a VTK object(s) on a server ">vtkSMProxy</a>. </p>
 <p>Each of these classes use a small subset of protected methods. This should be kept as such. </p>
 
-<p class="definition">Definition at line <a class="el" href="vtkSMProxy_8h_source.html#l00652">652</a> of file <a class="el" href="vtkSMProxy_8h_source.html">vtkSMProxy.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vtkSMProxy_8h_source.html#l00677">677</a> of file <a class="el" href="vtkSMProxy_8h_source.html">vtkSMProxy.h</a>.</p>
 
 </div>
 </div>
@@ -4664,7 +4798,7 @@ Friends</h2></td></tr>
 <p>These classes have been declared as friends to minimize the public interface exposed by <a class="el" href="classvtkSMProxy.html" title="proxy for a VTK object(s) on a server ">vtkSMProxy</a>. </p>
 <p>Each of these classes use a small subset of protected methods. This should be kept as such. </p>
 
-<p class="definition">Definition at line <a class="el" href="vtkSMProxy_8h_source.html#l00653">653</a> of file <a class="el" href="vtkSMProxy_8h_source.html">vtkSMProxy.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vtkSMProxy_8h_source.html#l00678">678</a> of file <a class="el" href="vtkSMProxy_8h_source.html">vtkSMProxy.h</a>.</p>
 
 </div>
 </div>
@@ -4691,7 +4825,7 @@ Friends</h2></td></tr>
 <p>These classes have been declared as friends to minimize the public interface exposed by <a class="el" href="classvtkSMProxy.html" title="proxy for a VTK object(s) on a server ">vtkSMProxy</a>. </p>
 <p>Each of these classes use a small subset of protected methods. This should be kept as such. </p>
 
-<p class="definition">Definition at line <a class="el" href="vtkSMProxy_8h_source.html#l00654">654</a> of file <a class="el" href="vtkSMProxy_8h_source.html">vtkSMProxy.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vtkSMProxy_8h_source.html#l00679">679</a> of file <a class="el" href="vtkSMProxy_8h_source.html">vtkSMProxy.h</a>.</p>
 
 </div>
 </div>
@@ -4718,7 +4852,7 @@ Friends</h2></td></tr>
 <p>These classes have been declared as friends to minimize the public interface exposed by <a class="el" href="classvtkSMProxy.html" title="proxy for a VTK object(s) on a server ">vtkSMProxy</a>. </p>
 <p>Each of these classes use a small subset of protected methods. This should be kept as such. </p>
 
-<p class="definition">Definition at line <a class="el" href="vtkSMProxy_8h_source.html#l00655">655</a> of file <a class="el" href="vtkSMProxy_8h_source.html">vtkSMProxy.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vtkSMProxy_8h_source.html#l00680">680</a> of file <a class="el" href="vtkSMProxy_8h_source.html">vtkSMProxy.h</a>.</p>
 
 </div>
 </div>
@@ -4745,7 +4879,7 @@ Friends</h2></td></tr>
 <p>These classes have been declared as friends to minimize the public interface exposed by <a class="el" href="classvtkSMProxy.html" title="proxy for a VTK object(s) on a server ">vtkSMProxy</a>. </p>
 <p>Each of these classes use a small subset of protected methods. This should be kept as such. </p>
 
-<p class="definition">Definition at line <a class="el" href="vtkSMProxy_8h_source.html#l00656">656</a> of file <a class="el" href="vtkSMProxy_8h_source.html">vtkSMProxy.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vtkSMProxy_8h_source.html#l00681">681</a> of file <a class="el" href="vtkSMProxy_8h_source.html">vtkSMProxy.h</a>.</p>
 
 </div>
 </div>
@@ -4772,7 +4906,7 @@ Friends</h2></td></tr>
 <p>These classes have been declared as friends to minimize the public interface exposed by <a class="el" href="classvtkSMProxy.html" title="proxy for a VTK object(s) on a server ">vtkSMProxy</a>. </p>
 <p>Each of these classes use a small subset of protected methods. This should be kept as such. </p>
 
-<p class="definition">Definition at line <a class="el" href="vtkSMProxy_8h_source.html#l00657">657</a> of file <a class="el" href="vtkSMProxy_8h_source.html">vtkSMProxy.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vtkSMProxy_8h_source.html#l00682">682</a> of file <a class="el" href="vtkSMProxy_8h_source.html">vtkSMProxy.h</a>.</p>
 
 </div>
 </div>
@@ -4799,7 +4933,7 @@ Friends</h2></td></tr>
 <p>These classes have been declared as friends to minimize the public interface exposed by <a class="el" href="classvtkSMProxy.html" title="proxy for a VTK object(s) on a server ">vtkSMProxy</a>. </p>
 <p>Each of these classes use a small subset of protected methods. This should be kept as such. </p>
 
-<p class="definition">Definition at line <a class="el" href="vtkSMProxy_8h_source.html#l00658">658</a> of file <a class="el" href="vtkSMProxy_8h_source.html">vtkSMProxy.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vtkSMProxy_8h_source.html#l00683">683</a> of file <a class="el" href="vtkSMProxy_8h_source.html">vtkSMProxy.h</a>.</p>
 
 </div>
 </div>
@@ -4826,7 +4960,7 @@ Friends</h2></td></tr>
 <p>These classes have been declared as friends to minimize the public interface exposed by <a class="el" href="classvtkSMProxy.html" title="proxy for a VTK object(s) on a server ">vtkSMProxy</a>. </p>
 <p>Each of these classes use a small subset of protected methods. This should be kept as such. </p>
 
-<p class="definition">Definition at line <a class="el" href="vtkSMProxy_8h_source.html#l00659">659</a> of file <a class="el" href="vtkSMProxy_8h_source.html">vtkSMProxy.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vtkSMProxy_8h_source.html#l00684">684</a> of file <a class="el" href="vtkSMProxy_8h_source.html">vtkSMProxy.h</a>.</p>
 
 </div>
 </div>
@@ -4853,7 +4987,7 @@ Friends</h2></td></tr>
 <p>These classes have been declared as friends to minimize the public interface exposed by <a class="el" href="classvtkSMProxy.html" title="proxy for a VTK object(s) on a server ">vtkSMProxy</a>. </p>
 <p>Each of these classes use a small subset of protected methods. This should be kept as such. </p>
 
-<p class="definition">Definition at line <a class="el" href="vtkSMProxy_8h_source.html#l00660">660</a> of file <a class="el" href="vtkSMProxy_8h_source.html">vtkSMProxy.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vtkSMProxy_8h_source.html#l00685">685</a> of file <a class="el" href="vtkSMProxy_8h_source.html">vtkSMProxy.h</a>.</p>
 
 </div>
 </div>
@@ -4880,7 +5014,7 @@ Friends</h2></td></tr>
 <p>These classes have been declared as friends to minimize the public interface exposed by <a class="el" href="classvtkSMProxy.html" title="proxy for a VTK object(s) on a server ">vtkSMProxy</a>. </p>
 <p>Each of these classes use a small subset of protected methods. This should be kept as such. </p>
 
-<p class="definition">Definition at line <a class="el" href="vtkSMProxy_8h_source.html#l00661">661</a> of file <a class="el" href="vtkSMProxy_8h_source.html">vtkSMProxy.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vtkSMProxy_8h_source.html#l00686">686</a> of file <a class="el" href="vtkSMProxy_8h_source.html">vtkSMProxy.h</a>.</p>
 
 </div>
 </div>
@@ -4907,7 +5041,7 @@ Friends</h2></td></tr>
 <p>These classes have been declared as friends to minimize the public interface exposed by <a class="el" href="classvtkSMProxy.html" title="proxy for a VTK object(s) on a server ">vtkSMProxy</a>. </p>
 <p>Each of these classes use a small subset of protected methods. This should be kept as such. </p>
 
-<p class="definition">Definition at line <a class="el" href="vtkSMProxy_8h_source.html#l00662">662</a> of file <a class="el" href="vtkSMProxy_8h_source.html">vtkSMProxy.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vtkSMProxy_8h_source.html#l00687">687</a> of file <a class="el" href="vtkSMProxy_8h_source.html">vtkSMProxy.h</a>.</p>
 
 </div>
 </div>
@@ -4934,7 +5068,7 @@ Friends</h2></td></tr>
 <p>These classes have been declared as friends to minimize the public interface exposed by <a class="el" href="classvtkSMProxy.html" title="proxy for a VTK object(s) on a server ">vtkSMProxy</a>. </p>
 <p>Each of these classes use a small subset of protected methods. This should be kept as such. </p>
 
-<p class="definition">Definition at line <a class="el" href="vtkSMProxy_8h_source.html#l00663">663</a> of file <a class="el" href="vtkSMProxy_8h_source.html">vtkSMProxy.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vtkSMProxy_8h_source.html#l00688">688</a> of file <a class="el" href="vtkSMProxy_8h_source.html">vtkSMProxy.h</a>.</p>
 
 </div>
 </div>
@@ -4961,7 +5095,7 @@ Friends</h2></td></tr>
 <p>These classes have been declared as friends to minimize the public interface exposed by <a class="el" href="classvtkSMProxy.html" title="proxy for a VTK object(s) on a server ">vtkSMProxy</a>. </p>
 <p>Each of these classes use a small subset of protected methods. This should be kept as such. </p>
 
-<p class="definition">Definition at line <a class="el" href="vtkSMProxy_8h_source.html#l00664">664</a> of file <a class="el" href="vtkSMProxy_8h_source.html">vtkSMProxy.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vtkSMProxy_8h_source.html#l00689">689</a> of file <a class="el" href="vtkSMProxy_8h_source.html">vtkSMProxy.h</a>.</p>
 
 </div>
 </div>
@@ -4988,7 +5122,34 @@ Friends</h2></td></tr>
 <p>These classes have been declared as friends to minimize the public interface exposed by <a class="el" href="classvtkSMProxy.html" title="proxy for a VTK object(s) on a server ">vtkSMProxy</a>. </p>
 <p>Each of these classes use a small subset of protected methods. This should be kept as such. </p>
 
-<p class="definition">Definition at line <a class="el" href="vtkSMProxy_8h_source.html#l00665">665</a> of file <a class="el" href="vtkSMProxy_8h_source.html">vtkSMProxy.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vtkSMProxy_8h_source.html#l00690">690</a> of file <a class="el" href="vtkSMProxy_8h_source.html">vtkSMProxy.h</a>.</p>
+
+</div>
+</div>
+<a id="aa309a59e9a1e80f2bdd4993d1cb28a4b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa309a59e9a1e80f2bdd4993d1cb28a4b">&#9670;&nbsp;</a></span>vtkSMStateLoader</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">friend class <a class="el" href="classvtkSMStateLoader.html">vtkSMStateLoader</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">friend</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>These classes have been declared as friends to minimize the public interface exposed by <a class="el" href="classvtkSMProxy.html" title="proxy for a VTK object(s) on a server ">vtkSMProxy</a>. </p>
+<p>Each of these classes use a small subset of protected methods. This should be kept as such. </p>
+
+<p class="definition">Definition at line <a class="el" href="vtkSMProxy_8h_source.html#l00691">691</a> of file <a class="el" href="vtkSMProxy_8h_source.html">vtkSMProxy.h</a>.</p>
 
 </div>
 </div>
@@ -5012,7 +5173,7 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="vtkSMProxy_8h_source.html#l00963">963</a> of file <a class="el" href="vtkSMProxy_8h_source.html">vtkSMProxy.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vtkSMProxy_8h_source.html#l00995">995</a> of file <a class="el" href="vtkSMProxy_8h_source.html">vtkSMProxy.h</a>.</p>
 
 </div>
 </div>
@@ -5037,7 +5198,7 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="vtkSMProxy_8h_source.html#l00832">832</a> of file <a class="el" href="vtkSMProxy_8h_source.html">vtkSMProxy.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vtkSMProxy_8h_source.html#l00858">858</a> of file <a class="el" href="vtkSMProxy_8h_source.html">vtkSMProxy.h</a>.</p>
 
 </div>
 </div>
@@ -5063,7 +5224,7 @@ Friends</h2></td></tr>
 
 <p>SIClassName identifies the classname for the helper on the server side. </p>
 
-<p class="definition">Definition at line <a class="el" href="vtkSMProxy_8h_source.html#l00905">905</a> of file <a class="el" href="vtkSMProxy_8h_source.html">vtkSMProxy.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vtkSMProxy_8h_source.html#l00937">937</a> of file <a class="el" href="vtkSMProxy_8h_source.html">vtkSMProxy.h</a>.</p>
 
 </div>
 </div>
@@ -5087,7 +5248,7 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="vtkSMProxy_8h_source.html#l00909">909</a> of file <a class="el" href="vtkSMProxy_8h_source.html">vtkSMProxy.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vtkSMProxy_8h_source.html#l00941">941</a> of file <a class="el" href="vtkSMProxy_8h_source.html">vtkSMProxy.h</a>.</p>
 
 </div>
 </div>
@@ -5111,7 +5272,7 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="vtkSMProxy_8h_source.html#l00910">910</a> of file <a class="el" href="vtkSMProxy_8h_source.html">vtkSMProxy.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vtkSMProxy_8h_source.html#l00942">942</a> of file <a class="el" href="vtkSMProxy_8h_source.html">vtkSMProxy.h</a>.</p>
 
 </div>
 </div>
@@ -5135,7 +5296,7 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="vtkSMProxy_8h_source.html#l00911">911</a> of file <a class="el" href="vtkSMProxy_8h_source.html">vtkSMProxy.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vtkSMProxy_8h_source.html#l00943">943</a> of file <a class="el" href="vtkSMProxy_8h_source.html">vtkSMProxy.h</a>.</p>
 
 </div>
 </div>
@@ -5159,7 +5320,7 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="vtkSMProxy_8h_source.html#l00912">912</a> of file <a class="el" href="vtkSMProxy_8h_source.html">vtkSMProxy.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vtkSMProxy_8h_source.html#l00944">944</a> of file <a class="el" href="vtkSMProxy_8h_source.html">vtkSMProxy.h</a>.</p>
 
 </div>
 </div>
@@ -5183,7 +5344,7 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="vtkSMProxy_8h_source.html#l00913">913</a> of file <a class="el" href="vtkSMProxy_8h_source.html">vtkSMProxy.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vtkSMProxy_8h_source.html#l00945">945</a> of file <a class="el" href="vtkSMProxy_8h_source.html">vtkSMProxy.h</a>.</p>
 
 </div>
 </div>
@@ -5207,7 +5368,7 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="vtkSMProxy_8h_source.html#l00914">914</a> of file <a class="el" href="vtkSMProxy_8h_source.html">vtkSMProxy.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vtkSMProxy_8h_source.html#l00946">946</a> of file <a class="el" href="vtkSMProxy_8h_source.html">vtkSMProxy.h</a>.</p>
 
 </div>
 </div>
@@ -5231,7 +5392,7 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="vtkSMProxy_8h_source.html#l00915">915</a> of file <a class="el" href="vtkSMProxy_8h_source.html">vtkSMProxy.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vtkSMProxy_8h_source.html#l00947">947</a> of file <a class="el" href="vtkSMProxy_8h_source.html">vtkSMProxy.h</a>.</p>
 
 </div>
 </div>
@@ -5255,7 +5416,7 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="vtkSMProxy_8h_source.html#l00916">916</a> of file <a class="el" href="vtkSMProxy_8h_source.html">vtkSMProxy.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vtkSMProxy_8h_source.html#l00948">948</a> of file <a class="el" href="vtkSMProxy_8h_source.html">vtkSMProxy.h</a>.</p>
 
 </div>
 </div>
@@ -5282,7 +5443,7 @@ Friends</h2></td></tr>
 <p>Avoids calls to UpdateVTKObjects in UpdateVTKObjects. </p>
 <p>UpdateVTKObjects call it self recursively until no properties are modified. </p>
 
-<p class="definition">Definition at line <a class="el" href="vtkSMProxy_8h_source.html#l00923">923</a> of file <a class="el" href="vtkSMProxy_8h_source.html">vtkSMProxy.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vtkSMProxy_8h_source.html#l00955">955</a> of file <a class="el" href="vtkSMProxy_8h_source.html">vtkSMProxy.h</a>.</p>
 
 </div>
 </div>
@@ -5308,7 +5469,7 @@ Friends</h2></td></tr>
 
 <p>Flag used to help speed up UpdateVTKObjects and ArePropertiesModified calls. </p>
 
-<p class="definition">Definition at line <a class="el" href="vtkSMProxy_8h_source.html#l00929">929</a> of file <a class="el" href="vtkSMProxy_8h_source.html">vtkSMProxy.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vtkSMProxy_8h_source.html#l00961">961</a> of file <a class="el" href="vtkSMProxy_8h_source.html">vtkSMProxy.h</a>.</p>
 
 </div>
 </div>
@@ -5332,7 +5493,7 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="vtkSMProxy_8h_source.html#l00940">940</a> of file <a class="el" href="vtkSMProxy_8h_source.html">vtkSMProxy.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vtkSMProxy_8h_source.html#l00972">972</a> of file <a class="el" href="vtkSMProxy_8h_source.html">vtkSMProxy.h</a>.</p>
 
 </div>
 </div>
@@ -5356,7 +5517,7 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="vtkSMProxy_8h_source.html#l00942">942</a> of file <a class="el" href="vtkSMProxy_8h_source.html">vtkSMProxy.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vtkSMProxy_8h_source.html#l00974">974</a> of file <a class="el" href="vtkSMProxy_8h_source.html">vtkSMProxy.h</a>.</p>
 
 </div>
 </div>
@@ -5380,7 +5541,7 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="vtkSMProxy_8h_source.html#l00943">943</a> of file <a class="el" href="vtkSMProxy_8h_source.html">vtkSMProxy.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vtkSMProxy_8h_source.html#l00975">975</a> of file <a class="el" href="vtkSMProxy_8h_source.html">vtkSMProxy.h</a>.</p>
 
 </div>
 </div>
@@ -5404,7 +5565,7 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="vtkSMProxy_8h_source.html#l00944">944</a> of file <a class="el" href="vtkSMProxy_8h_source.html">vtkSMProxy.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vtkSMProxy_8h_source.html#l00976">976</a> of file <a class="el" href="vtkSMProxy_8h_source.html">vtkSMProxy.h</a>.</p>
 
 </div>
 </div>
@@ -5428,7 +5589,7 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="vtkSMProxy_8h_source.html#l00947">947</a> of file <a class="el" href="vtkSMProxy_8h_source.html">vtkSMProxy.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vtkSMProxy_8h_source.html#l00979">979</a> of file <a class="el" href="vtkSMProxy_8h_source.html">vtkSMProxy.h</a>.</p>
 
 </div>
 </div>
@@ -5452,7 +5613,7 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="vtkSMProxy_8h_source.html#l00950">950</a> of file <a class="el" href="vtkSMProxy_8h_source.html">vtkSMProxy.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vtkSMProxy_8h_source.html#l00982">982</a> of file <a class="el" href="vtkSMProxy_8h_source.html">vtkSMProxy.h</a>.</p>
 
 </div>
 </div>
@@ -5476,7 +5637,7 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="vtkSMProxy_8h_source.html#l00952">952</a> of file <a class="el" href="vtkSMProxy_8h_source.html">vtkSMProxy.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vtkSMProxy_8h_source.html#l00984">984</a> of file <a class="el" href="vtkSMProxy_8h_source.html">vtkSMProxy.h</a>.</p>
 
 </div>
 </div>
@@ -5500,7 +5661,7 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="vtkSMProxy_8h_source.html#l00955">955</a> of file <a class="el" href="vtkSMProxy_8h_source.html">vtkSMProxy.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vtkSMProxy_8h_source.html#l00987">987</a> of file <a class="el" href="vtkSMProxy_8h_source.html">vtkSMProxy.h</a>.</p>
 
 </div>
 </div>
@@ -5524,7 +5685,7 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="vtkSMProxy_8h_source.html#l00956">956</a> of file <a class="el" href="vtkSMProxy_8h_source.html">vtkSMProxy.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vtkSMProxy_8h_source.html#l00988">988</a> of file <a class="el" href="vtkSMProxy_8h_source.html">vtkSMProxy.h</a>.</p>
 
 </div>
 </div>

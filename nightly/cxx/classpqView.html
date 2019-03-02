@@ -194,6 +194,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a2827c40f332411700e13179eb90eaf4c"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpqView.html#a2827c40f332411700e13179eb90eaf4c">supportsUndo</a> () const</td></tr>
 <tr class="memdesc:a2827c40f332411700e13179eb90eaf4c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns if this view module can support undo/redo.  <a href="#a2827c40f332411700e13179eb90eaf4c">More...</a><br /></td></tr>
 <tr class="separator:a2827c40f332411700e13179eb90eaf4c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab02a365b39bd3893e1c516fb4cf43596"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpqView.html#ab02a365b39bd3893e1c516fb4cf43596">supportsCapture</a> () const</td></tr>
+<tr class="memdesc:ab02a365b39bd3893e1c516fb4cf43596"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns if this view module can support image capture.  <a href="#ab02a365b39bd3893e1c516fb4cf43596">More...</a><br /></td></tr>
+<tr class="separator:ab02a365b39bd3893e1c516fb4cf43596"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a43e6ecb6a5dcfc7629fdffbfd2b5d981"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpqView.html#a43e6ecb6a5dcfc7629fdffbfd2b5d981">getViewType</a> () const</td></tr>
 <tr class="memdesc:a43e6ecb6a5dcfc7629fdffbfd2b5d981"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the type of this view module.  <a href="#a43e6ecb6a5dcfc7629fdffbfd2b5d981">More...</a><br /></td></tr>
 <tr class="separator:a43e6ecb6a5dcfc7629fdffbfd2b5d981"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -543,6 +546,38 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
+<a id="ab02a365b39bd3893e1c516fb4cf43596"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab02a365b39bd3893e1c516fb4cf43596">&#9670;&nbsp;</a></span>supportsCapture()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual bool pqView::supportsCapture </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns if this view module can support image capture. </p>
+<p>Returns false by default. Subclassess must override if that's not the case. </p>
+
+<p>Reimplemented in <a class="el" href="classpqRenderView.html#abebd8e14ce08438d2af1422ecffbe84c">pqRenderView</a>, and <a class="el" href="classpqContextView.html#a3677969192f8e280282a56ee122a6c9c">pqContextView</a>.</p>
+
+<p class="definition">Definition at line <a class="el" href="pqView_8h_source.html#l00106">106</a> of file <a class="el" href="pqView_8h_source.html">pqView.h</a>.</p>
+
+</div>
+</div>
 <a id="a43e6ecb6a5dcfc7629fdffbfd2b5d981"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a43e6ecb6a5dcfc7629fdffbfd2b5d981">&#9670;&nbsp;</a></span>getViewType()</h2>
 
@@ -568,7 +603,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Returns the type of this view module. </p>
 
-<p class="definition">Definition at line <a class="el" href="pqView_8h_source.html#l00104">104</a> of file <a class="el" href="pqView_8h_source.html">pqView.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="pqView_8h_source.html#l00111">111</a> of file <a class="el" href="pqView_8h_source.html">pqView.h</a>.</p>
 
 </div>
 </div>
@@ -680,7 +715,7 @@ Additional Inherited Members</h2></td></tr>
 <p>Called to undo interaction. </p>
 <p>View modules supporting interaction undo must override this method. </p>
 
-<p class="definition">Definition at line <a class="el" href="pqView_8h_source.html#l00126">126</a> of file <a class="el" href="pqView_8h_source.html">pqView.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="pqView_8h_source.html#l00133">133</a> of file <a class="el" href="pqView_8h_source.html">pqView.h</a>.</p>
 
 </div>
 </div>
@@ -710,7 +745,7 @@ Additional Inherited Members</h2></td></tr>
 <p>Called to redo interaction. </p>
 <p>View modules supporting interaction undo must override this method. </p>
 
-<p class="definition">Definition at line <a class="el" href="pqView_8h_source.html#l00132">132</a> of file <a class="el" href="pqView_8h_source.html">pqView.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="pqView_8h_source.html#l00139">139</a> of file <a class="el" href="pqView_8h_source.html">pqView.h</a>.</p>
 
 </div>
 </div>
@@ -742,7 +777,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Reimplemented in <a class="el" href="classpqContextView.html#aaf1dbbaa1abb3b3263112a2c3dd3e0a0">pqContextView</a>, and <a class="el" href="classpqRenderViewBase.html#a2ca0171fcf5929a99d7393a2a1538869">pqRenderViewBase</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="pqView_8h_source.html#l00139">139</a> of file <a class="el" href="pqView_8h_source.html">pqView.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="pqView_8h_source.html#l00146">146</a> of file <a class="el" href="pqView_8h_source.html">pqView.h</a>.</p>
 
 </div>
 </div>
@@ -773,7 +808,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Reimplemented in <a class="el" href="classpqRenderView.html#a643e5a0a40aae54f3a1fc5557cc75fbd">pqRenderView</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="pqView_8h_source.html#l00145">145</a> of file <a class="el" href="pqView_8h_source.html">pqView.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="pqView_8h_source.html#l00152">152</a> of file <a class="el" href="pqView_8h_source.html">pqView.h</a>.</p>
 
 </div>
 </div>
@@ -804,7 +839,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Reimplemented in <a class="el" href="classpqRenderView.html#a2f2c2da4b62cc54cdb6f257cc9dff87f">pqRenderView</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="pqView_8h_source.html#l00150">150</a> of file <a class="el" href="pqView_8h_source.html">pqView.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="pqView_8h_source.html#l00157">157</a> of file <a class="el" href="pqView_8h_source.html">pqView.h</a>.</p>
 
 </div>
 </div>
@@ -1495,7 +1530,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Subclasses must override this method to create a widget for the view. </p>
 
-<p>Implemented in <a class="el" href="classpqRenderView.html#a75abe00aca3f2f6df413aad0275d039a">pqRenderView</a>, <a class="el" href="classpqMultiSliceView.html#a2fef513af465b8ffbcad6c8f0b135f7c">pqMultiSliceView</a>, <a class="el" href="classpqContextView.html#acd78cc1d1da15918bd1edb1d35121623">pqContextView</a>, <a class="el" href="classpqRenderViewBase.html#a4030daa75934ff9ca11d6dd839a23507">pqRenderViewBase</a>, <a class="el" href="classpqComparativeContextView.html#a9772cc94d10b9ccff7b00b391c7b9dac">pqComparativeContextView</a>, <a class="el" href="classpqComparativeRenderView.html#ab787e06563c8f7251b8944bc6e0bf60e">pqComparativeRenderView</a>, and <a class="el" href="classpqPythonView.html#ac73ffd4e572c00e31e228244b987e417">pqPythonView</a>.</p>
+<p>Implemented in <a class="el" href="classpqRenderView.html#a75abe00aca3f2f6df413aad0275d039a">pqRenderView</a>, <a class="el" href="classpqContextView.html#acd78cc1d1da15918bd1edb1d35121623">pqContextView</a>, <a class="el" href="classpqMultiSliceView.html#a2fef513af465b8ffbcad6c8f0b135f7c">pqMultiSliceView</a>, <a class="el" href="classpqRenderViewBase.html#a4030daa75934ff9ca11d6dd839a23507">pqRenderViewBase</a>, <a class="el" href="classpqComparativeContextView.html#a9772cc94d10b9ccff7b00b391c7b9dac">pqComparativeContextView</a>, <a class="el" href="classpqComparativeRenderView.html#ab787e06563c8f7251b8944bc6e0bf60e">pqComparativeRenderView</a>, and <a class="el" href="classpqPythonView.html#ac73ffd4e572c00e31e228244b987e417">pqPythonView</a>.</p>
 
 </div>
 </div>
