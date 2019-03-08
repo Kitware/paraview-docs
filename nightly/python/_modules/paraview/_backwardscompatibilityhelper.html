@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>paraview._backwardscompatibilityhelper &mdash; ParaView/Python 5.6.0-1068-gae9baa7300 documentation</title>
+  <title>paraview._backwardscompatibilityhelper &mdash; ParaView/Python 5.6.0-1070-g31d4d4c868 documentation</title>
   
 
   
@@ -24,7 +24,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:'../../',
-        VERSION:'5.6.0-1068-gae9baa7300',
+        VERSION:'5.6.0-1070-g31d4d4c868',
         COLLAPSE_INDEX:false,
         FILE_SUFFIX:'.html',
         HAS_SOURCE:  true
@@ -48,7 +48,7 @@
         <link rel="index" title="Index"
               href="../../genindex.html"/>
         <link rel="search" title="Search" href="../../search.html"/>
-    <link rel="top" title="ParaView/Python 5.6.0-1068-gae9baa7300 documentation" href="../../index.html"/>
+    <link rel="top" title="ParaView/Python 5.6.0-1070-g31d4d4c868 documentation" href="../../index.html"/>
         <link rel="up" title="Module code" href="../index.html"/> 
 
   <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
@@ -66,7 +66,7 @@
           <li> <a href="../../index.html">
             <img src="../../_static/paraview-logo-small.png"
             alt="ParaView/Python"></img></a> </li>
-          <li class="version"> version 5.6.0-1068-gae9baa7300</li>
+          <li class="version"> version 5.6.0-1070-g31d4d4c868</li>
         </ul>
         <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
   <input type="text" name="q" placeholder="Search docs" />
@@ -929,6 +929,18 @@
                 <span class="s1">&#39;The ResampleWithDataset.Source property has been changed in ParaView 5.7. &#39;</span>\
                 <span class="s1">&#39;Please set the DestinationMesh property instead.&#39;</span><span class="p">)</span>
 
+    <span class="c1"># In 5.7, we removed `ArrayName` property on the `GenerateIdScalars` filter</span>
+    <span class="c1"># and replaced it with `CellIdsArrayName` and `PointIdsArrayName`.</span>
+    <span class="k">if</span> <span class="n">pname</span> <span class="o">==</span> <span class="s2">&quot;ArrayName&quot;</span> <span class="ow">and</span> <span class="n">proxy</span><span class="o">.</span><span class="n">SMProxy</span><span class="o">.</span><span class="n">GetXMLName</span><span class="p">()</span> <span class="o">==</span> <span class="s2">&quot;GenerateIdScalars&quot;</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">paraview</span><span class="o">.</span><span class="n">compatibility</span><span class="o">.</span><span class="n">GetVersion</span><span class="p">()</span> <span class="o">&lt;</span> <span class="mf">5.7</span><span class="p">:</span>
+            <span class="n">proxy</span><span class="o">.</span><span class="n">GetProperty</span><span class="p">(</span><span class="s2">&quot;PointIdsArrayName&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">SetData</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+            <span class="n">proxy</span><span class="o">.</span><span class="n">GetProperty</span><span class="p">(</span><span class="s2">&quot;CellIdsArrayName&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">SetData</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+            <span class="k">raise</span> <span class="n">Continue</span><span class="p">()</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">NotSupportedException</span><span class="p">(</span>
+                <span class="s1">&#39;The GenerateIdScalars.ArrayName property has been removed in ParaView 5.7. &#39;</span>\
+                <span class="s1">&#39;Please set `PointIdsArrayName` or `CellIdsArrayName` property instead.&#39;</span><span class="p">)</span>
+
     <span class="k">if</span> <span class="ow">not</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">proxy</span><span class="p">,</span> <span class="n">pname</span><span class="p">):</span>
         <span class="k">raise</span> <span class="ne">AttributeError</span><span class="p">()</span>
     <span class="n">proxy</span><span class="o">.</span><span class="vm">__dict__</span><span class="p">[</span><span class="n">pname</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span>
@@ -1167,6 +1179,16 @@
             <span class="k">raise</span> <span class="n">NotSupportedException</span><span class="p">(</span>
                 <span class="s1">&#39;The ResampleWithDataset.Source property has been changed in ParaView 5.7. &#39;</span>\
                 <span class="s1">&#39;Please access the DestinationMesh property instead.&#39;</span><span class="p">)</span>
+
+    <span class="c1"># In 5.7, we removed `ArrayName` property on the `GenerateIdScalars` filter</span>
+    <span class="c1"># and replaced it with `CellIdsArrayName` and `PointIdsArrayName`.</span>
+    <span class="k">if</span> <span class="n">pname</span> <span class="o">==</span> <span class="s2">&quot;ArrayName&quot;</span> <span class="ow">and</span> <span class="n">proxy</span><span class="o">.</span><span class="n">SMProxy</span><span class="o">.</span><span class="n">GetXMLName</span><span class="p">()</span> <span class="o">==</span> <span class="s2">&quot;GenerateIdScalars&quot;</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">paraview</span><span class="o">.</span><span class="n">compatibility</span><span class="o">.</span><span class="n">GetVersion</span><span class="p">()</span> <span class="o">&lt;</span> <span class="mf">5.7</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">proxy</span><span class="o">.</span><span class="n">GetProperty</span><span class="p">(</span><span class="s2">&quot;PointIdsArrayName&quot;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">NotSupportedException</span><span class="p">(</span>
+                <span class="s1">&#39;The GenerateIdScalars.ArrayName property has been removed in ParaView 5.7. &#39;</span> \
+                <span class="s1">&#39;Please access `PointIdsArrayName` or `CellIdsArrayName` property instead.&#39;</span><span class="p">)</span>
 
     <span class="k">raise</span> <span class="n">Continue</span><span class="p">()</span></div>
 
