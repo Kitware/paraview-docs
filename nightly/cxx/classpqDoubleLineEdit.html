@@ -39,6 +39,7 @@ $(function() {
 <a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-slots">Public Slots</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pub-static-methods">Static Public Member Functions</a> &#124;
 <a href="#pro-methods">Protected Member Functions</a> &#124;
 <a href="#properties">Properties</a> &#124;
 <a href="classpqDoubleLineEdit-members.html">List of all members</a>  </div>
@@ -127,6 +128,9 @@ Public Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
+<tr class="memitem:a5c6c8dae6a4f9b7494093cc4a6d21c86"><td class="memItemLeft" align="right" valign="top">static QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpqDoubleLineEdit.html#a5c6c8dae6a4f9b7494093cc4a6d21c86">formatDouble</a> (<a class="elRef" doxygen="/home/kitware/dashboards/buildbot/paraview_master-vall-linux-shared-debug_doc_extdeps_gui_mpi_python3/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkVectorOperators_8h.html#a45c855d65dd0e2b57b08024500ff9159">double</a> <a class="elRef" doxygen="/home/kitware/dashboards/buildbot/paraview_master-vall-linux-shared-debug_doc_extdeps_gui_mpi_python3/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/namespacevtkX3D.html#ac6551f7bf833e8254b2b3ecdaea0d210a6bf5e5151797630e91167caab3f22b9a">value</a>, QTextStream::RealNumberNotation <a class="el" href="classpqDoubleLineEdit.html#a75f2ecece2a0eb553c2b0659f5fadb5d">notation</a>, <a class="elRef" doxygen="/home/kitware/dashboards/buildbot/paraview_master-vall-linux-shared-debug_doc_extdeps_gui_mpi_python3/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkShaderProgram2_8h.html#a61569f2965b7a369eb10b6d75d410d11">int</a> <a class="el" href="classpqDoubleLineEdit.html#a09ab6d74f0efe8dd9b21db0286321c72">precision</a>)</td></tr>
+<tr class="memdesc:a5c6c8dae6a4f9b7494093cc4a6d21c86"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return a double formatted according to a QTextStream::RealNumberNotation and number of digits of precision.  <a href="#a5c6c8dae6a4f9b7494093cc4a6d21c86">More...</a><br /></td></tr>
+<tr class="separator:a5c6c8dae6a4f9b7494093cc4a6d21c86"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr><td colspan="2"><div class="groupHeader"></div></td></tr>
 <tr class="memitem:a4633ca607b0d55ff2ac6ddcc561af452"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpqDoubleLineEdit.html#a4633ca607b0d55ff2ac6ddcc561af452">setGlobalPrecisionAndNotation</a> (<a class="elRef" doxygen="/home/kitware/dashboards/buildbot/paraview_master-vall-linux-shared-debug_doc_extdeps_gui_mpi_python3/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkShaderProgram2_8h.html#a61569f2965b7a369eb10b6d75d410d11">int</a> <a class="el" href="classpqDoubleLineEdit.html#a09ab6d74f0efe8dd9b21db0286321c72">precision</a>, <a class="el" href="classpqDoubleLineEdit.html#a1607fb4589250eefa4a82f645e86a3ef">RealNumberNotation</a> <a class="el" href="classpqDoubleLineEdit.html#a75f2ecece2a0eb553c2b0659f5fadb5d">notation</a>)</td></tr>
 <tr class="memdesc:a4633ca607b0d55ff2ac6ddcc561af452"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get/set the global precision and notation.  <a href="#a4633ca607b0d55ff2ac6ddcc561af452">More...</a><br /></td></tr>
@@ -176,7 +180,7 @@ Additional Inherited Members</h2></td></tr>
 <p>The precision and notation associated with the displayed number can be configured using the <code>precision</code> and <code>notation</code> properties on the <a class="el" href="classpqDoubleLineEdit.html" title="pqLineEdit subclass that supports a low precision view when inactive ">pqDoubleLineEdit</a> instance. Additionally, <a class="el" href="classpqDoubleLineEdit.html" title="pqLineEdit subclass that supports a low precision view when inactive ">pqDoubleLineEdit</a> can be configure to simply respect a global precision and notation specification by using the property <code>useGlobalPrecisionAndNotation</code> (which is default).</p>
 <p>Since <a class="el" href="classpqDoubleLineEdit.html" title="pqLineEdit subclass that supports a low precision view when inactive ">pqDoubleLineEdit</a> is intended for numeric values, in its constructor, a <code>QDoubleValidator</code> is created for convenience. </p>
 
-<p class="definition">Definition at line <a class="el" href="pqDoubleLineEdit_8h_source.html#l00059">59</a> of file <a class="el" href="pqDoubleLineEdit_8h_source.html">pqDoubleLineEdit.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="pqDoubleLineEdit_8h_source.html#l00060">60</a> of file <a class="el" href="pqDoubleLineEdit_8h_source.html">pqDoubleLineEdit.h</a>.</p>
 </div><h2 class="groupheader">Member Enumeration Documentation</h2>
 <a id="a1607fb4589250eefa4a82f645e86a3ef"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a1607fb4589250eefa4a82f645e86a3ef">&#9670;&nbsp;</a></span>RealNumberNotation</h2>
@@ -197,7 +201,7 @@ Additional Inherited Members</h2></td></tr>
 <tr><td class="fieldname"><a id="a1607fb4589250eefa4a82f645e86a3efa404a19ef2d5c9ecd24dbc5b01d7b44f1"></a>FixedNotation&#160;</td><td class="fielddoc"></td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="pqDoubleLineEdit_8h_source.html#l00076">76</a> of file <a class="el" href="pqDoubleLineEdit_8h_source.html">pqDoubleLineEdit.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="pqDoubleLineEdit_8h_source.html#l00077">77</a> of file <a class="el" href="pqDoubleLineEdit_8h_source.html">pqDoubleLineEdit.h</a>.</p>
 
 </div>
 </div>
@@ -421,6 +425,50 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
+<a id="a5c6c8dae6a4f9b7494093cc4a6d21c86"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5c6c8dae6a4f9b7494093cc4a6d21c86">&#9670;&nbsp;</a></span>formatDouble()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static QString pqDoubleLineEdit::formatDouble </td>
+          <td>(</td>
+          <td class="paramtype"><a class="elRef" doxygen="/home/kitware/dashboards/buildbot/paraview_master-vall-linux-shared-debug_doc_extdeps_gui_mpi_python3/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkVectorOperators_8h.html#a45c855d65dd0e2b57b08024500ff9159">double</a>&#160;</td>
+          <td class="paramname"><em>value</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QTextStream::RealNumberNotation&#160;</td>
+          <td class="paramname"><em>notation</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="elRef" doxygen="/home/kitware/dashboards/buildbot/paraview_master-vall-linux-shared-debug_doc_extdeps_gui_mpi_python3/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkShaderProgram2_8h.html#a61569f2965b7a369eb10b6d75d410d11">int</a>&#160;</td>
+          <td class="paramname"><em>precision</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Return a double formatted according to a QTextStream::RealNumberNotation and number of digits of precision. </p>
+
+</div>
+</div>
 <a id="af10423a2d04337e27e8bb85d1449a430"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#af10423a2d04337e27e8bb85d1449a430">&#9670;&nbsp;</a></span>setNotation</h2>
 
@@ -581,7 +629,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="pqDoubleLineEdit_8h_source.html#l00063">63</a> of file <a class="el" href="pqDoubleLineEdit_8h_source.html">pqDoubleLineEdit.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="pqDoubleLineEdit_8h_source.html#l00064">64</a> of file <a class="el" href="pqDoubleLineEdit_8h_source.html">pqDoubleLineEdit.h</a>.</p>
 
 </div>
 </div>
@@ -605,7 +653,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="pqDoubleLineEdit_8h_source.html#l00064">64</a> of file <a class="el" href="pqDoubleLineEdit_8h_source.html">pqDoubleLineEdit.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="pqDoubleLineEdit_8h_source.html#l00065">65</a> of file <a class="el" href="pqDoubleLineEdit_8h_source.html">pqDoubleLineEdit.h</a>.</p>
 
 </div>
 </div>
@@ -629,7 +677,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="pqDoubleLineEdit_8h_source.html#l00066">66</a> of file <a class="el" href="pqDoubleLineEdit_8h_source.html">pqDoubleLineEdit.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="pqDoubleLineEdit_8h_source.html#l00067">67</a> of file <a class="el" href="pqDoubleLineEdit_8h_source.html">pqDoubleLineEdit.h</a>.</p>
 
 </div>
 </div>
