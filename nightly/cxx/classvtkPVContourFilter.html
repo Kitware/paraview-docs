@@ -813,6 +813,9 @@ Protected Member Functions</h2></td></tr>
 <tr class="memitem:a4490ce76108896a73e048eab7efb0c92"><td class="memItemLeft" align="right" valign="top"><a class="elRef" doxygen="/home/kitware/dashboards/buildbot/paraview_master-vall-linux-shared-debug_doc_extdeps_gui_mpi_python3/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkShaderProgram2_8h.html#a61569f2965b7a369eb10b6d75d410d11">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkPVContourFilter.html#a4490ce76108896a73e048eab7efb0c92">ContourUsingSuperclass</a> (<a class="elRef" doxygen="/home/kitware/dashboards/buildbot/paraview_master-vall-linux-shared-debug_doc_extdeps_gui_mpi_python3/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/classvtkInformation.html">vtkInformation</a> *request, <a class="elRef" doxygen="/home/kitware/dashboards/buildbot/paraview_master-vall-linux-shared-debug_doc_extdeps_gui_mpi_python3/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/classvtkInformationVector.html">vtkInformationVector</a> **inputVector, <a class="elRef" doxygen="/home/kitware/dashboards/buildbot/paraview_master-vall-linux-shared-debug_doc_extdeps_gui_mpi_python3/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/classvtkInformationVector.html">vtkInformationVector</a> *outputVector)</td></tr>
 <tr class="memdesc:a4490ce76108896a73e048eab7efb0c92"><td class="mdescLeft">&#160;</td><td class="mdescRight">Class superclass request data.  <a href="#a4490ce76108896a73e048eab7efb0c92">More...</a><br /></td></tr>
 <tr class="separator:a4490ce76108896a73e048eab7efb0c92"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0503e189e33df4f2a77352f536e9c5e3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkPVContourFilter.html#a0503e189e33df4f2a77352f536e9c5e3">CleanOutputScalars</a> (<a class="elRef" doxygen="/home/kitware/dashboards/buildbot/paraview_master-vall-linux-shared-debug_doc_extdeps_gui_mpi_python3/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/classvtkDataArray.html">vtkDataArray</a> *outScalars)</td></tr>
+<tr class="memdesc:a0503e189e33df4f2a77352f536e9c5e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">When <code>ComputeScalars</code> is true, the filter computes scalars for the contours.  <a href="#a0503e189e33df4f2a77352f536e9c5e3">More...</a><br /></td></tr>
+<tr class="separator:a0503e189e33df4f2a77352f536e9c5e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_methods_classvtkContourFilter"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_classvtkContourFilter')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="http://www.vtk.org/doc/nightly/html/classvtkContourFilter.html">vtkContourFilter</a></td></tr>
 <tr class="memitem:ae33c2e1baf069f6943087dfb4e3d6ac1 inherit pro_methods_classvtkContourFilter"><td class="memItemLeft" align="right" valign="top">virtual <a class="elRef" doxygen="/home/kitware/dashboards/buildbot/paraview_master-vall-linux-shared-debug_doc_extdeps_gui_mpi_python3/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/classvtkObjectBase.html">vtkObjectBase</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="elRef" doxygen="/home/kitware/dashboards/buildbot/paraview_master-vall-linux-shared-debug_doc_extdeps_gui_mpi_python3/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/classvtkContourFilter.html#ae33c2e1baf069f6943087dfb4e3d6ac1">NewInstanceInternal</a> () const</td></tr>
 <tr class="separator:ae33c2e1baf069f6943087dfb4e3d6ac1 inherit pro_methods_classvtkContourFilter"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -1029,10 +1032,11 @@ Additional Inherited Members</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>generate isosurfaces/isolines from scalar values </p>
 <p><a class="el" href="classvtkPVContourFilter.html" title="generate isosurfaces/isolines from scalar values ">vtkPVContourFilter</a> is an extension to <a class="elRef" doxygen="/home/kitware/dashboards/buildbot/paraview_master-vall-linux-shared-debug_doc_extdeps_gui_mpi_python3/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/classvtkContourFilter.html">vtkContourFilter</a>. It adds the ability to generate isosurfaces / isolines for AMR dataset.</p>
+<p><a class="el" href="classvtkPVContourFilter.html" title="generate isosurfaces/isolines from scalar values ">vtkPVContourFilter</a> also handles cleaning up interpolation error in the output scalars array when <code>ComputeScalars</code> is set to true. For each requested contour value, the output scalar array may have an error introduced due to interpolation along an edge. This filter fixes that error so that for all points generated from a particular contour value, the scalar array will have exactly the same value.</p>
 <dl class="section warning"><dt>Warning</dt><dd>Certain flags in <a class="el" href="classvtkAMRDualContour.html" title="Extract particles and analyse them. ">vtkAMRDualContour</a> are assumed to be ON.</dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a class="elRef" doxygen="/home/kitware/dashboards/buildbot/paraview_master-vall-linux-shared-debug_doc_extdeps_gui_mpi_python3/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/classvtkContourFilter.html">vtkContourFilter</a> <a class="el" href="classvtkAMRDualContour.html" title="Extract particles and analyse them. ">vtkAMRDualContour</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="vtkPVContourFilter_8h_source.html#l00035">35</a> of file <a class="el" href="vtkPVContourFilter_8h_source.html">vtkPVContourFilter.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vtkPVContourFilter_8h_source.html#l00042">42</a> of file <a class="el" href="vtkPVContourFilter_8h_source.html">vtkPVContourFilter.h</a>.</p>
 </div><h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="a853a246a2ab612666f48a2325247989b"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a853a246a2ab612666f48a2325247989b">&#9670;&nbsp;</a></span>Superclass</h2>
@@ -1046,7 +1050,7 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="vtkPVContourFilter_8h_source.html#l00038">38</a> of file <a class="el" href="vtkPVContourFilter_8h_source.html">vtkPVContourFilter.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vtkPVContourFilter_8h_source.html#l00045">45</a> of file <a class="el" href="vtkPVContourFilter_8h_source.html">vtkPVContourFilter.h</a>.</p>
 
 </div>
 </div>
@@ -1518,6 +1522,35 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Class superclass request data. </p>
 <p>Also handles iterating over <a class="elRef" doxygen="/home/kitware/dashboards/buildbot/paraview_master-vall-linux-shared-debug_doc_extdeps_gui_mpi_python3/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/classvtkHierarchicalBoxDataSet.html">vtkHierarchicalBoxDataSet</a>. </p>
+
+</div>
+</div>
+<a id="a0503e189e33df4f2a77352f536e9c5e3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0503e189e33df4f2a77352f536e9c5e3">&#9670;&nbsp;</a></span>CleanOutputScalars()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void vtkPVContourFilter::CleanOutputScalars </td>
+          <td>(</td>
+          <td class="paramtype"><a class="elRef" doxygen="/home/kitware/dashboards/buildbot/paraview_master-vall-linux-shared-debug_doc_extdeps_gui_mpi_python3/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/classvtkDataArray.html">vtkDataArray</a> *&#160;</td>
+          <td class="paramname"><em>outScalars</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>When <code>ComputeScalars</code> is true, the filter computes scalars for the contours. </p>
+<p>However, due to interpolation errors, there's a small difference between the requested contour value and the interpolated scalar value that ends up getting computed. That makes it complicated to identify contours for a specific scalar value. This method cleans the output scalars array to exactly match requested values. </p>
 
 </div>
 </div>
