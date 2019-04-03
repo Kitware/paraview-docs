@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Available readers, sources, writers, filters and animation cues &mdash; ParaView/Python 5.6.0-1268-gd820aa7b62 documentation</title>
+  <title>Available readers, sources, writers, filters and animation cues &mdash; ParaView/Python 5.6.0-1270-g33d874045a documentation</title>
   
 
   
@@ -24,7 +24,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:'./',
-        VERSION:'5.6.0-1268-gd820aa7b62',
+        VERSION:'5.6.0-1270-g33d874045a',
         COLLAPSE_INDEX:false,
         FILE_SUFFIX:'.html',
         HAS_SOURCE:  true
@@ -48,7 +48,7 @@
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="ParaView/Python 5.6.0-1268-gd820aa7b62 documentation" href="index.html"/>
+    <link rel="top" title="ParaView/Python 5.6.0-1270-g33d874045a documentation" href="index.html"/>
         <link rel="up" title="paraview Package" href="paraview.html"/>
         <link rel="next" title="paraview.simple.AMRConnectivity" href="paraview.simple.AMRConnectivity.html"/>
         <link rel="prev" title="simple Module" href="paraview.simple.html"/> 
@@ -68,7 +68,7 @@
           <li> <a href="index.html">
             <img src="_static/paraview-logo-small.png"
             alt="ParaView/Python"></img></a> </li>
-          <li class="version"> version 5.6.0-1268-gd820aa7b62</li>
+          <li class="version"> version 5.6.0-1270-g33d874045a</li>
         </ul>
         <form id ="rtd-search-form" class="wy-form" action="search.html" method="get">
   <input type="text" name="q" placeholder="Search docs" />
@@ -560,6 +560,7 @@
 <li class="toctree-l2"><a class="reference internal" href="paraview.simple.XMLImageDataWriter.html">paraview.simple.XMLImageDataWriter</a></li>
 <li class="toctree-l2"><a class="reference internal" href="paraview.simple.XMLMultiBlockDataReader.html">paraview.simple.XMLMultiBlockDataReader</a></li>
 <li class="toctree-l2"><a class="reference internal" href="paraview.simple.XMLMultiBlockDataWriter.html">paraview.simple.XMLMultiBlockDataWriter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.XMLPHyperTreeGridWriter.html">paraview.simple.XMLPHyperTreeGridWriter</a></li>
 <li class="toctree-l2"><a class="reference internal" href="paraview.simple.XMLPImageDataWriter.html">paraview.simple.XMLPImageDataWriter</a></li>
 <li class="toctree-l2"><a class="reference internal" href="paraview.simple.XMLPPolyDataWriter.html">paraview.simple.XMLPPolyDataWriter</a></li>
 <li class="toctree-l2"><a class="reference internal" href="paraview.simple.XMLPRectilinearGridWriter.html">paraview.simple.XMLPRectilinearGridWriter</a></li>
@@ -572,6 +573,7 @@
 <li class="toctree-l2"><a class="reference internal" href="paraview.simple.XMLPartitionedDataSetWriter.html">paraview.simple.XMLPartitionedDataSetWriter</a></li>
 <li class="toctree-l2"><a class="reference internal" href="paraview.simple.XMLPartitionedDatasetCollectionReader.html">paraview.simple.XMLPartitionedDatasetCollectionReader</a></li>
 <li class="toctree-l2"><a class="reference internal" href="paraview.simple.XMLPartitionedDatasetReader.html">paraview.simple.XMLPartitionedDatasetReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.XMLPartitionedHyperTreeGridReader.html">paraview.simple.XMLPartitionedHyperTreeGridReader</a></li>
 <li class="toctree-l2"><a class="reference internal" href="paraview.simple.XMLPartitionedImageDataReader.html">paraview.simple.XMLPartitionedImageDataReader</a></li>
 <li class="toctree-l2"><a class="reference internal" href="paraview.simple.XMLPartitionedPolydataReader.html">paraview.simple.XMLPartitionedPolydataReader</a></li>
 <li class="toctree-l2"><a class="reference internal" href="paraview.simple.XMLPartitionedRectilinearGridReader.html">paraview.simple.XMLPartitionedRectilinearGridReader</a></li>
@@ -2493,53 +2495,63 @@
 <div>Writer to write a multiblock dataset in a xml-based vtk data file.</div></blockquote>
 </td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="paraview.simple.XMLPImageDataWriter.html#paraview.simple.XMLPImageDataWriter" title="paraview.simple.XMLPImageDataWriter"><code class="xref py py-obj docutils literal notranslate"><span class="pre">XMLPImageDataWriter</span></code></a></td>
+<tr class="row-odd"><td><a class="reference internal" href="paraview.simple.XMLPHyperTreeGridWriter.html#paraview.simple.XMLPHyperTreeGridWriter" title="paraview.simple.XMLPHyperTreeGridWriter"><code class="xref py py-obj docutils literal notranslate"><span class="pre">XMLPHyperTreeGridWriter</span></code></a></td>
+<td><blockquote>
+<div>Writer to write hyper tree grid in a xml-based vtk data file.</div></blockquote>
+</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="paraview.simple.XMLPImageDataWriter.html#paraview.simple.XMLPImageDataWriter" title="paraview.simple.XMLPImageDataWriter"><code class="xref py py-obj docutils literal notranslate"><span class="pre">XMLPImageDataWriter</span></code></a></td>
 <td><blockquote>
 <div>Writer to write image data in a xml-based vtk data file.</div></blockquote>
 </td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="paraview.simple.XMLPPolyDataWriter.html#paraview.simple.XMLPPolyDataWriter" title="paraview.simple.XMLPPolyDataWriter"><code class="xref py py-obj docutils literal notranslate"><span class="pre">XMLPPolyDataWriter</span></code></a></td>
+<tr class="row-odd"><td><a class="reference internal" href="paraview.simple.XMLPPolyDataWriter.html#paraview.simple.XMLPPolyDataWriter" title="paraview.simple.XMLPPolyDataWriter"><code class="xref py py-obj docutils literal notranslate"><span class="pre">XMLPPolyDataWriter</span></code></a></td>
 <td><blockquote>
 <div>Writer to write polydata in a xml-based vtk data file.</div></blockquote>
 </td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="paraview.simple.XMLPRectilinearGridWriter.html#paraview.simple.XMLPRectilinearGridWriter" title="paraview.simple.XMLPRectilinearGridWriter"><code class="xref py py-obj docutils literal notranslate"><span class="pre">XMLPRectilinearGridWriter</span></code></a></td>
+<tr class="row-even"><td><a class="reference internal" href="paraview.simple.XMLPRectilinearGridWriter.html#paraview.simple.XMLPRectilinearGridWriter" title="paraview.simple.XMLPRectilinearGridWriter"><code class="xref py py-obj docutils literal notranslate"><span class="pre">XMLPRectilinearGridWriter</span></code></a></td>
 <td><blockquote>
 <div>Writer to write rectilinear grid in a xml-based vtk data file.</div></blockquote>
 </td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="paraview.simple.XMLPStructuredGridWriter.html#paraview.simple.XMLPStructuredGridWriter" title="paraview.simple.XMLPStructuredGridWriter"><code class="xref py py-obj docutils literal notranslate"><span class="pre">XMLPStructuredGridWriter</span></code></a></td>
+<tr class="row-odd"><td><a class="reference internal" href="paraview.simple.XMLPStructuredGridWriter.html#paraview.simple.XMLPStructuredGridWriter" title="paraview.simple.XMLPStructuredGridWriter"><code class="xref py py-obj docutils literal notranslate"><span class="pre">XMLPStructuredGridWriter</span></code></a></td>
 <td><blockquote>
 <div>Writer to write structured grid in a xml-based vtk data file.</div></blockquote>
 </td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="paraview.simple.XMLPTableWriter.html#paraview.simple.XMLPTableWriter" title="paraview.simple.XMLPTableWriter"><code class="xref py py-obj docutils literal notranslate"><span class="pre">XMLPTableWriter</span></code></a></td>
+<tr class="row-even"><td><a class="reference internal" href="paraview.simple.XMLPTableWriter.html#paraview.simple.XMLPTableWriter" title="paraview.simple.XMLPTableWriter"><code class="xref py py-obj docutils literal notranslate"><span class="pre">XMLPTableWriter</span></code></a></td>
 <td><blockquote>
 <div>Writer to write table in a xml-based vtk data file.</div></blockquote>
 </td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="paraview.simple.XMLPUnstructuredGridWriter.html#paraview.simple.XMLPUnstructuredGridWriter" title="paraview.simple.XMLPUnstructuredGridWriter"><code class="xref py py-obj docutils literal notranslate"><span class="pre">XMLPUnstructuredGridWriter</span></code></a></td>
+<tr class="row-odd"><td><a class="reference internal" href="paraview.simple.XMLPUnstructuredGridWriter.html#paraview.simple.XMLPUnstructuredGridWriter" title="paraview.simple.XMLPUnstructuredGridWriter"><code class="xref py py-obj docutils literal notranslate"><span class="pre">XMLPUnstructuredGridWriter</span></code></a></td>
 <td><blockquote>
 <div>Writer to write unstructured grid in a xml-based vtk data file.</div></blockquote>
 </td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="paraview.simple.XMLPVAnimationWriter.html#paraview.simple.XMLPVAnimationWriter" title="paraview.simple.XMLPVAnimationWriter"><code class="xref py py-obj docutils literal notranslate"><span class="pre">XMLPVAnimationWriter</span></code></a></td>
+<tr class="row-even"><td><a class="reference internal" href="paraview.simple.XMLPVAnimationWriter.html#paraview.simple.XMLPVAnimationWriter" title="paraview.simple.XMLPVAnimationWriter"><code class="xref py py-obj docutils literal notranslate"><span class="pre">XMLPVAnimationWriter</span></code></a></td>
 <td>Internal writer proxy used when saving animation geometry       to save all parts of the current source to the file with pieces spread       across the server processes.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="paraview.simple.XMLPVDWriter.html#paraview.simple.XMLPVDWriter" title="paraview.simple.XMLPVDWriter"><code class="xref py py-obj docutils literal notranslate"><span class="pre">XMLPVDWriter</span></code></a></td>
+<tr class="row-odd"><td><a class="reference internal" href="paraview.simple.XMLPVDWriter.html#paraview.simple.XMLPVDWriter" title="paraview.simple.XMLPVDWriter"><code class="xref py py-obj docutils literal notranslate"><span class="pre">XMLPVDWriter</span></code></a></td>
 <td>Writer to       write ParaView data files (pvd).</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="paraview.simple.XMLPartitionedDataSetCollectionWriter.html#paraview.simple.XMLPartitionedDataSetCollectionWriter" title="paraview.simple.XMLPartitionedDataSetCollectionWriter"><code class="xref py py-obj docutils literal notranslate"><span class="pre">XMLPartitionedDataSetCollectionWriter</span></code></a></td>
+<tr class="row-even"><td><a class="reference internal" href="paraview.simple.XMLPartitionedDataSetCollectionWriter.html#paraview.simple.XMLPartitionedDataSetCollectionWriter" title="paraview.simple.XMLPartitionedDataSetCollectionWriter"><code class="xref py py-obj docutils literal notranslate"><span class="pre">XMLPartitionedDataSetCollectionWriter</span></code></a></td>
 <td>Write a vtkPartitionedDataSetCollection to a xml-based vtk data file.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="paraview.simple.XMLPartitionedDataSetWriter.html#paraview.simple.XMLPartitionedDataSetWriter" title="paraview.simple.XMLPartitionedDataSetWriter"><code class="xref py py-obj docutils literal notranslate"><span class="pre">XMLPartitionedDataSetWriter</span></code></a></td>
+<tr class="row-odd"><td><a class="reference internal" href="paraview.simple.XMLPartitionedDataSetWriter.html#paraview.simple.XMLPartitionedDataSetWriter" title="paraview.simple.XMLPartitionedDataSetWriter"><code class="xref py py-obj docutils literal notranslate"><span class="pre">XMLPartitionedDataSetWriter</span></code></a></td>
 <td>Write a vtkPartitionedDataSet to a xml-based vtk data file.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="paraview.simple.XMLPartitionedDatasetCollectionReader.html#paraview.simple.XMLPartitionedDatasetCollectionReader" title="paraview.simple.XMLPartitionedDatasetCollectionReader"><code class="xref py py-obj docutils literal notranslate"><span class="pre">XMLPartitionedDatasetCollectionReader</span></code></a></td>
+<tr class="row-even"><td><a class="reference internal" href="paraview.simple.XMLPartitionedDatasetCollectionReader.html#paraview.simple.XMLPartitionedDatasetCollectionReader" title="paraview.simple.XMLPartitionedDatasetCollectionReader"><code class="xref py py-obj docutils literal notranslate"><span class="pre">XMLPartitionedDatasetCollectionReader</span></code></a></td>
 <td>The XML                      Partitioned Dataset Collection reader reads the VTK XML Partitioned Dataset Collection                      file format.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="paraview.simple.XMLPartitionedDatasetReader.html#paraview.simple.XMLPartitionedDatasetReader" title="paraview.simple.XMLPartitionedDatasetReader"><code class="xref py py-obj docutils literal notranslate"><span class="pre">XMLPartitionedDatasetReader</span></code></a></td>
+<tr class="row-odd"><td><a class="reference internal" href="paraview.simple.XMLPartitionedDatasetReader.html#paraview.simple.XMLPartitionedDatasetReader" title="paraview.simple.XMLPartitionedDatasetReader"><code class="xref py py-obj docutils literal notranslate"><span class="pre">XMLPartitionedDatasetReader</span></code></a></td>
 <td>The XML                      Partitioned Dataset reader reads the VTK XML Partitioned Dataset                      file format.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="paraview.simple.XMLPartitionedHyperTreeGridReader.html#paraview.simple.XMLPartitionedHyperTreeGridReader" title="paraview.simple.XMLPartitionedHyperTreeGridReader"><code class="xref py py-obj docutils literal notranslate"><span class="pre">XMLPartitionedHyperTreeGridReader</span></code></a></td>
+<td><blockquote>
+<div>The XML Partitioned Hyper Tree Grid reader reads the                      partitioned VTK htg data file format.</div></blockquote>
+</td>
 </tr>
 <tr class="row-odd"><td><a class="reference internal" href="paraview.simple.XMLPartitionedImageDataReader.html#paraview.simple.XMLPartitionedImageDataReader" title="paraview.simple.XMLPartitionedImageDataReader"><code class="xref py py-obj docutils literal notranslate"><span class="pre">XMLPartitionedImageDataReader</span></code></a></td>
 <td><blockquote>
