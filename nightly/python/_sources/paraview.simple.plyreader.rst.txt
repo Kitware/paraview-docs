@@ -10,6 +10,17 @@ Data Descriptors
 
 
    
+   DuplicatePointsForFaceTexture
+       If true (default) and the "face" element has
+       the property "texcoord" duplicate face points if they have 2
+       or more different texture coordinates. Otherwise, each texture
+       coordinate for a face point overwrites previously set texture
+       coordinates for that point.
+   
+   FaceTextureTolerance
+       Tolerance used to detect different texture
+       coordinates for shared points for faces
+   
    FileName
        This property specifies the file name for the PLY
        reader.
