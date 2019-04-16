@@ -14,6 +14,13 @@ Data Descriptors
        This property specifies the datasets to be merged into a
        single dataset by the Append Datasets filter.
    
+   OutputDataSetType
+       Determines the output type produced by this filter. Only input datasets compatible
+       with the output type will be merged in the output. For example, if the output type is
+       "Polygonal Mesh", then inputs of type "Image Data", "StructuredGrid", etc. will not be merged.
+       On the other hand, if the output type is "Unstructured Grid", then inputs of almost any type
+       will be merged in the output. Defaults to "Unstructured Grid".
+   
    
 
 Data Descriptors inherited from SourceProxy

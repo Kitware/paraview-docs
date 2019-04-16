@@ -14,9 +14,24 @@ Data Descriptors
        Set the input composite dataset.
    
    MergePoints
+       Merge points within a distance specified by the \*\*Tolerance\*\*
+       property.
+   
+   OutputDataSetType
+       Determines the output type produced by this filter. Only blocks compatible
+       with the output type will be merged in the output. For example, if the output type is
+       "Polygonal Mesh", then blocks of type "Image Data", "Structured Grid", etc. will not be merged.
+       If the output type is "UnstructuredGrid", then blocks of any type will be merged in the output.
+       Defaults to "Unstructured Grid".
    
    Tolerance
        Set the tolerance for merging points if \*\*Merge Points\*\* is enabled.
+   
+   ToleranceIsAbsolute
+       This property determines whether to treat the \*\*Tolerance\*\*
+       property as absolute (points closer than Tolerance are merged) or relative
+       (points closer than a fraction of the input data's bounding box diagonal length)
+       when performing point merging.
    
    
 

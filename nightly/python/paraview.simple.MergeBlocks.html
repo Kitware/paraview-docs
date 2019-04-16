@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>paraview.simple.MergeBlocks &mdash; ParaView/Python 5.6.0-1332-gf509607553 documentation</title>
+  <title>paraview.simple.MergeBlocks &mdash; ParaView/Python 5.6.0-1342-g72531b5c23 documentation</title>
   
 
   
@@ -24,7 +24,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:'./',
-        VERSION:'5.6.0-1332-gf509607553',
+        VERSION:'5.6.0-1342-g72531b5c23',
         COLLAPSE_INDEX:false,
         FILE_SUFFIX:'.html',
         HAS_SOURCE:  true
@@ -48,7 +48,7 @@
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="ParaView/Python 5.6.0-1332-gf509607553 documentation" href="index.html"/>
+    <link rel="top" title="ParaView/Python 5.6.0-1342-g72531b5c23 documentation" href="index.html"/>
         <link rel="up" title="Available readers, sources, writers, filters and animation cues" href="paraview.servermanager_proxies.html"/>
         <link rel="next" title="paraview.simple.MeshQuality" href="paraview.simple.MeshQuality.html"/>
         <link rel="prev" title="paraview.simple.Median" href="paraview.simple.Median.html"/> 
@@ -68,7 +68,7 @@
           <li> <a href="index.html">
             <img src="_static/paraview-logo-small.png"
             alt="ParaView/Python"></img></a> </li>
-          <li class="version"> version 5.6.0-1332-gf509607553</li>
+          <li class="version"> version 5.6.0-1342-g72531b5c23</li>
         </ul>
         <form id ="rtd-search-form" class="wy-form" action="search.html" method="get">
   <input type="text" name="q" placeholder="Search docs" />
@@ -662,11 +662,10 @@
 <dt id="paraview.simple.MergeBlocks">
 <code class="descclassname">paraview.simple.</code><code class="descname">MergeBlocks</code><span class="sig-paren">(</span><em>*input</em>, <em>**params</em><span class="sig-paren">)</span><a class="headerlink" href="#paraview.simple.MergeBlocks" title="Permalink to this definition">¶</a></dt>
 <dd><blockquote>
-<div>vtkCompositeDataToUnstructuredGridFilter appends all vtkDataSet leaves of
-the input composite dataset to a single unstructured grid. The subtree to
-be combined can be chosen using the SubTreeCompositeIndex. If the
-SubTreeCompositeIndex is a leaf node, then no appending is
-required.</div></blockquote>
+<div>Merge Blocks appends all vtkDataSet leaves of the input composite dataset to a single
+unstructured grid (or polydata if all leaves are polydata). The subtree to
+be combined can be chosen using the SubTreeCompositeIndex. If the SubTreeCompositeIndex
+is a leaf node, then no appending is required nor performed.</div></blockquote>
 </dd></dl>
 
 <div class="section" id="data-descriptors">
@@ -675,11 +674,22 @@ required.</div></blockquote>
 <div><dl class="docutils">
 <dt>Input</dt>
 <dd>Set the input composite dataset.</dd>
-</dl>
-<p>MergePoints</p>
-<dl class="docutils">
+<dt>MergePoints</dt>
+<dd>Merge points within a distance specified by the **Tolerance**
+property.</dd>
+<dt>OutputDataSetType</dt>
+<dd>Determines the output type produced by this filter. Only blocks compatible
+with the output type will be merged in the output. For example, if the output type is
+“Polygonal Mesh”, then blocks of type “Image Data”, “Structured Grid”, etc. will not be merged.
+If the output type is “UnstructuredGrid”, then blocks of any type will be merged in the output.
+Defaults to “Unstructured Grid”.</dd>
 <dt>Tolerance</dt>
 <dd>Set the tolerance for merging points if **Merge Points** is enabled.</dd>
+<dt>ToleranceIsAbsolute</dt>
+<dd>This property determines whether to treat the **Tolerance**
+property as absolute (points closer than Tolerance are merged) or relative
+(points closer than a fraction of the input data’s bounding box diagonal length)
+when performing point merging.</dd>
 </dl>
 </div></blockquote>
 <div class="section" id="data-descriptors-inherited-from-sourceproxy">

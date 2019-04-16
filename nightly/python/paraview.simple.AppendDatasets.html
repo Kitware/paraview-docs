@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>paraview.simple.AppendDatasets &mdash; ParaView/Python 5.6.0-1332-gf509607553 documentation</title>
+  <title>paraview.simple.AppendDatasets &mdash; ParaView/Python 5.6.0-1342-g72531b5c23 documentation</title>
   
 
   
@@ -24,7 +24,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:'./',
-        VERSION:'5.6.0-1332-gf509607553',
+        VERSION:'5.6.0-1342-g72531b5c23',
         COLLAPSE_INDEX:false,
         FILE_SUFFIX:'.html',
         HAS_SOURCE:  true
@@ -48,7 +48,7 @@
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="ParaView/Python 5.6.0-1332-gf509607553 documentation" href="index.html"/>
+    <link rel="top" title="ParaView/Python 5.6.0-1342-g72531b5c23 documentation" href="index.html"/>
         <link rel="up" title="Available readers, sources, writers, filters and animation cues" href="paraview.servermanager_proxies.html"/>
         <link rel="next" title="paraview.simple.AppendGeometry" href="paraview.simple.AppendGeometry.html"/>
         <link rel="prev" title="paraview.simple.AppendAttributes" href="paraview.simple.AppendAttributes.html"/> 
@@ -68,7 +68,7 @@
           <li> <a href="index.html">
             <img src="_static/paraview-logo-small.png"
             alt="ParaView/Python"></img></a> </li>
-          <li class="version"> version 5.6.0-1332-gf509607553</li>
+          <li class="version"> version 5.6.0-1342-g72531b5c23</li>
         </ul>
         <form id ="rtd-search-form" class="wy-form" action="search.html" method="get">
   <input type="text" name="q" placeholder="Search docs" />
@@ -664,14 +664,11 @@
 <dd><dl class="docutils">
 <dt>The Append</dt>
 <dd>Datasets filter operates on multiple data sets of any type
-(polygonal, structured, etc.). It merges their geometry
-into a single data set. Only the point and cell attributes
-that all of the input data sets have in common will appear
-in the output. The input data sets must already be
-collected together, either as a result of a reader that
-loads multiple parts (e.g., EnSight reader) or because the
-Group Parts filter has been run to form a collection of
-data sets.</dd>
+(polygonal, structured, etc.). It merges their meshes
+into a single dataset. If all inputs are polydata, the output
+is a polydata, otherwise it is an unstructured grid.
+Only the point and cell attributes that all of the input
+datasets have in common will appear in the output.</dd>
 </dl>
 </dd></dl>
 
@@ -682,6 +679,12 @@ data sets.</dd>
 <dt>Input</dt>
 <dd>This property specifies the datasets to be merged into a
 single dataset by the Append Datasets filter.</dd>
+<dt>OutputDataSetType</dt>
+<dd>Determines the output type produced by this filter. Only input datasets compatible
+with the output type will be merged in the output. For example, if the output type is
+“Polygonal Mesh”, then inputs of type “Image Data”, “StructuredGrid”, etc. will not be merged.
+On the other hand, if the output type is “Unstructured Grid”, then inputs of almost any type
+will be merged in the output. Defaults to “Unstructured Grid”.</dd>
 </dl>
 </div></blockquote>
 <div class="section" id="data-descriptors-inherited-from-sourceproxy">
