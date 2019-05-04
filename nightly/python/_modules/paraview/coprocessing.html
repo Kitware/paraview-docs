@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>paraview.coprocessing &mdash; ParaView/Python 5.6.0-1344-g047f0a83d5 documentation</title>
+  <title>paraview.coprocessing &mdash; ParaView/Python 5.6.0-1453-g9d8bb98edc documentation</title>
   
 
   
@@ -24,7 +24,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:'../../',
-        VERSION:'5.6.0-1344-g047f0a83d5',
+        VERSION:'5.6.0-1453-g9d8bb98edc',
         COLLAPSE_INDEX:false,
         FILE_SUFFIX:'.html',
         HAS_SOURCE:  true
@@ -48,7 +48,7 @@
         <link rel="index" title="Index"
               href="../../genindex.html"/>
         <link rel="search" title="Search" href="../../search.html"/>
-    <link rel="top" title="ParaView/Python 5.6.0-1344-g047f0a83d5 documentation" href="../../index.html"/>
+    <link rel="top" title="ParaView/Python 5.6.0-1453-g9d8bb98edc documentation" href="../../index.html"/>
         <link rel="up" title="Module code" href="../index.html"/> 
 
   <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
@@ -66,7 +66,7 @@
           <li> <a href="../../index.html">
             <img src="../../_static/paraview-logo-small.png"
             alt="ParaView/Python"></img></a> </li>
-          <li class="version"> version 5.6.0-1344-g047f0a83d5</li>
+          <li class="version"> version 5.6.0-1453-g9d8bb98edc</li>
         </ul>
         <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
   <input type="text" name="q" placeholder="Search docs" />
@@ -666,6 +666,8 @@
 <span class="kn">from</span> <span class="nn">__future__</span> <span class="k">import</span> <span class="n">print_function</span>
 <span class="kn">from</span> <span class="nn">paraview</span> <span class="k">import</span> <span class="n">simple</span><span class="p">,</span> <span class="n">servermanager</span>
 <span class="kn">from</span> <span class="nn">paraview.modules.vtkPVVTKExtensionsCore</span> <span class="k">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">paraview.detail</span> <span class="k">import</span> <span class="n">exportnow</span>
+
 <span class="kn">import</span> <span class="nn">math</span>
 
 <span class="c1"># If the user created a filename in a location that doesn&#39;t exist by default we&#39;ll</span>
@@ -723,9 +725,8 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">__FirstTimeStepIndex</span> <span class="o">=</span> <span class="kc">None</span>
         <span class="c1"># a list of arrays requested for each channel, e.g. {&#39;input&#39;: [&quot;a point data array name&quot;, 0], [&quot;a cell data array name&quot;, 1]}</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">__RequestedArrays</span> <span class="o">=</span> <span class="kc">None</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">__EnableCinemaDTable</span> <span class="o">=</span> <span class="kc">False</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">__WroteCinemaDHeader</span> <span class="o">=</span> <span class="kc">False</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">__RootDirectory</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__CinemaDHelper</span> <span class="o">=</span> <span class="kc">None</span>
 
 <div class="viewcode-block" id="CoProcessor.SetPrintEnsightFormatString"><a class="viewcode-back" href="../../paraview.coprocessing.html#paraview.coprocessing.CoProcessor.SetPrintEnsightFormatString">[docs]</a>    <span class="k">def</span> <span class="nf">SetPrintEnsightFormatString</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">enable</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;If outputting ExodusII files with the purpose of reading them into</span>
@@ -917,7 +918,8 @@
                         <span class="c1"># we can&#39;t make the directory so no reason to update the pipeline</span>
                         <span class="k">return</span>
                 <span class="n">writer</span><span class="o">.</span><span class="n">UpdatePipeline</span><span class="p">(</span><span class="n">datadescription</span><span class="o">.</span><span class="n">GetTime</span><span class="p">())</span>
-                <span class="bp">self</span><span class="o">.</span><span class="n">__AppendToCinemaDTable</span><span class="p">(</span><span class="n">timestep</span><span class="p">,</span> <span class="s2">&quot;writer_</span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="bp">self</span><span class="o">.</span><span class="n">__WritersList</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">writer</span><span class="p">),</span> <span class="n">writer</span><span class="o">.</span><span class="n">FileName</span><span class="p">)</span></div>
+                <span class="bp">self</span><span class="o">.</span><span class="n">__AppendToCinemaDTable</span><span class="p">(</span><span class="n">timestep</span><span class="p">,</span> <span class="s2">&quot;writer_</span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="bp">self</span><span class="o">.</span><span class="n">__WritersList</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">writer</span><span class="p">),</span> <span class="n">writer</span><span class="o">.</span><span class="n">FileName</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__FinalizeCinemaDTable</span><span class="p">()</span></div>
 
 
 <div class="viewcode-block" id="CoProcessor.WriteImages"><a class="viewcode-back" href="../../paraview.coprocessing.html#paraview.coprocessing.CoProcessor.WriteImages">[docs]</a>    <span class="k">def</span> <span class="nf">WriteImages</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">datadescription</span><span class="p">,</span> <span class="n">rescale_lookuptable</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
@@ -974,13 +976,13 @@
                 <span class="n">cinemaOptions</span> <span class="o">=</span> <span class="n">view</span><span class="o">.</span><span class="n">cpCinemaOptions</span>
                 <span class="k">if</span> <span class="n">cinemaOptions</span> <span class="ow">and</span> <span class="s1">&#39;camera&#39;</span> <span class="ow">in</span> <span class="n">cinemaOptions</span><span class="p">:</span>
                     <span class="k">if</span> <span class="s1">&#39;composite&#39;</span> <span class="ow">in</span> <span class="n">view</span><span class="o">.</span><span class="n">cpCinemaOptions</span> <span class="ow">and</span> <span class="n">view</span><span class="o">.</span><span class="n">cpCinemaOptions</span><span class="p">[</span><span class="s1">&#39;composite&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="kc">True</span><span class="p">:</span>
-                        <span class="n">dirname</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">UpdateCinema</span><span class="p">(</span><span class="n">view</span><span class="p">,</span> <span class="n">datadescription</span><span class="p">,</span>
+                        <span class="n">dirname</span><span class="p">,</span> <span class="n">filelist</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">UpdateCinema</span><span class="p">(</span><span class="n">view</span><span class="p">,</span> <span class="n">datadescription</span><span class="p">,</span>
                                                     <span class="n">specLevel</span><span class="o">=</span><span class="s2">&quot;B&quot;</span><span class="p">)</span>
                     <span class="k">else</span><span class="p">:</span>
-                        <span class="n">dirname</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">UpdateCinema</span><span class="p">(</span><span class="n">view</span><span class="p">,</span> <span class="n">datadescription</span><span class="p">,</span>
+                        <span class="n">dirname</span><span class="p">,</span> <span class="n">filelist</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">UpdateCinema</span><span class="p">(</span><span class="n">view</span><span class="p">,</span> <span class="n">datadescription</span><span class="p">,</span>
                                                     <span class="n">specLevel</span><span class="o">=</span><span class="s2">&quot;A&quot;</span><span class="p">)</span>
                     <span class="k">if</span> <span class="n">dirname</span><span class="p">:</span>
-                        <span class="bp">self</span><span class="o">.</span><span class="n">__AppendToCinemaDTable</span><span class="p">(</span><span class="n">timestep</span><span class="p">,</span> <span class="s2">&quot;view_</span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="bp">self</span><span class="o">.</span><span class="n">__ViewsList</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">view</span><span class="p">),</span> <span class="s2">&quot;cinema/&quot;</span><span class="o">+</span><span class="n">dirname</span><span class="p">)</span>
+                        <span class="bp">self</span><span class="o">.</span><span class="n">__AppendCViewToCinemaDTable</span><span class="p">(</span><span class="n">timestep</span><span class="p">,</span> <span class="s2">&quot;view_</span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="bp">self</span><span class="o">.</span><span class="n">__ViewsList</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">view</span><span class="p">),</span> <span class="n">filelist</span><span class="p">)</span>
                         <span class="n">cinema_dirs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">dirname</span><span class="p">)</span>
                 <span class="k">else</span><span class="p">:</span>
                     <span class="k">if</span> <span class="s1">&#39;/&#39;</span> <span class="ow">in</span> <span class="n">fname</span> <span class="ow">and</span> <span class="n">createDirectoriesIfNeeded</span><span class="p">:</span>
@@ -1017,7 +1019,9 @@
 
         <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">cinema_dirs</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
             <span class="kn">import</span> <span class="nn">paraview.tpl.cinema_python.adaptors.paraview.pv_introspect</span> <span class="k">as</span> <span class="nn">pv_introspect</span>
-            <span class="n">pv_introspect</span><span class="o">.</span><span class="n">make_workspace_file</span><span class="p">(</span><span class="s2">&quot;cinema&quot;</span><span class="p">,</span> <span class="n">cinema_dirs</span><span class="p">)</span></div>
+            <span class="n">pv_introspect</span><span class="o">.</span><span class="n">make_workspace_file</span><span class="p">(</span><span class="s2">&quot;cinema</span><span class="se">\\</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">cinema_dirs</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">__FinalizeCinemaDTable</span><span class="p">()</span></div>
 
 
 <div class="viewcode-block" id="CoProcessor.DoLiveVisualization"><a class="viewcode-back" href="../../paraview.coprocessing.html#paraview.coprocessing.CoProcessor.DoLiveVisualization">[docs]</a>    <span class="k">def</span> <span class="nf">DoLiveVisualization</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">datadescription</span><span class="p">,</span> <span class="n">hostname</span><span class="p">,</span> <span class="n">port</span><span class="p">):</span>
@@ -1390,7 +1394,8 @@
 
         <span class="n">enableFloatVal</span> <span class="o">=</span> <span class="kc">False</span> <span class="k">if</span> <span class="s1">&#39;floatValues&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">co</span> <span class="k">else</span> <span class="n">co</span><span class="p">[</span><span class="s1">&#39;floatValues&#39;</span><span class="p">]</span>
 
-        <span class="n">pv_introspect</span><span class="o">.</span><span class="n">explore</span><span class="p">(</span><span class="n">fs</span><span class="p">,</span> <span class="n">p</span><span class="p">,</span> <span class="n">iSave</span> <span class="o">=</span> <span class="p">(</span><span class="n">pid</span> <span class="o">==</span> <span class="mi">0</span><span class="p">),</span>
+        <span class="n">new_files</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="n">ret</span> <span class="o">=</span> <span class="n">pv_introspect</span><span class="o">.</span><span class="n">explore</span><span class="p">(</span><span class="n">fs</span><span class="p">,</span> <span class="n">p</span><span class="p">,</span> <span class="n">iSave</span> <span class="o">=</span> <span class="p">(</span><span class="n">pid</span> <span class="o">==</span> <span class="mi">0</span><span class="p">),</span>
                               <span class="n">currentTime</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;time&#39;</span><span class="p">:</span><span class="n">formatted_time</span><span class="p">},</span>
                               <span class="n">userDefined</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__CinemaTracks</span><span class="p">,</span>
                               <span class="n">specLevel</span> <span class="o">=</span> <span class="n">specLevel</span><span class="p">,</span>
@@ -1400,12 +1405,13 @@
                               <span class="n">disableValues</span> <span class="o">=</span> <span class="n">disableValues</span><span class="p">)</span>
         <span class="k">if</span> <span class="n">pid</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
             <span class="n">fs</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
+        <span class="n">new_files</span><span class="p">[</span><span class="n">vfname</span><span class="p">]</span> <span class="o">=</span> <span class="n">ret</span><span class="p">;</span>
 
         <span class="n">view</span><span class="o">.</span><span class="n">LockBounds</span> <span class="o">=</span> <span class="mi">0</span>
 
         <span class="c1">#restore what we showed</span>
         <span class="n">pv_introspect</span><span class="o">.</span><span class="n">restore_visibility</span><span class="p">(</span><span class="n">pxystate</span><span class="p">)</span>
-        <span class="k">return</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">vfname</span><span class="p">)</span></div>
+        <span class="k">return</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">vfname</span><span class="p">),</span> <span class="n">new_files</span></div>
 
 <div class="viewcode-block" id="CoProcessor.IsInModulo"><a class="viewcode-back" href="../../paraview.coprocessing.html#paraview.coprocessing.CoProcessor.IsInModulo">[docs]</a>    <span class="k">def</span> <span class="nf">IsInModulo</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">datadescription</span><span class="p">,</span> <span class="n">frequencies</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
@@ -1454,38 +1460,49 @@
 
 <div class="viewcode-block" id="CoProcessor.EnableCinemaDTable"><a class="viewcode-back" href="../../paraview.coprocessing.html#paraview.coprocessing.CoProcessor.EnableCinemaDTable">[docs]</a>    <span class="k">def</span> <span class="nf">EnableCinemaDTable</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot; Enable the normally disabled cinema D table export feature &quot;&quot;&quot;</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">__EnableCinemaDTable</span> <span class="o">=</span> <span class="kc">True</span></div>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__CinemaDHelper</span> <span class="o">=</span> <span class="n">exportnow</span><span class="o">.</span><span class="n">CinemaDHelper</span><span class="p">(</span><span class="kc">True</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">__RootDirectory</span><span class="p">)</span></div>
 
 
-    <span class="k">def</span> <span class="nf">__AppendToCinemaDTable</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">time</span><span class="p">,</span> <span class="n">producer</span><span class="p">,</span> <span class="n">filename</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__AppendCViewToCinemaDTable</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">time</span><span class="p">,</span> <span class="n">producer</span><span class="p">,</span> <span class="n">filelist</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        This is called every time catalyst writes any data product to update the</span>
-<span class="sd">        Cinema D index of outputs table.</span>
+<span class="sd">        This is called every time catalyst writes any cinema image result</span>
+<span class="sd">        to update the Cinema D index of outputs table.</span>
+<span class="sd">        Note, we aggregate file operations later with __FinalizeCinemaDTable.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">__EnableCinemaDTable</span><span class="p">:</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">__CinemaDHelper</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
             <span class="k">return</span>
         <span class="kn">import</span> <span class="nn">vtk</span>
         <span class="n">comm</span> <span class="o">=</span> <span class="n">vtk</span><span class="o">.</span><span class="n">vtkMultiProcessController</span><span class="o">.</span><span class="n">GetGlobalController</span><span class="p">()</span>
         <span class="k">if</span> <span class="n">comm</span><span class="o">.</span><span class="n">GetLocalProcessId</span><span class="p">()</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-            <span class="c1"># strip possible leading root directory from filename</span>
-            <span class="n">datafilename</span> <span class="o">=</span> <span class="n">filename</span>
-            <span class="n">indexfilename</span> <span class="o">=</span> <span class="s2">&quot;data.csv&quot;</span>
-            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">__RootDirectory</span> <span class="ow">is</span> <span class="ow">not</span> <span class="s2">&quot;&quot;</span><span class="p">:</span>
-              <span class="n">rdprefix</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__RootDirectory</span> <span class="o">+</span> <span class="s2">&quot;/&quot;</span>
-              <span class="n">datafilename</span> <span class="o">=</span> <span class="n">filename</span><span class="p">[</span><span class="n">filename</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="n">rdprefix</span><span class="p">)</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">rdprefix</span><span class="p">):]</span> <span class="c1">#strip rdprefix</span>
-              <span class="n">indexfilename</span> <span class="o">=</span> <span class="n">rdprefix</span> <span class="o">+</span> <span class="s2">&quot;/data.csv&quot;</span>
-            <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">__WroteCinemaDHeader</span><span class="p">:</span>
-                <span class="bp">self</span><span class="o">.</span><span class="n">__WroteCinemaDHeader</span> <span class="o">=</span> <span class="kc">True</span>
-                <span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">indexfilename</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span>
-                <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;timestep,producer,FILE</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
-                <span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
-            <span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">indexfilename</span><span class="p">,</span> <span class="s2">&quot;a+&quot;</span><span class="p">)</span>
-            <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%s</span><span class="s2">,</span><span class="si">%s</span><span class="s2">,</span><span class="si">%s</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">time</span><span class="p">,</span> <span class="n">producer</span><span class="p">,</span> <span class="n">datafilename</span><span class="p">))</span>
-            <span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">__CinemaDHelper</span><span class="o">.</span><span class="n">AppendCViewToCinemaDTable</span><span class="p">(</span><span class="n">time</span><span class="p">,</span> <span class="n">producer</span><span class="p">,</span> <span class="n">filelist</span><span class="p">)</span>
+
+
+    <span class="k">def</span> <span class="nf">__AppendToCinemaDTable</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">time</span><span class="p">,</span> <span class="n">producer</span><span class="p">,</span> <span class="n">filename</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        This is called every time catalyst writes any data file or screenshot</span>
+<span class="sd">        to update the Cinema D index of outputs table.</span>
+<span class="sd">        Note, we aggregate file operations later with __FinalizeCinemaDTable.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">__CinemaDHelper</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">return</span>
+        <span class="kn">import</span> <span class="nn">vtk</span>
+        <span class="n">comm</span> <span class="o">=</span> <span class="n">vtk</span><span class="o">.</span><span class="n">vtkMultiProcessController</span><span class="o">.</span><span class="n">GetGlobalController</span><span class="p">()</span>
+        <span class="k">if</span> <span class="n">comm</span><span class="o">.</span><span class="n">GetLocalProcessId</span><span class="p">()</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">__CinemaDHelper</span><span class="o">.</span><span class="n">AppendToCinemaDTable</span><span class="p">(</span><span class="n">time</span><span class="p">,</span> <span class="n">producer</span><span class="p">,</span> <span class="n">filename</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">__FinalizeCinemaDTable</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">__CinemaDHelper</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">return</span>
+        <span class="kn">import</span> <span class="nn">vtk</span>
+        <span class="n">comm</span> <span class="o">=</span> <span class="n">vtk</span><span class="o">.</span><span class="n">vtkMultiProcessController</span><span class="o">.</span><span class="n">GetGlobalController</span><span class="p">()</span>
+        <span class="k">if</span> <span class="n">comm</span><span class="o">.</span><span class="n">GetLocalProcessId</span><span class="p">()</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">__CinemaDHelper</span><span class="o">.</span><span class="n">WriteNow</span><span class="p">()</span>
 
 
 <div class="viewcode-block" id="CoProcessor.SetRootDirectory"><a class="viewcode-back" href="../../paraview.coprocessing.html#paraview.coprocessing.CoProcessor.SetRootDirectory">[docs]</a>    <span class="k">def</span> <span class="nf">SetRootDirectory</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">root_directory</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot; Makes Catalyst put all output under this directory. &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">root_directory</span> <span class="ow">is</span> <span class="ow">not</span> <span class="s1">&#39;&#39;</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">root_directory</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">&quot;/&quot;</span><span class="p">):</span>
+            <span class="n">root_directory</span> <span class="o">=</span> <span class="n">root_directory</span> <span class="o">+</span> <span class="s2">&quot;/&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">__RootDirectory</span> <span class="o">=</span> <span class="n">root_directory</span></div>
 
 
@@ -1494,9 +1511,9 @@
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">__RootDirectory</span> <span class="ow">is</span> <span class="s2">&quot;&quot;</span><span class="p">:</span>
             <span class="k">return</span>
         <span class="k">for</span> <span class="n">view</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">__ViewsList</span><span class="p">:</span>
-            <span class="n">view</span><span class="o">.</span><span class="n">cpFileName</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__RootDirectory</span> <span class="o">+</span> <span class="s2">&quot;/&quot;</span> <span class="o">+</span> <span class="n">view</span><span class="o">.</span><span class="n">cpFileName</span>
+            <span class="n">view</span><span class="o">.</span><span class="n">cpFileName</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__RootDirectory</span> <span class="o">+</span> <span class="n">view</span><span class="o">.</span><span class="n">cpFileName</span>
         <span class="k">for</span> <span class="n">writer</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">__WritersList</span><span class="p">:</span>
-            <span class="n">fileName</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__RootDirectory</span> <span class="o">+</span> <span class="s2">&quot;/&quot;</span> <span class="o">+</span> <span class="n">writer</span><span class="o">.</span><span class="n">parameters</span><span class="o">.</span><span class="n">GetProperty</span><span class="p">(</span><span class="s2">&quot;FileName&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">GetElement</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+            <span class="n">fileName</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__RootDirectory</span> <span class="o">+</span> <span class="n">writer</span><span class="o">.</span><span class="n">parameters</span><span class="o">.</span><span class="n">GetProperty</span><span class="p">(</span><span class="s2">&quot;FileName&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">GetElement</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
             <span class="n">writer</span><span class="o">.</span><span class="n">parameters</span><span class="o">.</span><span class="n">GetProperty</span><span class="p">(</span><span class="s2">&quot;FileName&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">SetElement</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">fileName</span><span class="p">)</span>
             <span class="n">writer</span><span class="o">.</span><span class="n">parameters</span><span class="o">.</span><span class="n">FileName</span> <span class="o">=</span> <span class="n">fileName</span></div>
 </pre></div>

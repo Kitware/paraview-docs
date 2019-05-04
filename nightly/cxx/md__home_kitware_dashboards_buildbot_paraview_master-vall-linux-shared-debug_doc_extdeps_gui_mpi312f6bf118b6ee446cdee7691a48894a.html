@@ -39,93 +39,142 @@ $(function() {
 <div class="title">Building ParaView </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p>This page describes how to build and install ParaView. It covers building for development, on both Unix-type systems (Linux, HP-UX, Solaris, Mac), and Windows.</p>
-<p>ParaView depends on several open source tools and libraries such as Python, Qt, CGNS, HDF5, etc. Some of these are included in the ParaView source itself (e.g. HDF5), while others are expected to be present on the machine on which ParaView is being built (e.g. Python, Qt, CGNS).</p>
-<p>Adapted from the <a href="http://www.paraview.org/Wiki/ParaView:Build_And_Install">Paraview wiki</a> which has more complete but dated instructions.</p>
-<h1>Prerequisites </h1>
+<div class="textblock"><p>This page describes how to build and install ParaView. It covers building for development, on both Unix-type systems (Linux, HP-UX, Solaris, macOS), and Windows. Note that Unix-like environments such as Cygwin and MinGW are not officially supported. However, patches to fix problems with these platforms will be considered for inclusion.</p>
+<p>ParaView depends on several open source tools and libraries such as Python, Qt, CGNS, HDF5, etc. Some of these are included in the ParaView source itself (e.g., HDF5), while others are expected to be present on the machine on which ParaView is being built (e.g., Python, Qt).</p>
+<h2>Obtaining the source</h2>
+<p>To obtain ParaView's sources locally, clone this repository using <a href="https://git-scm.org">Git</a>.</p>
+<div class="fragment"><div class="line">git clone --recursive https://gitlab.kitware.com/paraview/paraview.git</div></div><!-- fragment --><h2>Building</h2>
+<p>ParaView supports all of the common generators supported by CMake. The Ninja, Makefiles, and Visual Studio generators are the most well-tested however.</p>
+<h3>Prerequisites</h3>
+<p>ParaView only requires a few packages in order to build in general, however specific features may require additional packages to be provided to ParaView's build configuration.</p>
+<p>Required:</p>
 <ul>
-<li>The ParaView build process requires <a href="http://www.cmake.org/">CMake</a> version 3.10 or higher and a working compiler. On Unix-like operating systems, it also requires Make, while on Windows it requires Visual Studio. The Ninja build system speeds up compilation on most systems substantially.</li>
-<li>Building ParaView's user interface requires <a href="http://www.qt.io/download-open-source/">Qt</a>, version 5.6+ (5.9.* is recommended, 5.7.*, 5.8*, and 5.10 also work). To compile ParaView, either the LGPL or commercial versions of Qt may be used. Also note that on Windows you need to choose a Visual Studio version to match binaries available for your Qt version.</li>
-<li>For Windows builds, unix-like environments such as Cygwin, or MinGW are not officially supported.</li>
+<li><a href="https://cmake.org">CMake</a><ul>
+<li>Version 3.10 or newer, however, the latest version is always recommended</li>
 </ul>
-<h2>Download And Install CMake </h2>
-<p>CMake is a tool that makes cross-platform building simple. On several systems it will probably be already installed. If it is not, please use the following instructions to install it.</p>
-<p>There are several precompiled binaries available at the <a href="https://cmake.org/download/">CMake download page</a>. Download version 3.10 or later.</p>
-<p>Add CMake to your PATH environment variable if you downloaded an archive and not an installer.</p>
-<h2>Download And Install Qt </h2>
-<p>ParaView uses Qt as its GUI library. Qt is required whenever the ParaView client is built with a GUI.</p>
-<ul>
-<li><a href="http://download.qt.io/official_releases/qt/">Download a release</a>.<ul>
-<li>For binaries, use the latest stable version of qt-PLATFORM-opensource-VERSION.[tar.gz or zip or dmg or exe]. When downloading binaries, ensure that your compiler version matches the Qt compiler indicated. Version 5.6+ supports Visual Studio 2015.</li>
-<li>For source code, use the latest stable version of qt-everywhere-opensource-src-VERSION.[tar.gz or zip or dmg].</li>
+</li>
+<li>Supported compiler<ul>
+<li>GCC 4.8 or newer</li>
+<li>Clang 4 or newer</li>
+<li>Xcode 9 or newer</li>
+<li>Visual Studio 2015 or newer</li>
 </ul>
 </li>
 </ul>
-<h2>Compiler and Build Tool </h2>
-<p>Linux Ubuntu/Debian (16.04):</p>
+<p>Optional dependencies:</p>
 <ul>
-<li>sudo apt install<ul>
-<li>build-essential cmake git python-dev mesa-common-dev mesa-utils freeglut3-dev libhdf5-serial-dev autoconf libtool bison flex</li>
+<li><a href="https://python.org">Python</a><ul>
+<li>When using Python 2, at least 2.7 is required</li>
+<li>When using Python 3, at least 3.3 is required</li>
 </ul>
 </li>
-<li>sudo python get-pip.py<ul>
-<li>sudo -H pip install numpy</li>
-<li>sudo -H pip install Mako</li>
-</ul>
-</li>
-<li>sudo apt-get install ninja-build<ul>
-<li>ninja is a speedy replacement for make, highly recommended.</li>
+<li><a href="https://qt.io">Qt5</a><ul>
+<li>Version 5.9 or newer</li>
 </ul>
 </li>
 </ul>
-<p><b>Note for Ubuntu 16.04</b>. The official Qt 5.9.1 binaries downloaded from <code>qt.io</code> are linked against a different version of <code>libprotobuf</code> than what ParaView uses, which causes runtime errors in ParaView. To avoid this, you can move the file <code>libqgtk3.so</code> out from <code>Qt5.9.1/plugins/platformthemes</code>. This platform theme is linked against a different <code>libprotobuf</code> than ParaView. Moving it causes it not to be loaded, thereby avoiding the runtime errors with no negative effects on running ParaView.</p>
-<p>Windows:</p>
+<h4>Installing CMake</h4>
+<p>CMake is a tool that makes cross-platform building simple. On several systems it will probably be already installed or available through system package management utilities. If it is not, there are precompiled binaries available on <a href="https://cmake.org/download">CMake's download page</a>.</p>
+<h4>Installing Qt</h4>
+<p>ParaView uses Qt as its GUI library. Precompiled binaries are available on <a href="https://download.qt.io/official_releases/qt">Qt's website</a>.</p>
+<p>Note that on Windows, the compiler used for building ParaView must match the compiler version used to build Qt.</p>
+<p>The Linux packages for Qt 5.9 use a version of protobuf that may conflict with that used by ParaView. If, when running ParaView, error messages about a mismatch in protobuf versions appears, moving the <code>libqgtk3.so</code> plugin out of the <code>plugins/platformthemes</code> directory has been sufficient in the past.</p>
+<h3>Optional Additions</h3>
+<h4>Download And Install ffmpeg (<code>.avi</code>) movie libraries</h4>
+<p>When the ability to write <code>.avi</code> files is desired, and writing these files is not supported by the OS, ParaView can use the ffmpeg library. This is generally true for Linux. Source code for ffmpeg can be obtained from <a href="https://ffmpeg.org">the website</a>.</p>
+<h4>MPI</h4>
+<p>To run ParaView in parallel, an <a href="https://www.mcs.anl.gov/research/projects/mpi">MPI</a> implementation is required. If an MPI implementation that exploits special interconnect hardware is provided on your system, we suggest using it for optimal performance. Otherwise, on Linux/Mac, we suggest either <a href="https://www.open-mpi.org">OpenMPI</a> or <a href="https://www.mpich.org">MPICH</a>. On Windows, <a href="https://docs.microsoft.com/en-us/message-passing-interface/microsoft-mpi">Microsoft MPI</a> is required.</p>
+<h4>Python</h4>
+<p>In order to use scripting, <a href="https://python.org">Python</a> is required (versions 2.7 and 3.3). Python is also required in order to build ParaViewWeb support.</p>
+<h4>OSMesa</h4>
+<p>Off-screen Mesa can be used as a software-renderer for running ParaView on a server without hardware OpenGL acceleration. This is usually available in system packages on Linux. For example, the <code>libosmesa6-dev</code> package on Debian and Ubuntu. However, for older machines, building a newer version of Mesa is likely necessary for bug fixes and support. Its source and build instructions can be found on <a href="https://www.mesa3d.org">its website</a>.</p>
+<h2>Creating the Build Environment</h2>
+<h3>Linux (Ubuntu/Debian)</h3>
 <ul>
-<li>Visual Studio 2015 Community Edition</li>
-<li>Use "VS2015 x64 Native Tools Command Prompt" to configure with CMake and to build with ninja.</li>
-<li>Get <a href="https://ninja-build.org/">Ninja Build</a>. Unzip the binary and put it on your path.</li>
-</ul>
-<h2>Optional Additions </h2>
-<h3>Download And Install ffmpeg (.avi) movie libraries</h3>
-<p>When the ability to write .avi files is desired, and writing these files is not supported by the OS, ParaView can attach to an ffmpeg library. This is generally true for Linux. Ffmpeg library source code is found here: <a href="http://www.ffmpeg.org/">6</a></p>
-<h3>MPI</h3>
-<p>To run ParaView in parallel, an <a href="http://www-unix.mcs.anl.gov/mpi/">MPI</a> implementation is required. If an MPI implementation that exploits special interconnect hardware is provided on your system, we suggest using it for optimal performance. Otherwise, on Linux/Mac, we suggest either <a href="http://www.open-mpi.org/">OpenMPI</a> or <a href="http://www.mpich.org/">MPICH</a>. On Windows, we suggest <a href="https://msdn.microsoft.com/en-us/library/bb524831.aspx">Microsoft MPI</a>.</p>
-<h3>Python</h3>
-<p>In order to use scripting, <a href="http://www.python.org/">Python</a> is required (versions 2.7, 3.6, and 3.7.1 are supported). Python is also required for ParaViewWeb builds.</p>
-<h3>OSMesa</h3>
-<p>Off-screen Mesa can be used as a software-renderer for running ParaView on a server without hardware OpenGL acceleration.</p>
-<h2>Retrieve the Source </h2>
-<ul>
-<li><a class="el" href="Documentation_2dev_2git_2README_8md.html">Install Git</a> - Git 1.7.2 or greater is required for development</li>
-<li><a class="el" href="develop_8md.html">Develop ParaView</a> - Create a fork and checkout the source code.<ul>
-<li>A useful directory structure is ParaView/src for the git source tree, ParaView/build for the build tree, and if needed, ParaView/install for the install directory.</li>
-<li>If you wish to contribute bug fixes or features to ParaView, please follow the instructions in [<a class="el" href="develop_8md.html">git/develop.md</a>] for creating a fork and setting up the repository for contributing.</li>
+<li><code>sudo apt install</code> the following packages:<ul>
+<li><code>build-essential</code></li>
+<li><code>cmake</code></li>
+<li><code>mesa-common-dev</code></li>
+<li><code>mesa-utils</code></li>
+<li><code>freeglut3-dev</code></li>
+<li><code>ninja-build</code><ul>
+<li><code>ninja</code> is a speedy replacement for <code>make</code>, highly recommended.</li>
 </ul>
 </li>
 </ul>
-<h2>Run CMake </h2>
-<ul>
-<li><code>cd ParaView/build</code></li>
-<li><code>cmake-gui ../src</code> or <code>ccmake ../src</code></li>
-<li>Generator: choose <code>ninja</code> for the ninja build system.</li>
-<li>There are several CMake setting you may consider changing:</li>
+</li>
 </ul>
-<table class="markdownTable">
-<tr class="markdownTableHead">
-<th class="markdownTableHeadNone">Variable  </th><th class="markdownTableHeadNone">Value  </th><th class="markdownTableHeadNone">Description   </th></tr>
-<tr class="markdownTableBody" class="markdownTableRowOdd">
-<td class="markdownTableBodyNone">PARAVIEW_ENABLE_PYTHON  </td><td class="markdownTableBodyNone">ON  </td><td class="markdownTableBodyNone">Add python scripting support   </td></tr>
-<tr class="markdownTableBody" class="markdownTableRowEven">
-<td class="markdownTableBodyNone">BUILD_TESTING  </td><td class="markdownTableBodyNone">ON/OFF  </td><td class="markdownTableBodyNone">Build tests if you are contributing to ParaView   </td></tr>
-</table>
-<h2>Build </h2>
+<h3>Windows</h3>
 <ul>
-<li><code>cd ParaView/build</code></li>
-<li><code>ninja</code></li>
+<li><a href="https://visualstudio.microsoft.com/vs">Visual Studio Community Edition</a></li>
+<li>Use "x64 Native Tools Command Prompt" for the installed Visual Studio version to configure with CMake and to build with ninja.</li>
+<li>Get <a href="https://ninja-build.org">ninja</a>. Unzip the binary and put it in <code>PATH</code>.</li>
 </ul>
-<p>ParaView will be in <code>bin/paraview.exe</code></p>
-<h2>Other Variations </h2>
-<p><a href="http://kitware.github.io/paraviewweb/docs/guides/os_mesa.html">ParaViewWeb</a> uses ParaView as a server, so doesn't require the QT gui. It configures OSMesa instead. </p>
+<h2>Building</h2>
+<p>In order to build, CMake requires two steps, configure and build. ParaView itself does not support what are known as in-source builds, so the first step is to create a build directory.</p>
+<p>!!! note On Windows, there have historically been issues with long paths to the build directory. These should have been addressed, but they may appear again. If any are seen, please report them to <a href="https://gitlab.kitware.com/paraview/paraview/issues">the issue tracker</a>.</p>
+<div class="fragment"><div class="line">mkdir -p paraview/build</div><div class="line">cd paraview/build</div><div class="line">ccmake ../path/to/paraview/source # -GNinja may be added to use the Ninja generator</div></div><!-- fragment --><p>CMake's GUI has input entries for the build directory and the generator already. Note that on Windows, the GUI must be launched from a "Native Tools
+Command Prompt" available with Visual Studio in the start menu.</p>
+<h3>Build Settings</h3>
+<p>ParaView has a number of settings available for its build. The common variables to modify include:</p>
+<ul>
+<li><code>PARAVIEW_BUILD_SHARED_LIBS</code> (default <code>ON</code>): If set, shared libraries will be built. This is usually what is wanted.</li>
+<li><code>PARAVIEW_BUILD_QT_GUI</code> (default <code>ON</code>): Builds the <code>paraview</code> GUI application.</li>
+<li><code>PARAVIEW_USE_MPI</code> (default <code>OFF</code>): Whether MPI support will be available or not.</li>
+<li><code>PARAVIEW_USE_OSPRAY</code> (default <code>OFF</code>): Whether OSPRay ray-tracing support will be available or not.</li>
+<li><code>PARAVIEW_ENABLE_PYTHON</code> (default <code>OFF</code>): Whether Python support will be available or not.</li>
+<li><code>PARAVIEW_ENABLE_WEB</code> (default <code>OFF</code>; requires <code>PARAVIEW_ENABLE_PYTHON</code>): Whether ParaViewWeb support will be available or not.</li>
+<li><code>PARAVIEW_PLUGIN_ENABLE_&lt;name&gt;</code> (default varies): Whether to enable a plugin or not.</li>
+</ul>
+<p>ParaView uses VTK's module system to control its build. This infrastructure provides a number of variables to control modules which are not otherwise controlled by the other options provided.</p>
+<ul>
+<li><code>VTK_MODULE_USE_EXTERNAL_&lt;name&gt;</code> (default depends on <code>PARAVIEW_USE_EXTERNAL</code>): Use an external source for the named third-party module rather than the copy contained within the ParaView source tree.</li>
+<li><code>VTK_MODULE_ENABLE_&lt;name&gt;</code> (default <code>DEFAULT</code>): Change the build settings for the named module. Valid values are those for the module system's build settings (see below).</li>
+<li><code>VTK_GROUP_ENABLE_&lt;name&gt;</code> (default <code>DEFAULT</code>): Change the default build settings for modules belonging to the named group. Valid values are those for the module system's build settings (see below).</li>
+</ul>
+<p>For variables which use the module system's build settings, the valid values are as follows:</p>
+<ul>
+<li><code>YES</code>: Require the module to be built.</li>
+<li><code>WANT</code>: Build the module if possible.</li>
+<li><code>DEFAULT</code>: Use the settings by the module's groups and <code>PARAVIEW_BUILD_ALL_MODULES</code>.</li>
+<li><code>DONT_WANT</code>: Don't build the module unless required as a dependency.</li>
+<li><code>NO</code>: Do not build the module.</li>
+</ul>
+<p>If any <code>YES</code> module requires a <code>NO</code> module, an error is raised.</p>
+<p>Less common, but variables which may be of interest to some:</p>
+<ul>
+<li><code>PARAVIEW_BUILD_DEVELOPER_DOCUMENTATION</code> (default <code>OFF</code>): If set, the HTML documentation for ParaView's C++, Python, and proxies will be generated.</li>
+<li><code>PARAVIEW_ENABLE_EXAMPLES</code> (default <code>OFF</code>): If set, ParaView's example code will be added as tests to the ParaView test suite.</li>
+<li><code>PARAVIEW_ENABLE_LOGGING</code> (default <code>ON</code>): If set, enhanced logging will be enabled.</li>
+<li><code>PARAVIEW_USE_VTKM</code> (default <code>ON</code>): Enable VTK-m accelerated algorithms in ParaView.</li>
+<li><code>PARAVIEW_ENABLE_VISITBRIDGE</code> (default <code>OFF</code>): Enable support for VisIt readers.</li>
+<li><code>PARAVIEW_BUILD_TESTING</code> (default <code>OFF</code>): Whether to build tests or not. Valid values are <code>OFF</code> (no testing), <code>WANT</code> (enable tests as possible), and <code>ON</code> (enable all tests; may error out if features otherwise disabled are required by test code).</li>
+<li><code>PARAVIEW_ENABLE_KITS</code> (default <code>OFF</code>; requires CMake 3.12+): Compile ParaView into a smaller set of libraries. Can be useful on platforms where ParaView takes a long time to launch due to expensive disk access.</li>
+<li><code>PARAVIEW_ENABLE_CATALYST</code> (default <code>ON</code>): Whether to build Catalyst CoProcessing support or not.</li>
+</ul>
+<p>More advanced options:</p>
+<ul>
+<li><code>PARAVIEW_BUILD_ALL_MODULES</code> (default <code>OFF</code>): If set, ParaView will enable all modules not disabled by other features.</li>
+<li><code>PARAVIEW_ENABLE_NVPIPE</code> (default <code>OFF</code>): Use <a href="https://github.com/NVIDIA/NvPipe">nvpipe</a> image compression when communicating the GPU. Requires CUDA and an NVIDIA GPU.</li>
+<li><code>PARAVIEW_ENABLE_GDAL</code> (default <code>OFF</code>): Enable support for reading GDAL files.</li>
+<li><code>PARAVIEW_ENABLE_LAS</code> (default <code>OFF</code>): Enable support for reading LAS files.</li>
+<li><code>PARAVIEW_ENABLE_OPENTURNS</code> (default <code>OFF</code>): Enable support for reading OpenTurns files.</li>
+<li><code>PARAVIEW_ENABLE_PDAL</code> (default <code>OFF</code>): Enable support for reading PDAL files.</li>
+<li><code>PARAVIEW_ENABLE_MOTIONFX</code> (default <code>OFF</code>): Enable support for reading MotionFX files.</li>
+<li><code>PARAVIEW_ENABLE_XDMF2</code> (default <code>OFF</code>): Enable support for reading Xdmf2 files.</li>
+<li><code>PARAVIEW_ENABLE_XDMF3</code> (default <code>OFF</code>): Enable support for reading Xdmf3 files.</li>
+<li><code>PARAVIEW_ENABLE_FFMPEG</code> (default <code>OFF</code>; not available on Windows): Enable FFmpeg support.</li>
+<li><code>PARAVIEW_ENABLE_COSMOTOOLS</code> (default <code>OFF</code>; requires <code>PARAVIEW_USE_MPI</code> and not available on Windows): Enable support for CosmoTools which includes GenericIO readers and writers as well as some point cloud algorithms.</li>
+<li><code>PARAVIEW_USE_MPI_SSEND</code> (default <code>OFF</code>; requires <code>PARAVIEW_USE_MPI</code>): Use synchronous send commands for communication.</li>
+<li><code>PARAVIEW_USE_ICE_T</code> (default <code>OFF</code>; requires <code>PARAVIEW_USE_MPI</code>): Use Ice-T for parallel rendering.</li>
+<li><code>PARAVIEW_INITIALIZE_MPI_ON_CLIENT</code> (default <code>ON</code>; requires <code>PARAVIEW_USE_MPI</code>): Initialize MPI on client processes by default.</li>
+<li><code>PARAVIEW_ENABLE_QT_SUPPORT</code> (default <code>OFF</code>; implied by <code>PARAVIEW_BUILD_QT_GUI</code>): Enable Qt support.</li>
+<li><code>PARAVIEW_USE_QTHELP</code> (default <code>ON</code>; requires <code>PARAVIEW_ENABLE_QT_SUPPORT</code>): Use Qt's help infrastructure for runtime documentation.</li>
+<li><code>PARAVIEW_ENABLE_COMMANDLINE_TOOLS</code> (default <code>ON</code>; implied by <code>PARAVIEW_BUILD_QT_GUI</code>): Build command line tools such as <code>pvserver</code> and <code>pvrenderserver</code>.</li>
+<li><code>PARAVIEW_USE_EXTERNAL</code> (default <code>OFF</code>): Whether to prefer external third party libraries or the versions ParaView's source contains.</li>
+<li><code>PARAVIEW_VERSIONED_INSTALL</code> (default <code>ON</code>): Whether to add version numbers to ParaView's include and plugin directories in the install tree.</li>
+<li><code>PARAVIEW_CUSTOM_LIBRARY_SUFFIX</code> (default depends on <code>PARAVIEW_VERSIONED_INSTALL</code>): The custom suffix for libraries built by ParaView. Defaults to either an empty string or <code>pvX.Y</code> where <code>X</code> and <code>Y</code> are ParaView's major and minor version components, respectively. </li>
+</ul>
 </div></div><!-- contents -->
 <!-- HTML footer for doxygen 1.8.13-->
 <!-- start footer part -->

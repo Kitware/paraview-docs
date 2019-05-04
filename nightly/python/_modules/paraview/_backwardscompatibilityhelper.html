@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>paraview._backwardscompatibilityhelper &mdash; ParaView/Python 5.6.0-1344-g047f0a83d5 documentation</title>
+  <title>paraview._backwardscompatibilityhelper &mdash; ParaView/Python 5.6.0-1453-g9d8bb98edc documentation</title>
   
 
   
@@ -24,7 +24,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:'../../',
-        VERSION:'5.6.0-1344-g047f0a83d5',
+        VERSION:'5.6.0-1453-g9d8bb98edc',
         COLLAPSE_INDEX:false,
         FILE_SUFFIX:'.html',
         HAS_SOURCE:  true
@@ -48,7 +48,7 @@
         <link rel="index" title="Index"
               href="../../genindex.html"/>
         <link rel="search" title="Search" href="../../search.html"/>
-    <link rel="top" title="ParaView/Python 5.6.0-1344-g047f0a83d5 documentation" href="../../index.html"/>
+    <link rel="top" title="ParaView/Python 5.6.0-1453-g9d8bb98edc documentation" href="../../index.html"/>
         <link rel="up" title="Module code" href="../index.html"/> 
 
   <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
@@ -66,7 +66,7 @@
           <li> <a href="../../index.html">
             <img src="../../_static/paraview-logo-small.png"
             alt="ParaView/Python"></img></a> </li>
-          <li class="version"> version 5.6.0-1344-g047f0a83d5</li>
+          <li class="version"> version 5.6.0-1453-g9d8bb98edc</li>
         </ul>
         <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
   <input type="text" name="q" placeholder="Search docs" />
@@ -945,6 +945,50 @@
                 <span class="s1">&#39;The GenerateIdScalars.ArrayName property has been removed in ParaView 5.7. &#39;</span>\
                 <span class="s1">&#39;Please set `PointIdsArrayName` or `CellIdsArrayName` property instead.&#39;</span><span class="p">)</span>
 
+    <span class="c1"># In 5.7, we renamed the 3D View&#39;s ray tracing interface from OSPRay to RayTracing</span>
+    <span class="k">if</span> <span class="n">pname</span> <span class="o">==</span> <span class="s2">&quot;EnableOSPRay&quot;</span> <span class="ow">and</span> <span class="n">proxy</span><span class="o">.</span><span class="n">SMProxy</span><span class="o">.</span><span class="n">IsA</span><span class="p">(</span><span class="s2">&quot;vtkSMRenderViewProxy&quot;</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">paraview</span><span class="o">.</span><span class="n">compatibility</span><span class="o">.</span><span class="n">GetVersion</span><span class="p">()</span> <span class="o">&lt;</span> <span class="mf">5.7</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">proxy</span><span class="o">.</span><span class="n">GetProperty</span><span class="p">(</span><span class="s2">&quot;EnableRayTracing&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">SetData</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">NotSupportedException</span><span class="p">(</span>
+                <span class="s1">&#39;The `EnableOSPRay` control has been renamed in ParaView 5.7 to `EnableRayTracing`.&#39;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">pname</span> <span class="o">==</span> <span class="s2">&quot;OSPRayRenderer&quot;</span> <span class="ow">and</span> <span class="n">proxy</span><span class="o">.</span><span class="n">SMProxy</span><span class="o">.</span><span class="n">IsA</span><span class="p">(</span><span class="s2">&quot;vtkSMRenderViewProxy&quot;</span><span class="p">):</span>
+        <span class="n">newvalue</span> <span class="o">=</span> <span class="s2">&quot;OSPRay raycaster&quot;</span>
+        <span class="k">if</span> <span class="n">value</span> <span class="o">==</span> <span class="s2">&quot;pathtracer&quot;</span><span class="p">:</span>
+            <span class="n">newvalue</span> <span class="o">=</span> <span class="s2">&quot;OSPRay pathtracer&quot;</span>
+        <span class="k">if</span> <span class="n">paraview</span><span class="o">.</span><span class="n">compatibility</span><span class="o">.</span><span class="n">GetVersion</span><span class="p">()</span> <span class="o">&lt;</span> <span class="mf">5.7</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">proxy</span><span class="o">.</span><span class="n">GetProperty</span><span class="p">(</span><span class="s2">&quot;BackEnd&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">SetData</span><span class="p">(</span><span class="n">newvalue</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">NotSupportedException</span><span class="p">(</span>
+                <span class="s1">&#39;The `OSPRayRenderer` control has been renamed in ParaView 5.7 to `BackEnd` and &#39;</span>\
+                <span class="s1">&#39;the settings `scivis` and `pathtracer` have been renamed to `OSPRay scivis` &#39;</span>\
+                <span class="s1">&#39;and `OSPRay pathtracer` respectively.&#39;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">pname</span> <span class="o">==</span> <span class="s2">&quot;OSPRayTemporalCacheSize&quot;</span> <span class="ow">and</span> <span class="n">proxy</span><span class="o">.</span><span class="n">SMProxy</span><span class="o">.</span><span class="n">IsA</span><span class="p">(</span><span class="s2">&quot;vtkSMRenderViewProxy&quot;</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">paraview</span><span class="o">.</span><span class="n">compatibility</span><span class="o">.</span><span class="n">GetVersion</span><span class="p">()</span> <span class="o">&lt;</span> <span class="mf">5.7</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">proxy</span><span class="o">.</span><span class="n">GetProperty</span><span class="p">(</span><span class="s2">&quot;TemporalCacheSize&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">SetData</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">NotSupportedException</span><span class="p">(</span>
+                <span class="s1">&#39;The `OSPRayTemporalCacheSize` control has been renamed in ParaView 5.7 to `TemporalCacheSize`.&#39;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">pname</span> <span class="o">==</span> <span class="s2">&quot;OSPRayUseScaleArray&quot;</span> <span class="ow">and</span> <span class="n">proxy</span><span class="o">.</span><span class="n">SMProxy</span><span class="o">.</span><span class="n">IsA</span><span class="p">(</span><span class="s2">&quot;vtkSMRepresentationProxy&quot;</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">paraview</span><span class="o">.</span><span class="n">compatibility</span><span class="o">.</span><span class="n">GetVersion</span><span class="p">()</span> <span class="o">&lt;</span> <span class="mf">5.7</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">proxy</span><span class="o">.</span><span class="n">GetProperty</span><span class="p">(</span><span class="s2">&quot;UseScaleArray&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">SetData</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">NotSupportedException</span><span class="p">(</span>
+                <span class="s1">&#39;The `OSPRayUseScaleArray` control has been renamed in ParaView 5.7 to `UseScaleArray`.&#39;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">pname</span> <span class="o">==</span> <span class="s2">&quot;OSPRayScaleFunction&quot;</span> <span class="ow">and</span> <span class="n">proxy</span><span class="o">.</span><span class="n">SMProxy</span><span class="o">.</span><span class="n">IsA</span><span class="p">(</span><span class="s2">&quot;vtkSMRepresentationProxy&quot;</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">paraview</span><span class="o">.</span><span class="n">compatibility</span><span class="o">.</span><span class="n">GetVersion</span><span class="p">()</span> <span class="o">&lt;</span> <span class="mf">5.7</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">proxy</span><span class="o">.</span><span class="n">GetProperty</span><span class="p">(</span><span class="s2">&quot;ScaleFunction&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">SetData</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">NotSupportedException</span><span class="p">(</span>
+                <span class="s1">&#39;The `OSPRayScaleFunction` control has been renamed in ParaView 5.7 to `ScaleFunction`.&#39;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">pname</span> <span class="o">==</span> <span class="s2">&quot;OSPRayMaterial&quot;</span> <span class="ow">and</span> <span class="n">proxy</span><span class="o">.</span><span class="n">SMProxy</span><span class="o">.</span><span class="n">IsA</span><span class="p">(</span><span class="s2">&quot;vtkSMRepresentationProxy&quot;</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">paraview</span><span class="o">.</span><span class="n">compatibility</span><span class="o">.</span><span class="n">GetVersion</span><span class="p">()</span> <span class="o">&lt;</span> <span class="mf">5.7</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">proxy</span><span class="o">.</span><span class="n">GetProperty</span><span class="p">(</span><span class="s2">&quot;Material&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">SetData</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">NotSupportedException</span><span class="p">(</span>
+                <span class="s1">&#39;The `OSPRayMaterial` control has been renamed in ParaView 5.7 to `Material`.&#39;</span><span class="p">)</span>
+
+
     <span class="k">if</span> <span class="ow">not</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">proxy</span><span class="p">,</span> <span class="n">pname</span><span class="p">):</span>
         <span class="k">raise</span> <span class="ne">AttributeError</span><span class="p">()</span>
     <span class="n">proxy</span><span class="o">.</span><span class="vm">__dict__</span><span class="p">[</span><span class="n">pname</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span>
@@ -1194,6 +1238,46 @@
                 <span class="s1">&#39;The GenerateIdScalars.ArrayName property has been removed in ParaView 5.7. &#39;</span> \
                 <span class="s1">&#39;Please access `PointIdsArrayName` or `CellIdsArrayName` property instead.&#39;</span><span class="p">)</span>
 
+    <span class="c1"># In 5.7, we renamed the 3D View&#39;s ray tracing interface from OSPRay to RayTracing</span>
+    <span class="k">if</span> <span class="n">pname</span> <span class="o">==</span> <span class="s2">&quot;EnableOSPRay&quot;</span> <span class="ow">and</span> <span class="n">proxy</span><span class="o">.</span><span class="n">SMProxy</span><span class="o">.</span><span class="n">IsA</span><span class="p">(</span><span class="s2">&quot;vtkSMRenderViewProxy&quot;</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">paraview</span><span class="o">.</span><span class="n">compatibility</span><span class="o">.</span><span class="n">GetVersion</span><span class="p">()</span> <span class="o">&lt;</span> <span class="mf">5.7</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">proxy</span><span class="o">.</span><span class="n">GetProperty</span><span class="p">(</span><span class="s2">&quot;EnableRayTracing&quot;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">NotSupportedException</span><span class="p">(</span>
+                <span class="s1">&#39;The `EnableOSPRay` control has been renamed in ParaView 5.7 to `EnableRayTracing`.&#39;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">pname</span> <span class="o">==</span> <span class="s2">&quot;OSPRayRenderer&quot;</span> <span class="ow">and</span> <span class="n">proxy</span><span class="o">.</span><span class="n">SMProxy</span><span class="o">.</span><span class="n">IsA</span><span class="p">(</span><span class="s2">&quot;vtkSMRenderViewProxy&quot;</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">paraview</span><span class="o">.</span><span class="n">compatibility</span><span class="o">.</span><span class="n">GetVersion</span><span class="p">()</span> <span class="o">&lt;</span> <span class="mf">5.7</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">proxy</span><span class="o">.</span><span class="n">GetProperty</span><span class="p">(</span><span class="s2">&quot;BackEnd&quot;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">NotSupportedException</span><span class="p">(</span>
+                <span class="s1">&#39;The `OSPRayRenderer` control has been renamed in ParaView 5.7 to `BackEnd` and &#39;</span>\
+                <span class="s1">&#39;the settings `scivis` and `pathtracer` have been renamed to `OSPRay scivis` &#39;</span>\
+                <span class="s1">&#39;and `OSPRay pathtracer` respectively.&#39;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">pname</span> <span class="o">==</span> <span class="s2">&quot;OSPRayTemporalCacheSize&quot;</span> <span class="ow">and</span> <span class="n">proxy</span><span class="o">.</span><span class="n">SMProxy</span><span class="o">.</span><span class="n">IsA</span><span class="p">(</span><span class="s2">&quot;vtkSMRenderViewProxy&quot;</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">paraview</span><span class="o">.</span><span class="n">compatibility</span><span class="o">.</span><span class="n">GetVersion</span><span class="p">()</span> <span class="o">&lt;</span> <span class="mf">5.7</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">proxy</span><span class="o">.</span><span class="n">GetProperty</span><span class="p">(</span><span class="s2">&quot;TemporalCacheSize&quot;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">NotSupportedException</span><span class="p">(</span>
+                <span class="s1">&#39;The `OSPRayTemporalCacheSize` control has been renamed in ParaView 5.7 to `TemporalCacheSize`.&#39;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">pname</span> <span class="o">==</span> <span class="s2">&quot;OSPRayUseScaleArray&quot;</span> <span class="ow">and</span> <span class="n">proxy</span><span class="o">.</span><span class="n">SMProxy</span><span class="o">.</span><span class="n">IsA</span><span class="p">(</span><span class="s2">&quot;vtkSMRepresentationProxy&quot;</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">paraview</span><span class="o">.</span><span class="n">compatibility</span><span class="o">.</span><span class="n">GetVersion</span><span class="p">()</span> <span class="o">&lt;</span> <span class="mf">5.7</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">proxy</span><span class="o">.</span><span class="n">GetProperty</span><span class="p">(</span><span class="s2">&quot;UseScaleArray&quot;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">NotSupportedException</span><span class="p">(</span>
+                <span class="s1">&#39;The `OSPRayUseScaleArray` control has been renamed in ParaView 5.7 to `UseScaleArray`.&#39;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">pname</span> <span class="o">==</span> <span class="s2">&quot;OSPRayScaleFunction&quot;</span> <span class="ow">and</span> <span class="n">proxy</span><span class="o">.</span><span class="n">SMProxy</span><span class="o">.</span><span class="n">IsA</span><span class="p">(</span><span class="s2">&quot;vtkSMRepresentationProxy&quot;</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">paraview</span><span class="o">.</span><span class="n">compatibility</span><span class="o">.</span><span class="n">GetVersion</span><span class="p">()</span> <span class="o">&lt;</span> <span class="mf">5.7</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">proxy</span><span class="o">.</span><span class="n">GetProperty</span><span class="p">(</span><span class="s2">&quot;ScaleFunction&quot;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">NotSupportedException</span><span class="p">(</span>
+                <span class="s1">&#39;The `OSPRayScaleFunction` control has been renamed in ParaView 5.7 to `ScaleFunction`.&#39;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">pname</span> <span class="o">==</span> <span class="s2">&quot;OSPRayMaterial&quot;</span> <span class="ow">and</span> <span class="n">proxy</span><span class="o">.</span><span class="n">SMProxy</span><span class="o">.</span><span class="n">IsA</span><span class="p">(</span><span class="s2">&quot;vtkSMRepresentationProxy&quot;</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">paraview</span><span class="o">.</span><span class="n">compatibility</span><span class="o">.</span><span class="n">GetVersion</span><span class="p">()</span> <span class="o">&lt;</span> <span class="mf">5.7</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">proxy</span><span class="o">.</span><span class="n">GetProperty</span><span class="p">(</span><span class="s2">&quot;Material&quot;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">NotSupportedException</span><span class="p">(</span>
+                <span class="s1">&#39;The `OSPRayMaterial` control has been renamed in ParaView 5.7 to `Material`.&#39;</span><span class="p">)</span>
+
     <span class="k">raise</span> <span class="n">Continue</span><span class="p">()</span></div>
 
 <div class="viewcode-block" id="GetProxy"><a class="viewcode-back" href="../../paraview._backwardscompatibilityhelper.html#paraview._backwardscompatibilityhelper.GetProxy">[docs]</a><span class="k">def</span> <span class="nf">GetProxy</span><span class="p">(</span><span class="n">module</span><span class="p">,</span> <span class="n">key</span><span class="p">):</span>
@@ -1213,6 +1297,15 @@
             <span class="n">clip</span> <span class="o">=</span> <span class="n">module</span><span class="o">.</span><span class="vm">__dict__</span><span class="p">[</span><span class="n">key</span><span class="p">]()</span>
             <span class="n">clip</span><span class="o">.</span><span class="n">Invert</span> <span class="o">=</span> <span class="mi">0</span>
             <span class="k">return</span> <span class="n">clip</span>
+    <span class="k">if</span> <span class="n">version</span> <span class="o">&lt;</span> <span class="mf">5.6</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">key</span> <span class="o">==</span> <span class="s2">&quot;Glyph&quot;</span><span class="p">:</span>
+            <span class="c1"># In PV 5.6, we replaced the Glyph filter with a new implementation that has a</span>
+            <span class="c1"># different set of properties. The previous implementation was renamed to</span>
+            <span class="c1"># GlyphLegacy.</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Creating GlyphLegacy&quot;</span><span class="p">)</span>
+            <span class="n">glyph</span> <span class="o">=</span> <span class="n">module</span><span class="o">.</span><span class="vm">__dict__</span><span class="p">[</span><span class="s2">&quot;GlyphLegacy&quot;</span><span class="p">]()</span>
+            <span class="nb">print</span><span class="p">(</span><span class="n">glyph</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">glyph</span>
     <span class="k">if</span> <span class="n">version</span> <span class="o">&lt;</span> <span class="mf">5.6</span><span class="p">:</span>
         <span class="k">if</span> <span class="n">key</span> <span class="o">==</span> <span class="s2">&quot;Glyph&quot;</span><span class="p">:</span>
             <span class="c1"># In PV 5.6, we replaced the Glyph filter with a new implementation that has a</span>
