@@ -85,18 +85,21 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a29569313bb8c2048ada3ffaba59df6d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a81ff5c7733b851eb26cc3fa061ea16b6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkTilesHelper.html#a81ff5c7733b851eb26cc3fa061ea16b6">PrintSelf</a> (ostream &amp;os, <a class="elRef" doxygen="/home/kitware/dashboards/buildbot/paraview_master-vall-linux-shared-debug_doc_extdeps_gui_mpi_python3/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/classvtkIndent.html">vtkIndent</a> indent) override</td></tr>
 <tr class="separator:a81ff5c7733b851eb26cc3fa061ea16b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad9c3a0ecabb4dd467d2881e47cb4a58f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkTilesHelper.html#ad9c3a0ecabb4dd467d2881e47cb4a58f">GetTileViewport</a> (const <a class="elRef" doxygen="/home/kitware/dashboards/buildbot/paraview_master-vall-linux-shared-debug_doc_extdeps_gui_mpi_python3/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkVectorOperators_8h.html#a45c855d65dd0e2b57b08024500ff9159">double</a> *viewport, <a class="elRef" doxygen="/home/kitware/dashboards/buildbot/paraview_master-vall-linux-shared-debug_doc_extdeps_gui_mpi_python3/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkShaderProgram2_8h.html#a61569f2965b7a369eb10b6d75d410d11">int</a> rank, <a class="elRef" doxygen="/home/kitware/dashboards/buildbot/paraview_master-vall-linux-shared-debug_doc_extdeps_gui_mpi_python3/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkShaderProgram2_8h.html#a61569f2965b7a369eb10b6d75d410d11">int</a> out_tile_viewport[4])</td></tr>
-<tr class="memdesc:ad9c3a0ecabb4dd467d2881e47cb4a58f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns (x-origin, y-origin, x-max, y-max) in pixels for a tile with given <code>rank</code>.  <a href="#ad9c3a0ecabb4dd467d2881e47cb4a58f">More...</a><br /></td></tr>
-<tr class="separator:ad9c3a0ecabb4dd467d2881e47cb4a58f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a11906c302861bfff8c16d7b8353e0099"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkTilesHelper.html#a11906c302861bfff8c16d7b8353e0099">GetNormalizedTileViewport</a> (const <a class="elRef" doxygen="/home/kitware/dashboards/buildbot/paraview_master-vall-linux-shared-debug_doc_extdeps_gui_mpi_python3/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkVectorOperators_8h.html#a45c855d65dd0e2b57b08024500ff9159">double</a> *viewport, <a class="elRef" doxygen="/home/kitware/dashboards/buildbot/paraview_master-vall-linux-shared-debug_doc_extdeps_gui_mpi_python3/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkShaderProgram2_8h.html#a61569f2965b7a369eb10b6d75d410d11">int</a> rank, <a class="elRef" doxygen="/home/kitware/dashboards/buildbot/paraview_master-vall-linux-shared-debug_doc_extdeps_gui_mpi_python3/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkVectorOperators_8h.html#a45c855d65dd0e2b57b08024500ff9159">double</a> out_tile_viewport[4])</td></tr>
-<tr class="memdesc:a11906c302861bfff8c16d7b8353e0099"><td class="mdescLeft">&#160;</td><td class="mdescRight">Same as <a class="el" href="classvtkTilesHelper.html#ad9c3a0ecabb4dd467d2881e47cb4a58f" title="Returns (x-origin, y-origin, x-max, y-max) in pixels for a tile with given rank. ">GetTileViewport()</a> except that the returns values are in normalized-display coordinates instead of display coordinates.  <a href="#a11906c302861bfff8c16d7b8353e0099">More...</a><br /></td></tr>
-<tr class="separator:a11906c302861bfff8c16d7b8353e0099"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a14c8ff0cf0ff6307ab8e04782fc1ca63"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkTilesHelper.html#a14c8ff0cf0ff6307ab8e04782fc1ca63">GetPhysicalViewport</a> (const <a class="elRef" doxygen="/home/kitware/dashboards/buildbot/paraview_master-vall-linux-shared-debug_doc_extdeps_gui_mpi_python3/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkVectorOperators_8h.html#a45c855d65dd0e2b57b08024500ff9159">double</a> *global_viewport, <a class="elRef" doxygen="/home/kitware/dashboards/buildbot/paraview_master-vall-linux-shared-debug_doc_extdeps_gui_mpi_python3/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkShaderProgram2_8h.html#a61569f2965b7a369eb10b6d75d410d11">int</a> rank, <a class="elRef" doxygen="/home/kitware/dashboards/buildbot/paraview_master-vall-linux-shared-debug_doc_extdeps_gui_mpi_python3/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkVectorOperators_8h.html#a45c855d65dd0e2b57b08024500ff9159">double</a> out_phyiscal_viewport[4])</td></tr>
-<tr class="memdesc:a14c8ff0cf0ff6307ab8e04782fc1ca63"><td class="mdescLeft">&#160;</td><td class="mdescRight">Given a global-viewport for a renderer, returns the physical viewport on the rank indicated.  <a href="#a14c8ff0cf0ff6307ab8e04782fc1ca63">More...</a><br /></td></tr>
-<tr class="separator:a14c8ff0cf0ff6307ab8e04782fc1ca63"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8490e245c7afaf964e12f48ba7050cf6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkTilesHelper.html#a8490e245c7afaf964e12f48ba7050cf6">GetTileIndex</a> (<a class="elRef" doxygen="/home/kitware/dashboards/buildbot/paraview_master-vall-linux-shared-debug_doc_extdeps_gui_mpi_python3/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkShaderProgram2_8h.html#a61569f2965b7a369eb10b6d75d410d11">int</a> rank, <a class="elRef" doxygen="/home/kitware/dashboards/buildbot/paraview_master-vall-linux-shared-debug_doc_extdeps_gui_mpi_python3/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkShaderProgram2_8h.html#a61569f2965b7a369eb10b6d75d410d11">int</a> *tileX, <a class="elRef" doxygen="/home/kitware/dashboards/buildbot/paraview_master-vall-linux-shared-debug_doc_extdeps_gui_mpi_python3/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkShaderProgram2_8h.html#a61569f2965b7a369eb10b6d75d410d11">int</a> *tileY)</td></tr>
-<tr class="memdesc:a8490e245c7afaf964e12f48ba7050cf6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Given the rank, returns the tile location.  <a href="#a8490e245c7afaf964e12f48ba7050cf6">More...</a><br /></td></tr>
-<tr class="separator:a8490e245c7afaf964e12f48ba7050cf6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0fc8e910ca4ab067ffe1f13f7d9cb805"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkTilesHelper.html#a0fc8e910ca4ab067ffe1f13f7d9cb805">GetTiledSizeAndOrigin</a> (<a class="elRef" doxygen="/home/kitware/dashboards/buildbot/paraview_master-vall-linux-shared-debug_doc_extdeps_gui_mpi_python3/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkShaderProgram2_8h.html#a61569f2965b7a369eb10b6d75d410d11">int</a> rank, <a class="elRef" doxygen="/home/kitware/dashboards/buildbot/paraview_master-vall-linux-shared-debug_doc_extdeps_gui_mpi_python3/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/classvtkVector2i.html">vtkVector2i</a> &amp;<a class="elRef" doxygen="/home/kitware/dashboards/buildbot/paraview_master-vall-linux-shared-debug_doc_extdeps_gui_mpi_python3/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/namespacevtkX3D.html#ac6551f7bf833e8254b2b3ecdaea0d210ae3d5e7c015dff08d8daf72a0102e1444">size</a>, <a class="elRef" doxygen="/home/kitware/dashboards/buildbot/paraview_master-vall-linux-shared-debug_doc_extdeps_gui_mpi_python3/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/classvtkVector2i.html">vtkVector2i</a> &amp;lowerLeft) const</td></tr>
+<tr class="memdesc:a0fc8e910ca4ab067ffe1f13f7d9cb805"><td class="mdescLeft">&#160;</td><td class="mdescRight">For the specified <code>rank</code>, returns the tile size and origin of the tile rendered by the rank in display coordinates.  <a href="#a0fc8e910ca4ab067ffe1f13f7d9cb805">More...</a><br /></td></tr>
+<tr class="separator:a0fc8e910ca4ab067ffe1f13f7d9cb805"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a443d922b7633f9faaa16149f4a282fc9"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkTilesHelper.html#a443d922b7633f9faaa16149f4a282fc9">GetTiledSizeAndOrigin</a> (<a class="elRef" doxygen="/home/kitware/dashboards/buildbot/paraview_master-vall-linux-shared-debug_doc_extdeps_gui_mpi_python3/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkShaderProgram2_8h.html#a61569f2965b7a369eb10b6d75d410d11">int</a> rank, <a class="elRef" doxygen="/home/kitware/dashboards/buildbot/paraview_master-vall-linux-shared-debug_doc_extdeps_gui_mpi_python3/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/classvtkVector2i.html">vtkVector2i</a> &amp;<a class="elRef" doxygen="/home/kitware/dashboards/buildbot/paraview_master-vall-linux-shared-debug_doc_extdeps_gui_mpi_python3/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/namespacevtkX3D.html#ac6551f7bf833e8254b2b3ecdaea0d210ae3d5e7c015dff08d8daf72a0102e1444">size</a>, <a class="elRef" doxygen="/home/kitware/dashboards/buildbot/paraview_master-vall-linux-shared-debug_doc_extdeps_gui_mpi_python3/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/classvtkVector2i.html">vtkVector2i</a> &amp;lowerLeft, vtkVector4d viewport) const</td></tr>
+<tr class="memdesc:a443d922b7633f9faaa16149f4a282fc9"><td class="mdescLeft">&#160;</td><td class="mdescRight">A <code>GetTiledSizeAndOrigin</code> overload that takes in a <code>viewport</code> expressed as <code>(xmin, ymin, xmax, ymax)</code> where each coordinate is in the range <code>[0, 1.0]</code> (same as <a class="elRef" doxygen="/home/kitware/dashboards/buildbot/paraview_master-vall-linux-shared-debug_doc_extdeps_gui_mpi_python3/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/classvtkViewport.html#abce419379690dd4f05a5194f8dbb2a65">vtkViewport::SetViewport</a>).  <a href="#a443d922b7633f9faaa16149f4a282fc9">More...</a><br /></td></tr>
+<tr class="separator:a443d922b7633f9faaa16149f4a282fc9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a24f28c99d25c4a25af40120bce9dddd0"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkTilesHelper.html#a24f28c99d25c4a25af40120bce9dddd0">GetTileViewport</a> (<a class="elRef" doxygen="/home/kitware/dashboards/buildbot/paraview_master-vall-linux-shared-debug_doc_extdeps_gui_mpi_python3/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkShaderProgram2_8h.html#a61569f2965b7a369eb10b6d75d410d11">int</a> rank, vtkVector4d &amp;tile_viewport) const</td></tr>
+<tr class="memdesc:a24f28c99d25c4a25af40120bce9dddd0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provides the viewport for the tile displayed on the rank, if any.  <a href="#a24f28c99d25c4a25af40120bce9dddd0">More...</a><br /></td></tr>
+<tr class="separator:a24f28c99d25c4a25af40120bce9dddd0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a22d2254b4a1c5ffd8c33a79e96d5616c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkTilesHelper.html#a22d2254b4a1c5ffd8c33a79e96d5616c">GetTileIndex</a> (<a class="elRef" doxygen="/home/kitware/dashboards/buildbot/paraview_master-vall-linux-shared-debug_doc_extdeps_gui_mpi_python3/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkShaderProgram2_8h.html#a61569f2965b7a369eb10b6d75d410d11">int</a> rank, <a class="elRef" doxygen="/home/kitware/dashboards/buildbot/paraview_master-vall-linux-shared-debug_doc_extdeps_gui_mpi_python3/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkShaderProgram2_8h.html#a61569f2965b7a369eb10b6d75d410d11">int</a> *tileX, <a class="elRef" doxygen="/home/kitware/dashboards/buildbot/paraview_master-vall-linux-shared-debug_doc_extdeps_gui_mpi_python3/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkShaderProgram2_8h.html#a61569f2965b7a369eb10b6d75d410d11">int</a> *tileY) const</td></tr>
+<tr class="memdesc:a22d2254b4a1c5ffd8c33a79e96d5616c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Given the rank, returns the tile location.  <a href="#a22d2254b4a1c5ffd8c33a79e96d5616c">More...</a><br /></td></tr>
+<tr class="separator:a22d2254b4a1c5ffd8c33a79e96d5616c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a27200e226fcd96e306aa957ee2aca9b8"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkTilesHelper.html#a27200e226fcd96e306aa957ee2aca9b8">GetTileEnabled</a> (<a class="elRef" doxygen="/home/kitware/dashboards/buildbot/paraview_master-vall-linux-shared-debug_doc_extdeps_gui_mpi_python3/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkShaderProgram2_8h.html#a61569f2965b7a369eb10b6d75d410d11">int</a> rank) const</td></tr>
+<tr class="memdesc:a27200e226fcd96e306aa957ee2aca9b8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns true if current rank will render a tile.  <a href="#a27200e226fcd96e306aa957ee2aca9b8">More...</a><br /></td></tr>
+<tr class="separator:a27200e226fcd96e306aa957ee2aca9b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr><td colspan="2"><div class="groupHeader"></div></td></tr>
 <tr class="memitem:a5c12e9d0dc6de0443d66b9d97cd0ced5"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkTilesHelper.html#a5c12e9d0dc6de0443d66b9d97cd0ced5">SetTileDimensions</a> (<a class="elRef" doxygen="/home/kitware/dashboards/buildbot/paraview_master-vall-linux-shared-debug_doc_extdeps_gui_mpi_python3/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkShaderProgram2_8h.html#a61569f2965b7a369eb10b6d75d410d11">int</a>, <a class="elRef" doxygen="/home/kitware/dashboards/buildbot/paraview_master-vall-linux-shared-debug_doc_extdeps_gui_mpi_python3/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkShaderProgram2_8h.html#a61569f2965b7a369eb10b6d75d410d11">int</a>)</td></tr>
 <tr class="memdesc:a5c12e9d0dc6de0443d66b9d97cd0ced5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the tile dimensions.  <a href="#a5c12e9d0dc6de0443d66b9d97cd0ced5">More...</a><br /></td></tr>
@@ -359,7 +362,7 @@ Protected Attributes</h2></td></tr>
 <div class="textblock"><p>this is a helper class that handles viewport computations when rendering for tile-displays. </p>
 <p>This assumes that all tiles have the same pixel-size. </p>
 
-<p class="definition">Definition at line <a class="el" href="vtkTilesHelper_8h_source.html#l00030">30</a> of file <a class="el" href="vtkTilesHelper_8h_source.html">vtkTilesHelper.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vtkTilesHelper_8h_source.html#l00031">31</a> of file <a class="el" href="vtkTilesHelper_8h_source.html">vtkTilesHelper.h</a>.</p>
 </div><h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="a124c8565615e436a2aae477070a4f8bf"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a124c8565615e436a2aae477070a4f8bf">&#9670;&nbsp;</a></span>Superclass</h2>
@@ -373,7 +376,7 @@ Protected Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="vtkTilesHelper_8h_source.html#l00034">34</a> of file <a class="el" href="vtkTilesHelper_8h_source.html">vtkTilesHelper.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vtkTilesHelper_8h_source.html#l00035">35</a> of file <a class="el" href="vtkTilesHelper_8h_source.html">vtkTilesHelper.h</a>.</p>
 
 </div>
 </div>
@@ -944,7 +947,7 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Set the tile size i.e. </p>
-<p>the size of the render window for a tile. We assumes that all tiles have the same size (since that's a requirement for IceT). </p>
+<p>the size of the render window for a single tile. An assumption, in ParaView is that all tiles will be of the same size. </p>
 
 </div>
 </div>
@@ -965,7 +968,7 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Set the tile size i.e. </p>
-<p>the size of the render window for a tile. We assumes that all tiles have the same size (since that's a requirement for IceT). </p>
+<p>the size of the render window for a single tile. An assumption, in ParaView is that all tiles will be of the same size. </p>
 
 </div>
 </div>
@@ -993,7 +996,7 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Set the tile size i.e. </p>
-<p>the size of the render window for a tile. We assumes that all tiles have the same size (since that's a requirement for IceT). </p>
+<p>the size of the render window for a single tile. An assumption, in ParaView is that all tiles will be of the same size. </p>
 
 </div>
 </div>
@@ -1032,7 +1035,7 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Set the tile size i.e. </p>
-<p>the size of the render window for a tile. We assumes that all tiles have the same size (since that's a requirement for IceT). </p>
+<p>the size of the render window for a single tile. An assumption, in ParaView is that all tiles will be of the same size. </p>
 
 </div>
 </div>
@@ -1061,12 +1064,92 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Set the tile size i.e. </p>
-<p>the size of the render window for a tile. We assumes that all tiles have the same size (since that's a requirement for IceT). </p>
+<p>the size of the render window for a single tile. An assumption, in ParaView is that all tiles will be of the same size. </p>
 
 </div>
 </div>
-<a id="ad9c3a0ecabb4dd467d2881e47cb4a58f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad9c3a0ecabb4dd467d2881e47cb4a58f">&#9670;&nbsp;</a></span>GetTileViewport()</h2>
+<a id="a0fc8e910ca4ab067ffe1f13f7d9cb805"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0fc8e910ca4ab067ffe1f13f7d9cb805">&#9670;&nbsp;</a></span>GetTiledSizeAndOrigin() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool vtkTilesHelper::GetTiledSizeAndOrigin </td>
+          <td>(</td>
+          <td class="paramtype"><a class="elRef" doxygen="/home/kitware/dashboards/buildbot/paraview_master-vall-linux-shared-debug_doc_extdeps_gui_mpi_python3/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkShaderProgram2_8h.html#a61569f2965b7a369eb10b6d75d410d11">int</a>&#160;</td>
+          <td class="paramname"><em>rank</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="elRef" doxygen="/home/kitware/dashboards/buildbot/paraview_master-vall-linux-shared-debug_doc_extdeps_gui_mpi_python3/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/classvtkVector2i.html">vtkVector2i</a> &amp;&#160;</td>
+          <td class="paramname"><em>size</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="elRef" doxygen="/home/kitware/dashboards/buildbot/paraview_master-vall-linux-shared-debug_doc_extdeps_gui_mpi_python3/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/classvtkVector2i.html">vtkVector2i</a> &amp;&#160;</td>
+          <td class="paramname"><em>lowerLeft</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>For the specified <code>rank</code>, returns the tile size and origin of the tile rendered by the rank in display coordinates. </p>
+<p>If the rank is not expected to render an tile then returns false and <code>size</code> and <code>lowerLeft</code> will be left unchanged. Otherwise, returns true after updating <code>size</code> and <code>lowerLeft</code> appropriately. </p>
+
+</div>
+</div>
+<a id="a443d922b7633f9faaa16149f4a282fc9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a443d922b7633f9faaa16149f4a282fc9">&#9670;&nbsp;</a></span>GetTiledSizeAndOrigin() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool vtkTilesHelper::GetTiledSizeAndOrigin </td>
+          <td>(</td>
+          <td class="paramtype"><a class="elRef" doxygen="/home/kitware/dashboards/buildbot/paraview_master-vall-linux-shared-debug_doc_extdeps_gui_mpi_python3/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkShaderProgram2_8h.html#a61569f2965b7a369eb10b6d75d410d11">int</a>&#160;</td>
+          <td class="paramname"><em>rank</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="elRef" doxygen="/home/kitware/dashboards/buildbot/paraview_master-vall-linux-shared-debug_doc_extdeps_gui_mpi_python3/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/classvtkVector2i.html">vtkVector2i</a> &amp;&#160;</td>
+          <td class="paramname"><em>size</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="elRef" doxygen="/home/kitware/dashboards/buildbot/paraview_master-vall-linux-shared-debug_doc_extdeps_gui_mpi_python3/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/classvtkVector2i.html">vtkVector2i</a> &amp;&#160;</td>
+          <td class="paramname"><em>lowerLeft</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">vtkVector4d&#160;</td>
+          <td class="paramname"><em>viewport</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>A <code>GetTiledSizeAndOrigin</code> overload that takes in a <code>viewport</code> expressed as <code>(xmin, ymin, xmax, ymax)</code> where each coordinate is in the range <code>[0, 1.0]</code> (same as <a class="elRef" doxygen="/home/kitware/dashboards/buildbot/paraview_master-vall-linux-shared-debug_doc_extdeps_gui_mpi_python3/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/classvtkViewport.html#abce419379690dd4f05a5194f8dbb2a65">vtkViewport::SetViewport</a>). </p>
+<p>The size and origin returned are limited to the specified viewport. </p>
+
+</div>
+</div>
+<a id="a24f28c99d25c4a25af40120bce9dddd0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a24f28c99d25c4a25af40120bce9dddd0">&#9670;&nbsp;</a></span>GetTileViewport()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1074,116 +1157,36 @@ Protected Attributes</h2></td></tr>
         <tr>
           <td class="memname">bool vtkTilesHelper::GetTileViewport </td>
           <td>(</td>
-          <td class="paramtype">const <a class="elRef" doxygen="/home/kitware/dashboards/buildbot/paraview_master-vall-linux-shared-debug_doc_extdeps_gui_mpi_python3/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkVectorOperators_8h.html#a45c855d65dd0e2b57b08024500ff9159">double</a> *&#160;</td>
-          <td class="paramname"><em>viewport</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
           <td class="paramtype"><a class="elRef" doxygen="/home/kitware/dashboards/buildbot/paraview_master-vall-linux-shared-debug_doc_extdeps_gui_mpi_python3/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkShaderProgram2_8h.html#a61569f2965b7a369eb10b6d75d410d11">int</a>&#160;</td>
           <td class="paramname"><em>rank</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="elRef" doxygen="/home/kitware/dashboards/buildbot/paraview_master-vall-linux-shared-debug_doc_extdeps_gui_mpi_python3/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkShaderProgram2_8h.html#a61569f2965b7a369eb10b6d75d410d11">int</a>&#160;</td>
-          <td class="paramname"><em>out_tile_viewport</em>[4]&#160;</td>
+          <td class="paramtype">vtkVector4d &amp;&#160;</td>
+          <td class="paramname"><em>tile_viewport</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td></td>
+          <td></td><td> const</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Returns (x-origin, y-origin, x-max, y-max) in pixels for a tile with given <code>rank</code>. </p>
-<p><code>viewport</code> is in normalized display coordinates i.e. in range [0, 1] indicating the viewport covered by the current renderer on the whole i.e. treating all tiles as one large display if TileDimensions &gt; (1, 1). Returns false to indicate the result hasn't been computed. </p>
+<p>Provides the viewport for the tile displayed on the rank, if any. </p>
+<p>Returns false if the rank is not expected to display a tile. Otherwise returns true after updating <code>tile_viewport</code> to the result. </p>
 
 </div>
 </div>
-<a id="a11906c302861bfff8c16d7b8353e0099"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a11906c302861bfff8c16d7b8353e0099">&#9670;&nbsp;</a></span>GetNormalizedTileViewport()</h2>
+<a id="a22d2254b4a1c5ffd8c33a79e96d5616c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a22d2254b4a1c5ffd8c33a79e96d5616c">&#9670;&nbsp;</a></span>GetTileIndex()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">bool vtkTilesHelper::GetNormalizedTileViewport </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="elRef" doxygen="/home/kitware/dashboards/buildbot/paraview_master-vall-linux-shared-debug_doc_extdeps_gui_mpi_python3/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkVectorOperators_8h.html#a45c855d65dd0e2b57b08024500ff9159">double</a> *&#160;</td>
-          <td class="paramname"><em>viewport</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="elRef" doxygen="/home/kitware/dashboards/buildbot/paraview_master-vall-linux-shared-debug_doc_extdeps_gui_mpi_python3/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkShaderProgram2_8h.html#a61569f2965b7a369eb10b6d75d410d11">int</a>&#160;</td>
-          <td class="paramname"><em>rank</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="elRef" doxygen="/home/kitware/dashboards/buildbot/paraview_master-vall-linux-shared-debug_doc_extdeps_gui_mpi_python3/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkVectorOperators_8h.html#a45c855d65dd0e2b57b08024500ff9159">double</a>&#160;</td>
-          <td class="paramname"><em>out_tile_viewport</em>[4]&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Same as <a class="el" href="classvtkTilesHelper.html#ad9c3a0ecabb4dd467d2881e47cb4a58f" title="Returns (x-origin, y-origin, x-max, y-max) in pixels for a tile with given rank. ">GetTileViewport()</a> except that the returns values are in normalized-display coordinates instead of display coordinates. </p>
-<p>Returns false to indicate the result hasn't been computed. </p>
-
-</div>
-</div>
-<a id="a14c8ff0cf0ff6307ab8e04782fc1ca63"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a14c8ff0cf0ff6307ab8e04782fc1ca63">&#9670;&nbsp;</a></span>GetPhysicalViewport()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool vtkTilesHelper::GetPhysicalViewport </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="elRef" doxygen="/home/kitware/dashboards/buildbot/paraview_master-vall-linux-shared-debug_doc_extdeps_gui_mpi_python3/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkVectorOperators_8h.html#a45c855d65dd0e2b57b08024500ff9159">double</a> *&#160;</td>
-          <td class="paramname"><em>global_viewport</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="elRef" doxygen="/home/kitware/dashboards/buildbot/paraview_master-vall-linux-shared-debug_doc_extdeps_gui_mpi_python3/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkShaderProgram2_8h.html#a61569f2965b7a369eb10b6d75d410d11">int</a>&#160;</td>
-          <td class="paramname"><em>rank</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="elRef" doxygen="/home/kitware/dashboards/buildbot/paraview_master-vall-linux-shared-debug_doc_extdeps_gui_mpi_python3/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkVectorOperators_8h.html#a45c855d65dd0e2b57b08024500ff9159">double</a>&#160;</td>
-          <td class="paramname"><em>out_phyiscal_viewport</em>[4]&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Given a global-viewport for a renderer, returns the physical viewport on the rank indicated. </p>
-<p>Returns false to indicate the result hasn't been computed. </p>
-
-</div>
-</div>
-<a id="a8490e245c7afaf964e12f48ba7050cf6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8490e245c7afaf964e12f48ba7050cf6">&#9670;&nbsp;</a></span>GetTileIndex()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void vtkTilesHelper::GetTileIndex </td>
+          <td class="memname">bool vtkTilesHelper::GetTileIndex </td>
           <td>(</td>
           <td class="paramtype"><a class="elRef" doxygen="/home/kitware/dashboards/buildbot/paraview_master-vall-linux-shared-debug_doc_extdeps_gui_mpi_python3/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkShaderProgram2_8h.html#a61569f2965b7a369eb10b6d75d410d11">int</a>&#160;</td>
           <td class="paramname"><em>rank</em>, </td>
@@ -1203,12 +1206,43 @@ Protected Attributes</h2></td></tr>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td></td>
+          <td></td><td> const</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p>Given the rank, returns the tile location. </p>
+<p>Returns false if the rank is not expected to render any tile. </p>
+
+</div>
+</div>
+<a id="a27200e226fcd96e306aa957ee2aca9b8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a27200e226fcd96e306aa957ee2aca9b8">&#9670;&nbsp;</a></span>GetTileEnabled()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool vtkTilesHelper::GetTileEnabled </td>
+          <td>(</td>
+          <td class="paramtype"><a class="elRef" doxygen="/home/kitware/dashboards/buildbot/paraview_master-vall-linux-shared-debug_doc_extdeps_gui_mpi_python3/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkShaderProgram2_8h.html#a61569f2965b7a369eb10b6d75d410d11">int</a>&#160;</td>
+          <td class="paramname"><em>rank</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns true if current rank will render a tile. </p>
+
+<p class="definition">Definition at line <a class="el" href="vtkTilesHelper_8h_source.html#l00098">98</a> of file <a class="el" href="vtkTilesHelper_8h_source.html">vtkTilesHelper.h</a>.</p>
 
 </div>
 </div>
@@ -1233,7 +1267,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="vtkTilesHelper_8h_source.html#l00096">96</a> of file <a class="el" href="vtkTilesHelper_8h_source.html">vtkTilesHelper.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vtkTilesHelper_8h_source.html#l00108">108</a> of file <a class="el" href="vtkTilesHelper_8h_source.html">vtkTilesHelper.h</a>.</p>
 
 </div>
 </div>
@@ -1257,7 +1291,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="vtkTilesHelper_8h_source.html#l00097">97</a> of file <a class="el" href="vtkTilesHelper_8h_source.html">vtkTilesHelper.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vtkTilesHelper_8h_source.html#l00109">109</a> of file <a class="el" href="vtkTilesHelper_8h_source.html">vtkTilesHelper.h</a>.</p>
 
 </div>
 </div>
@@ -1281,7 +1315,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="vtkTilesHelper_8h_source.html#l00098">98</a> of file <a class="el" href="vtkTilesHelper_8h_source.html">vtkTilesHelper.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vtkTilesHelper_8h_source.html#l00110">110</a> of file <a class="el" href="vtkTilesHelper_8h_source.html">vtkTilesHelper.h</a>.</p>
 
 </div>
 </div>

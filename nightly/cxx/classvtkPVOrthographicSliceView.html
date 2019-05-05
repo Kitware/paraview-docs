@@ -49,7 +49,7 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
-<p>View.  
+<p>view with 3 orthographic slice views and 1 3D view.  
  <a href="classvtkPVOrthographicSliceView.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="vtkPVOrthographicSliceView_8h_source.html">vtkPVOrthographicSliceView.h</a>&gt;</code></p>
@@ -72,7 +72,7 @@ Collaboration diagram for vtkPVOrthographicSliceView:</div>
 <area shape="rect" id="node3" href="classvtkPVRenderView.html" title="Render View for ParaView. " alt="" coords="1168,552,1305,579"/>
 <area shape="rect" id="node4" href="classvtkPVView.html" title="baseclass for all ParaView views. " alt="" coords="686,358,778,384"/>
 <area shape="rect" id="node5" doxygen="/home/kitware/dashboards/buildbot/paraview_master-vall-linux-shared-debug_doc_extdeps_gui_mpi_python3/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/classvtkSmartPointer.html" title="vtkSmartPointer\&lt; vtkRender\lWindowInteractor \&gt;" alt="" coords="627,409,837,450"/>
-<area shape="rect" id="node6" href="classvtkPVSynchronizedRenderer.html" title="synchronizes and composites renderers among processes in ParaView configurations. ..." alt="" coords="629,475,835,502"/>
+<area shape="rect" id="node6" href="classvtkPVSynchronizedRenderer.html" title="coordinates rendering between corresponding renderers across multiple processes " alt="" coords="629,475,835,502"/>
 <area shape="rect" id="node7" doxygen="/home/kitware/dashboards/buildbot/paraview_master-vall-linux-shared-debug_doc_extdeps_gui_mpi_python3/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/classvtkSelection.html" title="vtkSelection" alt="" coords="681,526,783,552"/>
 <area shape="rect" id="node8" href="classvtkPVHardwareSelector.html" title="vtkHardwareSelector subclass with paraview specific logic to avoid recapturing buffers unless needed..." alt="" coords="407,583,583,610"/>
 <area shape="rect" id="node9" doxygen="/home/kitware/dashboards/buildbot/paraview_master-vall-linux-shared-debug_doc_extdeps_gui_mpi_python3/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/classvtkTimeStamp.html" title="vtkTimeStamp" alt="" coords="5,610,124,636"/>
@@ -130,9 +130,9 @@ Public Types</h2></td></tr>
 <tr class="memitem:a6ee11b74b78d88f893ff3d3f8fba703c inherit pub_types_classvtkPVRenderView"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="classvtkPVView.html">vtkPVView</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkPVRenderView.html#a6ee11b74b78d88f893ff3d3f8fba703c">Superclass</a></td></tr>
 <tr class="separator:a6ee11b74b78d88f893ff3d3f8fba703c inherit pub_types_classvtkPVRenderView"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_types_classvtkPVView"><td colspan="2" onclick="javascript:toggleInherit('pub_types_classvtkPVView')"><img src="closed.png" alt="-"/>&#160;Public Types inherited from <a class="el" href="classvtkPVView.html">vtkPVView</a></td></tr>
-<tr class="memitem:a1e139f1d8b3f63c4dcd3e47861e3aaf9 inherit pub_types_classvtkPVView"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom">{ <a class="el" href="classvtkPVView.html#a1e139f1d8b3f63c4dcd3e47861e3aaf9aba5d6c1d363bc86b6238cae7120e05ad">ViewTimeChangedEvent</a> = 9000
+<tr class="memitem:a835bdd3030de5353243cd1a73dc0b1ed inherit pub_types_classvtkPVView"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom">{ <a class="el" href="classvtkPVView.html#a835bdd3030de5353243cd1a73dc0b1edaba5d6c1d363bc86b6238cae7120e05ad">ViewTimeChangedEvent</a> = 9000
  }</td></tr>
-<tr class="separator:a1e139f1d8b3f63c4dcd3e47861e3aaf9 inherit pub_types_classvtkPVView"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="separator:a835bdd3030de5353243cd1a73dc0b1ed inherit pub_types_classvtkPVView"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac267665df53a6dc5b632268d50e15bf4 inherit pub_types_classvtkPVView"><td class="memItemLeft" align="right" valign="top">typedef <a class="elRef" doxygen="/home/kitware/dashboards/buildbot/paraview_master-vall-linux-shared-debug_doc_extdeps_gui_mpi_python3/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/classvtkView.html">vtkView</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkPVView.html#ac267665df53a6dc5b632268d50e15bf4">Superclass</a></td></tr>
 <tr class="separator:ac267665df53a6dc5b632268d50e15bf4 inherit pub_types_classvtkPVView"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_types_classvtkView"><td colspan="2" onclick="javascript:toggleInherit('pub_types_classvtkView')"><img src="closed.png" alt="-"/>&#160;Public Types inherited from <a class="el" href="http://www.vtk.org/doc/nightly/html/classvtkView.html">vtkView</a></td></tr>
@@ -147,9 +147,6 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:aefeb2a80078290f88665fc286131b57f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aad9146c550793b35e379ba75ff19b54c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkPVOrthographicSliceView.html#aad9146c550793b35e379ba75ff19b54c">PrintSelf</a> (ostream &amp;os, <a class="elRef" doxygen="/home/kitware/dashboards/buildbot/paraview_master-vall-linux-shared-debug_doc_extdeps_gui_mpi_python3/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/classvtkIndent.html">vtkIndent</a> indent) override</td></tr>
 <tr class="separator:aad9146c550793b35e379ba75ff19b54c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a42da59162ba1705364874b9501bae31f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkPVOrthographicSliceView.html#a42da59162ba1705364874b9501bae31f">Initialize</a> (unsigned <a class="elRef" doxygen="/home/kitware/dashboards/buildbot/paraview_master-vall-linux-shared-debug_doc_extdeps_gui_mpi_python3/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkShaderProgram2_8h.html#a61569f2965b7a369eb10b6d75d410d11">int</a> id) override</td></tr>
-<tr class="memdesc:a42da59162ba1705364874b9501bae31f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize the view with an identifier.  <a href="#a42da59162ba1705364874b9501bae31f">More...</a><br /></td></tr>
-<tr class="separator:a42da59162ba1705364874b9501bae31f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a44a538e0107d8077e0244ad9503b43d2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkPVOrthographicSliceView.html#a44a538e0107d8077e0244ad9503b43d2">Update</a> () override</td></tr>
 <tr class="memdesc:a44a538e0107d8077e0244ad9503b43d2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Overridden to ensure that the SlicePositionAxes3D doesn't get used when determine view bounds.  <a href="#a44a538e0107d8077e0244ad9503b43d2">More...</a><br /></td></tr>
 <tr class="separator:a44a538e0107d8077e0244ad9503b43d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -179,6 +176,9 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a2cea246bebe7cdff6e4843d8b4fd3ea4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a08822b2ccb2c29874dda60d55c57f432"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkPVOrthographicSliceView.html#a08822b2ccb2c29874dda60d55c57f432">SetTexturedBackground</a> (<a class="elRef" doxygen="/home/kitware/dashboards/buildbot/paraview_master-vall-linux-shared-debug_doc_extdeps_gui_mpi_python3/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkShaderProgram2_8h.html#a61569f2965b7a369eb10b6d75d410d11">int</a> val) override</td></tr>
 <tr class="separator:a08822b2ccb2c29874dda60d55c57f432"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4aac50aef4d05b6c3dba2be34e61b2f1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkPVOrthographicSliceView.html#a4aac50aef4d05b6c3dba2be34e61b2f1">ScaleRendererViewports</a> (const <a class="elRef" doxygen="/home/kitware/dashboards/buildbot/paraview_master-vall-linux-shared-debug_doc_extdeps_gui_mpi_python3/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkVectorOperators_8h.html#a45c855d65dd0e2b57b08024500ff9159">double</a> viewport[4]) override</td></tr>
+<tr class="memdesc:a4aac50aef4d05b6c3dba2be34e61b2f1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Overridden to scale the projection viewports appropriately.  <a href="#a4aac50aef4d05b6c3dba2be34e61b2f1">More...</a><br /></td></tr>
+<tr class="separator:a4aac50aef4d05b6c3dba2be34e61b2f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr><td colspan="2"><div class="groupHeader"></div></td></tr>
 <tr class="memitem:a80b637dc3a2065f5be9479be3e229426"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkPVOrthographicSliceView.html#a80b637dc3a2065f5be9479be3e229426">SetSlicePosition</a> (<a class="elRef" doxygen="/home/kitware/dashboards/buildbot/paraview_master-vall-linux-shared-debug_doc_extdeps_gui_mpi_python3/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkVectorOperators_8h.html#a45c855d65dd0e2b57b08024500ff9159">double</a> x, <a class="elRef" doxygen="/home/kitware/dashboards/buildbot/paraview_master-vall-linux-shared-debug_doc_extdeps_gui_mpi_python3/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkVectorOperators_8h.html#a45c855d65dd0e2b57b08024500ff9159">double</a> y, <a class="elRef" doxygen="/home/kitware/dashboards/buildbot/paraview_master-vall-linux-shared-debug_doc_extdeps_gui_mpi_python3/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkVectorOperators_8h.html#a45c855d65dd0e2b57b08024500ff9159">double</a> z)</td></tr>
 <tr class="memdesc:a80b637dc3a2065f5be9479be3e229426"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the slice position.  <a href="#a80b637dc3a2065f5be9479be3e229426">More...</a><br /></td></tr>
@@ -242,12 +242,6 @@ Public Member Functions</h2></td></tr>
 <tr class="inherit_header pub_methods_classvtkPVRenderView"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classvtkPVRenderView')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classvtkPVRenderView.html">vtkPVRenderView</a></td></tr>
 <tr class="memitem:a327d5efbf74103dea38c3286eff5eab8 inherit pub_methods_classvtkPVRenderView"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkPVRenderView.html#a327d5efbf74103dea38c3286eff5eab8">PrintSelf</a> (ostream &amp;os, <a class="elRef" doxygen="/home/kitware/dashboards/buildbot/paraview_master-vall-linux-shared-debug_doc_extdeps_gui_mpi_python3/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/classvtkIndent.html">vtkIndent</a> indent) override</td></tr>
 <tr class="separator:a327d5efbf74103dea38c3286eff5eab8 inherit pub_methods_classvtkPVRenderView"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aadbf306bb5f713ab7b4bf52be5aa93f9 inherit pub_methods_classvtkPVRenderView"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkPVRenderView.html#aadbf306bb5f713ab7b4bf52be5aa93f9">Initialize</a> (unsigned <a class="elRef" doxygen="/home/kitware/dashboards/buildbot/paraview_master-vall-linux-shared-debug_doc_extdeps_gui_mpi_python3/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkShaderProgram2_8h.html#a61569f2965b7a369eb10b6d75d410d11">int</a> id) override</td></tr>
-<tr class="memdesc:aadbf306bb5f713ab7b4bf52be5aa93f9 inherit pub_methods_classvtkPVRenderView"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize the view with an identifier.  <a href="classvtkPVRenderView.html#aadbf306bb5f713ab7b4bf52be5aa93f9">More...</a><br /></td></tr>
-<tr class="separator:aadbf306bb5f713ab7b4bf52be5aa93f9 inherit pub_methods_classvtkPVRenderView"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af3b8cc7bae14c2df24eaa7b05d12541d inherit pub_methods_classvtkPVRenderView"><td class="memItemLeft" align="right" valign="top"><a class="elRef" doxygen="/home/kitware/dashboards/buildbot/paraview_master-vall-linux-shared-debug_doc_extdeps_gui_mpi_python3/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/classvtkRenderWindow.html">vtkRenderWindow</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkPVRenderView.html#af3b8cc7bae14c2df24eaa7b05d12541d">GetRenderWindow</a> () override</td></tr>
-<tr class="memdesc:af3b8cc7bae14c2df24eaa7b05d12541d inherit pub_methods_classvtkPVRenderView"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the render window.  <a href="classvtkPVRenderView.html#af3b8cc7bae14c2df24eaa7b05d12541d">More...</a><br /></td></tr>
-<tr class="separator:af3b8cc7bae14c2df24eaa7b05d12541d inherit pub_methods_classvtkPVRenderView"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a18870dbdac8ca6f716e62a415201e558 inherit pub_methods_classvtkPVRenderView"><td class="memItemLeft" align="right" valign="top"><a class="elRef" doxygen="/home/kitware/dashboards/buildbot/paraview_master-vall-linux-shared-debug_doc_extdeps_gui_mpi_python3/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/classvtkRenderWindowInteractor.html">vtkRenderWindowInteractor</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkPVRenderView.html#a18870dbdac8ca6f716e62a415201e558">GetInteractor</a> ()</td></tr>
 <tr class="memdesc:a18870dbdac8ca6f716e62a415201e558 inherit pub_methods_classvtkPVRenderView"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the interactor.  <a href="classvtkPVRenderView.html#a18870dbdac8ca6f716e62a415201e558">More...</a><br /></td></tr>
 <tr class="separator:a18870dbdac8ca6f716e62a415201e558 inherit pub_methods_classvtkPVRenderView"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -266,9 +260,6 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a16e0b95c4783d735188e7e23a7f4a395 inherit pub_methods_classvtkPVRenderView"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkPVRenderView.html#a16e0b95c4783d735188e7e23a7f4a395">InvalidateCachedSelection</a> ()</td></tr>
 <tr class="memdesc:a16e0b95c4783d735188e7e23a7f4a395 inherit pub_methods_classvtkPVRenderView"><td class="mdescLeft">&#160;</td><td class="mdescRight">Invalidates cached selection.  <a href="classvtkPVRenderView.html#a16e0b95c4783d735188e7e23a7f4a395">More...</a><br /></td></tr>
 <tr class="separator:a16e0b95c4783d735188e7e23a7f4a395 inherit pub_methods_classvtkPVRenderView"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2f8e597bd6cfa7804cc1bfb70fff3953 inherit pub_methods_classvtkPVRenderView"><td class="memItemLeft" align="right" valign="top"><a class="elRef" doxygen="/home/kitware/dashboards/buildbot/paraview_master-vall-linux-shared-debug_doc_extdeps_gui_mpi_python3/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkVectorOperators_8h.html#a45c855d65dd0e2b57b08024500ff9159">double</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkPVRenderView.html#a2f8e597bd6cfa7804cc1bfb70fff3953">GetZbufferDataAtPoint</a> (<a class="elRef" doxygen="/home/kitware/dashboards/buildbot/paraview_master-vall-linux-shared-debug_doc_extdeps_gui_mpi_python3/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkShaderProgram2_8h.html#a61569f2965b7a369eb10b6d75d410d11">int</a> x, <a class="elRef" doxygen="/home/kitware/dashboards/buildbot/paraview_master-vall-linux-shared-debug_doc_extdeps_gui_mpi_python3/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkShaderProgram2_8h.html#a61569f2965b7a369eb10b6d75d410d11">int</a> y)</td></tr>
-<tr class="memdesc:a2f8e597bd6cfa7804cc1bfb70fff3953 inherit pub_methods_classvtkPVRenderView"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the z-buffer value at the given location.  <a href="classvtkPVRenderView.html#a2f8e597bd6cfa7804cc1bfb70fff3953">More...</a><br /></td></tr>
-<tr class="separator:a2f8e597bd6cfa7804cc1bfb70fff3953 inherit pub_methods_classvtkPVRenderView"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a445439a30d1610b54af3c6f9df453f6a inherit pub_methods_classvtkPVRenderView"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkPVRenderView.html#a445439a30d1610b54af3c6f9df453f6a">SetMaxClipBounds</a> (<a class="elRef" doxygen="/home/kitware/dashboards/buildbot/paraview_master-vall-linux-shared-debug_doc_extdeps_gui_mpi_python3/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkVectorOperators_8h.html#a45c855d65dd0e2b57b08024500ff9159">double</a> bds[6])</td></tr>
 <tr class="memdesc:a445439a30d1610b54af3c6f9df453f6a inherit pub_methods_classvtkPVRenderView"><td class="mdescLeft">&#160;</td><td class="mdescRight">Used by Cinema to enforce a consistent depth scaling.  <a href="classvtkPVRenderView.html#a445439a30d1610b54af3c6f9df453f6a">More...</a><br /></td></tr>
 <tr class="separator:a445439a30d1610b54af3c6f9df453f6a inherit pub_methods_classvtkPVRenderView"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -389,6 +380,12 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a87939ef44970d3a78c74091f87817c81 inherit pub_methods_classvtkPVRenderView"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad8cd1cc78d9ece7f116df8c3570f9b4f inherit pub_methods_classvtkPVRenderView"><td class="memItemLeft" align="right" valign="top">virtual <a class="elRef" doxygen="/home/kitware/dashboards/buildbot/paraview_master-vall-linux-shared-debug_doc_extdeps_gui_mpi_python3/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/classvtkRenderViewBase.html">vtkRenderViewBase</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkPVRenderView.html#ad8cd1cc78d9ece7f116df8c3570f9b4f">GetRenderView</a> ()</td></tr>
 <tr class="separator:ad8cd1cc78d9ece7f116df8c3570f9b4f inherit pub_methods_classvtkPVRenderView"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1c14ab94a0e60c491eb292eed3efad37 inherit pub_methods_classvtkPVRenderView"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkPVRenderView.html#a1c14ab94a0e60c491eb292eed3efad37">ScaleRendererViewports</a> (const <a class="elRef" doxygen="/home/kitware/dashboards/buildbot/paraview_master-vall-linux-shared-debug_doc_extdeps_gui_mpi_python3/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkVectorOperators_8h.html#a45c855d65dd0e2b57b08024500ff9159">double</a> viewport[4]) override</td></tr>
+<tr class="memdesc:a1c14ab94a0e60c491eb292eed3efad37 inherit pub_methods_classvtkPVRenderView"><td class="mdescLeft">&#160;</td><td class="mdescRight">Overridden to scale the OrientationWidget appropriately.  <a href="classvtkPVRenderView.html#a1c14ab94a0e60c491eb292eed3efad37">More...</a><br /></td></tr>
+<tr class="separator:a1c14ab94a0e60c491eb292eed3efad37 inherit pub_methods_classvtkPVRenderView"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a835bcca40602860ff055eaab539d4f09 inherit pub_methods_classvtkPVRenderView"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkPVRenderView.html#a835bcca40602860ff055eaab539d4f09">SynchronizeMaximumIds</a> (<a class="elRef" doxygen="/home/kitware/dashboards/buildbot/paraview_master-vall-linux-shared-debug_doc_extdeps_gui_mpi_python3/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkType_8h.html#a20bd6b6dedfe1bbb096c50354d52cc7e">vtkIdType</a> *maxPointId, <a class="elRef" doxygen="/home/kitware/dashboards/buildbot/paraview_master-vall-linux-shared-debug_doc_extdeps_gui_mpi_python3/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkType_8h.html#a20bd6b6dedfe1bbb096c50354d52cc7e">vtkIdType</a> *maxCellId)</td></tr>
+<tr class="memdesc:a835bcca40602860ff055eaab539d4f09 inherit pub_methods_classvtkPVRenderView"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is used by <a class="el" href="classvtkPVHardwareSelector.html" title="vtkHardwareSelector subclass with paraview specific logic to avoid recapturing buffers unless needed...">vtkPVHardwareSelector</a> to synchronize element ids between all ranks involved in selection.  <a href="classvtkPVRenderView.html#a835bcca40602860ff055eaab539d4f09">More...</a><br /></td></tr>
+<tr class="separator:a835bcca40602860ff055eaab539d4f09 inherit pub_methods_classvtkPVRenderView"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af75331ffdf960f91f09f888c8c9f82ed inherit pub_methods_classvtkPVRenderView"><td class="memItemLeft" align="right" valign="top">virtual <a class="elRef" doxygen="/home/kitware/dashboards/buildbot/paraview_master-vall-linux-shared-debug_doc_extdeps_gui_mpi_python3/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkShaderProgram2_8h.html#a61569f2965b7a369eb10b6d75d410d11">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkPVRenderView.html#af75331ffdf960f91f09f888c8c9f82ed">GetInteractionMode</a> ()</td></tr>
 <tr class="memdesc:af75331ffdf960f91f09f888c8c9f82ed inherit pub_methods_classvtkPVRenderView"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get/Set the interaction mode.  <a href="classvtkPVRenderView.html#af75331ffdf960f91f09f888c8c9f82ed">More...</a><br /></td></tr>
 <tr class="separator:af75331ffdf960f91f09f888c8c9f82ed inherit pub_methods_classvtkPVRenderView"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -725,9 +722,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a89f341dfc8010484534b511c1af3e7eb inherit pub_methods_classvtkPVView"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkPVView.html#a89f341dfc8010484534b511c1af3e7eb">GetLocalProcessSupportsInteraction</a> ()</td></tr>
 <tr class="memdesc:a89f341dfc8010484534b511c1af3e7eb inherit pub_methods_classvtkPVView"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns true if the local process can support interaction.  <a href="classvtkPVView.html#a89f341dfc8010484534b511c1af3e7eb">More...</a><br /></td></tr>
 <tr class="separator:a89f341dfc8010484534b511c1af3e7eb inherit pub_methods_classvtkPVView"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a220fb1319b3ff8559f5e5f647186b948 inherit pub_methods_classvtkPVView"><td class="memItemLeft" align="right" valign="top">virtual unsigned <a class="elRef" doxygen="/home/kitware/dashboards/buildbot/paraview_master-vall-linux-shared-debug_doc_extdeps_gui_mpi_python3/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkShaderProgram2_8h.html#a61569f2965b7a369eb10b6d75d410d11">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkPVView.html#a220fb1319b3ff8559f5e5f647186b948">GetIdentifier</a> ()</td></tr>
-<tr class="memdesc:a220fb1319b3ff8559f5e5f647186b948 inherit pub_methods_classvtkPVView"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the unique identifier used for this view.  <a href="classvtkPVView.html#a220fb1319b3ff8559f5e5f647186b948">More...</a><br /></td></tr>
-<tr class="separator:a220fb1319b3ff8559f5e5f647186b948 inherit pub_methods_classvtkPVView"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a676497d5663961af392b1005c2f4f27d inherit pub_methods_classvtkPVView"><td class="memItemLeft" align="right" valign="top"><a class="elRef" doxygen="/home/kitware/dashboards/buildbot/paraview_master-vall-linux-shared-debug_doc_extdeps_gui_mpi_python3/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/classvtkRenderWindow.html">vtkRenderWindow</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkPVView.html#a676497d5663961af392b1005c2f4f27d">GetRenderWindow</a> ()</td></tr>
+<tr class="memdesc:a676497d5663961af392b1005c2f4f27d inherit pub_methods_classvtkPVView"><td class="mdescLeft">&#160;</td><td class="mdescRight">If this view needs a render window (not all views may use one), this method can be used to get the render window associated with this view on the current process.  <a href="classvtkPVView.html#a676497d5663961af392b1005c2f4f27d">More...</a><br /></td></tr>
+<tr class="separator:a676497d5663961af392b1005c2f4f27d inherit pub_methods_classvtkPVView"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a91f2b8dee7a95696b6b8686ecef84aa8 inherit pub_methods_classvtkPVView"><td class="memItemLeft" align="right" valign="top">virtual <a class="elRef" doxygen="/home/kitware/dashboards/buildbot/paraview_master-vall-linux-shared-debug_doc_extdeps_gui_mpi_python3/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkShaderProgram2_8h.html#a61569f2965b7a369eb10b6d75d410d11">int</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkPVView.html#a91f2b8dee7a95696b6b8686ecef84aa8">GetPosition</a> ()</td></tr>
 <tr class="memdesc:a91f2b8dee7a95696b6b8686ecef84aa8 inherit pub_methods_classvtkPVView"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the position on this view in the multiview configuration.  <a href="classvtkPVView.html#a91f2b8dee7a95696b6b8686ecef84aa8">More...</a><br /></td></tr>
 <tr class="separator:a91f2b8dee7a95696b6b8686ecef84aa8 inherit pub_methods_classvtkPVView"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -746,15 +743,6 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:afbf8f347103f45fa0a028b3a95da35ae inherit pub_methods_classvtkPVView"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkPVView.html#afbf8f347103f45fa0a028b3a95da35ae">GetSize</a> (<a class="elRef" doxygen="/home/kitware/dashboards/buildbot/paraview_master-vall-linux-shared-debug_doc_extdeps_gui_mpi_python3/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkShaderProgram2_8h.html#a61569f2965b7a369eb10b6d75d410d11">int</a> [2])</td></tr>
 <tr class="memdesc:afbf8f347103f45fa0a028b3a95da35ae inherit pub_methods_classvtkPVView"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the size of this view in the multiview configuration.  <a href="classvtkPVView.html#afbf8f347103f45fa0a028b3a95da35ae">More...</a><br /></td></tr>
 <tr class="separator:afbf8f347103f45fa0a028b3a95da35ae inherit pub_methods_classvtkPVView"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a712ed970f4da070192cfcba906cb5c90 inherit pub_methods_classvtkPVView"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkPVView.html#a712ed970f4da070192cfcba906cb5c90">SynchronizeBounds</a> (<a class="elRef" doxygen="/home/kitware/dashboards/buildbot/paraview_master-vall-linux-shared-debug_doc_extdeps_gui_mpi_python3/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkVectorOperators_8h.html#a45c855d65dd0e2b57b08024500ff9159">double</a> bounds[6])</td></tr>
-<tr class="memdesc:a712ed970f4da070192cfcba906cb5c90 inherit pub_methods_classvtkPVView"><td class="mdescLeft">&#160;</td><td class="mdescRight">This encapsulates a whole lot of logic for communication between processes.  <a href="classvtkPVView.html#a712ed970f4da070192cfcba906cb5c90">More...</a><br /></td></tr>
-<tr class="separator:a712ed970f4da070192cfcba906cb5c90 inherit pub_methods_classvtkPVView"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad2568e01bcf05e47b7fa72e09e6e15a1 inherit pub_methods_classvtkPVView"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkPVView.html#ad2568e01bcf05e47b7fa72e09e6e15a1">SynchronizeSize</a> (<a class="elRef" doxygen="/home/kitware/dashboards/buildbot/paraview_master-vall-linux-shared-debug_doc_extdeps_gui_mpi_python3/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkVectorOperators_8h.html#a45c855d65dd0e2b57b08024500ff9159">double</a> &amp;<a class="elRef" doxygen="/home/kitware/dashboards/buildbot/paraview_master-vall-linux-shared-debug_doc_extdeps_gui_mpi_python3/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/namespacevtkX3D.html#ac6551f7bf833e8254b2b3ecdaea0d210ae3d5e7c015dff08d8daf72a0102e1444">size</a>)</td></tr>
-<tr class="memdesc:ad2568e01bcf05e47b7fa72e09e6e15a1 inherit pub_methods_classvtkPVView"><td class="mdescLeft">&#160;</td><td class="mdescRight">This encapsulates a whole lot of logic for communication between processes.  <a href="classvtkPVView.html#ad2568e01bcf05e47b7fa72e09e6e15a1">More...</a><br /></td></tr>
-<tr class="separator:ad2568e01bcf05e47b7fa72e09e6e15a1 inherit pub_methods_classvtkPVView"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a28dc11497577b99153d392751c3b4dbe inherit pub_methods_classvtkPVView"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkPVView.html#a28dc11497577b99153d392751c3b4dbe">SynchronizeSize</a> (unsigned <a class="elRef" doxygen="/home/kitware/dashboards/buildbot/paraview_master-vall-linux-shared-debug_doc_extdeps_gui_mpi_python3/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkShaderProgram2_8h.html#a61569f2965b7a369eb10b6d75d410d11">int</a> &amp;<a class="elRef" doxygen="/home/kitware/dashboards/buildbot/paraview_master-vall-linux-shared-debug_doc_extdeps_gui_mpi_python3/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/namespacevtkX3D.html#ac6551f7bf833e8254b2b3ecdaea0d210ae3d5e7c015dff08d8daf72a0102e1444">size</a>)</td></tr>
-<tr class="memdesc:a28dc11497577b99153d392751c3b4dbe inherit pub_methods_classvtkPVView"><td class="mdescLeft">&#160;</td><td class="mdescRight">This encapsulates a whole lot of logic for communication between processes.  <a href="classvtkPVView.html#a28dc11497577b99153d392751c3b4dbe">More...</a><br /></td></tr>
-<tr class="separator:a28dc11497577b99153d392751c3b4dbe inherit pub_methods_classvtkPVView"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:accc8afdbaf88057f9858fc04f34a8e9a inherit pub_methods_classvtkPVView"><td class="memItemLeft" align="right" valign="top">virtual <a class="elRef" doxygen="/home/kitware/dashboards/buildbot/paraview_master-vall-linux-shared-debug_doc_extdeps_gui_mpi_python3/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkVectorOperators_8h.html#a45c855d65dd0e2b57b08024500ff9159">double</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkPVView.html#accc8afdbaf88057f9858fc04f34a8e9a">GetViewTime</a> ()</td></tr>
 <tr class="memdesc:accc8afdbaf88057f9858fc04f34a8e9a inherit pub_methods_classvtkPVView"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get/Set the time this view is showing.  <a href="classvtkPVView.html#accc8afdbaf88057f9858fc04f34a8e9a">More...</a><br /></td></tr>
 <tr class="separator:accc8afdbaf88057f9858fc04f34a8e9a inherit pub_methods_classvtkPVView"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -776,6 +764,18 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a940276d6c305558fcceca362ef42e0b4 inherit pub_methods_classvtkPVView"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkPVView.html#a940276d6c305558fcceca362ef42e0b4">CleanupAfterScreenshot</a> ()</td></tr>
 <tr class="memdesc:a940276d6c305558fcceca362ef42e0b4 inherit pub_methods_classvtkPVView"><td class="mdescLeft">&#160;</td><td class="mdescRight">These methods are used to setup the view for capturing screen shots.  <a href="classvtkPVView.html#a940276d6c305558fcceca362ef42e0b4">More...</a><br /></td></tr>
 <tr class="separator:a940276d6c305558fcceca362ef42e0b4 inherit pub_methods_classvtkPVView"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab60c6dfb62684c32cb1e13a86dea039d inherit pub_methods_classvtkPVView"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkPVView.html#ab60c6dfb62684c32cb1e13a86dea039d">SetTileScale</a> (<a class="elRef" doxygen="/home/kitware/dashboards/buildbot/paraview_master-vall-linux-shared-debug_doc_extdeps_gui_mpi_python3/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkShaderProgram2_8h.html#a61569f2965b7a369eb10b6d75d410d11">int</a> x, <a class="elRef" doxygen="/home/kitware/dashboards/buildbot/paraview_master-vall-linux-shared-debug_doc_extdeps_gui_mpi_python3/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkShaderProgram2_8h.html#a61569f2965b7a369eb10b6d75d410d11">int</a> y)</td></tr>
+<tr class="memdesc:ab60c6dfb62684c32cb1e13a86dea039d inherit pub_methods_classvtkPVView"><td class="mdescLeft">&#160;</td><td class="mdescRight">When saving screenshots with tiling, these methods get called.  <a href="classvtkPVView.html#ab60c6dfb62684c32cb1e13a86dea039d">More...</a><br /></td></tr>
+<tr class="separator:ab60c6dfb62684c32cb1e13a86dea039d inherit pub_methods_classvtkPVView"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ace4b1668b04a41faa896d456994a79c2 inherit pub_methods_classvtkPVView"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkPVView.html#ace4b1668b04a41faa896d456994a79c2">SetTileViewport</a> (<a class="elRef" doxygen="/home/kitware/dashboards/buildbot/paraview_master-vall-linux-shared-debug_doc_extdeps_gui_mpi_python3/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkVectorOperators_8h.html#a45c855d65dd0e2b57b08024500ff9159">double</a> x0, <a class="elRef" doxygen="/home/kitware/dashboards/buildbot/paraview_master-vall-linux-shared-debug_doc_extdeps_gui_mpi_python3/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkVectorOperators_8h.html#a45c855d65dd0e2b57b08024500ff9159">double</a> y0, <a class="elRef" doxygen="/home/kitware/dashboards/buildbot/paraview_master-vall-linux-shared-debug_doc_extdeps_gui_mpi_python3/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkVectorOperators_8h.html#a45c855d65dd0e2b57b08024500ff9159">double</a> x1, <a class="elRef" doxygen="/home/kitware/dashboards/buildbot/paraview_master-vall-linux-shared-debug_doc_extdeps_gui_mpi_python3/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkVectorOperators_8h.html#a45c855d65dd0e2b57b08024500ff9159">double</a> y1)</td></tr>
+<tr class="memdesc:ace4b1668b04a41faa896d456994a79c2 inherit pub_methods_classvtkPVView"><td class="mdescLeft">&#160;</td><td class="mdescRight">When saving screenshots with tiling, these methods get called.  <a href="classvtkPVView.html#ace4b1668b04a41faa896d456994a79c2">More...</a><br /></td></tr>
+<tr class="separator:ace4b1668b04a41faa896d456994a79c2 inherit pub_methods_classvtkPVView"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3b497815d911e4973d11a5ddb0d0e49b inherit pub_methods_classvtkPVView"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkPVView.html#a3b497815d911e4973d11a5ddb0d0e49b">SetLogName</a> (const <a class="elRef" doxygen="/home/kitware/dashboards/buildbot/paraview_master-vall-linux-shared-debug_doc_extdeps_gui_mpi_python3/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/namespacevtkX3D.html#ac6551f7bf833e8254b2b3ecdaea0d210aff2af282e340f7884417cb571d333ccc">std::string</a> &amp;<a class="elRef" doxygen="/home/kitware/dashboards/buildbot/paraview_master-vall-linux-shared-debug_doc_extdeps_gui_mpi_python3/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/namespacevtkX3D.html#ac6551f7bf833e8254b2b3ecdaea0d210ac713735f1d46c2694d66e85217207be2">name</a>)</td></tr>
+<tr class="memdesc:a3b497815d911e4973d11a5ddb0d0e49b inherit pub_methods_classvtkPVView"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is solely intended to simplify debugging and use for any other purpose is vehemently discouraged.  <a href="classvtkPVView.html#a3b497815d911e4973d11a5ddb0d0e49b">More...</a><br /></td></tr>
+<tr class="separator:a3b497815d911e4973d11a5ddb0d0e49b inherit pub_methods_classvtkPVView"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0065026954ce33c628332a498d1a6913 inherit pub_methods_classvtkPVView"><td class="memItemLeft" align="right" valign="top">const <a class="elRef" doxygen="/home/kitware/dashboards/buildbot/paraview_master-vall-linux-shared-debug_doc_extdeps_gui_mpi_python3/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/namespacevtkX3D.html#ac6551f7bf833e8254b2b3ecdaea0d210aff2af282e340f7884417cb571d333ccc">std::string</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkPVView.html#a0065026954ce33c628332a498d1a6913">GetLogName</a> () const</td></tr>
+<tr class="memdesc:a0065026954ce33c628332a498d1a6913 inherit pub_methods_classvtkPVView"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is solely intended to simplify debugging and use for any other purpose is vehemently discouraged.  <a href="classvtkPVView.html#a0065026954ce33c628332a498d1a6913">More...</a><br /></td></tr>
+<tr class="separator:a0065026954ce33c628332a498d1a6913 inherit pub_methods_classvtkPVView"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classvtkView"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classvtkView')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="http://www.vtk.org/doc/nightly/html/classvtkView.html">vtkView</a></td></tr>
 <tr class="memitem:a6b7f9b953edf3bec5c0cd1d14574a38d inherit pub_methods_classvtkView"><td class="memItemLeft" align="right" valign="top"><a class="elRef" doxygen="/home/kitware/dashboards/buildbot/paraview_master-vall-linux-shared-debug_doc_extdeps_gui_mpi_python3/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/classvtkView.html">vtkView</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="elRef" doxygen="/home/kitware/dashboards/buildbot/paraview_master-vall-linux-shared-debug_doc_extdeps_gui_mpi_python3/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/classvtkView.html#a6b7f9b953edf3bec5c0cd1d14574a38d">NewInstance</a> () const</td></tr>
 <tr class="separator:a6b7f9b953edf3bec5c0cd1d14574a38d inherit pub_methods_classvtkView"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -1060,6 +1060,12 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memitem:aea505a1acd0d9765f40ef3ef60846f6a inherit pub_static_methods_classvtkPVView"><td class="memItemLeft" align="right" valign="top">static <a class="elRef" doxygen="/home/kitware/dashboards/buildbot/paraview_master-vall-linux-shared-debug_doc_extdeps_gui_mpi_python3/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/classvtkInformationRequestKey.html">vtkInformationRequestKey</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkPVView.html#aea505a1acd0d9765f40ef3ef60846f6a">REQUEST_RENDER</a> ()</td></tr>
 <tr class="memdesc:aea505a1acd0d9765f40ef3ef60846f6a inherit pub_static_methods_classvtkPVView"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is a render pass.  <a href="classvtkPVView.html#aea505a1acd0d9765f40ef3ef60846f6a">More...</a><br /></td></tr>
 <tr class="separator:aea505a1acd0d9765f40ef3ef60846f6a inherit pub_static_methods_classvtkPVView"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad39dddc9f46a66acebc2275da4479333 inherit pub_static_methods_classvtkPVView"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkPVView.html#ad39dddc9f46a66acebc2275da4479333">SetUseGenericOpenGLRenderWindow</a> (bool val)</td></tr>
+<tr class="memdesc:ad39dddc9f46a66acebc2275da4479333 inherit pub_static_methods_classvtkPVView"><td class="mdescLeft">&#160;</td><td class="mdescRight">Use this to indicate that the process should use <a class="elRef" doxygen="/home/kitware/dashboards/buildbot/paraview_master-vall-linux-shared-debug_doc_extdeps_gui_mpi_python3/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/classvtkGenericOpenGLRenderWindow.html">vtkGenericOpenGLRenderWindow</a> rather than <a class="elRef" doxygen="/home/kitware/dashboards/buildbot/paraview_master-vall-linux-shared-debug_doc_extdeps_gui_mpi_python3/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/classvtkRenderWindow.html">vtkRenderWindow</a> when creating an new render window.  <a href="classvtkPVView.html#ad39dddc9f46a66acebc2275da4479333">More...</a><br /></td></tr>
+<tr class="separator:ad39dddc9f46a66acebc2275da4479333 inherit pub_static_methods_classvtkPVView"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a25909a0b10dd952d66de28b98a211600 inherit pub_static_methods_classvtkPVView"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkPVView.html#a25909a0b10dd952d66de28b98a211600">GetUseGenericOpenGLRenderWindow</a> ()</td></tr>
+<tr class="memdesc:a25909a0b10dd952d66de28b98a211600 inherit pub_static_methods_classvtkPVView"><td class="mdescLeft">&#160;</td><td class="mdescRight">Use this to indicate that the process should use <a class="elRef" doxygen="/home/kitware/dashboards/buildbot/paraview_master-vall-linux-shared-debug_doc_extdeps_gui_mpi_python3/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/classvtkGenericOpenGLRenderWindow.html">vtkGenericOpenGLRenderWindow</a> rather than <a class="elRef" doxygen="/home/kitware/dashboards/buildbot/paraview_master-vall-linux-shared-debug_doc_extdeps_gui_mpi_python3/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/classvtkRenderWindow.html">vtkRenderWindow</a> when creating an new render window.  <a href="classvtkPVView.html#a25909a0b10dd952d66de28b98a211600">More...</a><br /></td></tr>
+<tr class="separator:a25909a0b10dd952d66de28b98a211600 inherit pub_static_methods_classvtkPVView"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_static_methods_classvtkView"><td colspan="2" onclick="javascript:toggleInherit('pub_static_methods_classvtkView')"><img src="closed.png" alt="-"/>&#160;Static Public Member Functions inherited from <a class="el" href="http://www.vtk.org/doc/nightly/html/classvtkView.html">vtkView</a></td></tr>
 <tr class="memitem:a06ee200906fce01c3b5969d65fd7b98f inherit pub_static_methods_classvtkView"><td class="memItemLeft" align="right" valign="top">static <a class="elRef" doxygen="/home/kitware/dashboards/buildbot/paraview_master-vall-linux-shared-debug_doc_extdeps_gui_mpi_python3/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/classvtkView.html">vtkView</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="elRef" doxygen="/home/kitware/dashboards/buildbot/paraview_master-vall-linux-shared-debug_doc_extdeps_gui_mpi_python3/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/classvtkView.html#a06ee200906fce01c3b5969d65fd7b98f">New</a> ()</td></tr>
 <tr class="separator:a06ee200906fce01c3b5969d65fd7b98f inherit pub_static_methods_classvtkView"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -1199,13 +1205,27 @@ Protected Member Functions</h2></td></tr>
 <tr class="memdesc:a6cc8cc0a4c14756d7152ff0d012ee2d2 inherit pro_methods_classvtkPVRenderView"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns true is currently generating a selection.  <a href="classvtkPVRenderView.html#a6cc8cc0a4c14756d7152ff0d012ee2d2">More...</a><br /></td></tr>
 <tr class="separator:a6cc8cc0a4c14756d7152ff0d012ee2d2 inherit pro_methods_classvtkPVRenderView"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_methods_classvtkPVView"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_classvtkPVView')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="classvtkPVView.html">vtkPVView</a></td></tr>
-<tr class="memitem:a5fb83b11edd3b6133d3d4e282c142b8a inherit pro_methods_classvtkPVView"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkPVView.html#a5fb83b11edd3b6133d3d4e282c142b8a">vtkPVView</a> ()</td></tr>
-<tr class="separator:a5fb83b11edd3b6133d3d4e282c142b8a inherit pro_methods_classvtkPVView"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5545a2cdec97f1b0973a8eead6e0235b inherit pro_methods_classvtkPVView"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkPVView.html#a5545a2cdec97f1b0973a8eead6e0235b">vtkPVView</a> (bool create_render_window=true)</td></tr>
+<tr class="separator:a5545a2cdec97f1b0973a8eead6e0235b inherit pro_methods_classvtkPVView"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afbcfa87ea04caf80b08e62a9e9bec0a8 inherit pro_methods_classvtkPVView"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkPVView.html#afbcfa87ea04caf80b08e62a9e9bec0a8">~vtkPVView</a> () override</td></tr>
 <tr class="separator:afbcfa87ea04caf80b08e62a9e9bec0a8 inherit pro_methods_classvtkPVView"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a99b388d20edf9cda7d473b282aaec283 inherit pro_methods_classvtkPVView"><td class="memItemLeft" align="right" valign="top"><a class="elRef" doxygen="/home/kitware/dashboards/buildbot/paraview_master-vall-linux-shared-debug_doc_extdeps_gui_mpi_python3/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/classvtkRenderWindow.html">vtkRenderWindow</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkPVView.html#a99b388d20edf9cda7d473b282aaec283">NewRenderWindow</a> ()</td></tr>
+<tr class="memdesc:a99b388d20edf9cda7d473b282aaec283 inherit pro_methods_classvtkPVView"><td class="mdescLeft">&#160;</td><td class="mdescRight">Subclasses should use this method to create new render windows instead of directly creating a new one.  <a href="classvtkPVView.html#a99b388d20edf9cda7d473b282aaec283">More...</a><br /></td></tr>
+<tr class="separator:a99b388d20edf9cda7d473b282aaec283 inherit pro_methods_classvtkPVView"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab7a9e3d52677ce5b2c3f3b88b28a2cfb inherit pro_methods_classvtkPVView"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkPVView.html#ab7a9e3d52677ce5b2c3f3b88b28a2cfb">SetRenderWindow</a> (<a class="elRef" doxygen="/home/kitware/dashboards/buildbot/paraview_master-vall-linux-shared-debug_doc_extdeps_gui_mpi_python3/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/classvtkRenderWindow.html">vtkRenderWindow</a> *)</td></tr>
+<tr class="memdesc:ab7a9e3d52677ce5b2c3f3b88b28a2cfb inherit pro_methods_classvtkPVView"><td class="mdescLeft">&#160;</td><td class="mdescRight">Subclasses can use this method to set the render window created for this view.  <a href="classvtkPVView.html#ab7a9e3d52677ce5b2c3f3b88b28a2cfb">More...</a><br /></td></tr>
+<tr class="separator:ab7a9e3d52677ce5b2c3f3b88b28a2cfb inherit pro_methods_classvtkPVView"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6c9fdbd7b8cdb77d228fffabfae2fb0b inherit pro_methods_classvtkPVView"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkPVView.html#a6c9fdbd7b8cdb77d228fffabfae2fb0b">AllReduce</a> (const <a class="elRef" doxygen="/home/kitware/dashboards/buildbot/paraview_master-vall-linux-shared-debug_doc_extdeps_gui_mpi_python3/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/classvtkBoundingBox.html">vtkBoundingBox</a> &amp;<a class="elRef" doxygen="/home/kitware/dashboards/buildbot/paraview_master-vall-linux-shared-debug_doc_extdeps_gui_mpi_python3/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkBoostGraphAdapter_8h.html#a7c22aa18a4e42c330618a6410d133551">source</a>, <a class="elRef" doxygen="/home/kitware/dashboards/buildbot/paraview_master-vall-linux-shared-debug_doc_extdeps_gui_mpi_python3/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/classvtkBoundingBox.html">vtkBoundingBox</a> &amp;dest)</td></tr>
+<tr class="memdesc:a6c9fdbd7b8cdb77d228fffabfae2fb0b inherit pro_methods_classvtkPVView"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reduce bounding box between all participating processes.  <a href="classvtkPVView.html#a6c9fdbd7b8cdb77d228fffabfae2fb0b">More...</a><br /></td></tr>
+<tr class="separator:a6c9fdbd7b8cdb77d228fffabfae2fb0b inherit pro_methods_classvtkPVView"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1d4d1eccbf3768c970b375805bacb521 inherit pro_methods_classvtkPVView"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkPVView.html#a1d4d1eccbf3768c970b375805bacb521">AllReduceMAX</a> (const vtkTypeUInt64 <a class="elRef" doxygen="/home/kitware/dashboards/buildbot/paraview_master-vall-linux-shared-debug_doc_extdeps_gui_mpi_python3/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkBoostGraphAdapter_8h.html#a7c22aa18a4e42c330618a6410d133551">source</a>, vtkTypeUInt64 &amp;dest, bool skip_data_server=false)</td></tr>
+<tr class="memdesc:a1d4d1eccbf3768c970b375805bacb521 inherit pro_methods_classvtkPVView"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reduce the max value between all participating processes.  <a href="classvtkPVView.html#a1d4d1eccbf3768c970b375805bacb521">More...</a><br /></td></tr>
+<tr class="separator:a1d4d1eccbf3768c970b375805bacb521 inherit pro_methods_classvtkPVView"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a920aeae4c9491ecf001a92147255f004 inherit pro_methods_classvtkPVView"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkPVView.html#a920aeae4c9491ecf001a92147255f004">AddRepresentationInternal</a> (<a class="elRef" doxygen="/home/kitware/dashboards/buildbot/paraview_master-vall-linux-shared-debug_doc_extdeps_gui_mpi_python3/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/classvtkDataRepresentation.html">vtkDataRepresentation</a> *rep) override</td></tr>
 <tr class="memdesc:a920aeae4c9491ecf001a92147255f004 inherit pro_methods_classvtkPVView"><td class="mdescLeft">&#160;</td><td class="mdescRight">Overridden to check that the representation has View setup properly.  <a href="classvtkPVView.html#a920aeae4c9491ecf001a92147255f004">More...</a><br /></td></tr>
 <tr class="separator:a920aeae4c9491ecf001a92147255f004 inherit pro_methods_classvtkPVView"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6ba180712a196b8fdb3f0ffd6d262153 inherit pro_methods_classvtkPVView"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classvtkPVSession.html">vtkPVSession</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkPVView.html#a6ba180712a196b8fdb3f0ffd6d262153">GetSession</a> ()</td></tr>
+<tr class="separator:a6ba180712a196b8fdb3f0ffd6d262153 inherit pro_methods_classvtkPVView"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad657b6efd317b9ce6063a02ee03add57 inherit pro_methods_classvtkPVView"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkPVView.html#ad657b6efd317b9ce6063a02ee03add57">CallProcessViewRequest</a> (<a class="elRef" doxygen="/home/kitware/dashboards/buildbot/paraview_master-vall-linux-shared-debug_doc_extdeps_gui_mpi_python3/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/classvtkInformationRequestKey.html">vtkInformationRequestKey</a> *passType, <a class="elRef" doxygen="/home/kitware/dashboards/buildbot/paraview_master-vall-linux-shared-debug_doc_extdeps_gui_mpi_python3/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/classvtkInformation.html">vtkInformation</a> *request, <a class="elRef" doxygen="/home/kitware/dashboards/buildbot/paraview_master-vall-linux-shared-debug_doc_extdeps_gui_mpi_python3/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/classvtkInformationVector.html">vtkInformationVector</a> *reply)</td></tr>
 <tr class="memdesc:ad657b6efd317b9ce6063a02ee03add57 inherit pro_methods_classvtkPVView"><td class="mdescLeft">&#160;</td><td class="mdescRight">Subclasses can use this method to trigger a pass on all representations.  <a href="classvtkPVView.html#ad657b6efd317b9ce6063a02ee03add57">More...</a><br /></td></tr>
 <tr class="separator:ad657b6efd317b9ce6063a02ee03add57 inherit pro_methods_classvtkPVView"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -1386,11 +1406,6 @@ Protected Attributes</h2></td></tr>
 <tr class="memitem:a4f449d2a39474d38d068481a18abe50b inherit pro_attribs_classvtkPVRenderView"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkPVRenderView.html#a4f449d2a39474d38d068481a18abe50b">LockBounds</a></td></tr>
 <tr class="separator:a4f449d2a39474d38d068481a18abe50b inherit pro_attribs_classvtkPVRenderView"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_attribs_classvtkPVView"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_classvtkPVView')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="classvtkPVView.html">vtkPVView</a></td></tr>
-<tr class="memitem:a6b129be6ab6450a0c58c1d75e348d988 inherit pro_attribs_classvtkPVView"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classvtkPVSynchronizedRenderWindows.html">vtkPVSynchronizedRenderWindows</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkPVView.html#a6b129be6ab6450a0c58c1d75e348d988">SynchronizedWindows</a></td></tr>
-<tr class="separator:a6b129be6ab6450a0c58c1d75e348d988 inherit pro_attribs_classvtkPVView"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2e600e53ea47d9c7719c1f53cf4e9316 inherit pro_attribs_classvtkPVView"><td class="memItemLeft" align="right" valign="top">unsigned <a class="elRef" doxygen="/home/kitware/dashboards/buildbot/paraview_master-vall-linux-shared-debug_doc_extdeps_gui_mpi_python3/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkShaderProgram2_8h.html#a61569f2965b7a369eb10b6d75d410d11">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkPVView.html#a2e600e53ea47d9c7719c1f53cf4e9316">Identifier</a></td></tr>
-<tr class="memdesc:a2e600e53ea47d9c7719c1f53cf4e9316 inherit pro_attribs_classvtkPVView"><td class="mdescLeft">&#160;</td><td class="mdescRight">Every view gets a unique identifier that it uses to register itself with the SynchronizedWindows.  <a href="classvtkPVView.html#a2e600e53ea47d9c7719c1f53cf4e9316">More...</a><br /></td></tr>
-<tr class="separator:a2e600e53ea47d9c7719c1f53cf4e9316 inherit pro_attribs_classvtkPVView"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a40440026b30bda7c3974e5e2895a7f6c inherit pro_attribs_classvtkPVView"><td class="memItemLeft" align="right" valign="top"><a class="elRef" doxygen="/home/kitware/dashboards/buildbot/paraview_master-vall-linux-shared-debug_doc_extdeps_gui_mpi_python3/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkVectorOperators_8h.html#a45c855d65dd0e2b57b08024500ff9159">double</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkPVView.html#a40440026b30bda7c3974e5e2895a7f6c">CacheKey</a></td></tr>
 <tr class="separator:a40440026b30bda7c3974e5e2895a7f6c inherit pro_attribs_classvtkPVView"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa521406a8101fe202108e34f23658932 inherit pro_attribs_classvtkPVView"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkPVView.html#aa521406a8101fe202108e34f23658932">UseCache</a></td></tr>
@@ -1432,8 +1447,8 @@ Friends</h2></td></tr>
 <tr class="separator:afce45b5972e8c49d4bc3e802c2f7a6a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>View. </p>
-<p><a class="el" href="classvtkPVOrthographicSliceView.html" title="View. ">vtkPVOrthographicSliceView</a> extends <a class="el" href="classvtkPVMultiSliceView.html" title="vtkPVMultiSliceView extends vtkPVRenderView but add meta-data information used by SliceRepresentation...">vtkPVMultiSliceView</a> to support showing a quad-view with orthographic views along with the 3D view. Work with <a class="el" href="classvtkPVCompositeOrthographicSliceRepresentation.html" title="vtkPVCompositeOrthographicSliceRepresentation is designed for use with vtkPVOrthographicSliceView. ">vtkPVCompositeOrthographicSliceRepresentation</a> and <a class="el" href="classvtkGeometrySliceRepresentation.html" title="extends vtkGeometryRepresentation to add support for showing just specific slices from the dataset...">vtkGeometrySliceRepresentation</a>, this class create a 3 slices for any dataset shown in this view and shows those slices in the orthographic views. The orthographic views themselves are non-composited i.e. the data is simply cloned on all rendering processes (hence we limit ourselves to showing slices alone).</p>
+<div class="textblock"><p>view with 3 orthographic slice views and 1 3D view. </p>
+<p><a class="el" href="classvtkPVOrthographicSliceView.html" title="view with 3 orthographic slice views and 1 3D view. ">vtkPVOrthographicSliceView</a> extends <a class="el" href="classvtkPVMultiSliceView.html" title="vtkPVMultiSliceView extends vtkPVRenderView but add meta-data information used by SliceRepresentation...">vtkPVMultiSliceView</a> to support showing a quad-view with orthographic views along with the 3D view. Work with <a class="el" href="classvtkPVCompositeOrthographicSliceRepresentation.html" title="vtkPVCompositeOrthographicSliceRepresentation is designed for use with vtkPVOrthographicSliceView. ">vtkPVCompositeOrthographicSliceRepresentation</a> and <a class="el" href="classvtkGeometrySliceRepresentation.html" title="extends vtkGeometryRepresentation to add support for showing just specific slices from the dataset...">vtkGeometrySliceRepresentation</a>, this class create a 3 slices for any dataset shown in this view and shows those slices in the orthographic views. The orthographic views themselves are non-composited i.e. the data is simply cloned on all rendering processes (hence we limit ourselves to showing slices alone).</p>
 <dl class="section user"><dt>Interactions:</dt><dd>In the orthographic views, users can use the thumb-wheel to change the slice plane (in which case the <code>SliceIncrements</code> are used to update the slice position). Additionally, users can double click in any of the orthographic views to move the slice position to that location. </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="vtkPVOrthographicSliceView_8h_source.html#l00041">41</a> of file <a class="el" href="vtkPVOrthographicSliceView_8h_source.html">vtkPVOrthographicSliceView.h</a>.</p>
@@ -1472,7 +1487,7 @@ Friends</h2></td></tr>
 <tr><td class="fieldname"><a id="adaaa4d89897a8fb689dead45bec39abea9d06edd8a7f15d19099d667d403c96f0"></a>CORONAL_VIEW_RENDERER&#160;</td><td class="fielddoc"></td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="vtkPVOrthographicSliceView_8h_source.html#l00061">61</a> of file <a class="el" href="vtkPVOrthographicSliceView_8h_source.html">vtkPVOrthographicSliceView.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vtkPVOrthographicSliceView_8h_source.html#l00054">54</a> of file <a class="el" href="vtkPVOrthographicSliceView_8h_source.html">vtkPVOrthographicSliceView.h</a>.</p>
 
 </div>
 </div>
@@ -1508,7 +1523,7 @@ Friends</h2></td></tr>
 <tr><td class="fieldname"><a id="a8142880840f054fb4e3da6b9362c195ba77baba9dfb5bb6fbe7e590d151936235"></a>RIGHT_SIDE_VIEW&#160;</td><td class="fielddoc"></td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="vtkPVOrthographicSliceView_8h_source.html#l00130">130</a> of file <a class="el" href="vtkPVOrthographicSliceView_8h_source.html">vtkPVOrthographicSliceView.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vtkPVOrthographicSliceView_8h_source.html#l00128">128</a> of file <a class="el" href="vtkPVOrthographicSliceView_8h_source.html">vtkPVOrthographicSliceView.h</a>.</p>
 
 </div>
 </div>
@@ -1731,37 +1746,6 @@ Friends</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Reimplemented from <a class="el" href="classvtkPVMultiSliceView.html#af4f16e6b64f2b7c13bf350b7b96bd03b">vtkPVMultiSliceView</a>.</p>
-
-</div>
-</div>
-<a id="a42da59162ba1705364874b9501bae31f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a42da59162ba1705364874b9501bae31f">&#9670;&nbsp;</a></span>Initialize()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void vtkPVOrthographicSliceView::Initialize </td>
-          <td>(</td>
-          <td class="paramtype">unsigned <a class="elRef" doxygen="/home/kitware/dashboards/buildbot/paraview_master-vall-linux-shared-debug_doc_extdeps_gui_mpi_python3/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkShaderProgram2_8h.html#a61569f2965b7a369eb10b6d75d410d11">int</a>&#160;</td>
-          <td class="paramname"><em>id</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Initialize the view with an identifier. </p>
-<p>Unless noted otherwise, this method must be called before calling any other methods on this class. </p><dl class="section note"><dt>Note</dt><dd>CallOnAllProcesses </dd></dl>
-
-<p>Reimplemented from <a class="el" href="classvtkPVView.html#aa580fa4531a22c3dc5a38d9b6de4f2c0">vtkPVView</a>.</p>
 
 </div>
 </div>
@@ -2229,7 +2213,7 @@ this must be called on all processes, however it will have any effect only the d
 
 <p>Reimplemented from <a class="el" href="classvtkPVRenderView.html#aa70b84b7d4501af0479d922b532b3c73">vtkPVRenderView</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="vtkPVOrthographicSliceView_8h_source.html#l00104">104</a> of file <a class="el" href="vtkPVOrthographicSliceView_8h_source.html">vtkPVOrthographicSliceView.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vtkPVOrthographicSliceView_8h_source.html#l00097">97</a> of file <a class="el" href="vtkPVOrthographicSliceView_8h_source.html">vtkPVOrthographicSliceView.h</a>.</p>
 
 </div>
 </div>
@@ -2402,6 +2386,36 @@ this must be called on all processes, however it will have any effect only the d
 </div><div class="memdoc">
 
 <p>Reimplemented from <a class="el" href="classvtkPVRenderView.html#a8a0f317469ef5b72603865b9a13731a3">vtkPVRenderView</a>.</p>
+
+</div>
+</div>
+<a id="a4aac50aef4d05b6c3dba2be34e61b2f1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4aac50aef4d05b6c3dba2be34e61b2f1">&#9670;&nbsp;</a></span>ScaleRendererViewports()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void vtkPVOrthographicSliceView::ScaleRendererViewports </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="elRef" doxygen="/home/kitware/dashboards/buildbot/paraview_master-vall-linux-shared-debug_doc_extdeps_gui_mpi_python3/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkVectorOperators_8h.html#a45c855d65dd0e2b57b08024500ff9159">double</a>&#160;</td>
+          <td class="paramname"><em>viewport</em>[4]</td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Overridden to scale the projection viewports appropriately. </p>
+
+<p>Reimplemented from <a class="el" href="classvtkPVView.html#ac0bf675038a4c019457f0a4fb90a8356">vtkPVView</a>.</p>
 
 </div>
 </div>
@@ -2589,7 +2603,7 @@ this must be called on all processes, however it will have any effect only the d
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="vtkPVOrthographicSliceView_8h_source.html#l00169">169</a> of file <a class="el" href="vtkPVOrthographicSliceView_8h_source.html">vtkPVOrthographicSliceView.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vtkPVOrthographicSliceView_8h_source.html#l00167">167</a> of file <a class="el" href="vtkPVOrthographicSliceView_8h_source.html">vtkPVOrthographicSliceView.h</a>.</p>
 
 </div>
 </div>
@@ -2614,7 +2628,7 @@ this must be called on all processes, however it will have any effect only the d
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="vtkPVOrthographicSliceView_8h_source.html#l00147">147</a> of file <a class="el" href="vtkPVOrthographicSliceView_8h_source.html">vtkPVOrthographicSliceView.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vtkPVOrthographicSliceView_8h_source.html#l00145">145</a> of file <a class="el" href="vtkPVOrthographicSliceView_8h_source.html">vtkPVOrthographicSliceView.h</a>.</p>
 
 </div>
 </div>
@@ -2638,7 +2652,7 @@ this must be called on all processes, however it will have any effect only the d
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="vtkPVOrthographicSliceView_8h_source.html#l00148">148</a> of file <a class="el" href="vtkPVOrthographicSliceView_8h_source.html">vtkPVOrthographicSliceView.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vtkPVOrthographicSliceView_8h_source.html#l00146">146</a> of file <a class="el" href="vtkPVOrthographicSliceView_8h_source.html">vtkPVOrthographicSliceView.h</a>.</p>
 
 </div>
 </div>
@@ -2662,7 +2676,7 @@ this must be called on all processes, however it will have any effect only the d
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="vtkPVOrthographicSliceView_8h_source.html#l00149">149</a> of file <a class="el" href="vtkPVOrthographicSliceView_8h_source.html">vtkPVOrthographicSliceView.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vtkPVOrthographicSliceView_8h_source.html#l00147">147</a> of file <a class="el" href="vtkPVOrthographicSliceView_8h_source.html">vtkPVOrthographicSliceView.h</a>.</p>
 
 </div>
 </div>
@@ -2686,7 +2700,7 @@ this must be called on all processes, however it will have any effect only the d
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="vtkPVOrthographicSliceView_8h_source.html#l00150">150</a> of file <a class="el" href="vtkPVOrthographicSliceView_8h_source.html">vtkPVOrthographicSliceView.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vtkPVOrthographicSliceView_8h_source.html#l00148">148</a> of file <a class="el" href="vtkPVOrthographicSliceView_8h_source.html">vtkPVOrthographicSliceView.h</a>.</p>
 
 </div>
 </div>
@@ -2710,7 +2724,7 @@ this must be called on all processes, however it will have any effect only the d
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="vtkPVOrthographicSliceView_8h_source.html#l00151">151</a> of file <a class="el" href="vtkPVOrthographicSliceView_8h_source.html">vtkPVOrthographicSliceView.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vtkPVOrthographicSliceView_8h_source.html#l00149">149</a> of file <a class="el" href="vtkPVOrthographicSliceView_8h_source.html">vtkPVOrthographicSliceView.h</a>.</p>
 
 </div>
 </div>
@@ -2734,7 +2748,7 @@ this must be called on all processes, however it will have any effect only the d
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="vtkPVOrthographicSliceView_8h_source.html#l00152">152</a> of file <a class="el" href="vtkPVOrthographicSliceView_8h_source.html">vtkPVOrthographicSliceView.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vtkPVOrthographicSliceView_8h_source.html#l00150">150</a> of file <a class="el" href="vtkPVOrthographicSliceView_8h_source.html">vtkPVOrthographicSliceView.h</a>.</p>
 
 </div>
 </div>
@@ -2758,7 +2772,7 @@ this must be called on all processes, however it will have any effect only the d
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="vtkPVOrthographicSliceView_8h_source.html#l00154">154</a> of file <a class="el" href="vtkPVOrthographicSliceView_8h_source.html">vtkPVOrthographicSliceView.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vtkPVOrthographicSliceView_8h_source.html#l00152">152</a> of file <a class="el" href="vtkPVOrthographicSliceView_8h_source.html">vtkPVOrthographicSliceView.h</a>.</p>
 
 </div>
 </div>
@@ -2782,7 +2796,7 @@ this must be called on all processes, however it will have any effect only the d
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="vtkPVOrthographicSliceView_8h_source.html#l00155">155</a> of file <a class="el" href="vtkPVOrthographicSliceView_8h_source.html">vtkPVOrthographicSliceView.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vtkPVOrthographicSliceView_8h_source.html#l00153">153</a> of file <a class="el" href="vtkPVOrthographicSliceView_8h_source.html">vtkPVOrthographicSliceView.h</a>.</p>
 
 </div>
 </div>
@@ -2806,7 +2820,7 @@ this must be called on all processes, however it will have any effect only the d
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="vtkPVOrthographicSliceView_8h_source.html#l00156">156</a> of file <a class="el" href="vtkPVOrthographicSliceView_8h_source.html">vtkPVOrthographicSliceView.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vtkPVOrthographicSliceView_8h_source.html#l00154">154</a> of file <a class="el" href="vtkPVOrthographicSliceView_8h_source.html">vtkPVOrthographicSliceView.h</a>.</p>
 
 </div>
 </div>

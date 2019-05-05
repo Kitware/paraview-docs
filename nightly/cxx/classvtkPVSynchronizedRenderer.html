@@ -39,7 +39,6 @@ $(function() {
 <a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-static-methods">Static Public Member Functions</a> &#124;
-<a href="#pro-types">Protected Types</a> &#124;
 <a href="#pro-methods">Protected Member Functions</a> &#124;
 <a href="#pro-attribs">Protected Attributes</a> &#124;
 <a href="classvtkPVSynchronizedRenderer-members.html">List of all members</a>  </div>
@@ -48,7 +47,7 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
-<p>synchronizes and composites renderers among processes in ParaView configurations.  
+<p>coordinates rendering between corresponding renderers across multiple processes  
  <a href="classvtkPVSynchronizedRenderer.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="vtkPVSynchronizedRenderer_8h_source.html">vtkPVSynchronizedRenderer.h</a>&gt;</code></p>
@@ -124,8 +123,9 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:ade2080a542d529683e54875d1ba40dab"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5de741b554ed3e62a2b05100851a3684"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkPVSynchronizedRenderer.html#a5de741b554ed3e62a2b05100851a3684">PrintSelf</a> (ostream &amp;os, <a class="elRef" doxygen="/home/kitware/dashboards/buildbot/paraview_master-vall-linux-shared-debug_doc_extdeps_gui_mpi_python3/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/classvtkIndent.html">vtkIndent</a> indent) override</td></tr>
 <tr class="separator:a5de741b554ed3e62a2b05100851a3684"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3cc54abbaf03b8a547ab3b8d216d09e9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkPVSynchronizedRenderer.html#a3cc54abbaf03b8a547ab3b8d216d09e9">Initialize</a> (<a class="el" href="classvtkPVSession.html">vtkPVSession</a> *session, unsigned <a class="elRef" doxygen="/home/kitware/dashboards/buildbot/paraview_master-vall-linux-shared-debug_doc_extdeps_gui_mpi_python3/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkShaderProgram2_8h.html#a61569f2965b7a369eb10b6d75d410d11">int</a> id)</td></tr>
-<tr class="separator:a3cc54abbaf03b8a547ab3b8d216d09e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7d711ecc7b9b682862f66163b650fef2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkPVSynchronizedRenderer.html#a7d711ecc7b9b682862f66163b650fef2">Initialize</a> (<a class="el" href="classvtkPVSession.html">vtkPVSession</a> *session)</td></tr>
+<tr class="memdesc:a7d711ecc7b9b682862f66163b650fef2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Must be called once to initialize the instance.  <a href="#a7d711ecc7b9b682862f66163b650fef2">More...</a><br /></td></tr>
+<tr class="separator:a7d711ecc7b9b682862f66163b650fef2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2717d9df09ba21e3cce67beda5fe61ee"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkPVSynchronizedRenderer.html#a2717d9df09ba21e3cce67beda5fe61ee">SetPartitionOrdering</a> (<a class="el" href="classvtkPartitionOrderingInterface.html">vtkPartitionOrderingInterface</a> *partitionOrdering)</td></tr>
 <tr class="memdesc:a2717d9df09ba21e3cce67beda5fe61ee"><td class="mdescLeft">&#160;</td><td class="mdescRight">partition ordering that gives processes ordering.  <a href="#a2717d9df09ba21e3cce67beda5fe61ee">More...</a><br /></td></tr>
 <tr class="separator:a2717d9df09ba21e3cce67beda5fe61ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -143,10 +143,10 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a0ee36fc6c5adbd5e2e928880305a3730"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr><td colspan="2"><div class="groupHeader"></div></td></tr>
 <tr class="memitem:aa69a14689871407f22983f65ed5e9941"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkPVSynchronizedRenderer.html#aa69a14689871407f22983f65ed5e9941">SetDisableIceT</a> (bool)</td></tr>
-<tr class="memdesc:aa69a14689871407f22983f65ed5e9941"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set this flag to true before calling <a class="el" href="classvtkPVSynchronizedRenderer.html#a3cc54abbaf03b8a547ab3b8d216d09e9">Initialize()</a> to disable using <a class="el" href="classvtkIceTSynchronizedRenderers.html" title="vtkSynchronizedRenderers subclass that uses IceT for parallel rendering and compositing. ">vtkIceTSynchronizedRenderers</a> for parallel rendering.  <a href="#aa69a14689871407f22983f65ed5e9941">More...</a><br /></td></tr>
+<tr class="memdesc:aa69a14689871407f22983f65ed5e9941"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set this flag to true before calling <a class="el" href="classvtkPVSynchronizedRenderer.html#a7d711ecc7b9b682862f66163b650fef2" title="Must be called once to initialize the instance. ">Initialize()</a> to disable using <a class="el" href="classvtkIceTSynchronizedRenderers.html" title="vtkSynchronizedRenderers subclass that uses IceT for parallel rendering and compositing. ">vtkIceTSynchronizedRenderers</a> for parallel rendering.  <a href="#aa69a14689871407f22983f65ed5e9941">More...</a><br /></td></tr>
 <tr class="separator:aa69a14689871407f22983f65ed5e9941"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abc2bdf09a4a9317179a100ffd8a3499e"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkPVSynchronizedRenderer.html#abc2bdf09a4a9317179a100ffd8a3499e">GetDisableIceT</a> ()</td></tr>
-<tr class="memdesc:abc2bdf09a4a9317179a100ffd8a3499e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set this flag to true before calling <a class="el" href="classvtkPVSynchronizedRenderer.html#a3cc54abbaf03b8a547ab3b8d216d09e9">Initialize()</a> to disable using <a class="el" href="classvtkIceTSynchronizedRenderers.html" title="vtkSynchronizedRenderers subclass that uses IceT for parallel rendering and compositing. ">vtkIceTSynchronizedRenderers</a> for parallel rendering.  <a href="#abc2bdf09a4a9317179a100ffd8a3499e">More...</a><br /></td></tr>
+<tr class="memdesc:abc2bdf09a4a9317179a100ffd8a3499e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set this flag to true before calling <a class="el" href="classvtkPVSynchronizedRenderer.html#a7d711ecc7b9b682862f66163b650fef2" title="Must be called once to initialize the instance. ">Initialize()</a> to disable using <a class="el" href="classvtkIceTSynchronizedRenderers.html" title="vtkSynchronizedRenderers subclass that uses IceT for parallel rendering and compositing. ">vtkIceTSynchronizedRenderers</a> for parallel rendering.  <a href="#abc2bdf09a4a9317179a100ffd8a3499e">More...</a><br /></td></tr>
 <tr class="separator:abc2bdf09a4a9317179a100ffd8a3499e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr><td colspan="2"><div class="groupHeader"></div></td></tr>
 <tr class="memitem:a82c9454b6e27cded82346286c469d3ea"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkPVSynchronizedRenderer.html#a82c9454b6e27cded82346286c469d3ea">SetEnabled</a> (bool <a class="elRef" doxygen="/home/kitware/dashboards/buildbot/paraview_master-vall-linux-shared-debug_doc_extdeps_gui_mpi_python3/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/namespacevtkX3D.html#ac6551f7bf833e8254b2b3ecdaea0d210ac3b128d6a04c1c1dd4daa4e384d7897c">enabled</a>)</td></tr>
@@ -361,19 +361,6 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memitem:a1ad146652efe695e9ace7bc29b3e0f74 inherit pub_static_methods_classvtkObjectBase"><td class="memItemLeft" align="right" valign="top">static <a class="elRef" doxygen="/home/kitware/dashboards/buildbot/paraview_master-vall-linux-shared-debug_doc_extdeps_gui_mpi_python3/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/classvtkObjectBase.html">vtkObjectBase</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="elRef" doxygen="/home/kitware/dashboards/buildbot/paraview_master-vall-linux-shared-debug_doc_extdeps_gui_mpi_python3/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/classvtkObjectBase.html#a1ad146652efe695e9ace7bc29b3e0f74">New</a> ()</td></tr>
 <tr class="separator:a1ad146652efe695e9ace7bc29b3e0f74 inherit pub_static_methods_classvtkObjectBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-types"></a>
-Protected Types</h2></td></tr>
-<tr class="memitem:a8fc81542def5fc069868e0ba618e4d15"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkPVSynchronizedRenderer.html#a8fc81542def5fc069868e0ba618e4d15">ModeEnum</a> { <br />
-&#160;&#160;<a class="el" href="classvtkPVSynchronizedRenderer.html#a8fc81542def5fc069868e0ba618e4d15a864450a125d88828a43df8026324d9ff">INVALID</a>, 
-<a class="el" href="classvtkPVSynchronizedRenderer.html#a8fc81542def5fc069868e0ba618e4d15aee840a1df3f079cd07541bf9888f05e0">BUILTIN</a>, 
-<a class="el" href="classvtkPVSynchronizedRenderer.html#a8fc81542def5fc069868e0ba618e4d15ac50f959ec43765a8c57b172846eba7f4">CLIENT</a>, 
-<a class="el" href="classvtkPVSynchronizedRenderer.html#a8fc81542def5fc069868e0ba618e4d15af69bddfaec8b526e9bd006216bf96e03">SERVER</a>, 
-<br />
-&#160;&#160;<a class="el" href="classvtkPVSynchronizedRenderer.html#a8fc81542def5fc069868e0ba618e4d15a4af2ebde4a5584a299dd4edcf6991f6f">BATCH</a>
-<br />
- }</td></tr>
-<tr class="separator:a8fc81542def5fc069868e0ba618e4d15"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
 <tr class="memitem:a63051797859270c524587de4d6e688dc"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkPVSynchronizedRenderer.html#a63051797859270c524587de4d6e688dc">vtkPVSynchronizedRenderer</a> ()</td></tr>
@@ -424,8 +411,6 @@ Protected Attributes</h2></td></tr>
 <tr class="separator:a62c7e000ba1160b19835d179ae20bb4a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae8584938419dca4dca26b07f2495bfa6"><td class="memItemLeft" align="right" valign="top"><a class="elRef" doxygen="/home/kitware/dashboards/buildbot/paraview_master-vall-linux-shared-debug_doc_extdeps_gui_mpi_python3/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/classvtkRenderPass.html">vtkRenderPass</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkPVSynchronizedRenderer.html#ae8584938419dca4dca26b07f2495bfa6">RenderPass</a></td></tr>
 <tr class="separator:ae8584938419dca4dca26b07f2495bfa6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afa6d1362e9db874a5b77071bc5aeafc0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classvtkPVSynchronizedRenderer.html#a8fc81542def5fc069868e0ba618e4d15">ModeEnum</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkPVSynchronizedRenderer.html#afa6d1362e9db874a5b77071bc5aeafc0">Mode</a></td></tr>
-<tr class="separator:afa6d1362e9db874a5b77071bc5aeafc0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4c3625d7e9f7b101da2859fe22222a48"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkPVSynchronizedRenderer.html#a4c3625d7e9f7b101da2859fe22222a48">Enabled</a></td></tr>
 <tr class="separator:a4c3625d7e9f7b101da2859fe22222a48"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af8a5e3f476994415a3a3020b2411cd95"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkPVSynchronizedRenderer.html#af8a5e3f476994415a3a3020b2411cd95">DisableIceT</a></td></tr>
@@ -454,9 +439,10 @@ Protected Attributes</h2></td></tr>
 <tr class="separator:a8b1994de8f45ddb8ae8acd18240715e6 inherit pro_attribs_classvtkObjectBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>synchronizes and composites renderers among processes in ParaView configurations. </p>
+<div class="textblock"><p>coordinates rendering between corresponding renderers across multiple processes </p>
+<p><a class="el" href="classvtkPVSynchronizedRenderer.html" title="coordinates rendering between corresponding renderers across multiple processes ">vtkPVSynchronizedRenderer</a> coordinates rendering between renderers that are split across multiple ranks. It internally uses other <a class="elRef" doxygen="/home/kitware/dashboards/buildbot/paraview_master-vall-linux-shared-debug_doc_extdeps_gui_mpi_python3/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/classvtkSynchronizedRenderers.html">vtkSynchronizedRenderers</a> subclasses based on the operation mode to do the actual coordination such as <a class="el" href="classvtkCaveSynchronizedRenderers.html" title="vtkSynchronizedRenderers subclass that handles adjusting of camera for cave configurations. ">vtkCaveSynchronizedRenderers</a>, <a class="el" href="classvtkIceTSynchronizedRenderers.html" title="vtkSynchronizedRenderers subclass that uses IceT for parallel rendering and compositing. ">vtkIceTSynchronizedRenderers</a>, <a class="el" href="classvtkPVClientServerSynchronizedRenderers.html" title="vtkPVClientServerSynchronizedRenderers is similar to vtkClientServerSynchronizedRenderers except that...">vtkPVClientServerSynchronizedRenderers</a> and <a class="elRef" doxygen="/home/kitware/dashboards/buildbot/paraview_master-vall-linux-shared-debug_doc_extdeps_gui_mpi_python3/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/classvtkCompositedSynchronizedRenderers.html">vtkCompositedSynchronizedRenderers</a>. </p>
 
-<p class="definition">Definition at line <a class="el" href="vtkPVSynchronizedRenderer_8h_source.html#l00038">38</a> of file <a class="el" href="vtkPVSynchronizedRenderer_8h_source.html">vtkPVSynchronizedRenderer.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vtkPVSynchronizedRenderer_8h_source.html#l00044">44</a> of file <a class="el" href="vtkPVSynchronizedRenderer_8h_source.html">vtkPVSynchronizedRenderer.h</a>.</p>
 </div><h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="a23e98decc38c7e9d4cfed10aba95d0de"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a23e98decc38c7e9d4cfed10aba95d0de">&#9670;&nbsp;</a></span>Superclass</h2>
@@ -470,39 +456,7 @@ Protected Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="vtkPVSynchronizedRenderer_8h_source.html#l00042">42</a> of file <a class="el" href="vtkPVSynchronizedRenderer_8h_source.html">vtkPVSynchronizedRenderer.h</a>.</p>
-
-</div>
-</div>
-<h2 class="groupheader">Member Enumeration Documentation</h2>
-<a id="a8fc81542def5fc069868e0ba618e4d15"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8fc81542def5fc069868e0ba618e4d15">&#9670;&nbsp;</a></span>ModeEnum</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">enum <a class="el" href="classvtkPVSynchronizedRenderer.html#a8fc81542def5fc069868e0ba618e4d15">vtkPVSynchronizedRenderer::ModeEnum</a></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a8fc81542def5fc069868e0ba618e4d15a864450a125d88828a43df8026324d9ff"></a>INVALID&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a8fc81542def5fc069868e0ba618e4d15aee840a1df3f079cd07541bf9888f05e0"></a>BUILTIN&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a8fc81542def5fc069868e0ba618e4d15ac50f959ec43765a8c57b172846eba7f4"></a>CLIENT&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a8fc81542def5fc069868e0ba618e4d15af69bddfaec8b526e9bd006216bf96e03"></a>SERVER&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a8fc81542def5fc069868e0ba618e4d15a4af2ebde4a5584a299dd4edcf6991f6f"></a>BATCH&#160;</td><td class="fielddoc"></td></tr>
-</table>
-
-<p class="definition">Definition at line <a class="el" href="vtkPVSynchronizedRenderer_8h_source.html#l00182">182</a> of file <a class="el" href="vtkPVSynchronizedRenderer_8h_source.html">vtkPVSynchronizedRenderer.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vtkPVSynchronizedRenderer_8h_source.html#l00048">48</a> of file <a class="el" href="vtkPVSynchronizedRenderer_8h_source.html">vtkPVSynchronizedRenderer.h</a>.</p>
 
 </div>
 </div>
@@ -750,7 +704,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Set this flag to true before calling <a class="el" href="classvtkPVSynchronizedRenderer.html#a3cc54abbaf03b8a547ab3b8d216d09e9">Initialize()</a> to disable using <a class="el" href="classvtkIceTSynchronizedRenderers.html" title="vtkSynchronizedRenderers subclass that uses IceT for parallel rendering and compositing. ">vtkIceTSynchronizedRenderers</a> for parallel rendering. </p>
+<p>Set this flag to true before calling <a class="el" href="classvtkPVSynchronizedRenderer.html#a7d711ecc7b9b682862f66163b650fef2" title="Must be called once to initialize the instance. ">Initialize()</a> to disable using <a class="el" href="classvtkIceTSynchronizedRenderers.html" title="vtkSynchronizedRenderers subclass that uses IceT for parallel rendering and compositing. ">vtkIceTSynchronizedRenderers</a> for parallel rendering. </p>
 <p>Default value is setup using <a class="el" href="classvtkPVRenderViewSettings.html#a0ece56ccbbdec56cd09a3cebe25753ad" title="EXPERIMENTAL: Add ability to disable IceT. ">vtkPVRenderViewSettings::GetDisableIceT</a>. </p>
 
 </div>
@@ -778,13 +732,13 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Set this flag to true before calling <a class="el" href="classvtkPVSynchronizedRenderer.html#a3cc54abbaf03b8a547ab3b8d216d09e9">Initialize()</a> to disable using <a class="el" href="classvtkIceTSynchronizedRenderers.html" title="vtkSynchronizedRenderers subclass that uses IceT for parallel rendering and compositing. ">vtkIceTSynchronizedRenderers</a> for parallel rendering. </p>
+<p>Set this flag to true before calling <a class="el" href="classvtkPVSynchronizedRenderer.html#a7d711ecc7b9b682862f66163b650fef2" title="Must be called once to initialize the instance. ">Initialize()</a> to disable using <a class="el" href="classvtkIceTSynchronizedRenderers.html" title="vtkSynchronizedRenderers subclass that uses IceT for parallel rendering and compositing. ">vtkIceTSynchronizedRenderers</a> for parallel rendering. </p>
 <p>Default value is setup using <a class="el" href="classvtkPVRenderViewSettings.html#a0ece56ccbbdec56cd09a3cebe25753ad" title="EXPERIMENTAL: Add ability to disable IceT. ">vtkPVRenderViewSettings::GetDisableIceT</a>. </p>
 
 </div>
 </div>
-<a id="a3cc54abbaf03b8a547ab3b8d216d09e9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3cc54abbaf03b8a547ab3b8d216d09e9">&#9670;&nbsp;</a></span>Initialize()</h2>
+<a id="a7d711ecc7b9b682862f66163b650fef2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7d711ecc7b9b682862f66163b650fef2">&#9670;&nbsp;</a></span>Initialize()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -793,21 +747,14 @@ Protected Attributes</h2></td></tr>
           <td class="memname">void vtkPVSynchronizedRenderer::Initialize </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classvtkPVSession.html">vtkPVSession</a> *&#160;</td>
-          <td class="paramname"><em>session</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
+          <td class="paramname"><em>session</em></td><td>)</td>
           <td></td>
-          <td class="paramtype">unsigned <a class="elRef" doxygen="/home/kitware/dashboards/buildbot/paraview_master-vall-linux-shared-debug_doc_extdeps_gui_mpi_python3/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkShaderProgram2_8h.html#a61569f2965b7a369eb10b6d75d410d11">int</a>&#160;</td>
-          <td class="paramname"><em>id</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Must be called once to initialize the instance. </p>
+<p>This will create appropriate internal <a class="elRef" doxygen="/home/kitware/dashboards/buildbot/paraview_master-vall-linux-shared-debug_doc_extdeps_gui_mpi_python3/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/classvtkSynchronizedRenderers.html">vtkSynchronizedRenderers</a> subclasses based on the process type and session provided. </p>
 
 </div>
 </div>
@@ -1418,7 +1365,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="vtkPVSynchronizedRenderer_8h_source.html#l00177">177</a> of file <a class="el" href="vtkPVSynchronizedRenderer_8h_source.html">vtkPVSynchronizedRenderer.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vtkPVSynchronizedRenderer_8h_source.html#l00182">182</a> of file <a class="el" href="vtkPVSynchronizedRenderer_8h_source.html">vtkPVSynchronizedRenderer.h</a>.</p>
 
 </div>
 </div>
@@ -1442,7 +1389,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="vtkPVSynchronizedRenderer_8h_source.html#l00178">178</a> of file <a class="el" href="vtkPVSynchronizedRenderer_8h_source.html">vtkPVSynchronizedRenderer.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vtkPVSynchronizedRenderer_8h_source.html#l00183">183</a> of file <a class="el" href="vtkPVSynchronizedRenderer_8h_source.html">vtkPVSynchronizedRenderer.h</a>.</p>
 
 </div>
 </div>
@@ -1466,7 +1413,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="vtkPVSynchronizedRenderer_8h_source.html#l00179">179</a> of file <a class="el" href="vtkPVSynchronizedRenderer_8h_source.html">vtkPVSynchronizedRenderer.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vtkPVSynchronizedRenderer_8h_source.html#l00184">184</a> of file <a class="el" href="vtkPVSynchronizedRenderer_8h_source.html">vtkPVSynchronizedRenderer.h</a>.</p>
 
 </div>
 </div>
@@ -1490,31 +1437,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="vtkPVSynchronizedRenderer_8h_source.html#l00180">180</a> of file <a class="el" href="vtkPVSynchronizedRenderer_8h_source.html">vtkPVSynchronizedRenderer.h</a>.</p>
-
-</div>
-</div>
-<a id="afa6d1362e9db874a5b77071bc5aeafc0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afa6d1362e9db874a5b77071bc5aeafc0">&#9670;&nbsp;</a></span>Mode</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classvtkPVSynchronizedRenderer.html#a8fc81542def5fc069868e0ba618e4d15">ModeEnum</a> vtkPVSynchronizedRenderer::Mode</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="vtkPVSynchronizedRenderer_8h_source.html#l00191">191</a> of file <a class="el" href="vtkPVSynchronizedRenderer_8h_source.html">vtkPVSynchronizedRenderer.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vtkPVSynchronizedRenderer_8h_source.html#l00185">185</a> of file <a class="el" href="vtkPVSynchronizedRenderer_8h_source.html">vtkPVSynchronizedRenderer.h</a>.</p>
 
 </div>
 </div>
@@ -1538,7 +1461,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="vtkPVSynchronizedRenderer_8h_source.html#l00192">192</a> of file <a class="el" href="vtkPVSynchronizedRenderer_8h_source.html">vtkPVSynchronizedRenderer.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vtkPVSynchronizedRenderer_8h_source.html#l00187">187</a> of file <a class="el" href="vtkPVSynchronizedRenderer_8h_source.html">vtkPVSynchronizedRenderer.h</a>.</p>
 
 </div>
 </div>
@@ -1562,7 +1485,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="vtkPVSynchronizedRenderer_8h_source.html#l00193">193</a> of file <a class="el" href="vtkPVSynchronizedRenderer_8h_source.html">vtkPVSynchronizedRenderer.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vtkPVSynchronizedRenderer_8h_source.html#l00188">188</a> of file <a class="el" href="vtkPVSynchronizedRenderer_8h_source.html">vtkPVSynchronizedRenderer.h</a>.</p>
 
 </div>
 </div>
@@ -1586,7 +1509,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="vtkPVSynchronizedRenderer_8h_source.html#l00194">194</a> of file <a class="el" href="vtkPVSynchronizedRenderer_8h_source.html">vtkPVSynchronizedRenderer.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vtkPVSynchronizedRenderer_8h_source.html#l00189">189</a> of file <a class="el" href="vtkPVSynchronizedRenderer_8h_source.html">vtkPVSynchronizedRenderer.h</a>.</p>
 
 </div>
 </div>
@@ -1610,7 +1533,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="vtkPVSynchronizedRenderer_8h_source.html#l00195">195</a> of file <a class="el" href="vtkPVSynchronizedRenderer_8h_source.html">vtkPVSynchronizedRenderer.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vtkPVSynchronizedRenderer_8h_source.html#l00190">190</a> of file <a class="el" href="vtkPVSynchronizedRenderer_8h_source.html">vtkPVSynchronizedRenderer.h</a>.</p>
 
 </div>
 </div>
@@ -1634,7 +1557,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="vtkPVSynchronizedRenderer_8h_source.html#l00197">197</a> of file <a class="el" href="vtkPVSynchronizedRenderer_8h_source.html">vtkPVSynchronizedRenderer.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vtkPVSynchronizedRenderer_8h_source.html#l00192">192</a> of file <a class="el" href="vtkPVSynchronizedRenderer_8h_source.html">vtkPVSynchronizedRenderer.h</a>.</p>
 
 </div>
 </div>
@@ -1658,7 +1581,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="vtkPVSynchronizedRenderer_8h_source.html#l00198">198</a> of file <a class="el" href="vtkPVSynchronizedRenderer_8h_source.html">vtkPVSynchronizedRenderer.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vtkPVSynchronizedRenderer_8h_source.html#l00193">193</a> of file <a class="el" href="vtkPVSynchronizedRenderer_8h_source.html">vtkPVSynchronizedRenderer.h</a>.</p>
 
 </div>
 </div>
@@ -1682,7 +1605,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="vtkPVSynchronizedRenderer_8h_source.html#l00199">199</a> of file <a class="el" href="vtkPVSynchronizedRenderer_8h_source.html">vtkPVSynchronizedRenderer.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vtkPVSynchronizedRenderer_8h_source.html#l00194">194</a> of file <a class="el" href="vtkPVSynchronizedRenderer_8h_source.html">vtkPVSynchronizedRenderer.h</a>.</p>
 
 </div>
 </div>

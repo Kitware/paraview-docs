@@ -86,16 +86,16 @@ Collaboration diagram for vtkSMCompositeTreeDomain:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
 Public Types</h2></td></tr>
-<tr class="memitem:af13984e41887cf44121ef372dea955de"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom">{ <br />
-&#160;&#160;<a class="el" href="classvtkSMCompositeTreeDomain.html#af13984e41887cf44121ef372dea955deafbaec4a6a90f4f79133a0420340823fc">ALL</a> = 0, 
-<a class="el" href="classvtkSMCompositeTreeDomain.html#af13984e41887cf44121ef372dea955dea817b6c2f33efae8e86bce67fdc528b21">LEAVES</a> = 1, 
-<a class="el" href="classvtkSMCompositeTreeDomain.html#af13984e41887cf44121ef372dea955dea7eba312497ab3ad17db32ec49aea38e8">NON_LEAVES</a> = 2, 
-<a class="el" href="classvtkSMCompositeTreeDomain.html#af13984e41887cf44121ef372dea955deaf16fb5a8e6ac94d1900f0578074ab5e0">NONE</a> = 3, 
+<tr class="memitem:a9c882f4f17f8fa0ba72db726123b1736"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom">{ <br />
+&#160;&#160;<a class="el" href="classvtkSMCompositeTreeDomain.html#a9c882f4f17f8fa0ba72db726123b1736afbaec4a6a90f4f79133a0420340823fc">ALL</a> = 0, 
+<a class="el" href="classvtkSMCompositeTreeDomain.html#a9c882f4f17f8fa0ba72db726123b1736a817b6c2f33efae8e86bce67fdc528b21">LEAVES</a> = 1, 
+<a class="el" href="classvtkSMCompositeTreeDomain.html#a9c882f4f17f8fa0ba72db726123b1736a7eba312497ab3ad17db32ec49aea38e8">NON_LEAVES</a> = 2, 
+<a class="el" href="classvtkSMCompositeTreeDomain.html#a9c882f4f17f8fa0ba72db726123b1736af16fb5a8e6ac94d1900f0578074ab5e0">NONE</a> = 3, 
 <br />
-&#160;&#160;<a class="el" href="classvtkSMCompositeTreeDomain.html#af13984e41887cf44121ef372dea955dea8bc077339c411d4477384fad88dea157">AMR</a> = 4
+&#160;&#160;<a class="el" href="classvtkSMCompositeTreeDomain.html#a9c882f4f17f8fa0ba72db726123b1736a8bc077339c411d4477384fad88dea157">AMR</a> = 4
 <br />
  }</td></tr>
-<tr class="separator:af13984e41887cf44121ef372dea955de"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="separator:a9c882f4f17f8fa0ba72db726123b1736"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad62e85fc59aabcc274a579274112b05d"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkSMCompositeTreeDomain.html#ad62e85fc59aabcc274a579274112b05d">DefaultModes</a> { <a class="el" href="classvtkSMCompositeTreeDomain.html#ad62e85fc59aabcc274a579274112b05da655d9b27f2de9a24ad05a8679a191936">DEFAULT</a> = 0, 
 <a class="el" href="classvtkSMCompositeTreeDomain.html#ad62e85fc59aabcc274a579274112b05dac64d4f84ca7f291ac0c9b31902459427">NONEMPTY_LEAF</a> = 1
  }</td></tr>
@@ -506,14 +506,14 @@ Protected Attributes</h2></td></tr>
 <p><a class="el" href="classvtkSMCompositeTreeDomain.html" title="domain used to restrict an vtkSMIntVectorProperty values to valid flat-index for a vtkCompositeDataSe...">vtkSMCompositeTreeDomain</a> can be added to a <a class="el" href="classvtkSMIntVectorProperty.html" title="property representing a vector of integers ">vtkSMIntVectorProperty</a>. This domain requires a <a class="el" href="classvtkSMInputProperty.html" title="proxy representing inputs to a filter ">vtkSMInputProperty</a> which is used to provide the input to the filter. This domain obtains data information from the input selected on the required input property and then decides the range for values the property can have.</p>
 <p>Broadly speaking, there are two ways of identifying unique node in a composite dataset: <code>flat-index</code> (also called <code>composite-index</code>) and <code>level-block-index</code>. <code>flat-index</code> applies to all types of composite datasets while <code>level-block-index</code> (or just <code>level-index</code>) applies only to AMR datasets. <code>flat-index</code> for any node in an arbitrary composite-dataset is simply the index of that node in a pre-order traversal of the tree with the root composite-dataset getting the index 0. <code>level-index</code> for an AMR dataset is the AMR level number while <code>level-block-index</code> is a pair of the AMR level number and block number for the node in that level.</p>
 <p>The type of index the property expects, is defined by the domain's mode. Supported modes are:</p><ol type="1">
-<li><a class="el" href="classvtkSMCompositeTreeDomain.html#af13984e41887cf44121ef372dea955deafbaec4a6a90f4f79133a0420340823fc">vtkSMCompositeTreeDomain::ALL</a>: (default) <br />
+<li><a class="el" href="classvtkSMCompositeTreeDomain.html#a9c882f4f17f8fa0ba72db726123b1736afbaec4a6a90f4f79133a0420340823fc">vtkSMCompositeTreeDomain::ALL</a>: (default) <br />
  The property uses <code>flat-index</code> and can accept index for any node (leaf or non-leaf). This can be specified in XML using the <code>mode="all"</code>.</li>
-<li><a class="el" href="classvtkSMCompositeTreeDomain.html#af13984e41887cf44121ef372dea955dea817b6c2f33efae8e86bce67fdc528b21">vtkSMCompositeTreeDomain::LEAVES</a>:<br />
+<li><a class="el" href="classvtkSMCompositeTreeDomain.html#a9c882f4f17f8fa0ba72db726123b1736a817b6c2f33efae8e86bce67fdc528b21">vtkSMCompositeTreeDomain::LEAVES</a>:<br />
  The property uses <code>flat-index</code> however can only accept flat-indices for leaf-nodes. This can be specified in XML using the <code>mode="leaves"</code>.</li>
-<li><a class="el" href="classvtkSMCompositeTreeDomain.html#af13984e41887cf44121ef372dea955dea8bc077339c411d4477384fad88dea157">vtkSMCompositeTreeDomain::AMR</a>: <br />
+<li><a class="el" href="classvtkSMCompositeTreeDomain.html#a9c882f4f17f8fa0ba72db726123b1736a8bc077339c411d4477384fad88dea157">vtkSMCompositeTreeDomain::AMR</a>: <br />
  The property uses <code>level-index</code> i.e. AMR level number or <code>level-block-index</code>. If the property has 2 elements (or for repeatable properties, if number of elements per command is 2) then <code>level-block-index</code> is used, otherwise simply the <code>level-index</code> is used. This only makes sense for filters dealing with AMR datasets. This can be specified in XML using the <code>mode="amr"</code>.</li>
-<li><a class="el" href="classvtkSMCompositeTreeDomain.html#af13984e41887cf44121ef372dea955dea7eba312497ab3ad17db32ec49aea38e8">vtkSMCompositeTreeDomain::NON_LEAVES</a>: (deprecated)<br />
- No longer supported (as of ParaView 5.4) and simply interpreted as <a class="el" href="classvtkSMCompositeTreeDomain.html#af13984e41887cf44121ef372dea955deafbaec4a6a90f4f79133a0420340823fc">vtkSMCompositeTreeDomain::ALL</a>. This used to be specified in XML using the <code>mode="non-leaves"</code>.</li>
+<li><a class="el" href="classvtkSMCompositeTreeDomain.html#a9c882f4f17f8fa0ba72db726123b1736a7eba312497ab3ad17db32ec49aea38e8">vtkSMCompositeTreeDomain::NON_LEAVES</a>: (deprecated)<br />
+ No longer supported (as of ParaView 5.4) and simply interpreted as <a class="el" href="classvtkSMCompositeTreeDomain.html#a9c882f4f17f8fa0ba72db726123b1736afbaec4a6a90f4f79133a0420340823fc">vtkSMCompositeTreeDomain::ALL</a>. This used to be specified in XML using the <code>mode="non-leaves"</code>.</li>
 </ol>
 <p><a class="el" href="classvtkSMCompositeTreeDomain.html" title="domain used to restrict an vtkSMIntVectorProperty values to valid flat-index for a vtkCompositeDataSe...">vtkSMCompositeTreeDomain</a> also provides ability to set default value on the property. If mode is LEAVES, then the default value selected is the first non-null leaf node. If mode is ALL, the same behaviour for default value is possible by using <code>default_mode="nonempty-leaf"</code> in XML. e.g. </p><div class="fragment"><div class="line">&lt;<span class="keywordtype">CompositeTreeDomain</span> <span class="keyword">name</span>=<span class="stringliteral">&quot;tree&quot;</span> <span class="keyword">mode</span>=<span class="stringliteral">&quot;all&quot;</span> <span class="keyword">default_mode</span>=<span class="stringliteral">&quot;nonempty-leaf&quot;</span>&gt;</div><div class="line">  &lt;<span class="keywordtype">RequiredProperties</span>&gt;</div><div class="line">    &lt;<span class="keywordtype">Property</span> <span class="keyword">function</span>=<span class="stringliteral">&quot;Input&quot;</span> <span class="keyword">name</span>=<span class="stringliteral">&quot;Input&quot;</span> /&gt;</div><div class="line">  &lt;/<span class="keywordtype">RequiredProperties</span>&gt;</div><div class="line">&lt;/<span class="keywordtype">CompositeTreeDomain</span>&gt;</div></div><!-- fragment --> 
 <p class="definition">Definition at line <a class="el" href="vtkSMCompositeTreeDomain_8h_source.html#l00086">86</a> of file <a class="el" href="vtkSMCompositeTreeDomain_8h_source.html">vtkSMCompositeTreeDomain.h</a>.</p>
@@ -535,8 +535,8 @@ Protected Attributes</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Enumeration Documentation</h2>
-<a id="af13984e41887cf44121ef372dea955de"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af13984e41887cf44121ef372dea955de">&#9670;&nbsp;</a></span>anonymous enum</h2>
+<a id="a9c882f4f17f8fa0ba72db726123b1736"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9c882f4f17f8fa0ba72db726123b1736">&#9670;&nbsp;</a></span>anonymous enum</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -547,11 +547,11 @@ Protected Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="af13984e41887cf44121ef372dea955deafbaec4a6a90f4f79133a0420340823fc"></a>ALL&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="af13984e41887cf44121ef372dea955dea817b6c2f33efae8e86bce67fdc528b21"></a>LEAVES&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="af13984e41887cf44121ef372dea955dea7eba312497ab3ad17db32ec49aea38e8"></a>NON_LEAVES&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="af13984e41887cf44121ef372dea955deaf16fb5a8e6ac94d1900f0578074ab5e0"></a>NONE&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="af13984e41887cf44121ef372dea955dea8bc077339c411d4477384fad88dea157"></a>AMR&#160;</td><td class="fielddoc"></td></tr>
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a9c882f4f17f8fa0ba72db726123b1736afbaec4a6a90f4f79133a0420340823fc"></a>ALL&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a9c882f4f17f8fa0ba72db726123b1736a817b6c2f33efae8e86bce67fdc528b21"></a>LEAVES&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a9c882f4f17f8fa0ba72db726123b1736a7eba312497ab3ad17db32ec49aea38e8"></a>NON_LEAVES&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a9c882f4f17f8fa0ba72db726123b1736af16fb5a8e6ac94d1900f0578074ab5e0"></a>NONE&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a9c882f4f17f8fa0ba72db726123b1736a8bc077339c411d4477384fad88dea157"></a>AMR&#160;</td><td class="fielddoc"></td></tr>
 </table>
 
 <p class="definition">Definition at line <a class="el" href="vtkSMCompositeTreeDomain_8h_source.html#l00138">138</a> of file <a class="el" href="vtkSMCompositeTreeDomain_8h_source.html">vtkSMCompositeTreeDomain.h</a>.</p>

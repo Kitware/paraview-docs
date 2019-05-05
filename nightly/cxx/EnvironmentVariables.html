@@ -54,11 +54,11 @@ $(function() {
 <tr class="markdownTableBody" class="markdownTableRowOdd">
 <td class="markdownTableBodyNone"><code>PV_ICET_WINDOW_BORDERS</code>  </td><td class="markdownTableBodyNone">Force render windows to be 400x400 instead of fullscreen.   </td></tr>
 <tr class="markdownTableBody" class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><code>PV_DEBUG_REMOTE_RENDERING</code>  </td><td class="markdownTableBodyNone">Forces server-side render windows to swap buffers in order to see what is being rendered on the server ranks.   </td></tr>
+<td class="markdownTableBodyNone"><code>PV_SHARED_WINDOW_SIZE</code>  </td><td class="markdownTableBodyNone">Similar to <code>PV_ICET_WINDOW_BORDERS</code> except that the value is specified as <code>WxH</code> where <code>W</code> and <code>H</code> is the width and height for the render window.   </td></tr>
 <tr class="markdownTableBody" class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><code>PV_MACRO_PATH</code>  </td><td class="markdownTableBodyNone">Additional directories defined by the user to store macros.   </td></tr>
+<td class="markdownTableBodyNone"><code>PV_DEBUG_REMOTE_RENDERING</code>  </td><td class="markdownTableBodyNone">Forces server-side render windows to swap buffers in order to see what is being rendered on the server ranks.   </td></tr>
 <tr class="markdownTableBody" class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><code>PV_ALLOW_BATCH_INTERACTION</code>  </td><td class="markdownTableBodyNone">Allow interactions in batch mode.   </td></tr>
+<td class="markdownTableBodyNone"><code>PV_MACRO_PATH</code>  </td><td class="markdownTableBodyNone">Additional directories defined by the user to store macros.   </td></tr>
 <tr class="markdownTableBody" class="markdownTableRowOdd">
 <td class="markdownTableBodyNone"><code>PV_PLUGIN_CONFIG_FILE</code>  </td><td class="markdownTableBodyNone">XML Plugin Configuration Files to specify which plugin to load on startup.   </td></tr>
 <tr class="markdownTableBody" class="markdownTableRowEven">
@@ -71,6 +71,8 @@ $(function() {
 <td class="markdownTableBodyNone"><code>PV_SETTINGS_DEBUG</code>  </td><td class="markdownTableBodyNone">(obsolete) Use <code>PARAVIEW_LOG_APPLICATION_VERBOSITY</code> instead.   </td></tr>
 <tr class="markdownTableBody" class="markdownTableRowEven">
 <td class="markdownTableBodyNone"><code>PV_DEBUG_APPLY_BUTTON</code>  </td><td class="markdownTableBodyNone">(obsolete) Use <code>PARAVIEW_LOG_APPLICATION_VERBOSITY</code> instead.   </td></tr>
+<tr class="markdownTableBody" class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>PV_ALLOW_BATCH_INTERACTION</code>  </td><td class="markdownTableBodyNone">(obsolete) No longer needed.   </td></tr>
 </table>
 <p>ParaView supports generating logs that includes debugging and tracking information. The log messages are categorized and it is possible to temporarily elevate the log level for any category using the following environment variables. The value for each of the variables can be a number in the range [-2, 9] or the strings <code>INFO</code>, <code>ERROR</code>, <code>WARNING</code>, <code>TRACE</code>, or <code>MAX</code> (See <code>vtkLogger</code> for additional information about log levels).</p>
 <table class="markdownTable">
