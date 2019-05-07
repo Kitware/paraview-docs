@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>paraview.smtrace &mdash; ParaView/Python 5.6.0-1471-g41e37af42c documentation</title>
+  <title>paraview.smtrace &mdash; ParaView/Python 5.6.0-1503-ga141230ebd documentation</title>
   
 
   
@@ -24,7 +24,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:'../../',
-        VERSION:'5.6.0-1471-g41e37af42c',
+        VERSION:'5.6.0-1503-ga141230ebd',
         COLLAPSE_INDEX:false,
         FILE_SUFFIX:'.html',
         HAS_SOURCE:  true
@@ -48,7 +48,7 @@
         <link rel="index" title="Index"
               href="../../genindex.html"/>
         <link rel="search" title="Search" href="../../search.html"/>
-    <link rel="top" title="ParaView/Python 5.6.0-1471-g41e37af42c documentation" href="../../index.html"/>
+    <link rel="top" title="ParaView/Python 5.6.0-1503-ga141230ebd documentation" href="../../index.html"/>
         <link rel="up" title="Module code" href="../index.html"/> 
 
   <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
@@ -66,7 +66,7 @@
           <li> <a href="../../index.html">
             <img src="../../_static/paraview-logo-small.png"
             alt="ParaView/Python"></img></a> </li>
-          <li class="version"> version 5.6.0-1471-g41e37af42c</li>
+          <li class="version"> version 5.6.0-1503-ga141230ebd</li>
         </ul>
         <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
   <input type="text" name="q" placeholder="Search docs" />
@@ -620,6 +620,8 @@
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../api-changes.html">API Changes between ParaView versions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../api-changes.html#changes-in-5-7">Changes in 5.7</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-changes.html#views-and-layouts">Views and Layouts</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../api-changes.html#changes-in-5-5">Changes in 5.5</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../api-changes.html#changes-in-5-1">Changes in 5.1</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../api-changes.html#changes-in-4-2">Changes in 4.2</a></li>
@@ -1938,12 +1940,36 @@
     <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">layout</span><span class="p">):</span>
         <span class="n">TraceItem</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">Layout</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">_getPyProxy</span><span class="p">(</span><span class="n">layout</span><span class="p">)</span>
-<div class="viewcode-block" id="RegisterLayoutProxy.finalize"><a class="viewcode-back" href="../../paraview.smtrace.html#paraview.smtrace.RegisterLayoutProxy.finalize">[docs]</a>    <span class="k">def</span> <span class="nf">finalize</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="RegisterLayoutProxy.finalize"><a class="viewcode-back" href="../../paraview.smtrace.html#paraview.smtrace.RegisterLayoutProxy.finalize">[docs]</a>    <span class="k">def</span> <span class="nf">finalize</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">filter</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="k">if</span> <span class="nb">filter</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="nb">filter</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="kc">True</span>
         <span class="n">pname</span> <span class="o">=</span> <span class="n">Trace</span><span class="o">.</span><span class="n">get_registered_name</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">Layout</span><span class="p">,</span> <span class="s2">&quot;layouts&quot;</span><span class="p">)</span>
         <span class="n">accessor</span> <span class="o">=</span> <span class="n">ProxyAccessor</span><span class="p">(</span><span class="n">Trace</span><span class="o">.</span><span class="n">get_varname</span><span class="p">(</span><span class="n">pname</span><span class="p">),</span> <span class="bp">self</span><span class="o">.</span><span class="n">Layout</span><span class="p">)</span>
         <span class="n">Trace</span><span class="o">.</span><span class="n">Output</span><span class="o">.</span><span class="n">append_separated</span><span class="p">([</span>\
-            <span class="s2">&quot;# create new layout object&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;</span><span class="si">%s</span><span class="s2"> = CreateLayout()&quot;</span> <span class="o">%</span> <span class="n">accessor</span><span class="p">])</span>
+            <span class="s2">&quot;# create new layout object &#39;</span><span class="si">%s</span><span class="s2">&#39;&quot;</span> <span class="o">%</span> <span class="n">pname</span><span class="p">,</span>
+            <span class="s2">&quot;</span><span class="si">%s</span><span class="s2"> = CreateLayout(name=&#39;</span><span class="si">%s</span><span class="s2">&#39;)&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">accessor</span><span class="p">,</span> <span class="n">pname</span><span class="p">)])</span>
+
+        <span class="c1"># Let&#39;s trace out the state for the layout.</span>
+        <span class="k">def</span> <span class="nf">_trace_layout</span><span class="p">(</span><span class="n">layout</span><span class="p">,</span> <span class="n">laccessor</span><span class="p">,</span> <span class="n">location</span><span class="p">):</span>
+            <span class="n">sdir</span> <span class="o">=</span> <span class="n">layout</span><span class="o">.</span><span class="n">GetSplitDirection</span><span class="p">(</span><span class="n">location</span><span class="p">)</span>
+            <span class="n">sfraction</span> <span class="o">=</span> <span class="n">layout</span><span class="o">.</span><span class="n">GetSplitFraction</span><span class="p">(</span><span class="n">location</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">sdir</span> <span class="o">==</span> <span class="n">layout</span><span class="o">.</span><span class="n">SMProxy</span><span class="o">.</span><span class="n">VERTICAL</span><span class="p">:</span>
+                <span class="n">Trace</span><span class="o">.</span><span class="n">Output</span><span class="o">.</span><span class="n">append</span><span class="p">([</span>\
+                    <span class="s2">&quot;</span><span class="si">%s</span><span class="s2">.SplitVertical(</span><span class="si">%d</span><span class="s2">, </span><span class="si">%f</span><span class="s2">)&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">laccessor</span><span class="p">,</span> <span class="n">location</span><span class="p">,</span> <span class="n">sfraction</span><span class="p">)])</span>
+                <span class="n">_trace_layout</span><span class="p">(</span><span class="n">layout</span><span class="p">,</span> <span class="n">laccessor</span><span class="p">,</span> <span class="n">layout</span><span class="o">.</span><span class="n">GetFirstChild</span><span class="p">(</span><span class="n">location</span><span class="p">))</span>
+                <span class="n">_trace_layout</span><span class="p">(</span><span class="n">layout</span><span class="p">,</span> <span class="n">laccessor</span><span class="p">,</span> <span class="n">layout</span><span class="o">.</span><span class="n">GetSecondChild</span><span class="p">(</span><span class="n">location</span><span class="p">))</span>
+            <span class="k">elif</span> <span class="n">sdir</span> <span class="o">==</span> <span class="n">layout</span><span class="o">.</span><span class="n">SMProxy</span><span class="o">.</span><span class="n">HORIZONTAL</span><span class="p">:</span>
+                <span class="n">Trace</span><span class="o">.</span><span class="n">Output</span><span class="o">.</span><span class="n">append</span><span class="p">([</span>\
+                    <span class="s2">&quot;</span><span class="si">%s</span><span class="s2">.SplitHorizontal(</span><span class="si">%d</span><span class="s2">, </span><span class="si">%f</span><span class="s2">)&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">laccessor</span><span class="p">,</span> <span class="n">location</span><span class="p">,</span> <span class="n">sfraction</span><span class="p">)])</span>
+                <span class="n">_trace_layout</span><span class="p">(</span><span class="n">layout</span><span class="p">,</span> <span class="n">laccessor</span><span class="p">,</span> <span class="n">layout</span><span class="o">.</span><span class="n">GetFirstChild</span><span class="p">(</span><span class="n">location</span><span class="p">))</span>
+                <span class="n">_trace_layout</span><span class="p">(</span><span class="n">layout</span><span class="p">,</span> <span class="n">laccessor</span><span class="p">,</span> <span class="n">layout</span><span class="o">.</span><span class="n">GetSecondChild</span><span class="p">(</span><span class="n">location</span><span class="p">))</span>
+            <span class="k">elif</span> <span class="n">sdir</span> <span class="o">==</span> <span class="n">layout</span><span class="o">.</span><span class="n">SMProxy</span><span class="o">.</span><span class="n">NONE</span><span class="p">:</span>
+                <span class="n">view</span> <span class="o">=</span> <span class="n">layout</span><span class="o">.</span><span class="n">GetView</span><span class="p">(</span><span class="n">location</span><span class="p">)</span>
+                <span class="k">if</span> <span class="n">view</span> <span class="ow">and</span> <span class="nb">filter</span><span class="p">(</span><span class="n">view</span><span class="p">):</span>
+                    <span class="n">vaccessor</span> <span class="o">=</span> <span class="n">Trace</span><span class="o">.</span><span class="n">get_accessor</span><span class="p">(</span><span class="n">view</span><span class="p">)</span>
+                    <span class="n">Trace</span><span class="o">.</span><span class="n">Output</span><span class="o">.</span><span class="n">append</span><span class="p">([</span>\
+                        <span class="s2">&quot;</span><span class="si">%s</span><span class="s2">.AssignView(</span><span class="si">%d</span><span class="s2">, </span><span class="si">%s</span><span class="s2">)&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">laccessor</span><span class="p">,</span> <span class="n">location</span><span class="p">,</span> <span class="n">vaccessor</span><span class="p">)])</span>
+        <span class="n">_trace_layout</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">Layout</span><span class="p">,</span> <span class="n">accessor</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
         <span class="n">TraceItem</span><span class="o">.</span><span class="n">finalize</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span></div></div>
 
 <div class="viewcode-block" id="LoadPlugin"><a class="viewcode-back" href="../../paraview.smtrace.html#paraview.smtrace.LoadPlugin">[docs]</a><span class="k">class</span> <span class="nc">LoadPlugin</span><span class="p">(</span><span class="n">TraceItem</span><span class="p">):</span>
@@ -2193,6 +2219,13 @@
         <span class="p">])</span>
     <span class="n">trace</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">Trace</span><span class="o">.</span><span class="n">Output</span><span class="p">)</span>
     <span class="n">Trace</span><span class="o">.</span><span class="n">reset</span><span class="p">()</span>
+
+    <span class="c1"># essential to ensure any obsolete accessor don&#39;t linger can cause havoc</span>
+    <span class="c1"># when saving state following a Python trace session</span>
+    <span class="c1"># (paraview/paraview#18994)</span>
+    <span class="kn">import</span> <span class="nn">gc</span>
+    <span class="n">gc</span><span class="o">.</span><span class="n">collect</span><span class="p">()</span>
+    <span class="n">gc</span><span class="o">.</span><span class="n">collect</span><span class="p">()</span>
     <span class="k">return</span> <span class="n">trace</span>
 
 <span class="c1">#------------------------------------------------------------------------------</span>

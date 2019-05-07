@@ -129,10 +129,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ac30fddc97700dce5696879430cea9b30"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkSMParaViewPipelineControllerWithRendering.html#ac30fddc97700dce5696879430cea9b30">RegisterLayoutProxy</a> (<a class="el" href="classvtkSMProxy.html">vtkSMProxy</a> *proxy, const char *proxyname=NULL)</td></tr>
 <tr class="memdesc:ac30fddc97700dce5696879430cea9b30"><td class="mdescLeft">&#160;</td><td class="mdescRight">Register layout proxy.  <a href="#ac30fddc97700dce5696879430cea9b30">More...</a><br /></td></tr>
 <tr class="separator:ac30fddc97700dce5696879430cea9b30"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr><td colspan="2"><div class="groupHeader"></div></td></tr>
-<tr class="memitem:a2c8b575abb18ce33807ac818039fa37f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkSMParaViewPipelineControllerWithRendering.html#a2c8b575abb18ce33807ac818039fa37f">RegisterViewProxy</a> (<a class="el" href="classvtkSMProxy.html">vtkSMProxy</a> *proxy, const char *proxyname) override</td></tr>
-<tr class="memdesc:a2c8b575abb18ce33807ac818039fa37f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Overridden to place the view in a layout on creation.  <a href="#a2c8b575abb18ce33807ac818039fa37f">More...</a><br /></td></tr>
-<tr class="separator:a2c8b575abb18ce33807ac818039fa37f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afa86f839959e115135677a01285a6326"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkSMParaViewPipelineControllerWithRendering.html#afa86f839959e115135677a01285a6326">AssignViewToLayout</a> (<a class="el" href="classvtkSMViewProxy.html">vtkSMViewProxy</a> *view, <a class="el" href="classvtkSMViewLayoutProxy.html">vtkSMViewLayoutProxy</a> *layout=nullptr, <a class="elRef" doxygen="/home/kitware/dashboards/buildbot/paraview_master-vall-linux-shared-debug_doc_extdeps_gui_mpi_python3/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkShaderProgram2_8h.html#a61569f2965b7a369eb10b6d75d410d11">int</a> hint=0)</td></tr>
+<tr class="memdesc:afa86f839959e115135677a01285a6326"><td class="mdescLeft">&#160;</td><td class="mdescRight">Assigns the view to any cell in the layout.  <a href="#afa86f839959e115135677a01285a6326">More...</a><br /></td></tr>
+<tr class="separator:afa86f839959e115135677a01285a6326"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classvtkSMParaViewPipelineController"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classvtkSMParaViewPipelineController')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classvtkSMParaViewPipelineController.html">vtkSMParaViewPipelineController</a></td></tr>
 <tr class="memitem:a37bdd8fc132eb23dcaceb77f6d5df601 inherit pub_methods_classvtkSMParaViewPipelineController"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkSMParaViewPipelineController.html#a37bdd8fc132eb23dcaceb77f6d5df601">InitializeSession</a> (<a class="el" href="classvtkSMSession.html">vtkSMSession</a> *session)</td></tr>
 <tr class="memdesc:a37bdd8fc132eb23dcaceb77f6d5df601 inherit pub_methods_classvtkSMParaViewPipelineController"><td class="mdescLeft">&#160;</td><td class="mdescRight">Call this method to setup a branch new session with state considered essential for ParaView session.  <a href="classvtkSMParaViewPipelineController.html#a37bdd8fc132eb23dcaceb77f6d5df601">More...</a><br /></td></tr>
@@ -163,6 +162,8 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a74f84ad746cc9303999fb54a0dff6983 inherit pub_methods_classvtkSMParaViewPipelineController"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkSMParaViewPipelineController.html#a74f84ad746cc9303999fb54a0dff6983">RegisterViewProxy</a> (<a class="el" href="classvtkSMProxy.html">vtkSMProxy</a> *proxy)</td></tr>
 <tr class="memdesc:a74f84ad746cc9303999fb54a0dff6983 inherit pub_methods_classvtkSMParaViewPipelineController"><td class="mdescLeft">&#160;</td><td class="mdescRight">Use this method after <a class="el" href="classvtkSMParaViewPipelineController.html#a8590d8ab0c40bf7336bf143a3aebc189" title="Pre-initializes a proxy i.e. ">PreInitializeProxy()</a> and <a class="el" href="classvtkSMParaViewPipelineController.html#a95fcaeeb37ff7d6d27dcffd8d7a4ae20" title="Final step in proxy initialization. ">PostInitializeProxy()</a> to register a view proxy with the proxy manager.  <a href="classvtkSMParaViewPipelineController.html#a74f84ad746cc9303999fb54a0dff6983">More...</a><br /></td></tr>
 <tr class="separator:a74f84ad746cc9303999fb54a0dff6983 inherit pub_methods_classvtkSMParaViewPipelineController"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad7baa5e2d0e98367d278c18f7b71b449 inherit pub_methods_classvtkSMParaViewPipelineController"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkSMParaViewPipelineController.html#ad7baa5e2d0e98367d278c18f7b71b449">RegisterViewProxy</a> (<a class="el" href="classvtkSMProxy.html">vtkSMProxy</a> *proxy, const char *proxyname)</td></tr>
+<tr class="separator:ad7baa5e2d0e98367d278c18f7b71b449 inherit pub_methods_classvtkSMParaViewPipelineController"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0fcdb50ef3357907f8d023a26ec2a22a inherit pub_methods_classvtkSMParaViewPipelineController"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkSMParaViewPipelineController.html#a0fcdb50ef3357907f8d023a26ec2a22a">UnRegisterViewProxy</a> (<a class="el" href="classvtkSMProxy.html">vtkSMProxy</a> *proxy, bool unregister_representations=true)</td></tr>
 <tr class="memdesc:a0fcdb50ef3357907f8d023a26ec2a22a inherit pub_methods_classvtkSMParaViewPipelineController"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inverse of RegisterViewProxy.  <a href="classvtkSMParaViewPipelineController.html#a0fcdb50ef3357907f8d023a26ec2a22a">More...</a><br /></td></tr>
 <tr class="separator:a0fcdb50ef3357907f8d023a26ec2a22a inherit pub_methods_classvtkSMParaViewPipelineController"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -1284,46 +1285,6 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="a2c8b575abb18ce33807ac818039fa37f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2c8b575abb18ce33807ac818039fa37f">&#9670;&nbsp;</a></span>RegisterViewProxy()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool vtkSMParaViewPipelineControllerWithRendering::RegisterViewProxy </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="classvtkSMProxy.html">vtkSMProxy</a> *&#160;</td>
-          <td class="paramname"><em>proxy</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const char *&#160;</td>
-          <td class="paramname"><em>proxyname</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Overridden to place the view in a layout on creation. </p>
-
-<p>Reimplemented from <a class="el" href="classvtkSMParaViewPipelineController.html#ad7baa5e2d0e98367d278c18f7b71b449">vtkSMParaViewPipelineController</a>.</p>
-
-</div>
-</div>
 <a id="ac30fddc97700dce5696879430cea9b30"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ac30fddc97700dce5696879430cea9b30">&#9670;&nbsp;</a></span>RegisterLayoutProxy()</h2>
 
@@ -1359,6 +1320,53 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Register layout proxy. </p>
+
+</div>
+</div>
+<a id="afa86f839959e115135677a01285a6326"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afa86f839959e115135677a01285a6326">&#9670;&nbsp;</a></span>AssignViewToLayout()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void vtkSMParaViewPipelineControllerWithRendering::AssignViewToLayout </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classvtkSMViewProxy.html">vtkSMViewProxy</a> *&#160;</td>
+          <td class="paramname"><em>view</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classvtkSMViewLayoutProxy.html">vtkSMViewLayoutProxy</a> *&#160;</td>
+          <td class="paramname"><em>layout</em> = <code>nullptr</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="elRef" doxygen="/home/kitware/dashboards/buildbot/paraview_master-vall-linux-shared-debug_doc_extdeps_gui_mpi_python3/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkShaderProgram2_8h.html#a61569f2965b7a369eb10b6d75d410d11">int</a>&#160;</td>
+          <td class="paramname"><em>hint</em> = <code>0</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Assigns the view to any cell in the layout. </p>
+<p>If the layout is null, then this will locate a layout on the same session and use it. If no layout is present on the session, a new layout will be created (and registered) before assigning the view to it.</p>
+<p>If the view is already assigned to a layout then this method is a no-op.</p>
+<dl class="section see"><dt>See also</dt><dd>vtkSMViewProxy::AssignViewToAnyCell </dd></dl>
 
 </div>
 </div>

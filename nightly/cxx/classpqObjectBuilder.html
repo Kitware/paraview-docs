@@ -80,7 +80,7 @@ Signals</h2></td></tr>
 <tr class="memdesc:a0c73d669f1f58751279e0938c260ba15"><td class="mdescLeft">&#160;</td><td class="mdescRight">fired before attempting to create a view.  <a href="#a0c73d669f1f58751279e0938c260ba15">More...</a><br /></td></tr>
 <tr class="separator:a0c73d669f1f58751279e0938c260ba15"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6f33fd63f2402956095f82ccc0c4c6da"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpqObjectBuilder.html#a6f33fd63f2402956095f82ccc0c4c6da">viewCreated</a> (<a class="el" href="classpqView.html">pqView</a> *)</td></tr>
-<tr class="memdesc:a6f33fd63f2402956095f82ccc0c4c6da"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fired on successful completion of <a class="el" href="classpqObjectBuilder.html#ad725902245602df30109a3c332ca05a3" title="Creates a new view module of the given type on the given server. ">createView()</a>.  <a href="#a6f33fd63f2402956095f82ccc0c4c6da">More...</a><br /></td></tr>
+<tr class="memdesc:a6f33fd63f2402956095f82ccc0c4c6da"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fired on successful completion of <a class="el" href="classpqObjectBuilder.html#ad7b8cdd7963e32f4a4afa74a662383d5" title="Creates a new view module of the given type on the given server. ">createView()</a>.  <a href="#a6f33fd63f2402956095f82ccc0c4c6da">More...</a><br /></td></tr>
 <tr class="separator:a6f33fd63f2402956095f82ccc0c4c6da"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a42d4cfa0e66d2a4e269489a41a1da1c4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpqObjectBuilder.html#a42d4cfa0e66d2a4e269489a41a1da1c4">dataRepresentationCreated</a> (<a class="el" href="classpqDataRepresentation.html">pqDataRepresentation</a> *)</td></tr>
 <tr class="memdesc:a42d4cfa0e66d2a4e269489a41a1da1c4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fired on successful completion of <a class="el" href="classpqObjectBuilder.html#af78bf7aee7c768b30dc961ad11801ec3" title="Creates a representation to show the data from the given output port of a source in the given view...">createDataRepresentation()</a>.  <a href="#a42d4cfa0e66d2a4e269489a41a1da1c4">More...</a><br /></td></tr>
@@ -131,12 +131,18 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a3f94cdd81b185592c78c7f673f9cbe58"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classpqPipelineSource.html">pqPipelineSource</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpqObjectBuilder.html#a3f94cdd81b185592c78c7f673f9cbe58">createReader</a> (const QString &amp;sm_group, const QString &amp;sm_name, const QStringList &amp;files, <a class="el" href="classpqServer.html">pqServer</a> *server)</td></tr>
 <tr class="memdesc:a3f94cdd81b185592c78c7f673f9cbe58"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a reader of the given server manager group (<code>sm_group</code>) and name (<code>sm_name</code>) on the given <code>server</code>.  <a href="#a3f94cdd81b185592c78c7f673f9cbe58">More...</a><br /></td></tr>
 <tr class="separator:a3f94cdd81b185592c78c7f673f9cbe58"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad725902245602df30109a3c332ca05a3"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classpqView.html">pqView</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpqObjectBuilder.html#ad725902245602df30109a3c332ca05a3">createView</a> (const QString &amp;<a class="elRef" doxygen="/home/kitware/dashboards/buildbot/paraview_master-vall-linux-shared-debug_doc_extdeps_gui_mpi_python3/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/namespacevtkX3D.html#ac6551f7bf833e8254b2b3ecdaea0d210a8e7f81709ed57920a45c02a954726847">type</a>, <a class="el" href="classpqServer.html">pqServer</a> *server, bool detachedFromLayout=false)</td></tr>
-<tr class="memdesc:ad725902245602df30109a3c332ca05a3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new view module of the given type on the given server.  <a href="#ad725902245602df30109a3c332ca05a3">More...</a><br /></td></tr>
-<tr class="separator:ad725902245602df30109a3c332ca05a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad7b8cdd7963e32f4a4afa74a662383d5"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classpqView.html">pqView</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpqObjectBuilder.html#ad7b8cdd7963e32f4a4afa74a662383d5">createView</a> (const QString &amp;<a class="elRef" doxygen="/home/kitware/dashboards/buildbot/paraview_master-vall-linux-shared-debug_doc_extdeps_gui_mpi_python3/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/namespacevtkX3D.html#ac6551f7bf833e8254b2b3ecdaea0d210a8e7f81709ed57920a45c02a954726847">type</a>, <a class="el" href="classpqServer.html">pqServer</a> *server)</td></tr>
+<tr class="memdesc:ad7b8cdd7963e32f4a4afa74a662383d5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new view module of the given type on the given server.  <a href="#ad7b8cdd7963e32f4a4afa74a662383d5">More...</a><br /></td></tr>
+<tr class="separator:ad7b8cdd7963e32f4a4afa74a662383d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1327d53b63b3c11587d715c35443cfe4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classpqView.html">pqView</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpqObjectBuilder.html#a1327d53b63b3c11587d715c35443cfe4">createView</a> (const QString &amp;<a class="elRef" doxygen="/home/kitware/dashboards/buildbot/paraview_master-vall-linux-shared-debug_doc_extdeps_gui_mpi_python3/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/namespacevtkX3D.html#ac6551f7bf833e8254b2b3ecdaea0d210a8e7f81709ed57920a45c02a954726847">type</a>, <a class="el" href="classpqServer.html">pqServer</a> *server, bool detachedFromLayout)</td></tr>
+<tr class="memdesc:a1327d53b63b3c11587d715c35443cfe4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deprecated in ParaView 5.7.  <a href="#a1327d53b63b3c11587d715c35443cfe4">More...</a><br /></td></tr>
+<tr class="separator:a1327d53b63b3c11587d715c35443cfe4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3a6b5ed452b34b6e526986e2caf2baf1"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpqObjectBuilder.html#a3a6b5ed452b34b6e526986e2caf2baf1">destroy</a> (<a class="el" href="classpqView.html">pqView</a> *view)</td></tr>
 <tr class="memdesc:a3a6b5ed452b34b6e526986e2caf2baf1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroys the view module.  <a href="#a3a6b5ed452b34b6e526986e2caf2baf1">More...</a><br /></td></tr>
 <tr class="separator:a3a6b5ed452b34b6e526986e2caf2baf1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a80b3cce675306cdaf6a818e74384563a"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpqObjectBuilder.html#a80b3cce675306cdaf6a818e74384563a">addToLayout</a> (<a class="el" href="classpqView.html">pqView</a> *view, <a class="el" href="classpqProxy.html">pqProxy</a> *layout=nullptr)</td></tr>
+<tr class="memdesc:a80b3cce675306cdaf6a818e74384563a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Assigns the view to the layout.  <a href="#a80b3cce675306cdaf6a818e74384563a">More...</a><br /></td></tr>
+<tr class="separator:a80b3cce675306cdaf6a818e74384563a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af78bf7aee7c768b30dc961ad11801ec3"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classpqDataRepresentation.html">pqDataRepresentation</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpqObjectBuilder.html#af78bf7aee7c768b30dc961ad11801ec3">createDataRepresentation</a> (<a class="el" href="classpqOutputPort.html">pqOutputPort</a> *<a class="elRef" doxygen="/home/kitware/dashboards/buildbot/paraview_master-vall-linux-shared-debug_doc_extdeps_gui_mpi_python3/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkBoostGraphAdapter_8h.html#a7c22aa18a4e42c330618a6410d133551">source</a>, <a class="el" href="classpqView.html">pqView</a> *view, const QString &amp;representationType=&quot;&quot;)</td></tr>
 <tr class="memdesc:af78bf7aee7c768b30dc961ad11801ec3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a representation to show the data from the given output port of a source in the given <code>view</code>.  <a href="#af78bf7aee7c768b30dc961ad11801ec3">More...</a><br /></td></tr>
 <tr class="separator:af78bf7aee7c768b30dc961ad11801ec3"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -190,7 +196,7 @@ Protected Member Functions</h2></td></tr>
 <div class="textblock"><p><a class="el" href="classpqObjectBuilder.html" title="pqObjectBuilder is loosely based on the Builder design pattern. ">pqObjectBuilder</a> is loosely based on the <code>Builder</code> design pattern. </p>
 <p>It is used to create as well as destroy complex objects such as views, displays, sources etc. Since most of the public API is virtual, it is possible for custom applications to subclass <a class="el" href="classpqObjectBuilder.html" title="pqObjectBuilder is loosely based on the Builder design pattern. ">pqObjectBuilder</a> to provide their own implementation for creation/ destroying these objects. The application layer accesses the ObjectBuilder through the <a class="el" href="classpqApplicationCore.html" title="This class is the crux of the ParaView application. ">pqApplicationCore</a> singleton. NOTE: <a class="el" href="classpqObjectBuilder.html" title="pqObjectBuilder is loosely based on the Builder design pattern. ">pqObjectBuilder</a> replaces the previously supported pqPipelineBuilder. Unlink, pqPipelineBuilder, this class no longer deals with undo/redo stack. The application layer components that use the ObjectBuilder are supposed to bother about the undo stack i.e. call begin/end on the undo stack before/after calling creation/destruction method on the ObjectBuilder. </p>
 
-<p class="definition">Definition at line <a class="el" href="pqObjectBuilder_8h_source.html#l00068">68</a> of file <a class="el" href="pqObjectBuilder_8h_source.html">pqObjectBuilder.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="pqObjectBuilder_8h_source.html#l00069">69</a> of file <a class="el" href="pqObjectBuilder_8h_source.html">pqObjectBuilder.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="aae9ef8a4db7801b6d7050c2865cae5fa"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aae9ef8a4db7801b6d7050c2865cae5fa">&#9670;&nbsp;</a></span>pqObjectBuilder()</h2>
@@ -504,8 +510,8 @@ Protected Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="ad725902245602df30109a3c332ca05a3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad725902245602df30109a3c332ca05a3">&#9670;&nbsp;</a></span>createView()</h2>
+<a id="ad7b8cdd7963e32f4a4afa74a662383d5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad7b8cdd7963e32f4a4afa74a662383d5">&#9670;&nbsp;</a></span>createView() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -523,13 +529,7 @@ Protected Member Functions</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype"><a class="el" href="classpqServer.html">pqServer</a> *&#160;</td>
-          <td class="paramname"><em>server</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">bool&#160;</td>
-          <td class="paramname"><em>detachedFromLayout</em> = <code>false</code>&#160;</td>
+          <td class="paramname"><em>server</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -545,6 +545,43 @@ Protected Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Creates a new view module of the given type on the given server. </p>
+
+</div>
+</div>
+<a id="a1327d53b63b3c11587d715c35443cfe4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1327d53b63b3c11587d715c35443cfe4">&#9670;&nbsp;</a></span>createView() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classpqView.html">pqView</a>* pqObjectBuilder::createView </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;&#160;</td>
+          <td class="paramname"><em>type</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classpqServer.html">pqServer</a> *&#160;</td>
+          <td class="paramname"><em>server</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>detachedFromLayout</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Deprecated in ParaView 5.7. </p>
+<p><code>detachedFromLayout</code> argument is not longer applicable. All views are now created <em>detached</em> by default. </p>
 
 </div>
 </div>
@@ -574,6 +611,45 @@ Protected Member Functions</h2></td></tr>
 
 <p>Destroys the view module. </p>
 <p>This destroys the view module as well as all the displays in the view module. </p>
+
+</div>
+</div>
+<a id="a80b3cce675306cdaf6a818e74384563a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a80b3cce675306cdaf6a818e74384563a">&#9670;&nbsp;</a></span>addToLayout()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void pqObjectBuilder::addToLayout </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classpqView.html">pqView</a> *&#160;</td>
+          <td class="paramname"><em>view</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classpqProxy.html">pqProxy</a> *&#160;</td>
+          <td class="paramname"><em>layout</em> = <code>nullptr</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Assigns the view to the layout. </p>
+<p>If layout is nullptr, this method will use an arbitrary layout on the same server as the view, if any, or create a new layout and assign the view to it. </p>
 
 </div>
 </div>
@@ -954,7 +1030,7 @@ Protected Member Functions</h2></td></tr>
 
 <p>Returns true while <a class="el" href="classpqObjectBuilder.html" title="pqObjectBuilder is loosely based on the Builder design pattern. ">pqObjectBuilder</a> is in <a class="el" href="classpqObjectBuilder.html#aa05540aec63f68cca6d32af12815f4ac" title="Create a server connection give a server resource. ">createServer()</a> call. </p>
 
-<p class="definition">Definition at line <a class="el" href="pqObjectBuilder_8h_source.html#l00226">226</a> of file <a class="el" href="pqObjectBuilder_8h_source.html">pqObjectBuilder.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="pqObjectBuilder_8h_source.html#l00239">239</a> of file <a class="el" href="pqObjectBuilder_8h_source.html">pqObjectBuilder.h</a>.</p>
 
 </div>
 </div>
@@ -1219,7 +1295,7 @@ Protected Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Fired on successful completion of <a class="el" href="classpqObjectBuilder.html#ad725902245602df30109a3c332ca05a3" title="Creates a new view module of the given type on the given server. ">createView()</a>. </p>
+<p>Fired on successful completion of <a class="el" href="classpqObjectBuilder.html#ad7b8cdd7963e32f4a4afa74a662383d5" title="Creates a new view module of the given type on the given server. ">createView()</a>. </p>
 <p>Remember that this signal is fired only when the creation of the object is requested by the GUI. It wont be triggered when the python client creates the source or when state is loaded or on undo/redo. </p>
 
 </div>

@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>paraview.smstate &mdash; ParaView/Python 5.6.0-1471-g41e37af42c documentation</title>
+  <title>paraview.smstate &mdash; ParaView/Python 5.6.0-1503-ga141230ebd documentation</title>
   
 
   
@@ -24,7 +24,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:'../../',
-        VERSION:'5.6.0-1471-g41e37af42c',
+        VERSION:'5.6.0-1503-ga141230ebd',
         COLLAPSE_INDEX:false,
         FILE_SUFFIX:'.html',
         HAS_SOURCE:  true
@@ -48,7 +48,7 @@
         <link rel="index" title="Index"
               href="../../genindex.html"/>
         <link rel="search" title="Search" href="../../search.html"/>
-    <link rel="top" title="ParaView/Python 5.6.0-1471-g41e37af42c documentation" href="../../index.html"/>
+    <link rel="top" title="ParaView/Python 5.6.0-1503-ga141230ebd documentation" href="../../index.html"/>
         <link rel="up" title="Module code" href="../index.html"/> 
 
   <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
@@ -66,7 +66,7 @@
           <li> <a href="../../index.html">
             <img src="../../_static/paraview-logo-small.png"
             alt="ParaView/Python"></img></a> </li>
-          <li class="version"> version 5.6.0-1471-g41e37af42c</li>
+          <li class="version"> version 5.6.0-1503-ga141230ebd</li>
         </ul>
         <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
   <input type="text" name="q" placeholder="Search docs" />
@@ -620,6 +620,8 @@
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../api-changes.html">API Changes between ParaView versions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../api-changes.html#changes-in-5-7">Changes in 5.7</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-changes.html#views-and-layouts">Views and Layouts</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../api-changes.html#changes-in-5-5">Changes in 5.5</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../api-changes.html#changes-in-5-1">Changes in 5.1</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../api-changes.html#changes-in-4-2">Changes in 4.2</a></li>
@@ -762,6 +764,13 @@
 <div class="viewcode-block" id="get_state"><a class="viewcode-back" href="../../paraview.smstate.html#paraview.smstate.get_state">[docs]</a><span class="k">def</span> <span class="nf">get_state</span><span class="p">(</span><span class="n">propertiesToTraceOnCreate</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="c1"># sm.vtkSMTrace.RECORD_MODIFIED_PROPERTIES,</span>
     <span class="n">skipHiddenRepresentations</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">source_set</span><span class="o">=</span><span class="p">[],</span> <span class="nb">filter</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">raw</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Returns the state string&quot;&quot;&quot;</span>
+
+    <span class="c1"># essential to ensure any obsolete accessor don&#39;t linger can cause havoc</span>
+    <span class="c1"># when saving state following a Python trace session</span>
+    <span class="c1"># (paraview/paraview#18994)</span>
+    <span class="kn">import</span> <span class="nn">gc</span>
+    <span class="n">gc</span><span class="o">.</span><span class="n">collect</span><span class="p">()</span>
+
     <span class="k">if</span> <span class="n">sm</span><span class="o">.</span><span class="n">vtkSMTrace</span><span class="o">.</span><span class="n">GetActiveTracer</span><span class="p">():</span>
         <span class="k">raise</span> <span class="ne">RuntimeError</span> <span class="p">(</span><span class="s2">&quot;Cannot generate Python state when tracing is active.&quot;</span><span class="p">)</span>
 
@@ -798,8 +807,8 @@
 
     <span class="c1">#--------------------------------------------------------------------------</span>
     <span class="c1"># First, we trace the views and layouts, if any.</span>
-    <span class="c1"># TODO: add support for layouts.</span>
     <span class="n">views</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">proxies_of_interest</span> <span class="k">if</span> <span class="n">smtrace</span><span class="o">.</span><span class="n">Trace</span><span class="o">.</span><span class="n">get_registered_name</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="s2">&quot;views&quot;</span><span class="p">)]</span>
+
     <span class="k">if</span> <span class="n">views</span><span class="p">:</span>
         <span class="c1"># sort views by their names, so the state has some structure to it.</span>
         <span class="n">views</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">views</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span>\
@@ -814,6 +823,31 @@
             <span class="n">traceitem</span><span class="o">.</span><span class="n">finalize</span><span class="p">()</span>
             <span class="k">del</span> <span class="n">traceitem</span>
         <span class="n">trace</span><span class="o">.</span><span class="n">append_separated</span><span class="p">(</span><span class="n">smtrace</span><span class="o">.</span><span class="n">get_current_trace_output_and_reset</span><span class="p">(</span><span class="n">raw</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span>
+        <span class="n">trace</span><span class="o">.</span><span class="n">append_separated</span><span class="p">([</span><span class="s2">&quot;SetActiveView(None)&quot;</span><span class="p">])</span>
+
+    <span class="c1"># from views,  build the list of layouts of interest.</span>
+    <span class="n">layouts</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">aview</span> <span class="ow">in</span> <span class="n">views</span><span class="p">:</span>
+        <span class="n">l</span> <span class="o">=</span> <span class="n">simple</span><span class="o">.</span><span class="n">GetLayout</span><span class="p">(</span><span class="n">aview</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">l</span><span class="p">:</span>
+            <span class="n">layouts</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">simple</span><span class="o">.</span><span class="n">GetLayout</span><span class="p">(</span><span class="n">aview</span><span class="p">))</span>
+
+    <span class="c1"># trace create of layouts</span>
+    <span class="k">if</span> <span class="n">layouts</span><span class="p">:</span>
+        <span class="n">layouts</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">layouts</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span>\
+                  <span class="n">smtrace</span><span class="o">.</span><span class="n">Trace</span><span class="o">.</span><span class="n">get_registered_name</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="s2">&quot;layouts&quot;</span><span class="p">))</span>
+        <span class="n">trace</span><span class="o">.</span><span class="n">append_separated</span><span class="p">([</span>\
+            <span class="s2">&quot;# ----------------------------------------------------------------&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;# setup view layouts&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;# ----------------------------------------------------------------&quot;</span><span class="p">])</span>
+        <span class="k">for</span> <span class="n">layout</span> <span class="ow">in</span> <span class="n">layouts</span><span class="p">:</span>
+            <span class="n">traceitem</span> <span class="o">=</span> <span class="n">smtrace</span><span class="o">.</span><span class="n">RegisterLayoutProxy</span><span class="p">(</span><span class="n">layout</span><span class="p">)</span>
+            <span class="n">traceitem</span><span class="o">.</span><span class="n">finalize</span><span class="p">(</span><span class="nb">filter</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">views</span><span class="p">)</span>
+            <span class="k">del</span> <span class="n">traceitem</span>
+        <span class="n">trace</span><span class="o">.</span><span class="n">append_separated</span><span class="p">(</span><span class="n">smtrace</span><span class="o">.</span><span class="n">get_current_trace_output_and_reset</span><span class="p">(</span><span class="n">raw</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span>
+
+    <span class="k">if</span> <span class="n">views</span><span class="p">:</span>
+        <span class="c1"># restore the active view after the layouts have been created.</span>
         <span class="n">trace</span><span class="o">.</span><span class="n">append_separated</span><span class="p">([</span>\
             <span class="s2">&quot;# ----------------------------------------------------------------&quot;</span><span class="p">,</span>
             <span class="s2">&quot;# restore active view&quot;</span><span class="p">,</span>

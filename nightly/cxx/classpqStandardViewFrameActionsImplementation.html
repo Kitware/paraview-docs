@@ -91,9 +91,6 @@ Protected Slots</h2></td></tr>
 <tr class="memitem:abe3048074b3879b512702fe4a131b10d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpqStandardViewFrameActionsImplementation.html#abe3048074b3879b512702fe4a131b10d">aboutToShowConvertMenu</a> ()</td></tr>
 <tr class="memdesc:abe3048074b3879b512702fe4a131b10d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called before the "Convert To" menu is shown.  <a href="#abe3048074b3879b512702fe4a131b10d">More...</a><br /></td></tr>
 <tr class="separator:abe3048074b3879b512702fe4a131b10d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4c2b3071ecd204aaefa77e1b25926352"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpqStandardViewFrameActionsImplementation.html#a4c2b3071ecd204aaefa77e1b25926352">invoked</a> ()</td></tr>
-<tr class="memdesc:a4c2b3071ecd204aaefa77e1b25926352"><td class="mdescLeft">&#160;</td><td class="mdescRight">This slot is called either from an action in the "Convert To" menu, or from the buttons on an empty frame.  <a href="#a4c2b3071ecd204aaefa77e1b25926352">More...</a><br /></td></tr>
-<tr class="separator:a4c2b3071ecd204aaefa77e1b25926352"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9acc7fbac8402e2cf7f06ebb5df626b6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpqStandardViewFrameActionsImplementation.html#a9acc7fbac8402e2cf7f06ebb5df626b6">selectSurfaceCellsTriggered</a> ()</td></tr>
 <tr class="memdesc:a9acc7fbac8402e2cf7f06ebb5df626b6"><td class="mdescLeft">&#160;</td><td class="mdescRight">slots for various shortcuts.  <a href="#a9acc7fbac8402e2cf7f06ebb5df626b6">More...</a><br /></td></tr>
 <tr class="separator:a9acc7fbac8402e2cf7f06ebb5df626b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -149,9 +146,12 @@ Protected Member Functions</h2></td></tr>
 <tr class="memitem:a9299fcdd40cb0974458f6cdf61d36589"><td class="memItemLeft" align="right" valign="top">virtual QList&lt; <a class="el" href="structpqStandardViewFrameActionsImplementation_1_1ViewType.html">ViewType</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpqStandardViewFrameActionsImplementation.html#a9299fcdd40cb0974458f6cdf61d36589">availableViewTypes</a> ()</td></tr>
 <tr class="memdesc:a9299fcdd40cb0974458f6cdf61d36589"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns available view types in the application.  <a href="#a9299fcdd40cb0974458f6cdf61d36589">More...</a><br /></td></tr>
 <tr class="separator:a9299fcdd40cb0974458f6cdf61d36589"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acf21e5e62d06b46a7e6a7ecd0b161648"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpqStandardViewFrameActionsImplementation.html#acf21e5e62d06b46a7e6a7ecd0b161648">handleCreateView</a> (const <a class="el" href="structpqStandardViewFrameActionsImplementation_1_1ViewType.html">ViewType</a> &amp;viewType)</td></tr>
-<tr class="memdesc:acf21e5e62d06b46a7e6a7ecd0b161648"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called when user clicks "Convert To" or create a view from the empty frame.  <a href="#acf21e5e62d06b46a7e6a7ecd0b161648">More...</a><br /></td></tr>
-<tr class="separator:acf21e5e62d06b46a7e6a7ecd0b161648"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a935fa641fc9ae86b37598c4a9fdd1920"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classpqView.html">pqView</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpqStandardViewFrameActionsImplementation.html#a935fa641fc9ae86b37598c4a9fdd1920">handleCreateView</a> (const <a class="el" href="structpqStandardViewFrameActionsImplementation_1_1ViewType.html">ViewType</a> &amp;viewType)</td></tr>
+<tr class="memdesc:a935fa641fc9ae86b37598c4a9fdd1920"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called when user clicks "Convert To" or create a view from the empty frame.  <a href="#a935fa641fc9ae86b37598c4a9fdd1920">More...</a><br /></td></tr>
+<tr class="separator:a935fa641fc9ae86b37598c4a9fdd1920"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4b712700370961a8e6db0b951459a14e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpqStandardViewFrameActionsImplementation.html#a4b712700370961a8e6db0b951459a14e">invoked</a> (<a class="el" href="classpqViewFrame.html">pqViewFrame</a> *, const <a class="el" href="structpqStandardViewFrameActionsImplementation_1_1ViewType.html">ViewType</a> &amp;<a class="elRef" doxygen="/home/kitware/dashboards/buildbot/paraview_master-vall-linux-shared-debug_doc_extdeps_gui_mpi_python3/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/namespacevtkX3D.html#ac6551f7bf833e8254b2b3ecdaea0d210a8e7f81709ed57920a45c02a954726847">type</a>, const QString &amp;command)</td></tr>
+<tr class="memdesc:a4b712700370961a8e6db0b951459a14e"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is called either from an action in the "Convert To" menu, or from the buttons on an empty frame.  <a href="#a4b712700370961a8e6db0b951459a14e">More...</a><br /></td></tr>
+<tr class="separator:a4b712700370961a8e6db0b951459a14e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p><br />
@@ -173,7 +173,7 @@ Protected Member Functions</h2></td></tr>
 *   &lt;/StandardViewFrameActions&gt;
 * &lt;/Hints&gt;
 * </pre> 
-<p class="definition">Definition at line <a class="el" href="pqStandardViewFrameActionsImplementation_8h_source.html#l00088">88</a> of file <a class="el" href="pqStandardViewFrameActionsImplementation_8h_source.html">pqStandardViewFrameActionsImplementation.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="pqStandardViewFrameActionsImplementation_8h_source.html#l00089">89</a> of file <a class="el" href="pqStandardViewFrameActionsImplementation_8h_source.html">pqStandardViewFrameActionsImplementation.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a307d24383bc77ef540f433322e9fab0d"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a307d24383bc77ef540f433322e9fab0d">&#9670;&nbsp;</a></span>pqStandardViewFrameActionsImplementation()</h2>
@@ -285,33 +285,6 @@ Protected Member Functions</h2></td></tr>
 
 <p>Called before the "Convert To" menu is shown. </p>
 <p>We populate the menu with actions for available view types. </p>
-
-</div>
-</div>
-<a id="a4c2b3071ecd204aaefa77e1b25926352"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4c2b3071ecd204aaefa77e1b25926352">&#9670;&nbsp;</a></span>invoked</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void pqStandardViewFrameActionsImplementation::invoked </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">slot</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>This slot is called either from an action in the "Convert To" menu, or from the buttons on an empty frame. </p>
 
 </div>
 </div>
@@ -901,8 +874,8 @@ Protected Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="acf21e5e62d06b46a7e6a7ecd0b161648"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acf21e5e62d06b46a7e6a7ecd0b161648">&#9670;&nbsp;</a></span>handleCreateView()</h2>
+<a id="a935fa641fc9ae86b37598c4a9fdd1920"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a935fa641fc9ae86b37598c4a9fdd1920">&#9670;&nbsp;</a></span>handleCreateView()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -911,7 +884,7 @@ Protected Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual void pqStandardViewFrameActionsImplementation::handleCreateView </td>
+          <td class="memname">virtual <a class="el" href="classpqView.html">pqView</a>* pqStandardViewFrameActionsImplementation::handleCreateView </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="structpqStandardViewFrameActionsImplementation_1_1ViewType.html">ViewType</a> &amp;&#160;</td>
           <td class="paramname"><em>viewType</em></td><td>)</td>
@@ -926,6 +899,50 @@ Protected Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Called when user clicks "Convert To" or create a view from the empty frame. </p>
+
+</div>
+</div>
+<a id="a4b712700370961a8e6db0b951459a14e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4b712700370961a8e6db0b951459a14e">&#9670;&nbsp;</a></span>invoked()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void pqStandardViewFrameActionsImplementation::invoked </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classpqViewFrame.html">pqViewFrame</a> *&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structpqStandardViewFrameActionsImplementation_1_1ViewType.html">ViewType</a> &amp;&#160;</td>
+          <td class="paramname"><em>type</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QString &amp;&#160;</td>
+          <td class="paramname"><em>command</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>This is called either from an action in the "Convert To" menu, or from the buttons on an empty frame. </p>
 
 </div>
 </div>

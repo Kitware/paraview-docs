@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>API Changes between ParaView versions &mdash; ParaView/Python 5.6.0-1471-g41e37af42c documentation</title>
+  <title>API Changes between ParaView versions &mdash; ParaView/Python 5.6.0-1503-ga141230ebd documentation</title>
   
 
   
@@ -24,7 +24,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:'./',
-        VERSION:'5.6.0-1471-g41e37af42c',
+        VERSION:'5.6.0-1503-ga141230ebd',
         COLLAPSE_INDEX:false,
         FILE_SUFFIX:'.html',
         HAS_SOURCE:  true
@@ -48,7 +48,7 @@
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="ParaView/Python 5.6.0-1471-g41e37af42c documentation" href="index.html"/>
+    <link rel="top" title="ParaView/Python 5.6.0-1503-ga141230ebd documentation" href="index.html"/>
         <link rel="prev" title="Python Version 2 versus 3" href="python-2-vs-3.html"/> 
 
   <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
@@ -66,7 +66,7 @@
           <li> <a href="index.html">
             <img src="_static/paraview-logo-small.png"
             alt="ParaView/Python"></img></a> </li>
-          <li class="version"> version 5.6.0-1471-g41e37af42c</li>
+          <li class="version"> version 5.6.0-1503-ga141230ebd</li>
         </ul>
         <form id ="rtd-search-form" class="wy-form" action="search.html" method="get">
   <input type="text" name="q" placeholder="Search docs" />
@@ -620,6 +620,8 @@
 </ul>
 <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">API Changes between ParaView versions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#changes-in-5-7">Changes in 5.7</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#views-and-layouts">Views and Layouts</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#changes-in-5-5">Changes in 5.5</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#changes-in-5-1">Changes in 5.1</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#changes-in-4-2">Changes in 4.2</a></li>
@@ -656,6 +658,18 @@
           
   <div class="section" id="api-changes-between-paraview-versions">
 <h1>API Changes between ParaView versions<a class="headerlink" href="#api-changes-between-paraview-versions" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="changes-in-5-7">
+<h2>Changes in 5.7<a class="headerlink" href="#changes-in-5-7" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="views-and-layouts">
+<h2>Views and Layouts<a class="headerlink" href="#views-and-layouts" title="Permalink to this headline">¶</a></h2>
+<p><cite>CreateView</cite>, <cite>CreateRenderView</cite>, etc. no longer automatically associates the
+created view with a layout. One has to explicitly assign the view to a layout.
+<cite>simple.AssignViewToLayout</cite> may be used to assign the view to an available
+layout, or create a new one if none exists.</p>
+<p><cite>detachedFromLayout</cite> argument to all the view creation functions is now
+obsolete since all views are created detached from layout.</p>
+</div>
 <div class="section" id="changes-in-5-5">
 <h2>Changes in 5.5<a class="headerlink" href="#changes-in-5-5" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="savescreenshot-and-saveanimation-parameters">

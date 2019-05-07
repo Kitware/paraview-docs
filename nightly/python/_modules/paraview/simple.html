@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>paraview.simple &mdash; ParaView/Python 5.6.0-1471-g41e37af42c documentation</title>
+  <title>paraview.simple &mdash; ParaView/Python 5.6.0-1503-ga141230ebd documentation</title>
   
 
   
@@ -24,7 +24,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:'../../',
-        VERSION:'5.6.0-1471-g41e37af42c',
+        VERSION:'5.6.0-1503-ga141230ebd',
         COLLAPSE_INDEX:false,
         FILE_SUFFIX:'.html',
         HAS_SOURCE:  true
@@ -48,7 +48,7 @@
         <link rel="index" title="Index"
               href="../../genindex.html"/>
         <link rel="search" title="Search" href="../../search.html"/>
-    <link rel="top" title="ParaView/Python 5.6.0-1471-g41e37af42c documentation" href="../../index.html"/>
+    <link rel="top" title="ParaView/Python 5.6.0-1503-ga141230ebd documentation" href="../../index.html"/>
         <link rel="up" title="Module code" href="../index.html"/> 
 
   <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
@@ -66,7 +66,7 @@
           <li> <a href="../../index.html">
             <img src="../../_static/paraview-logo-small.png"
             alt="ParaView/Python"></img></a> </li>
-          <li class="version"> version 5.6.0-1471-g41e37af42c</li>
+          <li class="version"> version 5.6.0-1503-ga141230ebd</li>
         </ul>
         <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
   <input type="text" name="q" placeholder="Search docs" />
@@ -620,6 +620,8 @@
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../api-changes.html">API Changes between ParaView versions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../api-changes.html#changes-in-5-7">Changes in 5.7</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api-changes.html#views-and-layouts">Views and Layouts</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../api-changes.html#changes-in-5-5">Changes in 5.5</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../api-changes.html#changes-in-5-1">Changes in 5.1</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../api-changes.html#changes-in-4-2">Changes in 4.2</a></li>
@@ -702,6 +704,7 @@
 <span class="kn">from</span> <span class="nn">paraview.servermanager</span> <span class="k">import</span> <span class="n">OutputPort</span>
 
 <span class="kn">import</span> <span class="nn">sys</span>
+<span class="kn">import</span> <span class="nn">warnings</span>
 
 <span class="k">if</span> <span class="n">sys</span><span class="o">.</span><span class="n">version_info</span> <span class="o">&gt;=</span> <span class="p">(</span><span class="mi">3</span><span class="p">,):</span>
     <span class="n">xrange</span> <span class="o">=</span> <span class="nb">range</span>
@@ -792,11 +795,16 @@
 <span class="c1">#==============================================================================</span>
 <span class="c1"># Views and Layout methods</span>
 <span class="c1">#==============================================================================</span>
-<div class="viewcode-block" id="CreateView"><a class="viewcode-back" href="../../paraview.simple.html#paraview.simple.CreateView">[docs]</a><span class="k">def</span> <span class="nf">CreateView</span><span class="p">(</span><span class="n">view_xml_name</span><span class="p">,</span> <span class="n">detachedFromLayout</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="o">**</span><span class="n">params</span><span class="p">):</span>
+<div class="viewcode-block" id="CreateView"><a class="viewcode-back" href="../../paraview.simple.html#paraview.simple.CreateView">[docs]</a><span class="k">def</span> <span class="nf">CreateView</span><span class="p">(</span><span class="n">view_xml_name</span><span class="p">,</span> <span class="n">detachedFromLayout</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">params</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Creates and returns the specified proxy view based on its name/label.</span>
-<span class="sd">    If detachedFromLayout is true, the view will no be grabbed by the layout</span>
-<span class="sd">    hence not visible unless it is attached after. This also set params keywords</span>
-<span class="sd">    arguments as view properties.&quot;&quot;&quot;</span>
+<span class="sd">    Also set params keywords arguments as view properties.</span>
+
+<span class="sd">    `detachedFromLayout` has been deprecated in ParaView 5.7 as it is no longer</span>
+<span class="sd">    needed. All views are created detached by default.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">detachedFromLayout</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="s2">&quot;`detachedFromLayout` is deprecated in ParaView 5.7&quot;</span><span class="p">,</span> <span class="ne">DeprecationWarning</span><span class="p">)</span>
+
     <span class="n">view</span> <span class="o">=</span> <span class="n">servermanager</span><span class="o">.</span><span class="n">_create_view</span><span class="p">(</span><span class="n">view_xml_name</span><span class="p">)</span>
     <span class="k">if</span> <span class="ow">not</span> <span class="n">view</span><span class="p">:</span>
         <span class="k">raise</span> <span class="ne">RuntimeError</span> <span class="p">(</span><span class="s2">&quot;Failed to create requested view&quot;</span><span class="p">,</span> <span class="n">view_xml_name</span><span class="p">)</span>
@@ -815,9 +823,12 @@
     <span class="n">controller</span><span class="o">.</span><span class="n">PreInitializeProxy</span><span class="p">(</span><span class="n">view</span><span class="p">)</span>
     <span class="n">SetProperties</span><span class="p">(</span><span class="n">view</span><span class="p">,</span> <span class="o">**</span><span class="n">params</span><span class="p">)</span>
     <span class="n">controller</span><span class="o">.</span><span class="n">PostInitializeProxy</span><span class="p">(</span><span class="n">view</span><span class="p">)</span>
-    <span class="k">if</span> <span class="n">detachedFromLayout</span><span class="p">:</span>
-      <span class="n">view</span><span class="o">.</span><span class="n">SMProxy</span><span class="o">.</span><span class="n">SetAnnotation</span><span class="p">(</span><span class="s2">&quot;ParaView::DetachedFromLayout&quot;</span><span class="p">,</span> <span class="s2">&quot;true&quot;</span><span class="p">)</span>
     <span class="n">controller</span><span class="o">.</span><span class="n">RegisterViewProxy</span><span class="p">(</span><span class="n">view</span><span class="p">,</span> <span class="n">registrationName</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">paraview</span><span class="o">.</span><span class="n">compatibility</span><span class="o">.</span><span class="n">GetVersion</span><span class="p">()</span> <span class="o">&lt;=</span> <span class="mf">5.6</span><span class="p">:</span>
+        <span class="c1"># older versions automatically assigned view to a</span>
+        <span class="c1"># layout.</span>
+        <span class="n">controller</span><span class="o">.</span><span class="n">AssignViewToLayout</span><span class="p">(</span><span class="n">view</span><span class="p">)</span>
 
     <span class="c1"># setup an interactor if current process support interaction if an</span>
     <span class="c1"># interactor hasn&#39;t already been set. This overcomes the problem where VTK</span>
@@ -1033,11 +1044,8 @@
         <span class="n">view</span> <span class="o">=</span> <span class="n">GetActiveView</span><span class="p">()</span>
     <span class="k">if</span> <span class="ow">not</span> <span class="n">view</span><span class="p">:</span>
         <span class="k">raise</span> <span class="ne">RuntimeError</span> <span class="p">(</span><span class="s2">&quot;No active view was found.&quot;</span><span class="p">)</span>
-    <span class="n">layouts</span> <span class="o">=</span> <span class="n">GetLayouts</span><span class="p">()</span>
-    <span class="k">for</span> <span class="n">layout</span> <span class="ow">in</span> <span class="n">layouts</span><span class="o">.</span><span class="n">values</span><span class="p">():</span>
-        <span class="k">if</span> <span class="n">layout</span><span class="o">.</span><span class="n">GetViewLocation</span><span class="p">(</span><span class="n">view</span><span class="p">)</span> <span class="o">!=</span> <span class="o">-</span><span class="mi">1</span><span class="p">:</span>
-            <span class="k">return</span> <span class="n">layout</span>
-    <span class="k">return</span> <span class="kc">None</span></div>
+    <span class="n">lproxy</span> <span class="o">=</span> <span class="n">servermanager</span><span class="o">.</span><span class="n">vtkSMViewLayoutProxy</span><span class="o">.</span><span class="n">FindLayout</span><span class="p">(</span><span class="n">view</span><span class="o">.</span><span class="n">SMProxy</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">servermanager</span><span class="o">.</span><span class="n">_getPyProxy</span><span class="p">(</span><span class="n">lproxy</span><span class="p">)</span></div>
 
 <div class="viewcode-block" id="GetLayoutByName"><a class="viewcode-back" href="../../paraview.simple.html#paraview.simple.GetLayoutByName">[docs]</a><span class="k">def</span> <span class="nf">GetLayoutByName</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Return the first layout with the given name, if any.&quot;&quot;&quot;</span>
@@ -1055,6 +1063,22 @@
         <span class="k">raise</span> <span class="ne">RuntimeError</span> <span class="p">(</span><span class="s2">&quot;Layout couldn&#39;t be determined. Please specify a valid layout.&quot;</span><span class="p">)</span>
     <span class="n">views</span> <span class="o">=</span> <span class="n">GetViews</span><span class="p">()</span>
     <span class="k">return</span> <span class="p">[</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">views</span> <span class="k">if</span> <span class="n">layout</span><span class="o">.</span><span class="n">GetViewLocation</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">!=</span> <span class="o">-</span><span class="mi">1</span><span class="p">]</span></div>
+
+<div class="viewcode-block" id="AssignViewToLayout"><a class="viewcode-back" href="../../paraview.simple.html#paraview.simple.AssignViewToLayout">[docs]</a><span class="k">def</span> <span class="nf">AssignViewToLayout</span><span class="p">(</span><span class="n">view</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">layout</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">hint</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Assigns the view provided (or active view if None) to the</span>
+<span class="sd">    layout provided. If layout is None, then either the active layout or an</span>
+<span class="sd">    existing layout on the same server will be used. If no layout exists, then</span>
+<span class="sd">    a new layout will be created. Returns True on success.</span>
+
+<span class="sd">    It is an error to assign the same view to multiple layouts.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">view</span> <span class="o">=</span> <span class="n">view</span> <span class="k">if</span> <span class="n">view</span> <span class="k">else</span> <span class="n">GetActiveView</span><span class="p">()</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">view</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="s2">&quot;No active view was found.&quot;</span><span class="p">)</span>
+
+    <span class="n">layout</span> <span class="o">=</span> <span class="n">layout</span> <span class="k">if</span> <span class="n">layout</span> <span class="k">else</span> <span class="n">GetLayout</span><span class="p">()</span>
+    <span class="n">controller</span> <span class="o">=</span> <span class="n">servermanager</span><span class="o">.</span><span class="n">ParaViewPipelineController</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">controller</span><span class="o">.</span><span class="n">AssignViewToLayout</span><span class="p">(</span><span class="n">view</span><span class="p">,</span> <span class="n">layout</span><span class="p">,</span> <span class="n">hint</span><span class="p">)</span></div>
 
 <span class="c1"># -----------------------------------------------------------------------------</span>
 
@@ -2327,17 +2351,15 @@
 
 <span class="c1"># -----------------------------------------------------------------------------</span>
 
-<div class="viewcode-block" id="AnimateReader"><a class="viewcode-back" href="../../paraview.simple.html#paraview.simple.AnimateReader">[docs]</a><span class="k">def</span> <span class="nf">AnimateReader</span><span class="p">(</span><span class="n">reader</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">view</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">filename</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class="viewcode-block" id="AnimateReader"><a class="viewcode-back" href="../../paraview.simple.html#paraview.simple.AnimateReader">[docs]</a><span class="k">def</span> <span class="nf">AnimateReader</span><span class="p">(</span><span class="n">reader</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">view</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;This is a utility function that, given a reader and a view</span>
-<span class="sd">    animates over all time steps of the reader. If the optional</span>
-<span class="sd">    filename is provided, a movie is created (type depends on the</span>
-<span class="sd">    extension of the filename.&quot;&quot;&quot;</span>
+<span class="sd">    animates over all time steps of the reader.&quot;&quot;&quot;</span>
     <span class="k">if</span> <span class="ow">not</span> <span class="n">reader</span><span class="p">:</span>
         <span class="n">reader</span> <span class="o">=</span> <span class="n">active_objects</span><span class="o">.</span><span class="n">source</span>
     <span class="k">if</span> <span class="ow">not</span> <span class="n">view</span><span class="p">:</span>
         <span class="n">view</span> <span class="o">=</span> <span class="n">active_objects</span><span class="o">.</span><span class="n">view</span>
 
-    <span class="k">return</span> <span class="n">servermanager</span><span class="o">.</span><span class="n">AnimateReader</span><span class="p">(</span><span class="n">reader</span><span class="p">,</span> <span class="n">view</span><span class="p">,</span> <span class="n">filename</span><span class="p">)</span></div>
+    <span class="k">return</span> <span class="n">servermanager</span><span class="o">.</span><span class="n">AnimateReader</span><span class="p">(</span><span class="n">reader</span><span class="p">,</span> <span class="n">view</span><span class="p">)</span></div>
 
 <span class="c1"># -----------------------------------------------------------------------------</span>
 

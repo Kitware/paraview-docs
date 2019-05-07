@@ -190,8 +190,9 @@ $(function() {
   &lt;/Hints&gt;
 &lt;/SourceProxy&gt;
 </pre><h2>View Annotations </h2>
-<p>Views support the following annotations:</p><ol type="1">
-<li><b>ParaView::DetachedFromLayout</b>: If set to "True", this annotation will prevent the layout from grabbing the view, enabling custom application developers to assign or position the view themselves. Use <code>pqObjectBuilder::createView(viewType, server, true)</code> to create a new view with this annotation added.</li>
+<p>Views support the following annotations:</p>
+<ol type="1">
+<li><b>ParaView::DetachedFromLayout</b>: <b>Deprecated in ParaView 5.7</b>. This is no longer applicable as all views are created detached from layout by default.</li>
 </ol>
 <h2>Live Source </h2>
 <p>Certain algorithms can generate new data autonomously, e.g. a source that reads data from the network. The <b>LiveSource</b> hint allows ParaView to periodically check with the algorithm if it has new data and update the application, if so.</p>

@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>simple Module &mdash; ParaView/Python 5.6.0-1471-g41e37af42c documentation</title>
+  <title>simple Module &mdash; ParaView/Python 5.6.0-1503-ga141230ebd documentation</title>
   
 
   
@@ -24,7 +24,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:'./',
-        VERSION:'5.6.0-1471-g41e37af42c',
+        VERSION:'5.6.0-1503-ga141230ebd',
         COLLAPSE_INDEX:false,
         FILE_SUFFIX:'.html',
         HAS_SOURCE:  true
@@ -48,7 +48,7 @@
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="ParaView/Python 5.6.0-1471-g41e37af42c documentation" href="index.html"/>
+    <link rel="top" title="ParaView/Python 5.6.0-1503-ga141230ebd documentation" href="index.html"/>
         <link rel="up" title="paraview Package" href="paraview.html"/>
         <link rel="next" title="Available readers, sources, writers, filters and animation cues" href="paraview.servermanager_proxies.html"/>
         <link rel="prev" title="servermanager Module" href="paraview.servermanager.html"/> 
@@ -68,7 +68,7 @@
           <li> <a href="index.html">
             <img src="_static/paraview-logo-small.png"
             alt="ParaView/Python"></img></a> </li>
-          <li class="version"> version 5.6.0-1471-g41e37af42c</li>
+          <li class="version"> version 5.6.0-1503-ga141230ebd</li>
         </ul>
         <form id ="rtd-search-form" class="wy-form" action="search.html" method="get">
   <input type="text" name="q" placeholder="Search docs" />
@@ -622,6 +622,8 @@
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="api-changes.html">API Changes between ParaView versions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="api-changes.html#changes-in-5-7">Changes in 5.7</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-changes.html#views-and-layouts">Views and Layouts</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api-changes.html#changes-in-5-5">Changes in 5.5</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api-changes.html#changes-in-5-1">Changes in 5.1</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api-changes.html#changes-in-4-2">Changes in 4.2</a></li>
@@ -695,11 +697,9 @@ name already exists it will be removed first.</p>
 
 <dl class="function">
 <dt id="paraview.simple.AnimateReader">
-<code class="descclassname">paraview.simple.</code><code class="descname">AnimateReader</code><span class="sig-paren">(</span><em>reader=None</em>, <em>view=None</em>, <em>filename=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#AnimateReader"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.AnimateReader" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">paraview.simple.</code><code class="descname">AnimateReader</code><span class="sig-paren">(</span><em>reader=None</em>, <em>view=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#AnimateReader"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.AnimateReader" title="Permalink to this definition">¶</a></dt>
 <dd><p>This is a utility function that, given a reader and a view
-animates over all time steps of the reader. If the optional
-filename is provided, a movie is created (type depends on the
-extension of the filename.</p>
+animates over all time steps of the reader.</p>
 </dd></dl>
 
 <dl class="function">
@@ -717,6 +717,16 @@ array determined using the <cite>arrayInfo</cite>.</p>
 <span class="n">AssignLookupTable</span><span class="p">(</span><span class="n">arrayInfo</span><span class="p">,</span> <span class="s2">&quot;Cool to Warm&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
+</dd></dl>
+
+<dl class="function">
+<dt id="paraview.simple.AssignViewToLayout">
+<code class="descclassname">paraview.simple.</code><code class="descname">AssignViewToLayout</code><span class="sig-paren">(</span><em>view=None</em>, <em>layout=None</em>, <em>hint=0</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#AssignViewToLayout"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.AssignViewToLayout" title="Permalink to this definition">¶</a></dt>
+<dd><p>Assigns the view provided (or active view if None) to the
+layout provided. If layout is None, then either the active layout or an
+existing layout on the same server will be used. If no layout exists, then
+a new layout will be created. Returns True on success.</p>
+<p>It is an error to assign the same view to multiple layouts.</p>
 </dd></dl>
 
 <dl class="function">
@@ -843,11 +853,11 @@ to this method:</p>
 
 <dl class="function">
 <dt id="paraview.simple.CreateView">
-<code class="descclassname">paraview.simple.</code><code class="descname">CreateView</code><span class="sig-paren">(</span><em>view_xml_name</em>, <em>detachedFromLayout=False</em>, <em>**params</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#CreateView"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.CreateView" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">paraview.simple.</code><code class="descname">CreateView</code><span class="sig-paren">(</span><em>view_xml_name</em>, <em>detachedFromLayout=None</em>, <em>**params</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#CreateView"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.CreateView" title="Permalink to this definition">¶</a></dt>
 <dd><p>Creates and returns the specified proxy view based on its name/label.
-If detachedFromLayout is true, the view will no be grabbed by the layout
-hence not visible unless it is attached after. This also set params keywords
-arguments as view properties.</p>
+Also set params keywords arguments as view properties.</p>
+<p><cite>detachedFromLayout</cite> has been deprecated in ParaView 5.7 as it is no longer
+needed. All views are created detached by default.</p>
 </dd></dl>
 
 <dl class="function">
