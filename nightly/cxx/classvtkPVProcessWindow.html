@@ -209,6 +209,9 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memitem:a824bd90b47e5bce3a2f0a6b222bf486a"><td class="memItemLeft" align="right" valign="top">static <a class="elRef" doxygen="/home/kitware/dashboards/buildbot/paraview_master-vall-linux-shared-debug_doc_extdeps_gui_mpi_python3/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/classvtkRenderWindow.html">vtkRenderWindow</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkPVProcessWindow.html#a824bd90b47e5bce3a2f0a6b222bf486a">GetRenderWindow</a> ()</td></tr>
 <tr class="memdesc:a824bd90b47e5bce3a2f0a6b222bf486a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the render window for this process.  <a href="#a824bd90b47e5bce3a2f0a6b222bf486a">More...</a><br /></td></tr>
 <tr class="separator:a824bd90b47e5bce3a2f0a6b222bf486a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8234136df47f4da42f898ebd2cd2063f"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkPVProcessWindow.html#a8234136df47f4da42f898ebd2cd2063f">PrepareForRendering</a> ()</td></tr>
+<tr class="memdesc:a8234136df47f4da42f898ebd2cd2063f"><td class="mdescLeft">&#160;</td><td class="mdescRight">This may be called to ensured that the shared window is created/initialized at least once.  <a href="#a8234136df47f4da42f898ebd2cd2063f">More...</a><br /></td></tr>
+<tr class="separator:a8234136df47f4da42f898ebd2cd2063f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_static_methods_classvtkObject"><td colspan="2" onclick="javascript:toggleInherit('pub_static_methods_classvtkObject')"><img src="closed.png" alt="-"/>&#160;Static Public Member Functions inherited from <a class="el" href="http://www.vtk.org/doc/nightly/html/classvtkObject.html">vtkObject</a></td></tr>
 <tr class="memitem:a4d5b227267c076d6f9e38483370b6612 inherit pub_static_methods_classvtkObject"><td class="memItemLeft" align="right" valign="top">static <a class="elRef" doxygen="/home/kitware/dashboards/buildbot/paraview_master-vall-linux-shared-debug_doc_extdeps_gui_mpi_python3/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/classvtkObject.html">vtkObject</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="elRef" doxygen="/home/kitware/dashboards/buildbot/paraview_master-vall-linux-shared-debug_doc_extdeps_gui_mpi_python3/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/classvtkObject.html#a4d5b227267c076d6f9e38483370b6612">New</a> ()</td></tr>
 <tr class="separator:a4d5b227267c076d6f9e38483370b6612 inherit pub_static_methods_classvtkObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -542,6 +545,33 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Returns the render window for this process. </p>
 <p>May return nullptr on processes where ParaView rules dictate no such process specific window is necessary. The first time this method is called the window may get created and initialized based on the configuration. </p>
+
+</div>
+</div>
+<a id="a8234136df47f4da42f898ebd2cd2063f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8234136df47f4da42f898ebd2cd2063f">&#9670;&nbsp;</a></span>PrepareForRendering()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void vtkPVProcessWindow::PrepareForRendering </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>This may be called to ensured that the shared window is created/initialized at least once. </p>
 
 </div>
 </div>
