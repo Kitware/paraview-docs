@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>paraview.web.helper &mdash; ParaView/Python 5.6.0-1520-gfefcf2c073 documentation</title>
+  <title>paraview.web.helper &mdash; ParaView/Python 5.6.0-1522-g38cabc186a documentation</title>
   
 
   
@@ -24,7 +24,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:'../../../',
-        VERSION:'5.6.0-1520-gfefcf2c073',
+        VERSION:'5.6.0-1522-g38cabc186a',
         COLLAPSE_INDEX:false,
         FILE_SUFFIX:'.html',
         HAS_SOURCE:  true
@@ -48,7 +48,7 @@
         <link rel="index" title="Index"
               href="../../../genindex.html"/>
         <link rel="search" title="Search" href="../../../search.html"/>
-    <link rel="top" title="ParaView/Python 5.6.0-1520-gfefcf2c073 documentation" href="../../../index.html"/>
+    <link rel="top" title="ParaView/Python 5.6.0-1522-g38cabc186a documentation" href="../../../index.html"/>
         <link rel="up" title="Module code" href="../../index.html"/> 
 
   <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
@@ -66,7 +66,7 @@
           <li> <a href="../../../index.html">
             <img src="../../../_static/paraview-logo-small.png"
             alt="ParaView/Python"></img></a> </li>
-          <li class="version"> version 5.6.0-1520-gfefcf2c073</li>
+          <li class="version"> version 5.6.0-1522-g38cabc186a</li>
         </ul>
         <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
   <input type="text" name="q" placeholder="Search docs" />
@@ -921,7 +921,7 @@
             <span class="k">except</span><span class="p">:</span>
                 <span class="k">pass</span>
             <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">proxyList</span><span class="p">)</span> <span class="ow">and</span> <span class="n">prop</span><span class="o">.</span><span class="n">GetNumberOfProxies</span><span class="p">()</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
-                <span class="n">listdomain</span> <span class="o">=</span> <span class="n">prop</span><span class="o">.</span><span class="n">GetDomain</span><span class="p">(</span><span class="s1">&#39;proxy_list&#39;</span><span class="p">)</span>
+                <span class="n">listdomain</span> <span class="o">=</span> <span class="n">prop</span><span class="o">.</span><span class="n">FindDomain</span><span class="p">(</span><span class="s2">&quot;vtkSMProxyListDomain&quot;</span><span class="p">)</span>
                 <span class="k">if</span> <span class="n">listdomain</span><span class="p">:</span>
                     <span class="n">proxyPropertyValue</span> <span class="o">=</span> <span class="n">prop</span><span class="o">.</span><span class="n">GetProxy</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
                     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">xrange</span><span class="p">(</span><span class="n">listdomain</span><span class="o">.</span><span class="n">GetNumberOfProxies</span><span class="p">()):</span>
@@ -955,10 +955,10 @@
           <span class="k">if</span> <span class="n">validKey</span> <span class="ow">in</span> <span class="n">allowedProperties</span><span class="p">:</span>
              <span class="n">value</span> <span class="o">=</span> <span class="n">removeUnicode</span><span class="p">(</span><span class="n">properties</span><span class="p">[</span><span class="n">key</span><span class="p">])</span>
              <span class="nb">property</span> <span class="o">=</span> <span class="n">servermanager</span><span class="o">.</span><span class="n">_wrap_property</span><span class="p">(</span><span class="n">proxy</span><span class="p">,</span> <span class="n">proxy</span><span class="o">.</span><span class="n">GetProperty</span><span class="p">(</span><span class="n">validKey</span><span class="p">))</span>
-             <span class="k">if</span> <span class="nb">property</span><span class="o">.</span><span class="n">GetDomain</span><span class="p">(</span><span class="s1">&#39;proxy_list&#39;</span><span class="p">)</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">value</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span> <span class="ow">and</span> <span class="nb">type</span><span class="p">(</span><span class="n">value</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="o">==</span> <span class="nb">str</span><span class="p">:</span>
+             <span class="k">if</span> <span class="nb">property</span><span class="o">.</span><span class="n">FindDomain</span><span class="p">(</span><span class="s2">&quot;vtkSMProxyListDomain&quot;</span><span class="p">)</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">value</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span> <span class="ow">and</span> <span class="nb">type</span><span class="p">(</span><span class="n">value</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="o">==</span> <span class="nb">str</span><span class="p">:</span>
                  <span class="k">try</span><span class="p">:</span>
                     <span class="n">idx</span> <span class="o">=</span> <span class="nb">property</span><span class="o">.</span><span class="n">GetAvailable</span><span class="p">()</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">value</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
-                    <span class="n">proxyToSet</span> <span class="o">=</span> <span class="n">servermanager</span><span class="o">.</span><span class="n">_getPyProxy</span><span class="p">(</span><span class="nb">property</span><span class="o">.</span><span class="n">GetDomain</span><span class="p">(</span><span class="s1">&#39;proxy_list&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">GetProxy</span><span class="p">(</span><span class="n">idx</span><span class="p">))</span>
+                    <span class="n">proxyToSet</span> <span class="o">=</span> <span class="n">servermanager</span><span class="o">.</span><span class="n">_getPyProxy</span><span class="p">(</span><span class="nb">property</span><span class="o">.</span><span class="n">FindDomain</span><span class="p">(</span><span class="s2">&quot;vtkSMProxyListDomain&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">GetProxy</span><span class="p">(</span><span class="n">idx</span><span class="p">))</span>
                     <span class="nb">property</span><span class="o">.</span><span class="n">SetData</span><span class="p">(</span><span class="n">proxyToSet</span><span class="p">)</span>
                  <span class="k">except</span><span class="p">:</span>
                     <span class="n">traceback</span><span class="o">.</span><span class="n">print_stack</span><span class="p">()</span>
@@ -1142,7 +1142,7 @@
         <span class="k">if</span> <span class="n">prop</span><span class="o">.</span><span class="n">IsA</span><span class="p">(</span><span class="s1">&#39;vtkSMProxyProperty&#39;</span><span class="p">):</span>
             <span class="k">try</span><span class="p">:</span>
                 <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">prop</span><span class="o">.</span><span class="n">Available</span><span class="p">)</span> <span class="ow">and</span> <span class="n">prop</span><span class="o">.</span><span class="n">GetNumberOfProxies</span><span class="p">()</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
-                    <span class="n">listdomain</span> <span class="o">=</span> <span class="n">prop</span><span class="o">.</span><span class="n">GetDomain</span><span class="p">(</span><span class="s1">&#39;proxy_list&#39;</span><span class="p">)</span>
+                    <span class="n">listdomain</span> <span class="o">=</span> <span class="n">prop</span><span class="o">.</span><span class="n">FindDomain</span><span class="p">(</span><span class="s2">&quot;vtkSMProxyListDomain&quot;</span><span class="p">)</span>
                     <span class="k">if</span> <span class="n">listdomain</span><span class="p">:</span>
                         <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">xrange</span><span class="p">(</span><span class="n">listdomain</span><span class="o">.</span><span class="n">GetNumberOfProxies</span><span class="p">()):</span>
                             <span class="n">internal_proxy</span> <span class="o">=</span> <span class="n">listdomain</span><span class="o">.</span><span class="n">GetProxy</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>

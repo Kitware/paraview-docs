@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>servermanager Module &mdash; ParaView/Python 5.6.0-1520-gfefcf2c073 documentation</title>
+  <title>servermanager Module &mdash; ParaView/Python 5.6.0-1522-g38cabc186a documentation</title>
   
 
   
@@ -24,7 +24,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:'./',
-        VERSION:'5.6.0-1520-gfefcf2c073',
+        VERSION:'5.6.0-1522-g38cabc186a',
         COLLAPSE_INDEX:false,
         FILE_SUFFIX:'.html',
         HAS_SOURCE:  true
@@ -48,7 +48,7 @@
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="ParaView/Python 5.6.0-1520-gfefcf2c073 documentation" href="index.html"/>
+    <link rel="top" title="ParaView/Python 5.6.0-1522-g38cabc186a documentation" href="index.html"/>
         <link rel="up" title="paraview Package" href="paraview.html"/>
         <link rel="next" title="simple Module" href="paraview.simple.html"/>
         <link rel="prev" title="python_view Module" href="paraview.python_view.html"/> 
@@ -68,7 +68,7 @@
           <li> <a href="index.html">
             <img src="_static/paraview-logo-small.png"
             alt="ParaView/Python"></img></a> </li>
-          <li class="version"> version 5.6.0-1520-gfefcf2c073</li>
+          <li class="version"> version 5.6.0-1522-g38cabc186a</li>
         </ul>
         <form id ="rtd-search-form" class="wy-form" action="search.html" method="get">
   <input type="text" name="q" placeholder="Search docs" />
@@ -995,7 +995,7 @@ properties.</p>
 <dl class="method">
 <dt id="paraview.servermanager.EnumerationProperty.GetAvailable">
 <code class="descname">GetAvailable</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/servermanager.html#EnumerationProperty.GetAvailable"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.EnumerationProperty.GetAvailable" title="Permalink to this definition">¶</a></dt>
-<dd><p>Returns the list of available values for the property.</p>
+<dd><p>Returns the list of available values for the property, if an enumeration domain is available.</p>
 </dd></dl>
 
 <dl class="method">
@@ -1877,6 +1877,26 @@ meta-data.</p>
 <code class="descname">UpdatePipelineInformation</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/servermanager.html#SourceProxy.UpdatePipelineInformation"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.SourceProxy.UpdatePipelineInformation" title="Permalink to this definition">¶</a></dt>
 <dd><p>This method updates the meta-data of the server-side VTK pipeline and
 the associated information properties</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="paraview.servermanager.StringListProperty">
+<em class="property">class </em><code class="descclassname">paraview.servermanager.</code><code class="descname">StringListProperty</code><span class="sig-paren">(</span><em>proxy</em>, <em>smproperty</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/servermanager.html#StringListProperty"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.StringListProperty" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#paraview.servermanager.VectorProperty" title="paraview.servermanager.VectorProperty"><code class="xref py py-class docutils literal notranslate"><span class="pre">paraview.servermanager.VectorProperty</span></code></a></p>
+<p>Property to set/get the a string with a string list domain.
+This property provides an interface to get available strings.</p>
+<dl class="attribute">
+<dt id="paraview.servermanager.StringListProperty.Available">
+<code class="descname">Available</code><a class="headerlink" href="#paraview.servermanager.StringListProperty.Available" title="Permalink to this definition">¶</a></dt>
+<dd><p>This read-only property contains the list of values that can be applied to this property.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="paraview.servermanager.StringListProperty.GetAvailable">
+<code class="descname">GetAvailable</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/servermanager.html#StringListProperty.GetAvailable"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.StringListProperty.GetAvailable" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the list of string values available for the property.</p>
 </dd></dl>
 
 </dd></dl>

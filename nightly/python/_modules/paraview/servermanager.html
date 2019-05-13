@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>paraview.servermanager &mdash; ParaView/Python 5.6.0-1520-gfefcf2c073 documentation</title>
+  <title>paraview.servermanager &mdash; ParaView/Python 5.6.0-1522-g38cabc186a documentation</title>
   
 
   
@@ -24,7 +24,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:'../../',
-        VERSION:'5.6.0-1520-gfefcf2c073',
+        VERSION:'5.6.0-1522-g38cabc186a',
         COLLAPSE_INDEX:false,
         FILE_SUFFIX:'.html',
         HAS_SOURCE:  true
@@ -48,7 +48,7 @@
         <link rel="index" title="Index"
               href="../../genindex.html"/>
         <link rel="search" title="Search" href="../../search.html"/>
-    <link rel="top" title="ParaView/Python 5.6.0-1520-gfefcf2c073 documentation" href="../../index.html"/>
+    <link rel="top" title="ParaView/Python 5.6.0-1522-g38cabc186a documentation" href="../../index.html"/>
         <link rel="up" title="Module code" href="../index.html"/> 
 
   <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
@@ -66,7 +66,7 @@
           <li> <a href="../../index.html">
             <img src="../../_static/paraview-logo-small.png"
             alt="ParaView/Python"></img></a> </li>
-          <li class="version"> version 5.6.0-1520-gfefcf2c073</li>
+          <li class="version"> version 5.6.0-1522-g38cabc186a</li>
         </ul>
         <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
   <input type="text" name="q" placeholder="Search docs" />
@@ -742,43 +742,36 @@
     <span class="nb">property</span> <span class="o">=</span> <span class="kc">None</span>
     <span class="k">if</span> <span class="n">paraview</span><span class="o">.</span><span class="n">compatibility</span><span class="o">.</span><span class="n">GetVersion</span><span class="p">()</span> <span class="o">&gt;=</span> <span class="mf">3.5</span> <span class="ow">and</span> \
       <span class="n">smproperty</span><span class="o">.</span><span class="n">IsA</span><span class="p">(</span><span class="s2">&quot;vtkSMStringVectorProperty&quot;</span><span class="p">):</span>
-        <span class="n">al</span> <span class="o">=</span> <span class="n">smproperty</span><span class="o">.</span><span class="n">GetDomain</span><span class="p">(</span><span class="s2">&quot;array_list&quot;</span><span class="p">)</span>
-        <span class="k">if</span> <span class="n">al</span> <span class="ow">and</span> <span class="n">al</span><span class="o">.</span><span class="n">IsA</span><span class="p">(</span><span class="s2">&quot;vtkSMArraySelectionDomain&quot;</span><span class="p">)</span> <span class="ow">and</span> \
-            <span class="n">smproperty</span><span class="o">.</span><span class="n">GetRepeatable</span><span class="p">():</span>
+        <span class="n">arraySelectionDomain</span> <span class="o">=</span> <span class="n">smproperty</span><span class="o">.</span><span class="n">FindDomain</span><span class="p">(</span><span class="s2">&quot;vtkSMArraySelectionDomain&quot;</span><span class="p">)</span>
+        <span class="n">chartSeriesSelectionDomain</span> <span class="o">=</span> <span class="n">smproperty</span><span class="o">.</span><span class="n">FindDomain</span><span class="p">(</span><span class="s2">&quot;vtkSMChartSeriesSelectionDomain&quot;</span><span class="p">)</span>
+        <span class="n">subsetInclusionLatticeDomain</span> <span class="o">=</span> <span class="n">smproperty</span><span class="o">.</span><span class="n">FindDomain</span><span class="p">(</span><span class="s2">&quot;vtkSMSubsetInclusionLatticeDomain&quot;</span><span class="p">)</span>
+        <span class="n">arrayListDomain</span> <span class="o">=</span> <span class="n">smproperty</span><span class="o">.</span><span class="n">FindDomain</span><span class="p">(</span><span class="s2">&quot;vtkSMArrayListDomain&quot;</span><span class="p">)</span>
+        <span class="n">fileListDomain</span> <span class="o">=</span> <span class="n">smproperty</span><span class="o">.</span><span class="n">FindDomain</span><span class="p">(</span><span class="s2">&quot;vtkSMFileListDomain&quot;</span><span class="p">)</span>
+        <span class="n">stringListDomain</span> <span class="o">=</span> <span class="n">smproperty</span><span class="o">.</span><span class="n">FindDomain</span><span class="p">(</span><span class="s2">&quot;vtkSMStringListDomain&quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">arraySelectionDomain</span> <span class="ow">and</span> <span class="n">smproperty</span><span class="o">.</span><span class="n">GetRepeatable</span><span class="p">():</span>
             <span class="nb">property</span> <span class="o">=</span> <span class="n">ArrayListProperty</span><span class="p">(</span><span class="n">proxy</span><span class="p">,</span> <span class="n">smproperty</span><span class="p">)</span>
-        <span class="k">elif</span> <span class="n">al</span> <span class="ow">and</span> <span class="n">al</span><span class="o">.</span><span class="n">IsA</span><span class="p">(</span><span class="s2">&quot;vtkSMChartSeriesSelectionDomain&quot;</span><span class="p">)</span> <span class="ow">and</span> \
-            <span class="n">smproperty</span><span class="o">.</span><span class="n">GetRepeatable</span><span class="p">()</span> <span class="ow">and</span> <span class="n">al</span><span class="o">.</span><span class="n">GetDefaultMode</span><span class="p">()</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="k">elif</span> <span class="n">chartSeriesSelectionDomain</span> <span class="ow">and</span> <span class="n">smproperty</span><span class="o">.</span><span class="n">GetRepeatable</span><span class="p">()</span> <span class="ow">and</span> \
+          <span class="n">chartSeriesSelectionDomain</span><span class="o">.</span><span class="n">GetDefaultMode</span><span class="p">()</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
             <span class="nb">property</span> <span class="o">=</span> <span class="n">ArrayListProperty</span><span class="p">(</span><span class="n">proxy</span><span class="p">,</span> <span class="n">smproperty</span><span class="p">)</span>
-        <span class="k">elif</span> <span class="n">al</span> <span class="ow">and</span> <span class="n">al</span><span class="o">.</span><span class="n">IsA</span><span class="p">(</span><span class="s2">&quot;vtkSMSubsetInclusionLatticeDomain&quot;</span><span class="p">)</span> <span class="ow">and</span> \
-            <span class="n">smproperty</span><span class="o">.</span><span class="n">GetRepeatable</span><span class="p">():</span>
+        <span class="k">elif</span> <span class="n">subsetInclusionLatticeDomain</span> <span class="ow">and</span> <span class="n">smproperty</span><span class="o">.</span><span class="n">GetRepeatable</span><span class="p">():</span>
             <span class="nb">property</span> <span class="o">=</span> <span class="n">SubsetInclusionLatticeProperty</span><span class="p">(</span><span class="n">proxy</span><span class="p">,</span> <span class="n">smproperty</span><span class="p">)</span>
-        <span class="k">elif</span> <span class="n">al</span> <span class="ow">and</span> <span class="n">al</span><span class="o">.</span><span class="n">IsA</span><span class="p">(</span><span class="s2">&quot;vtkSMArrayListDomain&quot;</span><span class="p">)</span> <span class="ow">and</span> \
-            <span class="n">smproperty</span><span class="o">.</span><span class="n">GetRepeatable</span><span class="p">():</span>
+        <span class="k">elif</span> <span class="n">arrayListDomain</span> <span class="ow">and</span> <span class="n">smproperty</span><span class="o">.</span><span class="n">GetRepeatable</span><span class="p">():</span>
             <span class="c1"># if it is repeatable, then it is not a single array selection... and if it happens</span>
             <span class="c1"># to have 5 elements in the repeatable proxy, avoid an exception by testing this case</span>
             <span class="c1"># first.</span>
             <span class="nb">property</span> <span class="o">=</span> <span class="n">VectorProperty</span><span class="p">(</span><span class="n">proxy</span><span class="p">,</span> <span class="n">smproperty</span><span class="p">)</span>
-        <span class="k">elif</span> <span class="n">al</span> <span class="ow">and</span> <span class="n">al</span><span class="o">.</span><span class="n">IsA</span><span class="p">(</span><span class="s2">&quot;vtkSMArrayListDomain&quot;</span><span class="p">)</span> <span class="ow">and</span> <span class="n">smproperty</span><span class="o">.</span><span class="n">GetNumberOfElements</span><span class="p">()</span> <span class="o">==</span> <span class="mi">5</span><span class="p">:</span>
+        <span class="k">elif</span> <span class="n">arrayListDomain</span> <span class="ow">and</span> <span class="n">smproperty</span><span class="o">.</span><span class="n">GetNumberOfElements</span><span class="p">()</span> <span class="o">==</span> <span class="mi">5</span><span class="p">:</span>
             <span class="nb">property</span> <span class="o">=</span> <span class="n">ArraySelectionProperty</span><span class="p">(</span><span class="n">proxy</span><span class="p">,</span> <span class="n">smproperty</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">fileListDomain</span> <span class="ow">and</span> <span class="n">fileListDomain</span><span class="o">.</span><span class="n">GetIsOptional</span><span class="p">()</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="c1"># Refer to BUG #9710 to see why optional domains need to be ignored.</span>
+            <span class="nb">property</span> <span class="o">=</span> <span class="n">FileNameProperty</span><span class="p">(</span><span class="n">proxy</span><span class="p">,</span> <span class="n">smproperty</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">stringListDomain</span><span class="p">:</span>
+            <span class="nb">property</span> <span class="o">=</span> <span class="n">StringListProperty</span><span class="p">(</span><span class="n">proxy</span><span class="p">,</span> <span class="n">smproperty</span><span class="p">)</span>
         <span class="k">else</span><span class="p">:</span>
-            <span class="nb">iter</span> <span class="o">=</span> <span class="n">smproperty</span><span class="o">.</span><span class="n">NewDomainIterator</span><span class="p">()</span>
-            <span class="n">isFileName</span> <span class="o">=</span> <span class="kc">False</span>
-            <span class="k">while</span> <span class="ow">not</span> <span class="nb">iter</span><span class="o">.</span><span class="n">IsAtEnd</span><span class="p">():</span>
-                <span class="c1"># Refer to BUG #9710 to see why optional domains need to be</span>
-                <span class="c1"># ignored.</span>
-                <span class="k">if</span> <span class="nb">iter</span><span class="o">.</span><span class="n">GetDomain</span><span class="p">()</span><span class="o">.</span><span class="n">IsA</span><span class="p">(</span><span class="s2">&quot;vtkSMFileListDomain&quot;</span><span class="p">)</span> <span class="ow">and</span> \
-                  <span class="nb">iter</span><span class="o">.</span><span class="n">GetDomain</span><span class="p">()</span><span class="o">.</span><span class="n">GetIsOptional</span><span class="p">()</span> <span class="o">==</span> <span class="mi">0</span> <span class="p">:</span>
-                    <span class="n">isFileName</span> <span class="o">=</span> <span class="kc">True</span>
-                    <span class="k">break</span>
-                <span class="nb">iter</span><span class="o">.</span><span class="n">Next</span><span class="p">()</span>
-            <span class="nb">iter</span><span class="o">.</span><span class="n">UnRegister</span><span class="p">(</span><span class="kc">None</span><span class="p">)</span>
-            <span class="k">if</span> <span class="n">isFileName</span><span class="p">:</span>
-                <span class="nb">property</span> <span class="o">=</span> <span class="n">FileNameProperty</span><span class="p">(</span><span class="n">proxy</span><span class="p">,</span> <span class="n">smproperty</span><span class="p">)</span>
-            <span class="k">else</span><span class="p">:</span>
-                <span class="nb">property</span> <span class="o">=</span> <span class="n">VectorProperty</span><span class="p">(</span><span class="n">proxy</span><span class="p">,</span> <span class="n">smproperty</span><span class="p">)</span>
+            <span class="nb">property</span> <span class="o">=</span> <span class="n">VectorProperty</span><span class="p">(</span><span class="n">proxy</span><span class="p">,</span> <span class="n">smproperty</span><span class="p">)</span>
     <span class="k">elif</span> <span class="n">smproperty</span><span class="o">.</span><span class="n">IsA</span><span class="p">(</span><span class="s2">&quot;vtkSMVectorProperty&quot;</span><span class="p">):</span>
         <span class="k">if</span> <span class="n">smproperty</span><span class="o">.</span><span class="n">IsA</span><span class="p">(</span><span class="s2">&quot;vtkSMIntVectorProperty&quot;</span><span class="p">)</span> <span class="ow">and</span> \
-          <span class="p">(</span><span class="n">smproperty</span><span class="o">.</span><span class="n">GetDomain</span><span class="p">(</span><span class="s2">&quot;enum&quot;</span><span class="p">)</span> <span class="ow">or</span> <span class="n">smproperty</span><span class="o">.</span><span class="n">GetDomain</span><span class="p">(</span><span class="s2">&quot;comps&quot;</span><span class="p">)):</span>
+          <span class="n">smproperty</span><span class="o">.</span><span class="n">FindDomain</span><span class="p">(</span><span class="s2">&quot;vtkSMEnumerationDomain&quot;</span><span class="p">):</span>
             <span class="nb">property</span> <span class="o">=</span> <span class="n">EnumerationProperty</span><span class="p">(</span><span class="n">proxy</span><span class="p">,</span> <span class="n">smproperty</span><span class="p">)</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="nb">property</span> <span class="o">=</span> <span class="n">VectorProperty</span><span class="p">(</span><span class="n">proxy</span><span class="p">,</span> <span class="n">smproperty</span><span class="p">)</span>
@@ -1557,34 +1550,31 @@
         <span class="sd">&quot;&quot;&quot;Returns the text for the given element if available. Returns</span>
 <span class="sd">        the numerical values otherwise.&quot;&quot;&quot;</span>
         <span class="n">val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">SMProperty</span><span class="o">.</span><span class="n">GetElement</span><span class="p">(</span><span class="n">index</span><span class="p">)</span>
-        <span class="n">domain</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">SMProperty</span><span class="o">.</span><span class="n">GetDomain</span><span class="p">(</span><span class="s2">&quot;enum&quot;</span><span class="p">)</span>
-        <span class="k">if</span> <span class="ow">not</span> <span class="n">domain</span><span class="p">:</span>
-          <span class="n">domain</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">SMProperty</span><span class="o">.</span><span class="n">GetDomain</span><span class="p">(</span><span class="s2">&quot;comps&quot;</span><span class="p">)</span>
-        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">domain</span><span class="o">.</span><span class="n">GetNumberOfEntries</span><span class="p">()):</span>
-            <span class="k">if</span> <span class="n">domain</span><span class="o">.</span><span class="n">GetEntryValue</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="o">==</span> <span class="n">val</span><span class="p">:</span>
-                <span class="k">return</span> <span class="n">domain</span><span class="o">.</span><span class="n">GetEntryText</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+        <span class="n">domain</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">SMProperty</span><span class="o">.</span><span class="n">FindDomain</span><span class="p">(</span><span class="s2">&quot;vtkSMEnumerationDomain&quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">domain</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">domain</span><span class="o">.</span><span class="n">GetNumberOfEntries</span><span class="p">()):</span>
+                <span class="k">if</span> <span class="n">domain</span><span class="o">.</span><span class="n">GetEntryValue</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="o">==</span> <span class="n">val</span><span class="p">:</span>
+                    <span class="k">return</span> <span class="n">domain</span><span class="o">.</span><span class="n">GetEntryText</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">val</span></div>
 
 <div class="viewcode-block" id="EnumerationProperty.ConvertValue"><a class="viewcode-back" href="../../paraview.servermanager.html#paraview.servermanager.EnumerationProperty.ConvertValue">[docs]</a>    <span class="k">def</span> <span class="nf">ConvertValue</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Converts value to type suitable for vtSMProperty::SetElement()&quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">value</span><span class="p">)</span> <span class="o">==</span> <span class="nb">str</span><span class="p">:</span>
-            <span class="n">domain</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">SMProperty</span><span class="o">.</span><span class="n">GetDomain</span><span class="p">(</span><span class="s2">&quot;enum&quot;</span><span class="p">)</span>
-            <span class="k">if</span> <span class="ow">not</span> <span class="n">domain</span><span class="p">:</span>
-              <span class="n">domain</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">SMProperty</span><span class="o">.</span><span class="n">GetDomain</span><span class="p">(</span><span class="s2">&quot;comps&quot;</span><span class="p">)</span>
-            <span class="k">if</span> <span class="n">domain</span><span class="o">.</span><span class="n">HasEntryText</span><span class="p">(</span><span class="n">value</span><span class="p">):</span>
-                <span class="k">return</span> <span class="n">domain</span><span class="o">.</span><span class="n">GetEntryValueForText</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
-            <span class="k">else</span><span class="p">:</span>
-                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%s</span><span class="s2"> is not a valid value.&quot;</span> <span class="o">%</span> <span class="n">value</span><span class="p">)</span>
+            <span class="n">domain</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">SMProperty</span><span class="o">.</span><span class="n">FindDomain</span><span class="p">(</span><span class="s2">&quot;vtkSMEnumerationDomain&quot;</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">domain</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">domain</span><span class="o">.</span><span class="n">HasEntryText</span><span class="p">(</span><span class="n">value</span><span class="p">):</span>
+                    <span class="k">return</span> <span class="n">domain</span><span class="o">.</span><span class="n">GetEntryValueForText</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%s</span><span class="s2"> is not a valid value.&quot;</span> <span class="o">%</span> <span class="n">value</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">VectorProperty</span><span class="o">.</span><span class="n">ConvertValue</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span></div>
 
 <div class="viewcode-block" id="EnumerationProperty.GetAvailable"><a class="viewcode-back" href="../../paraview.servermanager.html#paraview.servermanager.EnumerationProperty.GetAvailable">[docs]</a>    <span class="k">def</span> <span class="nf">GetAvailable</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="s2">&quot;Returns the list of available values for the property.&quot;</span>
+        <span class="s2">&quot;Returns the list of available values for the property, if an enumeration domain is available.&quot;</span>
         <span class="n">retVal</span> <span class="o">=</span> <span class="p">[]</span>
-        <span class="n">domain</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">SMProperty</span><span class="o">.</span><span class="n">GetDomain</span><span class="p">(</span><span class="s2">&quot;enum&quot;</span><span class="p">)</span>
-        <span class="k">if</span> <span class="ow">not</span> <span class="n">domain</span><span class="p">:</span>
-          <span class="n">domain</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">SMProperty</span><span class="o">.</span><span class="n">GetDomain</span><span class="p">(</span><span class="s2">&quot;comps&quot;</span><span class="p">)</span>
-        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">domain</span><span class="o">.</span><span class="n">GetNumberOfEntries</span><span class="p">()):</span>
-            <span class="n">retVal</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">domain</span><span class="o">.</span><span class="n">GetEntryText</span><span class="p">(</span><span class="n">i</span><span class="p">))</span>
+        <span class="n">domain</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">SMProperty</span><span class="o">.</span><span class="n">FindDomain</span><span class="p">(</span><span class="s2">&quot;vtkSMEnumerationDomain&quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">domain</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">domain</span><span class="o">.</span><span class="n">GetNumberOfEntries</span><span class="p">()):</span>
+                <span class="n">retVal</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">domain</span><span class="o">.</span><span class="n">GetEntryText</span><span class="p">(</span><span class="n">i</span><span class="p">))</span>
         <span class="k">return</span> <span class="n">retVal</span></div>
 
     <span class="n">Available</span> <span class="o">=</span> <span class="nb">property</span><span class="p">(</span><span class="n">GetAvailable</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> \
@@ -1683,6 +1673,22 @@
                 <span class="bp">self</span><span class="o">.</span><span class="n">SMProperty</span><span class="o">.</span><span class="n">SetElement</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="s1">&#39;0&#39;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">SMProperty</span><span class="o">.</span><span class="n">ResetToDomainDefaults</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span></div></div>
 
+<div class="viewcode-block" id="StringListProperty"><a class="viewcode-back" href="../../paraview.servermanager.html#paraview.servermanager.StringListProperty">[docs]</a><span class="k">class</span> <span class="nc">StringListProperty</span><span class="p">(</span><span class="n">VectorProperty</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Property to set/get the a string with a string list domain.</span>
+<span class="sd">    This property provides an interface to get available strings.&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="StringListProperty.GetAvailable"><a class="viewcode-back" href="../../paraview.servermanager.html#paraview.servermanager.StringListProperty.GetAvailable">[docs]</a>    <span class="k">def</span> <span class="nf">GetAvailable</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="s2">&quot;Returns the list of string values available for the property.&quot;</span>
+        <span class="n">retVal</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">domain</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">SMProperty</span><span class="o">.</span><span class="n">FindDomain</span><span class="p">(</span><span class="s2">&quot;vtkSMStringListDomain&quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">domain</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">domain</span><span class="o">.</span><span class="n">GetNumberOfStrings</span><span class="p">()):</span>
+                <span class="n">retVal</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">domain</span><span class="o">.</span><span class="n">GetString</span><span class="p">(</span><span class="n">i</span><span class="p">))</span>
+        <span class="k">return</span> <span class="n">retVal</span></div>
+
+    <span class="n">Available</span> <span class="o">=</span> <span class="nb">property</span><span class="p">(</span><span class="n">GetAvailable</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> \
+        <span class="s2">&quot;This read-only property contains the list of values that can be applied to this property.&quot;</span><span class="p">)</span></div>
+
 <div class="viewcode-block" id="ArrayListProperty"><a class="viewcode-back" href="../../paraview.servermanager.html#paraview.servermanager.ArrayListProperty">[docs]</a><span class="k">class</span> <span class="nc">ArrayListProperty</span><span class="p">(</span><span class="n">VectorProperty</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;This property provides a simpler interface for selecting arrays.</span>
 <span class="sd">    Simply assign a list of arrays that should be loaded by the reader.</span>
@@ -1694,10 +1700,13 @@
 
 <div class="viewcode-block" id="ArrayListProperty.GetAvailable"><a class="viewcode-back" href="../../paraview.servermanager.html#paraview.servermanager.ArrayListProperty.GetAvailable">[docs]</a>    <span class="k">def</span> <span class="nf">GetAvailable</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="s2">&quot;Returns the list of available arrays&quot;</span>
-        <span class="n">dm</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">GetDomain</span><span class="p">(</span><span class="s2">&quot;array_list&quot;</span><span class="p">)</span>
+        <span class="n">dm</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">SMProperty</span><span class="o">.</span><span class="n">FindDomain</span><span class="p">(</span><span class="s2">&quot;vtkSMArraySelectionDomain&quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">dm</span><span class="p">:</span>
+            <span class="n">dm</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">SMProperty</span><span class="o">.</span><span class="n">FindDomain</span><span class="p">(</span><span class="s2">&quot;vtkSMChartSeriesSelectionDomain&quot;</span><span class="p">)</span>
         <span class="n">retVal</span> <span class="o">=</span> <span class="p">[]</span>
-        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">dm</span><span class="o">.</span><span class="n">GetNumberOfStrings</span><span class="p">()):</span>
-            <span class="n">retVal</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">dm</span><span class="o">.</span><span class="n">GetString</span><span class="p">(</span><span class="n">i</span><span class="p">))</span>
+        <span class="k">if</span> <span class="n">dm</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">dm</span><span class="o">.</span><span class="n">GetNumberOfStrings</span><span class="p">()):</span>
+                <span class="n">retVal</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">dm</span><span class="o">.</span><span class="n">GetString</span><span class="p">(</span><span class="n">i</span><span class="p">))</span>
         <span class="k">return</span> <span class="n">retVal</span></div>
 
     <span class="n">Available</span> <span class="o">=</span> <span class="nb">property</span><span class="p">(</span><span class="n">GetAvailable</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> \
@@ -1830,10 +1839,8 @@
         <span class="n">Property</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">proxy</span><span class="p">,</span> <span class="n">smproperty</span><span class="p">)</span>
         <span class="c1"># Check to see if there is a proxy list domain and, if so,</span>
         <span class="c1"># initialize ourself. (Should this go in ProxyProperty?)</span>
-        <span class="n">listdomain</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">GetDomain</span><span class="p">(</span><span class="s1">&#39;proxy_list&#39;</span><span class="p">)</span>
+        <span class="n">listdomain</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">FindDomain</span><span class="p">(</span><span class="s2">&quot;vtkSMProxyListDomain&quot;</span><span class="p">)</span>
         <span class="k">if</span> <span class="n">listdomain</span><span class="p">:</span>
-            <span class="k">if</span> <span class="ow">not</span> <span class="n">listdomain</span><span class="o">.</span><span class="n">IsA</span><span class="p">(</span><span class="s1">&#39;vtkSMProxyListDomain&#39;</span><span class="p">):</span>
-                <span class="k">raise</span> <span class="ne">ValueError</span> <span class="p">(</span><span class="s2">&quot;Found a &#39;proxy_list&#39; domain on an InputProperty that is not a ProxyListDomain.&quot;</span><span class="p">)</span>
             <span class="n">pm</span> <span class="o">=</span> <span class="n">ProxyManager</span><span class="p">()</span>
             <span class="n">group</span> <span class="o">=</span> <span class="s2">&quot;pq_helper_proxies.&quot;</span> <span class="o">+</span> <span class="n">proxy</span><span class="o">.</span><span class="n">GetGlobalIDAsString</span><span class="p">()</span>
             <span class="k">if</span> <span class="n">listdomain</span><span class="o">.</span><span class="n">GetNumberOfProxies</span><span class="p">()</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
@@ -1848,7 +1855,7 @@
         <span class="sd">&quot;&quot;&quot;If this proxy has a list domain, then this function returns the</span>
 <span class="sd">        strings you can use to select from the domain.  If there is no such</span>
 <span class="sd">        list domain, the returned list is empty.&quot;&quot;&quot;</span>
-        <span class="n">listdomain</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">GetDomain</span><span class="p">(</span><span class="s1">&#39;proxy_list&#39;</span><span class="p">)</span>
+        <span class="n">listdomain</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">SMProperty</span><span class="o">.</span><span class="n">FindDomain</span><span class="p">(</span><span class="s2">&quot;vtkSMProxyListDomain&quot;</span><span class="p">)</span>
         <span class="n">retval</span> <span class="o">=</span> <span class="p">[]</span>
         <span class="k">if</span> <span class="n">listdomain</span><span class="p">:</span>
             <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">listdomain</span><span class="o">.</span><span class="n">GetNumberOfProxies</span><span class="p">()):</span>
@@ -1955,7 +1962,9 @@
                 <span class="n">position</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">Available</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">values</span><span class="p">)</span>
             <span class="k">except</span><span class="p">:</span>
                 <span class="k">raise</span> <span class="ne">ValueError</span> <span class="p">(</span><span class="n">values</span> <span class="o">+</span> <span class="s2">&quot; is not a valid object in the domain.&quot;</span><span class="p">)</span>
-            <span class="n">values</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">GetDomain</span><span class="p">(</span><span class="s1">&#39;proxy_list&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">GetProxy</span><span class="p">(</span><span class="n">position</span><span class="p">)</span>
+            <span class="n">listdomain</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">SMProperty</span><span class="o">.</span><span class="n">FindDomain</span><span class="p">(</span><span class="s2">&quot;vtkSMProxyListDomain&quot;</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">listdomain</span><span class="p">:</span>
+                <span class="n">values</span> <span class="o">=</span> <span class="n">listdomain</span><span class="o">.</span><span class="n">GetProxy</span><span class="p">(</span><span class="n">position</span><span class="p">)</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">values</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">)</span> <span class="ow">and</span> \
            <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">values</span><span class="p">,</span> <span class="nb">list</span><span class="p">):</span>
             <span class="n">values</span> <span class="o">=</span> <span class="p">(</span><span class="n">values</span><span class="p">,)</span>

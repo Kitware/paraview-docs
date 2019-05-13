@@ -61,9 +61,9 @@ Public Slots</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a2ae0cd667a635590eb357cf4412cb266"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpqComboBoxDomain.html#a2ae0cd667a635590eb357cf4412cb266">pqComboBoxDomain</a> (QComboBox *p, <a class="el" href="classvtkSMProperty.html">vtkSMProperty</a> *prop, const QString &amp;domainName=QString())</td></tr>
-<tr class="memdesc:a2ae0cd667a635590eb357cf4412cb266"><td class="mdescLeft">&#160;</td><td class="mdescRight">constructor requires a QComboBox, and the property with the domain to observe optionally pass in a domainName if a specific one needs to be watched  <a href="#a2ae0cd667a635590eb357cf4412cb266">More...</a><br /></td></tr>
-<tr class="separator:a2ae0cd667a635590eb357cf4412cb266"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3d3cf1b19834ee546f955753994283f2"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpqComboBoxDomain.html#a3d3cf1b19834ee546f955753994283f2">pqComboBoxDomain</a> (QComboBox *p, <a class="el" href="classvtkSMProperty.html">vtkSMProperty</a> *prop, <a class="el" href="classvtkSMDomain.html">vtkSMDomain</a> *domain=nullptr)</td></tr>
+<tr class="memdesc:a3d3cf1b19834ee546f955753994283f2"><td class="mdescLeft">&#160;</td><td class="mdescRight">constructor requires a QComboBox, and the property with the domain to observe optionally pass in a domain if a specific one needs to be watched  <a href="#a3d3cf1b19834ee546f955753994283f2">More...</a><br /></td></tr>
+<tr class="separator:a3d3cf1b19834ee546f955753994283f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac38e56bf383d73e18a7912d94c8a2ad5"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpqComboBoxDomain.html#ac38e56bf383d73e18a7912d94c8a2ad5">~pqComboBoxDomain</a> () override</td></tr>
 <tr class="separator:ac38e56bf383d73e18a7912d94c8a2ad5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a52d450d2bee601da7d0023708d7b9c5f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpqComboBoxDomain.html#a52d450d2bee601da7d0023708d7b9c5f">forceDomainChanged</a> ()</td></tr>
@@ -81,8 +81,6 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a87baa3fd8a70a44d41a402973e4b519d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2044b4726a6e45f1405f405aad91ee58"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classvtkSMDomain.html">vtkSMDomain</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpqComboBoxDomain.html#a2044b4726a6e45f1405f405aad91ee58">getDomain</a> () const</td></tr>
 <tr class="separator:a2044b4726a6e45f1405f405aad91ee58"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aef56f06256770df72ea7bf653998e2a3"><td class="memItemLeft" align="right" valign="top">const QString &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpqComboBoxDomain.html#aef56f06256770df72ea7bf653998e2a3">getDomainName</a> () const</td></tr>
-<tr class="separator:aef56f06256770df72ea7bf653998e2a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a16b7646fb1289fa131b01affa833d23c"><td class="memItemLeft" align="right" valign="top">const QStringList &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpqComboBoxDomain.html#a16b7646fb1289fa131b01affa833d23c">getUserStrings</a> () const</td></tr>
 <tr class="separator:a16b7646fb1289fa131b01affa833d23c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -106,8 +104,8 @@ Protected Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="pqComboBoxDomain_8h_source.html#l00048">48</a> of file <a class="el" href="pqComboBoxDomain_8h_source.html">pqComboBoxDomain.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a2ae0cd667a635590eb357cf4412cb266"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2ae0cd667a635590eb357cf4412cb266">&#9670;&nbsp;</a></span>pqComboBoxDomain()</h2>
+<a id="a3d3cf1b19834ee546f955753994283f2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3d3cf1b19834ee546f955753994283f2">&#9670;&nbsp;</a></span>pqComboBoxDomain()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -127,8 +125,8 @@ Protected Attributes</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const QString &amp;&#160;</td>
-          <td class="paramname"><em>domainName</em> = <code>QString()</code>&#160;</td>
+          <td class="paramtype"><a class="el" href="classvtkSMDomain.html">vtkSMDomain</a> *&#160;</td>
+          <td class="paramname"><em>domain</em> = <code>nullptr</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -138,7 +136,7 @@ Protected Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>constructor requires a QComboBox, and the property with the domain to observe optionally pass in a domainName if a specific one needs to be watched </p>
+<p>constructor requires a QComboBox, and the property with the domain to observe optionally pass in a domain if a specific one needs to be watched </p>
 
 </div>
 </div>
@@ -312,23 +310,6 @@ Protected Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="aef56f06256770df72ea7bf653998e2a3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aef56f06256770df72ea7bf653998e2a3">&#9670;&nbsp;</a></span>getDomainName()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">const QString&amp; pqComboBoxDomain::getDomainName </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <a id="a16b7646fb1289fa131b01affa833d23c"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a16b7646fb1289fa131b01affa833d23c">&#9670;&nbsp;</a></span>getUserStrings()</h2>
 
@@ -443,7 +424,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="pqComboBoxDomain_8h_source.html#l00087">87</a> of file <a class="el" href="pqComboBoxDomain_8h_source.html">pqComboBoxDomain.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="pqComboBoxDomain_8h_source.html#l00086">86</a> of file <a class="el" href="pqComboBoxDomain_8h_source.html">pqComboBoxDomain.h</a>.</p>
 
 </div>
 </div>
