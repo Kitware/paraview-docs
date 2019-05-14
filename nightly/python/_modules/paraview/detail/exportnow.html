@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>paraview.detail.exportnow &mdash; ParaView/Python 5.6.0-1522-g38cabc186a documentation</title>
+  <title>paraview.detail.exportnow &mdash; ParaView/Python 5.6.0-1542-gdc212134ba documentation</title>
   
 
   
@@ -24,7 +24,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:'../../../',
-        VERSION:'5.6.0-1522-g38cabc186a',
+        VERSION:'5.6.0-1542-gdc212134ba',
         COLLAPSE_INDEX:false,
         FILE_SUFFIX:'.html',
         HAS_SOURCE:  true
@@ -48,7 +48,7 @@
         <link rel="index" title="Index"
               href="../../../genindex.html"/>
         <link rel="search" title="Search" href="../../../search.html"/>
-    <link rel="top" title="ParaView/Python 5.6.0-1522-g38cabc186a documentation" href="../../../index.html"/>
+    <link rel="top" title="ParaView/Python 5.6.0-1542-gdc212134ba documentation" href="../../../index.html"/>
         <link rel="up" title="Module code" href="../../index.html"/> 
 
   <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
@@ -66,7 +66,7 @@
           <li> <a href="../../../index.html">
             <img src="../../../_static/paraview-logo-small.png"
             alt="ParaView/Python"></img></a> </li>
-          <li class="version"> version 5.6.0-1522-g38cabc186a</li>
+          <li class="version"> version 5.6.0-1542-gdc212134ba</li>
         </ul>
         <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
   <input type="text" name="q" placeholder="Search docs" />
@@ -842,7 +842,6 @@
 
     <span class="c1"># get a hold of the scene</span>
     <span class="n">spm</span> <span class="o">=</span> <span class="n">servermanager</span><span class="o">.</span><span class="n">vtkSMProxyManager</span><span class="o">.</span><span class="n">GetProxyManager</span><span class="p">()</span><span class="o">.</span><span class="n">GetActiveSessionProxyManager</span><span class="p">()</span>
-    <span class="n">isParallel</span> <span class="o">=</span> <span class="n">spm</span><span class="o">.</span><span class="n">GetSession</span><span class="p">()</span><span class="o">.</span><span class="n">GetNumberOfProcesses</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span>
     <span class="n">ed</span> <span class="o">=</span> <span class="n">spm</span><span class="o">.</span><span class="n">GetExportDepot</span><span class="p">()</span>
     <span class="n">s</span> <span class="o">=</span> <span class="n">GetAnimationScene</span><span class="p">()</span>
     <span class="n">s</span><span class="o">.</span><span class="n">GoToFirst</span><span class="p">()</span>
@@ -874,16 +873,9 @@
                 <span class="n">inputproxy</span> <span class="o">=</span> <span class="n">FindSource</span><span class="p">(</span><span class="n">inputname</span><span class="p">)</span>
                 <span class="n">fname</span> <span class="o">=</span> <span class="n">wp</span><span class="o">.</span><span class="n">GetProperty</span><span class="p">(</span><span class="s2">&quot;CatalystFilePattern&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">GetElement</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
                 <span class="k">if</span> <span class="n">wp</span><span class="o">.</span><span class="n">GetXMLName</span><span class="p">()</span> <span class="o">==</span> <span class="s2">&quot;ExodusIIWriter&quot;</span><span class="p">:</span>
-                    <span class="k">if</span> <span class="ow">not</span> <span class="n">isParallel</span><span class="p">:</span>
-                        <span class="c1">#is there a cleaner way to replace the last occurance?</span>
-                        <span class="n">fname</span> <span class="o">=</span> <span class="n">fname</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;.e-s&quot;</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">],(</span><span class="s2">&quot;.&quot;</span><span class="o">+</span><span class="n">padded_tstep</span><span class="o">+</span><span class="s2">&quot;.ex2&quot;</span><span class="p">)[::</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span><span class="mi">1</span><span class="p">)[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
-                        <span class="n">fnamefilled</span> <span class="o">=</span> <span class="n">root_directory</span><span class="o">+</span><span class="n">fname</span>
-                    <span class="k">else</span><span class="p">:</span>
-                        <span class="n">fnamefilled</span> <span class="o">=</span> <span class="n">root_directory</span><span class="o">+</span><span class="n">fname</span><span class="o">+</span><span class="n">padded_tstep</span>
+                    <span class="n">fnamefilled</span> <span class="o">=</span> <span class="n">root_directory</span><span class="o">+</span><span class="n">fname</span><span class="o">+</span><span class="n">padded_tstep</span>
                 <span class="k">else</span><span class="p">:</span>
                     <span class="n">fnamefilled</span> <span class="o">=</span> <span class="n">root_directory</span><span class="o">+</span><span class="n">fname</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;%t&quot;</span><span class="p">,</span> <span class="n">padded_tstep</span><span class="p">)</span>
-                    <span class="k">if</span> <span class="ow">not</span> <span class="n">isParallel</span><span class="p">:</span>
-                        <span class="n">fnamefilled</span> <span class="o">=</span> <span class="n">fnamefilled</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;.p&quot;</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span><span class="s2">&quot;.&quot;</span><span class="p">,</span><span class="mi">1</span><span class="p">)[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
                 <span class="c1"># finally after all of the finageling above, save the data</span>
                 <span class="n">SaveData</span><span class="p">(</span><span class="n">fnamefilled</span><span class="p">,</span> <span class="n">inputproxy</span><span class="p">)</span>
                 <span class="c1"># don&#39;t forget to tell cinema D about it</span>
