@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>paraview.detail.exportnow &mdash; ParaView/Python 5.6.0-1547-ga629ae7bba documentation</title>
+  <title>paraview.detail.exportnow &mdash; ParaView/Python 5.6.0-1571-g94c3061b9a documentation</title>
   
 
   
@@ -24,7 +24,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:'../../../',
-        VERSION:'5.6.0-1547-ga629ae7bba',
+        VERSION:'5.6.0-1571-g94c3061b9a',
         COLLAPSE_INDEX:false,
         FILE_SUFFIX:'.html',
         HAS_SOURCE:  true
@@ -48,7 +48,7 @@
         <link rel="index" title="Index"
               href="../../../genindex.html"/>
         <link rel="search" title="Search" href="../../../search.html"/>
-    <link rel="top" title="ParaView/Python 5.6.0-1547-ga629ae7bba documentation" href="../../../index.html"/>
+    <link rel="top" title="ParaView/Python 5.6.0-1571-g94c3061b9a documentation" href="../../../index.html"/>
         <link rel="up" title="Module code" href="../../index.html"/> 
 
   <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
@@ -66,7 +66,7 @@
           <li> <a href="../../../index.html">
             <img src="../../../_static/paraview-logo-small.png"
             alt="ParaView/Python"></img></a> </li>
-          <li class="version"> version 5.6.0-1547-ga629ae7bba</li>
+          <li class="version"> version 5.6.0-1571-g94c3061b9a</li>
         </ul>
         <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
   <input type="text" name="q" placeholder="Search docs" />
@@ -847,13 +847,18 @@
     <span class="n">s</span><span class="o">.</span><span class="n">GoToFirst</span><span class="p">()</span>
     <span class="n">et</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">EndTime</span>
     <span class="n">tnow</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">AnimationTime</span>
-    <span class="n">tstep</span> <span class="o">=</span> <span class="mi">0</span>
 
-    <span class="c1"># a flag to exit early if there is just one timestep</span>
-    <span class="n">noDataTime</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">paraview</span><span class="o">.</span><span class="n">simple</span><span class="o">.</span><span class="n">GetAnimationScene</span><span class="p">()</span><span class="o">.</span><span class="n">TimeKeeper</span><span class="o">.</span><span class="n">TimestepValues</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span>
+    <span class="n">numTimesteps</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">paraview</span><span class="o">.</span><span class="n">simple</span><span class="o">.</span><span class="n">GetAnimationScene</span><span class="p">()</span><span class="o">.</span><span class="n">TimeKeeper</span><span class="o">.</span><span class="n">TimestepValues</span><span class="p">)</span>
+    <span class="n">timesteps</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="c1"># We must perform the export loop at least once, even in the case where</span>
+    <span class="c1"># the input data contains no timesteps</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">numTimesteps</span> <span class="o">==</span> <span class="mi">0</span><span class="p">):</span>
+        <span class="n">timesteps</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">timesteps</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">numTimesteps</span><span class="p">))</span>
 
-    <span class="c1"># loop through available time</span>
-    <span class="k">while</span> <span class="n">tnow</span> <span class="o">&lt;</span> <span class="n">et</span><span class="p">:</span>
+    <span class="c1"># export loop</span>
+    <span class="k">for</span> <span class="n">tstep</span> <span class="ow">in</span> <span class="n">timesteps</span><span class="p">:</span>
         <span class="n">padded_tstep</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">tstep</span><span class="p">)</span><span class="o">.</span><span class="n">rjust</span><span class="p">(</span><span class="n">file_name_padding</span><span class="p">,</span> <span class="s1">&#39;0&#39;</span><span class="p">)</span>
 
         <span class="c1"># loop through the configured writers and export at the requested times</span>
@@ -911,10 +916,6 @@
         <span class="n">tstep</span> <span class="o">=</span> <span class="n">tstep</span> <span class="o">+</span> <span class="mi">1</span>
         <span class="n">s</span><span class="o">.</span><span class="n">GoToNext</span><span class="p">()</span>
         <span class="n">tnow</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">AnimationTime</span>
-
-        <span class="k">if</span> <span class="n">noDataTime</span><span class="p">:</span>
-            <span class="c1"># if data is not time varying, just do one export cycle</span>
-            <span class="k">break</span>
 
     <span class="c1"># defer actual cinema D output until the end because we only know now what the full set of cinema D columns actually are</span>
     <span class="n">CIND</span><span class="o">.</span><span class="n">Finalize</span><span class="p">()</span></div>

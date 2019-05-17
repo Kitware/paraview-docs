@@ -438,6 +438,9 @@ Protected Member Functions</h2></td></tr>
 <tr class="separator:a920aeae4c9491ecf001a92147255f004"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6ba180712a196b8fdb3f0ffd6d262153"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classvtkPVSession.html">vtkPVSession</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkPVView.html#a6ba180712a196b8fdb3f0ffd6d262153">GetSession</a> ()</td></tr>
 <tr class="separator:a6ba180712a196b8fdb3f0ffd6d262153"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a22c84c8c17d0e11cb4fd874ded1f1cb2"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkPVView.html#a22c84c8c17d0e11cb4fd874ded1f1cb2">GetInCaptureScreenshot</a> ()</td></tr>
+<tr class="memdesc:a22c84c8c17d0e11cb4fd874ded1f1cb2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Flag set to true between calls to <code>PrepareForScreenshot</code> and <code>CleanupAfterScreenshot</code>.  <a href="#a22c84c8c17d0e11cb4fd874ded1f1cb2">More...</a><br /></td></tr>
+<tr class="separator:a22c84c8c17d0e11cb4fd874ded1f1cb2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_methods_classvtkView"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_classvtkView')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="http://www.vtk.org/doc/nightly/html/classvtkView.html">vtkView</a></td></tr>
 <tr class="memitem:ae86581650e4d24a4a9985542fd56bcf9 inherit pro_methods_classvtkView"><td class="memItemLeft" align="right" valign="top">virtual <a class="elRef" doxygen="/home/kitware/dashboards/buildbot/paraview_master-vall-linux-shared-debug_doc_extdeps_gui_mpi_python3/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/classvtkObjectBase.html">vtkObjectBase</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="elRef" doxygen="/home/kitware/dashboards/buildbot/paraview_master-vall-linux-shared-debug_doc_extdeps_gui_mpi_python3/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/classvtkView.html#ae86581650e4d24a4a9985542fd56bcf9">NewInstanceInternal</a> () const</td></tr>
 <tr class="separator:ae86581650e4d24a4a9985542fd56bcf9 inherit pro_methods_classvtkView"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -2136,6 +2139,33 @@ Protected Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="a22c84c8c17d0e11cb4fd874ded1f1cb2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a22c84c8c17d0e11cb4fd874ded1f1cb2">&#9670;&nbsp;</a></span>GetInCaptureScreenshot()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual bool vtkPVView::GetInCaptureScreenshot </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Flag set to true between calls to <code>PrepareForScreenshot</code> and <code>CleanupAfterScreenshot</code>. </p>
+
+</div>
+</div>
 <h2 class="groupheader">Member Data Documentation</h2>
 <a id="aceefcc9d1c71019720caaaf4b032319c"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aceefcc9d1c71019720caaaf4b032319c">&#9670;&nbsp;</a></span>RequestInformation</h2>
@@ -2237,7 +2267,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="vtkPVView_8h_source.html#l00302">302</a> of file <a class="el" href="vtkPVView_8h_source.html">vtkPVView.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vtkPVView_8h_source.html#l00306">306</a> of file <a class="el" href="vtkPVView_8h_source.html">vtkPVView.h</a>.</p>
 
 </div>
 </div>
@@ -2261,7 +2291,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="vtkPVView_8h_source.html#l00303">303</a> of file <a class="el" href="vtkPVView_8h_source.html">vtkPVView.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vtkPVView_8h_source.html#l00309">309</a> of file <a class="el" href="vtkPVView_8h_source.html">vtkPVView.h</a>.</p>
 
 </div>
 </div>
@@ -2285,7 +2315,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="vtkPVView_8h_source.html#l00305">305</a> of file <a class="el" href="vtkPVView_8h_source.html">vtkPVView.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vtkPVView_8h_source.html#l00311">311</a> of file <a class="el" href="vtkPVView_8h_source.html">vtkPVView.h</a>.</p>
 
 </div>
 </div>
@@ -2309,7 +2339,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="vtkPVView_8h_source.html#l00306">306</a> of file <a class="el" href="vtkPVView_8h_source.html">vtkPVView.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vtkPVView_8h_source.html#l00312">312</a> of file <a class="el" href="vtkPVView_8h_source.html">vtkPVView.h</a>.</p>
 
 </div>
 </div>
@@ -2333,7 +2363,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="vtkPVView_8h_source.html#l00307">307</a> of file <a class="el" href="vtkPVView_8h_source.html">vtkPVView.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vtkPVView_8h_source.html#l00313">313</a> of file <a class="el" href="vtkPVView_8h_source.html">vtkPVView.h</a>.</p>
 
 </div>
 </div>
