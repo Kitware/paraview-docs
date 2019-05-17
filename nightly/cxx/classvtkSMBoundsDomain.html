@@ -83,7 +83,9 @@ Public Types</h2></td></tr>
 &#160;&#160;<a class="el" href="classvtkSMBoundsDomain.html#ab291fcc0b9345a01a36337b34d4a8dd0ae46aa9978e10f02a8d3e06194d77085f">ARRAY_SCALED_EXTENT</a>, 
 <a class="el" href="classvtkSMBoundsDomain.html#ab291fcc0b9345a01a36337b34d4a8dd0a1bd5af4a1001fb474df59771f3188e21">APPROXIMATE_CELL_LENGTH</a>, 
 <a class="el" href="classvtkSMBoundsDomain.html#ab291fcc0b9345a01a36337b34d4a8dd0a57af914cc4bd1e1b0d28acb613bd06d3">DATA_BOUNDS</a>, 
-<a class="el" href="classvtkSMBoundsDomain.html#ab291fcc0b9345a01a36337b34d4a8dd0af32387cda93fd0ee20126fd1ffde0cda">EXTENTS</a>
+<a class="el" href="classvtkSMBoundsDomain.html#ab291fcc0b9345a01a36337b34d4a8dd0af32387cda93fd0ee20126fd1ffde0cda">EXTENTS</a>, 
+<br />
+&#160;&#160;<a class="el" href="classvtkSMBoundsDomain.html#ab291fcc0b9345a01a36337b34d4a8dd0ae411ff20295135b5a9aba47f8d229d89">COMPONENT_MAGNITUDE</a>
 <br />
  }</td></tr>
 <tr class="memdesc:ab291fcc0b9345a01a36337b34d4a8dd0"><td class="mdescLeft">&#160;</td><td class="mdescRight">SCALED_EXTENT: is used for vtkPVScaleFactorEntry.  <a href="classvtkSMBoundsDomain.html#ab291fcc0b9345a01a36337b34d4a8dd0">More...</a><br /></td></tr>
@@ -518,6 +520,7 @@ Protected Attributes</h2></td></tr>
 <li><code>NORMAL</code> : this is the basic mode where the domain will have 3 ranges which are the min and max for the bounds along each of the coordinate axis. </li>
 <li><code>MAGNITUDE:</code> the domain has a single range set to (-magn/2.0, +magn/2.0) where magn is the magnitude of the diagonal. </li>
 <li><code>ORIENTED_MAGNITUDE:</code> same as MAGNITUDE, but instead of the diagonal, a vector determined using two additional required properties with functions Normal, and Origin is used. </li>
+<li><code>COMPONENT_MAGNITUDE:</code> similar to MAGNITUDE except suitable for 3 component properties where each component is given range for the corresponding axis i.e. <code>(0, xmax-xmin), (0, ymax-ymin), (0, zmax-zmin)</code>. </li>
 <li><code>SCALED_EXTENT:</code> the range is set to (0, maxbounds * this-&gt;ScaleFactor) where maxbounds is the length of the longest axis for the bounding box. </li>
 <li><code>ARRAY_SCALED_EXTENT:</code> the range is set to (0, (arrayMagnitude / maxbounds) * this-&gt;ScaleFactor) where maxbounds is the length of the longest axis for the bounding box. and arrayMagnitude the maximum magnitude of the array. </li>
 <li><code>APPROXIMATE_CELL_LENGTH:</code> approximation for cell length computed using the </li>
@@ -530,7 +533,7 @@ Protected Attributes</h2></td></tr>
 <li><code>scale_factor</code> : used in SCALED_EXTENT, ARRAY_SCALED_EXTENT and APPROXIMATE_CELL_LENGTH mode. Value is a floating point number that is used as the scale factor. </li>
 </ul>
 
-<p class="definition">Definition at line <a class="el" href="vtkSMBoundsDomain_8h_source.html#l00068">68</a> of file <a class="el" href="vtkSMBoundsDomain_8h_source.html">vtkSMBoundsDomain.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vtkSMBoundsDomain_8h_source.html#l00071">71</a> of file <a class="el" href="vtkSMBoundsDomain_8h_source.html">vtkSMBoundsDomain.h</a>.</p>
 </div><h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="a91fedb8e823f5c1f66926109fd927c36"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a91fedb8e823f5c1f66926109fd927c36">&#9670;&nbsp;</a></span>Superclass</h2>
@@ -544,7 +547,7 @@ Protected Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="vtkSMBoundsDomain_8h_source.html#l00072">72</a> of file <a class="el" href="vtkSMBoundsDomain_8h_source.html">vtkSMBoundsDomain.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vtkSMBoundsDomain_8h_source.html#l00075">75</a> of file <a class="el" href="vtkSMBoundsDomain_8h_source.html">vtkSMBoundsDomain.h</a>.</p>
 
 </div>
 </div>
@@ -571,9 +574,10 @@ Protected Attributes</h2></td></tr>
 <tr><td class="fieldname"><a id="ab291fcc0b9345a01a36337b34d4a8dd0a1bd5af4a1001fb474df59771f3188e21"></a>APPROXIMATE_CELL_LENGTH&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="ab291fcc0b9345a01a36337b34d4a8dd0a57af914cc4bd1e1b0d28acb613bd06d3"></a>DATA_BOUNDS&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="ab291fcc0b9345a01a36337b34d4a8dd0af32387cda93fd0ee20126fd1ffde0cda"></a>EXTENTS&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ab291fcc0b9345a01a36337b34d4a8dd0ae411ff20295135b5a9aba47f8d229d89"></a>COMPONENT_MAGNITUDE&#160;</td><td class="fielddoc"></td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="vtkSMBoundsDomain_8h_source.html#l00089">89</a> of file <a class="el" href="vtkSMBoundsDomain_8h_source.html">vtkSMBoundsDomain.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vtkSMBoundsDomain_8h_source.html#l00092">92</a> of file <a class="el" href="vtkSMBoundsDomain_8h_source.html">vtkSMBoundsDomain.h</a>.</p>
 
 </div>
 </div>
@@ -598,7 +602,7 @@ Protected Attributes</h2></td></tr>
 <tr><td class="fieldname"><a id="a0369b61ec87800dab39746e8e8b776dea680c1a71f609dce2d3bf05e8307ada9c"></a>X_Y_AND_Z_AXES&#160;</td><td class="fielddoc"></td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="vtkSMBoundsDomain_8h_source.html#l00103">103</a> of file <a class="el" href="vtkSMBoundsDomain_8h_source.html">vtkSMBoundsDomain.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vtkSMBoundsDomain_8h_source.html#l00107">107</a> of file <a class="el" href="vtkSMBoundsDomain_8h_source.html">vtkSMBoundsDomain.h</a>.</p>
 
 </div>
 </div>
@@ -1183,7 +1187,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="vtkSMBoundsDomain_8h_source.html#l00144">144</a> of file <a class="el" href="vtkSMBoundsDomain_8h_source.html">vtkSMBoundsDomain.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vtkSMBoundsDomain_8h_source.html#l00148">148</a> of file <a class="el" href="vtkSMBoundsDomain_8h_source.html">vtkSMBoundsDomain.h</a>.</p>
 
 </div>
 </div>
@@ -1207,7 +1211,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="vtkSMBoundsDomain_8h_source.html#l00145">145</a> of file <a class="el" href="vtkSMBoundsDomain_8h_source.html">vtkSMBoundsDomain.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vtkSMBoundsDomain_8h_source.html#l00149">149</a> of file <a class="el" href="vtkSMBoundsDomain_8h_source.html">vtkSMBoundsDomain.h</a>.</p>
 
 </div>
 </div>
@@ -1231,7 +1235,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="vtkSMBoundsDomain_8h_source.html#l00146">146</a> of file <a class="el" href="vtkSMBoundsDomain_8h_source.html">vtkSMBoundsDomain.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vtkSMBoundsDomain_8h_source.html#l00150">150</a> of file <a class="el" href="vtkSMBoundsDomain_8h_source.html">vtkSMBoundsDomain.h</a>.</p>
 
 </div>
 </div>

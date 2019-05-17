@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>paraview._backwardscompatibilityhelper &mdash; ParaView/Python 5.6.0-1571-g94c3061b9a documentation</title>
+  <title>paraview._backwardscompatibilityhelper &mdash; ParaView/Python 5.6.0-1577-gcd0ea8b2d0 documentation</title>
   
 
   
@@ -24,7 +24,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:'../../',
-        VERSION:'5.6.0-1571-g94c3061b9a',
+        VERSION:'5.6.0-1577-gcd0ea8b2d0',
         COLLAPSE_INDEX:false,
         FILE_SUFFIX:'.html',
         HAS_SOURCE:  true
@@ -48,7 +48,7 @@
         <link rel="index" title="Index"
               href="../../genindex.html"/>
         <link rel="search" title="Search" href="../../search.html"/>
-    <link rel="top" title="ParaView/Python 5.6.0-1571-g94c3061b9a documentation" href="../../index.html"/>
+    <link rel="top" title="ParaView/Python 5.6.0-1577-gcd0ea8b2d0 documentation" href="../../index.html"/>
         <link rel="up" title="Module code" href="../index.html"/> 
 
   <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
@@ -66,7 +66,7 @@
           <li> <a href="../../index.html">
             <img src="../../_static/paraview-logo-small.png"
             alt="ParaView/Python"></img></a> </li>
-          <li class="version"> version 5.6.0-1571-g94c3061b9a</li>
+          <li class="version"> version 5.6.0-1577-gcd0ea8b2d0</li>
         </ul>
         <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
   <input type="text" name="q" placeholder="Search docs" />
@@ -1280,6 +1280,14 @@
             <span class="k">raise</span> <span class="n">NotSupportedException</span><span class="p">(</span>
                 <span class="s1">&#39;The `OSPRayMaterial` control has been renamed in ParaView 5.7 to `Material`.&#39;</span><span class="p">)</span>
 
+    <span class="c1">#  In 5.7, the `Box` implicit function&#39;s Scale property was renamed to</span>
+    <span class="c1">#  Length.</span>
+    <span class="k">if</span> <span class="n">pname</span> <span class="o">==</span> <span class="s2">&quot;Scale&quot;</span> <span class="ow">and</span> <span class="n">proxy</span><span class="o">.</span><span class="n">SMProxy</span><span class="o">.</span><span class="n">GetXMLName</span><span class="p">()</span> <span class="o">==</span> <span class="s2">&quot;Box&quot;</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">paraview</span><span class="o">.</span><span class="n">compatibility</span><span class="o">.</span><span class="n">GetVersion</span><span class="p">()</span> <span class="o">&lt;</span> <span class="mf">5.7</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">proxy</span><span class="o">.</span><span class="n">GetProperty</span><span class="p">(</span><span class="s2">&quot;Length&quot;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">NotSupportedException</span><span class="p">(</span>
+                    <span class="s1">&#39;The `Scale` property has been renamed in ParaView 5.7 to `Length`.&#39;</span><span class="p">)</span>
     <span class="k">raise</span> <span class="n">Continue</span><span class="p">()</span></div>
 
 <div class="viewcode-block" id="GetProxy"><a class="viewcode-back" href="../../paraview._backwardscompatibilityhelper.html#paraview._backwardscompatibilityhelper.GetProxy">[docs]</a><span class="k">def</span> <span class="nf">GetProxy</span><span class="p">(</span><span class="n">module</span><span class="p">,</span> <span class="n">key</span><span class="p">):</span>

@@ -164,6 +164,16 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a274d66ac2a689a260ba3d3df1a8fdd54"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtk3DWidgetRepresentation.html#a274d66ac2a689a260ba3d3df1a8fdd54">EnabledOff</a> ()</td></tr>
 <tr class="memdesc:a274d66ac2a689a260ba3d3df1a8fdd54"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get/Set whether the widget is enabled.  <a href="#a274d66ac2a689a260ba3d3df1a8fdd54">More...</a><br /></td></tr>
 <tr class="separator:a274d66ac2a689a260ba3d3df1a8fdd54"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr><td colspan="2"><div class="groupHeader"></div></td></tr>
+<tr class="memitem:a42e097f0cdcba1ad30f0e381f1b746fe"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtk3DWidgetRepresentation.html#a42e097f0cdcba1ad30f0e381f1b746fe">SetReferenceBounds</a> (const <a class="elRef" doxygen="/home/kitware/dashboards/buildbot/paraview_master-vall-linux-shared-debug_doc_extdeps_gui_mpi_python3/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkVectorOperators_8h.html#a45c855d65dd0e2b57b08024500ff9159">double</a> bds[6])</td></tr>
+<tr class="memdesc:a42e097f0cdcba1ad30f0e381f1b746fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">These are needed to support BoxWidget use-case where we want to support specification of the box using global transform or relative to some reference bounds.  <a href="#a42e097f0cdcba1ad30f0e381f1b746fe">More...</a><br /></td></tr>
+<tr class="separator:a42e097f0cdcba1ad30f0e381f1b746fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa623fba5a411e049b8ddc1187b5e7a17"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtk3DWidgetRepresentation.html#aa623fba5a411e049b8ddc1187b5e7a17">PlaceWidget</a> (const <a class="elRef" doxygen="/home/kitware/dashboards/buildbot/paraview_master-vall-linux-shared-debug_doc_extdeps_gui_mpi_python3/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkVectorOperators_8h.html#a45c855d65dd0e2b57b08024500ff9159">double</a> bds[6])</td></tr>
+<tr class="memdesc:aa623fba5a411e049b8ddc1187b5e7a17"><td class="mdescLeft">&#160;</td><td class="mdescRight">These are needed to support BoxWidget use-case where we want to support specification of the box using global transform or relative to some reference bounds.  <a href="#aa623fba5a411e049b8ddc1187b5e7a17">More...</a><br /></td></tr>
+<tr class="separator:aa623fba5a411e049b8ddc1187b5e7a17"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:addf439318675fe3a03bc8fead8392558"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtk3DWidgetRepresentation.html#addf439318675fe3a03bc8fead8392558">SetUseReferenceBounds</a> (bool)</td></tr>
+<tr class="memdesc:addf439318675fe3a03bc8fead8392558"><td class="mdescLeft">&#160;</td><td class="mdescRight">These are needed to support BoxWidget use-case where we want to support specification of the box using global transform or relative to some reference bounds.  <a href="#addf439318675fe3a03bc8fead8392558">More...</a><br /></td></tr>
+<tr class="separator:addf439318675fe3a03bc8fead8392558"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classvtkDataRepresentation"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classvtkDataRepresentation')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="http://www.vtk.org/doc/nightly/html/classvtkDataRepresentation.html">vtkDataRepresentation</a></td></tr>
 <tr class="memitem:ab1e5d4c75272b8dd84e7a65e1e034fa0 inherit pub_methods_classvtkDataRepresentation"><td class="memItemLeft" align="right" valign="top"><a class="elRef" doxygen="/home/kitware/dashboards/buildbot/paraview_master-vall-linux-shared-debug_doc_extdeps_gui_mpi_python3/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/classvtkDataRepresentation.html">vtkDataRepresentation</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="elRef" doxygen="/home/kitware/dashboards/buildbot/paraview_master-vall-linux-shared-debug_doc_extdeps_gui_mpi_python3/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/classvtkDataRepresentation.html#ab1e5d4c75272b8dd84e7a65e1e034fa0">NewInstance</a> () const</td></tr>
 <tr class="separator:ab1e5d4c75272b8dd84e7a65e1e034fa0 inherit pub_methods_classvtkDataRepresentation"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -1650,6 +1660,69 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
+<a id="a42e097f0cdcba1ad30f0e381f1b746fe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a42e097f0cdcba1ad30f0e381f1b746fe">&#9670;&nbsp;</a></span>SetReferenceBounds()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void vtk3DWidgetRepresentation::SetReferenceBounds </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="elRef" doxygen="/home/kitware/dashboards/buildbot/paraview_master-vall-linux-shared-debug_doc_extdeps_gui_mpi_python3/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkVectorOperators_8h.html#a45c855d65dd0e2b57b08024500ff9159">double</a>&#160;</td>
+          <td class="paramname"><em>bds</em>[6]</td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>These are needed to support BoxWidget use-case where we want to support specification of the box using global transform or relative to some reference bounds. </p>
+<p>Since this may be applicable to other 3D widgets that have similar requirements, we add this ability to <a class="el" href="classvtk3DWidgetRepresentation.html" title="vtk3DWidgetRepresentation is a vtkDataRepresentation subclass for 3D widgets and their representation...">vtk3DWidgetRepresentation</a> itself. All this does it based on the state of UseReferenceBounds, <code><a class="elRef" doxygen="/home/kitware/dashboards/buildbot/paraview_master-vall-linux-shared-debug_doc_extdeps_gui_mpi_python3/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/classvtkWidgetRepresentation.html#adbe69d604d5e458504229326abeecd3b">vtkWidgetRepresentation::PlaceWidget</a></code> is called using either the <code>ReferenceBounds</code> or the bounds passed to <code>PlaceWidget</code>. </p>
+
+</div>
+</div>
+<a id="aa623fba5a411e049b8ddc1187b5e7a17"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa623fba5a411e049b8ddc1187b5e7a17">&#9670;&nbsp;</a></span>PlaceWidget()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void vtk3DWidgetRepresentation::PlaceWidget </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="elRef" doxygen="/home/kitware/dashboards/buildbot/paraview_master-vall-linux-shared-debug_doc_extdeps_gui_mpi_python3/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkVectorOperators_8h.html#a45c855d65dd0e2b57b08024500ff9159">double</a>&#160;</td>
+          <td class="paramname"><em>bds</em>[6]</td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>These are needed to support BoxWidget use-case where we want to support specification of the box using global transform or relative to some reference bounds. </p>
+<p>Since this may be applicable to other 3D widgets that have similar requirements, we add this ability to <a class="el" href="classvtk3DWidgetRepresentation.html" title="vtk3DWidgetRepresentation is a vtkDataRepresentation subclass for 3D widgets and their representation...">vtk3DWidgetRepresentation</a> itself. All this does it based on the state of UseReferenceBounds, <code><a class="elRef" doxygen="/home/kitware/dashboards/buildbot/paraview_master-vall-linux-shared-debug_doc_extdeps_gui_mpi_python3/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/classvtkWidgetRepresentation.html#adbe69d604d5e458504229326abeecd3b">vtkWidgetRepresentation::PlaceWidget</a></code> is called using either the <code>ReferenceBounds</code> or the bounds passed to <code>PlaceWidget</code>. </p>
+
+</div>
+</div>
+<a id="addf439318675fe3a03bc8fead8392558"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#addf439318675fe3a03bc8fead8392558">&#9670;&nbsp;</a></span>SetUseReferenceBounds()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void vtk3DWidgetRepresentation::SetUseReferenceBounds </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>These are needed to support BoxWidget use-case where we want to support specification of the box using global transform or relative to some reference bounds. </p>
+<p>Since this may be applicable to other 3D widgets that have similar requirements, we add this ability to <a class="el" href="classvtk3DWidgetRepresentation.html" title="vtk3DWidgetRepresentation is a vtkDataRepresentation subclass for 3D widgets and their representation...">vtk3DWidgetRepresentation</a> itself. All this does it based on the state of UseReferenceBounds, <code><a class="elRef" doxygen="/home/kitware/dashboards/buildbot/paraview_master-vall-linux-shared-debug_doc_extdeps_gui_mpi_python3/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/classvtkWidgetRepresentation.html#adbe69d604d5e458504229326abeecd3b">vtkWidgetRepresentation::PlaceWidget</a></code> is called using either the <code>ReferenceBounds</code> or the bounds passed to <code>PlaceWidget</code>. </p>
+
+</div>
+</div>
 <a id="a7fe72d2dbed274aa57ea0c6f0fedc95f"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a7fe72d2dbed274aa57ea0c6f0fedc95f">&#9670;&nbsp;</a></span>AddToView()</h2>
 
@@ -1812,7 +1885,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="vtk3DWidgetRepresentation_8h_source.html#l00113">113</a> of file <a class="el" href="vtk3DWidgetRepresentation_8h_source.html">vtk3DWidgetRepresentation.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vtk3DWidgetRepresentation_8h_source.html#l00128">128</a> of file <a class="el" href="vtk3DWidgetRepresentation_8h_source.html">vtk3DWidgetRepresentation.h</a>.</p>
 
 </div>
 </div>
@@ -1836,7 +1909,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="vtk3DWidgetRepresentation_8h_source.html#l00114">114</a> of file <a class="el" href="vtk3DWidgetRepresentation_8h_source.html">vtk3DWidgetRepresentation.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vtk3DWidgetRepresentation_8h_source.html#l00129">129</a> of file <a class="el" href="vtk3DWidgetRepresentation_8h_source.html">vtk3DWidgetRepresentation.h</a>.</p>
 
 </div>
 </div>
@@ -1860,7 +1933,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="vtk3DWidgetRepresentation_8h_source.html#l00115">115</a> of file <a class="el" href="vtk3DWidgetRepresentation_8h_source.html">vtk3DWidgetRepresentation.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vtk3DWidgetRepresentation_8h_source.html#l00130">130</a> of file <a class="el" href="vtk3DWidgetRepresentation_8h_source.html">vtk3DWidgetRepresentation.h</a>.</p>
 
 </div>
 </div>
@@ -1884,7 +1957,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="vtk3DWidgetRepresentation_8h_source.html#l00116">116</a> of file <a class="el" href="vtk3DWidgetRepresentation_8h_source.html">vtk3DWidgetRepresentation.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vtk3DWidgetRepresentation_8h_source.html#l00131">131</a> of file <a class="el" href="vtk3DWidgetRepresentation_8h_source.html">vtk3DWidgetRepresentation.h</a>.</p>
 
 </div>
 </div>
@@ -1908,7 +1981,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="vtk3DWidgetRepresentation_8h_source.html#l00117">117</a> of file <a class="el" href="vtk3DWidgetRepresentation_8h_source.html">vtk3DWidgetRepresentation.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vtk3DWidgetRepresentation_8h_source.html#l00132">132</a> of file <a class="el" href="vtk3DWidgetRepresentation_8h_source.html">vtk3DWidgetRepresentation.h</a>.</p>
 
 </div>
 </div>
