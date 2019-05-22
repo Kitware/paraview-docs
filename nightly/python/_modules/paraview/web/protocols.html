@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>paraview.web.protocols &mdash; ParaView/Python 5.6.0-1598-g34d8f33521 documentation</title>
+  <title>paraview.web.protocols &mdash; ParaView/Python 5.6.0-1600-gbaf397f009 documentation</title>
   
 
   
@@ -24,7 +24,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:'../../../',
-        VERSION:'5.6.0-1598-g34d8f33521',
+        VERSION:'5.6.0-1600-gbaf397f009',
         COLLAPSE_INDEX:false,
         FILE_SUFFIX:'.html',
         HAS_SOURCE:  true
@@ -48,7 +48,7 @@
         <link rel="index" title="Index"
               href="../../../genindex.html"/>
         <link rel="search" title="Search" href="../../../search.html"/>
-    <link rel="top" title="ParaView/Python 5.6.0-1598-g34d8f33521 documentation" href="../../../index.html"/>
+    <link rel="top" title="ParaView/Python 5.6.0-1600-gbaf397f009 documentation" href="../../../index.html"/>
         <link rel="up" title="Module code" href="../../index.html"/> 
 
   <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
@@ -66,7 +66,7 @@
           <li> <a href="../../../index.html">
             <img src="../../../_static/paraview-logo-small.png"
             alt="ParaView/Python"></img></a> </li>
-          <li class="version"> version 5.6.0-1598-g34d8f33521</li>
+          <li class="version"> version 5.6.0-1600-gbaf397f009</li>
         </ul>
         <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
   <input type="text" name="q" placeholder="Search docs" />
@@ -1333,11 +1333,13 @@
 
 <div class="viewcode-block" id="ParaViewWebPublishImageDelivery.removeRenderObserver"><a class="viewcode-back" href="../../../paraview.web.protocols.html#paraview.web.protocols.ParaViewWebPublishImageDelivery.removeRenderObserver">[docs]</a>    <span class="nd">@exportRpc</span><span class="p">(</span><span class="s2">&quot;viewport.image.push.observer.remove&quot;</span><span class="p">)</span>
     <span class="k">def</span> <span class="nf">removeRenderObserver</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">viewId</span><span class="p">):</span>
-        <span class="n">sView</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">getView</span><span class="p">(</span><span class="n">viewId</span><span class="p">)</span>
-        <span class="k">if</span> <span class="ow">not</span> <span class="n">sView</span><span class="p">:</span>
-            <span class="k">return</span> <span class="p">{</span> <span class="s1">&#39;error&#39;</span><span class="p">:</span> <span class="s1">&#39;Unable to get view with id </span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">viewId</span> <span class="p">}</span>
+        <span class="n">sView</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">sView</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">getView</span><span class="p">(</span><span class="n">viewId</span><span class="p">)</span>
+        <span class="k">except</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;no view with ID </span><span class="si">%s</span><span class="s1"> available in removeRenderObserver&#39;</span> <span class="o">%</span> <span class="n">viewId</span><span class="p">)</span>
 
-        <span class="n">realViewId</span> <span class="o">=</span> <span class="n">sView</span><span class="o">.</span><span class="n">GetGlobalIDAsString</span><span class="p">()</span>
+        <span class="n">realViewId</span> <span class="o">=</span> <span class="n">sView</span><span class="o">.</span><span class="n">GetGlobalIDAsString</span><span class="p">()</span> <span class="k">if</span> <span class="n">sView</span> <span class="k">else</span> <span class="n">viewId</span>
 
         <span class="n">observerInfo</span> <span class="o">=</span> <span class="kc">None</span>
         <span class="k">if</span> <span class="n">realViewId</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">trackingViews</span><span class="p">:</span>
