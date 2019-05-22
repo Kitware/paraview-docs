@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>paraview.cpstate &mdash; ParaView/Python 5.6.0-1606-gd0129eb99e documentation</title>
+  <title>paraview.cpstate &mdash; ParaView/Python 5.6.0-1620-g84ddb25617 documentation</title>
   
 
   
@@ -24,7 +24,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:'../../',
-        VERSION:'5.6.0-1606-gd0129eb99e',
+        VERSION:'5.6.0-1620-g84ddb25617',
         COLLAPSE_INDEX:false,
         FILE_SUFFIX:'.html',
         HAS_SOURCE:  true
@@ -48,7 +48,7 @@
         <link rel="index" title="Index"
               href="../../genindex.html"/>
         <link rel="search" title="Search" href="../../search.html"/>
-    <link rel="top" title="ParaView/Python 5.6.0-1606-gd0129eb99e documentation" href="../../index.html"/>
+    <link rel="top" title="ParaView/Python 5.6.0-1620-g84ddb25617 documentation" href="../../index.html"/>
         <link rel="up" title="Module code" href="../index.html"/> 
 
   <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
@@ -66,7 +66,7 @@
           <li> <a href="../../index.html">
             <img src="../../_static/paraview-logo-small.png"
             alt="ParaView/Python"></img></a> </li>
-          <li class="version"> version 5.6.0-1606-gd0129eb99e</li>
+          <li class="version"> version 5.6.0-1620-g84ddb25617</li>
         </ul>
         <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
   <input type="text" name="q" placeholder="Search docs" />
@@ -866,11 +866,11 @@
           <span class="s2">&quot;# and provide it with information such as the filename to use,&quot;</span><span class="p">,</span>
           <span class="s2">&quot;# how frequently to write the images, etc.&quot;</span><span class="p">])</span>
            <span class="n">params</span> <span class="o">=</span> <span class="n">cpstate_globals</span><span class="o">.</span><span class="n">screenshot_info</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">ProxyName</span><span class="p">]</span>
-           <span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">params</span><span class="p">)</span> <span class="o">==</span> <span class="mi">7</span>
+           <span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">params</span><span class="p">)</span> <span class="o">==</span> <span class="mi">8</span>
            <span class="n">trace</span><span class="o">.</span><span class="n">append</span><span class="p">([</span>
               <span class="s2">&quot;coprocessor.RegisterView(</span><span class="si">%s</span><span class="s2">,&quot;</span> <span class="o">%</span> <span class="bp">self</span><span class="p">,</span>
-              <span class="s2">&quot;    filename=&#39;</span><span class="si">%s</span><span class="s2">&#39;, freq=</span><span class="si">%s</span><span class="s2">, fittoscreen=</span><span class="si">%s</span><span class="s2">, magnification=</span><span class="si">%s</span><span class="s2">, width=</span><span class="si">%s</span><span class="s2">, height=</span><span class="si">%s</span><span class="s2">, cinema=</span><span class="si">%s</span><span class="s2">)&quot;</span> <span class="o">%</span>\
-                  <span class="p">(</span><span class="n">params</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">params</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">params</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">params</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">params</span><span class="p">[</span><span class="mi">4</span><span class="p">],</span> <span class="n">params</span><span class="p">[</span><span class="mi">5</span><span class="p">],</span> <span class="n">params</span><span class="p">[</span><span class="mi">6</span><span class="p">]),</span>
+               <span class="s2">&quot;    filename=&#39;</span><span class="si">%s</span><span class="s2">&#39;, freq=</span><span class="si">%s</span><span class="s2">, fittoscreen=</span><span class="si">%s</span><span class="s2">, magnification=</span><span class="si">%s</span><span class="s2">, width=</span><span class="si">%s</span><span class="s2">, height=</span><span class="si">%s</span><span class="s2">, cinema=</span><span class="si">%s</span><span class="s2">, compression=</span><span class="si">%s</span><span class="s2">)&quot;</span> <span class="o">%</span>\
+                  <span class="p">(</span><span class="n">params</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">params</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">params</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">params</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">params</span><span class="p">[</span><span class="mi">4</span><span class="p">],</span> <span class="n">params</span><span class="p">[</span><span class="mi">5</span><span class="p">],</span> <span class="n">params</span><span class="p">[</span><span class="mi">6</span><span class="p">],</span> <span class="n">params</span><span class="p">[</span><span class="mi">7</span><span class="p">]),</span>
               <span class="s2">&quot;</span><span class="si">%s</span><span class="s2">.ViewTime = datadescription.GetTime()&quot;</span> <span class="o">%</span> <span class="bp">self</span><span class="p">])</span>
            <span class="n">trace</span><span class="o">.</span><span class="n">append_separator</span><span class="p">()</span>
         <span class="k">return</span> <span class="n">trace</span><span class="o">.</span><span class="n">raw_data</span><span class="p">()</span></div></div>
@@ -1033,7 +1033,21 @@
             <span class="n">padding_amount</span> <span class="o">=</span> <span class="n">globalepxy</span><span class="o">.</span><span class="n">GetProperty</span><span class="p">(</span><span class="s2">&quot;FileNamePadding&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">GetElement</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
             <span class="n">write_frequency</span> <span class="o">=</span> <span class="n">pxy</span><span class="o">.</span><span class="n">GetProperty</span><span class="p">(</span><span class="s2">&quot;WriteFrequency&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">GetElement</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
             <span class="n">filename</span> <span class="o">=</span> <span class="n">pxy</span><span class="o">.</span><span class="n">GetProperty</span><span class="p">(</span><span class="s2">&quot;CatalystFilePattern&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">GetElement</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
-
+            <span class="n">DataMode</span> <span class="o">=</span> <span class="n">pxy</span><span class="o">.</span><span class="n">GetProperty</span><span class="p">(</span><span class="s2">&quot;DataMode&quot;</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">DataMode</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">DataMode</span> <span class="o">=</span> <span class="n">pxy</span><span class="o">.</span><span class="n">GetProperty</span><span class="p">(</span><span class="s2">&quot;DataMode&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">GetElement</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+            <span class="n">HeaderType</span> <span class="o">=</span> <span class="n">pxy</span><span class="o">.</span><span class="n">GetProperty</span><span class="p">(</span><span class="s2">&quot;HeaderType&quot;</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">HeaderType</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">HeaderType</span> <span class="o">=</span> <span class="n">pxy</span><span class="o">.</span><span class="n">GetProperty</span><span class="p">(</span><span class="s2">&quot;HeaderType&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">GetElement</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+            <span class="n">EncodeAppendedData</span><span class="o">=</span><span class="n">pxy</span><span class="o">.</span><span class="n">GetProperty</span><span class="p">(</span><span class="s2">&quot;EncodeAppendedData&quot;</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">EncodeAppendedData</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">EncodeAppendedData</span> <span class="o">=</span> <span class="n">pxy</span><span class="o">.</span><span class="n">GetProperty</span><span class="p">(</span><span class="s2">&quot;EncodeAppendedData&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">GetElement</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="o">!=</span><span class="mi">0</span>
+            <span class="n">CompressorType</span> <span class="o">=</span> <span class="n">pxy</span><span class="o">.</span><span class="n">GetProperty</span><span class="p">(</span><span class="s2">&quot;CompressorType&quot;</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">CompressorType</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">CompressorType</span> <span class="o">=</span> <span class="n">pxy</span><span class="o">.</span><span class="n">GetProperty</span><span class="p">(</span><span class="s2">&quot;CompressorType&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">GetElement</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+            <span class="n">CompressionLevel</span> <span class="o">=</span> <span class="n">pxy</span><span class="o">.</span><span class="n">GetProperty</span><span class="p">(</span><span class="s2">&quot;CompressionLevel&quot;</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">CompressionLevel</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">CompressionLevel</span> <span class="o">=</span> <span class="n">pxy</span><span class="o">.</span><span class="n">GetProperty</span><span class="p">(</span><span class="s2">&quot;CompressionLevel&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">GetElement</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
 
             <span class="n">sim_inputs</span> <span class="o">=</span> <span class="n">locate_simulation_inputs</span><span class="p">(</span><span class="n">pxy</span><span class="p">)</span>
             <span class="k">for</span> <span class="n">sim_input_name</span> <span class="ow">in</span> <span class="n">sim_inputs</span><span class="p">:</span>
@@ -1055,8 +1069,8 @@
                 <span class="n">f</span> <span class="o">=</span> <span class="s2">&quot;STP.RegisterWriter(</span><span class="si">%s</span><span class="s2">, &#39;</span><span class="si">%s</span><span class="s2">&#39;, tp_writers)&quot;</span> <span class="o">%</span> <span class="p">(</span>
                     <span class="n">varname</span><span class="p">,</span> <span class="n">filename</span><span class="p">)</span>
             <span class="k">else</span><span class="p">:</span>
-                <span class="n">f</span> <span class="o">=</span> <span class="s2">&quot;coprocessor.RegisterWriter(</span><span class="si">%s</span><span class="s2">, filename=&#39;</span><span class="si">%s</span><span class="s2">&#39;, freq=</span><span class="si">%s</span><span class="s2">, paddingamount=</span><span class="si">%s</span><span class="s2">)&quot;</span> <span class="o">%</span> <span class="p">(</span>
-                    <span class="n">varname</span><span class="p">,</span> <span class="n">filename</span><span class="p">,</span> <span class="n">write_frequency</span><span class="p">,</span> <span class="n">padding_amount</span><span class="p">)</span>
+                <span class="n">f</span> <span class="o">=</span> <span class="s2">&quot;coprocessor.RegisterWriter(</span><span class="si">%s</span><span class="s2">, filename=&#39;</span><span class="si">%s</span><span class="s2">&#39;, freq=</span><span class="si">%s</span><span class="s2">, paddingamount=</span><span class="si">%s</span><span class="s2">, DataMode=&#39;</span><span class="si">%s</span><span class="s2">&#39;, HeaderType=&#39;</span><span class="si">%s</span><span class="s2">&#39;, EncodeAppendedData=</span><span class="si">%s</span><span class="s2">, CompressorType=&#39;</span><span class="si">%s</span><span class="s2">&#39;, CompressionLevel=&#39;</span><span class="si">%s</span><span class="s2">&#39;)&quot;</span> <span class="o">%</span> <span class="p">(</span>
+                    <span class="n">varname</span><span class="p">,</span> <span class="n">filename</span><span class="p">,</span> <span class="n">write_frequency</span><span class="p">,</span> <span class="n">padding_amount</span><span class="p">,</span> <span class="n">DataMode</span><span class="p">,</span> <span class="n">HeaderType</span><span class="p">,</span> <span class="n">EncodeAppendedData</span><span class="p">,</span> <span class="n">CompressorType</span><span class="p">,</span> <span class="n">CompressionLevel</span><span class="p">)</span>
             <span class="n">res</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
             <span class="n">res</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
         <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">res</span><span class="p">)</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
@@ -1081,7 +1095,7 @@
 <span class="sd">      * key -&gt; view proxy name</span>
 
 <span class="sd">      * value -&gt; [filename, writefreq, fitToScreen, magnification, width, height,</span>
-<span class="sd">        cinemacamera options]</span>
+<span class="sd">        cinemacamera options, compressionlevel]</span>
 
 <span class="sd">    cinema_tracks</span>
 <span class="sd">      map with information about cinema tracks to record</span>

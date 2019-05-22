@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>coprocessing Module &mdash; ParaView/Python 5.6.0-1606-gd0129eb99e documentation</title>
+  <title>coprocessing Module &mdash; ParaView/Python 5.6.0-1620-g84ddb25617 documentation</title>
   
 
   
@@ -24,7 +24,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:'./',
-        VERSION:'5.6.0-1606-gd0129eb99e',
+        VERSION:'5.6.0-1620-g84ddb25617',
         COLLAPSE_INDEX:false,
         FILE_SUFFIX:'.html',
         HAS_SOURCE:  true
@@ -48,7 +48,7 @@
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="ParaView/Python 5.6.0-1606-gd0129eb99e documentation" href="index.html"/>
+    <link rel="top" title="ParaView/Python 5.6.0-1620-g84ddb25617 documentation" href="index.html"/>
         <link rel="up" title="paraview Package" href="paraview.html"/>
         <link rel="next" title="cpexport Module" href="paraview.cpexport.html"/>
         <link rel="prev" title="collaboration Module" href="paraview.collaboration.html"/> 
@@ -68,7 +68,7 @@
           <li> <a href="index.html">
             <img src="_static/paraview-logo-small.png"
             alt="ParaView/Python"></img></a> </li>
-          <li class="version"> version 5.6.0-1606-gd0129eb99e</li>
+          <li class="version"> version 5.6.0-1620-g84ddb25617</li>
         </ul>
         <form id ="rtd-search-form" class="wy-form" action="search.html" method="get">
   <input type="text" name="q" placeholder="Search docs" />
@@ -800,14 +800,14 @@ and print out a message on how to read the files into Ensight.</p>
 
 <dl class="method">
 <dt id="paraview.coprocessing.CoProcessor.RegisterView">
-<code class="descname">RegisterView</code><span class="sig-paren">(</span><em>view</em>, <em>filename</em>, <em>freq</em>, <em>fittoscreen</em>, <em>magnification</em>, <em>width</em>, <em>height</em>, <em>cinema=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/coprocessing.html#CoProcessor.RegisterView"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.coprocessing.CoProcessor.RegisterView" title="Permalink to this definition">¶</a></dt>
+<code class="descname">RegisterView</code><span class="sig-paren">(</span><em>view</em>, <em>filename</em>, <em>freq</em>, <em>fittoscreen</em>, <em>magnification</em>, <em>width</em>, <em>height</em>, <em>cinema=None</em>, <em>compression=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/coprocessing.html#CoProcessor.RegisterView"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.coprocessing.CoProcessor.RegisterView" title="Permalink to this definition">¶</a></dt>
 <dd><p>Register a view for image capture with extra meta-data such
 as magnification, size and frequency.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="paraview.coprocessing.CoProcessor.RegisterWriter">
-<code class="descname">RegisterWriter</code><span class="sig-paren">(</span><em>writer</em>, <em>filename</em>, <em>freq</em>, <em>paddingamount=0</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/coprocessing.html#CoProcessor.RegisterWriter"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.coprocessing.CoProcessor.RegisterWriter" title="Permalink to this definition">¶</a></dt>
+<code class="descname">RegisterWriter</code><span class="sig-paren">(</span><em>writer</em>, <em>filename</em>, <em>freq</em>, <em>paddingamount=0</em>, <em>**params</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/coprocessing.html#CoProcessor.RegisterWriter"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.coprocessing.CoProcessor.RegisterWriter" title="Permalink to this definition">¶</a></dt>
 <dd><p>Registers a writer proxy. This method is generally used in
 CreatePipeline() to register writers. All writes created as such will
 write the output files appropriately in WriteData() is called.</p>
