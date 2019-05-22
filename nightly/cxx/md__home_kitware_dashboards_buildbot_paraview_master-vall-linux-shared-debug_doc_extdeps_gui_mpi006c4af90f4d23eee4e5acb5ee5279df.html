@@ -41,7 +41,13 @@ $(function() {
 <div class="contents">
 <div class="textblock"><ul>
 <li>ParaView can now read ParFlow's simulation output (files named <code>.pfb</code> and <code>.C.pfb</code>).</li>
-<li>Preliminary support for reading multiple ParFlow files onto a single pair of meshes (surface and subsurface) is also provided; it expects JSON files with a <code>.pfmetadata</code> extension. </li>
+<li>Preliminary support for reading multiple ParFlow files onto a single pair of meshes (surface and subsurface) is also provided; it expects JSON files with a <code>.pfmetadata</code> extension.</li>
+<li>Example python filters are included to calculate<ul>
+<li>total subsurface storage</li>
+<li>water table depth at every surface point</li>
+<li>total water balance (including subsurface storage, surface storage, and surface runoff). </li>
+</ul>
+</li>
 </ul>
 </div></div><!-- contents -->
 <!-- HTML footer for doxygen 1.8.13-->
