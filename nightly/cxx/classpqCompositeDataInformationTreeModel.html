@@ -56,12 +56,12 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
 Public Types</h2></td></tr>
-<tr class="memitem:ac572725a03c399a2db6f7d99a839026d"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom">{ <a class="el" href="classpqCompositeDataInformationTreeModel.html#ac572725a03c399a2db6f7d99a839026da8c13db1a1209ea5a3577d76b6a7f1be1">ValueInheritedRole</a> = Qt::UserRole, 
-<a class="el" href="classpqCompositeDataInformationTreeModel.html#ac572725a03c399a2db6f7d99a839026dab222b47b8a73b574312f7b42c430ee1e">LeafIndexRole</a>, 
-<a class="el" href="classpqCompositeDataInformationTreeModel.html#ac572725a03c399a2db6f7d99a839026da10acc47c80929db830f2ba4561015123">CompositeIndexRole</a>
+<tr class="memitem:af5bb8829ca06fc3ff625246078be4e8a"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom">{ <a class="el" href="classpqCompositeDataInformationTreeModel.html#af5bb8829ca06fc3ff625246078be4e8aa8c13db1a1209ea5a3577d76b6a7f1be1">ValueInheritedRole</a> = Qt::UserRole, 
+<a class="el" href="classpqCompositeDataInformationTreeModel.html#af5bb8829ca06fc3ff625246078be4e8aab222b47b8a73b574312f7b42c430ee1e">LeafIndexRole</a>, 
+<a class="el" href="classpqCompositeDataInformationTreeModel.html#af5bb8829ca06fc3ff625246078be4e8aa10acc47c80929db830f2ba4561015123">CompositeIndexRole</a>
  }</td></tr>
-<tr class="memdesc:ac572725a03c399a2db6f7d99a839026d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Custom roles available for <code>data</code>.  <a href="classpqCompositeDataInformationTreeModel.html#ac572725a03c399a2db6f7d99a839026d">More...</a><br /></td></tr>
-<tr class="separator:ac572725a03c399a2db6f7d99a839026d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memdesc:af5bb8829ca06fc3ff625246078be4e8a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Custom roles available for <code>data</code>.  <a href="classpqCompositeDataInformationTreeModel.html#af5bb8829ca06fc3ff625246078be4e8a">More...</a><br /></td></tr>
+<tr class="separator:af5bb8829ca06fc3ff625246078be4e8a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-slots"></a>
 Public Slots</h2></td></tr>
@@ -214,7 +214,7 @@ Custom Columns</h1>
 <p>This model presents a single column tree. The check-state on this 0th column is optionally settable. There may be need for saving additional properties with the tree nodes, e.g. color or opacity values. Such use-cases are supported via custom columns.</p>
 <p>One can add custom columns to the model using <code>addColumn</code>. If custom columns are changed, you will need to call <code>reset</code> on the model. The model will behave unpredictably otherwise. Custom column values are stored as data for <code>Qt::DisplayRole</code> for the corresponding column. Hence they can be set/get using <code>setData</code> and <code>data</code> API on the QAbstractItemModel with an appropriate QModelIndex.</p>
 <p>Setting column value on a non-leaf node in the tree will cause the subtree anchored at that node to inherit the value, unless any of the nodes in the subtree themselves have a value set. To clear the value set at any node, simply call <code>setData</code> with an invalid QVariant.</p>
-<p>To determine if a custom column value is inherited or explicitly set, you can use <code><a class="el" href="classpqCompositeDataInformationTreeModel.html#ac572725a03c399a2db6f7d99a839026da8c13db1a1209ea5a3577d76b6a7f1be1" title="Used to get whether a custom column&#39;s value is inherited from a parent node or explicitly specified...">pqCompositeDataInformationTreeModel::ValueInheritedRole</a>)</code>. By making a <code>data</code> call with this role, you can determine if a particular node's custom column value is explicitly set or inherited.</p>
+<p>To determine if a custom column value is inherited or explicitly set, you can use <code><a class="el" href="classpqCompositeDataInformationTreeModel.html#af5bb8829ca06fc3ff625246078be4e8aa8c13db1a1209ea5a3577d76b6a7f1be1" title="Used to get whether a custom column&#39;s value is inherited from a parent node or explicitly specified...">pqCompositeDataInformationTreeModel::ValueInheritedRole</a>)</code>. By making a <code>data</code> call with this role, you can determine if a particular node's custom column value is explicitly set or inherited.</p>
 <p>Since custom columns only support Qt::DisplayRole storage, one can use a proxy model (e.g. <code>QIdentityProxyModel</code> subclass) to change how the column data is communicated to the view. e.g. <a class="el" href="classpqMultiBlockInspectorWidget.html" title="widget to show composite data hierarchy and controls its display properties. ">pqMultiBlockInspectorWidget</a> renders pixmaps for color and opacity columns.</p>
 <h1><a class="anchor" id="CheckStates"></a>
 Setting and querying check states</h1>
@@ -231,8 +231,8 @@ Setting and querying check states</h1>
 
 <p class="definition">Definition at line <a class="el" href="pqCompositeDataInformationTreeModel_8h_source.html#l00150">150</a> of file <a class="el" href="pqCompositeDataInformationTreeModel_8h_source.html">pqCompositeDataInformationTreeModel.h</a>.</p>
 </div><h2 class="groupheader">Member Enumeration Documentation</h2>
-<a id="ac572725a03c399a2db6f7d99a839026d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac572725a03c399a2db6f7d99a839026d">&#9670;&nbsp;</a></span>anonymous enum</h2>
+<a id="af5bb8829ca06fc3ff625246078be4e8a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af5bb8829ca06fc3ff625246078be4e8a">&#9670;&nbsp;</a></span>anonymous enum</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -245,13 +245,13 @@ Setting and querying check states</h1>
 
 <p>Custom roles available for <code>data</code>. </p>
 <table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="ac572725a03c399a2db6f7d99a839026da8c13db1a1209ea5a3577d76b6a7f1be1"></a>ValueInheritedRole&#160;</td><td class="fielddoc"><p>Used to get whether a custom column's value is inherited from a parent node or explicitly specified. </p>
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="af5bb8829ca06fc3ff625246078be4e8aa8c13db1a1209ea5a3577d76b6a7f1be1"></a>ValueInheritedRole&#160;</td><td class="fielddoc"><p>Used to get whether a custom column's value is inherited from a parent node or explicitly specified. </p>
 <p><code>data</code> will return true if inherited and false otherwise. </p>
 </td></tr>
-<tr><td class="fieldname"><a id="ac572725a03c399a2db6f7d99a839026dab222b47b8a73b574312f7b42c430ee1e"></a>LeafIndexRole&#160;</td><td class="fielddoc"><p>For a leaf node (i.e node with any children) return it's position in a ordered list of simply all leaf nodes of the tree. </p>
+<tr><td class="fieldname"><a id="af5bb8829ca06fc3ff625246078be4e8aab222b47b8a73b574312f7b42c430ee1e"></a>LeafIndexRole&#160;</td><td class="fielddoc"><p>For a leaf node (i.e node with any children) return it's position in a ordered list of simply all leaf nodes of the tree. </p>
 <p>Returned value is a unsigned int indicating the location or invalid QVariant for non-leaf nodes. </p>
 </td></tr>
-<tr><td class="fieldname"><a id="ac572725a03c399a2db6f7d99a839026da10acc47c80929db830f2ba4561015123"></a>CompositeIndexRole&#160;</td><td class="fielddoc"><p>For a node this return the flat index/composite index for that node. </p>
+<tr><td class="fieldname"><a id="af5bb8829ca06fc3ff625246078be4e8aa10acc47c80929db830f2ba4561015123"></a>CompositeIndexRole&#160;</td><td class="fielddoc"><p>For a node this return the flat index/composite index for that node. </p>
 </td></tr>
 </table>
 

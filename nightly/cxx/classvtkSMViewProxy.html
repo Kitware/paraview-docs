@@ -91,6 +91,9 @@ Collaboration diagram for vtkSMViewProxy:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
 Public Types</h2></td></tr>
+<tr class="memitem:aa1251f04bfe263792ab334ec5a9db362"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom">{ <a class="el" href="classvtkSMViewProxy.html#aa1251f04bfe263792ab334ec5a9db362af5e4c78fbb45d8bb17bdf3834d7b6d2b">PrepareContextForRendering</a> = vtkCommand::UserEvent + 1
+ }</td></tr>
+<tr class="separator:aa1251f04bfe263792ab334ec5a9db362"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a644b50073fcc66b0bd5fe563f66a85ed"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="classvtkSMProxy.html">vtkSMProxy</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkSMViewProxy.html#a644b50073fcc66b0bd5fe563f66a85ed">Superclass</a></td></tr>
 <tr class="separator:a644b50073fcc66b0bd5fe563f66a85ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_types_classvtkSMProxy"><td colspan="2" onclick="javascript:toggleInherit('pub_types_classvtkSMProxy')"><img src="closed.png" alt="-"/>&#160;Public Types inherited from <a class="el" href="classvtkSMProxy.html">vtkSMProxy</a></td></tr>
@@ -943,7 +946,7 @@ Friends</h2></td></tr>
 </ul>
 </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="vtkSMViewProxy_8h_source.html#l00052">52</a> of file <a class="el" href="vtkSMViewProxy_8h_source.html">vtkSMViewProxy.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vtkSMViewProxy_8h_source.html#l00053">53</a> of file <a class="el" href="vtkSMViewProxy_8h_source.html">vtkSMViewProxy.h</a>.</p>
 </div><h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="a644b50073fcc66b0bd5fe563f66a85ed"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a644b50073fcc66b0bd5fe563f66a85ed">&#9670;&nbsp;</a></span>Superclass</h2>
@@ -957,7 +960,28 @@ Friends</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="vtkSMViewProxy_8h_source.html#l00056">56</a> of file <a class="el" href="vtkSMViewProxy_8h_source.html">vtkSMViewProxy.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vtkSMViewProxy_8h_source.html#l00057">57</a> of file <a class="el" href="vtkSMViewProxy_8h_source.html">vtkSMViewProxy.h</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Enumeration Documentation</h2>
+<a id="aa1251f04bfe263792ab334ec5a9db362"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa1251f04bfe263792ab334ec5a9db362">&#9670;&nbsp;</a></span>anonymous enum</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">anonymous enum</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="aa1251f04bfe263792ab334ec5a9db362af5e4c78fbb45d8bb17bdf3834d7b6d2b"></a>PrepareContextForRendering&#160;</td><td class="fielddoc"><p>Fired in <code>IsContextReadyForRendering</code> if the context is not already ready for rendering. </p>
+</td></tr>
+</table>
+
+<p class="definition">Definition at line <a class="el" href="vtkSMViewProxy_8h_source.html#l00251">251</a> of file <a class="el" href="vtkSMViewProxy_8h_source.html">vtkSMViewProxy.h</a>.</p>
 
 </div>
 </div>
@@ -1568,7 +1592,7 @@ Friends</h2></td></tr>
 <p>Captures a image from this view. </p>
 <p>Default implementation returns NULL. Subclasses should override <a class="el" href="classvtkSMViewProxy.html#adc1a826a2a1ba4114fc00116378da831" title="Capture an image from the view&#39;s render window. ">CaptureWindowInternal()</a> to do the actual image capture. </p>
 
-<p class="definition">Definition at line <a class="el" href="vtkSMViewProxy_8h_source.html#l00123">123</a> of file <a class="el" href="vtkSMViewProxy_8h_source.html">vtkSMViewProxy.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vtkSMViewProxy_8h_source.html#l00124">124</a> of file <a class="el" href="vtkSMViewProxy_8h_source.html">vtkSMViewProxy.h</a>.</p>
 
 </div>
 </div>
@@ -1725,7 +1749,7 @@ Friends</h2></td></tr>
 <p>Return true any internal representation is dirty. </p>
 <p>This can be useful to know if the internal geometry has changed. DEPRECATED: Use <a class="el" href="classvtkSMViewProxy.html#a67d9f9a4ff211c6dd88655d7a8d070d6" title="Returns true if the subsequent call to Update() will result in an actual update. ">GetNeedsUpdate()</a> instead. </p>
 
-<p class="definition">Definition at line <a class="el" href="vtkSMViewProxy_8h_source.html#l00147">147</a> of file <a class="el" href="vtkSMViewProxy_8h_source.html">vtkSMViewProxy.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vtkSMViewProxy_8h_source.html#l00148">148</a> of file <a class="el" href="vtkSMViewProxy_8h_source.html">vtkSMViewProxy.h</a>.</p>
 
 </div>
 </div>
@@ -1787,7 +1811,7 @@ Friends</h2></td></tr>
 
 <p>Reimplemented in <a class="el" href="classvtkSMRenderViewProxy.html#a1e31f4129cd97b1df3a4a51de8a31120">vtkSMRenderViewProxy</a>, <a class="el" href="classvtkSMComparativeViewProxy.html#ae144a413fdad224e6eef13f35e259e6c">vtkSMComparativeViewProxy</a>, <a class="el" href="classvtkSMContextViewProxy.html#a7d0f6b7740d3e84e5487e4bfcb991ddb">vtkSMContextViewProxy</a>, and <a class="el" href="classvtkSMPythonViewProxy.html#ad45b97a553cdb3eddf5f42ae62986d33">vtkSMPythonViewProxy</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="vtkSMViewProxy_8h_source.html#l00166">166</a> of file <a class="el" href="vtkSMViewProxy_8h_source.html">vtkSMViewProxy.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vtkSMViewProxy_8h_source.html#l00167">167</a> of file <a class="el" href="vtkSMViewProxy_8h_source.html">vtkSMViewProxy.h</a>.</p>
 
 </div>
 </div>
@@ -1819,7 +1843,7 @@ Friends</h2></td></tr>
 
 <p>Reimplemented in <a class="el" href="classvtkSMRenderViewProxy.html#a1e6a63039d2136b356a5e05f1ce71f06">vtkSMRenderViewProxy</a>, <a class="el" href="classvtkSMComparativeViewProxy.html#a878e31a3fb1f7b60c11a2fbc3eb205b8">vtkSMComparativeViewProxy</a>, <a class="el" href="classvtkSMContextViewProxy.html#a29aafbc58efb97878c82a63fb88bfa13">vtkSMContextViewProxy</a>, and <a class="el" href="classvtkSMPythonViewProxy.html#a96c0b4e06cd2a5a064e495fe975bce28">vtkSMPythonViewProxy</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="vtkSMViewProxy_8h_source.html#l00173">173</a> of file <a class="el" href="vtkSMViewProxy_8h_source.html">vtkSMViewProxy.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vtkSMViewProxy_8h_source.html#l00174">174</a> of file <a class="el" href="vtkSMViewProxy_8h_source.html">vtkSMViewProxy.h</a>.</p>
 
 </div>
 </div>
@@ -1852,7 +1876,7 @@ Friends</h2></td></tr>
 
 <p>Reimplemented in <a class="el" href="classvtkSMRenderViewProxy.html#ae466b78149d51a69fc37e29070fdf0b3">vtkSMRenderViewProxy</a>, <a class="el" href="classvtkSMComparativeViewProxy.html#ac0f73c575ad6d5dede9d6575bb412ef1">vtkSMComparativeViewProxy</a>, <a class="el" href="classvtkSMPythonViewProxy.html#adbc21b87c182127fae81acea1ad0ae1c">vtkSMPythonViewProxy</a>, and <a class="el" href="classvtkSMContextViewProxy.html#ac56faa20725f73d813a6ba4739f0e472">vtkSMContextViewProxy</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="vtkSMViewProxy_8h_source.html#l00184">184</a> of file <a class="el" href="vtkSMViewProxy_8h_source.html">vtkSMViewProxy.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vtkSMViewProxy_8h_source.html#l00185">185</a> of file <a class="el" href="vtkSMViewProxy_8h_source.html">vtkSMViewProxy.h</a>.</p>
 
 </div>
 </div>
@@ -2010,7 +2034,7 @@ Friends</h2></td></tr>
 <p>This only affects other representations that have data inputs, not non-data representations.</p>
 <dl class="section return"><dt>Returns</dt><dd>true if any representations were hidden by this call, otherwise returns false. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="vtkSMViewProxy_8h_source.html#l00214">214</a> of file <a class="el" href="vtkSMViewProxy_8h_source.html">vtkSMViewProxy.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vtkSMViewProxy_8h_source.html#l00215">215</a> of file <a class="el" href="vtkSMViewProxy_8h_source.html">vtkSMViewProxy.h</a>.</p>
 
 </div>
 </div>
@@ -2100,7 +2124,7 @@ Friends</h2></td></tr>
 <p>SpreadSheetView needs to update the value of the "FieldAssociation" when a new data representation is being shown in the view. Subclasses can override this method to perform such updates to View properties. This is called explicitly by the <code><a class="el" href="classvtkSMParaViewPipelineControllerWithRendering.html" title="vtkSMParaViewPipelineControllerWithRendering overrides vtkSMParaViewPipelineController to add support...">vtkSMParaViewPipelineControllerWithRendering</a></code> after changing representation visibility. Changes to representation visibility outside of <code><a class="el" href="classvtkSMParaViewPipelineControllerWithRendering.html" title="vtkSMParaViewPipelineControllerWithRendering overrides vtkSMParaViewPipelineController to add support...">vtkSMParaViewPipelineControllerWithRendering</a></code> will require calling this method explicitly.</p>
 <p>Default implementation does not do anything. </p>
 
-<p class="definition">Definition at line <a class="el" href="vtkSMViewProxy_8h_source.html#l00235">235</a> of file <a class="el" href="vtkSMViewProxy_8h_source.html">vtkSMViewProxy.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vtkSMViewProxy_8h_source.html#l00236">236</a> of file <a class="el" href="vtkSMViewProxy_8h_source.html">vtkSMViewProxy.h</a>.</p>
 
 </div>
 </div>
@@ -2219,7 +2243,7 @@ Friends</h2></td></tr>
 
 <p>Reimplemented in <a class="el" href="classvtkSMRenderViewProxy.html#a1bf2e74d715562ffb2875542f923b179">vtkSMRenderViewProxy</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="vtkSMViewProxy_8h_source.html#l00270">270</a> of file <a class="el" href="vtkSMViewProxy_8h_source.html">vtkSMViewProxy.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vtkSMViewProxy_8h_source.html#l00280">280</a> of file <a class="el" href="vtkSMViewProxy_8h_source.html">vtkSMViewProxy.h</a>.</p>
 
 </div>
 </div>
@@ -2251,7 +2275,7 @@ Friends</h2></td></tr>
 <p>This is the method where subclasses can ensure that the data for rendering is made available ranks that will be doing the rendering and then return the location where the rendering will happen.</p>
 <p>Thus <a class="el" href="classvtkSMViewProxy.html" title="Superclass for all view proxies. ">vtkSMViewProxy</a> can send the render request to only those processes that will be doing rendering avoiding unnecessary communication to non-participating ranks. </p>
 
-<p class="definition">Definition at line <a class="el" href="vtkSMViewProxy_8h_source.html#l00282">282</a> of file <a class="el" href="vtkSMViewProxy_8h_source.html">vtkSMViewProxy.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vtkSMViewProxy_8h_source.html#l00292">292</a> of file <a class="el" href="vtkSMViewProxy_8h_source.html">vtkSMViewProxy.h</a>.</p>
 
 </div>
 </div>
@@ -2279,7 +2303,7 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="vtkSMViewProxy_8h_source.html#l00284">284</a> of file <a class="el" href="vtkSMViewProxy_8h_source.html">vtkSMViewProxy.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vtkSMViewProxy_8h_source.html#l00294">294</a> of file <a class="el" href="vtkSMViewProxy_8h_source.html">vtkSMViewProxy.h</a>.</p>
 
 </div>
 </div>
@@ -2454,7 +2478,7 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="vtkSMViewProxy_8h_source.html#l00332">332</a> of file <a class="el" href="vtkSMViewProxy_8h_source.html">vtkSMViewProxy.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vtkSMViewProxy_8h_source.html#l00342">342</a> of file <a class="el" href="vtkSMViewProxy_8h_source.html">vtkSMViewProxy.h</a>.</p>
 
 </div>
 </div>
@@ -2478,7 +2502,7 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="vtkSMViewProxy_8h_source.html#l00333">333</a> of file <a class="el" href="vtkSMViewProxy_8h_source.html">vtkSMViewProxy.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vtkSMViewProxy_8h_source.html#l00343">343</a> of file <a class="el" href="vtkSMViewProxy_8h_source.html">vtkSMViewProxy.h</a>.</p>
 
 </div>
 </div>
@@ -2503,7 +2527,7 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="vtkSMViewProxy_8h_source.html#l00313">313</a> of file <a class="el" href="vtkSMViewProxy_8h_source.html">vtkSMViewProxy.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vtkSMViewProxy_8h_source.html#l00323">323</a> of file <a class="el" href="vtkSMViewProxy_8h_source.html">vtkSMViewProxy.h</a>.</p>
 
 </div>
 </div>
@@ -2527,7 +2551,7 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="vtkSMViewProxy_8h_source.html#l00316">316</a> of file <a class="el" href="vtkSMViewProxy_8h_source.html">vtkSMViewProxy.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vtkSMViewProxy_8h_source.html#l00326">326</a> of file <a class="el" href="vtkSMViewProxy_8h_source.html">vtkSMViewProxy.h</a>.</p>
 
 </div>
 </div>
