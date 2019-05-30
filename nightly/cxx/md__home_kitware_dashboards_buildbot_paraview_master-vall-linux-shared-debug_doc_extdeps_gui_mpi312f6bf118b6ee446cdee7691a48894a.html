@@ -173,7 +173,8 @@ Command Prompt" available with Visual Studio in the start menu.</p>
 <li><code>PARAVIEW_ENABLE_COMMANDLINE_TOOLS</code> (default <code>ON</code>; implied by <code>PARAVIEW_BUILD_QT_GUI</code>): Build command line tools such as <code>pvserver</code> and <code>pvrenderserver</code>.</li>
 <li><code>PARAVIEW_USE_EXTERNAL</code> (default <code>OFF</code>): Whether to prefer external third party libraries or the versions ParaView's source contains.</li>
 <li><code>PARAVIEW_VERSIONED_INSTALL</code> (default <code>ON</code>): Whether to add version numbers to ParaView's include and plugin directories in the install tree.</li>
-<li><code>PARAVIEW_CUSTOM_LIBRARY_SUFFIX</code> (default depends on <code>PARAVIEW_VERSIONED_INSTALL</code>): The custom suffix for libraries built by ParaView. Defaults to either an empty string or <code>pvX.Y</code> where <code>X</code> and <code>Y</code> are ParaView's major and minor version components, respectively. </li>
+<li><code>PARAVIEW_CUSTOM_LIBRARY_SUFFIX</code> (default depends on <code>PARAVIEW_VERSIONED_INSTALL</code>): The custom suffix for libraries built by ParaView. Defaults to either an empty string or <code>pvX.Y</code> where <code>X</code> and <code>Y</code> are ParaView's major and minor version components, respectively.</li>
+<li><code>PARAVIEW_PLUGINS_DEFAULT</code> (default <code>ON</code>): The state for ParaView's set of enabled-by-default plugins. Note that this variable only really has an effect on initial configures or newly added plugins. </li>
 </ul>
 </div></div><!-- contents -->
 <!-- HTML footer for doxygen 1.8.13-->
