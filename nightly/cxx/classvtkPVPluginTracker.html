@@ -331,7 +331,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>a global manager for each processes to keep track of plugins loaded on that process. </p>
-<p><a class="el" href="classvtkPVPluginTracker.html" title="a global manager for each processes to keep track of plugins loaded on that process. ">vtkPVPluginTracker</a> is a singleton that's present on each process to keep track of plugins loaded on that process. Whenever is plugin is loaded (either statically using <a class="el" href="vtkPVPlugin_8h.html#a3005344ae5073a225a658ff339fea705">PV_PLUGIN_IMPORT()</a> or dynamically, it gets registered with the on every process that it is loaded. Whenever a plugin is registered, this class fires a vtkCommand::RegisterEvent that handlers can listen to, to process the plugin. </p>
+<p><a class="el" href="classvtkPVPluginTracker.html" title="a global manager for each processes to keep track of plugins loaded on that process. ">vtkPVPluginTracker</a> is a singleton that's present on each process to keep track of plugins loaded on that process. Whenever is plugin is loaded (either statically using PV_PLUGIN_IMPORT() or dynamically, it gets registered with the on every process that it is loaded. Whenever a plugin is registered, this class fires a vtkCommand::RegisterEvent that handlers can listen to, to process the plugin. </p>
 
 <p class="definition">Definition at line <a class="el" href="vtkPVPluginTracker_8h_source.html#l00040">40</a> of file <a class="el" href="vtkPVPluginTracker_8h_source.html">vtkPVPluginTracker.h</a>.</p>
 </div><h2 class="groupheader">Member Typedef Documentation</h2>
