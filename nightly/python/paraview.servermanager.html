@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>servermanager Module &mdash; ParaView/Python 5.6.1-1680-g84fdec1b8c documentation</title>
+  <title>servermanager Module &mdash; ParaView/Python 5.6.1-1693-gce1e31eddf documentation</title>
   
 
   
@@ -24,7 +24,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:'./',
-        VERSION:'5.6.1-1680-g84fdec1b8c',
+        VERSION:'5.6.1-1693-gce1e31eddf',
         COLLAPSE_INDEX:false,
         FILE_SUFFIX:'.html',
         HAS_SOURCE:  true
@@ -48,7 +48,7 @@
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="ParaView/Python 5.6.1-1680-g84fdec1b8c documentation" href="index.html"/>
+    <link rel="top" title="ParaView/Python 5.6.1-1693-gce1e31eddf documentation" href="index.html"/>
         <link rel="up" title="paraview Package" href="paraview.html"/>
         <link rel="next" title="simple Module" href="paraview.simple.html"/>
         <link rel="prev" title="python_view Module" href="paraview.python_view.html"/> 
@@ -68,7 +68,7 @@
           <li> <a href="index.html">
             <img src="_static/paraview-logo-small.png"
             alt="ParaView/Python"></img></a> </li>
-          <li class="version"> version 5.6.1-1680-g84fdec1b8c</li>
+          <li class="version"> version 5.6.1-1693-gce1e31eddf</li>
         </ul>
         <form id ="rtd-search-form" class="wy-form" action="search.html" method="get">
   <input type="text" name="q" placeholder="Search docs" />
@@ -412,6 +412,7 @@
 <li class="toctree-l2"><a class="reference internal" href="paraview.simple.SPHVolumeInterpolator.html">paraview.simple.SPHVolumeInterpolator</a></li>
 <li class="toctree-l2"><a class="reference internal" href="paraview.simple.STLReader.html">paraview.simple.STLReader</a></li>
 <li class="toctree-l2"><a class="reference internal" href="paraview.simple.ScatterPlot.html">paraview.simple.ScatterPlot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.SegYReader.html">paraview.simple.SegYReader</a></li>
 <li class="toctree-l2"><a class="reference internal" href="paraview.simple.SelectionQuerySource.html">paraview.simple.SelectionQuerySource</a></li>
 <li class="toctree-l2"><a class="reference internal" href="paraview.simple.SelectionSourceBase.html">paraview.simple.SelectionSourceBase</a></li>
 <li class="toctree-l2"><a class="reference internal" href="paraview.simple.SerialHTGMultiBlock.html">paraview.simple.SerialHTGMultiBlock</a></li>
@@ -1309,6 +1310,39 @@ is not specified or when a group cannot be deduced.</p>
 <dt id="paraview.servermanager.PVModule">
 <em class="property">class </em><code class="descclassname">paraview.servermanager.</code><code class="descname">PVModule</code><a class="reference internal" href="_modules/paraview/servermanager.html#PVModule"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.PVModule" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+</dd></dl>
+
+<dl class="class">
+<dt id="paraview.servermanager.ParaViewLoader">
+<em class="property">class </em><code class="descclassname">paraview.servermanager.</code><code class="descname">ParaViewLoader</code><a class="reference internal" href="_modules/paraview/servermanager.html#ParaViewLoader"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.ParaViewLoader" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">importlib.abc.InspectLoader</span></code></p>
+<dl class="method">
+<dt id="paraview.servermanager.ParaViewLoader.get_source">
+<code class="descname">get_source</code><span class="sig-paren">(</span><em>fullname</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/servermanager.html#ParaViewLoader.get_source"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.ParaViewLoader.get_source" title="Permalink to this definition">¶</a></dt>
+<dd><p>Abstract method which should return the source code for the
+module.  The fullname is a str.  Returns a str.</p>
+<p>Raises ImportError if the module cannot be found.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="paraview.servermanager.ParaViewLoader.is_package">
+<code class="descname">is_package</code><span class="sig-paren">(</span><em>fullname</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/servermanager.html#ParaViewLoader.is_package"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.ParaViewLoader.is_package" title="Permalink to this definition">¶</a></dt>
+<dd><p>Optional method which when implemented should return whether the
+module is a package.  The fullname is a str.  Returns a bool.</p>
+<p>Raises ImportError if the module cannot be found.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="paraview.servermanager.ParaViewMetaPathFinder">
+<em class="property">class </em><code class="descclassname">paraview.servermanager.</code><code class="descname">ParaViewMetaPathFinder</code><a class="reference internal" href="_modules/paraview/servermanager.html#ParaViewMetaPathFinder"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.ParaViewMetaPathFinder" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">importlib.abc.MetaPathFinder</span></code></p>
+<dl class="method">
+<dt id="paraview.servermanager.ParaViewMetaPathFinder.find_spec">
+<code class="descname">find_spec</code><span class="sig-paren">(</span><em>fullname</em>, <em>path</em>, <em>target=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/servermanager.html#ParaViewMetaPathFinder.find_spec"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.servermanager.ParaViewMetaPathFinder.find_spec" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="class">

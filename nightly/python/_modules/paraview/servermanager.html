@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>paraview.servermanager &mdash; ParaView/Python 5.6.1-1680-g84fdec1b8c documentation</title>
+  <title>paraview.servermanager &mdash; ParaView/Python 5.6.1-1693-gce1e31eddf documentation</title>
   
 
   
@@ -24,7 +24,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:'../../',
-        VERSION:'5.6.1-1680-g84fdec1b8c',
+        VERSION:'5.6.1-1693-gce1e31eddf',
         COLLAPSE_INDEX:false,
         FILE_SUFFIX:'.html',
         HAS_SOURCE:  true
@@ -48,7 +48,7 @@
         <link rel="index" title="Index"
               href="../../genindex.html"/>
         <link rel="search" title="Search" href="../../search.html"/>
-    <link rel="top" title="ParaView/Python 5.6.1-1680-g84fdec1b8c documentation" href="../../index.html"/>
+    <link rel="top" title="ParaView/Python 5.6.1-1693-gce1e31eddf documentation" href="../../index.html"/>
         <link rel="up" title="Module code" href="../index.html"/> 
 
   <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
@@ -66,7 +66,7 @@
           <li> <a href="../../index.html">
             <img src="../../_static/paraview-logo-small.png"
             alt="ParaView/Python"></img></a> </li>
-          <li class="version"> version 5.6.1-1680-g84fdec1b8c</li>
+          <li class="version"> version 5.6.1-1693-gce1e31eddf</li>
         </ul>
         <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
   <input type="text" name="q" placeholder="Search docs" />
@@ -410,6 +410,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.SPHVolumeInterpolator.html">paraview.simple.SPHVolumeInterpolator</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.STLReader.html">paraview.simple.STLReader</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.ScatterPlot.html">paraview.simple.ScatterPlot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.SegYReader.html">paraview.simple.SegYReader</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.SelectionQuerySource.html">paraview.simple.SelectionQuerySource</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.SelectionSourceBase.html">paraview.simple.SelectionSourceBase</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.SerialHTGMultiBlock.html">paraview.simple.SerialHTGMultiBlock</a></li>
@@ -2905,25 +2906,64 @@
     <span class="n">view</span><span class="o">.</span><span class="n">Representations</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">proxy</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">proxy</span></div>
 
-<span class="k">class</span> <span class="nc">_ModuleLoader</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
-    <span class="k">def</span> <span class="nf">find_module</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">fullname</span><span class="p">,</span> <span class="n">path</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-        <span class="k">if</span> <span class="n">vtkPVPythonModule</span><span class="o">.</span><span class="n">HasModule</span><span class="p">(</span><span class="n">fullname</span><span class="p">):</span>
-            <span class="k">return</span> <span class="bp">self</span>
-        <span class="k">else</span><span class="p">:</span>
+<span class="k">if</span> <span class="n">sys</span><span class="o">.</span><span class="n">version_info</span> <span class="o">&lt;</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">):</span>
+    <span class="k">class</span> <span class="nc">ParaViewMetaPathFinder</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+        <span class="k">def</span> <span class="nf">find_module</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">fullname</span><span class="p">,</span> <span class="n">path</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">vtkPVPythonModule</span><span class="o">.</span><span class="n">HasModule</span><span class="p">(</span><span class="n">fullname</span><span class="p">):</span>
+                <span class="k">return</span> <span class="bp">self</span>
             <span class="k">return</span> <span class="kc">None</span>
-    <span class="k">def</span> <span class="nf">load_module</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">fullname</span><span class="p">):</span>
-        <span class="kn">import</span> <span class="nn">imp</span>
-        <span class="n">moduleInfo</span> <span class="o">=</span> <span class="n">vtkPVPythonModule</span><span class="o">.</span><span class="n">GetModule</span><span class="p">(</span><span class="n">fullname</span><span class="p">)</span>
-        <span class="k">if</span> <span class="ow">not</span> <span class="n">moduleInfo</span><span class="p">:</span>
-            <span class="k">raise</span> <span class="ne">ImportError</span>
-        <span class="n">module</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">modules</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="n">fullname</span><span class="p">,</span> <span class="n">imp</span><span class="o">.</span><span class="n">new_module</span><span class="p">(</span><span class="n">fullname</span><span class="p">))</span>
-        <span class="n">module</span><span class="o">.</span><span class="vm">__file__</span> <span class="o">=</span> <span class="s2">&quot;&lt;</span><span class="si">%s</span><span class="s2">&gt;&quot;</span> <span class="o">%</span> <span class="n">moduleInfo</span><span class="o">.</span><span class="n">GetFullName</span><span class="p">()</span>
-        <span class="n">module</span><span class="o">.</span><span class="n">__loader__</span> <span class="o">=</span> <span class="bp">self</span>
-        <span class="k">if</span> <span class="n">moduleInfo</span><span class="o">.</span><span class="n">GetIsPackage</span><span class="p">:</span>
-            <span class="n">module</span><span class="o">.</span><span class="n">__path__</span> <span class="o">=</span> <span class="n">moduleInfo</span><span class="o">.</span><span class="n">GetFullName</span><span class="p">()</span>
-        <span class="n">code</span> <span class="o">=</span> <span class="nb">compile</span><span class="p">(</span><span class="n">moduleInfo</span><span class="o">.</span><span class="n">GetSource</span><span class="p">(),</span> <span class="n">module</span><span class="o">.</span><span class="vm">__file__</span><span class="p">,</span> <span class="s1">&#39;exec&#39;</span><span class="p">)</span>
-        <span class="n">exec</span> <span class="p">(</span><span class="n">code</span> <span class="ow">in</span> <span class="n">module</span><span class="o">.</span><span class="vm">__dict__</span><span class="p">)</span>
-        <span class="k">return</span> <span class="n">module</span>
+
+        <span class="k">def</span> <span class="nf">load_module</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">fullname</span><span class="p">):</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="k">return</span> <span class="n">sys</span><span class="o">.</span><span class="n">modules</span><span class="p">[</span><span class="n">fullname</span><span class="p">]</span>
+            <span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>
+                <span class="k">pass</span>
+
+            <span class="n">info</span> <span class="o">=</span> <span class="n">vtkPVPythonModule</span><span class="o">.</span><span class="n">GetModule</span><span class="p">(</span><span class="n">fullname</span><span class="p">)</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">info</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">ImportError</span>
+
+            <span class="kn">import</span> <span class="nn">imp</span>
+            <span class="n">module</span> <span class="o">=</span> <span class="n">imp</span><span class="o">.</span><span class="n">new_module</span><span class="p">(</span><span class="n">fullname</span><span class="p">)</span>
+            <span class="n">module</span><span class="o">.</span><span class="vm">__file__</span> <span class="o">=</span> <span class="s2">&quot;&lt;</span><span class="si">%s</span><span class="s2">&gt;&quot;</span> <span class="o">%</span> <span class="n">fullname</span>
+            <span class="n">module</span><span class="o">.</span><span class="n">__loader__</span> <span class="o">=</span> <span class="bp">self</span>
+            <span class="k">if</span> <span class="n">info</span><span class="o">.</span><span class="n">GetIsPackage</span><span class="p">():</span>
+                <span class="n">module</span><span class="o">.</span><span class="n">__path__</span> <span class="o">=</span> <span class="p">[]</span>
+                <span class="n">module</span><span class="o">.</span><span class="n">__package__</span> <span class="o">=</span> <span class="n">fullname</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">module</span><span class="o">.</span><span class="n">__package__</span> <span class="o">=</span> <span class="n">fullname</span><span class="o">.</span><span class="n">rpartition</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+
+            <span class="n">sys</span><span class="o">.</span><span class="n">modules</span><span class="p">[</span><span class="n">fullname</span><span class="p">]</span> <span class="o">=</span> <span class="n">module</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="n">exec</span><span class="p">(</span><span class="n">info</span><span class="o">.</span><span class="n">GetSource</span><span class="p">(),</span> <span class="n">module</span><span class="o">.</span><span class="vm">__dict__</span><span class="p">)</span>
+            <span class="k">except</span><span class="p">:</span>
+                <span class="k">del</span> <span class="n">sys</span><span class="o">.</span><span class="n">modules</span><span class="p">[</span><span class="n">fullname</span><span class="p">]</span>
+                <span class="k">raise</span>
+            <span class="k">return</span> <span class="n">module</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="kn">import</span> <span class="nn">importlib</span>
+<div class="viewcode-block" id="ParaViewMetaPathFinder"><a class="viewcode-back" href="../../paraview.servermanager.html#paraview.servermanager.ParaViewMetaPathFinder">[docs]</a>    <span class="k">class</span> <span class="nc">ParaViewMetaPathFinder</span><span class="p">(</span><span class="n">importlib</span><span class="o">.</span><span class="n">abc</span><span class="o">.</span><span class="n">MetaPathFinder</span><span class="p">):</span>
+        <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_loader</span> <span class="o">=</span> <span class="n">ParaViewLoader</span><span class="p">()</span>
+
+<div class="viewcode-block" id="ParaViewMetaPathFinder.find_spec"><a class="viewcode-back" href="../../paraview.servermanager.html#paraview.servermanager.ParaViewMetaPathFinder.find_spec">[docs]</a>        <span class="k">def</span> <span class="nf">find_spec</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">fullname</span><span class="p">,</span> <span class="n">path</span><span class="p">,</span> <span class="n">target</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+            <span class="n">info</span> <span class="o">=</span> <span class="n">vtkPVPythonModule</span><span class="o">.</span><span class="n">GetModule</span><span class="p">(</span><span class="n">fullname</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">info</span><span class="p">:</span>
+                <span class="n">package</span> <span class="o">=</span> <span class="kc">None</span>
+                <span class="k">if</span> <span class="n">info</span><span class="o">.</span><span class="n">GetIsPackage</span><span class="p">():</span>
+                    <span class="n">package</span> <span class="o">=</span> <span class="n">fullname</span>
+                <span class="k">return</span> <span class="n">importlib</span><span class="o">.</span><span class="n">machinery</span><span class="o">.</span><span class="n">ModuleSpec</span><span class="p">(</span><span class="n">fullname</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_loader</span><span class="p">,</span> <span class="n">is_package</span><span class="o">=</span><span class="n">package</span><span class="p">)</span>
+            <span class="k">return</span> <span class="kc">None</span></div></div>
+
+<div class="viewcode-block" id="ParaViewLoader"><a class="viewcode-back" href="../../paraview.servermanager.html#paraview.servermanager.ParaViewLoader">[docs]</a>    <span class="k">class</span> <span class="nc">ParaViewLoader</span><span class="p">(</span><span class="n">importlib</span><span class="o">.</span><span class="n">abc</span><span class="o">.</span><span class="n">InspectLoader</span><span class="p">):</span>
+        <span class="k">def</span> <span class="nf">_info</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">fullname</span><span class="p">):</span>
+            <span class="k">return</span> <span class="n">vtkPVPythonModule</span><span class="o">.</span><span class="n">GetModule</span><span class="p">(</span><span class="n">fullname</span><span class="p">)</span>
+
+<div class="viewcode-block" id="ParaViewLoader.is_package"><a class="viewcode-back" href="../../paraview.servermanager.html#paraview.servermanager.ParaViewLoader.is_package">[docs]</a>        <span class="k">def</span> <span class="nf">is_package</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">fullname</span><span class="p">):</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_info</span><span class="p">(</span><span class="n">fullname</span><span class="p">)</span><span class="o">.</span><span class="n">GetIsPackage</span><span class="p">()</span></div>
+
+<div class="viewcode-block" id="ParaViewLoader.get_source"><a class="viewcode-back" href="../../paraview.servermanager.html#paraview.servermanager.ParaViewLoader.get_source">[docs]</a>        <span class="k">def</span> <span class="nf">get_source</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">fullname</span><span class="p">):</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_info</span><span class="p">(</span><span class="n">fullname</span><span class="p">)</span><span class="o">.</span><span class="n">GetSource</span><span class="p">()</span></div></div>
 
 <div class="viewcode-block" id="LoadXML"><a class="viewcode-back" href="../../paraview.servermanager.html#paraview.servermanager.LoadXML">[docs]</a><span class="k">def</span> <span class="nf">LoadXML</span><span class="p">(</span><span class="n">xmlstring</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;DEPRECATED. Given a server manager XML as a string, parse and process it.&quot;&quot;&quot;</span>
@@ -3854,8 +3894,8 @@
 <span class="c1"># _createModules()</span>
 
 <span class="c1"># Set up our custom importer (if possible)</span>
-<span class="n">loader</span> <span class="o">=</span> <span class="n">_ModuleLoader</span><span class="p">()</span>
-<span class="n">sys</span><span class="o">.</span><span class="n">meta_path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">loader</span><span class="p">)</span>
+<span class="n">finder</span> <span class="o">=</span> <span class="n">ParaViewMetaPathFinder</span><span class="p">()</span>
+<span class="n">sys</span><span class="o">.</span><span class="n">meta_path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">finder</span><span class="p">)</span>
 
 <span class="k">def</span> <span class="nf">__exposeActiveModules__</span><span class="p">():</span>
     <span class="sd">&quot;&quot;&quot;Update servermanager submodules to point to the current</span>
