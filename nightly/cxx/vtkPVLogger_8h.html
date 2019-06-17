@@ -69,6 +69,9 @@ Macros</h2></td></tr>
 <tr class="memitem:a8abde6ef49c207fe28ef7b7516c3c348"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="vtkPVLogger_8h.html#a8abde6ef49c207fe28ef7b7516c3c348">PARAVIEW_LOG_PIPELINE_VERBOSITY</a>()&#160;&#160;&#160;<a class="el" href="classvtkPVLogger.html#a42eef892f205b8eba6e7735ebdc274ae">vtkPVLogger::GetPipelineVerbosity</a>()</td></tr>
 <tr class="memdesc:a8abde6ef49c207fe28ef7b7516c3c348"><td class="mdescLeft">&#160;</td><td class="mdescRight">Macro to use for verbosity when logging pipeline messages.  <a href="#a8abde6ef49c207fe28ef7b7516c3c348">More...</a><br /></td></tr>
 <tr class="separator:a8abde6ef49c207fe28ef7b7516c3c348"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa885e31f458db28a65c7d21a062681a5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="vtkPVLogger_8h.html#aa885e31f458db28a65c7d21a062681a5">PARAVIEW_LOG_EXECUTION_VERBOSITY</a>()&#160;&#160;&#160;<a class="el" href="classvtkPVLogger.html#a609fbe02127af7f2efe388b54af08114">vtkPVLogger::GetExecutionVerbosity</a>()</td></tr>
+<tr class="memdesc:aa885e31f458db28a65c7d21a062681a5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Macro to use for verbosity when logging execution messages.  <a href="#aa885e31f458db28a65c7d21a062681a5">More...</a><br /></td></tr>
+<tr class="separator:aa885e31f458db28a65c7d21a062681a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a967aa50706cdecf65f14cc9e58df9c0e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="vtkPVLogger_8h.html#a967aa50706cdecf65f14cc9e58df9c0e">PARAVIEW_LOG_PLUGIN_VERBOSITY</a>()&#160;&#160;&#160;<a class="el" href="classvtkPVLogger.html#ad41f2e418e2f7ce2c15eece2127e6d44">vtkPVLogger::GetPluginVerbosity</a>()</td></tr>
 <tr class="memdesc:a967aa50706cdecf65f14cc9e58df9c0e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Macro to use for verbosity when logging plugin messages.  <a href="#a967aa50706cdecf65f14cc9e58df9c0e">More...</a><br /></td></tr>
 <tr class="separator:a967aa50706cdecf65f14cc9e58df9c0e"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -99,9 +102,31 @@ Macros</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Macro to use for verbosity when logging pipeline messages. </p>
-<p>Same as calling <a class="el" href="classvtkPVLogger.html#a42eef892f205b8eba6e7735ebdc274ae" title="Use this verbosity level when logging messages that provide information about pipeline execution...">vtkPVLogger::GetPipelineVerbosity()</a> e.g.</p>
+<p>Same as calling <a class="el" href="classvtkPVLogger.html#a42eef892f205b8eba6e7735ebdc274ae" title="Use this verbosity level when logging messages that provide information about pipeline update request...">vtkPVLogger::GetPipelineVerbosity()</a> e.g.</p>
 <div class="fragment"><div class="line">vtkVLogF(<a class="code" href="vtkPVLogger_8h.html#a8abde6ef49c207fe28ef7b7516c3c348">PARAVIEW_LOG_PIPELINE_VERBOSITY</a>(), <span class="stringliteral">&quot;pipeline updated&quot;</span>);</div></div><!-- fragment --> 
-<p class="definition">Definition at line <a class="el" href="vtkPVLogger_8h_source.html#l00151">151</a> of file <a class="el" href="vtkPVLogger_8h_source.html">vtkPVLogger.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vtkPVLogger_8h_source.html#l00164">164</a> of file <a class="el" href="vtkPVLogger_8h_source.html">vtkPVLogger.h</a>.</p>
+
+</div>
+</div>
+<a id="aa885e31f458db28a65c7d21a062681a5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa885e31f458db28a65c7d21a062681a5">&#9670;&nbsp;</a></span>PARAVIEW_LOG_EXECUTION_VERBOSITY</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PARAVIEW_LOG_EXECUTION_VERBOSITY</td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td>&#160;&#160;&#160;<a class="el" href="classvtkPVLogger.html#a609fbe02127af7f2efe388b54af08114">vtkPVLogger::GetExecutionVerbosity</a>()</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Macro to use for verbosity when logging execution messages. </p>
+<p>Same as calling <a class="el" href="classvtkPVLogger.html#a609fbe02127af7f2efe388b54af08114" title="Use this verbosity level when logging messages that provide information about algorithm execution...">vtkPVLogger::GetExecutionVerbosity()</a> e.g.</p>
+<div class="fragment"><div class="line">vtkVLogF(<a class="code" href="vtkPVLogger_8h.html#aa885e31f458db28a65c7d21a062681a5">PARAVIEW_LOG_EXECUTION_VERBOSITY</a>(), <span class="stringliteral">&quot;filter executed&quot;</span>);</div></div><!-- fragment --> 
+<p class="definition">Definition at line <a class="el" href="vtkPVLogger_8h_source.html#l00174">174</a> of file <a class="el" href="vtkPVLogger_8h_source.html">vtkPVLogger.h</a>.</p>
 
 </div>
 </div>
@@ -123,7 +148,7 @@ Macros</h2></td></tr>
 <p>Macro to use for verbosity when logging plugin messages. </p>
 <p>Same as calling <a class="el" href="classvtkPVLogger.html#ad41f2e418e2f7ce2c15eece2127e6d44" title="Use this verbosity level to for log message relating to ParaView&#39;s plugin system. ...">vtkPVLogger::GetPluginVerbosity()</a> e.g.</p>
 <div class="fragment"><div class="line">vtkVLogF(<a class="code" href="vtkPVLogger_8h.html#a967aa50706cdecf65f14cc9e58df9c0e">PARAVIEW_LOG_PLUGIN_VERBOSITY</a>(), <span class="stringliteral">&quot;plugin loaded `%s`&quot;</span>, name);</div></div><!-- fragment --> 
-<p class="definition">Definition at line <a class="el" href="vtkPVLogger_8h_source.html#l00161">161</a> of file <a class="el" href="vtkPVLogger_8h_source.html">vtkPVLogger.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vtkPVLogger_8h_source.html#l00184">184</a> of file <a class="el" href="vtkPVLogger_8h_source.html">vtkPVLogger.h</a>.</p>
 
 </div>
 </div>
@@ -145,7 +170,7 @@ Macros</h2></td></tr>
 <p>Macro to use for verbosity when logging data-movement messages. </p>
 <p>Same as calling <a class="el" href="classvtkPVLogger.html#a84fd181554b012f6f0e4bf5ec27b5ac6" title="Verbosity level for log messages related to data-movement e.g. ">vtkPVLogger::GetDataMovementVerbosity()</a> e.g.</p>
 <div class="fragment"><div class="line">vtkVLogF(<a class="code" href="vtkPVLogger_8h.html#aa095e0a8666817a4e7e07db08472c925">PARAVIEW_LOG_DATA_MOVEMENT_VERBOSITY</a>(), <span class="stringliteral">&quot;moving data&quot;</span>);</div></div><!-- fragment --> 
-<p class="definition">Definition at line <a class="el" href="vtkPVLogger_8h_source.html#l00171">171</a> of file <a class="el" href="vtkPVLogger_8h_source.html">vtkPVLogger.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vtkPVLogger_8h_source.html#l00194">194</a> of file <a class="el" href="vtkPVLogger_8h_source.html">vtkPVLogger.h</a>.</p>
 
 </div>
 </div>
@@ -167,7 +192,7 @@ Macros</h2></td></tr>
 <p>Macro to use for verbosity when logging rendering messages. </p>
 <p>Same as calling <a class="el" href="classvtkPVLogger.html#a441ef7d4517278d33b1c9dc23001d99e" title="Verbosity level for log messages related to rendering. ">vtkPVLogger::GetRenderingVerbosity()</a> e.g.</p>
 <div class="fragment"><div class="line">vtkVLogF(<a class="code" href="vtkPVLogger_8h.html#abb88eb99c90be2ce8118f145ee1f40de">PARAVIEW_LOG_RENDERING_VERBOSITY</a>(), <span class="stringliteral">&quot;still render&quot;</span>);</div></div><!-- fragment --> 
-<p class="definition">Definition at line <a class="el" href="vtkPVLogger_8h_source.html#l00181">181</a> of file <a class="el" href="vtkPVLogger_8h_source.html">vtkPVLogger.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vtkPVLogger_8h_source.html#l00204">204</a> of file <a class="el" href="vtkPVLogger_8h_source.html">vtkPVLogger.h</a>.</p>
 
 </div>
 </div>
@@ -189,7 +214,7 @@ Macros</h2></td></tr>
 <p>Macro to use for verbosity when logging application messages. </p>
 <p>Same as calling <a class="el" href="classvtkPVLogger.html#a726fe22f9e9b7aa628b939c6999a8347" title="Verbosity level for log messages related to the application, gui, and similar components. ">vtkPVLogger::GetApplicationVerbosity()</a> e.g.</p>
 <div class="fragment"><div class="line">vtkVLogF(<a class="code" href="vtkPVLogger_8h.html#abc997b5097a1cfc53264c4c3e630e626">PARAVIEW_LOG_APPLICATION_VERBOSITY</a>(), <span class="stringliteral">&quot;reading config file %s&quot;</span>, filename);</div></div><!-- fragment --> 
-<p class="definition">Definition at line <a class="el" href="vtkPVLogger_8h_source.html#l00191">191</a> of file <a class="el" href="vtkPVLogger_8h_source.html">vtkPVLogger.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vtkPVLogger_8h_source.html#l00214">214</a> of file <a class="el" href="vtkPVLogger_8h_source.html">vtkPVLogger.h</a>.</p>
 
 </div>
 </div>

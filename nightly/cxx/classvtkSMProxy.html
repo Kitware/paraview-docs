@@ -669,9 +669,9 @@ Protected Member Functions</h2></td></tr>
 <tr class="memitem:ac52303ddc7c415bea63781d5b926e130"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkSMProxy.html#ac52303ddc7c415bea63781d5b926e130">RebuildStateForProperties</a> ()</td></tr>
 <tr class="memdesc:ac52303ddc7c415bea63781d5b926e130"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classvtkSMProxy.html" title="proxy for a VTK object(s) on a server ">vtkSMProxy</a> tracks state of properties on this proxy in an internal State object.  <a href="#ac52303ddc7c415bea63781d5b926e130">More...</a><br /></td></tr>
 <tr class="separator:ac52303ddc7c415bea63781d5b926e130"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a332c96f836f7ba6db8cd78e4bb593157"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkSMProxy.html#a332c96f836f7ba6db8cd78e4bb593157">SetLogNameInternal</a> (const char *<a class="elRef" doxygen="/home/kitware/dashboards/buildbot/paraview_master-vall-linux-shared-debug_doc_extdeps_gui_mpi_python3/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/namespacevtkX3D.html#ac6551f7bf833e8254b2b3ecdaea0d210ac713735f1d46c2694d66e85217207be2">name</a>, bool propagate_to_subproxies, bool propagate_to_proxylistdomains)</td></tr>
-<tr class="memdesc:a332c96f836f7ba6db8cd78e4bb593157"><td class="mdescLeft">&#160;</td><td class="mdescRight">Internal method used by <code>SetLogName</code>  <a href="#a332c96f836f7ba6db8cd78e4bb593157">More...</a><br /></td></tr>
-<tr class="separator:a332c96f836f7ba6db8cd78e4bb593157"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac679f932d4fc847b8490882c8c3970ae"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkSMProxy.html#ac679f932d4fc847b8490882c8c3970ae">SetLogNameInternal</a> (const char *<a class="elRef" doxygen="/home/kitware/dashboards/buildbot/paraview_master-vall-linux-shared-debug_doc_extdeps_gui_mpi_python3/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/namespacevtkX3D.html#ac6551f7bf833e8254b2b3ecdaea0d210ac713735f1d46c2694d66e85217207be2">name</a>, bool propagate_to_subproxies, bool propagate_to_proxylistdomains)</td></tr>
+<tr class="memdesc:ac679f932d4fc847b8490882c8c3970ae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Internal method used by <code>SetLogName</code>  <a href="#ac679f932d4fc847b8490882c8c3970ae">More...</a><br /></td></tr>
+<tr class="separator:ac679f932d4fc847b8490882c8c3970ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a779de6d211add8e205412ab9e3d23ab7"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkSMProxy.html#a779de6d211add8e205412ab9e3d23ab7">ArePropertiesModified</a> ()</td></tr>
 <tr class="memdesc:a779de6d211add8e205412ab9e3d23ab7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates if any properties are modified.  <a href="#a779de6d211add8e205412ab9e3d23ab7">More...</a><br /></td></tr>
 <tr class="separator:a779de6d211add8e205412ab9e3d23ab7"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -4382,8 +4382,8 @@ Friends</h2></td></tr>
 
 </div>
 </div>
-<a id="a332c96f836f7ba6db8cd78e4bb593157"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a332c96f836f7ba6db8cd78e4bb593157">&#9670;&nbsp;</a></span>SetLogNameInternal()</h2>
+<a id="ac679f932d4fc847b8490882c8c3970ae"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac679f932d4fc847b8490882c8c3970ae">&#9670;&nbsp;</a></span>SetLogNameInternal()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -4392,7 +4392,7 @@ Friends</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void vtkSMProxy::SetLogNameInternal </td>
+          <td class="memname">virtual void vtkSMProxy::SetLogNameInternal </td>
           <td>(</td>
           <td class="paramtype">const char *&#160;</td>
           <td class="paramname"><em>name</em>, </td>
@@ -4417,12 +4417,14 @@ Friends</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
 <p>Internal method used by <code>SetLogName</code> </p>
+
+<p>Reimplemented in <a class="el" href="classvtkSMSourceProxy.html#a2b7e28226802ffd893916e14d2db4f73">vtkSMSourceProxy</a>.</p>
 
 </div>
 </div>
