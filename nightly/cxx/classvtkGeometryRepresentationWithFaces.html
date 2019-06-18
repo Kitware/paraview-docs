@@ -1105,6 +1105,9 @@ Protected Member Functions</h2></td></tr>
 <tr class="memitem:abb2be5d01aa205fbb40e5e7ebec4267d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkGeometryRepresentationWithFaces.html#abb2be5d01aa205fbb40e5e7ebec4267d">UpdateColoringParameters</a> () override</td></tr>
 <tr class="memdesc:abb2be5d01aa205fbb40e5e7ebec4267d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Passes on parameters to <a class="elRef" doxygen="/home/kitware/dashboards/buildbot/paraview_master-vall-linux-shared-debug_doc_extdeps_gui_mpi_python3/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/classvtkProperty.html">vtkProperty</a> and <a class="elRef" doxygen="/home/kitware/dashboards/buildbot/paraview_master-vall-linux-shared-debug_doc_extdeps_gui_mpi_python3/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/classvtkMapper.html">vtkMapper</a>.  <a href="#abb2be5d01aa205fbb40e5e7ebec4267d">More...</a><br /></td></tr>
 <tr class="separator:abb2be5d01aa205fbb40e5e7ebec4267d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a90266506c59d4874d82daab3c8c5ed19"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkGeometryRepresentationWithFaces.html#a90266506c59d4874d82daab3c8c5ed19">NeedsOrderedCompositing</a> () override</td></tr>
+<tr class="memdesc:a90266506c59d4874d82daab3c8c5ed19"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns true if this representation has translucent geometry.  <a href="#a90266506c59d4874d82daab3c8c5ed19">More...</a><br /></td></tr>
+<tr class="separator:a90266506c59d4874d82daab3c8c5ed19"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_methods_classvtkGeometryRepresentation"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_classvtkGeometryRepresentation')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="classvtkGeometryRepresentation.html">vtkGeometryRepresentation</a></td></tr>
 <tr class="memitem:a7e031fb9674739e6391c7a82e5969ca0 inherit pro_methods_classvtkGeometryRepresentation"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkGeometryRepresentation.html#a7e031fb9674739e6391c7a82e5969ca0">vtkGeometryRepresentation</a> ()</td></tr>
 <tr class="separator:a7e031fb9674739e6391c7a82e5969ca0 inherit pro_methods_classvtkGeometryRepresentation"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -2053,6 +2056,36 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
+<a id="a90266506c59d4874d82daab3c8c5ed19"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a90266506c59d4874d82daab3c8c5ed19">&#9670;&nbsp;</a></span>NeedsOrderedCompositing()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool vtkGeometryRepresentationWithFaces::NeedsOrderedCompositing </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">protected</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns true if this representation has translucent geometry. </p>
+<p>Unlike <code><a class="elRef" doxygen="/home/kitware/dashboards/buildbot/paraview_master-vall-linux-shared-debug_doc_extdeps_gui_mpi_python3/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/classvtkActor.html#aa555544acf263d860cb048550595ce31">vtkActor::HasTranslucentPolygonalGeometry</a></code> which cannot be called in <code>Update</code>, this method can be called in <code>Update</code> i.e. before the mapper has all the data to decide if it is doing translucent rendering. </p>
+
+<p>Reimplemented from <a class="el" href="classvtkGeometryRepresentation.html#ab16b3c3d03c70a39008c415901cc843f">vtkGeometryRepresentation</a>.</p>
+
+</div>
+</div>
 <h2 class="groupheader">Member Data Documentation</h2>
 <a id="aedab99a1925ba61c65e5f6a6ebb73eaa"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aedab99a1925ba61c65e5f6a6ebb73eaa">&#9670;&nbsp;</a></span>BackfaceMapper</h2>
@@ -2074,7 +2107,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="vtkGeometryRepresentationWithFaces_8h_source.html#l00104">104</a> of file <a class="el" href="vtkGeometryRepresentationWithFaces_8h_source.html">vtkGeometryRepresentationWithFaces.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vtkGeometryRepresentationWithFaces_8h_source.html#l00106">106</a> of file <a class="el" href="vtkGeometryRepresentationWithFaces_8h_source.html">vtkGeometryRepresentationWithFaces.h</a>.</p>
 
 </div>
 </div>
@@ -2098,7 +2131,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="vtkGeometryRepresentationWithFaces_8h_source.html#l00105">105</a> of file <a class="el" href="vtkGeometryRepresentationWithFaces_8h_source.html">vtkGeometryRepresentationWithFaces.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vtkGeometryRepresentationWithFaces_8h_source.html#l00107">107</a> of file <a class="el" href="vtkGeometryRepresentationWithFaces_8h_source.html">vtkGeometryRepresentationWithFaces.h</a>.</p>
 
 </div>
 </div>
@@ -2122,7 +2155,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="vtkGeometryRepresentationWithFaces_8h_source.html#l00106">106</a> of file <a class="el" href="vtkGeometryRepresentationWithFaces_8h_source.html">vtkGeometryRepresentationWithFaces.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vtkGeometryRepresentationWithFaces_8h_source.html#l00108">108</a> of file <a class="el" href="vtkGeometryRepresentationWithFaces_8h_source.html">vtkGeometryRepresentationWithFaces.h</a>.</p>
 
 </div>
 </div>
@@ -2146,7 +2179,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="vtkGeometryRepresentationWithFaces_8h_source.html#l00107">107</a> of file <a class="el" href="vtkGeometryRepresentationWithFaces_8h_source.html">vtkGeometryRepresentationWithFaces.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vtkGeometryRepresentationWithFaces_8h_source.html#l00109">109</a> of file <a class="el" href="vtkGeometryRepresentationWithFaces_8h_source.html">vtkGeometryRepresentationWithFaces.h</a>.</p>
 
 </div>
 </div>
@@ -2170,7 +2203,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="vtkGeometryRepresentationWithFaces_8h_source.html#l00108">108</a> of file <a class="el" href="vtkGeometryRepresentationWithFaces_8h_source.html">vtkGeometryRepresentationWithFaces.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vtkGeometryRepresentationWithFaces_8h_source.html#l00110">110</a> of file <a class="el" href="vtkGeometryRepresentationWithFaces_8h_source.html">vtkGeometryRepresentationWithFaces.h</a>.</p>
 
 </div>
 </div>
