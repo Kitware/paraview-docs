@@ -1033,10 +1033,16 @@ Additional Inherited Members</h2></td></tr>
 <div class="textblock"><p>generate isosurfaces/isolines from scalar values </p>
 <p><a class="el" href="classvtkPVContourFilter.html" title="generate isosurfaces/isolines from scalar values ">vtkPVContourFilter</a> is an extension to <a class="elRef" doxygen="/home/kitware/dashboards/buildbot/paraview_master-vall-linux-shared-debug_doc_extdeps_gui_mpi_python3/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/classvtkContourFilter.html">vtkContourFilter</a>. It adds the ability to generate isosurfaces / isolines for AMR dataset.</p>
 <p><a class="el" href="classvtkPVContourFilter.html" title="generate isosurfaces/isolines from scalar values ">vtkPVContourFilter</a> also handles cleaning up interpolation error in the output scalars array when <code>ComputeScalars</code> is set to true. For each requested contour value, the output scalar array may have an error introduced due to interpolation along an edge. This filter fixes that error so that for all points generated from a particular contour value, the scalar array will have exactly the same value.</p>
+<p>For certain inputs, this filter delegates operation to vtkContour3DLinearGrid. The input must meet the following conditions for this filter to be used:</p>
+<ul>
+<li>all cells in the input are linear (i.e., not higher order)</li>
+<li>the contour array is one of the types supported by the vtkContour3DLinearGrid</li>
+<li>the ComputeScalars option is off</li>
+</ul>
 <dl class="section warning"><dt>Warning</dt><dd>Certain flags in <a class="el" href="classvtkAMRDualContour.html" title="Extract particles and analyse them. ">vtkAMRDualContour</a> are assumed to be ON.</dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a class="elRef" doxygen="/home/kitware/dashboards/buildbot/paraview_master-vall-linux-shared-debug_doc_extdeps_gui_mpi_python3/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/classvtkContourFilter.html">vtkContourFilter</a> <a class="el" href="classvtkAMRDualContour.html" title="Extract particles and analyse them. ">vtkAMRDualContour</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="vtkPVContourFilter_8h_source.html#l00042">42</a> of file <a class="el" href="vtkPVContourFilter_8h_source.html">vtkPVContourFilter.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vtkPVContourFilter_8h_source.html#l00049">49</a> of file <a class="el" href="vtkPVContourFilter_8h_source.html">vtkPVContourFilter.h</a>.</p>
 </div><h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="a853a246a2ab612666f48a2325247989b"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a853a246a2ab612666f48a2325247989b">&#9670;&nbsp;</a></span>Superclass</h2>
@@ -1050,7 +1056,7 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="vtkPVContourFilter_8h_source.html#l00045">45</a> of file <a class="el" href="vtkPVContourFilter_8h_source.html">vtkPVContourFilter.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vtkPVContourFilter_8h_source.html#l00052">52</a> of file <a class="el" href="vtkPVContourFilter_8h_source.html">vtkPVContourFilter.h</a>.</p>
 
 </div>
 </div>
