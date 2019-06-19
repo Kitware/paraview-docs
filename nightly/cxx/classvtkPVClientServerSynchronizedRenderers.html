@@ -374,8 +374,6 @@ Protected Member Functions</h2></td></tr>
 <tr class="separator:aca311f5869145db94c19d5ed81e7337d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9d90d2e9d61571178b4a7d7a85127299"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkPVClientServerSynchronizedRenderers.html#a9d90d2e9d61571178b4a7d7a85127299">MasterEndRender</a> () override</td></tr>
 <tr class="separator:a9d90d2e9d61571178b4a7d7a85127299"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a84cf833f65f3dca3a076a181c6f3acd8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkPVClientServerSynchronizedRenderers.html#a84cf833f65f3dca3a076a181c6f3acd8">SlaveStartRender</a> () override</td></tr>
-<tr class="separator:a84cf833f65f3dca3a076a181c6f3acd8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af785f33814f4f4282e39132ec5bb323c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkPVClientServerSynchronizedRenderers.html#af785f33814f4f4282e39132ec5bb323c">SlaveEndRender</a> () override</td></tr>
 <tr class="separator:af785f33814f4f4282e39132ec5bb323c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr><td colspan="2"><div class="groupHeader"></div></td></tr>
@@ -400,6 +398,8 @@ Protected Member Functions</h2></td></tr>
 <tr class="separator:a8217f7f655ebc05341a856ec5952aaa2 inherit pro_methods_classvtkSynchronizedRenderers"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af2c18539adf5fda67db52b5cf31ffa02 inherit pro_methods_classvtkSynchronizedRenderers"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="elRef" doxygen="/home/kitware/dashboards/buildbot/paraview_master-vall-linux-shared-debug_doc_extdeps_gui_mpi_python3/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/classvtkSynchronizedRenderers.html#af2c18539adf5fda67db52b5cf31ffa02">MasterStartRender</a> ()</td></tr>
 <tr class="separator:af2c18539adf5fda67db52b5cf31ffa02 inherit pro_methods_classvtkSynchronizedRenderers"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2803ffc53d3dd301850af04cb598b26b inherit pro_methods_classvtkSynchronizedRenderers"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="elRef" doxygen="/home/kitware/dashboards/buildbot/paraview_master-vall-linux-shared-debug_doc_extdeps_gui_mpi_python3/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/classvtkSynchronizedRenderers.html#a2803ffc53d3dd301850af04cb598b26b">SlaveStartRender</a> ()</td></tr>
+<tr class="separator:a2803ffc53d3dd301850af04cb598b26b inherit pro_methods_classvtkSynchronizedRenderers"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a64436b5732d990cd1811159c92d6359f inherit pro_methods_classvtkSynchronizedRenderers"><td class="memItemLeft" align="right" valign="top">virtual vtkRawImage &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="elRef" doxygen="/home/kitware/dashboards/buildbot/paraview_master-vall-linux-shared-debug_doc_extdeps_gui_mpi_python3/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/classvtkSynchronizedRenderers.html#a64436b5732d990cd1811159c92d6359f">CaptureRenderedImage</a> ()</td></tr>
 <tr class="separator:a64436b5732d990cd1811159c92d6359f inherit pro_methods_classvtkSynchronizedRenderers"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af86608371e58f26e6a29820ce1b8c7d4 inherit pro_methods_classvtkSynchronizedRenderers"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="elRef" doxygen="/home/kitware/dashboards/buildbot/paraview_master-vall-linux-shared-debug_doc_extdeps_gui_mpi_python3/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/classvtkSynchronizedRenderers.html#af86608371e58f26e6a29820ce1b8c7d4">PushImageToScreen</a> ()</td></tr>
@@ -1003,33 +1003,6 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="a84cf833f65f3dca3a076a181c6f3acd8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a84cf833f65f3dca3a076a181c6f3acd8">&#9670;&nbsp;</a></span>SlaveStartRender()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void vtkPVClientServerSynchronizedRenderers::SlaveStartRender </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">protected</span><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Reimplemented from <a class="elRef" doxygen="/home/kitware/dashboards/buildbot/paraview_master-vall-linux-shared-debug_doc_extdeps_gui_mpi_python3/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/classvtkSynchronizedRenderers.html#a2803ffc53d3dd301850af04cb598b26b">vtkSynchronizedRenderers</a>.</p>
-
-</div>
-</div>
 <a id="af785f33814f4f4282e39132ec5bb323c"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#af785f33814f4f4282e39132ec5bb323c">&#9670;&nbsp;</a></span>SlaveEndRender()</h2>
 
@@ -1078,7 +1051,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="vtkPVClientServerSynchronizedRenderers_8h_source.html#l00081">81</a> of file <a class="el" href="vtkPVClientServerSynchronizedRenderers_8h_source.html">vtkPVClientServerSynchronizedRenderers.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vtkPVClientServerSynchronizedRenderers_8h_source.html#l00080">80</a> of file <a class="el" href="vtkPVClientServerSynchronizedRenderers_8h_source.html">vtkPVClientServerSynchronizedRenderers.h</a>.</p>
 
 </div>
 </div>
@@ -1102,7 +1075,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="vtkPVClientServerSynchronizedRenderers_8h_source.html#l00082">82</a> of file <a class="el" href="vtkPVClientServerSynchronizedRenderers_8h_source.html">vtkPVClientServerSynchronizedRenderers.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vtkPVClientServerSynchronizedRenderers_8h_source.html#l00081">81</a> of file <a class="el" href="vtkPVClientServerSynchronizedRenderers_8h_source.html">vtkPVClientServerSynchronizedRenderers.h</a>.</p>
 
 </div>
 </div>
@@ -1126,7 +1099,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="vtkPVClientServerSynchronizedRenderers_8h_source.html#l00083">83</a> of file <a class="el" href="vtkPVClientServerSynchronizedRenderers_8h_source.html">vtkPVClientServerSynchronizedRenderers.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vtkPVClientServerSynchronizedRenderers_8h_source.html#l00082">82</a> of file <a class="el" href="vtkPVClientServerSynchronizedRenderers_8h_source.html">vtkPVClientServerSynchronizedRenderers.h</a>.</p>
 
 </div>
 </div>
