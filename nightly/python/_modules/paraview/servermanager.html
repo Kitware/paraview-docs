@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>paraview.servermanager &mdash; ParaView/Python 5.6.1-1738-gfb10bfb6e8 documentation</title>
+  <title>paraview.servermanager &mdash; ParaView/Python 5.6.1-1745-g25ebb3ee4c documentation</title>
   
 
   
@@ -24,7 +24,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:'../../',
-        VERSION:'5.6.1-1738-gfb10bfb6e8',
+        VERSION:'5.6.1-1745-g25ebb3ee4c',
         COLLAPSE_INDEX:false,
         FILE_SUFFIX:'.html',
         HAS_SOURCE:  true
@@ -48,7 +48,7 @@
         <link rel="index" title="Index"
               href="../../genindex.html"/>
         <link rel="search" title="Search" href="../../search.html"/>
-    <link rel="top" title="ParaView/Python 5.6.1-1738-gfb10bfb6e8 documentation" href="../../index.html"/>
+    <link rel="top" title="ParaView/Python 5.6.1-1745-g25ebb3ee4c documentation" href="../../index.html"/>
         <link rel="up" title="Module code" href="../index.html"/> 
 
   <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
@@ -66,7 +66,7 @@
           <li> <a href="../../index.html">
             <img src="../../_static/paraview-logo-small.png"
             alt="ParaView/Python"></img></a> </li>
-          <li class="version"> version 5.6.1-1738-gfb10bfb6e8</li>
+          <li class="version"> version 5.6.1-1745-g25ebb3ee4c</li>
         </ul>
         <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
   <input type="text" name="q" placeholder="Search docs" />
@@ -1458,6 +1458,8 @@
 <div class="viewcode-block" id="VectorProperty.SetData"><a class="viewcode-back" href="../../paraview.servermanager.html#paraview.servermanager.VectorProperty.SetData">[docs]</a>    <span class="k">def</span> <span class="nf">SetData</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">values</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Allows setting of all values at once. Requires a single value or</span>
 <span class="sd">        a iterable object.&quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">SMProperty</span><span class="o">.</span><span class="n">GetInformationOnly</span><span class="p">()</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+          <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="s2">&quot;Cannot set an InformationOnly property!&quot;</span><span class="p">)</span>
         <span class="c1"># Python3: str now has attr &quot;__iter__&quot;, test separately</span>
         <span class="k">if</span> <span class="p">(</span><span class="ow">not</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">values</span><span class="p">,</span> <span class="s2">&quot;__iter__&quot;</span><span class="p">))</span> <span class="ow">or</span> <span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">values</span><span class="p">)</span> <span class="o">==</span> <span class="nb">type</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">)):</span>
             <span class="n">values</span> <span class="o">=</span> <span class="p">(</span><span class="n">values</span><span class="p">,)</span>
@@ -1531,7 +1533,8 @@
 
 <div class="viewcode-block" id="DoubleMapProperty.SetData"><a class="viewcode-back" href="../../paraview.servermanager.html#paraview.servermanager.DoubleMapProperty.SetData">[docs]</a>    <span class="k">def</span> <span class="nf">SetData</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">elements</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Sets all the elements at once.&quot;&quot;&quot;</span>
-
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">SMProperty</span><span class="o">.</span><span class="n">GetInformationOnly</span><span class="p">()</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+          <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="s2">&quot;Cannot set an InformationOnly property!&quot;</span><span class="p">)</span>
         <span class="c1"># first clear existing data</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">Clear</span><span class="p">()</span>
 
@@ -1640,6 +1643,8 @@
 <div class="viewcode-block" id="ArraySelectionProperty.SetData"><a class="viewcode-back" href="../../paraview.servermanager.html#paraview.servermanager.ArraySelectionProperty.SetData">[docs]</a>    <span class="k">def</span> <span class="nf">SetData</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">values</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Allows setting of all values at once. Requires a single value,</span>
 <span class="sd">        a tuple or list.&quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">SMProperty</span><span class="o">.</span><span class="n">GetInformationOnly</span><span class="p">()</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+          <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="s2">&quot;Cannot set an InformationOnly property!&quot;</span><span class="p">)</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="n">values</span><span class="p">:</span>
             <span class="c1"># if values is None or empty list, we are resetting the selection.</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">SMProperty</span><span class="o">.</span><span class="n">SetElement</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
@@ -1763,6 +1768,8 @@
 <div class="viewcode-block" id="ArrayListProperty.SetData"><a class="viewcode-back" href="../../paraview.servermanager.html#paraview.servermanager.ArrayListProperty.SetData">[docs]</a>    <span class="k">def</span> <span class="nf">SetData</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">values</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Allows setting of all values at once. Requires a single value,</span>
 <span class="sd">        a tuple or list.&quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">SMProperty</span><span class="o">.</span><span class="n">GetInformationOnly</span><span class="p">()</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+          <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="s2">&quot;Cannot set an InformationOnly property!&quot;</span><span class="p">)</span>
         <span class="c1"># Clean up first</span>
         <span class="n">iup</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">SMProperty</span><span class="o">.</span><span class="n">GetImmediateUpdate</span><span class="p">()</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">SMProperty</span><span class="o">.</span><span class="n">SetImmediateUpdate</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
@@ -1960,6 +1967,8 @@
 <div class="viewcode-block" id="ProxyProperty.SetData"><a class="viewcode-back" href="../../paraview.servermanager.html#paraview.servermanager.ProxyProperty.SetData">[docs]</a>    <span class="k">def</span> <span class="nf">SetData</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">values</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Allows setting of all values at once. Requires a single value,</span>
 <span class="sd">        a tuple or list.&quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">SMProperty</span><span class="o">.</span><span class="n">GetInformationOnly</span><span class="p">()</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+          <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="s2">&quot;Cannot set an InformationOnly property!&quot;</span><span class="p">)</span>
         <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">values</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
             <span class="n">position</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
             <span class="k">try</span><span class="p">:</span>
@@ -3374,8 +3383,8 @@
     <span class="k">for</span> <span class="n">prop</span> <span class="ow">in</span> <span class="nb">iter</span><span class="p">:</span>
         <span class="n">propName</span> <span class="o">=</span> <span class="nb">iter</span><span class="o">.</span><span class="n">GetKey</span><span class="p">()</span>
         <span class="k">if</span> <span class="n">paraview</span><span class="o">.</span><span class="n">compatibility</span><span class="o">.</span><span class="n">GetVersion</span><span class="p">()</span> <span class="o">&gt;=</span> <span class="mf">3.5</span><span class="p">:</span>
-            <span class="k">if</span> <span class="p">(</span><span class="n">prop</span><span class="o">.</span><span class="n">GetInformationOnly</span><span class="p">()</span> <span class="ow">and</span> <span class="n">propName</span> <span class="o">!=</span> <span class="s2">&quot;TimestepValues&quot;</span> <span class="p">)</span> \
-              <span class="ow">or</span> <span class="n">prop</span><span class="o">.</span><span class="n">GetIsInternal</span><span class="p">():</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">prop</span><span class="o">.</span><span class="n">GetInformationOnly</span><span class="p">()</span> <span class="ow">and</span> <span class="n">propName</span> <span class="o">!=</span> <span class="s2">&quot;TimestepValues&quot;</span> \
+              <span class="ow">and</span> <span class="n">prop</span><span class="o">.</span><span class="n">GetPanelVisibility</span><span class="p">()</span> <span class="o">==</span> <span class="s2">&quot;never&quot;</span><span class="p">)</span> <span class="ow">or</span> <span class="n">prop</span><span class="o">.</span><span class="n">GetIsInternal</span><span class="p">():</span>
                 <span class="k">continue</span>
         <span class="n">names</span> <span class="o">=</span> <span class="p">[</span><span class="n">propName</span><span class="p">]</span>
         <span class="k">if</span> <span class="n">paraview</span><span class="o">.</span><span class="n">compatibility</span><span class="o">.</span><span class="n">GetVersion</span><span class="p">()</span> <span class="o">&gt;=</span> <span class="mf">3.5</span><span class="p">:</span>
