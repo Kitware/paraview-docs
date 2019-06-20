@@ -158,7 +158,7 @@ Functions</h2></td></tr>
 <li><code>WRAPPED_MODULES</code>: (Recommended) Not all modules are wrappable. This variable will be set to contain the list of modules which were wrapped.</li>
 <li><code>FUNCTION_NAME</code>: (Recommended) (Defaults to <code>&lt;TARGET&gt;_initialize</code>) The function name to generate in order to initialize the client server bindings.A header with the name <code>&lt;TARGET&gt;.h</code> should be included in order to access the initialization function.</li>
 <li><code>DESTINATION</code>: (Defaults to <code>${CMAKE_INSTALL_LIBDIR}</code>) Where to install the generated libraries.</li>
-<li><code>INSTALL_EXPORT</code>: If provided, installs will add the installed libraries to the provided export set.</li>
+<li><code>INSTALL_EXPORT</code>: If provided, installs will add the installed libraries and generated interface target to the provided export set.</li>
 <li><code>COMPONENT</code>: (Defaults to <code>development</code>) All install rules created by this function will use this installation component. </li>
 </ul>
 
@@ -186,7 +186,7 @@ Functions</h2></td></tr>
 <p>Some modules should not be wrapped using client server bindings. Since this is independent of general wrapping facilities, an additional property is used to check. This may be set using the <code>vtk_module_client_server_exclude</code> function.</p>
 <div class="fragment"><div class="line"><a class="code" href="vtkModuleWrapClientServer_8cmake.html#acc8d38ceaef2c5acd3469fdc910cd439">vtk_module_client_server_exclude</a>(</div><div class="line">  [MODULE &lt;module&gt;])</div></div><!-- fragment --><p>The <code>MODULE</code> defaults to the module currently being built. If a module is not being built when this function is called, it must be provided. </p>
 
-<p class="definition">Definition at line <a class="el" href="vtkModuleWrapClientServer_8cmake_source.html#l00385">385</a> of file <a class="el" href="vtkModuleWrapClientServer_8cmake_source.html">vtkModuleWrapClientServer.cmake</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vtkModuleWrapClientServer_8cmake_source.html#l00397">397</a> of file <a class="el" href="vtkModuleWrapClientServer_8cmake_source.html">vtkModuleWrapClientServer.cmake</a>.</p>
 
 </div>
 </div>

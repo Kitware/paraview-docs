@@ -106,10 +106,11 @@ Functions</h2></td></tr>
 <p>.md </p><h2>Building XML files</h2>
 </p>
 <p>There are two functions offered to build server manager XML files. The first uses modules:</p>
-<div class="fragment"><div class="line"><a class="code" href="ParaViewServerManager_8cmake.html#a2ec0a6d9d84a3508c733ffe1a29359d4">paraview_server_manager_process</a>(</div><div class="line">  MODULES &lt;module&gt;...</div><div class="line">  TARGET &lt;target&gt;</div><div class="line">  [FILES &lt;file&gt;...]</div><div class="line">  [XML_FILES  &lt;variable&gt;])</div></div><!-- fragment --><p>The <code>MODULES</code> argument contains the modules to include in the server manager target. The function gathers the XML files declared using <code>paraview_add_server_manager_xmls</code> and then calls <code>paraview_server_manager_process_files</code>. If additional, non-module related XML files are required, they may be passed via <code>FILES</code>.</p>
-<p>If <code>XML_FILES</code> is given, the list of process XML files are set on the given variable. </p>
+<div class="fragment"><div class="line"><a class="code" href="ParaViewServerManager_8cmake.html#a2ec0a6d9d84a3508c733ffe1a29359d4">paraview_server_manager_process</a>(</div><div class="line">  MODULES &lt;module&gt;...</div><div class="line">  TARGET &lt;target&gt;</div><div class="line">  [INSTALL_EXPORT &lt;export&gt;]</div><div class="line">  [FILES &lt;file&gt;...]</div><div class="line">  [XML_FILES  &lt;variable&gt;])</div></div><!-- fragment --><p>The <code>MODULES</code> argument contains the modules to include in the server manager target. The function gathers the XML files declared using <code>paraview_add_server_manager_xmls</code> and then calls <code>paraview_server_manager_process_files</code>. If additional, non-module related XML files are required, they may be passed via <code>FILES</code>.</p>
+<p>If <code>XML_FILES</code> is given, the list of process XML files are set on the given variable.</p>
+<p>If <code>INSTALL_EXPORT</code> is given, the interface target will be added to the given export set. </p>
 
-<p class="definition">Definition at line <a class="el" href="ParaViewServerManager_8cmake_source.html#l00077">77</a> of file <a class="el" href="ParaViewServerManager_8cmake_source.html">ParaViewServerManager.cmake</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ParaViewServerManager_8cmake_source.html#l00081">81</a> of file <a class="el" href="ParaViewServerManager_8cmake_source.html">ParaViewServerManager.cmake</a>.</p>
 
 </div>
 </div>
@@ -129,10 +130,11 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>.md The second way to process XML files directly. </p>
-<div class="fragment"><div class="line"><a class="code" href="ParaViewServerManager_8cmake.html#afa21ce9db3492985ea087a2cf3801122">paraview_server_manager_process_files</a>(</div><div class="line">  FILES &lt;file&gt;...</div><div class="line">  TARGET &lt;target&gt;)</div></div><!-- fragment --><p>The files passed to the <code>FILES</code> argument will be processed in to functions which are then consumed by ParaView applications.</p>
-<p>The name of the target is given to the <code>TARGET</code> argument. By default, the filename is <code>&lt;TARGET&gt;.h</code> and it contains a function named <code>&lt;TARGET&gt;_initialize</code>. They may be changed using the <code>FILE_NAME</code> and <code>FUNCTION_NAME</code> arguments. The target has an interface usage requirement that will allow the generated header to be included. </p>
+<div class="fragment"><div class="line"><a class="code" href="ParaViewServerManager_8cmake.html#afa21ce9db3492985ea087a2cf3801122">paraview_server_manager_process_files</a>(</div><div class="line">  FILES &lt;file&gt;...</div><div class="line">  TARGET &lt;target&gt;</div><div class="line">  [INSTALL_EXPORT &lt;export&gt;])</div></div><!-- fragment --><p>The files passed to the <code>FILES</code> argument will be processed in to functions which are then consumed by ParaView applications.</p>
+<p>The name of the target is given to the <code>TARGET</code> argument. By default, the filename is <code>&lt;TARGET&gt;.h</code> and it contains a function named <code>&lt;TARGET&gt;_initialize</code>. They may be changed using the <code>FILE_NAME</code> and <code>FUNCTION_NAME</code> arguments. The target has an interface usage requirement that will allow the generated header to be included.</p>
+<p>If <code>INSTALL_EXPORT</code> is given, the interface target will be added to the given export set. </p>
 
-<p class="definition">Definition at line <a class="el" href="ParaViewServerManager_8cmake_source.html#l00141">141</a> of file <a class="el" href="ParaViewServerManager_8cmake_source.html">ParaViewServerManager.cmake</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ParaViewServerManager_8cmake_source.html#l00156">156</a> of file <a class="el" href="ParaViewServerManager_8cmake_source.html">ParaViewServerManager.cmake</a>.</p>
 
 </div>
 </div>
