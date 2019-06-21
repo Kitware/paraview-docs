@@ -76,6 +76,10 @@ Collaboration diagram for vtkParallelSerialWriter:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
 Public Types</h2></td></tr>
+<tr class="memitem:a65de339fd1dbd29fc3823af250473ff8"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom">{ <a class="el" href="classvtkParallelSerialWriter.html#a65de339fd1dbd29fc3823af250473ff8a53623603d11f3fe6acbb51c2fd68cf17">ASSIGNMENT_MODE_CONTIGUOUS</a>, 
+<a class="el" href="classvtkParallelSerialWriter.html#a65de339fd1dbd29fc3823af250473ff8ad49d72a7d5197cf82617bf48770f263c">ASSIGNMENT_MODE_ROUND_ROBIN</a>
+ }</td></tr>
+<tr class="separator:a65de339fd1dbd29fc3823af250473ff8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ace0062c74fde8e0ba7f7d8e303f25a2d"><td class="memItemLeft" align="right" valign="top">typedef <a class="elRef" doxygen="/home/kitware/dashboards/buildbot/paraview_master-vall-linux-shared-debug_doc_extdeps_gui_mpi_python3/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/classvtkDataObjectAlgorithm.html">vtkDataObjectAlgorithm</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkParallelSerialWriter.html#ace0062c74fde8e0ba7f7d8e303f25a2d">Superclass</a></td></tr>
 <tr class="separator:ace0062c74fde8e0ba7f7d8e303f25a2d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_types_classvtkDataObjectAlgorithm"><td colspan="2" onclick="javascript:toggleInherit('pub_types_classvtkDataObjectAlgorithm')"><img src="closed.png" alt="-"/>&#160;Public Types inherited from <a class="el" href="http://www.vtk.org/doc/nightly/html/classvtkDataObjectAlgorithm.html">vtkDataObjectAlgorithm</a></td></tr>
@@ -182,6 +186,27 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a5897f56293f89f1a627236a3596fa7a3"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkParallelSerialWriter.html#a5897f56293f89f1a627236a3596fa7a3">SetFileNameSuffix</a> (const char *)</td></tr>
 <tr class="memdesc:a5897f56293f89f1a627236a3596fa7a3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provides an option to pad the time step when writing out time series data.  <a href="#a5897f56293f89f1a627236a3596fa7a3">More...</a><br /></td></tr>
 <tr class="separator:a5897f56293f89f1a627236a3596fa7a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr><td colspan="2"><div class="groupHeader"></div></td></tr>
+<tr class="memitem:aa4d047848359c64467795099dc48ed9c"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkParallelSerialWriter.html#aa4d047848359c64467795099dc48ed9c">SetNumberOfIORanks</a> (<a class="elRef" doxygen="/home/kitware/dashboards/buildbot/paraview_master-vall-linux-shared-debug_doc_extdeps_gui_mpi_python3/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkShaderProgram2_8h.html#a61569f2965b7a369eb10b6d75d410d11">int</a>)</td></tr>
+<tr class="memdesc:aa4d047848359c64467795099dc48ed9c"><td class="mdescLeft">&#160;</td><td class="mdescRight">In parallel runs, this writer can consolidate output from multiple ranks to a subset of ranks.  <a href="#aa4d047848359c64467795099dc48ed9c">More...</a><br /></td></tr>
+<tr class="separator:aa4d047848359c64467795099dc48ed9c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af7a81f2a991ba81272bc330fdf9dfd3d"><td class="memItemLeft" align="right" valign="top">virtual <a class="elRef" doxygen="/home/kitware/dashboards/buildbot/paraview_master-vall-linux-shared-debug_doc_extdeps_gui_mpi_python3/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkShaderProgram2_8h.html#a61569f2965b7a369eb10b6d75d410d11">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkParallelSerialWriter.html#af7a81f2a991ba81272bc330fdf9dfd3d">GetNumberOfIORanks</a> ()</td></tr>
+<tr class="memdesc:af7a81f2a991ba81272bc330fdf9dfd3d"><td class="mdescLeft">&#160;</td><td class="mdescRight">In parallel runs, this writer can consolidate output from multiple ranks to a subset of ranks.  <a href="#af7a81f2a991ba81272bc330fdf9dfd3d">More...</a><br /></td></tr>
+<tr class="separator:af7a81f2a991ba81272bc330fdf9dfd3d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr><td colspan="2"><div class="groupHeader"></div></td></tr>
+<tr class="memitem:af50b98e1b2ab16ce4bd9cdaf489e63d3"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkParallelSerialWriter.html#af50b98e1b2ab16ce4bd9cdaf489e63d3">SetRankAssignmentMode</a> (<a class="elRef" doxygen="/home/kitware/dashboards/buildbot/paraview_master-vall-linux-shared-debug_doc_extdeps_gui_mpi_python3/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkShaderProgram2_8h.html#a61569f2965b7a369eb10b6d75d410d11">int</a>)</td></tr>
+<tr class="memdesc:af50b98e1b2ab16ce4bd9cdaf489e63d3"><td class="mdescLeft">&#160;</td><td class="mdescRight">When <code>NumberOfIORanks</code> is greater than 1 and less than the number of MPI ranks, this controls how the ranks that write to disk are determined.  <a href="#af50b98e1b2ab16ce4bd9cdaf489e63d3">More...</a><br /></td></tr>
+<tr class="separator:af50b98e1b2ab16ce4bd9cdaf489e63d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a454e467be5c3d928d480338345ca8b68"><td class="memItemLeft" align="right" valign="top">virtual <a class="elRef" doxygen="/home/kitware/dashboards/buildbot/paraview_master-vall-linux-shared-debug_doc_extdeps_gui_mpi_python3/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkShaderProgram2_8h.html#a61569f2965b7a369eb10b6d75d410d11">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkParallelSerialWriter.html#a454e467be5c3d928d480338345ca8b68">GetRankAssignmentMode</a> ()</td></tr>
+<tr class="memdesc:a454e467be5c3d928d480338345ca8b68"><td class="mdescLeft">&#160;</td><td class="mdescRight">When <code>NumberOfIORanks</code> is greater than 1 and less than the number of MPI ranks, this controls how the ranks that write to disk are determined.  <a href="#a454e467be5c3d928d480338345ca8b68">More...</a><br /></td></tr>
+<tr class="separator:a454e467be5c3d928d480338345ca8b68"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr><td colspan="2"><div class="groupHeader"></div></td></tr>
+<tr class="memitem:a54fdbd2929ffa0086153bfac67ea194a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkParallelSerialWriter.html#a54fdbd2929ffa0086153bfac67ea194a">SetController</a> (<a class="elRef" doxygen="/home/kitware/dashboards/buildbot/paraview_master-vall-linux-shared-debug_doc_extdeps_gui_mpi_python3/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/classvtkMultiProcessController.html">vtkMultiProcessController</a> *controller)</td></tr>
+<tr class="memdesc:a54fdbd2929ffa0086153bfac67ea194a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get/Set the controller to use.  <a href="#a54fdbd2929ffa0086153bfac67ea194a">More...</a><br /></td></tr>
+<tr class="separator:a54fdbd2929ffa0086153bfac67ea194a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9c471f9c457c2d9af6fcb58e8413b639"><td class="memItemLeft" align="right" valign="top">virtual <a class="elRef" doxygen="/home/kitware/dashboards/buildbot/paraview_master-vall-linux-shared-debug_doc_extdeps_gui_mpi_python3/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/classvtkMultiProcessController.html">vtkMultiProcessController</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkParallelSerialWriter.html#a9c471f9c457c2d9af6fcb58e8413b639">GetController</a> ()</td></tr>
+<tr class="memdesc:a9c471f9c457c2d9af6fcb58e8413b639"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get/Set the controller to use.  <a href="#a9c471f9c457c2d9af6fcb58e8413b639">More...</a><br /></td></tr>
+<tr class="separator:a9c471f9c457c2d9af6fcb58e8413b639"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classvtkDataObjectAlgorithm"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classvtkDataObjectAlgorithm')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="http://www.vtk.org/doc/nightly/html/classvtkDataObjectAlgorithm.html">vtkDataObjectAlgorithm</a></td></tr>
 <tr class="memitem:a635aa73e9c907a28881c5e69742a547d inherit pub_methods_classvtkDataObjectAlgorithm"><td class="memItemLeft" align="right" valign="top"><a class="elRef" doxygen="/home/kitware/dashboards/buildbot/paraview_master-vall-linux-shared-debug_doc_extdeps_gui_mpi_python3/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/classvtkDataObjectAlgorithm.html">vtkDataObjectAlgorithm</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="elRef" doxygen="/home/kitware/dashboards/buildbot/paraview_master-vall-linux-shared-debug_doc_extdeps_gui_mpi_python3/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/classvtkDataObjectAlgorithm.html#a635aa73e9c907a28881c5e69742a547d">NewInstance</a> () const</td></tr>
 <tr class="separator:a635aa73e9c907a28881c5e69742a547d inherit pub_methods_classvtkDataObjectAlgorithm"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -904,9 +929,10 @@ Additional Inherited Members</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>parallel meta-writer for serial formats </p>
-<p><a class="el" href="classvtkParallelSerialWriter.html" title="parallel meta-writer for serial formats ">vtkParallelSerialWriter</a> is a meta-writer that enables serial writers to work in parallel. It gathers data to the 1st node and invokes the internal writer. The reduction is controlled defined by the PreGatherHelper and PostGatherHelper. This also makes it possible to write time-series for temporal datasets using simple non-time-aware writers. </p>
+<p><a class="el" href="classvtkParallelSerialWriter.html" title="parallel meta-writer for serial formats ">vtkParallelSerialWriter</a> is a meta-writer that enables serial writers to work in parallel. By default, it gathers data to the 1st node (root node) and invokes the internal writer. The reduction is controlled by the PreGatherHelper and PostGatherHelper. Instead of collecting all the data to the root node the filter supports reducing down to a target number of ranks which ranks chosen in either round-robin or contiguous fashion.</p>
+<p>This also makes it possible to write time-series for temporal datasets using simple non-time-aware writers. </p>
 
-<p class="definition">Definition at line <a class="el" href="vtkParallelSerialWriter_8h_source.html#l00035">35</a> of file <a class="el" href="vtkParallelSerialWriter_8h_source.html">vtkParallelSerialWriter.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vtkParallelSerialWriter_8h_source.html#l00041">41</a> of file <a class="el" href="vtkParallelSerialWriter_8h_source.html">vtkParallelSerialWriter.h</a>.</p>
 </div><h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="ace0062c74fde8e0ba7f7d8e303f25a2d"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ace0062c74fde8e0ba7f7d8e303f25a2d">&#9670;&nbsp;</a></span>Superclass</h2>
@@ -920,7 +946,28 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="vtkParallelSerialWriter_8h_source.html#l00039">39</a> of file <a class="el" href="vtkParallelSerialWriter_8h_source.html">vtkParallelSerialWriter.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vtkParallelSerialWriter_8h_source.html#l00045">45</a> of file <a class="el" href="vtkParallelSerialWriter_8h_source.html">vtkParallelSerialWriter.h</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Enumeration Documentation</h2>
+<a id="a65de339fd1dbd29fc3823af250473ff8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a65de339fd1dbd29fc3823af250473ff8">&#9670;&nbsp;</a></span>anonymous enum</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">anonymous enum</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a65de339fd1dbd29fc3823af250473ff8a53623603d11f3fe6acbb51c2fd68cf17"></a>ASSIGNMENT_MODE_CONTIGUOUS&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a65de339fd1dbd29fc3823af250473ff8ad49d72a7d5197cf82617bf48770f263c"></a>ASSIGNMENT_MODE_ROUND_ROBIN&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+<p class="definition">Definition at line <a class="el" href="vtkParallelSerialWriter_8h_source.html#l00167">167</a> of file <a class="el" href="vtkParallelSerialWriter_8h_source.html">vtkParallelSerialWriter.h</a>.</p>
 
 </div>
 </div>
@@ -1756,7 +1803,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Get/Set the interpreter to use to call methods on the writer. </p>
 
-<p class="definition">Definition at line <a class="el" href="vtkParallelSerialWriter_8h_source.html#l00135">135</a> of file <a class="el" href="vtkParallelSerialWriter_8h_source.html">vtkParallelSerialWriter.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vtkParallelSerialWriter_8h_source.html#l00141">141</a> of file <a class="el" href="vtkParallelSerialWriter_8h_source.html">vtkParallelSerialWriter.h</a>.</p>
 
 </div>
 </div>
@@ -1814,6 +1861,173 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Provides an option to pad the time step when writing out time series data. </p>
 <p>Only allow this format: ABC%.Xd where ABC is an arbitrary string which may or may not exist and d must exist and d must be the last character '.' and X may or may not exist, X must be an integer if it exists. Default is nullptr. </p>
+
+</div>
+</div>
+<a id="aa4d047848359c64467795099dc48ed9c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa4d047848359c64467795099dc48ed9c">&#9670;&nbsp;</a></span>SetNumberOfIORanks()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void vtkParallelSerialWriter::SetNumberOfIORanks </td>
+          <td>(</td>
+          <td class="paramtype"><a class="elRef" doxygen="/home/kitware/dashboards/buildbot/paraview_master-vall-linux-shared-debug_doc_extdeps_gui_mpi_python3/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkShaderProgram2_8h.html#a61569f2965b7a369eb10b6d75d410d11">int</a>&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>In parallel runs, this writer can consolidate output from multiple ranks to a subset of ranks. </p>
+<p>This specifies the number of ranks that will do the final writing to disk. If NumberOfIORanks is 0, then all ranks will save the local data. If set to 1 (default), the root node alone will write to disk. All data from all ranks will be gathered to the root node before being written out. </p>
+
+</div>
+</div>
+<a id="af7a81f2a991ba81272bc330fdf9dfd3d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af7a81f2a991ba81272bc330fdf9dfd3d">&#9670;&nbsp;</a></span>GetNumberOfIORanks()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="elRef" doxygen="/home/kitware/dashboards/buildbot/paraview_master-vall-linux-shared-debug_doc_extdeps_gui_mpi_python3/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkShaderProgram2_8h.html#a61569f2965b7a369eb10b6d75d410d11">int</a> vtkParallelSerialWriter::GetNumberOfIORanks </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>In parallel runs, this writer can consolidate output from multiple ranks to a subset of ranks. </p>
+<p>This specifies the number of ranks that will do the final writing to disk. If NumberOfIORanks is 0, then all ranks will save the local data. If set to 1 (default), the root node alone will write to disk. All data from all ranks will be gathered to the root node before being written out. </p>
+
+</div>
+</div>
+<a id="af50b98e1b2ab16ce4bd9cdaf489e63d3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af50b98e1b2ab16ce4bd9cdaf489e63d3">&#9670;&nbsp;</a></span>SetRankAssignmentMode()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void vtkParallelSerialWriter::SetRankAssignmentMode </td>
+          <td>(</td>
+          <td class="paramtype"><a class="elRef" doxygen="/home/kitware/dashboards/buildbot/paraview_master-vall-linux-shared-debug_doc_extdeps_gui_mpi_python3/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkShaderProgram2_8h.html#a61569f2965b7a369eb10b6d75d410d11">int</a>&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>When <code>NumberOfIORanks</code> is greater than 1 and less than the number of MPI ranks, this controls how the ranks that write to disk are determined. </p>
+<p>This also affects which ranks send data to which rank for IO.</p>
+<p>In ASSIGNMENT_MODE_CONTIGUOUS (default), all MPI ranks are numerically grouped into <code>NumberOfIORanks</code> groups with the first rank in each group acting as the <code>root</code> node for that group and is the one that does IO. For example, if there are 16 MPI ranks and NumberOfIORanks is set to 3 then the groups are <code>[0 - 5], [6 - 10], [11 - 15]</code> with the first rank in each group 0, 6, and 15 doing the IO.</p>
+<p>In ASSIGNMENT_MODE_ROUND_ROBIN, the grouping is done in round robin fashion, thus for 16 MPI ranks with NumberOfIORanks set to 3, the groups are <code>[0, 3, ..., 15], [1, 4, ..., 13], [2, 5, ..., 14]</code> with 0, 1 and 2 doing the IO. </p>
+
+</div>
+</div>
+<a id="a454e467be5c3d928d480338345ca8b68"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a454e467be5c3d928d480338345ca8b68">&#9670;&nbsp;</a></span>GetRankAssignmentMode()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="elRef" doxygen="/home/kitware/dashboards/buildbot/paraview_master-vall-linux-shared-debug_doc_extdeps_gui_mpi_python3/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkShaderProgram2_8h.html#a61569f2965b7a369eb10b6d75d410d11">int</a> vtkParallelSerialWriter::GetRankAssignmentMode </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>When <code>NumberOfIORanks</code> is greater than 1 and less than the number of MPI ranks, this controls how the ranks that write to disk are determined. </p>
+<p>This also affects which ranks send data to which rank for IO.</p>
+<p>In ASSIGNMENT_MODE_CONTIGUOUS (default), all MPI ranks are numerically grouped into <code>NumberOfIORanks</code> groups with the first rank in each group acting as the <code>root</code> node for that group and is the one that does IO. For example, if there are 16 MPI ranks and NumberOfIORanks is set to 3 then the groups are <code>[0 - 5], [6 - 10], [11 - 15]</code> with the first rank in each group 0, 6, and 15 doing the IO.</p>
+<p>In ASSIGNMENT_MODE_ROUND_ROBIN, the grouping is done in round robin fashion, thus for 16 MPI ranks with NumberOfIORanks set to 3, the groups are <code>[0, 3, ..., 15], [1, 4, ..., 13], [2, 5, ..., 14]</code> with 0, 1 and 2 doing the IO. </p>
+
+</div>
+</div>
+<a id="a54fdbd2929ffa0086153bfac67ea194a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a54fdbd2929ffa0086153bfac67ea194a">&#9670;&nbsp;</a></span>SetController()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void vtkParallelSerialWriter::SetController </td>
+          <td>(</td>
+          <td class="paramtype"><a class="elRef" doxygen="/home/kitware/dashboards/buildbot/paraview_master-vall-linux-shared-debug_doc_extdeps_gui_mpi_python3/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/classvtkMultiProcessController.html">vtkMultiProcessController</a> *&#160;</td>
+          <td class="paramname"><em>controller</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get/Set the controller to use. </p>
+<p>By default initialized to <code><a class="elRef" doxygen="/home/kitware/dashboards/buildbot/paraview_master-vall-linux-shared-debug_doc_extdeps_gui_mpi_python3/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/classvtkMultiProcessController.html#a83cc99c735f38b2fe79f33bce93cf258">vtkMultiProcessController::GetGlobalController</a></code> in the constructor. </p>
+
+</div>
+</div>
+<a id="a9c471f9c457c2d9af6fcb58e8413b639"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9c471f9c457c2d9af6fcb58e8413b639">&#9670;&nbsp;</a></span>GetController()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="elRef" doxygen="/home/kitware/dashboards/buildbot/paraview_master-vall-linux-shared-debug_doc_extdeps_gui_mpi_python3/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/classvtkMultiProcessController.html">vtkMultiProcessController</a>* vtkParallelSerialWriter::GetController </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get/Set the controller to use. </p>
+<p>By default initialized to <code><a class="elRef" doxygen="/home/kitware/dashboards/buildbot/paraview_master-vall-linux-shared-debug_doc_extdeps_gui_mpi_python3/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/classvtkMultiProcessController.html#a83cc99c735f38b2fe79f33bce93cf258">vtkMultiProcessController::GetGlobalController</a></code> in the constructor. </p>
 
 </div>
 </div>

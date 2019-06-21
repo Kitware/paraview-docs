@@ -17,9 +17,37 @@ Data Descriptors
        The type for the data file (i.e. ascii or
        binary).
    
+   Filenamesuffix
+       The suffix to append to the file name when writing files at different timesteps.
+       (File extensions such as .vtk should be excluded.)
+       The % format specifiers are used. For example, _%d will write files as FileName_0,
+       FileName_1, FileName_2, etc., and _%.3d will write files as FileName_000,
+       FileName_001, FileName_002 etc.
+   
    Input
        The input filter/source whose output dataset is to
        written to the file.
+   
+   NumberOfIORanks
+       In parallel runs, this writer can consolidate output from multiple ranks to
+       a subset of ranks. This specifies the number of ranks that will do the final writing
+       to disk. If \*\*NumberOfIORanks\*\* is 0, then all ranks will save the local data.
+       If set to 1 (default), the root node alone will write to disk. All data from all ranks will
+       be gathered to the root node before being written out.
+   
+   RankAssignmentMode
+       When \*\*NumberOfIORanks\*\* is greater than 1 and less than the number of MPI ranks,
+       this controls how the ranks that write to disk are determined. This also affects which
+       ranks send data to which rank for IO.
+       
+       In \*\*Contiguous\*\* mode (default), all MPI ranks are numerically grouped into \*\*NumberOfIORanks\*\*
+       groups with the first rank in each group acting as the `root` node for that group and is the one that
+       does IO. For example, if there are 16 MPI ranks and NumberOfIORanks is set to 3 then the groups are
+       `[0 - 5], [6 - 10], [11 - 15]` with the first rank in each group 0, 6, and 15 doing the IO.
+       
+       In \*\*RoundRobin\*\* mode, the grouping is done in round robin fashion, thus for 16 MPI
+       ranks with NumberOfIORanks set to 3, the groups are
+       `[0, 3, ..., 15], [1, 4, ..., 13], [2, 5, ..., 14]` with 0, 1 and 2 doing the IO.
    
    WriteTimeSteps
        When WriteTimeSteps is turned ON, the writer is
