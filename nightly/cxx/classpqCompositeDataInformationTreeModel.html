@@ -144,6 +144,13 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a0fc1994627898ec3e46816d689f5e02b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Toggle whether the model allows user to change check state.  <a href="#a0fc1994627898ec3e46816d689f5e02b">More...</a><br /></td></tr>
 <tr class="separator:a0fc1994627898ec3e46816d689f5e02b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr><td colspan="2"><div class="groupHeader"></div></td></tr>
+<tr class="memitem:a99a5b59692a070ec37f912343ae38f88"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpqCompositeDataInformationTreeModel.html#a99a5b59692a070ec37f912343ae38f88">setOnlyLeavesAreUserCheckable</a> (bool val)</td></tr>
+<tr class="memdesc:a99a5b59692a070ec37f912343ae38f88"><td class="mdescLeft">&#160;</td><td class="mdescRight">When <code>UserCheckable</code> is true, this limits use-checkability to leaf nodes only.  <a href="#a99a5b59692a070ec37f912343ae38f88">More...</a><br /></td></tr>
+<tr class="separator:a99a5b59692a070ec37f912343ae38f88"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a787d6403b8cde907d675e2544365b421"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpqCompositeDataInformationTreeModel.html#a787d6403b8cde907d675e2544365b421">onlyLeavesAreUserCheckable</a> () const</td></tr>
+<tr class="memdesc:a787d6403b8cde907d675e2544365b421"><td class="mdescLeft">&#160;</td><td class="mdescRight">When <code>UserCheckable</code> is true, this limits use-checkability to leaf nodes only.  <a href="#a787d6403b8cde907d675e2544365b421">More...</a><br /></td></tr>
+<tr class="separator:a787d6403b8cde907d675e2544365b421"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr><td colspan="2"><div class="groupHeader"></div></td></tr>
 <tr class="memitem:a5a95b98e0117988fb7127c981ab24bfd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpqCompositeDataInformationTreeModel.html#a5a95b98e0117988fb7127c981ab24bfd">setDefaultCheckState</a> (bool checked)</td></tr>
 <tr class="memdesc:a5a95b98e0117988fb7127c981ab24bfd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get/Set the default check state for nodes.  <a href="#a5a95b98e0117988fb7127c981ab24bfd">More...</a><br /></td></tr>
 <tr class="separator:a5a95b98e0117988fb7127c981ab24bfd"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -255,7 +262,7 @@ Setting and querying check states</h1>
 </td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="pqCompositeDataInformationTreeModel_8h_source.html#l00320">320</a> of file <a class="el" href="pqCompositeDataInformationTreeModel_8h_source.html">pqCompositeDataInformationTreeModel.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="pqCompositeDataInformationTreeModel_8h_source.html#l00330">330</a> of file <a class="el" href="pqCompositeDataInformationTreeModel_8h_source.html">pqCompositeDataInformationTreeModel.h</a>.</p>
 
 </div>
 </div>
@@ -697,6 +704,67 @@ Setting and querying check states</h1>
 
 </div>
 </div>
+<a id="a99a5b59692a070ec37f912343ae38f88"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a99a5b59692a070ec37f912343ae38f88">&#9670;&nbsp;</a></span>setOnlyLeavesAreUserCheckable()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void pqCompositeDataInformationTreeModel::setOnlyLeavesAreUserCheckable </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>val</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>When <code>UserCheckable</code> is true, this limits use-checkability to leaf nodes only. </p>
+<p>Note that this has no effect if <code>userCheckable</code> is false. Also please call <a class="el" href="classpqCompositeDataInformationTreeModel.html#a27c5453c4d6f450ec011a095e812dd31" title="Reset and rebuild the model using the data information object provided. ">reset()</a> after changing this. </p>
+
+<p class="definition">Definition at line <a class="el" href="pqCompositeDataInformationTreeModel_8h_source.html#l00196">196</a> of file <a class="el" href="pqCompositeDataInformationTreeModel_8h_source.html">pqCompositeDataInformationTreeModel.h</a>.</p>
+
+</div>
+</div>
+<a id="a787d6403b8cde907d675e2544365b421"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a787d6403b8cde907d675e2544365b421">&#9670;&nbsp;</a></span>onlyLeavesAreUserCheckable()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool pqCompositeDataInformationTreeModel::onlyLeavesAreUserCheckable </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>When <code>UserCheckable</code> is true, this limits use-checkability to leaf nodes only. </p>
+<p>Note that this has no effect if <code>userCheckable</code> is false. Also please call <a class="el" href="classpqCompositeDataInformationTreeModel.html#a27c5453c4d6f450ec011a095e812dd31" title="Reset and rebuild the model using the data information object provided. ">reset()</a> after changing this. </p>
+
+<p class="definition">Definition at line <a class="el" href="pqCompositeDataInformationTreeModel_8h_source.html#l00197">197</a> of file <a class="el" href="pqCompositeDataInformationTreeModel_8h_source.html">pqCompositeDataInformationTreeModel.h</a>.</p>
+
+</div>
+</div>
 <a id="a5a95b98e0117988fb7127c981ab24bfd"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a5a95b98e0117988fb7127c981ab24bfd">&#9670;&nbsp;</a></span>setDefaultCheckState()</h2>
 
@@ -724,7 +792,7 @@ Setting and querying check states</h1>
 <p>Get/Set the default check state for nodes. </p>
 <p>Default is unchecked (false). Note: please call <a class="el" href="classpqCompositeDataInformationTreeModel.html#a27c5453c4d6f450ec011a095e812dd31" title="Reset and rebuild the model using the data information object provided. ">reset()</a> after changing this. </p>
 
-<p class="definition">Definition at line <a class="el" href="pqCompositeDataInformationTreeModel_8h_source.html#l00195">195</a> of file <a class="el" href="pqCompositeDataInformationTreeModel_8h_source.html">pqCompositeDataInformationTreeModel.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="pqCompositeDataInformationTreeModel_8h_source.html#l00205">205</a> of file <a class="el" href="pqCompositeDataInformationTreeModel_8h_source.html">pqCompositeDataInformationTreeModel.h</a>.</p>
 
 </div>
 </div>
@@ -754,7 +822,7 @@ Setting and querying check states</h1>
 <p>Get/Set the default check state for nodes. </p>
 <p>Default is unchecked (false). Note: please call <a class="el" href="classpqCompositeDataInformationTreeModel.html#a27c5453c4d6f450ec011a095e812dd31" title="Reset and rebuild the model using the data information object provided. ">reset()</a> after changing this. </p>
 
-<p class="definition">Definition at line <a class="el" href="pqCompositeDataInformationTreeModel_8h_source.html#l00196">196</a> of file <a class="el" href="pqCompositeDataInformationTreeModel_8h_source.html">pqCompositeDataInformationTreeModel.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="pqCompositeDataInformationTreeModel_8h_source.html#l00206">206</a> of file <a class="el" href="pqCompositeDataInformationTreeModel_8h_source.html">pqCompositeDataInformationTreeModel.h</a>.</p>
 
 </div>
 </div>
@@ -785,7 +853,7 @@ Setting and querying check states</h1>
 <p>Toggle whether multipiece datasets are expanded (default false). </p>
 <p>Note: please call <a class="el" href="classpqCompositeDataInformationTreeModel.html#a27c5453c4d6f450ec011a095e812dd31" title="Reset and rebuild the model using the data information object provided. ">reset()</a> after changing this. </p>
 
-<p class="definition">Definition at line <a class="el" href="pqCompositeDataInformationTreeModel_8h_source.html#l00203">203</a> of file <a class="el" href="pqCompositeDataInformationTreeModel_8h_source.html">pqCompositeDataInformationTreeModel.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="pqCompositeDataInformationTreeModel_8h_source.html#l00213">213</a> of file <a class="el" href="pqCompositeDataInformationTreeModel_8h_source.html">pqCompositeDataInformationTreeModel.h</a>.</p>
 
 </div>
 </div>
@@ -815,7 +883,7 @@ Setting and querying check states</h1>
 <p>Get/Set the default check state for nodes. </p>
 <p>Default is unchecked (false). Note: please call <a class="el" href="classpqCompositeDataInformationTreeModel.html#a27c5453c4d6f450ec011a095e812dd31" title="Reset and rebuild the model using the data information object provided. ">reset()</a> after changing this. </p>
 
-<p class="definition">Definition at line <a class="el" href="pqCompositeDataInformationTreeModel_8h_source.html#l00204">204</a> of file <a class="el" href="pqCompositeDataInformationTreeModel_8h_source.html">pqCompositeDataInformationTreeModel.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="pqCompositeDataInformationTreeModel_8h_source.html#l00214">214</a> of file <a class="el" href="pqCompositeDataInformationTreeModel_8h_source.html">pqCompositeDataInformationTreeModel.h</a>.</p>
 
 </div>
 </div>
@@ -845,7 +913,7 @@ Setting and querying check states</h1>
 
 <p>When set to true for a userCheckable model, if the user checks a node, the all other nodes that are not children of the checked node are unchecked. </p>
 
-<p class="definition">Definition at line <a class="el" href="pqCompositeDataInformationTreeModel_8h_source.html#l00212">212</a> of file <a class="el" href="pqCompositeDataInformationTreeModel_8h_source.html">pqCompositeDataInformationTreeModel.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="pqCompositeDataInformationTreeModel_8h_source.html#l00222">222</a> of file <a class="el" href="pqCompositeDataInformationTreeModel_8h_source.html">pqCompositeDataInformationTreeModel.h</a>.</p>
 
 </div>
 </div>
@@ -874,7 +942,7 @@ Setting and querying check states</h1>
 
 <p>When set to true for a userCheckable model, if the user checks a node, the all other nodes that are not children of the checked node are unchecked. </p>
 
-<p class="definition">Definition at line <a class="el" href="pqCompositeDataInformationTreeModel_8h_source.html#l00213">213</a> of file <a class="el" href="pqCompositeDataInformationTreeModel_8h_source.html">pqCompositeDataInformationTreeModel.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="pqCompositeDataInformationTreeModel_8h_source.html#l00223">223</a> of file <a class="el" href="pqCompositeDataInformationTreeModel_8h_source.html">pqCompositeDataInformationTreeModel.h</a>.</p>
 
 </div>
 </div>
@@ -1286,7 +1354,7 @@ Setting and querying check states</h1>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="pqCompositeDataInformationTreeModel_8h_source.html#l00365">365</a> of file <a class="el" href="pqCompositeDataInformationTreeModel_8h_source.html">pqCompositeDataInformationTreeModel.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="pqCompositeDataInformationTreeModel_8h_source.html#l00376">376</a> of file <a class="el" href="pqCompositeDataInformationTreeModel_8h_source.html">pqCompositeDataInformationTreeModel.h</a>.</p>
 
 </div>
 </div>
