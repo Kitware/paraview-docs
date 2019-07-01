@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>paraview.detail.calculator &mdash; ParaView/Python 5.6.1-1783-g1bcdf71b46 documentation</title>
+  <title>paraview.detail.calculator &mdash; ParaView/Python 5.6.1-1789-g72d1fd88d7 documentation</title>
   
 
   
@@ -24,7 +24,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:'../../../',
-        VERSION:'5.6.1-1783-g1bcdf71b46',
+        VERSION:'5.6.1-1789-g72d1fd88d7',
         COLLAPSE_INDEX:false,
         FILE_SUFFIX:'.html',
         HAS_SOURCE:  true
@@ -48,7 +48,7 @@
         <link rel="index" title="Index"
               href="../../../genindex.html"/>
         <link rel="search" title="Search" href="../../../search.html"/>
-    <link rel="top" title="ParaView/Python 5.6.1-1783-g1bcdf71b46 documentation" href="../../../index.html"/>
+    <link rel="top" title="ParaView/Python 5.6.1-1789-g72d1fd88d7 documentation" href="../../../index.html"/>
         <link rel="up" title="Module code" href="../../index.html"/> 
 
   <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
@@ -66,7 +66,7 @@
           <li> <a href="../../../index.html">
             <img src="../../../_static/paraview-logo-small.png"
             alt="ParaView/Python"></img></a> </li>
-          <li class="version"> version 5.6.1-1783-g1bcdf71b46</li>
+          <li class="version"> version 5.6.1-1789-g72d1fd88d7</li>
         </ul>
         <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
   <input type="text" name="q" placeholder="Search docs" />
@@ -745,7 +745,8 @@
 
     <span class="kn">from</span> <span class="nn">paraview.vtk.vtkFiltersExtraction</span> <span class="k">import</span> <span class="n">vtkLocationSelector</span>
     <span class="n">selector</span> <span class="o">=</span> <span class="n">vtkLocationSelector</span><span class="p">()</span>
-    <span class="n">selector</span><span class="o">.</span><span class="n">Initialize</span><span class="p">(</span><span class="n">node</span><span class="p">,</span> <span class="s2">&quot;vtkInsidedness&quot;</span><span class="p">)</span>
+    <span class="n">selector</span><span class="o">.</span><span class="n">SetInsidednessArrayName</span><span class="p">(</span><span class="s2">&quot;vtkInsidedness&quot;</span><span class="p">)</span>
+    <span class="n">selector</span><span class="o">.</span><span class="n">Initialize</span><span class="p">(</span><span class="n">node</span><span class="p">)</span>
 
     <span class="n">inputDO</span> <span class="o">=</span> <span class="n">inputs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">VTKObject</span>
     <span class="n">outputDO</span> <span class="o">=</span> <span class="n">inputDO</span><span class="o">.</span><span class="n">NewInstance</span><span class="p">()</span>
@@ -758,7 +759,7 @@
         <span class="k">while</span> <span class="ow">not</span> <span class="n">it</span><span class="o">.</span><span class="n">IsDoneWithTraversal</span><span class="p">():</span>
             <span class="n">outputDO</span><span class="o">.</span><span class="n">SetDataSet</span><span class="p">(</span><span class="n">it</span><span class="p">,</span> <span class="n">inputDO</span><span class="o">.</span><span class="n">GetDataSet</span><span class="p">(</span><span class="n">it</span><span class="p">)</span><span class="o">.</span><span class="n">NewInstance</span><span class="p">())</span>
             <span class="n">it</span><span class="o">.</span><span class="n">GoToNextItem</span><span class="p">()</span>
-    <span class="n">selector</span><span class="o">.</span><span class="n">ComputeSelectedElements</span><span class="p">(</span><span class="n">inputDO</span><span class="p">,</span> <span class="n">outputDO</span><span class="p">)</span>
+    <span class="n">selector</span><span class="o">.</span><span class="n">Execute</span><span class="p">(</span><span class="n">inputDO</span><span class="p">,</span> <span class="n">outputDO</span><span class="p">)</span>
 
     <span class="k">return</span> <span class="n">output</span><span class="o">.</span><span class="n">PointData</span><span class="o">.</span><span class="n">GetArray</span><span class="p">(</span><span class="s1">&#39;vtkInsidedness&#39;</span><span class="p">)</span></div>
 
@@ -775,7 +776,8 @@
 
     <span class="kn">from</span> <span class="nn">paraview.vtk.vtkFiltersExtraction</span> <span class="k">import</span> <span class="n">vtkLocationSelector</span>
     <span class="n">selector</span> <span class="o">=</span> <span class="n">vtkLocationSelector</span><span class="p">()</span>
-    <span class="n">selector</span><span class="o">.</span><span class="n">Initialize</span><span class="p">(</span><span class="n">node</span><span class="p">,</span> <span class="s2">&quot;vtkInsidedness&quot;</span><span class="p">)</span>
+    <span class="n">selector</span><span class="o">.</span><span class="n">SetInsidednessArrayName</span><span class="p">(</span><span class="s2">&quot;vtkInsidedness&quot;</span><span class="p">)</span>
+    <span class="n">selector</span><span class="o">.</span><span class="n">Initialize</span><span class="p">(</span><span class="n">node</span><span class="p">)</span>
 
     <span class="n">inputDO</span> <span class="o">=</span> <span class="n">inputs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">VTKObject</span>
     <span class="n">outputDO</span> <span class="o">=</span> <span class="n">inputDO</span><span class="o">.</span><span class="n">NewInstance</span><span class="p">()</span>
@@ -788,7 +790,7 @@
         <span class="k">while</span> <span class="ow">not</span> <span class="n">it</span><span class="o">.</span><span class="n">IsDoneWithTraversal</span><span class="p">():</span>
             <span class="n">outputDO</span><span class="o">.</span><span class="n">SetDataSet</span><span class="p">(</span><span class="n">it</span><span class="p">,</span> <span class="n">inputDO</span><span class="o">.</span><span class="n">GetDataSet</span><span class="p">(</span><span class="n">it</span><span class="p">)</span><span class="o">.</span><span class="n">NewInstance</span><span class="p">())</span>
             <span class="n">it</span><span class="o">.</span><span class="n">GoToNextItem</span><span class="p">()</span>
-    <span class="n">selector</span><span class="o">.</span><span class="n">ComputeSelectedElements</span><span class="p">(</span><span class="n">inputDO</span><span class="p">,</span> <span class="n">outputDO</span><span class="p">)</span>
+    <span class="n">selector</span><span class="o">.</span><span class="n">Execute</span><span class="p">(</span><span class="n">inputDO</span><span class="p">,</span> <span class="n">outputDO</span><span class="p">)</span>
 
     <span class="k">return</span> <span class="n">output</span><span class="o">.</span><span class="n">CellData</span><span class="o">.</span><span class="n">GetArray</span><span class="p">(</span><span class="s1">&#39;vtkInsidedness&#39;</span><span class="p">)</span></div>
 
