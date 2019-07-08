@@ -153,7 +153,27 @@ $(function() {
      &lt;Hints&gt;
        &lt;ProxySelectionWidget enabled="0" /&gt;
      &lt;/Hints&gt;
-&lt;/ProxyProperty&gt;</pre> </div></div><!-- contents -->
+&lt;/ProxyProperty&gt;
+</pre><h2>ArraySelectionWidget </h2>
+<p>For a property that uses <code><a class="el" href="classpqArraySelectionWidget.html" title="pqArraySelectionWidget is a widget used to allow user to select arrays. ">pqArraySelectionWidget</a></code>, one can specify the icon to use for the arrays listed using this hint. See <code><a class="el" href="classpqArraySelectionWidget.html#ae4774fb640c51083f80016b8b1f17f47" title="Specify an icon type to use for a property with the given name. ">pqArraySelectionWidget::setIconType</a></code> for supported icon types. </p><pre class="fragment">&lt;StringVectorProperty
+      name="RowDataArrays"
+      command="GetRowDataArraySelection"
+      number_of_elements_per_command="1"
+      repeat_command="1"
+      si_class="vtkSIDataArraySelectionProperty"&gt;
+      &lt;ArrayListDomain name="array_list" input_domain_name="row_arrays"&gt;
+        &lt;RequiredProperties&gt;
+          &lt;Property name="Input" function="Input" /&gt;
+        &lt;/RequiredProperties&gt;
+      &lt;/ArrayListDomain&gt;
+      &lt;Documentation&gt;
+        Select the row data arrays to pass through
+      &lt;/Documentation&gt;
+      &lt;Hints&gt;
+        &lt;ArraySelectionWidget icon_type="row"/&gt;
+      &lt;/Hints&gt;
+  &lt;/StringVectorProperty&gt;
+&lt;/SourceProxy&gt;</pre> </div></div><!-- contents -->
 <!-- HTML footer for doxygen 1.8.13-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

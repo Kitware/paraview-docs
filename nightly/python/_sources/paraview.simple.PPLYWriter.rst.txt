@@ -10,9 +10,18 @@ Data Descriptors
 
 
    
+   CellDataArrays
+       Select the cell data arrays to pass through
+   
+   ChooseArraysToWrite
+       Explicitly choose which arrays to write.
+   
    ColorArrayName
        The array that will be used for saving color information when
        \*\*Enable Coloring\*\* is ON.
+   
+   EdgeDataArrays
+       Select the edge data arrays to pass through
    
    EnableAlpha
        Specify whether alpha channel information should be saved in the PLY file.
@@ -22,6 +31,9 @@ Data Descriptors
    EnableColoring
        Specify whether color information should be saved in the PLY file.
        If enabled, the data source's array to color with from the active view will be used.
+   
+   FieldDataArrays
+       Select the field data arrays to pass through
    
    FileName
        The name of the file to be written.
@@ -52,6 +64,9 @@ Data Descriptors
        If set to 1 (default), the root node alone will write to disk. All data from all ranks will
        be gathered to the root node before being written out.
    
+   PointDataArrays
+       Select the point data arrays to pass through
+   
    RankAssignmentMode
        When \*\*NumberOfIORanks\*\* is greater than 1 and less than the number of MPI ranks,
        this controls how the ranks that write to disk are determined. This also affects which
@@ -65,6 +80,12 @@ Data Descriptors
        In \*\*RoundRobin\*\* mode, the grouping is done in round robin fashion, thus for 16 MPI
        ranks with NumberOfIORanks set to 3, the groups are
        `[0, 3, ..., 15], [1, 4, ..., 13], [2, 5, ..., 14]` with 0, 1 and 2 doing the IO.
+   
+   RowDataArrays
+       Select the row data arrays to pass through
+   
+   VertexDataArrays
+       Select the vertex data arrays to pass through
    
    WriteTimeSteps
        When WriteTimeSteps is turned ON, the writer is

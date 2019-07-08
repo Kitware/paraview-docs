@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>paraview.simple.XMLPUnstructuredGridWriter &mdash; ParaView/Python 5.7.0-RC1-10-g10938cd09b documentation</title>
+  <title>paraview.simple.XMLPUnstructuredGridWriter &mdash; ParaView/Python 5.7.0-RC1-16-gfc95b4af2e documentation</title>
   
 
   
@@ -24,7 +24,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:'./',
-        VERSION:'5.7.0-RC1-10-g10938cd09b',
+        VERSION:'5.7.0-RC1-16-gfc95b4af2e',
         COLLAPSE_INDEX:false,
         FILE_SUFFIX:'.html',
         HAS_SOURCE:  true
@@ -48,7 +48,7 @@
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="ParaView/Python 5.7.0-RC1-10-g10938cd09b documentation" href="index.html"/>
+    <link rel="top" title="ParaView/Python 5.7.0-RC1-16-gfc95b4af2e documentation" href="index.html"/>
         <link rel="up" title="Available readers, sources, writers, filters and animation cues" href="paraview.servermanager_proxies.html"/>
         <link rel="next" title="paraview.simple.XMLPVAnimationWriter" href="paraview.simple.XMLPVAnimationWriter.html"/>
         <link rel="prev" title="paraview.simple.XMLPTableWriter" href="paraview.simple.XMLPTableWriter.html"/> 
@@ -68,7 +68,7 @@
           <li> <a href="index.html">
             <img src="_static/paraview-logo-small.png"
             alt="ParaView/Python"></img></a> </li>
-          <li class="version"> version 5.7.0-RC1-10-g10938cd09b</li>
+          <li class="version"> version 5.7.0-RC1-16-gfc95b4af2e</li>
         </ul>
         <form id ="rtd-search-form" class="wy-form" action="search.html" method="get">
   <input type="text" name="q" placeholder="Search docs" />
@@ -559,7 +559,6 @@
 <li class="toctree-l2"><a class="reference internal" href="paraview.simple.Wavelet.html">paraview.simple.Wavelet</a></li>
 <li class="toctree-l2"><a class="reference internal" href="paraview.simple.WindBladereader.html">paraview.simple.WindBladereader</a></li>
 <li class="toctree-l2"><a class="reference internal" href="paraview.simple.XDMFReader.html">paraview.simple.XDMFReader</a></li>
-<li class="toctree-l2"><a class="reference internal" href="paraview.simple.XMLDataObjectWriterBase.html">paraview.simple.XMLDataObjectWriterBase</a></li>
 <li class="toctree-l2"><a class="reference internal" href="paraview.simple.XMLHierarchicalBoxDataWriter.html">paraview.simple.XMLHierarchicalBoxDataWriter</a></li>
 <li class="toctree-l2"><a class="reference internal" href="paraview.simple.XMLHierarchicalBoxDatareader.html">paraview.simple.XMLHierarchicalBoxDatareader</a></li>
 <li class="toctree-l2"><a class="reference internal" href="paraview.simple.XMLImageDataReader.html">paraview.simple.XMLImageDataReader</a></li>
@@ -676,6 +675,10 @@ used for parallel writing.</div></blockquote>
 <h2>Data Descriptors<a class="headerlink" href="#data-descriptors" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><dl class="docutils">
+<dt>CellDataArrays</dt>
+<dd>Select the cell data arrays to pass through</dd>
+<dt>ChooseArraysToWrite</dt>
+<dd>Explicitly choose which arrays to write.</dd>
 <dt>CompressionLevel</dt>
 <dd>A compression performance parameter from 1 (faster/larger
 compressed filesize) to 9 (slower/smaller compressed filesize).</dd>
@@ -687,15 +690,19 @@ smallest compressed filesize.</dd>
 <dt>DataMode</dt>
 <dd>The mode uses for writing the file’s data i.e. ascii,
 binary, appended binary.</dd>
+<dt>EdgeDataArrays</dt>
+<dd>Select the edge data arrays to pass through</dd>
 <dt>EncodeAppendedData</dt>
 <dd>When EncodeAppendedData is turned ON, the writer uses
 base64 encoding when writing binary data (only if appended mode is
 selected).</dd>
+<dt>FieldDataArrays</dt>
+<dd>Select the field data arrays to pass through</dd>
 <dt>FileName</dt>
 <dd>The name of the file to be written.</dd>
 <dt>Filenamesuffix</dt>
 <dd>The suffix to append to the file name when writing files at different timesteps.
-(File extensions such as .vtk should be excluded.)
+File extensions such as .vtk should be excluded.
 The % format specifiers are used. For example, _%d will write files as FileName_0,
 FileName_1, FileName_2, etc., and _%.3d will write files as FileName_000,
 FileName_001, FileName_002 etc.</dd>
@@ -713,12 +720,18 @@ written to the file.</dd>
 <dt>Lasttimestep</dt>
 <dd>Sets the upper bound for timesteps to write. If
 less than min, the last time step is used.</dd>
+<dt>PointDataArrays</dt>
+<dd>Select the point data arrays to pass through</dd>
+<dt>RowDataArrays</dt>
+<dd>Select the row data arrays to pass through</dd>
 <dt>Timestepstride</dt>
 <dd>Sets the stride to go through the time steps.</dd>
 <dt>UseSubdirectory</dt>
 <dd>This property controls whether the writer puts the files for each piece
 in the same directory as the pvt* file or in a subdirectory named the same as the
 pvt* file without its extension</dd>
+<dt>VertexDataArrays</dt>
+<dd>Select the vertex data arrays to pass through</dd>
 <dt>Writealltimestepsasfileseries</dt>
 <dd>When WriteTimeSteps is turned ON, the writer is
 executed once for each timestep available from its input.</dd>
