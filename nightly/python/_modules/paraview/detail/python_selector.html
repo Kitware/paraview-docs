@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>paraview.detail.python_selector &mdash; ParaView/Python 5.7.0-RC1-39-gd6f26af9b8 documentation</title>
+  <title>paraview.detail.python_selector &mdash; ParaView/Python 5.7.0-RC1-43-g791fc94fe5 documentation</title>
   
 
   
@@ -24,7 +24,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:'../../../',
-        VERSION:'5.7.0-RC1-39-gd6f26af9b8',
+        VERSION:'5.7.0-RC1-43-g791fc94fe5',
         COLLAPSE_INDEX:false,
         FILE_SUFFIX:'.html',
         HAS_SOURCE:  true
@@ -48,7 +48,7 @@
         <link rel="index" title="Index"
               href="../../../genindex.html"/>
         <link rel="search" title="Search" href="../../../search.html"/>
-    <link rel="top" title="ParaView/Python 5.7.0-RC1-39-gd6f26af9b8 documentation" href="../../../index.html"/>
+    <link rel="top" title="ParaView/Python 5.7.0-RC1-43-g791fc94fe5 documentation" href="../../../index.html"/>
         <link rel="up" title="Module code" href="../../index.html"/> 
 
   <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
@@ -66,7 +66,7 @@
           <li> <a href="../../../index.html">
             <img src="../../../_static/paraview-logo-small.png"
             alt="ParaView/Python"></img></a> </li>
-          <li class="version"> version 5.7.0-RC1-39-gd6f26af9b8</li>
+          <li class="version"> version 5.7.0-RC1-43-g791fc94fe5</li>
         </ul>
         <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
   <input type="text" name="q" placeholder="Search docs" />
@@ -760,10 +760,10 @@
     <span class="c1"># be ignored by the freeze selection operation</span>
     <span class="kn">from</span> <span class="nn">paraview.vtk.util</span> <span class="k">import</span> <span class="n">numpy_support</span>
     <span class="n">output</span> <span class="o">=</span> <span class="n">dsa</span><span class="o">.</span><span class="n">WrapDataObject</span><span class="p">(</span><span class="n">outputDO</span><span class="p">)</span>
-    <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">maskArray</span><span class="p">)</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">dsa</span><span class="o">.</span><span class="n">VTKNoneArray</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">maskArray</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">dsa</span><span class="o">.</span><span class="n">NoneArray</span><span class="p">:</span>
         <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">maskArray</span><span class="p">,</span> <span class="n">dsa</span><span class="o">.</span><span class="n">VTKCompositeDataArray</span><span class="p">):</span>
             <span class="k">for</span> <span class="n">ds</span><span class="p">,</span> <span class="n">array</span> <span class="ow">in</span> <span class="n">izip</span><span class="p">(</span><span class="n">output</span><span class="p">,</span> <span class="n">maskArray</span><span class="o">.</span><span class="n">Arrays</span><span class="p">):</span>
-                <span class="k">if</span> <span class="n">array</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">array</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">dsa</span><span class="o">.</span><span class="n">NoneArray</span><span class="p">:</span>
                     <span class="n">insidedness</span> <span class="o">=</span> <span class="n">numpy_support</span><span class="o">.</span><span class="n">numpy_to_vtk</span><span class="p">(</span><span class="n">array</span><span class="p">,</span> <span class="n">deep</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">array_type</span><span class="o">=</span><span class="n">vtkConstants</span><span class="o">.</span><span class="n">VTK_SIGNED_CHAR</span><span class="p">)</span>
                     <span class="n">insidedness</span><span class="o">.</span><span class="n">SetName</span><span class="p">(</span><span class="n">insidednessArrayName</span><span class="p">)</span>
                     <span class="n">ds</span><span class="o">.</span><span class="n">GetAttributes</span><span class="p">(</span><span class="n">attributeType</span><span class="p">)</span><span class="o">.</span><span class="n">VTKObject</span><span class="o">.</span><span class="n">AddArray</span><span class="p">(</span><span class="n">insidedness</span><span class="p">)</span>
