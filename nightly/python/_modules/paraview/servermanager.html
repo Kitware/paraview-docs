@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>paraview.servermanager &mdash; ParaView/Python 5.7.0-RC1-46-g52a7b0e77a documentation</title>
+  <title>paraview.servermanager &mdash; ParaView/Python 5.7.0-RC1-51-g957e0ce6dd documentation</title>
   
 
   
@@ -24,7 +24,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:'../../',
-        VERSION:'5.7.0-RC1-46-g52a7b0e77a',
+        VERSION:'5.7.0-RC1-51-g957e0ce6dd',
         COLLAPSE_INDEX:false,
         FILE_SUFFIX:'.html',
         HAS_SOURCE:  true
@@ -48,7 +48,7 @@
         <link rel="index" title="Index"
               href="../../genindex.html"/>
         <link rel="search" title="Search" href="../../search.html"/>
-    <link rel="top" title="ParaView/Python 5.7.0-RC1-46-g52a7b0e77a documentation" href="../../index.html"/>
+    <link rel="top" title="ParaView/Python 5.7.0-RC1-51-g957e0ce6dd documentation" href="../../index.html"/>
         <link rel="up" title="Module code" href="../index.html"/> 
 
   <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
@@ -66,7 +66,7 @@
           <li> <a href="../../index.html">
             <img src="../../_static/paraview-logo-small.png"
             alt="ParaView/Python"></img></a> </li>
-          <li class="version"> version 5.7.0-RC1-46-g52a7b0e77a</li>
+          <li class="version"> version 5.7.0-RC1-51-g957e0ce6dd</li>
         </ul>
         <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
   <input type="text" name="q" placeholder="Search docs" />
@@ -3173,6 +3173,10 @@
 <span class="sd">    first checks if there is already such an object by looking in the</span>
 <span class="sd">    _pyproxies group and returns it if found. Otherwise, it creates a</span>
 <span class="sd">    new one. Proxies register themselves in _pyproxies upon creation.&quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">smproxy</span><span class="p">,</span> <span class="n">Proxy</span><span class="p">):</span>
+        <span class="c1"># if already a pyproxy, do nothing.</span>
+        <span class="k">return</span> <span class="n">smproxy</span>
+
     <span class="k">if</span> <span class="ow">not</span> <span class="n">smproxy</span><span class="p">:</span>
         <span class="k">return</span> <span class="kc">None</span>
     <span class="k">try</span><span class="p">:</span>
@@ -3360,11 +3364,13 @@
 <span class="k">def</span> <span class="nf">_make_name_valid</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">paraview</span><span class="o">.</span><span class="n">make_name_valid</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
 
-<span class="k">def</span> <span class="nf">_createClass</span><span class="p">(</span><span class="n">groupName</span><span class="p">,</span> <span class="n">proxyName</span><span class="p">,</span> <span class="n">apxm</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="k">def</span> <span class="nf">_createClass</span><span class="p">(</span><span class="n">groupName</span><span class="p">,</span> <span class="n">proxyName</span><span class="p">,</span> <span class="n">apxm</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">prototype</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Defines a new class type for the proxy.&quot;&quot;&quot;</span>
-    <span class="k">global</span> <span class="n">ActiveConnection</span>
-    <span class="n">pxm</span> <span class="o">=</span> <span class="n">ProxyManager</span><span class="p">()</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">apxm</span> <span class="k">else</span> <span class="n">apxm</span>
-    <span class="n">proto</span> <span class="o">=</span> <span class="n">pxm</span><span class="o">.</span><span class="n">GetPrototypeProxy</span><span class="p">(</span><span class="n">groupName</span><span class="p">,</span> <span class="n">proxyName</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">prototype</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">pxm</span> <span class="o">=</span> <span class="n">ProxyManager</span><span class="p">()</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">apxm</span> <span class="k">else</span> <span class="n">apxm</span>
+        <span class="n">proto</span> <span class="o">=</span> <span class="n">pxm</span><span class="o">.</span><span class="n">GetPrototypeProxy</span><span class="p">(</span><span class="n">groupName</span><span class="p">,</span> <span class="n">proxyName</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">proto</span> <span class="o">=</span> <span class="n">prototype</span>
     <span class="k">if</span> <span class="ow">not</span> <span class="n">proto</span><span class="p">:</span>
        <span class="n">paraview</span><span class="o">.</span><span class="n">print_error</span><span class="p">(</span><span class="s2">&quot;Error while loading </span><span class="si">%s</span><span class="s2"> </span><span class="si">%s</span><span class="s2">&quot;</span><span class="o">%</span><span class="p">(</span><span class="n">groupName</span><span class="p">,</span> <span class="n">proxyName</span><span class="p">))</span>
        <span class="k">return</span> <span class="kc">None</span>

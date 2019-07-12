@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>paraview.simple &mdash; ParaView/Python 5.7.0-RC1-46-g52a7b0e77a documentation</title>
+  <title>paraview.simple &mdash; ParaView/Python 5.7.0-RC1-51-g957e0ce6dd documentation</title>
   
 
   
@@ -24,7 +24,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:'../../',
-        VERSION:'5.7.0-RC1-46-g52a7b0e77a',
+        VERSION:'5.7.0-RC1-51-g957e0ce6dd',
         COLLAPSE_INDEX:false,
         FILE_SUFFIX:'.html',
         HAS_SOURCE:  true
@@ -48,7 +48,7 @@
         <link rel="index" title="Index"
               href="../../genindex.html"/>
         <link rel="search" title="Search" href="../../search.html"/>
-    <link rel="top" title="ParaView/Python 5.7.0-RC1-46-g52a7b0e77a documentation" href="../../index.html"/>
+    <link rel="top" title="ParaView/Python 5.7.0-RC1-51-g957e0ce6dd documentation" href="../../index.html"/>
         <link rel="up" title="Module code" href="../index.html"/> 
 
   <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
@@ -66,7 +66,7 @@
           <li> <a href="../../index.html">
             <img src="../../_static/paraview-logo-small.png"
             alt="ParaView/Python"></img></a> </li>
-          <li class="version"> version 5.7.0-RC1-46-g52a7b0e77a</li>
+          <li class="version"> version 5.7.0-RC1-51-g957e0ce6dd</li>
         </ul>
         <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
   <input type="text" name="q" placeholder="Search docs" />
@@ -1105,14 +1105,20 @@
     <span class="n">RemoveViewsAndLayouts</span><span class="p">()</span>
 
     <span class="n">pxm</span> <span class="o">=</span> <span class="n">servermanager</span><span class="o">.</span><span class="n">ProxyManager</span><span class="p">()</span>
-    <span class="n">proxy</span> <span class="o">=</span> <span class="n">pxm</span><span class="o">.</span><span class="n">NewProxy</span><span class="p">(</span><span class="s1">&#39;options&#39;</span><span class="p">,</span> <span class="s1">&#39;LoadStateOptions&#39;</span><span class="p">)</span>
+    <span class="n">smproxy</span> <span class="o">=</span> <span class="n">pxm</span><span class="o">.</span><span class="n">SMProxyManager</span><span class="o">.</span><span class="n">NewProxy</span><span class="p">(</span><span class="s1">&#39;options&#39;</span><span class="p">,</span> <span class="s1">&#39;LoadStateOptions&#39;</span><span class="p">)</span>
+    <span class="n">smproxy</span><span class="o">.</span><span class="n">UnRegister</span><span class="p">(</span><span class="kc">None</span><span class="p">)</span>
 
-    <span class="k">if</span> <span class="p">((</span><span class="n">proxy</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">)</span> <span class="o">&amp;</span> <span class="n">proxy</span><span class="o">.</span><span class="n">PrepareToLoad</span><span class="p">(</span><span class="n">filename</span><span class="p">)):</span>
-        <span class="k">if</span> <span class="p">(</span><span class="n">proxy</span><span class="o">.</span><span class="n">HasDataFiles</span><span class="p">()</span> <span class="ow">and</span> <span class="p">(</span><span class="n">extraArgs</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">)):</span>
-            <span class="n">pyproxy</span> <span class="o">=</span> <span class="n">servermanager</span><span class="o">.</span><span class="n">_getPyProxy</span><span class="p">(</span><span class="n">proxy</span><span class="p">)</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">smproxy</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">)</span> <span class="ow">and</span> <span class="n">smproxy</span><span class="o">.</span><span class="n">PrepareToLoad</span><span class="p">(</span><span class="n">filename</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">smproxy</span><span class="o">.</span><span class="n">HasDataFiles</span><span class="p">()</span> <span class="ow">and</span> <span class="p">(</span><span class="n">extraArgs</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">):</span>
+            <span class="c1"># always create a brand new class since the properties</span>
+            <span class="c1"># may change based on the state file being loaded.</span>
+            <span class="n">customclass</span> <span class="o">=</span> <span class="n">servermanager</span><span class="o">.</span><span class="n">_createClass</span><span class="p">(</span><span class="n">smproxy</span><span class="o">.</span><span class="n">GetXMLGroup</span><span class="p">(),</span>
+                    <span class="n">smproxy</span><span class="o">.</span><span class="n">GetXMLName</span><span class="p">(),</span> <span class="n">prototype</span><span class="o">=</span><span class="n">smproxy</span><span class="p">)</span>
+            <span class="n">pyproxy</span> <span class="o">=</span> <span class="n">customclass</span><span class="p">(</span><span class="n">proxy</span><span class="o">=</span><span class="n">smproxy</span><span class="p">)</span>
             <span class="n">SetProperties</span><span class="p">(</span><span class="n">pyproxy</span><span class="p">,</span> <span class="o">**</span><span class="n">extraArgs</span><span class="p">)</span>
-
-        <span class="n">proxy</span><span class="o">.</span><span class="n">Load</span><span class="p">()</span>
+            <span class="k">del</span> <span class="n">pyproxy</span>
+            <span class="k">del</span> <span class="n">customclass</span>
+        <span class="n">smproxy</span><span class="o">.</span><span class="n">Load</span><span class="p">()</span>
 
     <span class="c1"># Try to set the new view active</span>
     <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">GetRenderViews</span><span class="p">())</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>

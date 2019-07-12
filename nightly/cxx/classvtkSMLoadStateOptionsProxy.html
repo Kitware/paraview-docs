@@ -47,7 +47,7 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
-<p>proxy for managing data files when loading a state file.  
+<p>proxy for state loading options  
  <a href="classvtkSMLoadStateOptionsProxy.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="vtkSMLoadStateOptionsProxy_8h_source.html">vtkSMLoadStateOptionsProxy.h</a>&gt;</code></p>
@@ -127,12 +127,8 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a73b23cc71c24f4dbcb61f07b9c90820c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if state file has any data files.  <a href="#a73b23cc71c24f4dbcb61f07b9c90820c">More...</a><br /></td></tr>
 <tr class="separator:a73b23cc71c24f4dbcb61f07b9c90820c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aaae09256b5a979f1b99a71ef874aecda"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkSMLoadStateOptionsProxy.html#aaae09256b5a979f1b99a71ef874aecda">Load</a> ()</td></tr>
-<tr class="memdesc:aaae09256b5a979f1b99a71ef874aecda"><td class="mdescLeft">&#160;</td><td class="mdescRight">Do the state loading.  <a href="#aaae09256b5a979f1b99a71ef874aecda">More...</a><br /></td></tr>
+<tr class="memdesc:aaae09256b5a979f1b99a71ef874aecda"><td class="mdescLeft">&#160;</td><td class="mdescRight">Do the state loading using the values for properties on this proxy to configure the state loading i.e.  <a href="#aaae09256b5a979f1b99a71ef874aecda">More...</a><br /></td></tr>
 <tr class="separator:aaae09256b5a979f1b99a71ef874aecda"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab9f5a06df3753529ab45e313416ebcd3"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkSMLoadStateOptionsProxy.html#ab9f5a06df3753529ab45e313416ebcd3">SetDataFileOptions</a> (<a class="elRef" doxygen="/home/kitware/dashboards/buildbot/paraview_master-vall-linux-shared-debug_doc_extdeps_gui_mpi_python3/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkShaderProgram2_8h.html#a61569f2965b7a369eb10b6d75d410d11">int</a>)</td></tr>
-<tr class="separator:ab9f5a06df3753529ab45e313416ebcd3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4b45c3d41be290b70cda1439994df538"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkSMLoadStateOptionsProxy.html#a4b45c3d41be290b70cda1439994df538">SetOnlyUseFilesInDataDirectory</a> (bool)</td></tr>
-<tr class="separator:a4b45c3d41be290b70cda1439994df538"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classvtkSMProxy"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classvtkSMProxy')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classvtkSMProxy.html">vtkSMProxy</a></td></tr>
 <tr class="memitem:ad3f0e984c6abba36493d432b82360fd6 inherit pub_methods_classvtkSMProxy"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkSMProxy.html#ad3f0e984c6abba36493d432b82360fd6">SetAnnotation</a> (const char *<a class="elRef" doxygen="/home/kitware/dashboards/buildbot/paraview_master-vall-linux-shared-debug_doc_extdeps_gui_mpi_python3/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/namespacevtkX3D.html#ac6551f7bf833e8254b2b3ecdaea0d210a0846b78bc0416ae791ce3bc3eddc9bc7">key</a>, const char *<a class="elRef" doxygen="/home/kitware/dashboards/buildbot/paraview_master-vall-linux-shared-debug_doc_extdeps_gui_mpi_python3/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/namespacevtkX3D.html#ac6551f7bf833e8254b2b3ecdaea0d210a6bf5e5151797630e91167caab3f22b9a">value</a>)</td></tr>
 <tr class="separator:ad3f0e984c6abba36493d432b82360fd6 inherit pub_methods_classvtkSMProxy"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -839,10 +835,12 @@ Protected Attributes</h2></td></tr>
 <tr class="separator:a8b1994de8f45ddb8ae8acd18240715e6 inherit pro_attribs_classvtkObjectBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>proxy for managing data files when loading a state file. </p>
-<p><a class="el" href="classvtkSMLoadStateOptionsProxy.html" title="proxy for managing data files when loading a state file. ">vtkSMLoadStateOptionsProxy</a> provides a dialog to allow a user to change the locations of data files when loading a state file. The user can give a directory where the data files reside or explicitly change the path for each data file. </p>
+<div class="textblock"><p>proxy for state loading options </p>
+<p><a class="el" href="classvtkSMLoadStateOptionsProxy.html" title="proxy for state loading options ">vtkSMLoadStateOptionsProxy</a> is the proxy used to setup options when loading a state file. These including choosing how to handle data files referenced in the state. This proxy supports multiple ways to let the user update the files being loaded in the state file.</p>
+<p>To use this, create the <code>("options", "LoadStateOptions")</code> proxy using the session's proxy manager and call <code>PrepareToLoad</code> with the state file to load. This will parse the state file and setup internal data structures. At this point, you can call <code>HasDataFiles</code> method to determine if the state file has any data files. This can be used to determine if the application should prompt the user with options, for example. One can change options using properties on the options proxy itself. Following <code>PrepareToLoad</code>, the proxy will present additional properties that allows the user to pick filenames for readers in the state file. Call <code>Load</code> to load the state file.</p>
+<p>This proxy is not intended for reuse. Simply create a new one for each state to load. </p>
 
-<p class="definition">Definition at line <a class="el" href="vtkSMLoadStateOptionsProxy_8h_source.html#l00033">33</a> of file <a class="el" href="vtkSMLoadStateOptionsProxy_8h_source.html">vtkSMLoadStateOptionsProxy.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vtkSMLoadStateOptionsProxy_8h_source.html#l00045">45</a> of file <a class="el" href="vtkSMLoadStateOptionsProxy_8h_source.html">vtkSMLoadStateOptionsProxy.h</a>.</p>
 </div><h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="ac281582700035b30ed555455a1c9244d"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ac281582700035b30ed555455a1c9244d">&#9670;&nbsp;</a></span>Superclass</h2>
@@ -856,7 +854,7 @@ Protected Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="vtkSMLoadStateOptionsProxy_8h_source.html#l00037">37</a> of file <a class="el" href="vtkSMLoadStateOptionsProxy_8h_source.html">vtkSMLoadStateOptionsProxy.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vtkSMLoadStateOptionsProxy_8h_source.html#l00049">49</a> of file <a class="el" href="vtkSMLoadStateOptionsProxy_8h_source.html">vtkSMLoadStateOptionsProxy.h</a>.</p>
 
 </div>
 </div>
@@ -878,7 +876,7 @@ Protected Attributes</h2></td></tr>
 <tr><td class="fieldname"><a id="ae46ebbe8d4dca2e8ed530ddd381ef7f7a7a3972becdc18709583f44c8541b6d43"></a>CHOOSE_FILES_EXPLICITLY&#160;</td><td class="fielddoc"></td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="vtkSMLoadStateOptionsProxy_8h_source.html#l00057">57</a> of file <a class="el" href="vtkSMLoadStateOptionsProxy_8h_source.html">vtkSMLoadStateOptionsProxy.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vtkSMLoadStateOptionsProxy_8h_source.html#l00070">70</a> of file <a class="el" href="vtkSMLoadStateOptionsProxy_8h_source.html">vtkSMLoadStateOptionsProxy.h</a>.</p>
 
 </div>
 </div>
@@ -1184,59 +1182,8 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Do the state loading. </p>
-
-</div>
-</div>
-<a id="ab9f5a06df3753529ab45e313416ebcd3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab9f5a06df3753529ab45e313416ebcd3">&#9670;&nbsp;</a></span>SetDataFileOptions()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual void vtkSMLoadStateOptionsProxy::SetDataFileOptions </td>
-          <td>(</td>
-          <td class="paramtype"><a class="elRef" doxygen="/home/kitware/dashboards/buildbot/paraview_master-vall-linux-shared-debug_doc_extdeps_gui_mpi_python3/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkShaderProgram2_8h.html#a61569f2965b7a369eb10b6d75d410d11">int</a>&#160;</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a4b45c3d41be290b70cda1439994df538"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4b45c3d41be290b70cda1439994df538">&#9670;&nbsp;</a></span>SetOnlyUseFilesInDataDirectory()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual void vtkSMLoadStateOptionsProxy::SetOnlyUseFilesInDataDirectory </td>
-          <td>(</td>
-          <td class="paramtype">bool&#160;</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
+<p>Do the state loading using the values for properties on this proxy to configure the state loading i.e. </p>
+<p>update data files, etc. </p>
 
 </div>
 </div>
@@ -1333,7 +1280,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="vtkSMLoadStateOptionsProxy_8h_source.html#l00085">85</a> of file <a class="el" href="vtkSMLoadStateOptionsProxy_8h_source.html">vtkSMLoadStateOptionsProxy.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vtkSMLoadStateOptionsProxy_8h_source.html#l00094">94</a> of file <a class="el" href="vtkSMLoadStateOptionsProxy_8h_source.html">vtkSMLoadStateOptionsProxy.h</a>.</p>
 
 </div>
 </div>
@@ -1359,7 +1306,7 @@ Protected Attributes</h2></td></tr>
 
 <p>The three options for how to specify the data file locations. </p>
 
-<p class="definition">Definition at line <a class="el" href="vtkSMLoadStateOptionsProxy_8h_source.html#l00091">91</a> of file <a class="el" href="vtkSMLoadStateOptionsProxy_8h_source.html">vtkSMLoadStateOptionsProxy.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vtkSMLoadStateOptionsProxy_8h_source.html#l00100">100</a> of file <a class="el" href="vtkSMLoadStateOptionsProxy_8h_source.html">vtkSMLoadStateOptionsProxy.h</a>.</p>
 
 </div>
 </div>
@@ -1385,7 +1332,7 @@ Protected Attributes</h2></td></tr>
 
 <p>When the number of parent directories for a file series reaches this number assume it will match for the rest of the file series. </p>
 
-<p class="definition">Definition at line <a class="el" href="vtkSMLoadStateOptionsProxy_8h_source.html#l00097">97</a> of file <a class="el" href="vtkSMLoadStateOptionsProxy_8h_source.html">vtkSMLoadStateOptionsProxy.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vtkSMLoadStateOptionsProxy_8h_source.html#l00106">106</a> of file <a class="el" href="vtkSMLoadStateOptionsProxy_8h_source.html">vtkSMLoadStateOptionsProxy.h</a>.</p>
 
 </div>
 </div>
@@ -1411,7 +1358,7 @@ Protected Attributes</h2></td></tr>
 
 <p>When this is set to true, USE_DATA_DIRECTORY mode will fail when a file is not in the data directory rather than defaulting back to the absolute path in the state file. </p>
 
-<p class="definition">Definition at line <a class="el" href="vtkSMLoadStateOptionsProxy_8h_source.html#l00103">103</a> of file <a class="el" href="vtkSMLoadStateOptionsProxy_8h_source.html">vtkSMLoadStateOptionsProxy.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vtkSMLoadStateOptionsProxy_8h_source.html#l00112">112</a> of file <a class="el" href="vtkSMLoadStateOptionsProxy_8h_source.html">vtkSMLoadStateOptionsProxy.h</a>.</p>
 
 </div>
 </div>
