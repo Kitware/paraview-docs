@@ -54,7 +54,8 @@ Inheritance diagram for vtkPVPlugin:</div>
 <div class="dyncontent">
 <div class="center"><img src="classvtkPVPlugin__inherit__graph.png" border="0" usemap="#vtkPVPlugin_inherit__map" alt="Inheritance graph"/></div>
 <map name="vtkPVPlugin_inherit__map" id="vtkPVPlugin_inherit__map">
-<area shape="rect" id="node2" href="classvtkPVPythonAlgorithmPlugin.html" title="packages a Python module into a ParaView plugin. " alt="" coords="5,80,215,107"/>
+<area shape="rect" id="node2" href="classvtkPVInitializerPlugin.html" title="vtkPVInitializerPlugin" alt="" coords="5,80,167,107"/>
+<area shape="rect" id="node3" href="classvtkPVPythonAlgorithmPlugin.html" title="packages a Python module into a ParaView plugin. " alt="" coords="191,80,400,107"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
@@ -81,6 +82,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ab3b884f43b42635098538b8caeb4fe1b"><td class="memItemLeft" align="right" valign="top">virtual const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkPVPlugin.html#ab3b884f43b42635098538b8caeb4fe1b">GetRequiredPlugins</a> ()=0</td></tr>
 <tr class="memdesc:ab3b884f43b42635098538b8caeb4fe1b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a ';' separated list of plugin names required by this plugin.  <a href="#ab3b884f43b42635098538b8caeb4fe1b">More...</a><br /></td></tr>
 <tr class="separator:ab3b884f43b42635098538b8caeb4fe1b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a328b9e87e3addcef340f0e42252b4d48"><td class="memItemLeft" align="right" valign="top">virtual const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkPVPlugin.html#a328b9e87e3addcef340f0e42252b4d48">GetDescription</a> ()=0</td></tr>
+<tr class="memdesc:a328b9e87e3addcef340f0e42252b4d48"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a description of this plugin.  <a href="#a328b9e87e3addcef340f0e42252b4d48">More...</a><br /></td></tr>
+<tr class="separator:a328b9e87e3addcef340f0e42252b4d48"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6e83c21a74a622ad4829d291c6529d96"><td class="memItemLeft" align="right" valign="top">virtual const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkPVPlugin.html#a6e83c21a74a622ad4829d291c6529d96">GetEULA</a> ()=0</td></tr>
 <tr class="memdesc:a6e83c21a74a622ad4829d291c6529d96"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns EULA for the plugin, if any.  <a href="#a6e83c21a74a622ad4829d291c6529d96">More...</a><br /></td></tr>
 <tr class="separator:a6e83c21a74a622ad4829d291c6529d96"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -114,9 +118,9 @@ Friends</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>defines the core interface for any ParaView plugin. </p>
 <p><a class="el" href="classvtkPVPlugin.html" title="defines the core interface for any ParaView plugin. ">vtkPVPlugin</a> defines the core interface for any ParaView plugin. A plugin implementing merely this interface is pretty much useless. The header file also defines few import macros that are required for exporting/importing plugins.</p>
-<p>When debugging issues with plugins try setting the PV_PLUGIN_DEBUG environment variable on all the processes where you are trying to load the plugin. That will print extra information as the plugin is being loaded. </p>
+<p>When debugging issues with plugins try setting the <code>PARAVIEW_LOG_PLUGIN_VERBOSITY=&lt;level&gt;</code> environment variable on all the processes where you are trying to load the plugin. That will print extra information as the plugin is being loaded. See <code><a class="el" href="classvtkPVLogger.html#a53e1b3ca14ad83fa9a2188ebc78b4530" title="Use this verbosity level to for log message relating to ParaView&#39;s plugin system. ...">vtkPVLogger::SetPluginVerbosity</a></code> for details. </p>
 
-<p class="definition">Definition at line <a class="el" href="vtkPVPlugin_8h_source.html#l00050">50</a> of file <a class="el" href="vtkPVPlugin_8h_source.html">vtkPVPlugin.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vtkPVPlugin_8h_source.html#l00052">52</a> of file <a class="el" href="vtkPVPlugin_8h_source.html">vtkPVPlugin.h</a>.</p>
 </div><h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="a58d47f266934461908c06fc97c810d60"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a58d47f266934461908c06fc97c810d60">&#9670;&nbsp;</a></span>EULAConfirmationCallback</h2>
@@ -132,7 +136,7 @@ Friends</h2></td></tr>
 
 <p>Type for EULAConfirmationCallback. </p>
 
-<p class="definition">Definition at line <a class="el" href="vtkPVPlugin_8h_source.html#l00114">114</a> of file <a class="el" href="vtkPVPlugin_8h_source.html">vtkPVPlugin.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vtkPVPlugin_8h_source.html#l00121">121</a> of file <a class="el" href="vtkPVPlugin_8h_source.html">vtkPVPlugin.h</a>.</p>
 
 </div>
 </div>
@@ -203,7 +207,7 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="vtkPVPlugin_8h_source.html#l00056">56</a> of file <a class="el" href="vtkPVPlugin_8h_source.html">vtkPVPlugin.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vtkPVPlugin_8h_source.html#l00058">58</a> of file <a class="el" href="vtkPVPlugin_8h_source.html">vtkPVPlugin.h</a>.</p>
 
 </div>
 </div>
@@ -349,6 +353,35 @@ Friends</h2></td></tr>
 <p>Returns a ';' separated list of plugin names required by this plugin. </p>
 
 <p>Implemented in <a class="el" href="classvtkPVPythonAlgorithmPlugin.html#a6330221be152b0a8f8f1dcc43c627298">vtkPVPythonAlgorithmPlugin</a>.</p>
+
+</div>
+</div>
+<a id="a328b9e87e3addcef340f0e42252b4d48"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a328b9e87e3addcef340f0e42252b4d48">&#9670;&nbsp;</a></span>GetDescription()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual const char* vtkPVPlugin::GetDescription </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns a description of this plugin. </p>
+
+<p>Implemented in <a class="el" href="classvtkPVPythonAlgorithmPlugin.html#a8683053885f73545d8c80c2054900e6d">vtkPVPythonAlgorithmPlugin</a>.</p>
 
 </div>
 </div>
@@ -547,7 +580,7 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="vtkPVPlugin_8h_source.html#l00144">144</a> of file <a class="el" href="vtkPVPlugin_8h_source.html">vtkPVPlugin.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vtkPVPlugin_8h_source.html#l00151">151</a> of file <a class="el" href="vtkPVPlugin_8h_source.html">vtkPVPlugin.h</a>.</p>
 
 </div>
 </div>

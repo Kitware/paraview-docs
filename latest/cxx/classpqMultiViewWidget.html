@@ -42,6 +42,7 @@ $(function() {
 <a href="#pro-slots">Protected Slots</a> &#124;
 <a href="#pro-methods">Protected Member Functions</a> &#124;
 <a href="#properties">Properties</a> &#124;
+<a href="#friends">Friends</a> &#124;
 <a href="classpqMultiViewWidget-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">pqMultiViewWidget Class Reference</div>  </div>
@@ -60,19 +61,9 @@ Public Slots</h2></td></tr>
 <tr class="memitem:a3eaf89a166dd4984d58cd755bce510f9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpqMultiViewWidget.html#a3eaf89a166dd4984d58cd755bce510f9">reload</a> ()</td></tr>
 <tr class="memdesc:a3eaf89a166dd4984d58cd755bce510f9"><td class="mdescLeft">&#160;</td><td class="mdescRight">This forces the <a class="el" href="classpqMultiViewWidget.html" title="pqMultiViewWidget is a widget that manages layout of multiple views. ">pqMultiViewWidget</a> to reload its layout from the <a class="el" href="classvtkSMViewLayoutProxy.html" title="vtkSMViewLayoutProxy is used by ParaView to layout multiple views in a 2D KD-Tree layout...">vtkSMViewLayoutProxy</a> instance.  <a href="#a3eaf89a166dd4984d58cd755bce510f9">More...</a><br /></td></tr>
 <tr class="separator:a3eaf89a166dd4984d58cd755bce510f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5923440c0f47e3fa9ea41114d8299eef"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpqMultiViewWidget.html#a5923440c0f47e3fa9ea41114d8299eef">assignToFrame</a> (<a class="el" href="classpqView.html">pqView</a> *)</td></tr>
-<tr class="memdesc:a5923440c0f47e3fa9ea41114d8299eef"><td class="mdescLeft">&#160;</td><td class="mdescRight">Assigns a frame to the view.  <a href="#a5923440c0f47e3fa9ea41114d8299eef">More...</a><br /></td></tr>
-<tr class="separator:a5923440c0f47e3fa9ea41114d8299eef"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a457186976a37cae7cf61d8723c3805eb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpqMultiViewWidget.html#a457186976a37cae7cf61d8723c3805eb">makeFrameActive</a> ()</td></tr>
 <tr class="memdesc:a457186976a37cae7cf61d8723c3805eb"><td class="mdescLeft">&#160;</td><td class="mdescRight">In a tabbed setup, when <a class="el" href="classpqMultiViewWidget.html" title="pqMultiViewWidget is a widget that manages layout of multiple views. ">pqMultiViewWidget</a> becomes active, this method should be called to ensure that the first view/frame in this widget is indeed made active, as the user would expect.  <a href="#a457186976a37cae7cf61d8723c3805eb">More...</a><br /></td></tr>
 <tr class="separator:a457186976a37cae7cf61d8723c3805eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aafde312b22e55cb2a19e14b57de8870c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpqMultiViewWidget.html#aafde312b22e55cb2a19e14b57de8870c">setDecorationsVisible</a> (bool)</td></tr>
-<tr class="memdesc:aafde312b22e55cb2a19e14b57de8870c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the visibility for frame decorations and splitter handles.  <a href="#aafde312b22e55cb2a19e14b57de8870c">More...</a><br /></td></tr>
-<tr class="separator:aafde312b22e55cb2a19e14b57de8870c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2a7d69985d70fda8f303a97bef035631"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpqMultiViewWidget.html#a2a7d69985d70fda8f303a97bef035631">showDecorations</a> ()</td></tr>
-<tr class="separator:a2a7d69985d70fda8f303a97bef035631"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a84c0c3b50ae99d546cb0fab96f6c266c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpqMultiViewWidget.html#a84c0c3b50ae99d546cb0fab96f6c266c">hideDecorations</a> ()</td></tr>
-<tr class="separator:a84c0c3b50ae99d546cb0fab96f6c266c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab2bbf52057bd73345702f9f216cdeef3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpqMultiViewWidget.html#ab2bbf52057bd73345702f9f216cdeef3">lockViewSize</a> (const QSize &amp;)</td></tr>
 <tr class="memdesc:ab2bbf52057bd73345702f9f216cdeef3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Locks the maximum size for each view-frame to the given size.  <a href="#ab2bbf52057bd73345702f9f216cdeef3">More...</a><br /></td></tr>
 <tr class="separator:ab2bbf52057bd73345702f9f216cdeef3"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -82,6 +73,16 @@ Public Slots</h2></td></tr>
 <tr class="memitem:a479596dc6f5a4ea22cbfd26ad4be5446"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpqMultiViewWidget.html#a479596dc6f5a4ea22cbfd26ad4be5446">destroyAllViews</a> ()</td></tr>
 <tr class="memdesc:a479596dc6f5a4ea22cbfd26ad4be5446"><td class="mdescLeft">&#160;</td><td class="mdescRight">destroys each of the views present in this layout.  <a href="#a479596dc6f5a4ea22cbfd26ad4be5446">More...</a><br /></td></tr>
 <tr class="separator:a479596dc6f5a4ea22cbfd26ad4be5446"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr><td colspan="2"><div class="groupHeader"></div></td></tr>
+<tr class="memitem:a6ec42add2a306ba57676b67f2149df96"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpqMultiViewWidget.html#a6ec42add2a306ba57676b67f2149df96">setDecorationsVisibility</a> (bool)</td></tr>
+<tr class="memdesc:a6ec42add2a306ba57676b67f2149df96"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the visibility for frame decorations and splitter handles.  <a href="#a6ec42add2a306ba57676b67f2149df96">More...</a><br /></td></tr>
+<tr class="separator:a6ec42add2a306ba57676b67f2149df96"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2a7d69985d70fda8f303a97bef035631"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpqMultiViewWidget.html#a2a7d69985d70fda8f303a97bef035631">showDecorations</a> ()</td></tr>
+<tr class="memdesc:a2a7d69985d70fda8f303a97bef035631"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the visibility for frame decorations and splitter handles.  <a href="#a2a7d69985d70fda8f303a97bef035631">More...</a><br /></td></tr>
+<tr class="separator:a2a7d69985d70fda8f303a97bef035631"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a84c0c3b50ae99d546cb0fab96f6c266c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpqMultiViewWidget.html#a84c0c3b50ae99d546cb0fab96f6c266c">hideDecorations</a> ()</td></tr>
+<tr class="memdesc:a84c0c3b50ae99d546cb0fab96f6c266c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the visibility for frame decorations and splitter handles.  <a href="#a84c0c3b50ae99d546cb0fab96f6c266c">More...</a><br /></td></tr>
+<tr class="separator:a84c0c3b50ae99d546cb0fab96f6c266c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="signals"></a>
 Signals</h2></td></tr>
@@ -103,9 +104,9 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:afa47f97c4b27976e543c5ce4e2cd9fc2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab1930e47c24cd1e158f3345ab49efed1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classvtkSMViewLayoutProxy.html">vtkSMViewLayoutProxy</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpqMultiViewWidget.html#ab1930e47c24cd1e158f3345ab49efed1">layoutManager</a> () const</td></tr>
 <tr class="separator:ab1930e47c24cd1e158f3345ab49efed1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1141de2efbb8fe3cfbd7bd50b843b6f5"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpqMultiViewWidget.html#a1141de2efbb8fe3cfbd7bd50b843b6f5">isDecorationsVisible</a> () const</td></tr>
-<tr class="memdesc:a1141de2efbb8fe3cfbd7bd50b843b6f5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns whether window decorations and splitter handles are visible.  <a href="#a1141de2efbb8fe3cfbd7bd50b843b6f5">More...</a><br /></td></tr>
-<tr class="separator:a1141de2efbb8fe3cfbd7bd50b843b6f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a188f6a6225a21ee64a8246fcd6819e37"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpqMultiViewWidget.html#a188f6a6225a21ee64a8246fcd6819e37">decorationsVisibility</a> () const</td></tr>
+<tr class="memdesc:a188f6a6225a21ee64a8246fcd6819e37"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns whether window decorations and splitter handles are visible.  <a href="#a188f6a6225a21ee64a8246fcd6819e37">More...</a><br /></td></tr>
+<tr class="separator:a188f6a6225a21ee64a8246fcd6819e37"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac75e27add5b9a493b46ef6f3a8ed0b21"><td class="memItemLeft" align="right" valign="top">QList&lt; <a class="el" href="classvtkSMViewProxy.html">vtkSMViewProxy</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpqMultiViewWidget.html#ac75e27add5b9a493b46ef6f3a8ed0b21">viewProxies</a> () const</td></tr>
 <tr class="memdesc:ac75e27add5b9a493b46ef6f3a8ed0b21"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns list of views assigned to frames in this widget.  <a href="#ac75e27add5b9a493b46ef6f3a8ed0b21">More...</a><br /></td></tr>
 <tr class="separator:ac75e27add5b9a493b46ef6f3a8ed0b21"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -118,14 +119,19 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a5ebf0434cdcf0264e3593064fa3c4715"><td class="memItemLeft" align="right" valign="top">QSize&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpqMultiViewWidget.html#a5ebf0434cdcf0264e3593064fa3c4715">preview</a> (const QSize &amp;previewSize=QSize())</td></tr>
 <tr class="memdesc:a5ebf0434cdcf0264e3593064fa3c4715"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enter (or exit) preview mode.  <a href="#a5ebf0434cdcf0264e3593064fa3c4715">More...</a><br /></td></tr>
 <tr class="separator:a5ebf0434cdcf0264e3593064fa3c4715"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af4852fc9a95976888aaf23cca4f8c0ae"><td class="memItemLeft" align="right" valign="top"><a class="elRef" doxygen="/home/kitware/dashboards/buildbot/paraview_release-vall-linux-shared-debug_doc_extdeps_gui_mpi_python3/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkShaderProgram2_8h.html#a61569f2965b7a369eb10b6d75d410d11">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpqMultiViewWidget.html#af4852fc9a95976888aaf23cca4f8c0ae">activeFrameLocation</a> () const</td></tr>
+<tr class="memdesc:af4852fc9a95976888aaf23cca4f8c0ae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the location of the active frame, if any, else -1.  <a href="#af4852fc9a95976888aaf23cca4f8c0ae">More...</a><br /></td></tr>
+<tr class="separator:af4852fc9a95976888aaf23cca4f8c0ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1141de2efbb8fe3cfbd7bd50b843b6f5"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpqMultiViewWidget.html#a1141de2efbb8fe3cfbd7bd50b843b6f5">isDecorationsVisible</a> () const</td></tr>
+<tr class="separator:a1141de2efbb8fe3cfbd7bd50b843b6f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5cadca07d7e7aa27a2461205c670fbc4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpqMultiViewWidget.html#a5cadca07d7e7aa27a2461205c670fbc4">setDecorationsVisible</a> (bool val)</td></tr>
+<tr class="separator:a5cadca07d7e7aa27a2461205c670fbc4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-slots"></a>
 Protected Slots</h2></td></tr>
 <tr class="memitem:a3b4772920c9dd52c13ea9b264ca75f25"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpqMultiViewWidget.html#a3b4772920c9dd52c13ea9b264ca75f25">standardButtonPressed</a> (<a class="elRef" doxygen="/home/kitware/dashboards/buildbot/paraview_release-vall-linux-shared-debug_doc_extdeps_gui_mpi_python3/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkShaderProgram2_8h.html#a61569f2965b7a369eb10b6d75d410d11">int</a>)</td></tr>
 <tr class="memdesc:a3b4772920c9dd52c13ea9b264ca75f25"><td class="mdescLeft">&#160;</td><td class="mdescRight">Slots called on different signals fired by the nested frames or splitters.  <a href="#a3b4772920c9dd52c13ea9b264ca75f25">More...</a><br /></td></tr>
 <tr class="separator:a3b4772920c9dd52c13ea9b264ca75f25"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aca4c4054cf99cfe1a0d6ab6b4b646f88"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpqMultiViewWidget.html#aca4c4054cf99cfe1a0d6ab6b4b646f88">splitterMoved</a> ()</td></tr>
-<tr class="separator:aca4c4054cf99cfe1a0d6ab6b4b646f88"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7291ac0922dc240090555ef1ffc392ec"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpqMultiViewWidget.html#a7291ac0922dc240090555ef1ffc392ec">makeActive</a> (<a class="el" href="classpqViewFrame.html">pqViewFrame</a> *frame)</td></tr>
 <tr class="memdesc:a7291ac0922dc240090555ef1ffc392ec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Makes a frame active.  <a href="#a7291ac0922dc240090555ef1ffc392ec">More...</a><br /></td></tr>
 <tr class="separator:a7291ac0922dc240090555ef1ffc392ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -157,12 +163,18 @@ Protected Member Functions</h2></td></tr>
 Properties</h2></td></tr>
 <tr class="memitem:af7c30e838de67f85fe440861ecc52d5e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpqMultiViewWidget.html#af7c30e838de67f85fe440861ecc52d5e">decorationsVisibility</a></td></tr>
 <tr class="separator:af7c30e838de67f85fe440861ecc52d5e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="friends"></a>
+Friends</h2></td></tr>
+<tr class="memitem:a6b9200f99790855b1677bce2af5fbaa1"><td class="memItemLeft" align="right" valign="top">class&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpqMultiViewWidget.html#a6b9200f99790855b1677bce2af5fbaa1">pqInternals</a></td></tr>
+<tr class="separator:a6b9200f99790855b1677bce2af5fbaa1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p><a class="el" href="classpqMultiViewWidget.html" title="pqMultiViewWidget is a widget that manages layout of multiple views. ">pqMultiViewWidget</a> is a widget that manages layout of multiple views. </p>
-<p>It works together with a <a class="el" href="classvtkSMViewLayoutProxy.html" title="vtkSMViewLayoutProxy is used by ParaView to layout multiple views in a 2D KD-Tree layout...">vtkSMViewLayoutProxy</a> instance to keep track of the layout for the views. It's acceptable to create multiple instances of <a class="el" href="classpqMultiViewWidget.html" title="pqMultiViewWidget is a widget that manages layout of multiple views. ">pqMultiViewWidget</a> in the same application. </p>
+<p>It works together with a <a class="el" href="classvtkSMViewLayoutProxy.html" title="vtkSMViewLayoutProxy is used by ParaView to layout multiple views in a 2D KD-Tree layout...">vtkSMViewLayoutProxy</a> instance to keep track of the layout for the views. It's acceptable to create multiple instances of <a class="el" href="classpqMultiViewWidget.html" title="pqMultiViewWidget is a widget that manages layout of multiple views. ">pqMultiViewWidget</a> in the same application.</p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="classpqHierarchicalGridLayout.html" title="QLayout specialization that supports a hierarchical layout. ">pqHierarchicalGridLayout</a>, <a class="el" href="classpqHierarchicalGridWidget.html" title="Widget that supports resizing of a pqHierarchicalGridLayout. ">pqHierarchicalGridWidget</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="pqMultiViewWidget_8h_source.html#l00055">55</a> of file <a class="el" href="pqMultiViewWidget_8h_source.html">pqMultiViewWidget.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="pqMultiViewWidget_8h_source.html#l00057">57</a> of file <a class="el" href="pqMultiViewWidget_8h_source.html">pqMultiViewWidget.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a1289e27c7bd300e45e893799fa86454a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a1289e27c7bd300e45e893799fa86454a">&#9670;&nbsp;</a></span>pqMultiViewWidget()</h2>
@@ -255,32 +267,22 @@ Properties</h2></td></tr>
 
 </div>
 </div>
-<a id="a1141de2efbb8fe3cfbd7bd50b843b6f5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1141de2efbb8fe3cfbd7bd50b843b6f5">&#9670;&nbsp;</a></span>isDecorationsVisible()</h2>
+<a id="a188f6a6225a21ee64a8246fcd6819e37"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a188f6a6225a21ee64a8246fcd6819e37">&#9670;&nbsp;</a></span>decorationsVisibility()</h2>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool pqMultiViewWidget::isDecorationsVisible </td>
+          <td class="memname">bool pqMultiViewWidget::decorationsVisibility </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
 <p>Returns whether window decorations and splitter handles are visible. </p>
-
-<p class="definition">Definition at line <a class="el" href="pqMultiViewWidget_8h_source.html#l00075">75</a> of file <a class="el" href="pqMultiViewWidget_8h_source.html">pqMultiViewWidget.h</a>.</p>
 
 </div>
 </div>
@@ -363,6 +365,62 @@ Properties</h2></td></tr>
 <p>Preview mode is a mode were various widget's decorations are hidden and the widget is locked to the specified size. If the widget's current size is less than the size specified, then the widget is locked to a size with similar aspect ratio as requested. Pass in invalid (or empty) size to exit preview mode.</p>
 <p>Preview mode is preferred over <code>toggleWidgetDecoration</code> and <code>lockViewSize</code> and is mutually exclusive with either. Mixing them can have unintended consequences.</p>
 <dl class="section return"><dt>Returns</dt><dd>the size to which the widget was locked. When unlocked, this will be QSize(QWIDGETSIZE_MAX, QWIDGETSIZE_MAX). When entering preview mode this will same as requested <code>previewSize</code> or a smaller size preserving aspect ratio as much as possible. </dd></dl>
+
+</div>
+</div>
+<a id="af4852fc9a95976888aaf23cca4f8c0ae"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af4852fc9a95976888aaf23cca4f8c0ae">&#9670;&nbsp;</a></span>activeFrameLocation()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="elRef" doxygen="/home/kitware/dashboards/buildbot/paraview_release-vall-linux-shared-debug_doc_extdeps_gui_mpi_python3/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkShaderProgram2_8h.html#a61569f2965b7a369eb10b6d75d410d11">int</a> pqMultiViewWidget::activeFrameLocation </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns the location of the active frame, if any, else -1. </p>
+
+</div>
+</div>
+<a id="a1141de2efbb8fe3cfbd7bd50b843b6f5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1141de2efbb8fe3cfbd7bd50b843b6f5">&#9670;&nbsp;</a></span>isDecorationsVisible()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool pqMultiViewWidget::isDecorationsVisible </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000006">Deprecated:</a></b></dt><dd>use <code>decorationsVisibility</code> instead.</dd></dl>
+
+</div>
+</div>
+<a id="a5cadca07d7e7aa27a2461205c670fbc4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5cadca07d7e7aa27a2461205c670fbc4">&#9670;&nbsp;</a></span>setDecorationsVisible()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void pqMultiViewWidget::setDecorationsVisible </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>val</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000007">Deprecated:</a></b></dt><dd>, use <code>setDecorationsVisibility</code> instead.</dd></dl>
 
 </div>
 </div>
@@ -449,35 +507,6 @@ Properties</h2></td></tr>
 
 </div>
 </div>
-<a id="a5923440c0f47e3fa9ea41114d8299eef"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5923440c0f47e3fa9ea41114d8299eef">&#9670;&nbsp;</a></span>assignToFrame</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void pqMultiViewWidget::assignToFrame </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="classpqView.html">pqView</a> *&#160;</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">slot</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Assigns a frame to the view. </p>
-<p>This assumes that the view not already been placed in a frame. This will try to locate an empty frame, if possible. If no empty frames are available, it will split the active frame along its longest dimension and place the view in the newly created child-frame. </p>
-
-</div>
-</div>
 <a id="a457186976a37cae7cf61d8723c3805eb"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a457186976a37cae7cf61d8723c3805eb">&#9670;&nbsp;</a></span>makeFrameActive</h2>
 
@@ -505,8 +534,8 @@ Properties</h2></td></tr>
 
 </div>
 </div>
-<a id="aafde312b22e55cb2a19e14b57de8870c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aafde312b22e55cb2a19e14b57de8870c">&#9670;&nbsp;</a></span>setDecorationsVisible</h2>
+<a id="a6ec42add2a306ba57676b67f2149df96"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6ec42add2a306ba57676b67f2149df96">&#9670;&nbsp;</a></span>setDecorationsVisibility</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -515,7 +544,7 @@ Properties</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void pqMultiViewWidget::setDecorationsVisible </td>
+          <td class="memname">void pqMultiViewWidget::setDecorationsVisibility </td>
           <td>(</td>
           <td class="paramtype">bool&#160;</td>
           <td class="paramname"></td><td>)</td>
@@ -556,7 +585,9 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="pqMultiViewWidget_8h_source.html#l00154">154</a> of file <a class="el" href="pqMultiViewWidget_8h_source.html">pqMultiViewWidget.h</a>.</p>
+<p>Set the visibility for frame decorations and splitter handles. </p>
+
+<p class="definition">Definition at line <a class="el" href="pqMultiViewWidget_8h_source.html#l00165">165</a> of file <a class="el" href="pqMultiViewWidget_8h_source.html">pqMultiViewWidget.h</a>.</p>
 
 </div>
 </div>
@@ -583,7 +614,9 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="pqMultiViewWidget_8h_source.html#l00155">155</a> of file <a class="el" href="pqMultiViewWidget_8h_source.html">pqMultiViewWidget.h</a>.</p>
+<p>Set the visibility for frame decorations and splitter handles. </p>
+
+<p class="definition">Definition at line <a class="el" href="pqMultiViewWidget_8h_source.html#l00166">166</a> of file <a class="el" href="pqMultiViewWidget_8h_source.html">pqMultiViewWidget.h</a>.</p>
 
 </div>
 </div>
@@ -697,31 +730,6 @@ Properties</h2></td></tr>
 
 <p>Slots called on different signals fired by the nested frames or splitters. </p>
 <p>Note that these slots use this-&gt;sender(), hence these should not be called directly. These result in updating the layoutManager. </p>
-
-</div>
-</div>
-<a id="aca4c4054cf99cfe1a0d6ab6b4b646f88"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aca4c4054cf99cfe1a0d6ab6b4b646f88">&#9670;&nbsp;</a></span>splitterMoved</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void pqMultiViewWidget::splitterMoved </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">slot</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
 
 </div>
 </div>
@@ -961,6 +969,31 @@ Properties</h2></td></tr>
 
 </div>
 </div>
+<h2 class="groupheader">Friends And Related Function Documentation</h2>
+<a id="a6b9200f99790855b1677bce2af5fbaa1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6b9200f99790855b1677bce2af5fbaa1">&#9670;&nbsp;</a></span>pqInternals</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">friend class pqInternals</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">friend</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="pqMultiViewWidget_8h_source.html#l00248">248</a> of file <a class="el" href="pqMultiViewWidget_8h_source.html">pqMultiViewWidget.h</a>.</p>
+
+</div>
+</div>
 <h2 class="groupheader">Property Documentation</h2>
 <a id="af7c30e838de67f85fe440861ecc52d5e"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#af7c30e838de67f85fe440861ecc52d5e">&#9670;&nbsp;</a></span>decorationsVisibility</h2>
@@ -982,7 +1015,7 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="pqMultiViewWidget_8h_source.html#l00060">60</a> of file <a class="el" href="pqMultiViewWidget_8h_source.html">pqMultiViewWidget.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="pqMultiViewWidget_8h_source.html#l00062">62</a> of file <a class="el" href="pqMultiViewWidget_8h_source.html">pqMultiViewWidget.h</a>.</p>
 
 </div>
 </div>

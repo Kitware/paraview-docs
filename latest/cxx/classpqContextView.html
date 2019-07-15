@@ -58,14 +58,12 @@ Inheritance diagram for pqContextView:</div>
 <area shape="rect" id="node6" href="classpqComparativeContextView.html" title="The abstract base class for comparative chart views. " alt="" coords="682,56,887,83"/>
 <area shape="rect" id="node9" href="classpqParallelCoordinatesChartView.html" title="pqView subclass of ParallelCoordinatesChartView chart view. " alt="" coords="669,107,900,133"/>
 <area shape="rect" id="node10" href="classpqPlotMatrixView.html" title="pqPlotMatrixView" alt="" coords="717,157,853,184"/>
-<area shape="rect" id="node11" href="classpqXYBagChartView.html" title="Bag chart view. " alt="" coords="711,208,858,235"/>
-<area shape="rect" id="node12" href="classpqXYBarChartView.html" title="pqContextView subclass for &quot;Bar Chart View&quot;. " alt="" coords="713,259,857,285"/>
-<area shape="rect" id="node13" href="classpqXYChartView.html" title="pqContextView subclass for &quot;Line Chart View&quot;. " alt="" coords="724,309,845,336"/>
-<area shape="rect" id="node14" href="classpqXYFunctionalBagChartView.html" title="FunctionalBag chart view. " alt="" coords="678,360,891,387"/>
-<area shape="rect" id="node15" href="classpqXYHistogramChartView.html" title="pqContextView subclass for &quot;HistogramView&quot;. " alt="" coords="689,411,880,437"/>
-<area shape="rect" id="node2" href="classpqView.html" title="This is a PQ abstraction of a generic view module. " alt="" coords="381,208,452,235"/>
-<area shape="rect" id="node3" href="classpqProxy.html" title="This class represents any registered Server Manager proxy. " alt="" coords="259,208,333,235"/>
-<area shape="rect" id="node4" href="classpqServerManagerModelItem.html" title="pqServerManagerModelItem is a element maintained by pqServerManagerModel. " alt="" coords="5,208,211,235"/>
+<area shape="rect" id="node11" href="classpqXYBarChartView.html" title="pqContextView subclass for &quot;Bar Chart View&quot;. " alt="" coords="713,208,857,235"/>
+<area shape="rect" id="node12" href="classpqXYChartView.html" title="pqContextView subclass for &quot;Line Chart View&quot;. " alt="" coords="724,259,845,285"/>
+<area shape="rect" id="node13" href="classpqXYHistogramChartView.html" title="pqContextView subclass for &quot;HistogramView&quot;. " alt="" coords="689,309,880,336"/>
+<area shape="rect" id="node2" href="classpqView.html" title="This is a PQ abstraction of a generic view module. " alt="" coords="381,157,452,184"/>
+<area shape="rect" id="node3" href="classpqProxy.html" title="This class represents any registered Server Manager proxy. " alt="" coords="259,157,333,184"/>
+<area shape="rect" id="node4" href="classpqServerManagerModelItem.html" title="pqServerManagerModelItem is a element maintained by pqServerManagerModel. " alt="" coords="5,157,211,184"/>
 <area shape="rect" id="node7" href="classpqComparativeXYBarChartView.html" title="The comparative bar chart subclass. " alt="" coords="948,31,1176,57"/>
 <area shape="rect" id="node8" href="classpqComparativeXYChartView.html" title="The comparative line chart subclass. " alt="" coords="959,81,1165,108"/>
 </map>
@@ -94,6 +92,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:abca7fcfaeb95b847874401ded85e5ea3"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpqContextView.html#abca7fcfaeb95b847874401ded85e5ea3">supportsSelection</a> () const</td></tr>
 <tr class="memdesc:abca7fcfaeb95b847874401ded85e5ea3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns true if selection can be done.  <a href="#abca7fcfaeb95b847874401ded85e5ea3">More...</a><br /></td></tr>
 <tr class="separator:abca7fcfaeb95b847874401ded85e5ea3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3677969192f8e280282a56ee122a6c9c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpqContextView.html#a3677969192f8e280282a56ee122a6c9c">supportsCapture</a> () const override</td></tr>
+<tr class="memdesc:a3677969192f8e280282a56ee122a6c9c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns if this view module can support image capture.  <a href="#a3677969192f8e280282a56ee122a6c9c">More...</a><br /></td></tr>
+<tr class="separator:a3677969192f8e280282a56ee122a6c9c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adec73e4736e6032c2ba048305e218fe2"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpqContextView.html#adec73e4736e6032c2ba048305e218fe2">setSelectionAction</a> (<a class="elRef" doxygen="/home/kitware/dashboards/buildbot/paraview_release-vall-linux-shared-debug_doc_extdeps_gui_mpi_python3/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkShaderProgram2_8h.html#a61569f2965b7a369eb10b6d75d410d11">int</a> selAction)</td></tr>
 <tr class="memdesc:adec73e4736e6032c2ba048305e218fe2"><td class="mdescLeft">&#160;</td><td class="mdescRight">set/get the selection action in the context view, defined by <a class="elRef" doxygen="/home/kitware/dashboards/buildbot/paraview_release-vall-linux-shared-debug_doc_extdeps_gui_mpi_python3/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/classvtkChart.html">vtkChart</a> enumeration from SELECT to SELECT_POLYGON.  <a href="#adec73e4736e6032c2ba048305e218fe2">More...</a><br /></td></tr>
 <tr class="separator:adec73e4736e6032c2ba048305e218fe2"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -535,7 +536,39 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Returns true if selection can be done. </p>
 
-<p>Reimplemented in <a class="el" href="classpqXYHistogramChartView.html#afe474812a9af67e9e322783bd5518443">pqXYHistogramChartView</a>, <a class="el" href="classpqXYBarChartView.html#a42b46895ab338649d2475a108f26e007">pqXYBarChartView</a>, <a class="el" href="classpqXYBagChartView.html#a2be9f82ad7b000b97acfdecf0d3bc7e0">pqXYBagChartView</a>, and <a class="el" href="classpqXYFunctionalBagChartView.html#a09a05111a2a240ce28b278d7363d4f27">pqXYFunctionalBagChartView</a>.</p>
+<p>Reimplemented in <a class="el" href="classpqXYHistogramChartView.html#afe474812a9af67e9e322783bd5518443">pqXYHistogramChartView</a>, and <a class="el" href="classpqXYBarChartView.html#a42b46895ab338649d2475a108f26e007">pqXYBarChartView</a>.</p>
+
+</div>
+</div>
+<a id="a3677969192f8e280282a56ee122a6c9c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3677969192f8e280282a56ee122a6c9c">&#9670;&nbsp;</a></span>supportsCapture()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool pqContextView::supportsCapture </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns if this view module can support image capture. </p>
+<p>Returns false by default. Subclassess must override if that's not the case. </p>
+
+<p>Reimplemented from <a class="el" href="classpqView.html#ab02a365b39bd3893e1c516fb4cf43596">pqView</a>.</p>
+
+<p class="definition">Definition at line <a class="el" href="pqContextView_8h_source.html#l00076">76</a> of file <a class="el" href="pqContextView_8h_source.html">pqContextView.h</a>.</p>
 
 </div>
 </div>
@@ -783,7 +816,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="pqContextView_8h_source.html#l00123">123</a> of file <a class="el" href="pqContextView_8h_source.html">pqContextView.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="pqContextView_8h_source.html#l00130">130</a> of file <a class="el" href="pqContextView_8h_source.html">pqContextView.h</a>.</p>
 
 </div>
 </div>
