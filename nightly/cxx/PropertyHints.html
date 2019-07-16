@@ -146,7 +146,7 @@ $(function() {
 &lt;/StringVectorProperty&gt;
 </pre><h2>ProxySelectionWidget </h2>
 <p>Specify options to configure <code><a class="el" href="classpqProxySelectionWidget.html" title="pqPropertyWidget that can be used for any proxy with a vtkSMProxyListDomain. ">pqProxySelectionWidget</a></code>, typically used for proxy-properties with a proxy-list domain.</p>
-<p>To disable the combo-box widget, so that the user cannot change the selection, add <code>enabled="0"</code> attribute. </p><pre class="fragment">&lt;ProxyProperty name="Format"&gt;
+<p>To hide the combo-box widget, add <code>visibility="0"</code> attribute. To disable the combo-box widget, so that the user cannot change the selection, add <code>enabled="0"</code> attribute. </p><pre class="fragment">&lt;ProxyProperty name="Format"&gt;
      &lt;ProxyListDomain name="proxy_list"&gt;
        &lt;Group name="screenshot_writers" /&gt;
      &lt;/ProxyListDomain&gt;
