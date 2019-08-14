@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>paraview.tpl.cinema_python.database.raster_wrangler &mdash; ParaView/Python 5.7.0-RC1-44-g30566b5d8b documentation</title>
+  <title>paraview.tpl.cinema_python.database.raster_wrangler &mdash; ParaView/Python 5.7.0-RC2-22-g809ca5953e documentation</title>
   
 
   
@@ -24,7 +24,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:'../../../../../',
-        VERSION:'5.7.0-RC1-44-g30566b5d8b',
+        VERSION:'5.7.0-RC2-22-g809ca5953e',
         COLLAPSE_INDEX:false,
         FILE_SUFFIX:'.html',
         HAS_SOURCE:  true
@@ -48,7 +48,7 @@
         <link rel="index" title="Index"
               href="../../../../../genindex.html"/>
         <link rel="search" title="Search" href="../../../../../search.html"/>
-    <link rel="top" title="ParaView/Python 5.7.0-RC1-44-g30566b5d8b documentation" href="../../../../../index.html"/>
+    <link rel="top" title="ParaView/Python 5.7.0-RC2-22-g809ca5953e documentation" href="../../../../../index.html"/>
         <link rel="up" title="Module code" href="../../../../index.html"/> 
 
   <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
@@ -66,7 +66,7 @@
           <li> <a href="../../../../../index.html">
             <img src="../../../../../_static/paraview-logo-small.png"
             alt="ParaView/Python"></img></a> </li>
-          <li class="version"> version 5.7.0-RC1-44-g30566b5d8b</li>
+          <li class="version"> version 5.7.0-RC2-22-g809ca5953e</li>
         </ul>
         <form id ="rtd-search-form" class="wy-form" action="../../../../../search.html" method="get">
   <input type="text" name="q" placeholder="Search docs" />
@@ -839,7 +839,8 @@
             <span class="bp">self</span><span class="o">.</span><span class="n">threadedwriter</span><span class="o">.</span><span class="n">EncodeAndWrite</span><span class="p">(</span><span class="nb">id</span><span class="p">,</span> <span class="n">fname</span><span class="p">)</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">fname</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
-                <span class="n">file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">imageslice</span><span class="p">)</span></div>
+                <span class="n">file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">imageslice</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">fname</span></div>
 
 <div class="viewcode-block" id="RasterWrangler.rgbreader"><a class="viewcode-back" href="../../../../../paraview.tpl.cinema_python.database.raster_wrangler.html#paraview.tpl.cinema_python.database.raster_wrangler.RasterWrangler.rgbreader">[docs]</a>    <span class="k">def</span> <span class="nf">rgbreader</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">fname</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;opens a color image file and returns it as a color buffer&quot;&quot;&quot;</span>
@@ -887,14 +888,16 @@
                 <span class="n">writer</span><span class="o">.</span><span class="n">SetInputData</span><span class="p">(</span><span class="nb">id</span><span class="p">)</span>
                 <span class="n">writer</span><span class="o">.</span><span class="n">SetFileName</span><span class="p">(</span><span class="n">fname</span><span class="p">)</span>
                 <span class="n">writer</span><span class="o">.</span><span class="n">Write</span><span class="p">()</span>
+            <span class="k">return</span> <span class="n">fname</span>
 
         <span class="k">elif</span> <span class="s2">&quot;PIL&quot;</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">backends</span><span class="p">:</span>
             <span class="n">imageslice</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">flipud</span><span class="p">(</span><span class="n">imageslice</span><span class="p">)</span>
             <span class="n">pimg</span> <span class="o">=</span> <span class="n">PIL</span><span class="o">.</span><span class="n">Image</span><span class="o">.</span><span class="n">fromarray</span><span class="p">(</span><span class="n">imageslice</span><span class="p">)</span>
             <span class="n">pimg</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">fname</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">fname</span>
 
         <span class="k">else</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Warning: need PIL or VTK to write to &quot;</span> <span class="o">+</span> <span class="n">fname</span><span class="p">)</span></div>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Warning: need PIL or VTK to write to &quot;</span> <span class="o">+</span> <span class="n">fname</span><span class="p">)</span></div>
 
 <div class="viewcode-block" id="RasterWrangler.valuewriter"><a class="viewcode-back" href="../../../../../paraview.tpl.cinema_python.database.raster_wrangler.html#paraview.tpl.cinema_python.database.raster_wrangler.RasterWrangler.valuewriter">[docs]</a>    <span class="k">def</span> <span class="nf">valuewriter</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">imageSlice</span><span class="p">,</span> <span class="n">fname</span><span class="p">,</span> <span class="n">vrange</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot; Takes in either a (1C) float or a RGB (3C) buffer and writes it as</span>
@@ -907,7 +910,7 @@
         <span class="n">dimensions</span> <span class="o">=</span> <span class="n">imageSlice</span><span class="o">.</span><span class="n">shape</span>
         <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">dimensions</span><span class="p">)</span> <span class="o">==</span> <span class="mi">2</span> <span class="ow">and</span> <span class="n">imageSlice</span><span class="o">.</span><span class="n">dtype</span> <span class="o">==</span> <span class="n">numpy</span><span class="o">.</span><span class="n">float32</span><span class="p">:</span>
             <span class="c1"># Given as single channel floating point buffer.</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">zwriter</span><span class="p">(</span><span class="n">imageSlice</span><span class="p">,</span> <span class="n">adjustedName</span><span class="p">)</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">zwriter</span><span class="p">(</span><span class="n">imageSlice</span><span class="p">,</span> <span class="n">adjustedName</span><span class="p">)</span>
 
         <span class="k">elif</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">dimensions</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">2</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="n">dimensions</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">==</span> <span class="mi">3</span><span class="p">):</span>
             <span class="c1"># if self.dontConvertValsToFloat</span>
@@ -926,10 +929,11 @@
             <span class="n">value</span> <span class="o">=</span> <span class="n">value</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">numpy</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
             <span class="n">adjusted_val</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">divide</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="nb">float</span><span class="p">(</span><span class="mh">0xFFFFFE</span><span class="p">))</span>
 
-            <span class="bp">self</span><span class="o">.</span><span class="n">zwriter</span><span class="p">(</span><span class="n">adjusted_val</span><span class="p">,</span> <span class="n">adjustedName</span><span class="p">)</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">zwriter</span><span class="p">(</span><span class="n">adjusted_val</span><span class="p">,</span> <span class="n">adjustedName</span><span class="p">)</span>
 
         <span class="k">else</span><span class="p">:</span>
             <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Invalid dimensions for a value raster.&quot;</span><span class="p">)</span></div>
+
 
 <div class="viewcode-block" id="RasterWrangler.valuereader"><a class="viewcode-back" href="../../../../../paraview.tpl.cinema_python.database.raster_wrangler.html#paraview.tpl.cinema_python.database.raster_wrangler.RasterWrangler.valuereader">[docs]</a>    <span class="k">def</span> <span class="nf">valuereader</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">fname</span><span class="p">,</span> <span class="n">shape</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot; Opens a value image file and returns it as either a color buffer</span>
@@ -996,7 +1000,7 @@
         <span class="k">if</span> <span class="s2">&quot;OpenEXR&quot;</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">backends</span><span class="p">:</span>
             <span class="n">imageslice</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">flipud</span><span class="p">(</span><span class="n">imageslice</span><span class="p">)</span>
             <span class="n">exr</span><span class="o">.</span><span class="n">save_depth</span><span class="p">(</span><span class="n">imageslice</span><span class="p">,</span> <span class="n">fname</span><span class="p">)</span>
-            <span class="k">return</span>
+            <span class="k">return</span> <span class="n">fname</span>
 
         <span class="c1"># if self.dontCompressFloatVals:</span>
         <span class="c1">#     if &quot;VTK&quot; in self.backends:</span>
@@ -1039,7 +1043,8 @@
             <span class="bp">self</span><span class="o">.</span><span class="n">threadedwriter</span><span class="o">.</span><span class="n">EncodeAndWrite</span><span class="p">(</span><span class="nb">id</span><span class="p">,</span> <span class="n">adjustedName</span><span class="p">)</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">adjustedName</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;wb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
-                <span class="n">file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">zlib</span><span class="o">.</span><span class="n">compress</span><span class="p">(</span><span class="n">numpy</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">imageslice</span><span class="p">)))</span></div>
+                <span class="n">file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">zlib</span><span class="o">.</span><span class="n">compress</span><span class="p">(</span><span class="n">numpy</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">imageslice</span><span class="p">)))</span>
+        <span class="k">return</span> <span class="n">adjustedName</span></div>
 
 <div class="viewcode-block" id="RasterWrangler.assertvalidimage"><a class="viewcode-back" href="../../../../../paraview.tpl.cinema_python.database.raster_wrangler.html#paraview.tpl.cinema_python.database.raster_wrangler.RasterWrangler.assertvalidimage">[docs]</a>    <span class="k">def</span> <span class="nf">assertvalidimage</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">filename</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;tests that a given file is syntactically correct&quot;&quot;&quot;</span>

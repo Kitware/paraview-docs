@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>paraview.tpl.cinema_python.database.file_store &mdash; ParaView/Python 5.7.0-RC1-44-g30566b5d8b documentation</title>
+  <title>paraview.tpl.cinema_python.database.file_store &mdash; ParaView/Python 5.7.0-RC2-22-g809ca5953e documentation</title>
   
 
   
@@ -24,7 +24,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:'../../../../../',
-        VERSION:'5.7.0-RC1-44-g30566b5d8b',
+        VERSION:'5.7.0-RC2-22-g809ca5953e',
         COLLAPSE_INDEX:false,
         FILE_SUFFIX:'.html',
         HAS_SOURCE:  true
@@ -48,7 +48,7 @@
         <link rel="index" title="Index"
               href="../../../../../genindex.html"/>
         <link rel="search" title="Search" href="../../../../../search.html"/>
-    <link rel="top" title="ParaView/Python 5.7.0-RC1-44-g30566b5d8b documentation" href="../../../../../index.html"/>
+    <link rel="top" title="ParaView/Python 5.7.0-RC2-22-g809ca5953e documentation" href="../../../../../index.html"/>
         <link rel="up" title="Module code" href="../../../../index.html"/> 
 
   <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
@@ -66,7 +66,7 @@
           <li> <a href="../../../../../index.html">
             <img src="../../../../../_static/paraview-logo-small.png"
             alt="ParaView/Python"></img></a> </li>
-          <li class="version"> version 5.7.0-RC1-44-g30566b5d8b</li>
+          <li class="version"> version 5.7.0-RC2-22-g809ca5953e</li>
         </ul>
         <form id ="rtd-search-form" class="wy-form" action="../../../../../search.html" method="get">
   <input type="text" name="q" placeholder="Search docs" />
@@ -860,8 +860,6 @@
         <span class="nb">super</span><span class="p">(</span><span class="n">FileStore</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="n">document</span><span class="p">)</span>
 
         <span class="n">fname</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_filename</span><span class="p">(</span><span class="n">document</span><span class="o">.</span><span class="n">descriptor</span><span class="p">,</span> <span class="n">readingFile</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-        <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">fname</span><span class="p">):</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">__new_files</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">document</span><span class="o">.</span><span class="n">descriptor</span><span class="p">,</span><span class="n">fname</span><span class="p">))</span>
 
         <span class="n">dirname</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">fname</span><span class="p">)</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">dirname</span><span class="p">):</span>
@@ -875,6 +873,8 @@
                 <span class="k">pass</span>
 
         <span class="k">if</span> <span class="n">document</span><span class="o">.</span><span class="n">data</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">adjustedfname</span> <span class="o">=</span> <span class="kc">None</span>
+
             <span class="k">for</span> <span class="n">parname</span><span class="p">,</span> <span class="n">parvalue</span> <span class="ow">in</span> <span class="n">py23iteritems</span><span class="p">(</span><span class="n">document</span><span class="o">.</span><span class="n">descriptor</span><span class="p">):</span>
                 <span class="n">params</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_parameter</span><span class="p">(</span><span class="n">parname</span><span class="p">)</span>
                 <span class="k">if</span> <span class="s1">&#39;role&#39;</span> <span class="ow">in</span> <span class="n">params</span><span class="p">:</span>
@@ -886,7 +886,7 @@
 
             <span class="n">doctype</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">determine_type</span><span class="p">(</span><span class="n">document</span><span class="o">.</span><span class="n">descriptor</span><span class="p">)</span>
             <span class="k">if</span> <span class="n">doctype</span> <span class="o">==</span> <span class="s1">&#39;RGB&#39;</span> <span class="ow">or</span> <span class="n">doctype</span> <span class="o">==</span> <span class="s1">&#39;LUMINANCE&#39;</span><span class="p">:</span>
-                <span class="bp">self</span><span class="o">.</span><span class="n">raster_wrangler</span><span class="o">.</span><span class="n">rgbwriter</span><span class="p">(</span><span class="n">document</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">fname</span><span class="p">)</span>
+                <span class="n">adjustedfname</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">raster_wrangler</span><span class="o">.</span><span class="n">rgbwriter</span><span class="p">(</span><span class="n">document</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">fname</span><span class="p">)</span>
             <span class="k">elif</span> <span class="n">doctype</span> <span class="o">==</span> <span class="s1">&#39;VALUE&#39;</span><span class="p">:</span>
                 <span class="c1"># find the range for the value that this raster shows</span>
                 <span class="n">vrange</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
@@ -898,13 +898,16 @@
                         <span class="n">vr</span> <span class="o">=</span> <span class="n">param</span><span class="p">[</span><span class="s1">&#39;valueRanges&#39;</span><span class="p">]</span>
                         <span class="k">if</span> <span class="n">parvalue</span> <span class="ow">in</span> <span class="n">vr</span><span class="p">:</span>
                             <span class="n">vrange</span> <span class="o">=</span> <span class="n">vr</span><span class="p">[</span><span class="n">parvalue</span><span class="p">]</span>
-                <span class="bp">self</span><span class="o">.</span><span class="n">raster_wrangler</span><span class="o">.</span><span class="n">valuewriter</span><span class="p">(</span><span class="n">document</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">fname</span><span class="p">,</span> <span class="n">vrange</span><span class="p">)</span>
+                <span class="n">adjustedfname</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">raster_wrangler</span><span class="o">.</span><span class="n">valuewriter</span><span class="p">(</span><span class="n">document</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">fname</span><span class="p">,</span> <span class="n">vrange</span><span class="p">)</span>
             <span class="k">elif</span> <span class="n">doctype</span> <span class="o">==</span> <span class="s1">&#39;Z&#39;</span><span class="p">:</span>
-                <span class="bp">self</span><span class="o">.</span><span class="n">raster_wrangler</span><span class="o">.</span><span class="n">zwriter</span><span class="p">(</span><span class="n">document</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">fname</span><span class="p">)</span>
+                <span class="n">adjustedfname</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">raster_wrangler</span><span class="o">.</span><span class="n">zwriter</span><span class="p">(</span><span class="n">document</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">fname</span><span class="p">)</span>
             <span class="k">elif</span> <span class="n">doctype</span> <span class="o">==</span> <span class="s1">&#39;MAGNITUDE&#39;</span><span class="p">:</span>
                 <span class="k">pass</span>
             <span class="k">else</span><span class="p">:</span>
-                <span class="bp">self</span><span class="o">.</span><span class="n">raster_wrangler</span><span class="o">.</span><span class="n">genericwriter</span><span class="p">(</span><span class="n">document</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">fname</span><span class="p">)</span></div>
+                <span class="n">adjustedfname</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">raster_wrangler</span><span class="o">.</span><span class="n">genericwriter</span><span class="p">(</span><span class="n">document</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">fname</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">adjustedfname</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">__new_files</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">document</span><span class="o">.</span><span class="n">descriptor</span><span class="p">,</span><span class="n">adjustedfname</span><span class="p">))</span></div>
+
 
     <span class="k">def</span> <span class="nf">_load_data</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">descriptor</span><span class="p">):</span>
         <span class="n">doctype</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">determine_type</span><span class="p">(</span><span class="n">descriptor</span><span class="p">)</span>
