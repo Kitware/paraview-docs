@@ -1,0 +1,229 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>ParaView’s Python documentation! &mdash; ParaView/Python 5.7.0-RC1-179-g18f110ec32 documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="_static/pvIcon.ico"/>
+  
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  
+  
+
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:'./',
+        VERSION:'5.7.0-RC1-179-g18f110ec32',
+        COLLAPSE_INDEX:false,
+        FILE_SUFFIX:'.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="_static/language_data.js"></script>
+
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="ParaView/Python 5.7.0-RC1-179-g18f110ec32 documentation" href="#"/>
+        <link rel="next" title="Quick-Start : A Tutorial" href="quick-start.html"/> 
+
+  <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        <ul>
+          <li> <a href="#">
+            <img src="_static/paraview-logo-small.png"
+            alt="ParaView/Python"></img></a> </li>
+          <li class="version"> version 5.7.0-RC1-179-g18f110ec32</li>
+        </ul>
+        <form id ="rtd-search-form" class="wy-form" action="search.html" method="get">
+  <input type="text" name="q" placeholder="Search docs" />
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix">
+        
+        
+            <ul>
+<li class="toctree-l1"><a class="reference internal" href="quick-start.html">Quick-Start :  A Tutorial</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="quick-start.html#getting-started">Getting Started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="quick-start.html#creating-a-pipeline">Creating a Pipeline</a></li>
+<li class="toctree-l2"><a class="reference internal" href="quick-start.html#rendering">Rendering</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="python-2-vs-3.html">Python Version 2 versus 3</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="python-2-vs-3.html#print-is-a-function"><code class="docutils literal notranslate"><span class="pre">print</span></code> is a function</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python-2-vs-3.html#exceptions">Exceptions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python-2-vs-3.html#iterables">Iterables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python-2-vs-3.html#iterators-not-lists">Iterators, not lists</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python-2-vs-3.html#submodule-import">Submodule import</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python-2-vs-3.html#new-modules">New modules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python-2-vs-3.html#references">References</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="api-changes.html">API Changes between ParaView versions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="api-changes.html#changes-in-5-7">Changes in 5.7</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-changes.html#views-and-layouts">Views and Layouts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-changes.html#changes-in-5-5">Changes in 5.5</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-changes.html#changes-in-5-1">Changes in 5.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-changes.html#changes-in-4-2">Changes in 4.2</a></li>
+</ul>
+</li>
+</ul>
+
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top">
+        <i data-toggle="wy-nav-top" class="icon icon-reorder"></i>
+        <a href="#">ParaView/Python</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <ul class="wy-breadcrumbs">
+  <li><a href="#">Docs</a> &raquo;</li>
+  <a href="genindex.html" class="float-right">Index</a> 
+  <li><a href="">ParaView’s Python documentation!</a></li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+</ul>
+<hr/>
+          
+  <div class="section" id="paraview-s-python-documentation">
+<h1>ParaView’s Python documentation!<a class="headerlink" href="#paraview-s-python-documentation" title="Permalink to this headline">¶</a></h1>
+<p>ParaView offers rich scripting support through Python. This support is available
+as part of the ParaView client (paraview), an MPI-enabled batch application
+(pvbatch), the ParaView python client (pvpython), or any other Python-enabled
+application. Using Python, users and developers can gain access to the ParaView
+visualization engine.</p>
+</div>
+<div class="section" id="main-modules">
+<h1>Main modules<a class="headerlink" href="#main-modules" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="quick-start.html">Quick-Start :  A Tutorial</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="quick-start.html#getting-started">Getting Started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="quick-start.html#creating-a-pipeline">Creating a Pipeline</a></li>
+<li class="toctree-l2"><a class="reference internal" href="quick-start.html#rendering">Rendering</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="python-version-support">
+<h1>Python Version Support<a class="headerlink" href="#python-version-support" title="Permalink to this headline">¶</a></h1>
+<p>ParaView currently supports Python 2.7, but support for 3.5 is coming. To help
+this development, please use Python 3 compatible code constructs. This section
+discusses the most common needed changes.</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="python-2-vs-3.html">Python Version 2 versus 3</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="python-2-vs-3.html#print-is-a-function"><code class="docutils literal notranslate"><span class="pre">print</span></code> is a function</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python-2-vs-3.html#exceptions">Exceptions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python-2-vs-3.html#iterables">Iterables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python-2-vs-3.html#iterators-not-lists">Iterators, not lists</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python-2-vs-3.html#submodule-import">Submodule import</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python-2-vs-3.html#new-modules">New modules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python-2-vs-3.html#references">References</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="api-changes">
+<h1>API Changes<a class="headerlink" href="#api-changes" title="Permalink to this headline">¶</a></h1>
+<p>This documents changes to ParaView’s Python APIs between different versions, starting
+with ParaView 4.2.0.</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="api-changes.html">API Changes between ParaView versions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="api-changes.html#changes-in-5-7">Changes in 5.7</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-changes.html#views-and-layouts">Views and Layouts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-changes.html#changes-in-5-5">Changes in 5.5</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-changes.html#changes-in-5-1">Changes in 5.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-changes.html#changes-in-4-2">Changes in 4.2</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+
+          <footer>
+  
+    <div class="rst-footer-buttons">
+      
+        <a href="quick-start.html" class="btn btn-neutral float-right" title="Quick-Start : A Tutorial"/>Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+    </div>
+  
+
+  <hr/>
+
+  <p>
+      &copy; Copyright 2013, Kitware, Inc..
+  </p>
+
+  <a href="https://www.github.com/snide/sphinx_rtd_theme">Sphinx theme</a> provided by <a href="http://readthedocs.org">Read the Docs</a>
+  <!-- KW:BEGIN -->
+  <script type="text/javascript" src="/paraview-docs/paraview-version.js"></script>
+  <!-- KW:END -->
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+</body>
+</html>
