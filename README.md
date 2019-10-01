@@ -18,7 +18,7 @@ The resulting script is `dist/paraview-version.js`.
 ./scripts/prepare-doc.sh /path/to/paraview/src /path/to/paraview/build /path/to/workdir
 ```
 
-For nightly you may want to use/edit the given script to force the name of the version to be `nighlty` instead of the result of `git describe`.
+For nightly you may want to use/edit the given script to force the name of the version to be `nightly` instead of the result of `git describe`.
 
 ## How to update the generated script
 
