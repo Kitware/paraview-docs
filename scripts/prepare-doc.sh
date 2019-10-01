@@ -29,6 +29,8 @@ if [ ! -d "./paraview-docs" ]; then
     git clone https://github.com/Kitware/paraview-docs.git
 fi
 cd paraview-docs
+git config user.email "buildbot@kwrobot02"
+git config user.name "buildbot"
 git checkout gh-pages
 
 # -----------------------------------------------------------------------------
@@ -36,8 +38,8 @@ git checkout gh-pages
 # -----------------------------------------------------------------------------
 rm -rf "${WORK_DIR}/paraview-docs/${VERSION}"
 mkdir -p "${WORK_DIR}/paraview-docs/${VERSION}"
-cp -r "${PV_BUILD}/www/cxx-doc" "${WORK_DIR}/paraview-docs/${VERSION}/cxx"
-cp -r "${PV_BUILD}/www/py-doc" "${WORK_DIR}/paraview-docs/${VERSION}/python"
+cp -r "${PV_BUILD}/doc/cxx" "${WORK_DIR}/paraview-docs/${VERSION}/cxx"
+cp -r "${PV_BUILD}/doc/python" "${WORK_DIR}/paraview-docs/${VERSION}/python"
 rm -rf "${WORK_DIR}/paraview-docs/${VERSION}/python/.doctrees"
 
 # -----------------------------------------------------------------------------
