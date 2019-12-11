@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>cpexport Module &mdash; ParaView/Python 5.7.0-874-g887fd42ac5 documentation</title>
+  <title>cpexport Module &mdash; ParaView/Python 5.7.0-878-g8cd8be9e4a documentation</title>
   
 
   
@@ -24,7 +24,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:'./',
-        VERSION:'5.7.0-874-g887fd42ac5',
+        VERSION:'5.7.0-878-g8cd8be9e4a',
         COLLAPSE_INDEX:false,
         FILE_SUFFIX:'.html',
         HAS_SOURCE:  true
@@ -33,7 +33,6 @@
       <script type="text/javascript" src="_static/jquery.js"></script>
       <script type="text/javascript" src="_static/underscore.js"></script>
       <script type="text/javascript" src="_static/doctools.js"></script>
-      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
     
 
@@ -49,7 +48,7 @@
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="ParaView/Python 5.7.0-874-g887fd42ac5 documentation" href="index.html"/>
+    <link rel="top" title="ParaView/Python 5.7.0-878-g8cd8be9e4a documentation" href="index.html"/>
         <link rel="up" title="paraview Package" href="paraview.html"/>
         <link rel="next" title="cpstate Module" href="paraview.cpstate.html"/>
         <link rel="prev" title="coprocessing Module" href="paraview.coprocessing.html"/> 
@@ -69,7 +68,7 @@
           <li> <a href="index.html">
             <img src="_static/paraview-logo-small.png"
             alt="ParaView/Python"></img></a> </li>
-          <li class="version"> version 5.7.0-874-g887fd42ac5</li>
+          <li class="version"> version 5.7.0-878-g8cd8be9e4a</li>
         </ul>
         <form id ="rtd-search-form" class="wy-form" action="search.html" method="get">
   <input type="text" name="q" placeholder="Search docs" />
@@ -89,7 +88,7 @@
 </ul>
 </li>
 <li class="toctree-l1 current"><a class="reference internal" href="paraview.html">The ParaView Python Package</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="paraview.html#id1"><code class="docutils literal notranslate"><span class="pre">paraview</span></code> Package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.html#id1"><code class="docutils literal"><span class="pre">paraview</span></code> Package</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="paraview.html#modules">Modules</a></li>
 <li class="toctree-l2"><a class="reference internal" href="paraview.html#subpackages">Subpackages</a></li>
 </ul>
@@ -98,7 +97,7 @@
 <li class="toctree-l1"><a class="reference internal" href="paraview.servermanager.html">servermanager</a></li>
 <li class="toctree-l1"><a class="reference internal" href="paraview.coprocessing.html">coprocessing</a></li>
 <li class="toctree-l1"><a class="reference internal" href="paraview.benchmark.html">benchmark</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="paraview.benchmark.html#id1"><code class="docutils literal notranslate"><span class="pre">benchmark</span></code> Package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.benchmark.html#id1"><code class="docutils literal"><span class="pre">benchmark</span></code> Package</a></li>
 <li class="toctree-l2"><a class="reference internal" href="paraview.benchmark.html#modules">Modules</a></li>
 </ul>
 </li>
@@ -604,7 +603,7 @@
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="python-2-vs-3.html">Python Version 2 versus 3</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="python-2-vs-3.html#print-is-a-function"><code class="docutils literal notranslate"><span class="pre">print</span></code> is a function</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python-2-vs-3.html#print-is-a-function"><code class="docutils literal"><span class="pre">print</span></code> is a function</a></li>
 <li class="toctree-l2"><a class="reference internal" href="python-2-vs-3.html#exceptions">Exceptions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="python-2-vs-3.html#iterables">Iterables</a></li>
 <li class="toctree-l2"><a class="reference internal" href="python-2-vs-3.html#iterators-not-lists">Iterators, not lists</a></li>
@@ -652,8 +651,52 @@
 </ul>
 <hr/>
           
-  <div class="section" id="cpexport-module">
-<h1>cpexport Module<a class="headerlink" href="#cpexport-module" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="module-paraview.cpexport">
+<span id="cpexport-module"></span><h1>cpexport Module<a class="headerlink" href="#module-paraview.cpexport" title="Permalink to this headline">¶</a></h1>
+<p>This module is used to export complete CoProcessing Python scripts that
+can be used in a vtkCPPythonScriptPipeline.</p>
+<p>This module uses paraview.cpstate Module to dump the ParaView session state as a
+an Python class description that can be then be used in the CoProcessor.</p>
+<p>The exported script can be used in a vtkCPPythonScriptPipeline instance for
+CoProcessing.</p>
+<dl class="function">
+<dt id="paraview.cpexport.DumpCoProcessingScript">
+<code class="descclassname">paraview.cpexport.</code><code class="descname">DumpCoProcessingScript</code><span class="sig-paren">(</span><em>export_rendering</em>, <em>simulation_input_map</em>, <em>screenshot_info</em>, <em>padding_amount</em>, <em>rescale_data_range</em>, <em>enable_live_viz</em>, <em>live_viz_frequency</em>, <em>cinema_tracks</em>, <em>cinema_arrays</em>, <em>filename=None</em>, <em>write_start=0</em>, <em>make_cinema_table=False</em>, <em>root_directory=''</em>, <em>request_specific_arrays=False</em>, <em>force_first_output=False</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/cpexport.html#DumpCoProcessingScript"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.cpexport.DumpCoProcessingScript" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a string with the generated CoProcessing script based on the
+options specified.</p>
+<p>First three arguments are same as those expected by
+cpstate.DumpPipeline() function.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>write_start</strong> – integer (0-) how many cycles catalyst should wait before executing</li>
+<li><strong>padding_amount</strong> – integer (0-10) to set image output filename padding</li>
+<li><strong>rescale_data_range</strong> – boolean set to true if the LUTs must be scaled on each timestep</li>
+<li><strong>enable_live_viz</strong> – boolean set to true if the generated script should handle live-visualization.</li>
+<li><strong>live_viz_frequency</strong> – integer specifying how often should the coprocessor send the live data</li>
+<li><strong>cinema_tracks</strong> – cinema offline visualizer parameters</li>
+<li><strong>cinema_arrays</strong> – selected value arrays for cinema</li>
+<li><strong>make_cinema_table</strong> – boolean set to true to request a cinema D index file.</li>
+<li><strong>filename</strong> – if specified, the script is written to the file.</li>
+<li><strong>root_directory</strong> – if specified, the script will export underneath this directory.</li>
+<li><strong>request_specific_arrays</strong> – boolean set to true to ask for individual arrays</li>
+<li><strong>force_first_output</strong> – boolean set to true to write the first timestep regardless of write_start.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="paraview.cpexport.run">
+<code class="descclassname">paraview.cpexport.</code><code class="descname">run</code><span class="sig-paren">(</span><em>filename=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/cpexport.html#run"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.cpexport.run" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a dummy pipeline and save the coprocessing state in the filename
+specified, if any, else dumps it out on stdout.</p>
+</dd></dl>
+
 </div>
 
 

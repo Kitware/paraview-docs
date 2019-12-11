@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>paraview.simple.Calculator &mdash; ParaView/Python 5.7.0-874-g887fd42ac5 documentation</title>
+  <title>paraview.simple.Calculator &mdash; ParaView/Python 5.7.0-878-g8cd8be9e4a documentation</title>
   
 
   
@@ -24,7 +24,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:'./',
-        VERSION:'5.7.0-874-g887fd42ac5',
+        VERSION:'5.7.0-878-g8cd8be9e4a',
         COLLAPSE_INDEX:false,
         FILE_SUFFIX:'.html',
         HAS_SOURCE:  true
@@ -33,7 +33,6 @@
       <script type="text/javascript" src="_static/jquery.js"></script>
       <script type="text/javascript" src="_static/underscore.js"></script>
       <script type="text/javascript" src="_static/doctools.js"></script>
-      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
     
 
@@ -49,7 +48,7 @@
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="ParaView/Python 5.7.0-874-g887fd42ac5 documentation" href="index.html"/>
+    <link rel="top" title="ParaView/Python 5.7.0-878-g8cd8be9e4a documentation" href="index.html"/>
         <link rel="up" title="Available readers, sources, writers, filters and animation cues" href="paraview.servermanager_proxies.html"/>
         <link rel="next" title="paraview.simple.CameraAnimationCue" href="paraview.simple.CameraAnimationCue.html"/>
         <link rel="prev" title="paraview.simple.CTHSurface" href="paraview.simple.CTHSurface.html"/> 
@@ -69,7 +68,7 @@
           <li> <a href="index.html">
             <img src="_static/paraview-logo-small.png"
             alt="ParaView/Python"></img></a> </li>
-          <li class="version"> version 5.7.0-874-g887fd42ac5</li>
+          <li class="version"> version 5.7.0-878-g8cd8be9e4a</li>
         </ul>
         <form id ="rtd-search-form" class="wy-form" action="search.html" method="get">
   <input type="text" name="q" placeholder="Search docs" />
@@ -89,7 +88,7 @@
 </ul>
 </li>
 <li class="toctree-l1 current"><a class="reference internal" href="paraview.html">The ParaView Python Package</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="paraview.html#id1"><code class="docutils literal notranslate"><span class="pre">paraview</span></code> Package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.html#id1"><code class="docutils literal"><span class="pre">paraview</span></code> Package</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="paraview.html#modules">Modules</a></li>
 <li class="toctree-l2"><a class="reference internal" href="paraview.html#subpackages">Subpackages</a></li>
 </ul>
@@ -98,7 +97,7 @@
 <li class="toctree-l1"><a class="reference internal" href="paraview.servermanager.html">servermanager</a></li>
 <li class="toctree-l1"><a class="reference internal" href="paraview.coprocessing.html">coprocessing</a></li>
 <li class="toctree-l1"><a class="reference internal" href="paraview.benchmark.html">benchmark</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="paraview.benchmark.html#id1"><code class="docutils literal notranslate"><span class="pre">benchmark</span></code> Package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.benchmark.html#id1"><code class="docutils literal"><span class="pre">benchmark</span></code> Package</a></li>
 <li class="toctree-l2"><a class="reference internal" href="paraview.benchmark.html#modules">Modules</a></li>
 </ul>
 </li>
@@ -604,7 +603,7 @@
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="python-2-vs-3.html">Python Version 2 versus 3</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="python-2-vs-3.html#print-is-a-function"><code class="docutils literal notranslate"><span class="pre">print</span></code> is a function</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python-2-vs-3.html#print-is-a-function"><code class="docutils literal"><span class="pre">print</span></code> is a function</a></li>
 <li class="toctree-l2"><a class="reference internal" href="python-2-vs-3.html#exceptions">Exceptions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="python-2-vs-3.html#iterables">Iterables</a></li>
 <li class="toctree-l2"><a class="reference internal" href="python-2-vs-3.html#iterators-not-lists">Iterators, not lists</a></li>
@@ -654,6 +653,75 @@
           
   <div class="section" id="paraview-simple-calculator">
 <h1>paraview.simple.Calculator<a class="headerlink" href="#paraview-simple-calculator" title="Permalink to this headline">¶</a></h1>
+<dl class="function">
+<dt id="paraview.simple.Calculator">
+<code class="descclassname">paraview.simple.</code><code class="descname">Calculator</code><span class="sig-paren">(</span><em>*input</em>, <em>**params</em><span class="sig-paren">)</span><a class="headerlink" href="#paraview.simple.Calculator" title="Permalink to this definition">¶</a></dt>
+<dd><p>The Calculator filter computes a new data array or new point
+coordinates as a function of existing scalar or vector arrays. If
+point-centered arrays are used in the computation of a new data array,
+the resulting array will also be point-centered. Similarly,
+computations using cell-centered arrays will produce a new
+cell-centered array. If the function is computing point coordinates,
+the result of the function must be a three-component vector.</p>
+<p>The Calculator interface operates similarly to a scientific
+calculator. In creating the function to evaluate, the standard order
+of operations applies. Each of the calculator functions is described
+below. Unless otherwise noted, enclose the operand in parentheses
+using the ( and ) buttons.</p>
+<ul class="simple">
+<li>Clear: Erase the current function (displayed in the read-only text
+box above the calculator buttons).</li>
+<li>/: Divide one scalar by another. The operands for this function are
+not required to be enclosed in parentheses.</li>
+<li><a href="#id1"><span class="problematic" id="id2">*</span></a>: Multiply two scalars, or multiply a vector by a scalar (scalar multiple).
+The operands for this function are not required to be enclosed in parentheses.</li>
+<li>-: Negate a scalar or vector (unary minus), or subtract one scalar or vector
+from another. The operands for this function are not required to be enclosed
+in parentheses.</li>
+<li>+: Add two scalars or two vectors. The operands for this function are not
+required to be enclosed in parentheses.</li>
+<li>sin: Compute the sine of a scalar. cos: Compute the cosine of a scalar.</li>
+<li>tan: Compute the tangent of a scalar.</li>
+<li>asin: Compute the arcsine of a scalar.</li>
+<li>acos: Compute the arccosine of a scalar.</li>
+<li>atan: Compute the arctangent of a scalar.</li>
+<li>sinh: Compute the hyperbolic sine of a scalar.</li>
+<li>cosh: Compute the hyperbolic cosine of a scalar.</li>
+<li>tanh: Compute the hyperbolic tangent of a scalar.</li>
+<li>min: Compute minimum of two scalars.</li>
+<li>max: Compute maximum of two scalars.</li>
+<li>x^y: Raise one scalar to the power of another scalar. The operands for
+this function are not required to be enclosed in parentheses.</li>
+<li>sqrt: Compute the square root of a scalar.</li>
+<li>e^x: Raise e to the power of a scalar.</li>
+<li>log: Compute the logarithm of a scalar (deprecated. same as log10).</li>
+<li>log10: Compute the logarithm of a scalar to the base 10.</li>
+<li>ln: Compute the logarithm of a scalar to the base ‘e’.</li>
+<li>ceil: Compute the ceiling of a scalar. floor: Compute the floor of a scalar.</li>
+<li>abs: Compute the absolute value of a scalar.</li>
+<li>v1.v2: Compute the dot product of two vectors. The operands for this
+function are not required to be enclosed in parentheses.</li>
+<li>cross: Compute cross product of two vectors.</li>
+<li>mag: Compute the magnitude of a vector.</li>
+<li>norm: Normalize a vector.</li>
+</ul>
+<p>The operands are described below. The digits 0 - 9 and the decimal
+point are used to enter constant scalar values. <strong>iHat</strong>, <strong>jHat</strong>,
+and <strong>kHat</strong> are vector constants representing unit vectors in the X,
+Y, and Z directions, respectively. The scalars menu lists the names of
+the scalar arrays and the components of the vector arrays of either
+the point-centered or cell-centered data.  The vectors menu lists the
+names of the point-centered or cell-centered vector arrays. The
+function will be computed for each point (or cell) using the scalar or
+vector value of the array at that point (or cell). The filter operates
+on any type of data set, but the input data set must have at least one
+scalar or vector array. The arrays can be either point-centered or
+cell-centered. The Calculator filter’s output is of the same data set
+type as the input.</p>
+<p>The output array type can be specified as an advanced option with the default
+being of a vtkDoubleArray.</p>
+</dd></dl>
+
 <div class="section" id="data-descriptors">
 <h2>Data Descriptors<a class="headerlink" href="#data-descriptors" title="Permalink to this headline">¶</a></h2>
 <blockquote>

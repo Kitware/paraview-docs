@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>paraview.simple.Delaunay2D &mdash; ParaView/Python 5.7.0-874-g887fd42ac5 documentation</title>
+  <title>paraview.simple.Delaunay2D &mdash; ParaView/Python 5.7.0-878-g8cd8be9e4a documentation</title>
   
 
   
@@ -24,7 +24,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:'./',
-        VERSION:'5.7.0-874-g887fd42ac5',
+        VERSION:'5.7.0-878-g8cd8be9e4a',
         COLLAPSE_INDEX:false,
         FILE_SUFFIX:'.html',
         HAS_SOURCE:  true
@@ -33,7 +33,6 @@
       <script type="text/javascript" src="_static/jquery.js"></script>
       <script type="text/javascript" src="_static/underscore.js"></script>
       <script type="text/javascript" src="_static/doctools.js"></script>
-      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
     
 
@@ -49,7 +48,7 @@
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="ParaView/Python 5.7.0-874-g887fd42ac5 documentation" href="index.html"/>
+    <link rel="top" title="ParaView/Python 5.7.0-878-g8cd8be9e4a documentation" href="index.html"/>
         <link rel="up" title="Available readers, sources, writers, filters and animation cues" href="paraview.servermanager_proxies.html"/>
         <link rel="next" title="paraview.simple.Delaunay3D" href="paraview.simple.Delaunay3D.html"/>
         <link rel="prev" title="paraview.simple.DecimatePolyline" href="paraview.simple.DecimatePolyline.html"/> 
@@ -69,7 +68,7 @@
           <li> <a href="index.html">
             <img src="_static/paraview-logo-small.png"
             alt="ParaView/Python"></img></a> </li>
-          <li class="version"> version 5.7.0-874-g887fd42ac5</li>
+          <li class="version"> version 5.7.0-878-g8cd8be9e4a</li>
         </ul>
         <form id ="rtd-search-form" class="wy-form" action="search.html" method="get">
   <input type="text" name="q" placeholder="Search docs" />
@@ -89,7 +88,7 @@
 </ul>
 </li>
 <li class="toctree-l1 current"><a class="reference internal" href="paraview.html">The ParaView Python Package</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="paraview.html#id1"><code class="docutils literal notranslate"><span class="pre">paraview</span></code> Package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.html#id1"><code class="docutils literal"><span class="pre">paraview</span></code> Package</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="paraview.html#modules">Modules</a></li>
 <li class="toctree-l2"><a class="reference internal" href="paraview.html#subpackages">Subpackages</a></li>
 </ul>
@@ -98,7 +97,7 @@
 <li class="toctree-l1"><a class="reference internal" href="paraview.servermanager.html">servermanager</a></li>
 <li class="toctree-l1"><a class="reference internal" href="paraview.coprocessing.html">coprocessing</a></li>
 <li class="toctree-l1"><a class="reference internal" href="paraview.benchmark.html">benchmark</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="paraview.benchmark.html#id1"><code class="docutils literal notranslate"><span class="pre">benchmark</span></code> Package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.benchmark.html#id1"><code class="docutils literal"><span class="pre">benchmark</span></code> Package</a></li>
 <li class="toctree-l2"><a class="reference internal" href="paraview.benchmark.html#modules">Modules</a></li>
 </ul>
 </li>
@@ -604,7 +603,7 @@
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="python-2-vs-3.html">Python Version 2 versus 3</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="python-2-vs-3.html#print-is-a-function"><code class="docutils literal notranslate"><span class="pre">print</span></code> is a function</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python-2-vs-3.html#print-is-a-function"><code class="docutils literal"><span class="pre">print</span></code> is a function</a></li>
 <li class="toctree-l2"><a class="reference internal" href="python-2-vs-3.html#exceptions">Exceptions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="python-2-vs-3.html#iterables">Iterables</a></li>
 <li class="toctree-l2"><a class="reference internal" href="python-2-vs-3.html#iterators-not-lists">Iterators, not lists</a></li>
@@ -654,6 +653,59 @@
           
   <div class="section" id="paraview-simple-delaunay2d">
 <h1>paraview.simple.Delaunay2D<a class="headerlink" href="#paraview-simple-delaunay2d" title="Permalink to this headline">¶</a></h1>
+<dl class="function">
+<dt id="paraview.simple.Delaunay2D">
+<code class="descclassname">paraview.simple.</code><code class="descname">Delaunay2D</code><span class="sig-paren">(</span><em>*input</em>, <em>**params</em><span class="sig-paren">)</span><a class="headerlink" href="#paraview.simple.Delaunay2D" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div>Delaunay2D is a filter that constructs a 2D Delaunay
+triangulation from a list of input points. These points
+may be represented by any dataset of type vtkPointSet and
+subclasses. The output of the filter is a polygonal
+dataset containing a triangle mesh. The 2D Delaunay
+triangulation is defined as the triangulation that
+satisfies the Delaunay criterion for n-dimensional
+simplexes (in this case n=2 and the simplexes are
+triangles). This criterion states that a circumsphere of
+each simplex in a triangulation contains only the n+1
+defining points of the simplex. In two dimensions, this
+translates into an optimal triangulation. That is, the
+maximum interior angle of any triangle is less than or
+equal to that of any possible triangulation. Delaunay
+triangulations are used to build topological structures
+from unorganized (or unstructured) points. The input to
+this filter is a list of points specified in 3D, even
+though the triangulation is 2D. Thus the triangulation is
+constructed in the x-y plane, and the z coordinate is
+ignored (although carried through to the output). You can
+use the option ProjectionPlaneMode in order to compute the
+best-fitting plane to the set of points, project the
+points and that plane and then perform the triangulation
+using their projected positions and then use it as the
+plane in which the triangulation is performed. The
+Delaunay triangulation can be numerically sensitive in
+some cases. To prevent problems, try to avoid injecting
+points that will result in triangles with bad aspect
+ratios (1000:1 or greater). In practice this means
+inserting points that are “widely dispersed”, and enables
+smooth transition of triangle sizes throughout the mesh.
+(You may even want to add extra points to create a better
+point distribution.) If numerical problems are present,
+you will see a warning message to this effect at the end
+of the triangulation process. Warning: Points arranged on
+a regular lattice (termed degenerate cases) can be
+triangulated in more than one way (at least according to
+the Delaunay criterion). The choice of triangulation (as
+implemented by this algorithm) depends on the order of the
+input points. The first three points will form a triangle;
+other degenerate points will not break this triangle.
+Points that are coincident (or nearly so) may be discarded
+by the algorithm. This is because the Delaunay
+triangulation requires unique input points. The output of
+the Delaunay triangulation is supposedly a convex hull. In
+certain cases this implementation may not generate the
+convex hull.</div></blockquote>
+</dd></dl>
+
 <div class="section" id="data-descriptors">
 <h2>Data Descriptors<a class="headerlink" href="#data-descriptors" title="Permalink to this headline">¶</a></h2>
 <blockquote>

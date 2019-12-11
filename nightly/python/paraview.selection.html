@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>selection Module &mdash; ParaView/Python 5.7.0-874-g887fd42ac5 documentation</title>
+  <title>selection Module &mdash; ParaView/Python 5.7.0-878-g8cd8be9e4a documentation</title>
   
 
   
@@ -24,7 +24,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:'./',
-        VERSION:'5.7.0-874-g887fd42ac5',
+        VERSION:'5.7.0-878-g8cd8be9e4a',
         COLLAPSE_INDEX:false,
         FILE_SUFFIX:'.html',
         HAS_SOURCE:  true
@@ -33,7 +33,6 @@
       <script type="text/javascript" src="_static/jquery.js"></script>
       <script type="text/javascript" src="_static/underscore.js"></script>
       <script type="text/javascript" src="_static/doctools.js"></script>
-      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
     
 
@@ -49,7 +48,7 @@
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="ParaView/Python 5.7.0-874-g887fd42ac5 documentation" href="index.html"/>
+    <link rel="top" title="ParaView/Python 5.7.0-878-g8cd8be9e4a documentation" href="index.html"/>
         <link rel="up" title="paraview Package" href="paraview.html"/>
         <link rel="next" title="servermanager Module" href="paraview.servermanager.html"/>
         <link rel="prev" title="python_view Module" href="paraview.python_view.html"/> 
@@ -69,7 +68,7 @@
           <li> <a href="index.html">
             <img src="_static/paraview-logo-small.png"
             alt="ParaView/Python"></img></a> </li>
-          <li class="version"> version 5.7.0-874-g887fd42ac5</li>
+          <li class="version"> version 5.7.0-878-g8cd8be9e4a</li>
         </ul>
         <form id ="rtd-search-form" class="wy-form" action="search.html" method="get">
   <input type="text" name="q" placeholder="Search docs" />
@@ -89,7 +88,7 @@
 </ul>
 </li>
 <li class="toctree-l1 current"><a class="reference internal" href="paraview.html">The ParaView Python Package</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="paraview.html#id1"><code class="docutils literal notranslate"><span class="pre">paraview</span></code> Package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.html#id1"><code class="docutils literal"><span class="pre">paraview</span></code> Package</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="paraview.html#modules">Modules</a></li>
 <li class="toctree-l2"><a class="reference internal" href="paraview.html#subpackages">Subpackages</a></li>
 </ul>
@@ -98,7 +97,7 @@
 <li class="toctree-l1"><a class="reference internal" href="paraview.servermanager.html">servermanager</a></li>
 <li class="toctree-l1"><a class="reference internal" href="paraview.coprocessing.html">coprocessing</a></li>
 <li class="toctree-l1"><a class="reference internal" href="paraview.benchmark.html">benchmark</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="paraview.benchmark.html#id1"><code class="docutils literal notranslate"><span class="pre">benchmark</span></code> Package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.benchmark.html#id1"><code class="docutils literal"><span class="pre">benchmark</span></code> Package</a></li>
 <li class="toctree-l2"><a class="reference internal" href="paraview.benchmark.html#modules">Modules</a></li>
 </ul>
 </li>
@@ -604,7 +603,7 @@
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="python-2-vs-3.html">Python Version 2 versus 3</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="python-2-vs-3.html#print-is-a-function"><code class="docutils literal notranslate"><span class="pre">print</span></code> is a function</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python-2-vs-3.html#print-is-a-function"><code class="docutils literal"><span class="pre">print</span></code> is a function</a></li>
 <li class="toctree-l2"><a class="reference internal" href="python-2-vs-3.html#exceptions">Exceptions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="python-2-vs-3.html#iterables">Iterables</a></li>
 <li class="toctree-l2"><a class="reference internal" href="python-2-vs-3.html#iterators-not-lists">Iterators, not lists</a></li>
@@ -652,8 +651,269 @@
 </ul>
 <hr/>
           
-  <div class="section" id="selection-module">
-<h1>selection Module<a class="headerlink" href="#selection-module" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="module-paraview.selection">
+<span id="selection-module"></span><h1>selection Module<a class="headerlink" href="#module-paraview.selection" title="Permalink to this headline">¶</a></h1>
+<p>selection is a module for defining and using selections via Python. It provides
+a convenience layer to provide functionality provided by the underlying C++ classes.</p>
+<p>A simple example:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">paraview.selection</span> <span class="k">import</span> <span class="o">*</span>
+
+<span class="c1"># Create a new sphere proxy on the active connection and register it</span>
+<span class="c1"># in the sources group.</span>
+<span class="n">sphere</span> <span class="o">=</span> <span class="n">Sphere</span><span class="p">(</span><span class="n">ThetaResolution</span><span class="o">=</span><span class="mi">16</span><span class="p">,</span> <span class="n">PhiResolution</span><span class="o">=</span><span class="mi">32</span><span class="p">)</span>
+
+<span class="c1"># Show the sphere</span>
+<span class="n">Show</span><span class="p">(</span><span class="n">sphere</span><span class="p">)</span>
+
+<span class="c1"># Select cells falling inside a rectangle defined by two points on a diagonal,</span>
+<span class="c1"># (300, 400) and (600, 800).</span>
+<span class="n">SelectSurfaceCells</span><span class="p">(</span><span class="n">Rectangle</span><span class="o">=</span><span class="p">[</span><span class="mi">300</span><span class="p">,</span> <span class="mi">400</span><span class="p">,</span> <span class="mi">600</span><span class="p">,</span> <span class="mi">800</span><span class="p">])</span>
+
+<span class="c1"># Add cells on processor 0 with ids 1 and 2 to the current selection.</span>
+<span class="n">SelectIDs</span><span class="p">(</span><span class="n">IDs</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="n">FieldType</span><span class="o">=</span><span class="s1">&#39;CELL&#39;</span><span class="p">,</span> <span class="n">Source</span><span class="o">=</span><span class="n">sphere</span><span class="p">,</span> <span class="n">Modifier</span><span class="o">=</span><span class="s1">&#39;ADD&#39;</span><span class="p">)</span>
+
+<span class="c1"># Remove cells on processor 0 with ids 4 and 5 from the current selection.</span>
+<span class="n">SelectIDS</span><span class="p">(</span><span class="n">IDs</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">],</span> <span class="n">FieldType</span><span class="o">=</span><span class="s1">&#39;CELL&#39;</span><span class="p">,</span> <span class="n">Source</span><span class="o">=</span><span class="n">sphere</span><span class="p">,</span> <span class="n">Modifier</span><span class="o">=</span><span class="s1">&#39;SUBTRACT&#39;</span><span class="p">)</span>
+
+<span class="c1"># Extract the currently extracted cells</span>
+<span class="n">es</span> <span class="o">=</span> <span class="n">ExtractSelection</span><span class="p">()</span>
+<span class="n">Show</span><span class="p">(</span><span class="n">es</span><span class="p">)</span>
+</pre></div>
+</div>
+<dl class="function">
+<dt id="paraview.selection.ClearSelection">
+<code class="descclassname">paraview.selection.</code><code class="descname">ClearSelection</code><span class="sig-paren">(</span><em>Source=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/selection.html#ClearSelection"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.selection.ClearSelection" title="Permalink to this definition">¶</a></dt>
+<dd><p>Clears the selection on the source passed in to the source parameter
+or the active source if no source is provided.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="paraview.selection.QuerySelect">
+<code class="descclassname">paraview.selection.</code><code class="descname">QuerySelect</code><span class="sig-paren">(</span><em>QueryString=''</em>, <em>FieldType='POINT'</em>, <em>Source=None</em>, <em>InsideOut=False</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/selection.html#QuerySelect"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.selection.QuerySelect" title="Permalink to this definition">¶</a></dt>
+<dd><p>Selection by query expression.
+- QueryString - string with NumPy-like boolean expression defining which attributes are selected
+- FieldType - atttribute to select, e.g., ‘POINT’ or ‘CELL’
+- Source - if not set, then the selection will be on the active source
+- InsideOut - Invert the selection so that attributes that do not satisfy the expression are</p>
+<blockquote>
+<div>selected instead of elements that do</div></blockquote>
+</dd></dl>
+
+<dl class="function">
+<dt id="paraview.selection.SelectCellsThrough">
+<code class="descclassname">paraview.selection.</code><code class="descname">SelectCellsThrough</code><span class="sig-paren">(</span><em>Rectangle=[]</em>, <em>View=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/selection.html#SelectCellsThrough"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.selection.SelectCellsThrough" title="Permalink to this definition">¶</a></dt>
+<dd><p>Select all cells within a rectangular region regardless of their visibility.</p>
+<ul class="simple">
+<li>Rectangle - list containing bottom left (x1, y1) and top right (x2, y2) corner of a
+rectangle defining the selection region in the format [x1, y1, x2, y2]. Defined in pixels.</li>
+<li>View - the view in which to perform the selection. If None, uses the current active view.</li>
+</ul>
+</dd></dl>
+
+<dl class="function">
+<dt id="paraview.selection.SelectCompositeDataIDs">
+<code class="descclassname">paraview.selection.</code><code class="descname">SelectCompositeDataIDs</code><span class="sig-paren">(</span><em>IDs=[]</em>, <em>FieldType='POINT'</em>, <em>ContainingCells=False</em>, <em>Source=None</em>, <em>Modifier=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/selection.html#SelectCompositeDataIDs"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.selection.SelectCompositeDataIDs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Select attributes by composite attribute IDs.</p>
+<ul class="simple">
+<li>IDs - list of IDs of attribute types to select. Defined as 3-tuples of
+(flat block index, process number, attribute ID) interleaved in a single list.</li>
+<li>FieldType - type of attribute to select, e.g., ‘POINT’, ‘CELL’</li>
+<li><dl class="first docutils">
+<dt>ContainingCells - if True and FieldType is ‘POINT’, select the cells containing the</dt>
+<dd>points corresponding to the given IDs.</dd>
+</dl>
+</li>
+<li>Source - If not None, specifies the sources whose elements should be selected by ID.</li>
+<li><dl class="first docutils">
+<dt>Modifier - ‘ADD’, ‘SUBTRACT’, ‘TOGGLE’, or None to define whether and how the selection</dt>
+<dd>should modify the existing selection.</dd>
+</dl>
+</li>
+</ul>
+</dd></dl>
+
+<dl class="function">
+<dt id="paraview.selection.SelectGlobalIDs">
+<code class="descclassname">paraview.selection.</code><code class="descname">SelectGlobalIDs</code><span class="sig-paren">(</span><em>IDs=[]</em>, <em>FieldType='POINT'</em>, <em>ContainingCells=False</em>, <em>Source=None</em>, <em>Modifier=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/selection.html#SelectGlobalIDs"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.selection.SelectGlobalIDs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Select attributes by global IDs.</p>
+<ul class="simple">
+<li>IDs - list of IDs of attribute types to select. Defined as a list of global IDs.</li>
+<li>FieldType - type of attribute to select, e.g., ‘POINT’, ‘CELL’</li>
+<li><dl class="first docutils">
+<dt>ContainingCells - if True and FieldType is ‘POINT’, select the cells containing the</dt>
+<dd>points corresponding to the given IDs.</dd>
+</dl>
+</li>
+<li>Source - If not None, specifies the sources whose elements should be selected by ID.</li>
+<li><dl class="first docutils">
+<dt>Modifier - ‘ADD’, ‘SUBTRACT’, ‘TOGGLE’, or None to define whether and how the selection</dt>
+<dd>should modify the existing selection.</dd>
+</dl>
+</li>
+</ul>
+</dd></dl>
+
+<dl class="function">
+<dt id="paraview.selection.SelectHierarchicalDataIDs">
+<code class="descclassname">paraview.selection.</code><code class="descname">SelectHierarchicalDataIDs</code><span class="sig-paren">(</span><em>IDs=[]</em>, <em>FieldType='POINT'</em>, <em>ContainingCells=False</em>, <em>Source=None</em>, <em>Modifier=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/selection.html#SelectHierarchicalDataIDs"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.selection.SelectHierarchicalDataIDs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Select attributes by hierarchical data IDs.</p>
+<ul class="simple">
+<li>IDs - list of IDs of attribute types to select. Defined as 3-tuples of
+(level, index, attribute ID) interleaved in a single list.</li>
+<li>FieldType - type of attribute to select, e.g., ‘POINT’, ‘CELL’</li>
+<li><dl class="first docutils">
+<dt>ContainingCells - if True and FieldType is ‘POINT’, select the cells containing the</dt>
+<dd>points corresponding to the given IDs.</dd>
+</dl>
+</li>
+<li>Source - If not None, specifies the sources whose elements should be selected by ID.</li>
+<li><dl class="first docutils">
+<dt>Modifier - ‘ADD’, ‘SUBTRACT’, ‘TOGGLE’, or None to define whether and how the selection</dt>
+<dd>should modify the existing selection.</dd>
+</dl>
+</li>
+</ul>
+</dd></dl>
+
+<dl class="function">
+<dt id="paraview.selection.SelectIDs">
+<code class="descclassname">paraview.selection.</code><code class="descname">SelectIDs</code><span class="sig-paren">(</span><em>IDs=[]</em>, <em>FieldType='POINT'</em>, <em>ContainingCells=False</em>, <em>Source=None</em>, <em>Modifier=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/selection.html#SelectIDs"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.selection.SelectIDs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Select attributes by attribute IDs.</p>
+<ul class="simple">
+<li>IDs - list of IDs of attribute types to select. Defined as (process number, attribute ID) pairs
+interleaved in a single list. For multiblock datasets, this will select attributes on all
+blocks of the provided (processor number, attribute ID) pairs</li>
+<li>FieldType - type of attribute to select, e.g., ‘POINT’, ‘CELL’</li>
+<li><dl class="first docutils">
+<dt>ContainingCells - if True and FieldType is ‘POINT’, select the cells containing the</dt>
+<dd>points corresponding to the given IDs.</dd>
+</dl>
+</li>
+<li>Source - If not None, specifies the sources whose elements should be selected by ID.</li>
+<li><dl class="first docutils">
+<dt>Modifier - ‘ADD’, ‘SUBTRACT’, ‘TOGGLE’, or None to define whether and how the selection</dt>
+<dd>should modify the existing selection.</dd>
+</dl>
+</li>
+</ul>
+</dd></dl>
+
+<dl class="function">
+<dt id="paraview.selection.SelectLocation">
+<code class="descclassname">paraview.selection.</code><code class="descname">SelectLocation</code><span class="sig-paren">(</span><em>Locations=[]</em>, <em>Source=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/selection.html#SelectLocation"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.selection.SelectLocation" title="Permalink to this definition">¶</a></dt>
+<dd><p>Select points by location.</p>
+<ul class="simple">
+<li>Locations - list of x, y, z points to select.</li>
+<li>Source - if not set, then the selection will be on the active source</li>
+</ul>
+</dd></dl>
+
+<dl class="function">
+<dt id="paraview.selection.SelectPedigreeIDs">
+<code class="descclassname">paraview.selection.</code><code class="descname">SelectPedigreeIDs</code><span class="sig-paren">(</span><em>IDs=[]</em>, <em>FieldType='POINT'</em>, <em>ContainingCells=False</em>, <em>Source=None</em>, <em>Modifier=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/selection.html#SelectPedigreeIDs"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.selection.SelectPedigreeIDs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Select attributes by Pedigree IDs.</p>
+<ul class="simple">
+<li>IDs - list of IDs of attribute types to select. Defined as (domain, ID) pairs
+interleaved in a single list.</li>
+<li>FieldType - type of attribute to select, e.g., ‘POINT’, ‘CELL’</li>
+<li><dl class="first docutils">
+<dt>ContainingCells - if True and FieldType is ‘POINT’, select the cells containing the</dt>
+<dd>points corresponding to the given IDs.</dd>
+</dl>
+</li>
+<li>Source - If not None, specifies the sources whose elements should be selected by ID.</li>
+<li><dl class="first docutils">
+<dt>Modifier - ‘ADD’, ‘SUBTRACT’, ‘TOGGLE’, or None to define whether and how the selection</dt>
+<dd>should modify the existing selection.</dd>
+</dl>
+</li>
+</ul>
+</dd></dl>
+
+<dl class="function">
+<dt id="paraview.selection.SelectPointsThrough">
+<code class="descclassname">paraview.selection.</code><code class="descname">SelectPointsThrough</code><span class="sig-paren">(</span><em>Rectangle=[]</em>, <em>View=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/selection.html#SelectPointsThrough"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.selection.SelectPointsThrough" title="Permalink to this definition">¶</a></dt>
+<dd><p>Select all points within a rectangular region regardless of their visibility.</p>
+<ul class="simple">
+<li>Rectangle - list containing bottom left (x1, y1) and top right (x2, y2) corner of a
+rectangle defining the selection region in the format [x1, y1, x2, y2]. Defined in pixels.</li>
+<li>View - the view in which to perform the selection. If None, uses the current active view.</li>
+</ul>
+</dd></dl>
+
+<dl class="function">
+<dt id="paraview.selection.SelectSurfaceBlocks">
+<code class="descclassname">paraview.selection.</code><code class="descname">SelectSurfaceBlocks</code><span class="sig-paren">(</span><em>Rectangle=[]</em>, <em>View=None</em>, <em>Modifier=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/selection.html#SelectSurfaceBlocks"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.selection.SelectSurfaceBlocks" title="Permalink to this definition">¶</a></dt>
+<dd><p>Select visible blocks within a rectangular region.</p>
+<ul class="simple">
+<li>Rectangle - list containing bottom left (x1, y1) and top right (x2, y2) corner of a
+rectangle defining the selection region in the format [x1, y1, x2, y2]. Defined in pixels.</li>
+<li>View - the view in which to perform the selection. If None, uses the current active view.</li>
+<li>Modifier - ‘ADD’, ‘SUBTRACT’, ‘TOGGLE’, or None to define whether and how the selection
+should modify the existing selection.</li>
+</ul>
+</dd></dl>
+
+<dl class="function">
+<dt id="paraview.selection.SelectSurfaceCells">
+<code class="descclassname">paraview.selection.</code><code class="descname">SelectSurfaceCells</code><span class="sig-paren">(</span><em>Rectangle=[]</em>, <em>Polygon=[]</em>, <em>View=None</em>, <em>Modifier=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/selection.html#SelectSurfaceCells"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.selection.SelectSurfaceCells" title="Permalink to this definition">¶</a></dt>
+<dd><p>Select visible cells within a rectangular or polygon region.</p>
+<ul class="simple">
+<li>Rectangle - list containing bottom left (x1, y1) and top right (x2, y2) corner of a
+rectangle defining the selection region in the format [x1, y1, x2, y2]. Defined in pixels.
+If not empty, the Polygon parameter must be empty or None.</li>
+<li><dl class="first docutils">
+<dt>Polygon - list of 2D points defining a polygon in which visible points should be selected,</dt>
+<dd>e.g., [x1, y1, x2, y2, …, xn, yn]. Defined in pixels. If not empty, the Rectangle parameter
+must be empty or None.</dd>
+</dl>
+</li>
+<li>View - the view in which to perform the selection. If None, uses the current active view.</li>
+<li>Modifier - ‘ADD’, ‘SUBTRACT’, ‘TOGGLE’, or None to define whether and how the selection
+should modify the existing selection.</li>
+</ul>
+</dd></dl>
+
+<dl class="function">
+<dt id="paraview.selection.SelectSurfacePoints">
+<code class="descclassname">paraview.selection.</code><code class="descname">SelectSurfacePoints</code><span class="sig-paren">(</span><em>Rectangle=[]</em>, <em>Polygon=[]</em>, <em>View=None</em>, <em>Modifier=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/selection.html#SelectSurfacePoints"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.selection.SelectSurfacePoints" title="Permalink to this definition">¶</a></dt>
+<dd><p>Select visible points within a rectangular or polygon region.</p>
+<ul class="simple">
+<li>Rectangle - list containing bottom left (x1, y1) and top right (x2, y2) corner of a
+rectangle defining the selection region in the format [x1, y1, x2, y2]. Defined in pixels.
+If not empty, the Polygon parameter must be empty or None.</li>
+<li><dl class="first docutils">
+<dt>Polygon - list of 2D points defining a polygon in which visible points should be selected,</dt>
+<dd>e.g., [x1, y1, x2, y2, …, xn, yn]. Defined in pixels. If not empty, the Rectangle parameter
+must be empty or None.</dd>
+</dl>
+</li>
+<li>View - the view in which to perform the selection. If None, uses the current active view.</li>
+<li>Modifier - ‘ADD’, ‘SUBTRACT’, ‘TOGGLE’, or None to define whether and how the selection
+should modify the existing selection.</li>
+</ul>
+</dd></dl>
+
+<dl class="function">
+<dt id="paraview.selection.SelectThresholds">
+<code class="descclassname">paraview.selection.</code><code class="descname">SelectThresholds</code><span class="sig-paren">(</span><em>Thresholds=[]</em>, <em>ArrayName=''</em>, <em>FieldType='POINT'</em>, <em>Source=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/selection.html#SelectThresholds"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.selection.SelectThresholds" title="Permalink to this definition">¶</a></dt>
+<dd><p>Select attributes in a source by thresholding on values in an associated array.</p>
+<ul class="simple">
+<li>Thresholds - list of lower and upper threshold bounds. Attributes with associated
+values in the selected array between any set of bounds will be selected.</li>
+<li>ArrayName - name of the array to threshold.</li>
+<li>FieldType - atttribute to select, e.g., ‘POINT’ or ‘CELL’</li>
+<li>Source - if not set, then the selection will be on the active source</li>
+</ul>
+</dd></dl>
+
+<dl class="class">
+<dt id="paraview.selection.SelectionProxy">
+<em class="property">class </em><code class="descclassname">paraview.selection.</code><code class="descname">SelectionProxy</code><span class="sig-paren">(</span><em>**args</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/selection.html#SelectionProxy"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.selection.SelectionProxy" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="paraview.servermanager.html#paraview.servermanager.Proxy" title="paraview.servermanager.Proxy"><code class="xref py py-class docutils literal"><span class="pre">paraview.servermanager.Proxy</span></code></a></p>
+<p>Special proxy wrapper type for Selections.</p>
+</dd></dl>
+
 </div>
 
 

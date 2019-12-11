@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>paraview.simple.VisItNASTRANReader &mdash; ParaView/Python 5.7.0-874-g887fd42ac5 documentation</title>
+  <title>paraview.simple.VisItNASTRANReader &mdash; ParaView/Python 5.7.0-878-g8cd8be9e4a documentation</title>
   
 
   
@@ -24,7 +24,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:'./',
-        VERSION:'5.7.0-874-g887fd42ac5',
+        VERSION:'5.7.0-878-g8cd8be9e4a',
         COLLAPSE_INDEX:false,
         FILE_SUFFIX:'.html',
         HAS_SOURCE:  true
@@ -33,7 +33,6 @@
       <script type="text/javascript" src="_static/jquery.js"></script>
       <script type="text/javascript" src="_static/underscore.js"></script>
       <script type="text/javascript" src="_static/doctools.js"></script>
-      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
     
 
@@ -49,7 +48,7 @@
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="ParaView/Python 5.7.0-874-g887fd42ac5 documentation" href="index.html"/>
+    <link rel="top" title="ParaView/Python 5.7.0-878-g8cd8be9e4a documentation" href="index.html"/>
         <link rel="up" title="Available readers, sources, writers, filters and animation cues" href="paraview.servermanager_proxies.html"/>
         <link rel="next" title="paraview.simple.VisItNek5000Reader" href="paraview.simple.VisItNek5000Reader.html"/>
         <link rel="prev" title="paraview.simple.VisItMirandaReader" href="paraview.simple.VisItMirandaReader.html"/> 
@@ -69,7 +68,7 @@
           <li> <a href="index.html">
             <img src="_static/paraview-logo-small.png"
             alt="ParaView/Python"></img></a> </li>
-          <li class="version"> version 5.7.0-874-g887fd42ac5</li>
+          <li class="version"> version 5.7.0-878-g8cd8be9e4a</li>
         </ul>
         <form id ="rtd-search-form" class="wy-form" action="search.html" method="get">
   <input type="text" name="q" placeholder="Search docs" />
@@ -89,7 +88,7 @@
 </ul>
 </li>
 <li class="toctree-l1 current"><a class="reference internal" href="paraview.html">The ParaView Python Package</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="paraview.html#id1"><code class="docutils literal notranslate"><span class="pre">paraview</span></code> Package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.html#id1"><code class="docutils literal"><span class="pre">paraview</span></code> Package</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="paraview.html#modules">Modules</a></li>
 <li class="toctree-l2"><a class="reference internal" href="paraview.html#subpackages">Subpackages</a></li>
 </ul>
@@ -98,7 +97,7 @@
 <li class="toctree-l1"><a class="reference internal" href="paraview.servermanager.html">servermanager</a></li>
 <li class="toctree-l1"><a class="reference internal" href="paraview.coprocessing.html">coprocessing</a></li>
 <li class="toctree-l1"><a class="reference internal" href="paraview.benchmark.html">benchmark</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="paraview.benchmark.html#id1"><code class="docutils literal notranslate"><span class="pre">benchmark</span></code> Package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.benchmark.html#id1"><code class="docutils literal"><span class="pre">benchmark</span></code> Package</a></li>
 <li class="toctree-l2"><a class="reference internal" href="paraview.benchmark.html#modules">Modules</a></li>
 </ul>
 </li>
@@ -604,7 +603,7 @@
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="python-2-vs-3.html">Python Version 2 versus 3</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="python-2-vs-3.html#print-is-a-function"><code class="docutils literal notranslate"><span class="pre">print</span></code> is a function</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python-2-vs-3.html#print-is-a-function"><code class="docutils literal"><span class="pre">print</span></code> is a function</a></li>
 <li class="toctree-l2"><a class="reference internal" href="python-2-vs-3.html#exceptions">Exceptions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="python-2-vs-3.html#iterables">Iterables</a></li>
 <li class="toctree-l2"><a class="reference internal" href="python-2-vs-3.html#iterators-not-lists">Iterators, not lists</a></li>
@@ -654,6 +653,14 @@
           
   <div class="section" id="paraview-simple-visitnastranreader">
 <h1>paraview.simple.VisItNASTRANReader<a class="headerlink" href="#paraview-simple-visitnastranreader" title="Permalink to this headline">¶</a></h1>
+<dl class="function">
+<dt id="paraview.simple.VisItNASTRANReader">
+<code class="descclassname">paraview.simple.</code><code class="descname">VisItNASTRANReader</code><span class="sig-paren">(</span><em>*input</em>, <em>**params</em><span class="sig-paren">)</span><a class="headerlink" href="#paraview.simple.VisItNASTRANReader" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div>Note this reader is automatically generated from wrapping a third party reader. For more information on the reader see <a class="reference external" href="https://wci.llnl.gov/codes/visit">https://wci.llnl.gov/codes/visit</a>
+The default file extensions are .nas, and .f06</div></blockquote>
+</dd></dl>
+
 <div class="section" id="data-descriptors">
 <h2>Data Descriptors<a class="headerlink" href="#data-descriptors" title="Permalink to this headline">¶</a></h2>
 <blockquote>

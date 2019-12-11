@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>web.helper Module &mdash; ParaView/Python 5.7.0-874-g887fd42ac5 documentation</title>
+  <title>web.helper Module &mdash; ParaView/Python 5.7.0-878-g8cd8be9e4a documentation</title>
   
 
   
@@ -24,7 +24,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:'./',
-        VERSION:'5.7.0-874-g887fd42ac5',
+        VERSION:'5.7.0-878-g8cd8be9e4a',
         COLLAPSE_INDEX:false,
         FILE_SUFFIX:'.html',
         HAS_SOURCE:  true
@@ -33,7 +33,6 @@
       <script type="text/javascript" src="_static/jquery.js"></script>
       <script type="text/javascript" src="_static/underscore.js"></script>
       <script type="text/javascript" src="_static/doctools.js"></script>
-      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
     
 
@@ -49,7 +48,7 @@
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="ParaView/Python 5.7.0-874-g887fd42ac5 documentation" href="index.html"/>
+    <link rel="top" title="ParaView/Python 5.7.0-878-g8cd8be9e4a documentation" href="index.html"/>
         <link rel="up" title="web Package" href="paraview.web.html"/>
         <link rel="next" title="web.protocols Module" href="paraview.web.protocols.html"/>
         <link rel="prev" title="web.decorators Module" href="paraview.web.decorators.html"/> 
@@ -69,7 +68,7 @@
           <li> <a href="index.html">
             <img src="_static/paraview-logo-small.png"
             alt="ParaView/Python"></img></a> </li>
-          <li class="version"> version 5.7.0-874-g887fd42ac5</li>
+          <li class="version"> version 5.7.0-878-g8cd8be9e4a</li>
         </ul>
         <form id ="rtd-search-form" class="wy-form" action="search.html" method="get">
   <input type="text" name="q" placeholder="Search docs" />
@@ -89,7 +88,7 @@
 </ul>
 </li>
 <li class="toctree-l1 current"><a class="reference internal" href="paraview.html">The ParaView Python Package</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="paraview.html#id1"><code class="docutils literal notranslate"><span class="pre">paraview</span></code> Package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.html#id1"><code class="docutils literal"><span class="pre">paraview</span></code> Package</a></li>
 <li class="toctree-l2"><a class="reference internal" href="paraview.html#modules">Modules</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="paraview.html#subpackages">Subpackages</a></li>
 </ul>
@@ -98,7 +97,7 @@
 <li class="toctree-l1"><a class="reference internal" href="paraview.servermanager.html">servermanager</a></li>
 <li class="toctree-l1"><a class="reference internal" href="paraview.coprocessing.html">coprocessing</a></li>
 <li class="toctree-l1"><a class="reference internal" href="paraview.benchmark.html">benchmark</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="paraview.benchmark.html#id1"><code class="docutils literal notranslate"><span class="pre">benchmark</span></code> Package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.benchmark.html#id1"><code class="docutils literal"><span class="pre">benchmark</span></code> Package</a></li>
 <li class="toctree-l2"><a class="reference internal" href="paraview.benchmark.html#modules">Modules</a></li>
 </ul>
 </li>
@@ -604,7 +603,7 @@
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="python-2-vs-3.html">Python Version 2 versus 3</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="python-2-vs-3.html#print-is-a-function"><code class="docutils literal notranslate"><span class="pre">print</span></code> is a function</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python-2-vs-3.html#print-is-a-function"><code class="docutils literal"><span class="pre">print</span></code> is a function</a></li>
 <li class="toctree-l2"><a class="reference internal" href="python-2-vs-3.html#exceptions">Exceptions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="python-2-vs-3.html#iterables">Iterables</a></li>
 <li class="toctree-l2"><a class="reference internal" href="python-2-vs-3.html#iterators-not-lists">Iterators, not lists</a></li>
@@ -652,8 +651,143 @@
 </ul>
 <hr/>
           
-  <div class="section" id="web-helper-module">
-<h1>web.helper Module<a class="headerlink" href="#web-helper-module" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="module-paraview.web.helper">
+<span id="web-helper-module"></span><h1>web.helper Module<a class="headerlink" href="#module-paraview.web.helper" title="Permalink to this headline">¶</a></h1>
+<p>web_helper is a module that provides access to functions that helps to build
+new protocols and process ParaView data structure into web friendly ones.</p>
+<dl class="class">
+<dt id="paraview.web.helper.Pipeline">
+<em class="property">class </em><code class="descclassname">paraview.web.helper.</code><code class="descname">Pipeline</code><span class="sig-paren">(</span><em>name</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/helper.html#Pipeline"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.helper.Pipeline" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<p>Define a data structure that represent a pipeline as a tree.
+This provide also methods to get the data structure for the web environment</p>
+<dl class="method">
+<dt id="paraview.web.helper.Pipeline.addNode">
+<code class="descname">addNode</code><span class="sig-paren">(</span><em>parent_id</em>, <em>node_id</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/helper.html#Pipeline.addNode"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.helper.Pipeline.addNode" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add node into the pipeline tree.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="paraview.web.helper.Pipeline.clear">
+<code class="descname">clear</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/helper.html#Pipeline.clear"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.helper.Pipeline.clear" title="Permalink to this definition">¶</a></dt>
+<dd><p>Clear the pipeline tree.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="paraview.web.helper.Pipeline.getRootNode">
+<code class="descname">getRootNode</code><span class="sig-paren">(</span><em>view=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/helper.html#Pipeline.getRootNode"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.helper.Pipeline.getRootNode" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a tree structure of the pipeline with the current proxy state.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="paraview.web.helper.Pipeline.isEmpty">
+<code class="descname">isEmpty</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/helper.html#Pipeline.isEmpty"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.helper.Pipeline.isEmpty" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="paraview.web.helper.Pipeline.removeNode">
+<code class="descname">removeNode</code><span class="sig-paren">(</span><em>id</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/helper.html#Pipeline.removeNode"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.helper.Pipeline.removeNode" title="Permalink to this definition">¶</a></dt>
+<dd><p>Remove a node from the pipeline tree.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="paraview.web.helper.apply_domains">
+<code class="descclassname">paraview.web.helper.</code><code class="descname">apply_domains</code><span class="sig-paren">(</span><em>parentProxy</em>, <em>proxy_id</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/helper.html#apply_domains"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.helper.apply_domains" title="Permalink to this definition">¶</a></dt>
+<dd><p>Handle bounds domain</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="paraview.web.helper.extractDomain">
+<code class="descclassname">paraview.web.helper.</code><code class="descname">extractDomain</code><span class="sig-paren">(</span><em>proxy</em>, <em>propertyName</em>, <em>xmlDomainElement</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/helper.html#extractDomain"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.helper.extractDomain" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="paraview.web.helper.extractProperty">
+<code class="descclassname">paraview.web.helper.</code><code class="descname">extractProperty</code><span class="sig-paren">(</span><em>proxy</em>, <em>xmlPropertyElement</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/helper.html#extractProperty"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.helper.extractProperty" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="paraview.web.helper.getParentProxyId">
+<code class="descclassname">paraview.web.helper.</code><code class="descname">getParentProxyId</code><span class="sig-paren">(</span><em>proxy</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/helper.html#getParentProxyId"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.helper.getParentProxyId" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return ‘0’ if the given proxy has no Input otherwise will return
+the parent proxy id as a String.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="paraview.web.helper.getProxyAsPipelineNode">
+<code class="descclassname">paraview.web.helper.</code><code class="descname">getProxyAsPipelineNode</code><span class="sig-paren">(</span><em>id</em>, <em>view=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/helper.html#getProxyAsPipelineNode"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.helper.getProxyAsPipelineNode" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a representation for that proxy so it can be used within a pipeline
+browser.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="paraview.web.helper.getProxyAsState">
+<code class="descclassname">paraview.web.helper.</code><code class="descname">getProxyAsState</code><span class="sig-paren">(</span><em>id</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/helper.html#getProxyAsState"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.helper.getProxyAsState" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a json representation of the given proxy state.</p>
+<dl class="docutils">
+<dt>Example of the state of the Clip filter</dt>
+<dd><dl class="first docutils">
+<dt>{</dt>
+<dd><p class="first">proxy_id: 234,
+ClipType: {</p>
+<blockquote>
+<div>proxy_id: 235,
+Normal: [0,0,1],
+Origin: [0,0,0],
+InsideOut: 0</div></blockquote>
+<p class="last">}</p>
+</dd>
+</dl>
+<p class="last">}</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="paraview.web.helper.getProxyDomains">
+<code class="descclassname">paraview.web.helper.</code><code class="descname">getProxyDomains</code><span class="sig-paren">(</span><em>id</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/helper.html#getProxyDomains"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.helper.getProxyDomains" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a json based structured based on the proxy XML.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="paraview.web.helper.idToProxy">
+<code class="descclassname">paraview.web.helper.</code><code class="descname">idToProxy</code><span class="sig-paren">(</span><em>id</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/helper.html#idToProxy"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.helper.idToProxy" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the proxy that match the given proxy ID.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="paraview.web.helper.listFiles">
+<code class="descclassname">paraview.web.helper.</code><code class="descname">listFiles</code><span class="sig-paren">(</span><em>pathToList</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/helper.html#listFiles"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.helper.listFiles" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a tree structure of the given directory that will be understand by
+the pipelineBrowser widget.
+The provided path should not have a trailing ‘/’.</p>
+<dl class="docutils">
+<dt>return {</dt>
+<dd><dl class="first docutils">
+<dt>children: [</dt>
+<dd>{ name: ‘fileName.vtk’, path: ‘/full_path/to_file/fileName.vtk’ },
+{ name: ‘directoryName’, path: ‘/full_path/to_file/directoryName’, children: [] }</dd>
+</dl>
+<p class="last">]</p>
+</dd>
+</dl>
+<p>}</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="paraview.web.helper.removeUnicode">
+<code class="descclassname">paraview.web.helper.</code><code class="descname">removeUnicode</code><span class="sig-paren">(</span><em>value</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/helper.html#removeUnicode"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.helper.removeUnicode" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="paraview.web.helper.updateProxyProperties">
+<code class="descclassname">paraview.web.helper.</code><code class="descname">updateProxyProperties</code><span class="sig-paren">(</span><em>proxy</em>, <em>properties</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/helper.html#updateProxyProperties"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.helper.updateProxyProperties" title="Permalink to this definition">¶</a></dt>
+<dd><p>Loop over the properties object and update the mapping properties
+to the given proxy.</p>
+</dd></dl>
+
 </div>
 
 

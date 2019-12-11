@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>benchmark.waveletvolume Module &mdash; ParaView/Python 5.7.0-874-g887fd42ac5 documentation</title>
+  <title>benchmark.waveletvolume Module &mdash; ParaView/Python 5.7.0-878-g8cd8be9e4a documentation</title>
   
 
   
@@ -24,7 +24,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:'./',
-        VERSION:'5.7.0-874-g887fd42ac5',
+        VERSION:'5.7.0-878-g8cd8be9e4a',
         COLLAPSE_INDEX:false,
         FILE_SUFFIX:'.html',
         HAS_SOURCE:  true
@@ -33,7 +33,6 @@
       <script type="text/javascript" src="_static/jquery.js"></script>
       <script type="text/javascript" src="_static/underscore.js"></script>
       <script type="text/javascript" src="_static/doctools.js"></script>
-      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
     
 
@@ -49,7 +48,7 @@
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="ParaView/Python 5.7.0-874-g887fd42ac5 documentation" href="index.html"/>
+    <link rel="top" title="ParaView/Python 5.7.0-878-g8cd8be9e4a documentation" href="index.html"/>
         <link rel="up" title="benchmark Package" href="paraview.benchmark.html"/>
         <link rel="next" title="detail Package" href="paraview.detail.html"/>
         <link rel="prev" title="benchmark.waveletcontour Module" href="paraview.benchmark.waveletcontour.html"/> 
@@ -69,7 +68,7 @@
           <li> <a href="index.html">
             <img src="_static/paraview-logo-small.png"
             alt="ParaView/Python"></img></a> </li>
-          <li class="version"> version 5.7.0-874-g887fd42ac5</li>
+          <li class="version"> version 5.7.0-878-g8cd8be9e4a</li>
         </ul>
         <form id ="rtd-search-form" class="wy-form" action="search.html" method="get">
   <input type="text" name="q" placeholder="Search docs" />
@@ -89,7 +88,7 @@
 </ul>
 </li>
 <li class="toctree-l1 current"><a class="reference internal" href="paraview.html">The ParaView Python Package</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="paraview.html#id1"><code class="docutils literal notranslate"><span class="pre">paraview</span></code> Package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.html#id1"><code class="docutils literal"><span class="pre">paraview</span></code> Package</a></li>
 <li class="toctree-l2"><a class="reference internal" href="paraview.html#modules">Modules</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="paraview.html#subpackages">Subpackages</a></li>
 </ul>
@@ -98,7 +97,7 @@
 <li class="toctree-l1"><a class="reference internal" href="paraview.servermanager.html">servermanager</a></li>
 <li class="toctree-l1"><a class="reference internal" href="paraview.coprocessing.html">coprocessing</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="paraview.benchmark.html">benchmark</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="paraview.benchmark.html#id1"><code class="docutils literal notranslate"><span class="pre">benchmark</span></code> Package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.benchmark.html#id1"><code class="docutils literal"><span class="pre">benchmark</span></code> Package</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="paraview.benchmark.html#modules">Modules</a></li>
 </ul>
 </li>
@@ -604,7 +603,7 @@
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="python-2-vs-3.html">Python Version 2 versus 3</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="python-2-vs-3.html#print-is-a-function"><code class="docutils literal notranslate"><span class="pre">print</span></code> is a function</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python-2-vs-3.html#print-is-a-function"><code class="docutils literal"><span class="pre">print</span></code> is a function</a></li>
 <li class="toctree-l2"><a class="reference internal" href="python-2-vs-3.html#exceptions">Exceptions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="python-2-vs-3.html#iterables">Iterables</a></li>
 <li class="toctree-l2"><a class="reference internal" href="python-2-vs-3.html#iterators-not-lists">Iterators, not lists</a></li>
@@ -652,8 +651,46 @@
 </ul>
 <hr/>
           
-  <div class="section" id="benchmark-waveletvolume-module">
-<h1>benchmark.waveletvolume Module<a class="headerlink" href="#benchmark-waveletvolume-module" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="module-paraview.benchmark.waveletvolume">
+<span id="benchmark-waveletvolume-module"></span><h1>benchmark.waveletvolume Module<a class="headerlink" href="#module-paraview.benchmark.waveletvolume" title="Permalink to this headline">¶</a></h1>
+<dl class="function">
+<dt id="paraview.benchmark.waveletvolume.flush_render_buffer">
+<code class="descclassname">paraview.benchmark.waveletvolume.</code><code class="descname">flush_render_buffer</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/benchmark/waveletvolume.html#flush_render_buffer"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.benchmark.waveletvolume.flush_render_buffer" title="Permalink to this definition">¶</a></dt>
+<dd><p>When running as a single process use the WindowToImage filter to
+force a framebuffer read.  This bypasses driver optimizations that
+perform lazy rendering and allows you to get actual frame rates for
+a single process with a GPU.  Multi-process doesn’t need this since
+compositing forces the frame buffer read.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="paraview.benchmark.waveletvolume.get_render_view">
+<code class="descclassname">paraview.benchmark.waveletvolume.</code><code class="descname">get_render_view</code><span class="sig-paren">(</span><em>size</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/benchmark/waveletvolume.html#get_render_view"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.benchmark.waveletvolume.get_render_view" title="Permalink to this definition">¶</a></dt>
+<dd><p>Similar to GetRenderView except if a new view is created, it’s
+created with the specified size instead of having t resize afterwards</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="paraview.benchmark.waveletvolume.main">
+<code class="descclassname">paraview.benchmark.waveletvolume.</code><code class="descname">main</code><span class="sig-paren">(</span><em>argv</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/benchmark/waveletvolume.html#main"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.benchmark.waveletvolume.main" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="paraview.benchmark.waveletvolume.memtime_stamp">
+<code class="descclassname">paraview.benchmark.waveletvolume.</code><code class="descname">memtime_stamp</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/benchmark/waveletvolume.html#memtime_stamp"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.benchmark.waveletvolume.memtime_stamp" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="paraview.benchmark.waveletvolume.run">
+<code class="descclassname">paraview.benchmark.waveletvolume.</code><code class="descname">run</code><span class="sig-paren">(</span><em>output_basename='log'</em>, <em>dimension=100</em>, <em>view_size=(1920</em>, <em>1080)</em>, <em>num_frames=10</em>, <em>save_logs=True</em>, <em>ospray=False</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/benchmark/waveletvolume.html#run"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.benchmark.waveletvolume.run" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="paraview.benchmark.waveletvolume.save_render_buffer">
+<code class="descclassname">paraview.benchmark.waveletvolume.</code><code class="descname">save_render_buffer</code><span class="sig-paren">(</span><em>fname</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/benchmark/waveletvolume.html#save_render_buffer"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.benchmark.waveletvolume.save_render_buffer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Similar to SaveScreenshot except a re-render will not be triggered</p>
+</dd></dl>
+
 </div>
 
 

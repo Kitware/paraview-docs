@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>python_view Module &mdash; ParaView/Python 5.7.0-874-g887fd42ac5 documentation</title>
+  <title>python_view Module &mdash; ParaView/Python 5.7.0-878-g8cd8be9e4a documentation</title>
   
 
   
@@ -24,7 +24,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:'./',
-        VERSION:'5.7.0-874-g887fd42ac5',
+        VERSION:'5.7.0-878-g8cd8be9e4a',
         COLLAPSE_INDEX:false,
         FILE_SUFFIX:'.html',
         HAS_SOURCE:  true
@@ -33,7 +33,6 @@
       <script type="text/javascript" src="_static/jquery.js"></script>
       <script type="text/javascript" src="_static/underscore.js"></script>
       <script type="text/javascript" src="_static/doctools.js"></script>
-      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
     
 
@@ -49,7 +48,7 @@
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="ParaView/Python 5.7.0-874-g887fd42ac5 documentation" href="index.html"/>
+    <link rel="top" title="ParaView/Python 5.7.0-878-g8cd8be9e4a documentation" href="index.html"/>
         <link rel="up" title="paraview Package" href="paraview.html"/>
         <link rel="next" title="selection Module" href="paraview.selection.html"/>
         <link rel="prev" title="pv-vtk-all Module" href="paraview.pv-vtk-all.html"/> 
@@ -69,7 +68,7 @@
           <li> <a href="index.html">
             <img src="_static/paraview-logo-small.png"
             alt="ParaView/Python"></img></a> </li>
-          <li class="version"> version 5.7.0-874-g887fd42ac5</li>
+          <li class="version"> version 5.7.0-878-g8cd8be9e4a</li>
         </ul>
         <form id ="rtd-search-form" class="wy-form" action="search.html" method="get">
   <input type="text" name="q" placeholder="Search docs" />
@@ -89,7 +88,7 @@
 </ul>
 </li>
 <li class="toctree-l1 current"><a class="reference internal" href="paraview.html">The ParaView Python Package</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="paraview.html#id1"><code class="docutils literal notranslate"><span class="pre">paraview</span></code> Package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.html#id1"><code class="docutils literal"><span class="pre">paraview</span></code> Package</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="paraview.html#modules">Modules</a></li>
 <li class="toctree-l2"><a class="reference internal" href="paraview.html#subpackages">Subpackages</a></li>
 </ul>
@@ -98,7 +97,7 @@
 <li class="toctree-l1"><a class="reference internal" href="paraview.servermanager.html">servermanager</a></li>
 <li class="toctree-l1"><a class="reference internal" href="paraview.coprocessing.html">coprocessing</a></li>
 <li class="toctree-l1"><a class="reference internal" href="paraview.benchmark.html">benchmark</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="paraview.benchmark.html#id1"><code class="docutils literal notranslate"><span class="pre">benchmark</span></code> Package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.benchmark.html#id1"><code class="docutils literal"><span class="pre">benchmark</span></code> Package</a></li>
 <li class="toctree-l2"><a class="reference internal" href="paraview.benchmark.html#modules">Modules</a></li>
 </ul>
 </li>
@@ -604,7 +603,7 @@
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="python-2-vs-3.html">Python Version 2 versus 3</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="python-2-vs-3.html#print-is-a-function"><code class="docutils literal notranslate"><span class="pre">print</span></code> is a function</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python-2-vs-3.html#print-is-a-function"><code class="docutils literal"><span class="pre">print</span></code> is a function</a></li>
 <li class="toctree-l2"><a class="reference internal" href="python-2-vs-3.html#exceptions">Exceptions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="python-2-vs-3.html#iterables">Iterables</a></li>
 <li class="toctree-l2"><a class="reference internal" href="python-2-vs-3.html#iterators-not-lists">Iterators, not lists</a></li>
@@ -652,8 +651,78 @@
 </ul>
 <hr/>
           
-  <div class="section" id="python-view-module">
-<h1>python_view Module<a class="headerlink" href="#python-view-module" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="module-paraview.python_view">
+<span id="python-view-module"></span><h1>python_view Module<a class="headerlink" href="#module-paraview.python_view" title="Permalink to this headline">¶</a></h1>
+<p>python_view is a module providing access to a PythonView. It is
+possible to use the PythonView API directly, but this module provides
+convenience classes in Python.</p>
+<dl class="function">
+<dt id="paraview.python_view.call_render">
+<code class="descclassname">paraview.python_view.</code><code class="descname">call_render</code><span class="sig-paren">(</span><em>render_function</em>, <em>view</em>, <em>width</em>, <em>height</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/python_view.html#call_render"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.python_view.call_render" title="Permalink to this definition">¶</a></dt>
+<dd><p>Utility function to call the user-defined render function. This is called
+by the C++ side of the vtkPythonView class.</p>
+<dl class="docutils">
+<dt>view</dt>
+<dd>vtkPythonView object</dd>
+<dt>width</dt>
+<dd>Width of view</dd>
+<dt>height</dt>
+<dd>Height of view</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="paraview.python_view.figure_to_data">
+<code class="descclassname">paraview.python_view.</code><code class="descname">figure_to_data</code><span class="sig-paren">(</span><em>figure</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/python_view.html#figure_to_data"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.python_view.figure_to_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert a Matplotlib figure to a numpy 2D array with RGBA uint8 channels
+and return it.</p>
+<dl class="docutils">
+<dt>figure</dt>
+<dd>A matplotlib figure.</dd>
+<dt>return</dt>
+<dd>A numpy 2D array of RGBA values.</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="paraview.python_view.figure_to_image">
+<code class="descclassname">paraview.python_view.</code><code class="descname">figure_to_image</code><span class="sig-paren">(</span><em>figure</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/python_view.html#figure_to_image"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.python_view.figure_to_image" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert a Matplotlib figure to a vtkImageData with RGBA unsigned char
+channels.</p>
+<dl class="docutils">
+<dt>figure</dt>
+<dd>A matplotlib figure.</dd>
+<dt>return</dt>
+<dd>A vtkImageData with the Matplotlib figure content.</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="paraview.python_view.matplotlib_figure">
+<code class="descclassname">paraview.python_view.</code><code class="descname">matplotlib_figure</code><span class="sig-paren">(</span><em>width</em>, <em>height</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/python_view.html#matplotlib_figure"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.python_view.matplotlib_figure" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a Matplotlib figure with specified width and height for rendering.</p>
+<dl class="docutils">
+<dt>w</dt>
+<dd>Width of desired plot.</dd>
+<dt>h</dt>
+<dd>Height of desired plot.</dd>
+<dt>return</dt>
+<dd>A Matplotlib figure.</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="paraview.python_view.numpy_to_image">
+<code class="descclassname">paraview.python_view.</code><code class="descname">numpy_to_image</code><span class="sig-paren">(</span><em>numpy_array</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/python_view.html#numpy_to_image"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.python_view.numpy_to_image" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert a numpy 2D or 3D array to a vtkImageData object.</p>
+<dl class="docutils">
+<dt>numpy_array</dt>
+<dd>2D or 3D numpy array containing image data</dd>
+<dt>return</dt>
+<dd>vtkImageData with the numpy_array content</dd>
+</dl>
+</dd></dl>
+
 </div>
 
 

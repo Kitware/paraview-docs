@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>paraview.simple.KeyFrame &mdash; ParaView/Python 5.7.0-874-g887fd42ac5 documentation</title>
+  <title>paraview.simple.KeyFrame &mdash; ParaView/Python 5.7.0-878-g8cd8be9e4a documentation</title>
   
 
   
@@ -24,7 +24,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:'./',
-        VERSION:'5.7.0-874-g887fd42ac5',
+        VERSION:'5.7.0-878-g8cd8be9e4a',
         COLLAPSE_INDEX:false,
         FILE_SUFFIX:'.html',
         HAS_SOURCE:  true
@@ -33,7 +33,6 @@
       <script type="text/javascript" src="_static/jquery.js"></script>
       <script type="text/javascript" src="_static/underscore.js"></script>
       <script type="text/javascript" src="_static/doctools.js"></script>
-      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
     
 
@@ -49,7 +48,7 @@
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="ParaView/Python 5.7.0-874-g887fd42ac5 documentation" href="index.html"/>
+    <link rel="top" title="ParaView/Python 5.7.0-878-g8cd8be9e4a documentation" href="index.html"/>
         <link rel="up" title="Available readers, sources, writers, filters and animation cues" href="paraview.servermanager_proxies.html"/>
         <link rel="next" title="paraview.simple.KeyFrameAnimationCue" href="paraview.simple.KeyFrameAnimationCue.html"/>
         <link rel="prev" title="paraview.simple.KMeans" href="paraview.simple.KMeans.html"/> 
@@ -69,7 +68,7 @@
           <li> <a href="index.html">
             <img src="_static/paraview-logo-small.png"
             alt="ParaView/Python"></img></a> </li>
-          <li class="version"> version 5.7.0-874-g887fd42ac5</li>
+          <li class="version"> version 5.7.0-878-g8cd8be9e4a</li>
         </ul>
         <form id ="rtd-search-form" class="wy-form" action="search.html" method="get">
   <input type="text" name="q" placeholder="Search docs" />
@@ -89,7 +88,7 @@
 </ul>
 </li>
 <li class="toctree-l1 current"><a class="reference internal" href="paraview.html">The ParaView Python Package</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="paraview.html#id1"><code class="docutils literal notranslate"><span class="pre">paraview</span></code> Package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.html#id1"><code class="docutils literal"><span class="pre">paraview</span></code> Package</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="paraview.html#modules">Modules</a></li>
 <li class="toctree-l2"><a class="reference internal" href="paraview.html#subpackages">Subpackages</a></li>
 </ul>
@@ -98,7 +97,7 @@
 <li class="toctree-l1"><a class="reference internal" href="paraview.servermanager.html">servermanager</a></li>
 <li class="toctree-l1"><a class="reference internal" href="paraview.coprocessing.html">coprocessing</a></li>
 <li class="toctree-l1"><a class="reference internal" href="paraview.benchmark.html">benchmark</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="paraview.benchmark.html#id1"><code class="docutils literal notranslate"><span class="pre">benchmark</span></code> Package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.benchmark.html#id1"><code class="docutils literal"><span class="pre">benchmark</span></code> Package</a></li>
 <li class="toctree-l2"><a class="reference internal" href="paraview.benchmark.html#modules">Modules</a></li>
 </ul>
 </li>
@@ -604,7 +603,7 @@
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="python-2-vs-3.html">Python Version 2 versus 3</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="python-2-vs-3.html#print-is-a-function"><code class="docutils literal notranslate"><span class="pre">print</span></code> is a function</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python-2-vs-3.html#print-is-a-function"><code class="docutils literal"><span class="pre">print</span></code> is a function</a></li>
 <li class="toctree-l2"><a class="reference internal" href="python-2-vs-3.html#exceptions">Exceptions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="python-2-vs-3.html#iterables">Iterables</a></li>
 <li class="toctree-l2"><a class="reference internal" href="python-2-vs-3.html#iterators-not-lists">Iterators, not lists</a></li>
@@ -654,6 +653,87 @@
           
   <div class="section" id="paraview-simple-keyframe">
 <h1>paraview.simple.KeyFrame<a class="headerlink" href="#paraview-simple-keyframe" title="Permalink to this headline">¶</a></h1>
+<dl class="function">
+<dt id="paraview.simple.KeyFrame">
+<code class="descclassname">paraview.simple.</code><code class="descname">KeyFrame</code><span class="sig-paren">(</span><em>*input</em>, <em>**params</em><span class="sig-paren">)</span><a class="headerlink" href="#paraview.simple.KeyFrame" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>one or more server manager objects. It also provides an interface
+to set and get the properties of the server side objects. These
+properties are presented as Python properties. For example,
+you can set a property Foo using the following:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">proxy</span><span class="o">.</span><span class="n">Foo</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>or:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">proxy</span><span class="o">.</span><span class="n">Foo</span><span class="o">.</span><span class="n">SetData</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>or:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">proxy</span><span class="o">.</span><span class="n">Foo</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>For more information, see the documentation of the property which
+you can obtain with:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">help</span><span class="p">(</span><span class="n">proxy</span><span class="o">.</span><span class="n">Foo</span><span class="p">)</span><span class="o">.</span>
+</pre></div>
+</div>
+<p>This class also provides an iterator which can be used to iterate
+over all properties, e.g.:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">proxy</span> <span class="o">=</span> <span class="n">Proxy</span><span class="p">(</span><span class="n">proxy</span><span class="o">=</span><span class="n">smproxy</span><span class="p">)</span>
+<span class="k">for</span> <span class="nb">property</span> <span class="ow">in</span> <span class="n">proxy</span><span class="p">:</span>
+    <span class="nb">print</span> <span class="p">(</span><span class="nb">property</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>For advanced users:
+This is a python class that wraps a vtkSMProxy. Makes it easier to
+set/get properties.
+Instead of:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">proxy</span><span class="o">.</span><span class="n">GetProperty</span><span class="p">(</span><span class="s2">&quot;Foo&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">SetElement</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">proxy</span><span class="o">.</span><span class="n">GetProperty</span><span class="p">(</span><span class="s2">&quot;Foo&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">SetElement</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>you can do:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">proxy</span><span class="o">.</span><span class="n">Foo</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>or:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">proxy</span><span class="o">.</span><span class="n">Foo</span><span class="o">.</span><span class="n">SetData</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>or:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">proxy</span><span class="o">.</span><span class="n">Foo</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Instead of:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">proxy</span><span class="o">.</span><span class="n">GetProperty</span><span class="p">(</span><span class="s2">&quot;Foo&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">GetElement</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>you can do:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">proxy</span><span class="o">.</span><span class="n">Foo</span><span class="o">.</span><span class="n">GetData</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>or:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">proxy</span><span class="o">.</span><span class="n">Foo</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>For proxy properties, you can use append:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">proxy</span><span class="o">.</span><span class="n">GetProperty</span><span class="p">(</span><span class="s2">&quot;Bar&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">AddProxy</span><span class="p">(</span><span class="n">foo</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>you can do:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">proxy</span><span class="o">.</span><span class="n">Bar</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">foo</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Properties support most of the list API. See <code class="docutils literal"><span class="pre">VectorProperty</span></code> and
+<code class="docutils literal"><span class="pre">ProxyProperty</span></code> documentation for details.</p>
+<p>Please note that some of the methods accessible through the Proxy
+class are not listed by <code class="docutils literal"><span class="pre">help()</span></code> because the <code class="docutils literal"><span class="pre">Proxy</span></code> objects forward
+unresolved attributes to the underlying object. To get the full list,
+see also <code class="docutils literal"><span class="pre">dir(proxy.SMProxy)</span></code>. See also the doxygen based documentation
+of the <code class="docutils literal"><span class="pre">vtkSMProxy</span></code> C++ class.</p>
+</div></blockquote>
+</dd></dl>
+
 <div class="section" id="data-descriptors">
 <h2>Data Descriptors<a class="headerlink" href="#data-descriptors" title="Permalink to this headline">¶</a></h2>
 <blockquote>

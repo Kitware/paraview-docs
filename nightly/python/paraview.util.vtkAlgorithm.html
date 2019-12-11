@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>util.vtkAlgorithm Module &mdash; ParaView/Python 5.7.0-874-g887fd42ac5 documentation</title>
+  <title>util.vtkAlgorithm Module &mdash; ParaView/Python 5.7.0-878-g8cd8be9e4a documentation</title>
   
 
   
@@ -24,7 +24,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:'./',
-        VERSION:'5.7.0-874-g887fd42ac5',
+        VERSION:'5.7.0-878-g8cd8be9e4a',
         COLLAPSE_INDEX:false,
         FILE_SUFFIX:'.html',
         HAS_SOURCE:  true
@@ -33,7 +33,6 @@
       <script type="text/javascript" src="_static/jquery.js"></script>
       <script type="text/javascript" src="_static/underscore.js"></script>
       <script type="text/javascript" src="_static/doctools.js"></script>
-      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
     
 
@@ -49,7 +48,7 @@
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="ParaView/Python 5.7.0-874-g887fd42ac5 documentation" href="index.html"/>
+    <link rel="top" title="ParaView/Python 5.7.0-878-g8cd8be9e4a documentation" href="index.html"/>
         <link rel="up" title="util Package" href="paraview.util.html"/>
         <link rel="next" title="web Package" href="paraview.web.html"/>
         <link rel="prev" title="util Package" href="paraview.util.html"/> 
@@ -69,7 +68,7 @@
           <li> <a href="index.html">
             <img src="_static/paraview-logo-small.png"
             alt="ParaView/Python"></img></a> </li>
-          <li class="version"> version 5.7.0-874-g887fd42ac5</li>
+          <li class="version"> version 5.7.0-878-g8cd8be9e4a</li>
         </ul>
         <form id ="rtd-search-form" class="wy-form" action="search.html" method="get">
   <input type="text" name="q" placeholder="Search docs" />
@@ -89,7 +88,7 @@
 </ul>
 </li>
 <li class="toctree-l1 current"><a class="reference internal" href="paraview.html">The ParaView Python Package</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="paraview.html#id1"><code class="docutils literal notranslate"><span class="pre">paraview</span></code> Package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.html#id1"><code class="docutils literal"><span class="pre">paraview</span></code> Package</a></li>
 <li class="toctree-l2"><a class="reference internal" href="paraview.html#modules">Modules</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="paraview.html#subpackages">Subpackages</a></li>
 </ul>
@@ -98,7 +97,7 @@
 <li class="toctree-l1"><a class="reference internal" href="paraview.servermanager.html">servermanager</a></li>
 <li class="toctree-l1"><a class="reference internal" href="paraview.coprocessing.html">coprocessing</a></li>
 <li class="toctree-l1"><a class="reference internal" href="paraview.benchmark.html">benchmark</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="paraview.benchmark.html#id1"><code class="docutils literal notranslate"><span class="pre">benchmark</span></code> Package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.benchmark.html#id1"><code class="docutils literal"><span class="pre">benchmark</span></code> Package</a></li>
 <li class="toctree-l2"><a class="reference internal" href="paraview.benchmark.html#modules">Modules</a></li>
 </ul>
 </li>
@@ -604,7 +603,7 @@
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="python-2-vs-3.html">Python Version 2 versus 3</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="python-2-vs-3.html#print-is-a-function"><code class="docutils literal notranslate"><span class="pre">print</span></code> is a function</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python-2-vs-3.html#print-is-a-function"><code class="docutils literal"><span class="pre">print</span></code> is a function</a></li>
 <li class="toctree-l2"><a class="reference internal" href="python-2-vs-3.html#exceptions">Exceptions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="python-2-vs-3.html#iterables">Iterables</a></li>
 <li class="toctree-l2"><a class="reference internal" href="python-2-vs-3.html#iterators-not-lists">Iterators, not lists</a></li>
@@ -652,8 +651,258 @@
 </ul>
 <hr/>
           
-  <div class="section" id="util-vtkalgorithm-module">
-<h1>util.vtkAlgorithm Module<a class="headerlink" href="#util-vtkalgorithm-module" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="module-paraview.util.vtkAlgorithm">
+<span id="util-vtkalgorithm-module"></span><h1>util.vtkAlgorithm Module<a class="headerlink" href="#module-paraview.util.vtkAlgorithm" title="Permalink to this headline">¶</a></h1>
+<p>This module provides utility functions that can be used to expose a
+<cite>VTKPythonAlgorithmBase</cite> derived Pythonic vtkAlgorithm subclass in ParaView.</p>
+<div class="section" id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<p>VTK provides a convenient Python-friendly mechanism to add new algorithms, such as data sources,
+filters, readers, and writers via <cite>vtkPythonAlgorithm</cite>. In this approach, developers can
+write subclasses of <cite>VTKPythonAlgorithmBase</cite> and then implement the
+<cite>vtkAlgorithm</cite> API in Python.</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">vtkmodules.util.vtkAlgorithm</span> <span class="kn">import</span> <span class="n">VTKPythonAlgorithmBase</span>
+<span class="k">class</span> <span class="nc">ContourShrink</span><span class="p">(</span><span class="n">VTKPythonAlgorithmBase</span><span class="p">):</span>
+  <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+      <span class="n">VTKPythonAlgorithmBase</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+
+  <span class="k">def</span> <span class="nf">RequestData</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">request</span><span class="p">,</span> <span class="n">inInfo</span><span class="p">,</span> <span class="n">outInfo</span><span class="p">):</span>
+      <span class="n">inp</span> <span class="o">=</span> <span class="n">vtk</span><span class="o">.</span><span class="n">vtkDataSet</span><span class="o">.</span><span class="n">GetData</span><span class="p">(</span><span class="n">inInfo</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+      <span class="n">opt</span> <span class="o">=</span> <span class="n">vtk</span><span class="o">.</span><span class="n">vtkPolyData</span><span class="o">.</span><span class="n">GetData</span><span class="p">(</span><span class="n">outInfo</span><span class="p">)</span>
+
+      <span class="n">cf</span> <span class="o">=</span> <span class="n">vtk</span><span class="o">.</span><span class="n">vtkContourFilter</span><span class="p">()</span>
+      <span class="n">cf</span><span class="o">.</span><span class="n">SetInputData</span><span class="p">(</span><span class="n">inp</span><span class="p">)</span>
+      <span class="n">cf</span><span class="o">.</span><span class="n">SetValue</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">200</span><span class="p">)</span>
+
+      <span class="n">sf</span> <span class="o">=</span> <span class="n">vtk</span><span class="o">.</span><span class="n">vtkShrinkPolyData</span><span class="p">()</span>
+      <span class="n">sf</span><span class="o">.</span><span class="n">SetInputConnection</span><span class="p">(</span><span class="n">cf</span><span class="o">.</span><span class="n">GetOutputPort</span><span class="p">())</span>
+      <span class="n">sf</span><span class="o">.</span><span class="n">Update</span><span class="p">()</span>
+
+      <span class="n">opt</span><span class="o">.</span><span class="n">ShallowCopy</span><span class="p">(</span><span class="n">sf</span><span class="o">.</span><span class="n">GetOutput</span><span class="p">())</span>
+      <span class="k">return</span> <span class="mi">1</span>
+</pre></div>
+</div>
+<p>Such <cite>VTKPythonAlgorithmBase</cite>-based algorithms act as any other <cite>vtkAlgorithm</cite>
+and can be used directly in VTK pipelines. To use them in ParaView, however, one
+has to make ParaView aware of the capabilities of the algorithm. For
+<cite>vtkAlgorithm</cite> subclasses in C++, this is done by writing an XML description of
+the algorithm. For Python-based algorithms, this module provides us a mechanism
+to build the ParaView-specific XML via decorators.</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">vtkmodules.util.vtkAlgorithm</span> <span class="kn">import</span> <span class="n">VTKPythonAlgorithmBase</span>
+<span class="kn">from</span> <span class="nn">paraview.util.vtkAlgorithm</span> <span class="kn">import</span> <span class="n">smproxy</span><span class="p">,</span> <span class="n">smproperty</span><span class="p">,</span> <span class="n">smdomain</span>
+
+<span class="nd">@smproxy.filter</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="s2">&quot;Contour Shrink&quot;</span><span class="p">)</span>
+<span class="nd">@smproperty.input</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;Input&quot;</span><span class="p">)</span>
+<span class="nd">@smdomain.datatype</span><span class="p">(</span><span class="n">dataTypes</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;vtkDataSet&quot;</span><span class="p">],</span> <span class="n">composite_data_supported</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+<span class="k">class</span> <span class="nc">ContourShrink</span><span class="p">(</span><span class="n">VTKPythonAlgorithmBase</span><span class="p">):</span>
+  <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+      <span class="n">VTKPythonAlgorithmBase</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+
+  <span class="k">def</span> <span class="nf">RequestData</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">request</span><span class="p">,</span> <span class="n">inInfo</span><span class="p">,</span> <span class="n">outInfo</span><span class="p">):</span>
+      <span class="o">...</span>
+      <span class="k">return</span> <span class="mi">1</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">ParaView’s XML description provides a wide gamut of features.
+The decorators available currently only expose a small subset of them. The
+plan is to have complete feature parity in the future. If you encounter a
+missing capability, please raise an issue or better yet, a merge-request to address
+the same.</p>
+</div>
+</div>
+<div class="section" id="decorator-basics">
+<h2>Decorator Basics<a class="headerlink" href="#decorator-basics" title="Permalink to this headline">¶</a></h2>
+<p>There are four main classes currently available: <cite>smproxy</cite>,
+<cite>smproperty</cite>, <cite>smdomain</cite>, and <cite>smhint</cite>. Each provides a set of decorators to
+declare a proxy, property, domain or a hint, respectively.</p>
+<p>All available decorators exhibit the following characteristics:</p>
+<ol class="arabic simple">
+<li>With the exception of decorators defined in <cite>smproxy</cite>, all decorators are
+intended for decorating classes or their methods. <cite>smproxy</cite> decorators are
+only intended for classes.</li>
+<li>Decorators take keyword arguments (positional arguments are discouraged).
+While there may be exceptions, the general pattern is that a decorator
+corresponds to an XML node in the ParaView XML configuration. Any attributes
+on the XML node itself can be specified as keyword arguments to the
+decorator. The decorator may explicitly define parameters that affect the
+generated node or to explicit limit the arguments provided.</li>
+<li>Decorators can be chained. The order of chaining is significant and follows
+the direction of nesting in the XML e.g. to add a domain to a property, one
+would nest decorators as follows:</li>
+</ol>
+<div class="highlight-python"><div class="highlight"><pre><span></span> <span class="nd">@smproperty.intvector</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;Radius&quot;</span><span class="p">,</span> <span class="n">default_values</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+ <span class="nd">@smdomain.intrange</span><span class="p">(</span><span class="nb">min</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="nb">max</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+ <span class="nd">@smhint.xml</span><span class="p">(</span><span class="s2">&quot;&lt;SomeHint/&gt;&quot;</span><span class="p">)</span>
+ <span class="k">def</span> <span class="nf">SetRadius</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">radius</span><span class="p">):</span>
+     <span class="o">...</span>
+
+
+<span class="n">Note</span><span class="p">,</span> <span class="n">since</span> <span class="n">domains</span> <span class="n">can</span><span class="s1">&#39;t have nested hints, the hint specified after the</span>
+<span class="sb">`smdomain.intrange`</span> <span class="n">invocation</span> <span class="ow">is</span> <span class="n">intended</span> <span class="k">for</span> <span class="n">the</span> <span class="sb">`smproperty`</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">the</span>
+<span class="sb">`smdomain`</span><span class="o">.</span>
+
+<span class="n">When</span> <span class="n">chaining</span> <span class="sb">`smproperty`</span> <span class="n">decorators</span> <span class="n">under</span> <span class="n">a</span> <span class="sb">`smproxy`</span><span class="p">,</span> <span class="n">the</span> <span class="n">order</span> <span class="ow">in</span> <span class="n">which</span>
+<span class="n">the</span> <span class="n">properties</span> <span class="n">are</span> <span class="n">shown</span> <span class="ow">in</span> <span class="n">ParaView</span> <span class="n">UI</span> <span class="ow">is</span> <span class="n">reverse</span> <span class="n">of</span> <span class="n">the</span> <span class="n">order</span> <span class="ow">in</span> <span class="n">the</span>
+<span class="n">Python</span> <span class="n">code</span> <span class="n">e</span><span class="o">.</span><span class="n">g</span><span class="o">.</span> <span class="n">the</span> <span class="ow">in</span> <span class="n">following</span> <span class="n">snippets</span> <span class="n">the</span> <span class="n">UI</span> <span class="n">will</span> <span class="n">show</span> <span class="s2">&quot;PolyDataInput&quot;</span>
+<span class="n">above</span> <span class="s2">&quot;TableInput&quot;</span><span class="o">.</span>
+</pre></div>
+</div>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="nd">@smproxy.filter</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
+<span class="nd">@smproperty.input</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;TableInput&quot;</span><span class="p">,</span> <span class="n">port_index</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="o">...</span><span class="p">)</span>
+<span class="nd">@smdomain.datatype</span><span class="p">(</span><span class="n">dataTypes</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;vtkTable&quot;</span><span class="p">])</span>
+<span class="nd">@smproperty.input</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;PolyDataInput&quot;</span><span class="p">,</span> <span class="n">port_index</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="o">...</span><span class="p">)</span>
+<span class="nd">@smdomain.datatype</span><span class="p">(</span><span class="n">dataTypes</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;vtkPolyData&quot;</span><span class="p">])</span>
+<span class="k">class</span> <span class="nc">MyFilter</span><span class="p">(</span><span class="n">VTKPythonAlgorithmBase</span><span class="p">):</span>
+   <span class="o">...</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="smproxy-decorators">
+<h2><cite>smproxy</cite> Decorators<a class="headerlink" href="#smproxy-decorators" title="Permalink to this headline">¶</a></h2>
+<p>To make <cite>VTKPythonAlgorithmBase</cite> subclass available in ParaView as a data-source,
+filter, reader, or writer, one must use of the decorators in the <cite>smproxy</cite>
+class.</p>
+<div class="section" id="common-decorator-parameters">
+<h3>Common decorator parameters<a class="headerlink" href="#common-decorator-parameters" title="Permalink to this headline">¶</a></h3>
+<p>The following keyword parameters are supported by all <cite>smproxy</cite> decorators:</p>
+<ol class="arabic simple">
+<li><cite>name</cite>: if present, provides the name to use of the Proxy. This is the name
+that ParaView uses to refer to your class. If none specified, the name is
+deduced from the class name.</li>
+<li><cite>label</cite>: if present, provides the label to use in the UI. If missing, the
+label is deduced from the <cite>name</cite>.</li>
+<li><cite>class</cite>: if present, is the fully qualified class name ParaView should use to
+instantiate this object. Except for exceptional situation, it’s best to let
+ParaView deduce this argument.</li>
+<li><cite>group</cite>: if present, is the proxy-group under which the definition must be
+placed. This is often not needed since the decorators set a good default
+based on the role of the proxy.</li>
+</ol>
+<p>As mentioned before, any keyword arguments passed any decorator that is not
+processed by the decorator simply gets added to the generated XML node as
+attribute.</p>
+</div>
+<div class="section" id="smproxy-source">
+<h3><cite>smproxy.source</cite><a class="headerlink" href="#smproxy-source" title="Permalink to this headline">¶</a></h3>
+<p>This decorator can be used to declare data sources. Data sources don’t have any
+inputs, but provide 1 or more outputs. While technically a reader is a source,
+<cite>smproxy.reader</cite> is preferred way of adding readers.</p>
+</div>
+<div class="section" id="smproxy-filter">
+<h3><cite>smproxy.filter</cite><a class="headerlink" href="#smproxy-filter" title="Permalink to this headline">¶</a></h3>
+<p>This decorator can be used to declare filters that have one or more inputs and
+one or more outputs. The inputs themselves must be declared using
+<cite>smproperty.input</cite> decorators.</p>
+</div>
+<div class="section" id="smproxy-reader">
+<h3><cite>smproxy.reader</cite><a class="headerlink" href="#smproxy-reader" title="Permalink to this headline">¶</a></h3>
+<p>This decorator is used to declare reader. This is same as <cite>smproxy.source</cite>,
+except it adds the appropriate hints to make ParaView aware that this is a
+reader.</p>
+<p>It takes the following keyword parameters, in addition to the standard ones:</p>
+<ol class="arabic simple">
+<li><cite>file_description</cite>: (required) a user friendly text to use in the <strong>File
+Open</strong> dialog.</li>
+<li><cite>extensions</cite>:  a string or list of strings which define the supported
+extensions (without the leading <cite>.</cite>).</li>
+<li><cite>filename_patterns</cite>: wild card patten.</li>
+</ol>
+<p>Either <cite>extensions</cite> or <cite>filename_patterns</cite> must be provided.</p>
+</div>
+<div class="section" id="smproxy-writer">
+<h3><cite>smproxy.writer</cite><a class="headerlink" href="#smproxy-writer" title="Permalink to this headline">¶</a></h3>
+<p>This decorator is used to declare a writer. Similar to <cite>smproxy.reader</cite>, one
+provides <cite>file_description</cite> and <cite>extensions</cite> keyword parameters to indicate
+which file extensions the writer supports.</p>
+</div>
+</div>
+<div class="section" id="smproperty-decorators">
+<h2><cite>smproperty</cite> Decorators<a class="headerlink" href="#smproperty-decorators" title="Permalink to this headline">¶</a></h2>
+<p>Decorators in <cite>smproperty</cite> are used to add properties to the proxies declared
+using <cite>smproxy</cite> decorators. These can be added either to class methods or to
+class objects. Multiple <cite>smproperty</cite> decorators may be chained when adding to
+class objects.</p>
+<div class="section" id="id1">
+<h3>Common decorator parameters<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<p>The following keyword parameters are supported by all <cite>smproperty</cite> decorators:</p>
+<ol class="arabic simple">
+<li><cite>name</cite>: if present, provides the name to use of the Property. If missing, the
+name will be deduced from the object being decorated which will rarely be
+correct when decorating class objects. Hence, this parameter is optional
+when decorating class methods, but required when decorating class objects.</li>
+<li><cite>label</cite>: if present, provides the label to use in the UI. If missing, the
+label is deduced from the <cite>name</cite>.</li>
+<li><cite>command</cite>: if present, is the method name. If missing, ParaView can deduce it
+based on the method being decorated. Hence, as before, optional when
+decorating class methods, but generally required when decorating class
+objects (with the exception of <cite>smproperty.input</cite>).</li>
+</ol>
+</div>
+<div class="section" id="smproperty-xml">
+<h3><cite>smproperty.xml</cite><a class="headerlink" href="#smproperty-xml" title="Permalink to this headline">¶</a></h3>
+<p>This is a catch-all decorator. One can use this to add arbitrary XML to the
+proxy definition.</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="nd">@smproperty.xml</span><span class="p">(</span><span class="n">xmlstr</span><span class="o">=</span><span class="s2">&quot;&lt;IntVectorProperty name=..&gt; ....  &lt;/IntVectorProperty&gt;&quot;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">MyMethod</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">...</span><span class="p">):</span>
+    <span class="o">...</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="smproperty-intvector-smproperty-doublevector-smproperty-idtypevector-smproperty-stringvector">
+<h3><cite>smproperty.intvector</cite>, <cite>smproperty.doublevector</cite>, <cite>smproperty.idtypevector</cite>, <cite>smproperty.stringvector</cite><a class="headerlink" href="#smproperty-intvector-smproperty-doublevector-smproperty-idtypevector-smproperty-stringvector" title="Permalink to this headline">¶</a></h3>
+<p>These are used to declare various types of vector properties. The arguments are
+simply the XML attributes.</p>
+</div>
+<div class="section" id="smproperty-proxy">
+<h3><cite>smproperty.proxy</cite><a class="headerlink" href="#smproperty-proxy" title="Permalink to this headline">¶</a></h3>
+<p>This decorator can be used for adding a <cite>ProxyProperty</cite>, i.e. a method that
+takes another VTK object as argument.</p>
+</div>
+<div class="section" id="smproperty-input">
+<h3><cite>smproperty.input</cite><a class="headerlink" href="#smproperty-input" title="Permalink to this headline">¶</a></h3>
+<p>This decorator can be used to add inputs to a <cite>vtkAlgorithm</cite>. Since
+<cite>vtkAlgorithm</cite> provides the appropriate API to set an input, often one doesn’t
+have custom methods in Python in the <cite>VTKPythonAlgorithmBase</cite> subclass. Hence,
+this decorator is often simply added to the class definition rather than a
+particular method.</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="nd">@smproxy.filter</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
+<span class="nd">@smproperty.input</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;TableInput&quot;</span><span class="p">,</span> <span class="n">port_index</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">multiple_input</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<span class="nd">@smdomain.datatype</span><span class="p">(</span><span class="n">dataTypes</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;vtkTable&quot;</span><span class="p">],</span> <span class="n">composite_data_supported</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+<span class="k">class</span> <span class="nc">MyFilter</span><span class="p">(</span><span class="n">VTKPythonAlgorithmBase</span><span class="p">):</span>
+   <span class="o">...</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="smproperty-dataarrayselection">
+<h3><cite>smproperty.dataarrayselection</cite><a class="headerlink" href="#smproperty-dataarrayselection" title="Permalink to this headline">¶</a></h3>
+<p>This a convenience decorator that can be used to decorate a method that returns
+a <cite>vtkDataArraySelection</cite> object often used to array selection in data sources
+and readers. The decorator adds appropriate ParaView ServerManager XML
+components to expose the array selection to the user.</p>
+</div>
+</div>
+<div class="section" id="smdomain-decorators">
+<h2><cite>smdomain</cite> Decorators<a class="headerlink" href="#smdomain-decorators" title="Permalink to this headline">¶</a></h2>
+<p>These decorators are used to add domains to <cite>smproperty</cite>. Domains often guide
+the UI that ParaView generated for the specific property. The current set of
+available domains, includes <cite>smdomain.intrange</cite>, <cite>smdomain.doublerange</cite>,
+<cite>smdomain.filelist</cite>, and <cite>smdomain.datatype</cite>. More will be added as needed.
+Additionally, one can use the <cite>smdomain.xml</cite> catch-all decorator to add XML
+definition for the domain.</p>
+</div>
+<div class="section" id="smhint-decorators">
+<h2><cite>smhint</cite> Decorators<a class="headerlink" href="#smhint-decorators" title="Permalink to this headline">¶</a></h2>
+<p>These add elements under <cite>&lt;Hints/&gt;</cite> for <cite>smproxy</cite> and/or <cite>smproperty</cite> elements.
+Currently <cite>smhint.filechooser</cite> and the generic <cite>smhint.xml</cite> are provided with
+more to be added as needed.</p>
+</div>
+<div class="section" id="examples">
+<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
+<p><strong>PythonAlgorithmExamples.py</strong> provides a working example that demonstrates how
+several of the decorators described here may be used.</p>
+</div>
 </div>
 
 

@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>paraview.simple.ContourGenericDataset &mdash; ParaView/Python 5.7.0-874-g887fd42ac5 documentation</title>
+  <title>paraview.simple.ContourGenericDataset &mdash; ParaView/Python 5.7.0-878-g8cd8be9e4a documentation</title>
   
 
   
@@ -24,7 +24,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:'./',
-        VERSION:'5.7.0-874-g887fd42ac5',
+        VERSION:'5.7.0-878-g8cd8be9e4a',
         COLLAPSE_INDEX:false,
         FILE_SUFFIX:'.html',
         HAS_SOURCE:  true
@@ -33,7 +33,6 @@
       <script type="text/javascript" src="_static/jquery.js"></script>
       <script type="text/javascript" src="_static/underscore.js"></script>
       <script type="text/javascript" src="_static/doctools.js"></script>
-      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
     
 
@@ -49,7 +48,7 @@
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="ParaView/Python 5.7.0-874-g887fd42ac5 documentation" href="index.html"/>
+    <link rel="top" title="ParaView/Python 5.7.0-878-g8cd8be9e4a documentation" href="index.html"/>
         <link rel="up" title="Available readers, sources, writers, filters and animation cues" href="paraview.servermanager_proxies.html"/>
         <link rel="next" title="paraview.simple.ConvertAMRdatasettoMultiblock" href="paraview.simple.ConvertAMRdatasettoMultiblock.html"/>
         <link rel="prev" title="paraview.simple.Contour" href="paraview.simple.Contour.html"/> 
@@ -69,7 +68,7 @@
           <li> <a href="index.html">
             <img src="_static/paraview-logo-small.png"
             alt="ParaView/Python"></img></a> </li>
-          <li class="version"> version 5.7.0-874-g887fd42ac5</li>
+          <li class="version"> version 5.7.0-878-g8cd8be9e4a</li>
         </ul>
         <form id ="rtd-search-form" class="wy-form" action="search.html" method="get">
   <input type="text" name="q" placeholder="Search docs" />
@@ -89,7 +88,7 @@
 </ul>
 </li>
 <li class="toctree-l1 current"><a class="reference internal" href="paraview.html">The ParaView Python Package</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="paraview.html#id1"><code class="docutils literal notranslate"><span class="pre">paraview</span></code> Package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.html#id1"><code class="docutils literal"><span class="pre">paraview</span></code> Package</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="paraview.html#modules">Modules</a></li>
 <li class="toctree-l2"><a class="reference internal" href="paraview.html#subpackages">Subpackages</a></li>
 </ul>
@@ -98,7 +97,7 @@
 <li class="toctree-l1"><a class="reference internal" href="paraview.servermanager.html">servermanager</a></li>
 <li class="toctree-l1"><a class="reference internal" href="paraview.coprocessing.html">coprocessing</a></li>
 <li class="toctree-l1"><a class="reference internal" href="paraview.benchmark.html">benchmark</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="paraview.benchmark.html#id1"><code class="docutils literal notranslate"><span class="pre">benchmark</span></code> Package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.benchmark.html#id1"><code class="docutils literal"><span class="pre">benchmark</span></code> Package</a></li>
 <li class="toctree-l2"><a class="reference internal" href="paraview.benchmark.html#modules">Modules</a></li>
 </ul>
 </li>
@@ -604,7 +603,7 @@
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="python-2-vs-3.html">Python Version 2 versus 3</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="python-2-vs-3.html#print-is-a-function"><code class="docutils literal notranslate"><span class="pre">print</span></code> is a function</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python-2-vs-3.html#print-is-a-function"><code class="docutils literal"><span class="pre">print</span></code> is a function</a></li>
 <li class="toctree-l2"><a class="reference internal" href="python-2-vs-3.html#exceptions">Exceptions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="python-2-vs-3.html#iterables">Iterables</a></li>
 <li class="toctree-l2"><a class="reference internal" href="python-2-vs-3.html#iterators-not-lists">Iterators, not lists</a></li>
@@ -654,6 +653,45 @@
           
   <div class="section" id="paraview-simple-contourgenericdataset">
 <h1>paraview.simple.ContourGenericDataset<a class="headerlink" href="#paraview-simple-contourgenericdataset" title="Permalink to this headline">¶</a></h1>
+<dl class="function">
+<dt id="paraview.simple.ContourGenericDataset">
+<code class="descclassname">paraview.simple.</code><code class="descname">ContourGenericDataset</code><span class="sig-paren">(</span><em>*input</em>, <em>**params</em><span class="sig-paren">)</span><a class="headerlink" href="#paraview.simple.ContourGenericDataset" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="docutils">
+<dt>The Generic</dt>
+<dd>Contour filter computes isolines or isosurfaces using a
+selected point-centered scalar array. The available scalar
+arrays are listed in the Scalars menu. The scalar range of
+the selected array will be displayed. The interface for
+adding contour values is very similar to the one for
+selecting cut offsets (in the Cut filter). To add a single
+contour value, select the value from the New Value slider
+in the Add value portion of the interface and click the
+Add button, or press Enter. To instead add several evenly
+spaced contours, use the controls in the Generate range of
+values section. Select the number of contour values to
+generate using the Number of Values slider. The Range
+slider controls the interval in which to generate the
+contour values. Once the number of values and range have
+been selected, click the Generate button. The new values
+will be added to the Contour Values list. To delete a
+value from the Contour Values list, select the value and
+click the Delete button. (If no value is selected, the
+last value in the list will be removed.) Clicking the
+Delete All button removes all the values in the list. If
+no values are in the Contour Values list when Accept is
+pressed, the current value of the New Value slider will be
+used. In addition to selecting contour values, you can
+also select additional computations to perform. If any of
+Compute Normals, Compute Gradients, or Compute Scalars is
+selected, the appropriate computation will be performed,
+and a corresponding point-centered array will be added to
+the output. The Generic Contour filter operates on a
+generic data set, but the input is required to have at
+least one point-centered scalar (single-component) array.
+The output of this filter is polygonal.</dd>
+</dl>
+</dd></dl>
+
 <div class="section" id="data-descriptors">
 <h2>Data Descriptors<a class="headerlink" href="#data-descriptors" title="Permalink to this headline">¶</a></h2>
 <blockquote>

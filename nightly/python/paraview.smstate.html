@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>smstate Module &mdash; ParaView/Python 5.7.0-874-g887fd42ac5 documentation</title>
+  <title>smstate Module &mdash; ParaView/Python 5.7.0-878-g8cd8be9e4a documentation</title>
   
 
   
@@ -24,7 +24,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:'./',
-        VERSION:'5.7.0-874-g887fd42ac5',
+        VERSION:'5.7.0-878-g8cd8be9e4a',
         COLLAPSE_INDEX:false,
         FILE_SUFFIX:'.html',
         HAS_SOURCE:  true
@@ -33,7 +33,6 @@
       <script type="text/javascript" src="_static/jquery.js"></script>
       <script type="text/javascript" src="_static/underscore.js"></script>
       <script type="text/javascript" src="_static/doctools.js"></script>
-      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
     
 
@@ -49,7 +48,7 @@
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="ParaView/Python 5.7.0-874-g887fd42ac5 documentation" href="index.html"/>
+    <link rel="top" title="ParaView/Python 5.7.0-878-g8cd8be9e4a documentation" href="index.html"/>
         <link rel="up" title="paraview Package" href="paraview.html"/>
         <link rel="next" title="smtesting Module" href="paraview.smtesting.html"/>
         <link rel="prev" title="paraview.simple.spcthhistoryreader" href="paraview.simple.spcthhistoryreader.html"/> 
@@ -69,7 +68,7 @@
           <li> <a href="index.html">
             <img src="_static/paraview-logo-small.png"
             alt="ParaView/Python"></img></a> </li>
-          <li class="version"> version 5.7.0-874-g887fd42ac5</li>
+          <li class="version"> version 5.7.0-878-g8cd8be9e4a</li>
         </ul>
         <form id ="rtd-search-form" class="wy-form" action="search.html" method="get">
   <input type="text" name="q" placeholder="Search docs" />
@@ -89,7 +88,7 @@
 </ul>
 </li>
 <li class="toctree-l1 current"><a class="reference internal" href="paraview.html">The ParaView Python Package</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="paraview.html#id1"><code class="docutils literal notranslate"><span class="pre">paraview</span></code> Package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.html#id1"><code class="docutils literal"><span class="pre">paraview</span></code> Package</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="paraview.html#modules">Modules</a></li>
 <li class="toctree-l2"><a class="reference internal" href="paraview.html#subpackages">Subpackages</a></li>
 </ul>
@@ -98,7 +97,7 @@
 <li class="toctree-l1"><a class="reference internal" href="paraview.servermanager.html">servermanager</a></li>
 <li class="toctree-l1"><a class="reference internal" href="paraview.coprocessing.html">coprocessing</a></li>
 <li class="toctree-l1"><a class="reference internal" href="paraview.benchmark.html">benchmark</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="paraview.benchmark.html#id1"><code class="docutils literal notranslate"><span class="pre">benchmark</span></code> Package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.benchmark.html#id1"><code class="docutils literal"><span class="pre">benchmark</span></code> Package</a></li>
 <li class="toctree-l2"><a class="reference internal" href="paraview.benchmark.html#modules">Modules</a></li>
 </ul>
 </li>
@@ -604,7 +603,7 @@
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="python-2-vs-3.html">Python Version 2 versus 3</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="python-2-vs-3.html#print-is-a-function"><code class="docutils literal notranslate"><span class="pre">print</span></code> is a function</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python-2-vs-3.html#print-is-a-function"><code class="docutils literal"><span class="pre">print</span></code> is a function</a></li>
 <li class="toctree-l2"><a class="reference internal" href="python-2-vs-3.html#exceptions">Exceptions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="python-2-vs-3.html#iterables">Iterables</a></li>
 <li class="toctree-l2"><a class="reference internal" href="python-2-vs-3.html#iterators-not-lists">Iterators, not lists</a></li>
@@ -652,8 +651,54 @@
 </ul>
 <hr/>
           
-  <div class="section" id="smstate-module">
-<h1>smstate Module<a class="headerlink" href="#smstate-module" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="module-paraview.smstate">
+<span id="smstate-module"></span><h1>smstate Module<a class="headerlink" href="#module-paraview.smstate" title="Permalink to this headline">¶</a></h1>
+<p>Module for generating a Python state for ParaView.
+This module uses paraview.smtrace to generate a trace for a selected set of
+proxies my mimicking the creating of various pipeline components in sequence.
+Typical usage of this module is as follows:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">paraview</span> <span class="k">import</span> <span class="n">smstate</span>
+<span class="n">state</span> <span class="o">=</span> <span class="n">smstate</span><span class="o">.</span><span class="n">get_state</span><span class="p">()</span>
+<span class="nb">print</span> <span class="p">(</span><span class="n">state</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Note, this cannot be called when Python tracing is active.</p>
+<dl class="function">
+<dt id="paraview.smstate.get_consumers">
+<code class="descclassname">paraview.smstate.</code><code class="descname">get_consumers</code><span class="sig-paren">(</span><em>proxy</em>, <em>filter</em>, <em>consumer_set</em>, <em>recursive=True</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/smstate.html#get_consumers"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.smstate.get_consumers" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the consumers for a proxy iteratively. If filter is non-None,
+filter is used to cull consumers.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="paraview.smstate.get_producers">
+<code class="descclassname">paraview.smstate.</code><code class="descname">get_producers</code><span class="sig-paren">(</span><em>proxy</em>, <em>filter</em>, <em>producer_set</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/smstate.html#get_producers"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.smstate.get_producers" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the producers for a proxy iteratively. If filter is non-None,
+filter is used to cull producers.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="paraview.smstate.get_state">
+<code class="descclassname">paraview.smstate.</code><code class="descname">get_state</code><span class="sig-paren">(</span><em>propertiesToTraceOnCreate=1</em>, <em>skipHiddenRepresentations=True</em>, <em>source_set=[]</em>, <em>filter=None</em>, <em>raw=False</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/smstate.html#get_state"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.smstate.get_state" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the state string</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="paraview.smstate.supported_proxies">
+<em class="property">class </em><code class="descclassname">paraview.smstate.</code><code class="descname">supported_proxies</code><a class="reference internal" href="_modules/paraview/smstate.html#supported_proxies"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.smstate.supported_proxies" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<p>filter object used to hide proxies that are currently not supported by
+the state saving mechanism or those that are generally skipped in state e.g.
+animation proxies and time keeper.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="paraview.smstate.visible_representations">
+<em class="property">class </em><code class="descclassname">paraview.smstate.</code><code class="descname">visible_representations</code><a class="reference internal" href="_modules/paraview/smstate.html#visible_representations"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.smstate.visible_representations" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<p>filter object to skip hidden representations from being saved in state file</p>
+</dd></dl>
+
 </div>
 
 

@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>lookuptable Module &mdash; ParaView/Python 5.7.0-874-g887fd42ac5 documentation</title>
+  <title>lookuptable Module &mdash; ParaView/Python 5.7.0-878-g8cd8be9e4a documentation</title>
   
 
   
@@ -24,7 +24,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:'./',
-        VERSION:'5.7.0-874-g887fd42ac5',
+        VERSION:'5.7.0-878-g8cd8be9e4a',
         COLLAPSE_INDEX:false,
         FILE_SUFFIX:'.html',
         HAS_SOURCE:  true
@@ -33,7 +33,6 @@
       <script type="text/javascript" src="_static/jquery.js"></script>
       <script type="text/javascript" src="_static/underscore.js"></script>
       <script type="text/javascript" src="_static/doctools.js"></script>
-      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
     
 
@@ -49,7 +48,7 @@
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="ParaView/Python 5.7.0-874-g887fd42ac5 documentation" href="index.html"/>
+    <link rel="top" title="ParaView/Python 5.7.0-878-g8cd8be9e4a documentation" href="index.html"/>
         <link rel="up" title="paraview Package" href="paraview.html"/>
         <link rel="next" title="numeric Module" href="paraview.numeric.html"/>
         <link rel="prev" title="cpstate Module" href="paraview.cpstate.html"/> 
@@ -69,7 +68,7 @@
           <li> <a href="index.html">
             <img src="_static/paraview-logo-small.png"
             alt="ParaView/Python"></img></a> </li>
-          <li class="version"> version 5.7.0-874-g887fd42ac5</li>
+          <li class="version"> version 5.7.0-878-g8cd8be9e4a</li>
         </ul>
         <form id ="rtd-search-form" class="wy-form" action="search.html" method="get">
   <input type="text" name="q" placeholder="Search docs" />
@@ -89,7 +88,7 @@
 </ul>
 </li>
 <li class="toctree-l1 current"><a class="reference internal" href="paraview.html">The ParaView Python Package</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="paraview.html#id1"><code class="docutils literal notranslate"><span class="pre">paraview</span></code> Package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.html#id1"><code class="docutils literal"><span class="pre">paraview</span></code> Package</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="paraview.html#modules">Modules</a></li>
 <li class="toctree-l2"><a class="reference internal" href="paraview.html#subpackages">Subpackages</a></li>
 </ul>
@@ -98,7 +97,7 @@
 <li class="toctree-l1"><a class="reference internal" href="paraview.servermanager.html">servermanager</a></li>
 <li class="toctree-l1"><a class="reference internal" href="paraview.coprocessing.html">coprocessing</a></li>
 <li class="toctree-l1"><a class="reference internal" href="paraview.benchmark.html">benchmark</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="paraview.benchmark.html#id1"><code class="docutils literal notranslate"><span class="pre">benchmark</span></code> Package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.benchmark.html#id1"><code class="docutils literal"><span class="pre">benchmark</span></code> Package</a></li>
 <li class="toctree-l2"><a class="reference internal" href="paraview.benchmark.html#modules">Modules</a></li>
 </ul>
 </li>
@@ -604,7 +603,7 @@
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="python-2-vs-3.html">Python Version 2 versus 3</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="python-2-vs-3.html#print-is-a-function"><code class="docutils literal notranslate"><span class="pre">print</span></code> is a function</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python-2-vs-3.html#print-is-a-function"><code class="docutils literal"><span class="pre">print</span></code> is a function</a></li>
 <li class="toctree-l2"><a class="reference internal" href="python-2-vs-3.html#exceptions">Exceptions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="python-2-vs-3.html#iterables">Iterables</a></li>
 <li class="toctree-l2"><a class="reference internal" href="python-2-vs-3.html#iterators-not-lists">Iterators, not lists</a></li>
@@ -652,8 +651,100 @@
 </ul>
 <hr/>
           
-  <div class="section" id="lookuptable-module">
-<h1>lookuptable Module<a class="headerlink" href="#lookuptable-module" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="module-paraview.lookuptable">
+<span id="lookuptable-module"></span><h1>lookuptable Module<a class="headerlink" href="#module-paraview.lookuptable" title="Permalink to this headline">¶</a></h1>
+<p>Utility module for easy manipultions of lookup tables.
+This module is intended for use with by simple.py.</p>
+<p>DEPRECATED: will be removed in future releases of ParaView.</p>
+<dl class="class">
+<dt id="paraview.lookuptable.vtkPVLUTReader">
+<em class="property">class </em><code class="descclassname">paraview.lookuptable.</code><code class="descname">vtkPVLUTReader</code><span class="sig-paren">(</span><em>ns=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/lookuptable.html#vtkPVLUTReader"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.lookuptable.vtkPVLUTReader" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<p>Reader and container for ParaView’s XML based lookup tables.
+Once lookup tables are loaded you access them by name. When
+accessing you must provide the array instance, which you may
+get from a pvpython ‘Source’ type object.</p>
+<p>This reader makes use of ParaView’s XML LUT file format with
+one exception - the XML document must be root’ed by an element
+named “ColorMaps”. Within the “ColorMaps” element an arbitrary
+number of ParaView’s “ColorMap” elements define LUT entries.</p>
+<p>Usage:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># at the top of your script</span>
+<span class="c1"># create the reader and load LUT&#39;s</span>
+<span class="n">lr</span> <span class="o">=</span> <span class="n">lookuptable</span><span class="o">.</span><span class="n">vtkPVLUTReader</span><span class="p">()</span>
+<span class="n">lr</span><span class="o">.</span><span class="n">Read</span><span class="p">(</span><span class="s1">&#39;/path/to/luts.xml&#39;</span><span class="p">)</span>
+<span class="n">lr</span><span class="o">.</span><span class="n">Print</span><span class="p">()</span>
+
+<span class="c1"># after you have a pvpython source object, get</span>
+<span class="c1"># one of it&#39;s arrays.</span>
+<span class="n">srcObj</span> <span class="o">=</span> <span class="n">GetActiveSource</span><span class="p">()</span>
+<span class="n">array</span> <span class="o">=</span> <span class="n">srcObj</span><span class="o">.</span><span class="n">PointData</span><span class="o">.</span><span class="n">GetArray</span><span class="p">(</span><span class="s1">&#39;arrayName&#39;</span><span class="p">)</span>
+
+<span class="c1"># create a LUT for the array.</span>
+<span class="n">lut</span> <span class="o">=</span> <span class="n">lr</span><span class="o">.</span><span class="n">GetLUT</span><span class="p">(</span><span class="n">array</span><span class="p">,</span><span class="s1">&#39;lutName&#39;</span><span class="p">)</span>
+
+<span class="c1"># set the active array and assign the LUT</span>
+<span class="n">srcObjRep</span> <span class="o">=</span> <span class="n">Show</span><span class="p">(</span><span class="n">srcObj</span><span class="p">)</span>
+<span class="n">srcObjRep</span><span class="o">.</span><span class="n">ColorArrayName</span> <span class="o">=</span> <span class="s1">&#39;arrayName&#39;</span>
+<span class="n">srcObjRep</span><span class="o">.</span><span class="n">LookupTable</span> <span class="o">=</span> <span class="n">lut</span>
+
+<span class="c1"># finally render to display the result</span>
+<span class="n">Render</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>File Format:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">ColorMaps</span><span class="o">&gt;</span>
+    <span class="o">...</span>
+  <span class="o">&lt;</span><span class="n">ColorMap</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;LUTName&quot;</span> <span class="n">space</span><span class="o">=</span><span class="s2">&quot;Lab,RGB,HSV&quot;</span> <span class="n">indexedLookup</span><span class="o">=</span><span class="s2">&quot;true,false&quot;</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">Point</span> <span class="n">x</span><span class="o">=</span><span class="s2">&quot;val&quot;</span> <span class="n">o</span><span class="o">=</span><span class="s2">&quot;val&quot;</span> <span class="n">r</span><span class="o">=</span><span class="s2">&quot;val&quot;</span> <span class="n">g</span><span class="o">=</span><span class="s2">&quot;val&quot;</span> <span class="n">b</span><span class="o">=</span><span class="s2">&quot;val&quot;</span><span class="o">/&gt;</span>
+      <span class="o">...</span>
+    <span class="o">&lt;</span><span class="n">Point</span> <span class="n">x</span><span class="o">=</span><span class="s2">&quot;val&quot;</span> <span class="n">o</span><span class="o">=</span><span class="s2">&quot;val&quot;</span> <span class="n">r</span><span class="o">=</span><span class="s2">&quot;val&quot;</span> <span class="n">g</span><span class="o">=</span><span class="s2">&quot;val&quot;</span> <span class="n">b</span><span class="o">=</span><span class="s2">&quot;val&quot;</span><span class="o">/&gt;</span>
+    <span class="o">&lt;</span><span class="n">NaN</span> <span class="n">r</span><span class="o">=</span><span class="s2">&quot;val&quot;</span> <span class="n">g</span><span class="o">=</span><span class="s2">&quot;val&quot;</span> <span class="n">b</span><span class="o">=</span><span class="s2">&quot;val&quot;</span><span class="o">/&gt;</span>
+  <span class="o">&lt;/</span><span class="n">ColorMap</span><span class="o">&gt;</span>
+    <span class="o">...</span>
+  <span class="o">&lt;</span><span class="n">ColorMap</span><span class="o">&gt;</span>
+    <span class="o">...</span>
+  <span class="o">&lt;/</span><span class="n">ColorMap</span><span class="o">&gt;</span>
+    <span class="o">...</span>
+<span class="o">&lt;/</span><span class="n">ColorMaps</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<dl class="method">
+<dt id="paraview.lookuptable.vtkPVLUTReader.Clear">
+<code class="descname">Clear</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/lookuptable.html#vtkPVLUTReader.Clear"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.lookuptable.vtkPVLUTReader.Clear" title="Permalink to this definition">¶</a></dt>
+<dd><p>Clear internal data structures.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="paraview.lookuptable.vtkPVLUTReader.GetLUT">
+<code class="descname">GetLUT</code><span class="sig-paren">(</span><em>aArray</em>, <em>aLutName</em>, <em>aRangeOveride=[]</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/lookuptable.html#vtkPVLUTReader.GetLUT"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.lookuptable.vtkPVLUTReader.GetLUT" title="Permalink to this definition">¶</a></dt>
+<dd><p>Given an array and lookup table name assign the LUT
+to the given array and return the LUT. If aRangeOveride
+is specified then LUT will be mapped through that
+range rather than the array’s actual range.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="paraview.lookuptable.vtkPVLUTReader.GetLUTNames">
+<code class="descname">GetLUTNames</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/lookuptable.html#vtkPVLUTReader.GetLUTNames"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.lookuptable.vtkPVLUTReader.GetLUTNames" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a list of the currently available LUT’s names.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="paraview.lookuptable.vtkPVLUTReader.Print">
+<code class="descname">Print</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/lookuptable.html#vtkPVLUTReader.Print"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.lookuptable.vtkPVLUTReader.Print" title="Permalink to this definition">¶</a></dt>
+<dd><p>Print the available list of LUT’s.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="paraview.lookuptable.vtkPVLUTReader.Read">
+<code class="descname">Read</code><span class="sig-paren">(</span><em>aFileName</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/lookuptable.html#vtkPVLUTReader.Read"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.lookuptable.vtkPVLUTReader.Read" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read in the LUT’s defined in the named file. Each
+call to read extends the internal list of LUTs.</p>
+</dd></dl>
+
+</dd></dl>
+
 </div>
 
 

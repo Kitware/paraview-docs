@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>paraview Package &mdash; ParaView/Python 5.7.0-874-g887fd42ac5 documentation</title>
+  <title>paraview Package &mdash; ParaView/Python 5.7.0-878-g8cd8be9e4a documentation</title>
   
 
   
@@ -24,7 +24,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:'./',
-        VERSION:'5.7.0-874-g887fd42ac5',
+        VERSION:'5.7.0-878-g8cd8be9e4a',
         COLLAPSE_INDEX:false,
         FILE_SUFFIX:'.html',
         HAS_SOURCE:  true
@@ -33,7 +33,6 @@
       <script type="text/javascript" src="_static/jquery.js"></script>
       <script type="text/javascript" src="_static/underscore.js"></script>
       <script type="text/javascript" src="_static/doctools.js"></script>
-      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
     
 
@@ -49,7 +48,7 @@
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="ParaView/Python 5.7.0-874-g887fd42ac5 documentation" href="index.html"/>
+    <link rel="top" title="ParaView/Python 5.7.0-878-g8cd8be9e4a documentation" href="index.html"/>
         <link rel="next" title="_backwardscompatibilityhelper Module" href="paraview._backwardscompatibilityhelper.html"/>
         <link rel="prev" title="Quick-Start : A Tutorial" href="quick-start.html"/> 
 
@@ -68,7 +67,7 @@
           <li> <a href="index.html">
             <img src="_static/paraview-logo-small.png"
             alt="ParaView/Python"></img></a> </li>
-          <li class="version"> version 5.7.0-874-g887fd42ac5</li>
+          <li class="version"> version 5.7.0-878-g8cd8be9e4a</li>
         </ul>
         <form id ="rtd-search-form" class="wy-form" action="search.html" method="get">
   <input type="text" name="q" placeholder="Search docs" />
@@ -88,7 +87,7 @@
 </ul>
 </li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">The ParaView Python Package</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#id1"><code class="docutils literal notranslate"><span class="pre">paraview</span></code> Package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id1"><code class="docutils literal"><span class="pre">paraview</span></code> Package</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#modules">Modules</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#subpackages">Subpackages</a></li>
 </ul>
@@ -97,7 +96,7 @@
 <li class="toctree-l1"><a class="reference internal" href="paraview.servermanager.html">servermanager</a></li>
 <li class="toctree-l1"><a class="reference internal" href="paraview.coprocessing.html">coprocessing</a></li>
 <li class="toctree-l1"><a class="reference internal" href="paraview.benchmark.html">benchmark</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="paraview.benchmark.html#id1"><code class="docutils literal notranslate"><span class="pre">benchmark</span></code> Package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.benchmark.html#id1"><code class="docutils literal"><span class="pre">benchmark</span></code> Package</a></li>
 <li class="toctree-l2"><a class="reference internal" href="paraview.benchmark.html#modules">Modules</a></li>
 </ul>
 </li>
@@ -603,7 +602,7 @@
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="python-2-vs-3.html">Python Version 2 versus 3</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="python-2-vs-3.html#print-is-a-function"><code class="docutils literal notranslate"><span class="pre">print</span></code> is a function</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python-2-vs-3.html#print-is-a-function"><code class="docutils literal"><span class="pre">print</span></code> is a function</a></li>
 <li class="toctree-l2"><a class="reference internal" href="python-2-vs-3.html#exceptions">Exceptions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="python-2-vs-3.html#iterables">Iterables</a></li>
 <li class="toctree-l2"><a class="reference internal" href="python-2-vs-3.html#iterators-not-lists">Iterators, not lists</a></li>
@@ -654,15 +653,15 @@
   <div class="section" id="paraview-package">
 <h1>paraview Package<a class="headerlink" href="#paraview-package" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="id1">
-<h2><code class="xref py py-mod docutils literal notranslate"><span class="pre">paraview</span></code> Package<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<h2><code class="xref py py-mod docutils literal"><span class="pre">paraview</span></code> Package<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
 <span class="target" id="module-paraview.__init__"></span><p>The paraview package provides modules used to script ParaView. Generally, users
 should import the modules of interest directly e.g.:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">paraview.simple</span> <span class="k">import</span> <span class="o">*</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">paraview.simple</span> <span class="k">import</span> <span class="o">*</span>
 </pre></div>
 </div>
 <p>However, one may want to import paraview package before importing any of the
 ParaView modules to force backwards compatibility to an older version:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># To run scripts written for ParaView 4.0 in newer versions, you can use the</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># To run scripts written for ParaView 4.0 in newer versions, you can use the</span>
 <span class="c1"># following.</span>
 <span class="kn">import</span> <span class="nn">paraview</span>
 <span class="n">paraview</span><span class="o">.</span><span class="n">compatibility</span><span class="o">.</span><span class="n">major</span> <span class="o">=</span> <span class="mi">4</span>
@@ -675,14 +674,15 @@ ParaView modules to force backwards compatibility to an older version:</p>
 <dl class="exception">
 <dt id="paraview.__init__.NotSupportedException">
 <em class="property">exception </em><code class="descclassname">paraview.__init__.</code><code class="descname">NotSupportedException</code><span class="sig-paren">(</span><em>msg</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/__init__.html#NotSupportedException"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.__init__.NotSupportedException" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">exceptions.Exception</span></code></p>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">Exception</span></code></p>
 <p>Exception that is fired when obsolete API is used in a script.</p>
 </dd></dl>
 
 <dl class="class">
 <dt id="paraview.__init__.compatibility">
 <em class="property">class </em><code class="descclassname">paraview.__init__.</code><code class="descname">compatibility</code><a class="reference internal" href="_modules/paraview/__init__.html#compatibility"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.__init__.compatibility" title="Permalink to this definition">¶</a></dt>
-<dd><p>Class used to check version number and compatibility. Users should only
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<p>Class used to check version number and compatibility. Users should only
 set the compatibility explicitly to force backwards compatibility to and
 older versions.</p>
 <dl class="classmethod">
@@ -711,7 +711,8 @@ older versions.</p>
 <dl class="class">
 <dt id="paraview.__init__.options">
 <em class="property">class </em><code class="descclassname">paraview.__init__.</code><code class="descname">options</code><a class="reference internal" href="_modules/paraview/__init__.html#options"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.__init__.options" title="Permalink to this definition">¶</a></dt>
-<dd><p>Values set here have any effect, only when importing the paraview module
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<p>Values set here have any effect, only when importing the paraview module
 in python interpretor directly i.e. not through pvpython or pvbatch. In
 that case, one should use command line arguments for the two
 executables</p>
@@ -784,7 +785,11 @@ suppressed.</p>
 <li class="toctree-l1"><a class="reference internal" href="paraview.servermanager_proxies.html">Available readers, sources, writers, filters and animation cues</a></li>
 <li class="toctree-l1"><a class="reference internal" href="paraview.smstate.html">smstate Module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="paraview.smtesting.html">smtesting Module</a></li>
-<li class="toctree-l1"><a class="reference internal" href="paraview.smtrace.html">smtrace Module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="paraview.smtrace.html">smtrace Module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="paraview.smtrace.html#developer-documentation">Developer Documentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.smtrace.html#notes-about-references">Notes about references</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="paraview.spatiotemporalparallelism.html">spatiotemporalparallelism Module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="paraview.variant.html">variant Module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="paraview.vtk.html">vtk Module</a></li>
@@ -796,7 +801,7 @@ suppressed.</p>
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="paraview.benchmark.html">benchmark Package</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="paraview.benchmark.html#id1"><code class="docutils literal notranslate"><span class="pre">benchmark</span></code> Package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.benchmark.html#id1"><code class="docutils literal"><span class="pre">benchmark</span></code> Package</a></li>
 <li class="toctree-l2"><a class="reference internal" href="paraview.benchmark.html#modules">Modules</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="paraview.benchmark.basic.html">benchmark.basic Module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="paraview.benchmark.logbase.html">benchmark.logbase Module</a></li>
@@ -809,7 +814,7 @@ suppressed.</p>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="paraview.detail.html">detail Package</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="paraview.detail.html#id1"><code class="docutils literal notranslate"><span class="pre">detail</span></code> Package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.detail.html#id1"><code class="docutils literal"><span class="pre">detail</span></code> Package</a></li>
 <li class="toctree-l2"><a class="reference internal" href="paraview.detail.html#modules">Modules</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="paraview.detail.annotation.html">detail.annotation Module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="paraview.detail.calculator.html">detail.calculator Module</a></li>
@@ -822,53 +827,18 @@ suppressed.</p>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="paraview.tpl.html">tpl Package</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="paraview.tpl.html#id1"><code class="docutils literal notranslate"><span class="pre">tpl</span></code> Package</a></li>
 <li class="toctree-l2"><a class="reference internal" href="paraview.tpl.html#subpackages">Subpackages</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="paraview.tpl.cinema_python.html">cinema_python Package</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="paraview.tpl.cinema_python.html#subpackages">Subpackages</a><ul>
 <li class="toctree-l5"><a class="reference internal" href="paraview.tpl.cinema_python.adaptors.html">adaptors Package</a><ul>
-<li class="toctree-l6"><a class="reference internal" href="paraview.tpl.cinema_python.adaptors.html#modules">Modules</a><ul>
-<li class="toctree-l7"><a class="reference internal" href="paraview.tpl.cinema_python.adaptors.explorers.html">tpl.cinema_python.adaptors.explorers Module</a></li>
-</ul>
-</li>
 <li class="toctree-l6"><a class="reference internal" href="paraview.tpl.cinema_python.adaptors.html#subpackages">Subpackages</a><ul>
-<li class="toctree-l7"><a class="reference internal" href="paraview.tpl.cinema_python.adaptors.paraview.html">paraview Package</a><ul>
-<li class="toctree-l8"><a class="reference internal" href="paraview.tpl.cinema_python.adaptors.paraview.html#modules">Modules</a><ul>
-<li class="toctree-l9"><a class="reference internal" href="paraview.tpl.cinema_python.adaptors.paraview.cinemareader.html">tpl.cinema_python.adaptors.paraview.cinemareader Module</a></li>
-<li class="toctree-l9"><a class="reference internal" href="paraview.tpl.cinema_python.adaptors.paraview.progress.html">tpl.cinema_python.adaptors.paraview.progress Module</a></li>
-<li class="toctree-l9"><a class="reference internal" href="paraview.tpl.cinema_python.adaptors.paraview.pv_explorers.html">tpl.cinema_python.adaptors.paraview.pv_explorers Module</a></li>
-<li class="toctree-l9"><a class="reference internal" href="paraview.tpl.cinema_python.adaptors.paraview.pv_introspect.html">tpl.cinema_python.adaptors.paraview.pv_introspect Module</a></li>
+<li class="toctree-l7"><a class="reference internal" href="paraview.tpl.cinema_python.adaptors.paraview.html">paraview Package</a></li>
 </ul>
 </li>
 </ul>
 </li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l5"><a class="reference internal" href="paraview.tpl.cinema_python.database.html">database Package</a><ul>
-<li class="toctree-l6"><a class="reference internal" href="paraview.tpl.cinema_python.database.html#modules">Modules</a><ul>
-<li class="toctree-l7"><a class="reference internal" href="paraview.tpl.cinema_python.database.file_store.html">tpl.cinema_python.database.file_store Module</a></li>
-<li class="toctree-l7"><a class="reference internal" href="paraview.tpl.cinema_python.database.oexr_helper.html">tpl.cinema_python.database.oexr_helper Module</a></li>
-<li class="toctree-l7"><a class="reference internal" href="paraview.tpl.cinema_python.database.raster_wrangler.html">tpl.cinema_python.database.raster_wrangler Module</a></li>
-<li class="toctree-l7"><a class="reference internal" href="paraview.tpl.cinema_python.database.store.html">tpl.cinema_python.database.store Module</a></li>
-<li class="toctree-l7"><a class="reference internal" href="paraview.tpl.cinema_python.database.vti_store.html">tpl.cinema_python.database.vti_store Module</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l5"><a class="reference internal" href="paraview.tpl.cinema_python.images.html">images Package</a><ul>
-<li class="toctree-l6"><a class="reference internal" href="paraview.tpl.cinema_python.images.html#modules">Modules</a><ul>
-<li class="toctree-l7"><a class="reference internal" href="paraview.tpl.cinema_python.images.camera_utils.html">tpl.cinema_python.images.camera_utils Module</a></li>
-<li class="toctree-l7"><a class="reference internal" href="paraview.tpl.cinema_python.images.compositor.html">tpl.cinema_python.images.compositor Module</a></li>
-<li class="toctree-l7"><a class="reference internal" href="paraview.tpl.cinema_python.images.layer_rasters.html">tpl.cinema_python.images.layer_rasters Module</a></li>
-<li class="toctree-l7"><a class="reference internal" href="paraview.tpl.cinema_python.images.lookup_tables.html">tpl.cinema_python.images.lookup_tables Module</a></li>
-<li class="toctree-l7"><a class="reference internal" href="paraview.tpl.cinema_python.images.querymaker.html">tpl.cinema_python.images.querymaker Module</a></li>
-<li class="toctree-l7"><a class="reference internal" href="paraview.tpl.cinema_python.images.querymaker_specb.html">tpl.cinema_python.images.querymaker_specb Module</a></li>
-</ul>
-</li>
-</ul>
-</li>
+<li class="toctree-l5"><a class="reference internal" href="paraview.tpl.cinema_python.database.html">database Package</a></li>
+<li class="toctree-l5"><a class="reference internal" href="paraview.tpl.cinema_python.images.html">images Package</a></li>
 </ul>
 </li>
 </ul>
@@ -878,9 +848,33 @@ suppressed.</p>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="paraview.util.html">util Package</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="paraview.util.html#id1"><code class="docutils literal notranslate"><span class="pre">util</span></code> Package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.util.html#id1"><code class="docutils literal"><span class="pre">util</span></code> Package</a></li>
 <li class="toctree-l2"><a class="reference internal" href="paraview.util.html#modules">Modules</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="paraview.util.vtkAlgorithm.html">util.vtkAlgorithm Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="paraview.util.vtkAlgorithm.html">util.vtkAlgorithm Module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="paraview.util.vtkAlgorithm.html#introduction">Introduction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="paraview.util.vtkAlgorithm.html#decorator-basics">Decorator Basics</a></li>
+<li class="toctree-l4"><a class="reference internal" href="paraview.util.vtkAlgorithm.html#smproxy-decorators"><cite>smproxy</cite> Decorators</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="paraview.util.vtkAlgorithm.html#common-decorator-parameters">Common decorator parameters</a></li>
+<li class="toctree-l5"><a class="reference internal" href="paraview.util.vtkAlgorithm.html#smproxy-source"><cite>smproxy.source</cite></a></li>
+<li class="toctree-l5"><a class="reference internal" href="paraview.util.vtkAlgorithm.html#smproxy-filter"><cite>smproxy.filter</cite></a></li>
+<li class="toctree-l5"><a class="reference internal" href="paraview.util.vtkAlgorithm.html#smproxy-reader"><cite>smproxy.reader</cite></a></li>
+<li class="toctree-l5"><a class="reference internal" href="paraview.util.vtkAlgorithm.html#smproxy-writer"><cite>smproxy.writer</cite></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="paraview.util.vtkAlgorithm.html#smproperty-decorators"><cite>smproperty</cite> Decorators</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="paraview.util.vtkAlgorithm.html#id1">Common decorator parameters</a></li>
+<li class="toctree-l5"><a class="reference internal" href="paraview.util.vtkAlgorithm.html#smproperty-xml"><cite>smproperty.xml</cite></a></li>
+<li class="toctree-l5"><a class="reference internal" href="paraview.util.vtkAlgorithm.html#smproperty-intvector-smproperty-doublevector-smproperty-idtypevector-smproperty-stringvector"><cite>smproperty.intvector</cite>, <cite>smproperty.doublevector</cite>, <cite>smproperty.idtypevector</cite>, <cite>smproperty.stringvector</cite></a></li>
+<li class="toctree-l5"><a class="reference internal" href="paraview.util.vtkAlgorithm.html#smproperty-proxy"><cite>smproperty.proxy</cite></a></li>
+<li class="toctree-l5"><a class="reference internal" href="paraview.util.vtkAlgorithm.html#smproperty-input"><cite>smproperty.input</cite></a></li>
+<li class="toctree-l5"><a class="reference internal" href="paraview.util.vtkAlgorithm.html#smproperty-dataarrayselection"><cite>smproperty.dataarrayselection</cite></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="paraview.util.vtkAlgorithm.html#smdomain-decorators"><cite>smdomain</cite> Decorators</a></li>
+<li class="toctree-l4"><a class="reference internal" href="paraview.util.vtkAlgorithm.html#smhint-decorators"><cite>smhint</cite> Decorators</a></li>
+<li class="toctree-l4"><a class="reference internal" href="paraview.util.vtkAlgorithm.html#examples">Examples</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>

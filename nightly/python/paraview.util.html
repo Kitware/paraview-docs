@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>util Package &mdash; ParaView/Python 5.7.0-874-g887fd42ac5 documentation</title>
+  <title>util Package &mdash; ParaView/Python 5.7.0-878-g8cd8be9e4a documentation</title>
   
 
   
@@ -24,7 +24,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:'./',
-        VERSION:'5.7.0-874-g887fd42ac5',
+        VERSION:'5.7.0-878-g8cd8be9e4a',
         COLLAPSE_INDEX:false,
         FILE_SUFFIX:'.html',
         HAS_SOURCE:  true
@@ -33,7 +33,6 @@
       <script type="text/javascript" src="_static/jquery.js"></script>
       <script type="text/javascript" src="_static/underscore.js"></script>
       <script type="text/javascript" src="_static/doctools.js"></script>
-      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
     
 
@@ -49,10 +48,10 @@
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="ParaView/Python 5.7.0-874-g887fd42ac5 documentation" href="index.html"/>
+    <link rel="top" title="ParaView/Python 5.7.0-878-g8cd8be9e4a documentation" href="index.html"/>
         <link rel="up" title="paraview Package" href="paraview.html"/>
         <link rel="next" title="util.vtkAlgorithm Module" href="paraview.util.vtkAlgorithm.html"/>
-        <link rel="prev" title="tpl.cinema_python.images.querymaker_specb Module" href="paraview.tpl.cinema_python.images.querymaker_specb.html"/> 
+        <link rel="prev" title="images Package" href="paraview.tpl.cinema_python.images.html"/> 
 
   <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
 
@@ -69,7 +68,7 @@
           <li> <a href="index.html">
             <img src="_static/paraview-logo-small.png"
             alt="ParaView/Python"></img></a> </li>
-          <li class="version"> version 5.7.0-874-g887fd42ac5</li>
+          <li class="version"> version 5.7.0-878-g8cd8be9e4a</li>
         </ul>
         <form id ="rtd-search-form" class="wy-form" action="search.html" method="get">
   <input type="text" name="q" placeholder="Search docs" />
@@ -89,7 +88,7 @@
 </ul>
 </li>
 <li class="toctree-l1 current"><a class="reference internal" href="paraview.html">The ParaView Python Package</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="paraview.html#id1"><code class="docutils literal notranslate"><span class="pre">paraview</span></code> Package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.html#id1"><code class="docutils literal"><span class="pre">paraview</span></code> Package</a></li>
 <li class="toctree-l2"><a class="reference internal" href="paraview.html#modules">Modules</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="paraview.html#subpackages">Subpackages</a></li>
 </ul>
@@ -98,7 +97,7 @@
 <li class="toctree-l1"><a class="reference internal" href="paraview.servermanager.html">servermanager</a></li>
 <li class="toctree-l1"><a class="reference internal" href="paraview.coprocessing.html">coprocessing</a></li>
 <li class="toctree-l1"><a class="reference internal" href="paraview.benchmark.html">benchmark</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="paraview.benchmark.html#id1"><code class="docutils literal notranslate"><span class="pre">benchmark</span></code> Package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.benchmark.html#id1"><code class="docutils literal"><span class="pre">benchmark</span></code> Package</a></li>
 <li class="toctree-l2"><a class="reference internal" href="paraview.benchmark.html#modules">Modules</a></li>
 </ul>
 </li>
@@ -604,7 +603,7 @@
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="python-2-vs-3.html">Python Version 2 versus 3</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="python-2-vs-3.html#print-is-a-function"><code class="docutils literal notranslate"><span class="pre">print</span></code> is a function</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python-2-vs-3.html#print-is-a-function"><code class="docutils literal"><span class="pre">print</span></code> is a function</a></li>
 <li class="toctree-l2"><a class="reference internal" href="python-2-vs-3.html#exceptions">Exceptions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="python-2-vs-3.html#iterables">Iterables</a></li>
 <li class="toctree-l2"><a class="reference internal" href="python-2-vs-3.html#iterators-not-lists">Iterators, not lists</a></li>
@@ -655,7 +654,7 @@
   <div class="section" id="util-package">
 <h1>util Package<a class="headerlink" href="#util-package" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="id1">
-<h2><code class="xref py py-mod docutils literal notranslate"><span class="pre">util</span></code> Package<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<h2><code class="xref py py-mod docutils literal"><span class="pre">util</span></code> Package<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
 <span class="target" id="module-paraview.util"></span><dl class="function">
 <dt id="paraview.util.IntegrateCell">
 <code class="descclassname">paraview.util.</code><code class="descname">IntegrateCell</code><span class="sig-paren">(</span><em>dataset</em>, <em>cellId</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/util.html#IntegrateCell"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.util.IntegrateCell" title="Permalink to this definition">¶</a></dt>
@@ -673,7 +672,7 @@ during volume calculation. In such cases, the result may not be exact.</p>
 Commonly used by programmable filters. The arguments are the algorithm
 and a tuple/list with 6 elements (xmin, xmax, ymin, ymax, zmin, zmax).</p>
 <p>Example use:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">paraview.util</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">paraview.util</span>
 <span class="c1"># The output will be of dimensions 10, 1, 1</span>
 <span class="n">paraview</span><span class="o">.</span><span class="n">util</span><span class="o">.</span><span class="n">SetOutputWholeExtent</span><span class="p">(</span><span class="n">algorithm</span><span class="p">,</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
 </pre></div>
@@ -685,7 +684,31 @@ and a tuple/list with 6 elements (xmin, xmax, ymin, ymax, zmin, zmax).</p>
 <h2>Modules<a class="headerlink" href="#modules" title="Permalink to this headline">¶</a></h2>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="paraview.util.vtkAlgorithm.html">util.vtkAlgorithm Module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="paraview.util.vtkAlgorithm.html">util.vtkAlgorithm Module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="paraview.util.vtkAlgorithm.html#introduction">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.util.vtkAlgorithm.html#decorator-basics">Decorator Basics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.util.vtkAlgorithm.html#smproxy-decorators"><cite>smproxy</cite> Decorators</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="paraview.util.vtkAlgorithm.html#common-decorator-parameters">Common decorator parameters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="paraview.util.vtkAlgorithm.html#smproxy-source"><cite>smproxy.source</cite></a></li>
+<li class="toctree-l3"><a class="reference internal" href="paraview.util.vtkAlgorithm.html#smproxy-filter"><cite>smproxy.filter</cite></a></li>
+<li class="toctree-l3"><a class="reference internal" href="paraview.util.vtkAlgorithm.html#smproxy-reader"><cite>smproxy.reader</cite></a></li>
+<li class="toctree-l3"><a class="reference internal" href="paraview.util.vtkAlgorithm.html#smproxy-writer"><cite>smproxy.writer</cite></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.util.vtkAlgorithm.html#smproperty-decorators"><cite>smproperty</cite> Decorators</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="paraview.util.vtkAlgorithm.html#id1">Common decorator parameters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="paraview.util.vtkAlgorithm.html#smproperty-xml"><cite>smproperty.xml</cite></a></li>
+<li class="toctree-l3"><a class="reference internal" href="paraview.util.vtkAlgorithm.html#smproperty-intvector-smproperty-doublevector-smproperty-idtypevector-smproperty-stringvector"><cite>smproperty.intvector</cite>, <cite>smproperty.doublevector</cite>, <cite>smproperty.idtypevector</cite>, <cite>smproperty.stringvector</cite></a></li>
+<li class="toctree-l3"><a class="reference internal" href="paraview.util.vtkAlgorithm.html#smproperty-proxy"><cite>smproperty.proxy</cite></a></li>
+<li class="toctree-l3"><a class="reference internal" href="paraview.util.vtkAlgorithm.html#smproperty-input"><cite>smproperty.input</cite></a></li>
+<li class="toctree-l3"><a class="reference internal" href="paraview.util.vtkAlgorithm.html#smproperty-dataarrayselection"><cite>smproperty.dataarrayselection</cite></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.util.vtkAlgorithm.html#smdomain-decorators"><cite>smdomain</cite> Decorators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.util.vtkAlgorithm.html#smhint-decorators"><cite>smhint</cite> Decorators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.util.vtkAlgorithm.html#examples">Examples</a></li>
+</ul>
+</li>
 </ul>
 </div>
 </div>
@@ -699,7 +722,7 @@ and a tuple/list with 6 elements (xmin, xmax, ymin, ymax, zmin, zmax).</p>
         <a href="paraview.util.vtkAlgorithm.html" class="btn btn-neutral float-right" title="util.vtkAlgorithm Module"/>Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="paraview.tpl.cinema_python.images.querymaker_specb.html" class="btn btn-neutral" title="tpl.cinema_python.images.querymaker_specb Module"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="paraview.tpl.cinema_python.images.html" class="btn btn-neutral" title="images Package"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
