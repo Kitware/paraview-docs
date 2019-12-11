@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>tpl.cinema_python.database.store Module &mdash; ParaView/Python 5.7.0-873-gff6b66ab5c documentation</title>
+  <title>tpl.cinema_python.database.store Module &mdash; ParaView/Python 5.7.0-874-g887fd42ac5 documentation</title>
   
 
   
@@ -24,7 +24,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:'./',
-        VERSION:'5.7.0-873-gff6b66ab5c',
+        VERSION:'5.7.0-874-g887fd42ac5',
         COLLAPSE_INDEX:false,
         FILE_SUFFIX:'.html',
         HAS_SOURCE:  true
@@ -49,7 +49,7 @@
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="ParaView/Python 5.7.0-873-gff6b66ab5c documentation" href="index.html"/>
+    <link rel="top" title="ParaView/Python 5.7.0-874-g887fd42ac5 documentation" href="index.html"/>
         <link rel="up" title="database Package" href="paraview.tpl.cinema_python.database.html"/>
         <link rel="next" title="tpl.cinema_python.database.vti_store Module" href="paraview.tpl.cinema_python.database.vti_store.html"/>
         <link rel="prev" title="tpl.cinema_python.database.raster_wrangler Module" href="paraview.tpl.cinema_python.database.raster_wrangler.html"/> 
@@ -69,7 +69,7 @@
           <li> <a href="index.html">
             <img src="_static/paraview-logo-small.png"
             alt="ParaView/Python"></img></a> </li>
-          <li class="version"> version 5.7.0-873-gff6b66ab5c</li>
+          <li class="version"> version 5.7.0-874-g887fd42ac5</li>
         </ul>
         <form id ="rtd-search-form" class="wy-form" action="search.html" method="get">
   <input type="text" name="q" placeholder="Search docs" />
@@ -652,8 +652,350 @@
 </ul>
 <hr/>
           
-  <div class="section" id="tpl-cinema-python-database-store-module">
-<h1>tpl.cinema_python.database.store Module<a class="headerlink" href="#tpl-cinema-python-database-store-module" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="module-paraview.tpl.cinema_python.database.store">
+<span id="tpl-cinema-python-database-store-module"></span><h1>tpl.cinema_python.database.store Module<a class="headerlink" href="#module-paraview.tpl.cinema_python.database.store" title="Permalink to this headline">¶</a></h1>
+<p>Module defining classes and methods for managing cinema data storage.</p>
+<dl class="class">
+<dt id="paraview.tpl.cinema_python.database.store.Document">
+<em class="property">class </em><code class="descclassname">paraview.tpl.cinema_python.database.store.</code><code class="descname">Document</code><span class="sig-paren">(</span><em>descriptor</em>, <em>data=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/tpl/cinema_python/database/store.html#Document"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.tpl.cinema_python.database.store.Document" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>This refers to a document in the cinema data storage. A document is
+uniquely identified by a ‘descriptor’. A descriptor is a dictionary
+with key-value pairs, where key is a parameter name and value is the
+value for that particular parameter.
+TODO:
+A document can have arbitrary data (as ‘data’) and meta-data (as
+‘attributes’) associated with it. At the moment we are ignoring the
+attributes.</p>
+<dl class="attribute">
+<dt id="paraview.tpl.cinema_python.database.store.Document.attributes">
+<code class="descname">attributes</code><a class="headerlink" href="#paraview.tpl.cinema_python.database.store.Document.attributes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Attributes are arbitrary meta-data associated with the document.
+If no attributes are present, it is set to None. When present,
+attributes are a dict with arbitrary meta-data relevant to the
+application.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="paraview.tpl.cinema_python.database.store.Document.data">
+<code class="descname">data</code><a class="headerlink" href="#paraview.tpl.cinema_python.database.store.Document.data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Data associated with the document.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="paraview.tpl.cinema_python.database.store.Document.descriptor">
+<code class="descname">descriptor</code><a class="headerlink" href="#paraview.tpl.cinema_python.database.store.Document.descriptor" title="Permalink to this definition">¶</a></dt>
+<dd><p>A document descriptor is a unique identifier for the document. It is
+a dict with key value pairs. The descriptor cannot be changed once the
+document has been instantiated.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="paraview.tpl.cinema_python.database.store.Store">
+<em class="property">class </em><code class="descclassname">paraview.tpl.cinema_python.database.store.</code><code class="descname">Store</code><a class="reference internal" href="_modules/paraview/tpl/cinema_python/database/store.html#Store"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.tpl.cinema_python.database.store.Store" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>API for cinema stores. A store is a collection of Documents,
+with API to add, find, and access them. This class is an abstract class
+defining the API and storage independent logic. Storage specific
+subclasses handle the ‘database’ access.</p>
+<p>The design of cinema store is based on the following principles:</p>
+<p>The store comprises of documents (Document instances). Each document has a
+unique set of parameters, aka a “descriptor” associated with it. This
+can be thought of as the ‘unique key’ in database terminology.</p>
+<p>One defines the parameters (contents of the descriptor) for documents
+on the store itself. The set of them is is referred to as ‘parameter_list’.
+One uses ‘add_parameter()’ calls to add new parameter definitions for a new
+store instance.</p>
+<p>Users insert documents in the store using ‘insert’. One can find
+document(s) using ‘find’ which returns a generator (or cursor) allow users
+to iterate over all match documents.</p>
+<dl class="method">
+<dt id="paraview.tpl.cinema_python.database.store.Store.add_control">
+<code class="descname">add_control</code><span class="sig-paren">(</span><em>name</em>, <em>properties</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/tpl/cinema_python/database/store.html#Store.add_control"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.tpl.cinema_python.database.store.Store.add_control" title="Permalink to this definition">¶</a></dt>
+<dd><p>A control is a togglable parameter for a filter. Examples include:
+isovalue, offset.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="paraview.tpl.cinema_python.database.store.Store.add_field">
+<code class="descname">add_field</code><span class="sig-paren">(</span><em>name</em>, <em>properties</em>, <em>parent_layer</em>, <em>parents_values</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/tpl/cinema_python/database/store.html#Store.add_field"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.tpl.cinema_python.database.store.Store.add_field" title="Permalink to this definition">¶</a></dt>
+<dd><p>A field is a component of the final color for a layer. Examples
+include: depth, normal, color, scalar values.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="paraview.tpl.cinema_python.database.store.Store.add_layer">
+<code class="descname">add_layer</code><span class="sig-paren">(</span><em>name</em>, <em>properties</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/tpl/cinema_python/database/store.html#Store.add_layer"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.tpl.cinema_python.database.store.Store.add_layer" title="Permalink to this definition">¶</a></dt>
+<dd><p>A Layer boils down to an image of something in the scene, and only
+that thing, along with the depth at each pixel. Layers (note the
+plural) can be composited back together by a viewer.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="paraview.tpl.cinema_python.database.store.Store.add_metadata">
+<code class="descname">add_metadata</code><span class="sig-paren">(</span><em>keyval</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/tpl/cinema_python/database/store.html#Store.add_metadata"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.tpl.cinema_python.database.store.Store.add_metadata" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="paraview.tpl.cinema_python.database.store.Store.add_parameter">
+<code class="descname">add_parameter</code><span class="sig-paren">(</span><em>name</em>, <em>properties</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/tpl/cinema_python/database/store.html#Store.add_parameter"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.tpl.cinema_python.database.store.Store.add_parameter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add a parameter.
+:param name: Name for the parameter.
+:param properties: Keyword arguments can be used to associate
+miscellaneous meta-data with this parameter.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="paraview.tpl.cinema_python.database.store.Store.assign_parameter_dependence">
+<code class="descname">assign_parameter_dependence</code><span class="sig-paren">(</span><em>dep_param</em>, <em>param</em>, <em>on_values</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/tpl/cinema_python/database/store.html#Store.assign_parameter_dependence"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.tpl.cinema_python.database.store.Store.assign_parameter_dependence" title="Permalink to this definition">¶</a></dt>
+<dd><p>mark a particular parameter as being explorable only for a subset
+of the possible values of another.</p>
+<p>For example given parameter ‘appendage type’ which might have
+value ‘foot’ or ‘flipper’, a dependent parameter might be ‘shoe type’
+which only makes sense for ‘feet’. More to the point we use this
+for ‘layers’ and ‘fields’ in composite rendering of objects in a scene
+and the color settings that each object is allowed to take.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="paraview.tpl.cinema_python.database.store.Store.create">
+<code class="descname">create</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/tpl/cinema_python/database/store.html#Store.create"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.tpl.cinema_python.database.store.Store.create" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates an empty store.
+Subclasses must extend this.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="paraview.tpl.cinema_python.database.store.Store.dependencies_satisfied">
+<code class="descname">dependencies_satisfied</code><span class="sig-paren">(</span><em>dep_param</em>, <em>descriptor</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/tpl/cinema_python/database/store.html#Store.dependencies_satisfied"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.tpl.cinema_python.database.store.Store.dependencies_satisfied" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check if the values in decriptor satisfy all of the dependencies
+of dep_param.
+Return true if no dependencies to satisfy.
+Return false if dependency of dependency fails.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="paraview.tpl.cinema_python.database.store.Store.determine_type">
+<code class="descname">determine_type</code><span class="sig-paren">(</span><em>desc</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/tpl/cinema_python/database/store.html#Store.determine_type"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.tpl.cinema_python.database.store.Store.determine_type" title="Permalink to this definition">¶</a></dt>
+<dd><p>Given a descriptor this figures out what type of data it holds.
+It works by first looking into the __type_specs for registered
+relationships and if that fails returning the registered default
+type for the store.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="paraview.tpl.cinema_python.database.store.Store.find">
+<code class="descname">find</code><span class="sig-paren">(</span><em>q=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/tpl/cinema_python/database/store.html#Store.find"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.tpl.cinema_python.database.store.Store.find" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return iterator to all documents that match query q.
+Should support empty query or direct values queries e.g.</p>
+<dl class="docutils">
+<dt>for doc in store.find({‘phi’: 0}):</dt>
+<dd>print (doc.data)</dd>
+<dt>for doc in store.find({‘phi’: 0, ‘theta’: 100}):</dt>
+<dd>print (doc.data)</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="paraview.tpl.cinema_python.database.store.Store.find_field_key">
+<code class="descname">find_field_key</code><span class="sig-paren">(</span><em>desc</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/tpl/cinema_python/database/store.html#Store.find_field_key"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.tpl.cinema_python.database.store.Store.find_field_key" title="Permalink to this definition">¶</a></dt>
+<dd><p>Given a descriptor this finds the field value if any in the
+descriptor.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="paraview.tpl.cinema_python.database.store.Store.getDependeeValue">
+<code class="descname">getDependeeValue</code><span class="sig-paren">(</span><em>depender</em>, <em>dependee</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/tpl/cinema_python/database/store.html#Store.getDependeeValue"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.tpl.cinema_python.database.store.Store.getDependeeValue" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the required value of a dependee to fulfill a dependency.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="paraview.tpl.cinema_python.database.store.Store.getRelatedField">
+<code class="descname">getRelatedField</code><span class="sig-paren">(</span><em>parameter</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/tpl/cinema_python/database/store.html#Store.getRelatedField"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.tpl.cinema_python.database.store.Store.getRelatedField" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the ‘field’ argument related to a ‘parameter’.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="paraview.tpl.cinema_python.database.store.Store.get_camera_model">
+<code class="descname">get_camera_model</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/tpl/cinema_python/database/store.html#Store.get_camera_model"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.tpl.cinema_python.database.store.Store.get_camera_model" title="Permalink to this definition">¶</a></dt>
+<dd><p>return the camera model that the raster images in the store
+correspond to</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="paraview.tpl.cinema_python.database.store.Store.get_complete_descriptor">
+<code class="descname">get_complete_descriptor</code><span class="sig-paren">(</span><em>partial_desc</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/tpl/cinema_python/database/store.html#Store.get_complete_descriptor"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.tpl.cinema_python.database.store.Store.get_complete_descriptor" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convenience method that expands an incomplete list of parameters into
+the full set using default values for the missing variables.
+TODO: doesn’t make sense with bifurcation (dependencies) remove</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="paraview.tpl.cinema_python.database.store.Store.get_default_type">
+<code class="descname">get_default_type</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/tpl/cinema_python/database/store.html#Store.get_default_type"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.tpl.cinema_python.database.store.Store.get_default_type" title="Permalink to this definition">¶</a></dt>
+<dd><p>subclasses override this if they know more</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="paraview.tpl.cinema_python.database.store.Store.get_parameter">
+<code class="descname">get_parameter</code><span class="sig-paren">(</span><em>name</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/tpl/cinema_python/database/store.html#Store.get_parameter"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.tpl.cinema_python.database.store.Store.get_parameter" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="paraview.tpl.cinema_python.database.store.Store.get_parameter_values">
+<code class="descname">get_parameter_values</code><span class="sig-paren">(</span><em>name</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/tpl/cinema_python/database/store.html#Store.get_parameter_values"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.tpl.cinema_python.database.store.Store.get_parameter_values" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get all values of type value
+:param name: Name for the parameter.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="paraview.tpl.cinema_python.database.store.Store.get_version_major">
+<code class="descname">get_version_major</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/tpl/cinema_python/database/store.html#Store.get_version_major"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.tpl.cinema_python.database.store.Store.get_version_major" title="Permalink to this definition">¶</a></dt>
+<dd><p>major version information corresponds with store type</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="paraview.tpl.cinema_python.database.store.Store.get_version_minor">
+<code class="descname">get_version_minor</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/tpl/cinema_python/database/store.html#Store.get_version_minor"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.tpl.cinema_python.database.store.Store.get_version_minor" title="Permalink to this definition">¶</a></dt>
+<dd><p>minor version information corresponds to larger changes in a store
+type</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="paraview.tpl.cinema_python.database.store.Store.get_version_patch">
+<code class="descname">get_version_patch</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/tpl/cinema_python/database/store.html#Store.get_version_patch"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.tpl.cinema_python.database.store.Store.get_version_patch" title="Permalink to this definition">¶</a></dt>
+<dd><p>patch version information corresponds to slight changes in a store
+type</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="paraview.tpl.cinema_python.database.store.Store.getdependees">
+<code class="descname">getdependees</code><span class="sig-paren">(</span><em>depender</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/tpl/cinema_python/database/store.html#Store.getdependees"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.tpl.cinema_python.database.store.Store.getdependees" title="Permalink to this definition">¶</a></dt>
+<dd><p>return a list of all the parameters that ‘depender’ depends on</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="paraview.tpl.cinema_python.database.store.Store.getdependers">
+<code class="descname">getdependers</code><span class="sig-paren">(</span><em>name</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/tpl/cinema_python/database/store.html#Store.getdependers"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.tpl.cinema_python.database.store.Store.getdependers" title="Permalink to this definition">¶</a></dt>
+<dd><p>return a list of all the parameters that depend on the given one</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="paraview.tpl.cinema_python.database.store.Store.hasRelatedParameter">
+<code class="descname">hasRelatedParameter</code><span class="sig-paren">(</span><em>fieldName</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/tpl/cinema_python/database/store.html#Store.hasRelatedParameter"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.tpl.cinema_python.database.store.Store.hasRelatedParameter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Predicate to know if a field has a related ‘parameter’ argument.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="paraview.tpl.cinema_python.database.store.Store.insert">
+<code class="descname">insert</code><span class="sig-paren">(</span><em>document</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/tpl/cinema_python/database/store.html#Store.insert"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.tpl.cinema_python.database.store.Store.insert" title="Permalink to this definition">¶</a></dt>
+<dd><p>Inserts a new document.
+Subclasses must extend this.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="paraview.tpl.cinema_python.database.store.Store.iscontrol">
+<code class="descname">iscontrol</code><span class="sig-paren">(</span><em>name</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/tpl/cinema_python/database/store.html#Store.iscontrol"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.tpl.cinema_python.database.store.Store.iscontrol" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="paraview.tpl.cinema_python.database.store.Store.isdependee">
+<code class="descname">isdependee</code><span class="sig-paren">(</span><em>name</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/tpl/cinema_python/database/store.html#Store.isdependee"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.tpl.cinema_python.database.store.Store.isdependee" title="Permalink to this definition">¶</a></dt>
+<dd><p>check if the named parameter has others that depend on it</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="paraview.tpl.cinema_python.database.store.Store.isdepender">
+<code class="descname">isdepender</code><span class="sig-paren">(</span><em>name</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/tpl/cinema_python/database/store.html#Store.isdepender"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.tpl.cinema_python.database.store.Store.isdepender" title="Permalink to this definition">¶</a></dt>
+<dd><p>check if the named parameter depends on any others</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="paraview.tpl.cinema_python.database.store.Store.isfield">
+<code class="descname">isfield</code><span class="sig-paren">(</span><em>name</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/tpl/cinema_python/database/store.html#Store.isfield"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.tpl.cinema_python.database.store.Store.isfield" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="paraview.tpl.cinema_python.database.store.Store.islayer">
+<code class="descname">islayer</code><span class="sig-paren">(</span><em>name</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/tpl/cinema_python/database/store.html#Store.islayer"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.tpl.cinema_python.database.store.Store.islayer" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="paraview.tpl.cinema_python.database.store.Store.iterate">
+<code class="descname">iterate</code><span class="sig-paren">(</span><em>parameters=None</em>, <em>fixedargs=None</em>, <em>progressObject=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/tpl/cinema_python/database/store.html#Store.iterate"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.tpl.cinema_python.database.store.Store.iterate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Run through all combinations of parameter/value pairs without visiting
+any combinations that do not satisfy dependencies among them.
+Parameters, if supplied, is a list of parameter names to enforce an
+ordering. Fixed arguments, if supplied, are parameter/value pairs that
+we want to hold constant in the exploration.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="paraview.tpl.cinema_python.database.store.Store.load">
+<code class="descname">load</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/tpl/cinema_python/database/store.html#Store.load"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.tpl.cinema_python.database.store.Store.load" title="Permalink to this definition">¶</a></dt>
+<dd><p>Loads contents on the store (but not the documents).
+Subclasses must extend this.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="paraview.tpl.cinema_python.database.store.Store.metadata">
+<code class="descname">metadata</code><a class="headerlink" href="#paraview.tpl.cinema_python.database.store.Store.metadata" title="Permalink to this definition">¶</a></dt>
+<dd><p>Auxiliary data about the store itself. An example is hints that help
+the viewer app know how to interpret this particular store.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="paraview.tpl.cinema_python.database.store.Store.parameter_associations">
+<code class="descname">parameter_associations</code><a class="headerlink" href="#paraview.tpl.cinema_python.database.store.Store.parameter_associations" title="Permalink to this definition">¶</a></dt>
+<dd><p>paremeter associations establish a dependency relationship between
+different parameters.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="paraview.tpl.cinema_python.database.store.Store.parameter_list">
+<code class="descname">parameter_list</code><a class="headerlink" href="#paraview.tpl.cinema_python.database.store.Store.parameter_list" title="Permalink to this definition">¶</a></dt>
+<dd><p>The parameter list is the set of variables and their values that the
+documents in the store vary over.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="paraview.tpl.cinema_python.database.store.Store.parameters_for_object">
+<code class="descname">parameters_for_object</code><span class="sig-paren">(</span><em>obj</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/tpl/cinema_python/database/store.html#Store.parameters_for_object"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.tpl.cinema_python.database.store.Store.parameters_for_object" title="Permalink to this definition">¶</a></dt>
+<dd><p>Given &lt;obj&gt;, an element of the layer &lt;vis&gt;, this method returns:
+1. the names of independent parameters (t, theta, etc) that affect it
+2. the name of its associated field
+3. the names of the controls that affect it</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="paraview.tpl.cinema_python.database.store.make_field">
+<code class="descclassname">paraview.tpl.cinema_python.database.store.</code><code class="descname">make_field</code><span class="sig-paren">(</span><em>name</em>, <em>_values</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/tpl/cinema_python/database/store.html#make_field"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.tpl.cinema_python.database.store.make_field" title="Permalink to this definition">¶</a></dt>
+<dd><p>specialization of make_parameters for parameters that define fields
+(aka color inputs). In this case the values is a list of name, type pairs
+where types must be one of ‘rgb’, ‘lut’, ‘depth’, ‘value’, or ‘luminance’
+May also be given an set of valueRanges, which have min and max values for
+named ‘value’ type color selections.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="paraview.tpl.cinema_python.database.store.make_parameter">
+<code class="descclassname">paraview.tpl.cinema_python.database.store.</code><code class="descname">make_parameter</code><span class="sig-paren">(</span><em>name</em>, <em>values</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/tpl/cinema_python/database/store.html#make_parameter"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.tpl.cinema_python.database.store.make_parameter" title="Permalink to this definition">¶</a></dt>
+<dd><p>define a new parameter that will be added to a store.
+Primarily takes a name and an array of potential values.
+May also be given a default value from inside the array.
+May also be given a typechoice to help the UI which is required to be
+one of ‘list’, ‘range’, ‘option’ or ‘hidden’.
+May also bve given a user friendly label.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="paraview.tpl.cinema_python.database.store.py23iteritems">
+<code class="descclassname">paraview.tpl.cinema_python.database.store.</code><code class="descname">py23iteritems</code><span class="sig-paren">(</span><em>d</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/tpl/cinema_python/database/store.html#py23iteritems"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.tpl.cinema_python.database.store.py23iteritems" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 </div>
 
 

@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>tpl.cinema_python.images.compositor Module &mdash; ParaView/Python 5.7.0-873-gff6b66ab5c documentation</title>
+  <title>tpl.cinema_python.images.compositor Module &mdash; ParaView/Python 5.7.0-874-g887fd42ac5 documentation</title>
   
 
   
@@ -24,7 +24,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:'./',
-        VERSION:'5.7.0-873-gff6b66ab5c',
+        VERSION:'5.7.0-874-g887fd42ac5',
         COLLAPSE_INDEX:false,
         FILE_SUFFIX:'.html',
         HAS_SOURCE:  true
@@ -49,7 +49,7 @@
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="ParaView/Python 5.7.0-873-gff6b66ab5c documentation" href="index.html"/>
+    <link rel="top" title="ParaView/Python 5.7.0-874-g887fd42ac5 documentation" href="index.html"/>
         <link rel="up" title="images Package" href="paraview.tpl.cinema_python.images.html"/>
         <link rel="next" title="tpl.cinema_python.images.layer_rasters Module" href="paraview.tpl.cinema_python.images.layer_rasters.html"/>
         <link rel="prev" title="tpl.cinema_python.images.camera_utils Module" href="paraview.tpl.cinema_python.images.camera_utils.html"/> 
@@ -69,7 +69,7 @@
           <li> <a href="index.html">
             <img src="_static/paraview-logo-small.png"
             alt="ParaView/Python"></img></a> </li>
-          <li class="version"> version 5.7.0-873-gff6b66ab5c</li>
+          <li class="version"> version 5.7.0-874-g887fd42ac5</li>
         </ul>
         <form id ="rtd-search-form" class="wy-form" action="search.html" method="get">
   <input type="text" name="q" placeholder="Search docs" />
@@ -652,8 +652,91 @@
 </ul>
 <hr/>
           
-  <div class="section" id="tpl-cinema-python-images-compositor-module">
-<h1>tpl.cinema_python.images.compositor Module<a class="headerlink" href="#tpl-cinema-python-images-compositor-module" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="module-paraview.tpl.cinema_python.images.compositor">
+<span id="tpl-cinema-python-images-compositor-module"></span><h1>tpl.cinema_python.images.compositor Module<a class="headerlink" href="#module-paraview.tpl.cinema_python.images.compositor" title="Permalink to this headline">¶</a></h1>
+<p>A module that composites one or more layers together to produce a recognizable
+image.</p>
+<dl class="class">
+<dt id="paraview.tpl.cinema_python.images.compositor.Compositor">
+<em class="property">class </em><code class="descclassname">paraview.tpl.cinema_python.images.compositor.</code><code class="descname">Compositor</code><a class="reference internal" href="_modules/paraview/tpl/cinema_python/images/compositor.html#Compositor"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.tpl.cinema_python.images.compositor.Compositor" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="method">
+<dt id="paraview.tpl.cinema_python.images.compositor.Compositor.enableGeometryColor">
+<code class="descname">enableGeometryColor</code><span class="sig-paren">(</span><em>enable</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/tpl/cinema_python/images/compositor.html#Compositor.enableGeometryColor"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.tpl.cinema_python.images.compositor.Compositor.enableGeometryColor" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="paraview.tpl.cinema_python.images.compositor.Compositor.enableLighting">
+<code class="descname">enableLighting</code><span class="sig-paren">(</span><em>enable</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/tpl/cinema_python/images/compositor.html#Compositor.enableLighting"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.tpl.cinema_python.images.compositor.Compositor.enableLighting" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="paraview.tpl.cinema_python.images.compositor.Compositor.render">
+<code class="descname">render</code><span class="sig-paren">(</span><em>layers</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/tpl/cinema_python/images/compositor.html#Compositor.render"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.tpl.cinema_python.images.compositor.Compositor.render" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="paraview.tpl.cinema_python.images.compositor.Compositor.setColorDefinitions">
+<code class="descname">setColorDefinitions</code><span class="sig-paren">(</span><em>colorDefs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/tpl/cinema_python/images/compositor.html#Compositor.setColorDefinitions"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.tpl.cinema_python.images.compositor.Compositor.setColorDefinitions" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="paraview.tpl.cinema_python.images.compositor.Compositor.set_background_color">
+<code class="descname">set_background_color</code><span class="sig-paren">(</span><em>rgb</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/tpl/cinema_python/images/compositor.html#Compositor.set_background_color"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.tpl.cinema_python.images.compositor.Compositor.set_background_color" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="paraview.tpl.cinema_python.images.compositor.Compositor_SpecA">
+<em class="property">class </em><code class="descclassname">paraview.tpl.cinema_python.images.compositor.</code><code class="descname">Compositor_SpecA</code><span class="sig-paren">(</span><em>parent=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/tpl/cinema_python/images/compositor.html#Compositor_SpecA"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.tpl.cinema_python.images.compositor.Compositor_SpecA" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#paraview.tpl.cinema_python.images.compositor.Compositor" title="paraview.tpl.cinema_python.images.compositor.Compositor"><code class="xref py py-class docutils literal notranslate"><span class="pre">paraview.tpl.cinema_python.images.compositor.Compositor</span></code></a></p>
+<p>Compositor SpecA. Loads LayerSpecs consisting of a
+single image. No compositing supported.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="paraview.tpl.cinema_python.images.compositor.Compositor_SpecB">
+<em class="property">class </em><code class="descclassname">paraview.tpl.cinema_python.images.compositor.</code><code class="descname">Compositor_SpecB</code><span class="sig-paren">(</span><em>parent=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/tpl/cinema_python/images/compositor.html#Compositor_SpecB"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.tpl.cinema_python.images.compositor.Compositor_SpecB" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#paraview.tpl.cinema_python.images.compositor.Compositor" title="paraview.tpl.cinema_python.images.compositor.Compositor"><code class="xref py py-class docutils literal notranslate"><span class="pre">paraview.tpl.cinema_python.images.compositor.Compositor</span></code></a></p>
+<p>Compositor SpecB. Composites several LayerSpec instances together.
+Each LayerSpec holds all of its buffer components (depth, color, luminance,
+etc.).</p>
+<dl class="method">
+<dt id="paraview.tpl.cinema_python.images.compositor.Compositor_SpecB.ambient">
+<code class="descname">ambient</code><span class="sig-paren">(</span><em>rgb</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/tpl/cinema_python/images/compositor.html#Compositor_SpecB.ambient"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.tpl.cinema_python.images.compositor.Compositor_SpecB.ambient" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the ambient contribution in an RGB luminance image.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="paraview.tpl.cinema_python.images.compositor.Compositor_SpecB.diffuse">
+<code class="descname">diffuse</code><span class="sig-paren">(</span><em>rgb</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/tpl/cinema_python/images/compositor.html#Compositor_SpecB.diffuse"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.tpl.cinema_python.images.compositor.Compositor_SpecB.diffuse" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the diffuse contribution in an RGB luminance image.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="paraview.tpl.cinema_python.images.compositor.Compositor_SpecB.enableGeometryColor">
+<code class="descname">enableGeometryColor</code><span class="sig-paren">(</span><em>enable</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/tpl/cinema_python/images/compositor.html#Compositor_SpecB.enableGeometryColor"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.tpl.cinema_python.images.compositor.Compositor_SpecB.enableGeometryColor" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="paraview.tpl.cinema_python.images.compositor.Compositor_SpecB.enableLighting">
+<code class="descname">enableLighting</code><span class="sig-paren">(</span><em>enable</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/tpl/cinema_python/images/compositor.html#Compositor_SpecB.enableLighting"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.tpl.cinema_python.images.compositor.Compositor_SpecB.enableLighting" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="paraview.tpl.cinema_python.images.compositor.Compositor_SpecB.setColorDefinitions">
+<code class="descname">setColorDefinitions</code><span class="sig-paren">(</span><em>colorDefs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/tpl/cinema_python/images/compositor.html#Compositor_SpecB.setColorDefinitions"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.tpl.cinema_python.images.compositor.Compositor_SpecB.setColorDefinitions" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="paraview.tpl.cinema_python.images.compositor.Compositor_SpecB.specular">
+<code class="descname">specular</code><span class="sig-paren">(</span><em>rgb</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/tpl/cinema_python/images/compositor.html#Compositor_SpecB.specular"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.tpl.cinema_python.images.compositor.Compositor_SpecB.specular" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the specular contribution in an RGB luminance image.</p>
+</dd></dl>
+
+</dd></dl>
+
 </div>
 
 

@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>tpl.cinema_python.database.raster_wrangler Module &mdash; ParaView/Python 5.7.0-873-gff6b66ab5c documentation</title>
+  <title>tpl.cinema_python.database.raster_wrangler Module &mdash; ParaView/Python 5.7.0-874-g887fd42ac5 documentation</title>
   
 
   
@@ -24,7 +24,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:'./',
-        VERSION:'5.7.0-873-gff6b66ab5c',
+        VERSION:'5.7.0-874-g887fd42ac5',
         COLLAPSE_INDEX:false,
         FILE_SUFFIX:'.html',
         HAS_SOURCE:  true
@@ -49,7 +49,7 @@
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="ParaView/Python 5.7.0-873-gff6b66ab5c documentation" href="index.html"/>
+    <link rel="top" title="ParaView/Python 5.7.0-874-g887fd42ac5 documentation" href="index.html"/>
         <link rel="up" title="database Package" href="paraview.tpl.cinema_python.database.html"/>
         <link rel="next" title="tpl.cinema_python.database.store Module" href="paraview.tpl.cinema_python.database.store.html"/>
         <link rel="prev" title="tpl.cinema_python.database.oexr_helper Module" href="paraview.tpl.cinema_python.database.oexr_helper.html"/> 
@@ -69,7 +69,7 @@
           <li> <a href="index.html">
             <img src="_static/paraview-logo-small.png"
             alt="ParaView/Python"></img></a> </li>
-          <li class="version"> version 5.7.0-873-gff6b66ab5c</li>
+          <li class="version"> version 5.7.0-874-g887fd42ac5</li>
         </ul>
         <form id ="rtd-search-form" class="wy-form" action="search.html" method="get">
   <input type="text" name="q" placeholder="Search docs" />
@@ -652,8 +652,100 @@
 </ul>
 <hr/>
           
-  <div class="section" id="tpl-cinema-python-database-raster-wrangler-module">
-<h1>tpl.cinema_python.database.raster_wrangler Module<a class="headerlink" href="#tpl-cinema-python-database-raster-wrangler-module" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="module-paraview.tpl.cinema_python.database.raster_wrangler">
+<span id="tpl-cinema-python-database-raster-wrangler-module"></span><h1>tpl.cinema_python.database.raster_wrangler Module<a class="headerlink" href="#module-paraview.tpl.cinema_python.database.raster_wrangler" title="Permalink to this headline">¶</a></h1>
+<p>Module that uses one of the available back end libraries to write out image
+files for cinema’s file store class.</p>
+<dl class="class">
+<dt id="paraview.tpl.cinema_python.database.raster_wrangler.RasterWrangler">
+<em class="property">class </em><code class="descclassname">paraview.tpl.cinema_python.database.raster_wrangler.</code><code class="descname">RasterWrangler</code><a class="reference internal" href="_modules/paraview/tpl/cinema_python/database/raster_wrangler.html#RasterWrangler"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.tpl.cinema_python.database.raster_wrangler.RasterWrangler" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Isolates the specifics of raster file formats from the cinema store.
+In particular this delegates the task to one or more subsidiary modules.
+The choice of which is open to facilitate packaging in different
+places, i.e. PIL for desktop and small packages, VTK for HPC contexts.</p>
+<dl class="method">
+<dt id="paraview.tpl.cinema_python.database.raster_wrangler.RasterWrangler.assertvalidimage">
+<code class="descname">assertvalidimage</code><span class="sig-paren">(</span><em>filename</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/tpl/cinema_python/database/raster_wrangler.html#RasterWrangler.assertvalidimage"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.tpl.cinema_python.database.raster_wrangler.RasterWrangler.assertvalidimage" title="Permalink to this definition">¶</a></dt>
+<dd><p>tests that a given file is syntactically correct</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="paraview.tpl.cinema_python.database.raster_wrangler.RasterWrangler.enableOpenEXR">
+<code class="descname">enableOpenEXR</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/tpl/cinema_python/database/raster_wrangler.html#RasterWrangler.enableOpenEXR"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.tpl.cinema_python.database.raster_wrangler.RasterWrangler.enableOpenEXR" title="Permalink to this definition">¶</a></dt>
+<dd><p>Try to turn on OpenEXR file IO support</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="paraview.tpl.cinema_python.database.raster_wrangler.RasterWrangler.enablePIL">
+<code class="descname">enablePIL</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/tpl/cinema_python/database/raster_wrangler.html#RasterWrangler.enablePIL"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.tpl.cinema_python.database.raster_wrangler.RasterWrangler.enablePIL" title="Permalink to this definition">¶</a></dt>
+<dd><p>Try to turn on PIL file IO support</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="paraview.tpl.cinema_python.database.raster_wrangler.RasterWrangler.enableVTK">
+<code class="descname">enableVTK</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/tpl/cinema_python/database/raster_wrangler.html#RasterWrangler.enableVTK"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.tpl.cinema_python.database.raster_wrangler.RasterWrangler.enableVTK" title="Permalink to this definition">¶</a></dt>
+<dd><p>Try to turn on VTK file IO support</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="paraview.tpl.cinema_python.database.raster_wrangler.RasterWrangler.floatExtension">
+<code class="descname">floatExtension</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/tpl/cinema_python/database/raster_wrangler.html#RasterWrangler.floatExtension"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.tpl.cinema_python.database.raster_wrangler.RasterWrangler.floatExtension" title="Permalink to this definition">¶</a></dt>
+<dd><p>determine file extension for depth images</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="paraview.tpl.cinema_python.database.raster_wrangler.RasterWrangler.genericreader">
+<code class="descname">genericreader</code><span class="sig-paren">(</span><em>fname</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/tpl/cinema_python/database/raster_wrangler.html#RasterWrangler.genericreader"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.tpl.cinema_python.database.raster_wrangler.RasterWrangler.genericreader" title="Permalink to this definition">¶</a></dt>
+<dd><p>read generic binary data dump</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="paraview.tpl.cinema_python.database.raster_wrangler.RasterWrangler.genericwriter">
+<code class="descname">genericwriter</code><span class="sig-paren">(</span><em>imageslice</em>, <em>fname</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/tpl/cinema_python/database/raster_wrangler.html#RasterWrangler.genericwriter"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.tpl.cinema_python.database.raster_wrangler.RasterWrangler.genericwriter" title="Permalink to this definition">¶</a></dt>
+<dd><p>write generic binary data dump</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="paraview.tpl.cinema_python.database.raster_wrangler.RasterWrangler.rgbreader">
+<code class="descname">rgbreader</code><span class="sig-paren">(</span><em>fname</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/tpl/cinema_python/database/raster_wrangler.html#RasterWrangler.rgbreader"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.tpl.cinema_python.database.raster_wrangler.RasterWrangler.rgbreader" title="Permalink to this definition">¶</a></dt>
+<dd><p>opens a color image file and returns it as a color buffer</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="paraview.tpl.cinema_python.database.raster_wrangler.RasterWrangler.rgbwriter">
+<code class="descname">rgbwriter</code><span class="sig-paren">(</span><em>imageslice</em>, <em>fname</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/tpl/cinema_python/database/raster_wrangler.html#RasterWrangler.rgbwriter"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.tpl.cinema_python.database.raster_wrangler.RasterWrangler.rgbwriter" title="Permalink to this definition">¶</a></dt>
+<dd><p>takes in a color buffer and writes it as an image file</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="paraview.tpl.cinema_python.database.raster_wrangler.RasterWrangler.valuereader">
+<code class="descname">valuereader</code><span class="sig-paren">(</span><em>fname</em>, <em>shape=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/tpl/cinema_python/database/raster_wrangler.html#RasterWrangler.valuereader"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.tpl.cinema_python.database.raster_wrangler.RasterWrangler.valuereader" title="Permalink to this definition">¶</a></dt>
+<dd><p>Opens a value image file and returns it as either a color buffer
+or a floating point array (depending on how the image was exported).</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="paraview.tpl.cinema_python.database.raster_wrangler.RasterWrangler.valuewriter">
+<code class="descname">valuewriter</code><span class="sig-paren">(</span><em>imageSlice</em>, <em>fname</em>, <em>vrange</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/tpl/cinema_python/database/raster_wrangler.html#RasterWrangler.valuewriter"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.tpl.cinema_python.database.raster_wrangler.RasterWrangler.valuewriter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Takes in either a (1C) float or a RGB (3C) buffer and writes it as
+an image file.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="paraview.tpl.cinema_python.database.raster_wrangler.RasterWrangler.zreader">
+<code class="descname">zreader</code><span class="sig-paren">(</span><em>fname</em>, <em>shape=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/tpl/cinema_python/database/raster_wrangler.html#RasterWrangler.zreader"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.tpl.cinema_python.database.raster_wrangler.RasterWrangler.zreader" title="Permalink to this definition">¶</a></dt>
+<dd><p>reads a depth file to make a depth buffer</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="paraview.tpl.cinema_python.database.raster_wrangler.RasterWrangler.zwriter">
+<code class="descname">zwriter</code><span class="sig-paren">(</span><em>imageslice</em>, <em>fname</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/tpl/cinema_python/database/raster_wrangler.html#RasterWrangler.zwriter"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.tpl.cinema_python.database.raster_wrangler.RasterWrangler.zwriter" title="Permalink to this definition">¶</a></dt>
+<dd><p>takes in a depth buffer and writes it as a depth file</p>
+</dd></dl>
+
+</dd></dl>
+
 </div>
 
 

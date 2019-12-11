@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>tpl.cinema_python.database.file_store Module &mdash; ParaView/Python 5.7.0-873-gff6b66ab5c documentation</title>
+  <title>tpl.cinema_python.database.file_store Module &mdash; ParaView/Python 5.7.0-874-g887fd42ac5 documentation</title>
   
 
   
@@ -24,7 +24,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:'./',
-        VERSION:'5.7.0-873-gff6b66ab5c',
+        VERSION:'5.7.0-874-g887fd42ac5',
         COLLAPSE_INDEX:false,
         FILE_SUFFIX:'.html',
         HAS_SOURCE:  true
@@ -49,7 +49,7 @@
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="ParaView/Python 5.7.0-873-gff6b66ab5c documentation" href="index.html"/>
+    <link rel="top" title="ParaView/Python 5.7.0-874-g887fd42ac5 documentation" href="index.html"/>
         <link rel="up" title="database Package" href="paraview.tpl.cinema_python.database.html"/>
         <link rel="next" title="tpl.cinema_python.database.oexr_helper Module" href="paraview.tpl.cinema_python.database.oexr_helper.html"/>
         <link rel="prev" title="database Package" href="paraview.tpl.cinema_python.database.html"/> 
@@ -69,7 +69,7 @@
           <li> <a href="index.html">
             <img src="_static/paraview-logo-small.png"
             alt="ParaView/Python"></img></a> </li>
-          <li class="version"> version 5.7.0-873-gff6b66ab5c</li>
+          <li class="version"> version 5.7.0-874-g887fd42ac5</li>
         </ul>
         <form id ="rtd-search-form" class="wy-form" action="search.html" method="get">
   <input type="text" name="q" placeholder="Search docs" />
@@ -652,8 +652,83 @@
 </ul>
 <hr/>
           
-  <div class="section" id="tpl-cinema-python-database-file-store-module">
-<h1>tpl.cinema_python.database.file_store Module<a class="headerlink" href="#tpl-cinema-python-database-file-store-module" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="module-paraview.tpl.cinema_python.database.file_store">
+<span id="tpl-cinema-python-database-file-store-module"></span><h1>tpl.cinema_python.database.file_store Module<a class="headerlink" href="#module-paraview.tpl.cinema_python.database.file_store" title="Permalink to this headline">¶</a></h1>
+<p>An implementation of the database API based on named files and directories.</p>
+<dl class="class">
+<dt id="paraview.tpl.cinema_python.database.file_store.FileStore">
+<em class="property">class </em><code class="descclassname">paraview.tpl.cinema_python.database.file_store.</code><code class="descname">FileStore</code><span class="sig-paren">(</span><em>dbfilename=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/tpl/cinema_python/database/file_store.html#FileStore"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.tpl.cinema_python.database.file_store.FileStore" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="paraview.tpl.cinema_python.database.store.html#paraview.tpl.cinema_python.database.store.Store" title="paraview.tpl.cinema_python.database.store.Store"><code class="xref py py-class docutils literal notranslate"><span class="pre">paraview.tpl.cinema_python.database.store.Store</span></code></a></p>
+<p>Implementation of a store based on named files and directories.</p>
+<dl class="method">
+<dt id="paraview.tpl.cinema_python.database.file_store.FileStore.create">
+<code class="descname">create</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/tpl/cinema_python/database/file_store.html#FileStore.create"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.tpl.cinema_python.database.file_store.FileStore.create" title="Permalink to this definition">¶</a></dt>
+<dd><p>creates a new file store</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="paraview.tpl.cinema_python.database.file_store.FileStore.filename_pattern">
+<code class="descname">filename_pattern</code><a class="headerlink" href="#paraview.tpl.cinema_python.database.file_store.FileStore.filename_pattern" title="Permalink to this definition">¶</a></dt>
+<dd><p>Files corresponding to Documents are arranged on disk
+according the the directory and filename structure described
+by the filename_pattern. The format is a regular expression
+consisting of parameter names enclosed in ‘{‘ and ‘}’ and
+separated by spacers. “/” spacer characters produce sub
+directories.</p>
+<p>Composite type stores ignore the file name pattern other than
+the extension.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="paraview.tpl.cinema_python.database.file_store.FileStore.find">
+<code class="descname">find</code><span class="sig-paren">(</span><em>q=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/tpl/cinema_python/database/file_store.html#FileStore.find"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.tpl.cinema_python.database.file_store.FileStore.find" title="Permalink to this definition">¶</a></dt>
+<dd><p>overridden to implement parent API with files</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="paraview.tpl.cinema_python.database.file_store.FileStore.get">
+<code class="descname">get</code><span class="sig-paren">(</span><em>q</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/tpl/cinema_python/database/file_store.html#FileStore.get"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.tpl.cinema_python.database.file_store.FileStore.get" title="Permalink to this definition">¶</a></dt>
+<dd><p>optimization of find()[0] for an important case where caller
+knows exactly what to retrieve.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="paraview.tpl.cinema_python.database.file_store.FileStore.get_default_type">
+<code class="descname">get_default_type</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/tpl/cinema_python/database/file_store.html#FileStore.get_default_type"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.tpl.cinema_python.database.file_store.FileStore.get_default_type" title="Permalink to this definition">¶</a></dt>
+<dd><p>overridden to use the filename pattern to determine default type</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="paraview.tpl.cinema_python.database.file_store.FileStore.get_new_files">
+<code class="descname">get_new_files</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/tpl/cinema_python/database/file_store.html#FileStore.get_new_files"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.tpl.cinema_python.database.file_store.FileStore.get_new_files" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="paraview.tpl.cinema_python.database.file_store.FileStore.insert">
+<code class="descname">insert</code><span class="sig-paren">(</span><em>document</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/tpl/cinema_python/database/file_store.html#FileStore.insert"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.tpl.cinema_python.database.file_store.FileStore.insert" title="Permalink to this definition">¶</a></dt>
+<dd><p>overridden to write file for the document after parent
+makes a record of it in the store</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="paraview.tpl.cinema_python.database.file_store.FileStore.load">
+<code class="descname">load</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/tpl/cinema_python/database/file_store.html#FileStore.load"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.tpl.cinema_python.database.file_store.FileStore.load" title="Permalink to this definition">¶</a></dt>
+<dd><p>loads an existing filestore</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="paraview.tpl.cinema_python.database.file_store.FileStore.save">
+<code class="descname">save</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/tpl/cinema_python/database/file_store.html#FileStore.save"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.tpl.cinema_python.database.file_store.FileStore.save" title="Permalink to this definition">¶</a></dt>
+<dd><p>writes out a modified file store</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="paraview.tpl.cinema_python.database.file_store.py23iteritems">
+<code class="descclassname">paraview.tpl.cinema_python.database.file_store.</code><code class="descname">py23iteritems</code><span class="sig-paren">(</span><em>d</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/tpl/cinema_python/database/file_store.html#py23iteritems"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.tpl.cinema_python.database.file_store.py23iteritems" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 </div>
 
 

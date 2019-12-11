@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>tpl.cinema_python.images.querymaker Module &mdash; ParaView/Python 5.7.0-873-gff6b66ab5c documentation</title>
+  <title>tpl.cinema_python.images.querymaker Module &mdash; ParaView/Python 5.7.0-874-g887fd42ac5 documentation</title>
   
 
   
@@ -24,7 +24,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:'./',
-        VERSION:'5.7.0-873-gff6b66ab5c',
+        VERSION:'5.7.0-874-g887fd42ac5',
         COLLAPSE_INDEX:false,
         FILE_SUFFIX:'.html',
         HAS_SOURCE:  true
@@ -49,7 +49,7 @@
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="ParaView/Python 5.7.0-873-gff6b66ab5c documentation" href="index.html"/>
+    <link rel="top" title="ParaView/Python 5.7.0-874-g887fd42ac5 documentation" href="index.html"/>
         <link rel="up" title="images Package" href="paraview.tpl.cinema_python.images.html"/>
         <link rel="next" title="tpl.cinema_python.images.querymaker_specb Module" href="paraview.tpl.cinema_python.images.querymaker_specb.html"/>
         <link rel="prev" title="tpl.cinema_python.images.lookup_tables Module" href="paraview.tpl.cinema_python.images.lookup_tables.html"/> 
@@ -69,7 +69,7 @@
           <li> <a href="index.html">
             <img src="_static/paraview-logo-small.png"
             alt="ParaView/Python"></img></a> </li>
-          <li class="version"> version 5.7.0-873-gff6b66ab5c</li>
+          <li class="version"> version 5.7.0-874-g887fd42ac5</li>
         </ul>
         <form id ="rtd-search-form" class="wy-form" action="search.html" method="get">
   <input type="text" name="q" placeholder="Search docs" />
@@ -652,8 +652,92 @@
 </ul>
 <hr/>
           
-  <div class="section" id="tpl-cinema-python-images-querymaker-module">
-<h1>tpl.cinema_python.images.querymaker Module<a class="headerlink" href="#tpl-cinema-python-images-querymaker-module" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="module-paraview.tpl.cinema_python.images.querymaker">
+<span id="tpl-cinema-python-images-querymaker-module"></span><h1>tpl.cinema_python.images.querymaker Module<a class="headerlink" href="#module-paraview.tpl.cinema_python.images.querymaker" title="Permalink to this headline">¶</a></h1>
+<p>API for creating images that correspond to a set of queries.
+Used by viewer primarily.</p>
+<dl class="class">
+<dt id="paraview.tpl.cinema_python.images.querymaker.QueryMaker">
+<em class="property">class </em><code class="descclassname">paraview.tpl.cinema_python.images.querymaker.</code><code class="descname">QueryMaker</code><a class="reference internal" href="_modules/paraview/tpl/cinema_python/images/querymaker.html#QueryMaker"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.tpl.cinema_python.images.querymaker.QueryMaker" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="method">
+<dt id="paraview.tpl.cinema_python.images.querymaker.QueryMaker.setStore">
+<code class="descname">setStore</code><span class="sig-paren">(</span><em>store</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/tpl/cinema_python/images/querymaker.html#QueryMaker.setStore"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.tpl.cinema_python.images.querymaker.QueryMaker.setStore" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="paraview.tpl.cinema_python.images.querymaker.QueryMaker.store">
+<code class="descname">store</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/tpl/cinema_python/images/querymaker.html#QueryMaker.store"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.tpl.cinema_python.images.querymaker.QueryMaker.store" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="paraview.tpl.cinema_python.images.querymaker.QueryMaker.supportsLayering">
+<code class="descname">supportsLayering</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/tpl/cinema_python/images/querymaker.html#QueryMaker.supportsLayering"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.tpl.cinema_python.images.querymaker.QueryMaker.supportsLayering" title="Permalink to this definition">¶</a></dt>
+<dd><p>Predicate to query if a translator supports compositing (e.g. Spec-B).
+Abstract, implement in a derived class.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="paraview.tpl.cinema_python.images.querymaker.QueryMaker.translateQuery">
+<code class="descname">translateQuery</code><span class="sig-paren">(</span><em>query</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/tpl/cinema_python/images/querymaker.html#QueryMaker.translateQuery"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.tpl.cinema_python.images.querymaker.QueryMaker.translateQuery" title="Permalink to this definition">¶</a></dt>
+<dd><p>Receives a set of parameters from the UI. The parameters (or UI
+queries) come in the following form:</p>
+<dl class="docutils">
+<dt>total_query = { “parameter_1” <span class="classifier-delimiter">:</span> <span class="classifier">set([values_of_1]),</span></dt>
+<dd>“parameter_2” : set([values_of_2]), … }</dd>
+</dl>
+<p>Example:</p>
+<dl class="docutils">
+<dt>total_query = { “phi” <span class="classifier-delimiter">:</span> <span class="classifier">set([-180]),</span></dt>
+<dd>“theta” : set([0]),
+“Slice2” : set([-0.34, -0.1, 0.1]) }</dd>
+</dl>
+<p>The queries are passed to the LayerRasters instances which then use
+cinema_store to parse these queries into image file paths. This method
+is expected to return a set of LayerRasters consisting of all the
+layers to render (each LayerRasters instance holds all of its required
+images). Abstract, implement in a derived class.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="paraview.tpl.cinema_python.images.querymaker.QueryMaker_SpecA">
+<em class="property">class </em><code class="descclassname">paraview.tpl.cinema_python.images.querymaker.</code><code class="descname">QueryMaker_SpecA</code><a class="reference internal" href="_modules/paraview/tpl/cinema_python/images/querymaker.html#QueryMaker_SpecA"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.tpl.cinema_python.images.querymaker.QueryMaker_SpecA" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#paraview.tpl.cinema_python.images.querymaker.QueryMaker" title="paraview.tpl.cinema_python.images.querymaker.QueryMaker"><code class="xref py py-class docutils literal notranslate"><span class="pre">paraview.tpl.cinema_python.images.querymaker.QueryMaker</span></code></a></p>
+<p>This class translates UI queries into a single Spec-A LayerRasters instance
+(single-image).</p>
+<dl class="method">
+<dt id="paraview.tpl.cinema_python.images.querymaker.QueryMaker_SpecA.supportsLayering">
+<code class="descname">supportsLayering</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/tpl/cinema_python/images/querymaker.html#QueryMaker_SpecA.supportsLayering"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.tpl.cinema_python.images.querymaker.QueryMaker_SpecA.supportsLayering" title="Permalink to this definition">¶</a></dt>
+<dd><p>Predicate to query if a translator supports compositing (e.g. Spec-B).
+Abstract, implement in a derived class.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="paraview.tpl.cinema_python.images.querymaker.QueryMaker_SpecA.translateQuery">
+<code class="descname">translateQuery</code><span class="sig-paren">(</span><em>query</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/tpl/cinema_python/images/querymaker.html#QueryMaker_SpecA.translateQuery"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.tpl.cinema_python.images.querymaker.QueryMaker_SpecA.translateQuery" title="Permalink to this definition">¶</a></dt>
+<dd><p>Receives a set of parameters from the UI. The parameters (or UI
+queries) come in the following form:</p>
+<dl class="docutils">
+<dt>total_query = { “parameter_1” <span class="classifier-delimiter">:</span> <span class="classifier">set([values_of_1]),</span></dt>
+<dd>“parameter_2” : set([values_of_2]), … }</dd>
+</dl>
+<p>Example:</p>
+<dl class="docutils">
+<dt>total_query = { “phi” <span class="classifier-delimiter">:</span> <span class="classifier">set([-180]),</span></dt>
+<dd>“theta” : set([0]),
+“Slice2” : set([-0.34, -0.1, 0.1]) }</dd>
+</dl>
+<p>The queries are passed to the LayerRasters instances which then use
+cinema_store to parse these queries into image file paths. This method
+is expected to return a set of LayerRasters consisting of all the
+layers to render (each LayerRasters instance holds all of its required
+images). Abstract, implement in a derived class.</p>
+</dd></dl>
+
+</dd></dl>
+
 </div>
 
 

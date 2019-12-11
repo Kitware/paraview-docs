@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>tpl.cinema_python.database.vti_store Module &mdash; ParaView/Python 5.7.0-873-gff6b66ab5c documentation</title>
+  <title>tpl.cinema_python.database.vti_store Module &mdash; ParaView/Python 5.7.0-874-g887fd42ac5 documentation</title>
   
 
   
@@ -24,7 +24,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:'./',
-        VERSION:'5.7.0-873-gff6b66ab5c',
+        VERSION:'5.7.0-874-g887fd42ac5',
         COLLAPSE_INDEX:false,
         FILE_SUFFIX:'.html',
         HAS_SOURCE:  true
@@ -49,7 +49,7 @@
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="ParaView/Python 5.7.0-873-gff6b66ab5c documentation" href="index.html"/>
+    <link rel="top" title="ParaView/Python 5.7.0-874-g887fd42ac5 documentation" href="index.html"/>
         <link rel="up" title="database Package" href="paraview.tpl.cinema_python.database.html"/>
         <link rel="next" title="images Package" href="paraview.tpl.cinema_python.images.html"/>
         <link rel="prev" title="tpl.cinema_python.database.store Module" href="paraview.tpl.cinema_python.database.store.html"/> 
@@ -69,7 +69,7 @@
           <li> <a href="index.html">
             <img src="_static/paraview-logo-small.png"
             alt="ParaView/Python"></img></a> </li>
-          <li class="version"> version 5.7.0-873-gff6b66ab5c</li>
+          <li class="version"> version 5.7.0-874-g887fd42ac5</li>
         </ul>
         <form id ="rtd-search-form" class="wy-form" action="search.html" method="get">
   <input type="text" name="q" placeholder="Search docs" />
@@ -652,8 +652,57 @@
 </ul>
 <hr/>
           
-  <div class="section" id="tpl-cinema-python-database-vti-store-module">
-<h1>tpl.cinema_python.database.vti_store Module<a class="headerlink" href="#tpl-cinema-python-database-vti-store-module" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="module-paraview.tpl.cinema_python.database.vti_store">
+<span id="tpl-cinema-python-database-vti-store-module"></span><h1>tpl.cinema_python.database.vti_store Module<a class="headerlink" href="#module-paraview.tpl.cinema_python.database.vti_store" title="Permalink to this headline">¶</a></h1>
+<p>An implementation of the database API stored in one VTK .vti format file.</p>
+<dl class="class">
+<dt id="paraview.tpl.cinema_python.database.vti_store.VTIFileStore">
+<em class="property">class </em><code class="descclassname">paraview.tpl.cinema_python.database.vti_store.</code><code class="descname">VTIFileStore</code><span class="sig-paren">(</span><em>dbfilename=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/tpl/cinema_python/database/vti_store.html#VTIFileStore"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.tpl.cinema_python.database.vti_store.VTIFileStore" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="paraview.tpl.cinema_python.database.store.html#paraview.tpl.cinema_python.database.store.Store" title="paraview.tpl.cinema_python.database.store.Store"><code class="xref py py-class docutils literal notranslate"><span class="pre">paraview.tpl.cinema_python.database.store.Store</span></code></a></p>
+<p>Implementation of a store based on a single volume file (image stack).
+NOTE: This class is limited to parametric-image-stack type stores,
+currently unmaintained and may go away in the near future.</p>
+<dl class="method">
+<dt id="paraview.tpl.cinema_python.database.vti_store.VTIFileStore.create">
+<code class="descname">create</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/tpl/cinema_python/database/vti_store.html#VTIFileStore.create"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.tpl.cinema_python.database.vti_store.VTIFileStore.create" title="Permalink to this definition">¶</a></dt>
+<dd><p>creates a new file store</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="paraview.tpl.cinema_python.database.vti_store.VTIFileStore.find">
+<code class="descname">find</code><span class="sig-paren">(</span><em>q=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/tpl/cinema_python/database/vti_store.html#VTIFileStore.find"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.tpl.cinema_python.database.vti_store.VTIFileStore.find" title="Permalink to this definition">¶</a></dt>
+<dd><p>Overridden to search for documentts withing the stack.
+TODO: algorithm is dumb, but consisent with compute_sliceindex
+(which is also dumb)</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="paraview.tpl.cinema_python.database.vti_store.VTIFileStore.get_sliceindex">
+<code class="descname">get_sliceindex</code><span class="sig-paren">(</span><em>document</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/tpl/cinema_python/database/vti_store.html#VTIFileStore.get_sliceindex"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.tpl.cinema_python.database.vti_store.VTIFileStore.get_sliceindex" title="Permalink to this definition">¶</a></dt>
+<dd><p>returns the location of one document within the stack</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="paraview.tpl.cinema_python.database.vti_store.VTIFileStore.insert">
+<code class="descname">insert</code><span class="sig-paren">(</span><em>document</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/tpl/cinema_python/database/vti_store.html#VTIFileStore.insert"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.tpl.cinema_python.database.vti_store.VTIFileStore.insert" title="Permalink to this definition">¶</a></dt>
+<dd><p>overridden to store data within a volume after parent
+makes a note of it</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="paraview.tpl.cinema_python.database.vti_store.VTIFileStore.load">
+<code class="descname">load</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/tpl/cinema_python/database/vti_store.html#VTIFileStore.load"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.tpl.cinema_python.database.vti_store.VTIFileStore.load" title="Permalink to this definition">¶</a></dt>
+<dd><p>loads an existing filestore</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="paraview.tpl.cinema_python.database.vti_store.VTIFileStore.save">
+<code class="descname">save</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/tpl/cinema_python/database/vti_store.html#VTIFileStore.save"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.tpl.cinema_python.database.vti_store.VTIFileStore.save" title="Permalink to this definition">¶</a></dt>
+<dd><p>writes out a modified file store</p>
+</dd></dl>
+
+</dd></dl>
+
 </div>
 
 

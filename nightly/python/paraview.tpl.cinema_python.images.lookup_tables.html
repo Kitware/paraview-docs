@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>tpl.cinema_python.images.lookup_tables Module &mdash; ParaView/Python 5.7.0-873-gff6b66ab5c documentation</title>
+  <title>tpl.cinema_python.images.lookup_tables Module &mdash; ParaView/Python 5.7.0-874-g887fd42ac5 documentation</title>
   
 
   
@@ -24,7 +24,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:'./',
-        VERSION:'5.7.0-873-gff6b66ab5c',
+        VERSION:'5.7.0-874-g887fd42ac5',
         COLLAPSE_INDEX:false,
         FILE_SUFFIX:'.html',
         HAS_SOURCE:  true
@@ -49,7 +49,7 @@
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="ParaView/Python 5.7.0-873-gff6b66ab5c documentation" href="index.html"/>
+    <link rel="top" title="ParaView/Python 5.7.0-874-g887fd42ac5 documentation" href="index.html"/>
         <link rel="up" title="images Package" href="paraview.tpl.cinema_python.images.html"/>
         <link rel="next" title="tpl.cinema_python.images.querymaker Module" href="paraview.tpl.cinema_python.images.querymaker.html"/>
         <link rel="prev" title="tpl.cinema_python.images.layer_rasters Module" href="paraview.tpl.cinema_python.images.layer_rasters.html"/> 
@@ -69,7 +69,7 @@
           <li> <a href="index.html">
             <img src="_static/paraview-logo-small.png"
             alt="ParaView/Python"></img></a> </li>
-          <li class="version"> version 5.7.0-873-gff6b66ab5c</li>
+          <li class="version"> version 5.7.0-874-g887fd42ac5</li>
         </ul>
         <form id ="rtd-search-form" class="wy-form" action="search.html" method="get">
   <input type="text" name="q" placeholder="Search docs" />
@@ -652,8 +652,66 @@
 </ul>
 <hr/>
           
-  <div class="section" id="tpl-cinema-python-images-lookup-tables-module">
-<h1>tpl.cinema_python.images.lookup_tables Module<a class="headerlink" href="#tpl-cinema-python-images-lookup-tables-module" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="module-paraview.tpl.cinema_python.images.lookup_tables">
+<span id="tpl-cinema-python-images-lookup-tables-module"></span><h1>tpl.cinema_python.images.lookup_tables Module<a class="headerlink" href="#module-paraview.tpl.cinema_python.images.lookup_tables" title="Permalink to this headline">¶</a></h1>
+<p>Module for handling color lookup tables.</p>
+<dl class="class">
+<dt id="paraview.tpl.cinema_python.images.lookup_tables.LookupTable">
+<em class="property">class </em><code class="descclassname">paraview.tpl.cinema_python.images.lookup_tables.</code><code class="descname">LookupTable</code><a class="reference internal" href="_modules/paraview/tpl/cinema_python/images/lookup_tables.html#LookupTable"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.tpl.cinema_python.images.lookup_tables.LookupTable" title="Permalink to this definition">¶</a></dt>
+<dd><p>Color table container.
+- self.lut          : Actual color LUT.
+- self.x            : Vector containing the value bins.
+- self.adjustedBins : Vector containing the value bins
+Where adjustedBins is adjusted to hold a value &gt; 1.0 in the end.</p>
+<dl class="method">
+<dt id="paraview.tpl.cinema_python.images.lookup_tables.LookupTable.ingest">
+<code class="descname">ingest</code><span class="sig-paren">(</span><em>rgbPoints</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/tpl/cinema_python/images/lookup_tables.html#LookupTable.ingest"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.tpl.cinema_python.images.lookup_tables.LookupTable.ingest" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="paraview.tpl.cinema_python.images.lookup_tables.LookupTableManager">
+<em class="property">class </em><code class="descclassname">paraview.tpl.cinema_python.images.lookup_tables.</code><code class="descname">LookupTableManager</code><a class="reference internal" href="_modules/paraview/tpl/cinema_python/images/lookup_tables.html#LookupTableManager"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.tpl.cinema_python.images.lookup_tables.LookupTableManager" title="Permalink to this definition">¶</a></dt>
+<dd><p>Loads a set of color lookup tables from a .json file.</p>
+<dl class="method">
+<dt id="paraview.tpl.cinema_python.images.lookup_tables.LookupTableManager.getColorLutStructByName">
+<code class="descname">getColorLutStructByName</code><span class="sig-paren">(</span><em>name</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/tpl/cinema_python/images/lookup_tables.html#LookupTableManager.getColorLutStructByName"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.tpl.cinema_python.images.lookup_tables.LookupTableManager.getColorLutStructByName" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="paraview.tpl.cinema_python.images.lookup_tables.LookupTableManager.names">
+<code class="descname">names</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/tpl/cinema_python/images/lookup_tables.html#LookupTableManager.names"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.tpl.cinema_python.images.lookup_tables.LookupTableManager.names" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return an array of the names of all available lookup tables.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="paraview.tpl.cinema_python.images.lookup_tables.LookupTableManager.read">
+<code class="descname">read</code><span class="sig-paren">(</span><em>file_path</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/tpl/cinema_python/images/lookup_tables.html#LookupTableManager.read"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.tpl.cinema_python.images.lookup_tables.LookupTableManager.read" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="paraview.tpl.cinema_python.images.lookup_tables.add_grayscale">
+<code class="descclassname">paraview.tpl.cinema_python.images.lookup_tables.</code><code class="descname">add_grayscale</code><span class="sig-paren">(</span><em>luts</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/tpl/cinema_python/images/lookup_tables.html#add_grayscale"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.tpl.cinema_python.images.lookup_tables.add_grayscale" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="paraview.tpl.cinema_python.images.lookup_tables.add_ocean">
+<code class="descclassname">paraview.tpl.cinema_python.images.lookup_tables.</code><code class="descname">add_ocean</code><span class="sig-paren">(</span><em>luts</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/tpl/cinema_python/images/lookup_tables.html#add_ocean"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.tpl.cinema_python.images.lookup_tables.add_ocean" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="paraview.tpl.cinema_python.images.lookup_tables.add_rainbow">
+<code class="descclassname">paraview.tpl.cinema_python.images.lookup_tables.</code><code class="descname">add_rainbow</code><span class="sig-paren">(</span><em>luts</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/tpl/cinema_python/images/lookup_tables.html#add_rainbow"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.tpl.cinema_python.images.lookup_tables.add_rainbow" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="paraview.tpl.cinema_python.images.lookup_tables.add_spectral">
+<code class="descclassname">paraview.tpl.cinema_python.images.lookup_tables.</code><code class="descname">add_spectral</code><span class="sig-paren">(</span><em>luts</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/tpl/cinema_python/images/lookup_tables.html#add_spectral"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.tpl.cinema_python.images.lookup_tables.add_spectral" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 </div>
 
 

@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>tpl.cinema_python.adaptors.explorers Module &mdash; ParaView/Python 5.7.0-873-gff6b66ab5c documentation</title>
+  <title>tpl.cinema_python.adaptors.explorers Module &mdash; ParaView/Python 5.7.0-874-g887fd42ac5 documentation</title>
   
 
   
@@ -24,7 +24,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:'./',
-        VERSION:'5.7.0-873-gff6b66ab5c',
+        VERSION:'5.7.0-874-g887fd42ac5',
         COLLAPSE_INDEX:false,
         FILE_SUFFIX:'.html',
         HAS_SOURCE:  true
@@ -49,7 +49,7 @@
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="ParaView/Python 5.7.0-873-gff6b66ab5c documentation" href="index.html"/>
+    <link rel="top" title="ParaView/Python 5.7.0-874-g887fd42ac5 documentation" href="index.html"/>
         <link rel="up" title="adaptors Package" href="paraview.tpl.cinema_python.adaptors.html"/>
         <link rel="next" title="paraview Package" href="paraview.tpl.cinema_python.adaptors.paraview.html"/>
         <link rel="prev" title="adaptors Package" href="paraview.tpl.cinema_python.adaptors.html"/> 
@@ -69,7 +69,7 @@
           <li> <a href="index.html">
             <img src="_static/paraview-logo-small.png"
             alt="ParaView/Python"></img></a> </li>
-          <li class="version"> version 5.7.0-873-gff6b66ab5c</li>
+          <li class="version"> version 5.7.0-874-g887fd42ac5</li>
         </ul>
         <form id ="rtd-search-form" class="wy-form" action="search.html" method="get">
   <input type="text" name="q" placeholder="Search docs" />
@@ -652,8 +652,114 @@
 </ul>
 <hr/>
           
-  <div class="section" id="tpl-cinema-python-adaptors-explorers-module">
-<h1>tpl.cinema_python.adaptors.explorers Module<a class="headerlink" href="#tpl-cinema-python-adaptors-explorers-module" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="module-paraview.tpl.cinema_python.adaptors.explorers">
+<span id="tpl-cinema-python-adaptors-explorers-module"></span><h1>tpl.cinema_python.adaptors.explorers Module<a class="headerlink" href="#module-paraview.tpl.cinema_python.adaptors.explorers" title="Permalink to this headline">¶</a></h1>
+<p>module for generating cinema databases from arbitrary codes.
+Essentially this provides a way to runs over all possible combinations of
+values in database and call out to arbitrary codes so that they have a chance
+to make corresponding changes before inserting the result into the database.</p>
+<dl class="class">
+<dt id="paraview.tpl.cinema_python.adaptors.explorers.Explorer">
+<em class="property">class </em><code class="descclassname">paraview.tpl.cinema_python.adaptors.explorers.</code><code class="descname">Explorer</code><span class="sig-paren">(</span><em>store</em>, <em>parameters</em>, <em>tracks</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/tpl/cinema_python/adaptors/explorers.html#Explorer"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.tpl.cinema_python.adaptors.explorers.Explorer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Middleman that connects an arbitrary producing codes to the CinemaStore.
+The purpose of this class is to run through the parameter sets, and tell a
+set of tracks (in order) to do something with the parameter values
+it cares about.</p>
+<dl class="method">
+<dt id="paraview.tpl.cinema_python.adaptors.explorers.Explorer.execute">
+<code class="descname">execute</code><span class="sig-paren">(</span><em>desc</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/tpl/cinema_python/adaptors/explorers.html#Explorer.execute"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.tpl.cinema_python.adaptors.explorers.Explorer.execute" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="paraview.tpl.cinema_python.adaptors.explorers.Explorer.explore">
+<code class="descname">explore</code><span class="sig-paren">(</span><em>fixedargs=None</em>, <em>progressObject=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/tpl/cinema_python/adaptors/explorers.html#Explorer.explore"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.tpl.cinema_python.adaptors.explorers.Explorer.explore" title="Permalink to this definition">¶</a></dt>
+<dd><p>Explore the problem space to populate the store being careful not to
+hit combinations where dependencies are not satisfied.
+Fixed arguments are the parameters that we want to hold constant in
+the exploration.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="paraview.tpl.cinema_python.adaptors.explorers.Explorer.finish">
+<code class="descname">finish</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/tpl/cinema_python/adaptors/explorers.html#Explorer.finish"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.tpl.cinema_python.adaptors.explorers.Explorer.finish" title="Permalink to this definition">¶</a></dt>
+<dd><p>Give tracks a chance to clean up after a run</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="paraview.tpl.cinema_python.adaptors.explorers.Explorer.insert">
+<code class="descname">insert</code><span class="sig-paren">(</span><em>doc</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/tpl/cinema_python/adaptors/explorers.html#Explorer.insert"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.tpl.cinema_python.adaptors.explorers.Explorer.insert" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="paraview.tpl.cinema_python.adaptors.explorers.Explorer.list_parameters">
+<code class="descname">list_parameters</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/tpl/cinema_python/adaptors/explorers.html#Explorer.list_parameters"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.tpl.cinema_python.adaptors.explorers.Explorer.list_parameters" title="Permalink to this definition">¶</a></dt>
+<dd><p>parameters is an ordered list of parameters that the Explorer varies
+over</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="paraview.tpl.cinema_python.adaptors.explorers.Explorer.prepare">
+<code class="descname">prepare</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/tpl/cinema_python/adaptors/explorers.html#Explorer.prepare"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.tpl.cinema_python.adaptors.explorers.Explorer.prepare" title="Permalink to this definition">¶</a></dt>
+<dd><p>Give tracks a chance to get ready for a run</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="paraview.tpl.cinema_python.adaptors.explorers.Explorer.store">
+<code class="descname">store</code><a class="headerlink" href="#paraview.tpl.cinema_python.adaptors.explorers.Explorer.store" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="paraview.tpl.cinema_python.adaptors.explorers.Layer">
+<em class="property">class </em><code class="descclassname">paraview.tpl.cinema_python.adaptors.explorers.</code><code class="descname">Layer</code><span class="sig-paren">(</span><em>layer</em>, <em>objectlist</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/tpl/cinema_python/adaptors/explorers.html#Layer"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.tpl.cinema_python.adaptors.explorers.Layer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#paraview.tpl.cinema_python.adaptors.explorers.Track" title="paraview.tpl.cinema_python.adaptors.explorers.Track"><code class="xref py py-class docutils literal notranslate"><span class="pre">paraview.tpl.cinema_python.adaptors.explorers.Track</span></code></a></p>
+<p>A track that connects a layer to the set of objects in the scene that it
+controls.</p>
+<dl class="method">
+<dt id="paraview.tpl.cinema_python.adaptors.explorers.Layer.execute">
+<code class="descname">execute</code><span class="sig-paren">(</span><em>doc</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/tpl/cinema_python/adaptors/explorers.html#Layer.execute"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.tpl.cinema_python.adaptors.explorers.Layer.execute" title="Permalink to this definition">¶</a></dt>
+<dd><p>subclasses operate on parameters here</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="paraview.tpl.cinema_python.adaptors.explorers.LayerControl">
+<em class="property">class </em><code class="descclassname">paraview.tpl.cinema_python.adaptors.explorers.</code><code class="descname">LayerControl</code><span class="sig-paren">(</span><em>name</em>, <em>showFunc</em>, <em>hideFunc</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/tpl/cinema_python/adaptors/explorers.html#LayerControl"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.tpl.cinema_python.adaptors.explorers.LayerControl" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Prototype for something that Layer track can control</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="paraview.tpl.cinema_python.adaptors.explorers.Track">
+<em class="property">class </em><code class="descclassname">paraview.tpl.cinema_python.adaptors.explorers.</code><code class="descname">Track</code><a class="reference internal" href="_modules/paraview/tpl/cinema_python/adaptors/explorers.html#Track"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.tpl.cinema_python.adaptors.explorers.Track" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>abstract interface for things that can produce data</p>
+<p>to use this:
+caller should set up some visualization
+then tie a particular set of parameters to an action with a track</p>
+<dl class="method">
+<dt id="paraview.tpl.cinema_python.adaptors.explorers.Track.execute">
+<code class="descname">execute</code><span class="sig-paren">(</span><em>document</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/tpl/cinema_python/adaptors/explorers.html#Track.execute"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.tpl.cinema_python.adaptors.explorers.Track.execute" title="Permalink to this definition">¶</a></dt>
+<dd><p>subclasses operate on parameters here</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="paraview.tpl.cinema_python.adaptors.explorers.Track.finish">
+<code class="descname">finish</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/tpl/cinema_python/adaptors/explorers.html#Track.finish"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.tpl.cinema_python.adaptors.explorers.Track.finish" title="Permalink to this definition">¶</a></dt>
+<dd><p>subclasses cleanup after running here</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="paraview.tpl.cinema_python.adaptors.explorers.Track.prepare">
+<code class="descname">prepare</code><span class="sig-paren">(</span><em>explorer</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/tpl/cinema_python/adaptors/explorers.html#Track.prepare"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.tpl.cinema_python.adaptors.explorers.Track.prepare" title="Permalink to this definition">¶</a></dt>
+<dd><p>subclasses get ready to run here</p>
+</dd></dl>
+
+</dd></dl>
+
 </div>
 
 

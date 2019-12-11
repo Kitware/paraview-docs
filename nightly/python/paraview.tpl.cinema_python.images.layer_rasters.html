@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>tpl.cinema_python.images.layer_rasters Module &mdash; ParaView/Python 5.7.0-873-gff6b66ab5c documentation</title>
+  <title>tpl.cinema_python.images.layer_rasters Module &mdash; ParaView/Python 5.7.0-874-g887fd42ac5 documentation</title>
   
 
   
@@ -24,7 +24,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:'./',
-        VERSION:'5.7.0-873-gff6b66ab5c',
+        VERSION:'5.7.0-874-g887fd42ac5',
         COLLAPSE_INDEX:false,
         FILE_SUFFIX:'.html',
         HAS_SOURCE:  true
@@ -49,7 +49,7 @@
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="ParaView/Python 5.7.0-873-gff6b66ab5c documentation" href="index.html"/>
+    <link rel="top" title="ParaView/Python 5.7.0-874-g887fd42ac5 documentation" href="index.html"/>
         <link rel="up" title="images Package" href="paraview.tpl.cinema_python.images.html"/>
         <link rel="next" title="tpl.cinema_python.images.lookup_tables Module" href="paraview.tpl.cinema_python.images.lookup_tables.html"/>
         <link rel="prev" title="tpl.cinema_python.images.compositor Module" href="paraview.tpl.cinema_python.images.compositor.html"/> 
@@ -69,7 +69,7 @@
           <li> <a href="index.html">
             <img src="_static/paraview-logo-small.png"
             alt="ParaView/Python"></img></a> </li>
-          <li class="version"> version 5.7.0-873-gff6b66ab5c</li>
+          <li class="version"> version 5.7.0-874-g887fd42ac5</li>
         </ul>
         <form id ="rtd-search-form" class="wy-form" action="search.html" method="get">
   <input type="text" name="q" placeholder="Search docs" />
@@ -652,8 +652,84 @@
 </ul>
 <hr/>
           
-  <div class="section" id="tpl-cinema-python-images-layer-rasters-module">
-<h1>tpl.cinema_python.images.layer_rasters Module<a class="headerlink" href="#tpl-cinema-python-images-layer-rasters-module" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="module-paraview.tpl.cinema_python.images.layer_rasters">
+<span id="tpl-cinema-python-images-layer-rasters-module"></span><h1>tpl.cinema_python.images.layer_rasters Module<a class="headerlink" href="#module-paraview.tpl.cinema_python.images.layer_rasters" title="Permalink to this headline">¶</a></h1>
+<p>Manages the set of one or more fields that go into a layer.</p>
+<dl class="class">
+<dt id="paraview.tpl.cinema_python.images.layer_rasters.LayerRasters">
+<em class="property">class </em><code class="descclassname">paraview.tpl.cinema_python.images.layer_rasters.</code><code class="descname">LayerRasters</code><a class="reference internal" href="_modules/paraview/tpl/cinema_python/images/layer_rasters.html#LayerRasters"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.tpl.cinema_python.images.layer_rasters.LayerRasters" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="method">
+<dt id="paraview.tpl.cinema_python.images.layer_rasters.LayerRasters.addQuery">
+<code class="descname">addQuery</code><span class="sig-paren">(</span><em>img_type</em>, <em>fieldname</em>, <em>fieldchoice</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/tpl/cinema_python/images/layer_rasters.html#LayerRasters.addQuery"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.tpl.cinema_python.images.layer_rasters.LayerRasters.addQuery" title="Permalink to this definition">¶</a></dt>
+<dd><p>add a query for a particular field of the layer</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="paraview.tpl.cinema_python.images.layer_rasters.LayerRasters.addToBaseQuery">
+<code class="descname">addToBaseQuery</code><span class="sig-paren">(</span><em>query</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/tpl/cinema_python/images/layer_rasters.html#LayerRasters.addToBaseQuery"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.tpl.cinema_python.images.layer_rasters.LayerRasters.addToBaseQuery" title="Permalink to this definition">¶</a></dt>
+<dd><p>add queries that together define the layer</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="paraview.tpl.cinema_python.images.layer_rasters.LayerRasters.customizationName">
+<code class="descname">customizationName</code><a class="headerlink" href="#paraview.tpl.cinema_python.images.layer_rasters.LayerRasters.customizationName" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="paraview.tpl.cinema_python.images.layer_rasters.LayerRasters.getColorArray">
+<code class="descname">getColorArray</code><span class="sig-paren">(</span><em>index=0</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/tpl/cinema_python/images/layer_rasters.html#LayerRasters.getColorArray"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.tpl.cinema_python.images.layer_rasters.LayerRasters.getColorArray" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="paraview.tpl.cinema_python.images.layer_rasters.LayerRasters.getDepth">
+<code class="descname">getDepth</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/tpl/cinema_python/images/layer_rasters.html#LayerRasters.getDepth"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.tpl.cinema_python.images.layer_rasters.LayerRasters.getDepth" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="paraview.tpl.cinema_python.images.layer_rasters.LayerRasters.getLuminance">
+<code class="descname">getLuminance</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/tpl/cinema_python/images/layer_rasters.html#LayerRasters.getLuminance"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.tpl.cinema_python.images.layer_rasters.LayerRasters.getLuminance" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="paraview.tpl.cinema_python.images.layer_rasters.LayerRasters.getValueArray">
+<code class="descname">getValueArray</code><span class="sig-paren">(</span><em>index=0</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/tpl/cinema_python/images/layer_rasters.html#LayerRasters.getValueArray"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.tpl.cinema_python.images.layer_rasters.LayerRasters.getValueArray" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="paraview.tpl.cinema_python.images.layer_rasters.LayerRasters.hasColorArray">
+<code class="descname">hasColorArray</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/tpl/cinema_python/images/layer_rasters.html#LayerRasters.hasColorArray"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.tpl.cinema_python.images.layer_rasters.LayerRasters.hasColorArray" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="paraview.tpl.cinema_python.images.layer_rasters.LayerRasters.hasValueArray">
+<code class="descname">hasValueArray</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/tpl/cinema_python/images/layer_rasters.html#LayerRasters.hasValueArray"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.tpl.cinema_python.images.layer_rasters.LayerRasters.hasValueArray" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="paraview.tpl.cinema_python.images.layer_rasters.LayerRasters.loadImages">
+<code class="descname">loadImages</code><span class="sig-paren">(</span><em>store</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/tpl/cinema_python/images/layer_rasters.html#LayerRasters.loadImages"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.tpl.cinema_python.images.layer_rasters.LayerRasters.loadImages" title="Permalink to this definition">¶</a></dt>
+<dd><p>Take the queries we’ve been given and get images for them.
+Later call get* to get the images out.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="paraview.tpl.cinema_python.images.layer_rasters.LayerRasters.setCustomizationName">
+<code class="descname">setCustomizationName</code><span class="sig-paren">(</span><em>name</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/tpl/cinema_python/images/layer_rasters.html#LayerRasters.setCustomizationName"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.tpl.cinema_python.images.layer_rasters.LayerRasters.setCustomizationName" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="paraview.tpl.cinema_python.images.layer_rasters.LayerRasters.setValueRange">
+<code class="descname">setValueRange</code><span class="sig-paren">(</span><em>vRange</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/tpl/cinema_python/images/layer_rasters.html#LayerRasters.setValueRange"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.tpl.cinema_python.images.layer_rasters.LayerRasters.setValueRange" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="paraview.tpl.cinema_python.images.layer_rasters.LayerRasters.valueRange">
+<code class="descname">valueRange</code><a class="headerlink" href="#paraview.tpl.cinema_python.images.layer_rasters.LayerRasters.valueRange" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
 </div>
 
 

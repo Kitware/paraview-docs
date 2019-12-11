@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>detail.pythonalgorithm Module &mdash; ParaView/Python 5.7.0-873-gff6b66ab5c documentation</title>
+  <title>detail.pythonalgorithm Module &mdash; ParaView/Python 5.7.0-874-g887fd42ac5 documentation</title>
   
 
   
@@ -24,7 +24,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:'./',
-        VERSION:'5.7.0-873-gff6b66ab5c',
+        VERSION:'5.7.0-874-g887fd42ac5',
         COLLAPSE_INDEX:false,
         FILE_SUFFIX:'.html',
         HAS_SOURCE:  true
@@ -49,7 +49,7 @@
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="ParaView/Python 5.7.0-873-gff6b66ab5c documentation" href="index.html"/>
+    <link rel="top" title="ParaView/Python 5.7.0-874-g887fd42ac5 documentation" href="index.html"/>
         <link rel="up" title="detail Package" href="paraview.detail.html"/>
         <link rel="next" title="tpl Package" href="paraview.tpl.html"/>
         <link rel="prev" title="detail.python_selector Module" href="paraview.detail.python_selector.html"/> 
@@ -69,7 +69,7 @@
           <li> <a href="index.html">
             <img src="_static/paraview-logo-small.png"
             alt="ParaView/Python"></img></a> </li>
-          <li class="version"> version 5.7.0-873-gff6b66ab5c</li>
+          <li class="version"> version 5.7.0-874-g887fd42ac5</li>
         </ul>
         <form id ="rtd-search-form" class="wy-form" action="search.html" method="get">
   <input type="text" name="q" placeholder="Search docs" />
@@ -652,8 +652,181 @@
 </ul>
 <hr/>
           
-  <div class="section" id="detail-pythonalgorithm-module">
-<h1>detail.pythonalgorithm Module<a class="headerlink" href="#detail-pythonalgorithm-module" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="module-paraview.detail.pythonalgorithm">
+<span id="detail-pythonalgorithm-module"></span><h1>detail.pythonalgorithm Module<a class="headerlink" href="#module-paraview.detail.pythonalgorithm" title="Permalink to this headline">¶</a></h1>
+<dl class="function">
+<dt id="paraview.detail.pythonalgorithm.get_plugin_name">
+<code class="descclassname">paraview.detail.pythonalgorithm.</code><code class="descname">get_plugin_name</code><span class="sig-paren">(</span><em>module_or_package</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/detail/pythonalgorithm.html#get_plugin_name"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.detail.pythonalgorithm.get_plugin_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>helper function called by vtkPVPythonAlgorithmPlugin to discover
+ParaView plugin name, if any.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="paraview.detail.pythonalgorithm.get_plugin_version">
+<code class="descclassname">paraview.detail.pythonalgorithm.</code><code class="descname">get_plugin_version</code><span class="sig-paren">(</span><em>module_or_package</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/detail/pythonalgorithm.html#get_plugin_version"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.detail.pythonalgorithm.get_plugin_version" title="Permalink to this definition">¶</a></dt>
+<dd><p>helper function called by vtkPVPythonAlgorithmPlugin to discover
+ParaView plugin version, if any.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="paraview.detail.pythonalgorithm.get_plugin_xmls">
+<code class="descclassname">paraview.detail.pythonalgorithm.</code><code class="descname">get_plugin_xmls</code><span class="sig-paren">(</span><em>module_or_package</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/detail/pythonalgorithm.html#get_plugin_xmls"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.detail.pythonalgorithm.get_plugin_xmls" title="Permalink to this definition">¶</a></dt>
+<dd><p>helper function called by vtkPVPythonAlgorithmPlugin to discover
+all “proxy” decorated classes in the module or package. We don’t recurse
+into the package, on simply needs to export all classes that form the
+ParaView plugin in the __init__.py for the package.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="paraview.detail.pythonalgorithm.get_qualified_classname">
+<code class="descclassname">paraview.detail.pythonalgorithm.</code><code class="descname">get_qualified_classname</code><span class="sig-paren">(</span><em>classobj</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/detail/pythonalgorithm.html#get_qualified_classname"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.detail.pythonalgorithm.get_qualified_classname" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="paraview.detail.pythonalgorithm.load_plugin">
+<code class="descclassname">paraview.detail.pythonalgorithm.</code><code class="descname">load_plugin</code><span class="sig-paren">(</span><em>filepath</em>, <em>default_modulename=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/detail/pythonalgorithm.html#load_plugin"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.detail.pythonalgorithm.load_plugin" title="Permalink to this definition">¶</a></dt>
+<dd><p>helper function called by vtkPVPythonAlgorithmPlugin to load
+a python file.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="paraview.detail.pythonalgorithm.reload_plugin_module">
+<code class="descclassname">paraview.detail.pythonalgorithm.</code><code class="descname">reload_plugin_module</code><span class="sig-paren">(</span><em>module</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/detail/pythonalgorithm.html#reload_plugin_module"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.detail.pythonalgorithm.reload_plugin_module" title="Permalink to this definition">¶</a></dt>
+<dd><p>helper function to reload a plugin module previously loaded via
+load_plugin</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="paraview.detail.pythonalgorithm.smdomain">
+<em class="property">class </em><code class="descclassname">paraview.detail.pythonalgorithm.</code><code class="descname">smdomain</code><a class="reference internal" href="_modules/paraview/detail/pythonalgorithm.html#smdomain"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.detail.pythonalgorithm.smdomain" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Provides decorators that add domains to properties.</p>
+<dl class="staticmethod">
+<dt id="paraview.detail.pythonalgorithm.smdomain.datatype">
+<em class="property">static </em><code class="descname">datatype</code><span class="sig-paren">(</span><em>dataTypes</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/detail/pythonalgorithm.html#smdomain.datatype"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.detail.pythonalgorithm.smdomain.datatype" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="staticmethod">
+<dt id="paraview.detail.pythonalgorithm.smdomain.doublerange">
+<em class="property">static </em><code class="descname">doublerange</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/detail/pythonalgorithm.html#smdomain.doublerange"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.detail.pythonalgorithm.smdomain.doublerange" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="staticmethod">
+<dt id="paraview.detail.pythonalgorithm.smdomain.filelist">
+<em class="property">static </em><code class="descname">filelist</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/detail/pythonalgorithm.html#smdomain.filelist"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.detail.pythonalgorithm.smdomain.filelist" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="staticmethod">
+<dt id="paraview.detail.pythonalgorithm.smdomain.intrange">
+<em class="property">static </em><code class="descname">intrange</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/detail/pythonalgorithm.html#smdomain.intrange"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.detail.pythonalgorithm.smdomain.intrange" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="staticmethod">
+<dt id="paraview.detail.pythonalgorithm.smdomain.xml">
+<em class="property">static </em><code class="descname">xml</code><span class="sig-paren">(</span><em>xmlstr</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/detail/pythonalgorithm.html#smdomain.xml"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.detail.pythonalgorithm.smdomain.xml" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="paraview.detail.pythonalgorithm.smhint">
+<em class="property">class </em><code class="descclassname">paraview.detail.pythonalgorithm.</code><code class="descname">smhint</code><a class="reference internal" href="_modules/paraview/detail/pythonalgorithm.html#smhint"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.detail.pythonalgorithm.smhint" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Provides decorators that add hints to proxies and properties.</p>
+<dl class="staticmethod">
+<dt id="paraview.detail.pythonalgorithm.smhint.filechooser">
+<em class="property">static </em><code class="descname">filechooser</code><span class="sig-paren">(</span><em>extensions</em>, <em>file_description</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/detail/pythonalgorithm.html#smhint.filechooser"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.detail.pythonalgorithm.smhint.filechooser" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="staticmethod">
+<dt id="paraview.detail.pythonalgorithm.smhint.xml">
+<em class="property">static </em><code class="descname">xml</code><span class="sig-paren">(</span><em>xmlstr</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/detail/pythonalgorithm.html#smhint.xml"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.detail.pythonalgorithm.smhint.xml" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="paraview.detail.pythonalgorithm.smproperty">
+<em class="property">class </em><code class="descclassname">paraview.detail.pythonalgorithm.</code><code class="descname">smproperty</code><a class="reference internal" href="_modules/paraview/detail/pythonalgorithm.html#smproperty"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.detail.pythonalgorithm.smproperty" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Provides decorators for class methods that are to be exposed as
+server-manager properties in ParaView. Only methods that are decorated
+using one of the available decorators will be exposed be accessible to ParaView
+UI or client-side Python scripting API.</p>
+<dl class="staticmethod">
+<dt id="paraview.detail.pythonalgorithm.smproperty.dataarrayselection">
+<em class="property">static </em><code class="descname">dataarrayselection</code><span class="sig-paren">(</span><em>name=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/detail/pythonalgorithm.html#smproperty.dataarrayselection"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.detail.pythonalgorithm.smproperty.dataarrayselection" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="staticmethod">
+<dt id="paraview.detail.pythonalgorithm.smproperty.doublevector">
+<em class="property">static </em><code class="descname">doublevector</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/detail/pythonalgorithm.html#smproperty.doublevector"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.detail.pythonalgorithm.smproperty.doublevector" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="staticmethod">
+<dt id="paraview.detail.pythonalgorithm.smproperty.idtypevector">
+<em class="property">static </em><code class="descname">idtypevector</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/detail/pythonalgorithm.html#smproperty.idtypevector"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.detail.pythonalgorithm.smproperty.idtypevector" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="staticmethod">
+<dt id="paraview.detail.pythonalgorithm.smproperty.input">
+<em class="property">static </em><code class="descname">input</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/detail/pythonalgorithm.html#smproperty.input"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.detail.pythonalgorithm.smproperty.input" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="staticmethod">
+<dt id="paraview.detail.pythonalgorithm.smproperty.intvector">
+<em class="property">static </em><code class="descname">intvector</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/detail/pythonalgorithm.html#smproperty.intvector"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.detail.pythonalgorithm.smproperty.intvector" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="staticmethod">
+<dt id="paraview.detail.pythonalgorithm.smproperty.proxy">
+<em class="property">static </em><code class="descname">proxy</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/detail/pythonalgorithm.html#smproperty.proxy"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.detail.pythonalgorithm.smproperty.proxy" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="staticmethod">
+<dt id="paraview.detail.pythonalgorithm.smproperty.stringvector">
+<em class="property">static </em><code class="descname">stringvector</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/detail/pythonalgorithm.html#smproperty.stringvector"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.detail.pythonalgorithm.smproperty.stringvector" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="staticmethod">
+<dt id="paraview.detail.pythonalgorithm.smproperty.xml">
+<em class="property">static </em><code class="descname">xml</code><span class="sig-paren">(</span><em>xmlstr</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/detail/pythonalgorithm.html#smproperty.xml"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.detail.pythonalgorithm.smproperty.xml" title="Permalink to this definition">¶</a></dt>
+<dd><p>Decorator that be used to directly add a ServerManager property XML for a method.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="paraview.detail.pythonalgorithm.smproxy">
+<em class="property">class </em><code class="descclassname">paraview.detail.pythonalgorithm.</code><code class="descname">smproxy</code><a class="reference internal" href="_modules/paraview/detail/pythonalgorithm.html#smproxy"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.detail.pythonalgorithm.smproxy" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Provides decorators for class objects that should be exposed to
+ParaView.</p>
+<dl class="staticmethod">
+<dt id="paraview.detail.pythonalgorithm.smproxy.filter">
+<em class="property">static </em><code class="descname">filter</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/detail/pythonalgorithm.html#smproxy.filter"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.detail.pythonalgorithm.smproxy.filter" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="staticmethod">
+<dt id="paraview.detail.pythonalgorithm.smproxy.reader">
+<em class="property">static </em><code class="descname">reader</code><span class="sig-paren">(</span><em>file_description</em>, <em>extensions=None</em>, <em>filename_patterns=None</em>, <em>is_directory=False</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/detail/pythonalgorithm.html#smproxy.reader"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.detail.pythonalgorithm.smproxy.reader" title="Permalink to this definition">¶</a></dt>
+<dd><p>Decorates a reader. Either <cite>filename_patterns</cite> or <cite>extensions</cite> must be
+provided.</p>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="paraview.detail.pythonalgorithm.smproxy.source">
+<em class="property">static </em><code class="descname">source</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/detail/pythonalgorithm.html#smproxy.source"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.detail.pythonalgorithm.smproxy.source" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="staticmethod">
+<dt id="paraview.detail.pythonalgorithm.smproxy.writer">
+<em class="property">static </em><code class="descname">writer</code><span class="sig-paren">(</span><em>file_description</em>, <em>extensions</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/detail/pythonalgorithm.html#smproxy.writer"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.detail.pythonalgorithm.smproxy.writer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Decorates a writer.</p>
+</dd></dl>
+
+</dd></dl>
+
 </div>
 
 
