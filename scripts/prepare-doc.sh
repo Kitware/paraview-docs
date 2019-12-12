@@ -1,4 +1,8 @@
 #!/usr/bin/env bash
+
+# error out if anything fails.
+set -e
+
 PV_SRC=$1
 PV_BUILD=$2
 WORK_DIR=$3
