@@ -1,4 +1,8 @@
 #!/usr/bin/env bash
+
+# error out if anything fails.
+set -e
+
 PV_SRC=$1
 PV_BUILD=$2
 WORK_DIR=$3
@@ -6,7 +10,7 @@ WORK_DIR=$3
 if [ -z "$PV_SRC" ] || [ -z "$PV_BUILD" ] || [ -z "$WORK_DIR" ]
 then
     echo "Usage:"
-    echo "  ./prepare-doc.sh /path/to/paraview/src /path/to/paraview/build /path/to/workdir"
+    echo "  ./prepare-doc.sh /path/to/paraview/src /path/to/paraview/build /path/to/workdir [version]"
     echo ""
     exit 0
 fi
@@ -14,9 +18,13 @@ fi
 # -----------------------------------------------------------------------------
 # Source version
 # -----------------------------------------------------------------------------
+if [ -z $4 ]
+then
+    VERSION=$4
+else
+    VERSION=`git -C $PV_SRC describe`
+fi
 
-cd $PV_SRC
-VERSION=`git describe`
 echo $VERSION
 
 # -----------------------------------------------------------------------------
