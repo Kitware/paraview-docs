@@ -10,9 +10,27 @@ Data Descriptors
 
 
    
+   AbsoluteTolerance
+       When merging nearby points and
+       using absolute tolerance (see ToleranceIsAbsolute property), this
+       property specifies the tolerance for performing merging in the spatial
+       units of the input data set.
+   
    Input
        This property specifies the input to the Clean to Grid
        filter.
+   
+   Tolerance
+       When merging nearby points and
+       not using absolute tolerance (see ToleranceIsAbsolute property), this
+       property specifies the tolerance for performing merging as a fraction
+       of the length of the diagonal of the bounding box of the input data
+       set.
+   
+   ToleranceIsAbsolute
+       This property determines whether to use absolute or
+       relative (a percentage of the bounding box) tolerance when performing
+       point merging.
    
    
 

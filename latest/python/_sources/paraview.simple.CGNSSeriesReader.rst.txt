@@ -53,9 +53,8 @@ Data Descriptors
    
    IgnoreFlowSolutionPointers
        When checked, the reader will simply ignore \*\*FlowSolutionPointers\*\* in the
-       CGNS file since they are either incomplete or invalid and instead will rely
-       on \*\*FlowSolution_t\*\* nodes being labelled as \*\*...AtStep[tsindex]\*\* to locate
-       solution nodes for a specific timestep. Note, \*\*\*tsindex\*\*\* starts with 1.
+       CGNS file since they are either incomplete or invalid. To locate unsteady
+       solution, the \*\*UseUnsteadyPattern\*\* option should then be activated.
    
    IgnoreReaderTime
        When reading a file-series, if each file in the series does not provide correct time
@@ -67,6 +66,12 @@ Data Descriptors
    
    TimestepValues
        Available time step values.
+   
+   UseUnsteadyPattern
+       When checked, the reader will use pattern matching to detect FlowSolution_t
+       that are relevant for the current timestep. It rely on \*\*FlowSolution_t\*\*
+       nodes being labelled as \*\*...AtStep[tsindex]\*\* to locate
+       solution nodes for a specific timestep. Note, \*\*\*tsindex\*\*\* starts with 1.
    
    
 

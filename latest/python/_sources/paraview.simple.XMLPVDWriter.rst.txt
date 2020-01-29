@@ -10,6 +10,12 @@ Data Descriptors
 
 
    
+   CellDataArrays
+       Select the cell data arrays to pass through
+   
+   ChooseArraysToWrite
+       Explicitly choose which arrays to write.
+   
    CompressionLevel
        A compression performance parameter from 1 (faster/larger
        compressed filesize) to 9 (slower/smaller compressed filesize).
@@ -24,10 +30,16 @@ Data Descriptors
        The mode uses for writing the file's data i.e. ascii,
        binary, appended binary.
    
+   EdgeDataArrays
+       Select the edge data arrays to pass through
+   
    EncodeAppendedData
        When EncodeAppendedData is turned ON, the writer uses
        base64 encoding when writing binary data (only if appended mode is
        selected).
+   
+   FieldDataArrays
+       Select the field data arrays to pass through
    
    FileName
        The name of the file to be written.
@@ -44,6 +56,15 @@ Data Descriptors
    Input
        The input filter/source whose output dataset is to
        written to the files.
+   
+   PointDataArrays
+       Select the point data arrays to pass through
+   
+   RowDataArrays
+       Select the row data arrays to pass through
+   
+   VertexDataArrays
+       Select the vertex data arrays to pass through
    
    WriteTimeSteps
        When WriteTimeSteps is turned ON, the writer is
