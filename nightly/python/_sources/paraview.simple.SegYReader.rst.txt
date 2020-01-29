@@ -14,6 +14,18 @@ Data Descriptors
        This property specifies the file name for the
        SEG-Y reader.
    
+   Force2D
+       Specify if we create a Structured Grid even when the data is
+       SEG-Y 3D. Note this consumes more memory but it shows the
+       precise location for each point and the correct shape of the
+       data. The default value is true. If we set this option to
+       false we create an Image Data for a SEG-Y 3D dataset.
+       Specify if we should we force the data to be interpreted as a 2D dataset.
+       It may be a 2D sheet through 3D space. When this is turned on we ignore the cross
+       line and line values and instead build a 2D data by processing and
+       connecting the traces in order from first to last. The output will be a
+       Structured Grid.
+   
    StructuredGrid
        Specify if we create a Structured Grid even when the data is
        SEG-Y 3D. Note this consumes more memory but it shows the

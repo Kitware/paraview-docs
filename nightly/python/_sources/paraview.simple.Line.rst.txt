@@ -18,9 +18,18 @@ Data Descriptors
        This property controls the coordinates of the second
        endpoint of the line.
    
+   RefinementRatios
+       Specify refinements ration in the range [0.0, 1.0] where to add points
+       along the line segment. 0.0 and 1.0 must be added to add the start and end points,
+       if needed.
+   
    Resolution
        This property specifies the number of pieces into which
        to divide the line.
+   
+   UseRegularRefinement
+       If set, the line segment will be generated with regular subdivisions (specified
+       by \*\*Resolution\*\*), else the subdivisions must be explicitly specified.
    
    
 
