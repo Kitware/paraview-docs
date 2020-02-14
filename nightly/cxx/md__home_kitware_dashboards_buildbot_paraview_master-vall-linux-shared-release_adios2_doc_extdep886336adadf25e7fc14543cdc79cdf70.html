@@ -64,7 +64,7 @@ $(function() {
 <h5>Other distribution</h5>
 <p>If you are using another distribution, please try to adapt the package list. Feel free to then provide it so we can integrate it in this guide by creating an <a href="https://gitlab.kitware.com/paraview/paraview/issues">issue</a>.</p>
 <h4>Build</h4>
-<p>To build ParaView developement version (usually refered as "master"), please run the following commands in a terminal : </p><div class="fragment"><div class="line">git clone --recursive https://gitlab.kitware.com/paraview/paraview.git</div><div class="line">mkdir paraview_build</div><div class="line">cd paraview_build</div><div class="line">cmake -GNinja -DPARAVIEW_ENABLE_PYTHON=ON -DPARAVIEW_USE_MPI=ON -DVTK_SMP_IMPLEMENTATION=TBB -DCMAKE_BUILD_TYPE=Release ../paraview</div><div class="line">ninja</div></div><!-- fragment --><p>To build a specific ParaView version, eg: v5.6.0 , please run the following commands in a terminal while replacing "tag" by the version you want to build </p><div class="fragment"><div class="line">git clone https://gitlab.kitware.com/paraview/paraview.git</div><div class="line">mkdir paraview_build</div><div class="line">cd paraview</div><div class="line">git checkout tag</div><div class="line">git submodule update --init --recursive</div><div class="line">cd ../paraview_build</div><div class="line">cmake -GNinja -DPARAVIEW_ENABLE_PYTHON=ON -DPARAVIEW_USE_MPI=ON -DVTK_SMP_IMPLEMENTATION=TBB -DCMAKE_BUILD_TYPE=Release ../paraview</div><div class="line">ninja</div></div><!-- fragment --><h4>Run</h4>
+<p>To build ParaView developement version (usually refered as "master"), please run the following commands in a terminal : </p><div class="fragment"><div class="line">git clone --recursive https://gitlab.kitware.com/paraview/paraview.git</div><div class="line">mkdir paraview_build</div><div class="line">cd paraview_build</div><div class="line">cmake -GNinja -DPARAVIEW_ENABLE_PYTHON=ON -DPARAVIEW_USE_MPI=ON -DVTK_SMP_IMPLEMENTATION_TYPE=TBB -DCMAKE_BUILD_TYPE=Release ../paraview</div><div class="line">ninja</div></div><!-- fragment --><p>To build a specific ParaView version, eg: v5.6.0 , please run the following commands in a terminal while replacing "tag" by the version you want to build </p><div class="fragment"><div class="line">git clone https://gitlab.kitware.com/paraview/paraview.git</div><div class="line">mkdir paraview_build</div><div class="line">cd paraview</div><div class="line">git checkout tag</div><div class="line">git submodule update --init --recursive</div><div class="line">cd ../paraview_build</div><div class="line">cmake -GNinja -DPARAVIEW_ENABLE_PYTHON=ON -DPARAVIEW_USE_MPI=ON -DVTK_SMP_IMPLEMENTATION_TYPE=TBB -DCMAKE_BUILD_TYPE=Release ../paraview</div><div class="line">ninja</div></div><!-- fragment --><h4>Run</h4>
 <p>Double click on the paraview executable in the bin directory or run in the previous terminal</p>
 <div class="fragment"><div class="line">./bin/paraview</div></div><!-- fragment --><h3>Windows</h3>
 <h4>Dependencies</h4>
@@ -72,9 +72,8 @@ $(function() {
 <li>Download and install <a href="https://gitforwindows.org/">git bash for windows</a></li>
 <li>Download and install <a href="https://cmake.org/download">cmake</a></li>
 <li>Download and install <a href="https://visualstudio.microsoft.com/vs/older-downloads">Visual Studio 2015 Community Edition</a></li>
-<li>Download and install <a href="https://github.com/ninja-build/ninja/releases">ninja-build</a></li>
-<li>Download and install <a href="https://docs.microsoft.com/en-us/message-passing-interface/microsoft-mpi">Microsoft MPI</a></li>
-<li>Download and install <a href="https://github.com/intel/tbb/releases">Intel TBB for windows</a></li>
+<li>Download <a href="https://github.com/ninja-build/ninja/releases">ninja-build</a> and drop ninja.exe in C:/Windows/</li>
+<li>Download and install both msmpisetup.exe and msmpisdk.msi from <a href="https://docs.microsoft.com/en-us/message-passing-interface/microsoft-mpi">Microsoft MPI</a></li>
 <li>Download and install <a href="https://www.python.org/downloads/windows/">Python for windows</a></li>
 </ul>
 <h4>Recover the source</h4>
@@ -87,7 +86,7 @@ $(function() {
 </ul>
 <div class="fragment"><div class="line">cd C:</div><div class="line">mkdir pv</div><div class="line">cd pv</div><div class="line">git clone https://gitlab.kitware.com/paraview/paraview.git</div><div class="line">mv paraview pv</div><div class="line">mkdir pvb</div><div class="line">cd pv</div><div class="line">git checkout tag</div><div class="line">git submodule update --init --recursive</div></div><!-- fragment --><h4>Build</h4>
 <ul>
-<li>Open VS2015 x64 Native Tools Command Prompt and run the following commands <div class="fragment"><div class="line">cd C:\pv\pvb</div><div class="line">cmake -GNinja -DPARAVIEW_ENABLE_PYTHON=ON -DPARAVIEW_USE_MPI=ON -DVTK_SMP_IMPLEMENTATION=TBB -DCMAKE_BUILD_TYPE=Release ..\pv</div><div class="line">ninja</div></div><!-- fragment --></li>
+<li>Open VS2015 x64 Native Tools Command Prompt and run the following commands <div class="fragment"><div class="line">cd C:\pv\pvb</div><div class="line">cmake -GNinja -DPARAVIEW_ENABLE_PYTHON=ON -DPARAVIEW_USE_MPI=ON -DVTK_SMP_IMPLEMENTATION_TYPE=OpenMP -DCMAKE_BUILD_TYPE=Release ..\pv</div><div class="line">ninja</div></div><!-- fragment --></li>
 </ul>
 <h4>Run</h4>
 <ul>
@@ -279,7 +278,7 @@ Command Prompt" available with Visual Studio in the start menu.</p>
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.15 on Wed Feb 12 2020
+</a> 1.8.15 on Thu Feb 13 2020
 </small></address>
 <!-- KW:BEGIN -->
 <!-- this adds the version selection header -->
