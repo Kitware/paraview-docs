@@ -60,7 +60,9 @@ ls -d */ | cut -d "/"  -f 1 > versions
 # Commit to server
 # -----------------------------------------------------------------------------
 
-cd "${WORK_DIR}/paraview-docs/"
-git add "$VERSION"
-git commit -a -m "Update documentation for version $VERSION"
-git push origin gh-pages
+if [ "$PARAVIEW_DOC_UPLOAD" = "true" ]; then
+    cd "${WORK_DIR}/paraview-docs/"
+    git add "$VERSION"
+    git commit -a -m "Update documentation for version $VERSION"
+    git push origin gh-pages
+fi
