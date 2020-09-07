@@ -63,6 +63,7 @@ ls -d */ | cut -d "/"  -f 1 > versions
 if [ "$PARAVIEW_DOC_UPLOAD" = "true" ]; then
     cd "${WORK_DIR}/paraview-docs/"
     git add "$VERSION"
-    git commit -a -m "Update documentation for version $VERSION"
-    git push origin gh-pages
+    # we simply ammend the last commit and force-push
+    git commit -a --amend -m "Update documentation for version $VERSION"
+    git push origin gh-pages -f
 fi
