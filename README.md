@@ -46,6 +46,8 @@ on a Linux system.
   changes to the `gh-pages` branch on this repo.
 * When adding a new version, you should edit the `versions.json` file in the
   `gh-pages` branch to ensure it all the versions listed and labelled correctly.
+  When adding new commits to gh-pages branch, ensure that last commit is the nightly
+  doc update commit since the automatic builders ammend the last commit.
 
 ## How to update the generated script
 
