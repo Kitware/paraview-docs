@@ -7,12 +7,10 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>paraview.catalyst.detail &mdash; ParaView/Python 5.9.0-RC1-193-gf1bb9b526b documentation</title>
+  <title>paraview.catalyst.detail &mdash; ParaView/Python 5.9.0-RC1-211-gf85ab347b3 documentation</title>
   
 
   
-  
-    <link rel="shortcut icon" href="../../../_static/pvIcon.ico"/>
   
 
   
@@ -24,7 +22,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:'../../../',
-        VERSION:'5.9.0-RC1-193-gf1bb9b526b',
+        VERSION:'5.9.0-RC1-211-gf85ab347b3',
         COLLAPSE_INDEX:false,
         FILE_SUFFIX:'.html',
         HAS_SOURCE:  true
@@ -49,7 +47,7 @@
         <link rel="index" title="Index"
               href="../../../genindex.html"/>
         <link rel="search" title="Search" href="../../../search.html"/>
-    <link rel="top" title="ParaView/Python 5.9.0-RC1-193-gf1bb9b526b documentation" href="../../../index.html"/>
+    <link rel="top" title="ParaView/Python 5.9.0-RC1-211-gf85ab347b3 documentation" href="../../../index.html"/>
         <link rel="up" title="paraview.catalyst" href="../catalyst.html"/> 
 
   <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
@@ -67,7 +65,7 @@
           <li> <a href="../../../index.html">
             <img src="../../../_static/paraview-logo-small.png"
             alt="ParaView/Python"></img></a> </li>
-          <li class="version"> version 5.9.0-RC1-193-gf1bb9b526b</li>
+          <li class="version"> version 5.9.0-RC1-211-gf85ab347b3</li>
         </ul>
         <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
   <input type="text" name="q" placeholder="Search docs" />
@@ -585,11 +583,11 @@
 <span class="sd">Internal functions not intended for use by users. This may change without</span>
 <span class="sd">notice.</span>
 <span class="sd">&quot;&quot;&quot;</span>
-<span class="kn">from</span> <span class="nn">..</span> <span class="k">import</span> <span class="n">logger</span>
+<span class="kn">from</span> <span class="nn">..</span> <span class="kn">import</span> <span class="n">logger</span>
 
-<span class="kn">from</span> <span class="nn">..modules.vtkPVInSitu</span> <span class="k">import</span> <span class="n">vtkInSituInitializationHelper</span><span class="p">,</span> <span class="n">vtkInSituPipelinePython</span>
+<span class="kn">from</span> <span class="nn">..modules.vtkPVInSitu</span> <span class="kn">import</span> <span class="n">vtkInSituInitializationHelper</span><span class="p">,</span> <span class="n">vtkInSituPipelinePython</span>
 
-<span class="kn">from</span> <span class="nn">..modules.vtkPVPythonCatalyst</span> <span class="k">import</span> <span class="n">vtkCPPythonScriptV2Helper</span>
+<span class="kn">from</span> <span class="nn">..modules.vtkPVPythonCatalyst</span> <span class="kn">import</span> <span class="n">vtkCPPythonScriptV2Helper</span>
 
 <span class="k">def</span> <span class="nf">_get_active_helper</span><span class="p">():</span>
     <span class="k">return</span> <span class="n">vtkCPPythonScriptV2Helper</span><span class="o">.</span><span class="n">GetActiveInstance</span><span class="p">()</span>
@@ -658,12 +656,12 @@
 
 <div class="viewcode-block" id="CreateProducer"><a class="viewcode-back" href="../../../paraview.catalyst.detail.html#paraview.catalyst.detail.CreateProducer">[docs]</a><span class="k">def</span> <span class="nf">CreateProducer</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
     <span class="k">assert</span> <span class="n">IsInsituInput</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
-    <span class="kn">from</span> <span class="nn">.</span> <span class="k">import</span> <span class="n">log_level</span>
-    <span class="kn">from</span> <span class="nn">..</span> <span class="k">import</span> <span class="n">log</span>
+    <span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">log_level</span>
+    <span class="kn">from</span> <span class="nn">..</span> <span class="kn">import</span> <span class="n">log</span>
     <span class="n">log</span><span class="p">(</span><span class="n">log_level</span><span class="p">(),</span> <span class="s2">&quot;creating producer for simulation input named &#39;</span><span class="si">%s</span><span class="s2">&#39;&quot;</span><span class="p">)</span>
     <span class="k">if</span> <span class="n">IsCatalystInSituAPI</span><span class="p">():</span>
         <span class="c1"># Catalyst 2.0</span>
-        <span class="kn">from</span> <span class="nn">paraview</span> <span class="k">import</span> <span class="n">servermanager</span>
+        <span class="kn">from</span> <span class="nn">paraview</span> <span class="kn">import</span> <span class="n">servermanager</span>
         <span class="n">producer</span> <span class="o">=</span> <span class="n">servermanager</span><span class="o">.</span><span class="n">_getPyProxy</span><span class="p">(</span><span class="n">vtkInSituInitializationHelper</span><span class="o">.</span><span class="n">GetProducer</span><span class="p">(</span><span class="n">name</span><span class="p">))</span>
 
         <span class="c1"># since state file may have arbitrary properties being specified</span>
@@ -672,7 +670,7 @@
         <span class="k">return</span> <span class="n">producer</span>
 
     <span class="c1"># Legacy Catalyst</span>
-    <span class="kn">from</span> <span class="nn">paraview</span> <span class="k">import</span> <span class="n">servermanager</span>
+    <span class="kn">from</span> <span class="nn">paraview</span> <span class="kn">import</span> <span class="n">servermanager</span>
     <span class="n">helper</span> <span class="o">=</span> <span class="n">_get_active_helper</span><span class="p">()</span>
     <span class="n">producer</span> <span class="o">=</span> <span class="n">helper</span><span class="o">.</span><span class="n">GetTrivialProducer</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
     <span class="n">producer</span> <span class="o">=</span> <span class="n">servermanager</span><span class="o">.</span><span class="n">_getPyProxy</span><span class="p">(</span><span class="n">producer</span><span class="p">)</span>
@@ -688,8 +686,8 @@
 <span class="sd">    This is called in vtkCPPythonPipeline to initialize the Python</span>
 <span class="sd">    environment to be more suitable for Catalyst in situ execution.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="kn">from</span> <span class="nn">.</span> <span class="k">import</span> <span class="n">log_level</span>
-    <span class="kn">from</span> <span class="nn">..</span> <span class="k">import</span> <span class="n">log</span>
+    <span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">log_level</span>
+    <span class="kn">from</span> <span class="nn">..</span> <span class="kn">import</span> <span class="n">log</span>
 
     <span class="n">log</span><span class="p">(</span><span class="n">log_level</span><span class="p">(),</span> <span class="s2">&quot;initializing Python environment for in situ&quot;</span><span class="p">)</span>
 
@@ -701,28 +699,28 @@
 
     <span class="c1"># ensure we can import ParaView servermanager and necessary modules</span>
     <span class="n">log</span><span class="p">(</span><span class="n">log_level</span><span class="p">(),</span> <span class="s2">&quot;import paraview.servermanager&quot;</span><span class="p">)</span>
-    <span class="kn">from</span> <span class="nn">paraview</span> <span class="k">import</span> <span class="n">servermanager</span>
+    <span class="kn">from</span> <span class="nn">paraview</span> <span class="kn">import</span> <span class="n">servermanager</span>
 
     <span class="c1"># import Python wrapping for vtkPVCatalyst module</span>
     <span class="n">log</span><span class="p">(</span><span class="n">log_level</span><span class="p">(),</span> <span class="s2">&quot;import paraview.modules.vtkPVCatalyst&quot;</span><span class="p">)</span>
-    <span class="kn">from</span> <span class="nn">paraview.modules</span> <span class="k">import</span> <span class="n">vtkPVCatalyst</span></div>
+    <span class="kn">from</span> <span class="nn">paraview.modules</span> <span class="kn">import</span> <span class="n">vtkPVCatalyst</span></div>
 
 <div class="viewcode-block" id="RegisterPackageFromZip"><a class="viewcode-back" href="../../../paraview.catalyst.detail.html#paraview.catalyst.detail.RegisterPackageFromZip">[docs]</a><span class="k">def</span> <span class="nf">RegisterPackageFromZip</span><span class="p">(</span><span class="n">zipfilename</span><span class="p">,</span> <span class="n">packagename</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-    <span class="kn">from</span> <span class="nn">.</span> <span class="k">import</span> <span class="n">importers</span>
+    <span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">importers</span>
     <span class="n">zipfilename</span> <span class="o">=</span> <span class="n">_mpi_exchange_if_needed</span><span class="p">(</span><span class="n">zipfilename</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">importers</span><span class="o">.</span><span class="n">add_file</span><span class="p">(</span><span class="n">zipfilename</span><span class="p">,</span> <span class="n">packagename</span><span class="p">)</span></div>
 
 
 <div class="viewcode-block" id="RegisterPackageFromDir"><a class="viewcode-back" href="../../../paraview.catalyst.detail.html#paraview.catalyst.detail.RegisterPackageFromDir">[docs]</a><span class="k">def</span> <span class="nf">RegisterPackageFromDir</span><span class="p">(</span><span class="n">path</span><span class="p">):</span>
     <span class="kn">import</span> <span class="nn">os.path</span>
-    <span class="kn">from</span> <span class="nn">.</span> <span class="k">import</span> <span class="n">importers</span>
+    <span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">importers</span>
     <span class="n">packagename</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
     <span class="n">init_py</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="s2">&quot;__init__.py&quot;</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">importers</span><span class="o">.</span><span class="n">add_file</span><span class="p">(</span><span class="n">init_py</span><span class="p">,</span> <span class="n">packagename</span><span class="p">)</span></div>
 
 
 <div class="viewcode-block" id="RegisterModuleFromFile"><a class="viewcode-back" href="../../../paraview.catalyst.detail.html#paraview.catalyst.detail.RegisterModuleFromFile">[docs]</a><span class="k">def</span> <span class="nf">RegisterModuleFromFile</span><span class="p">(</span><span class="n">filename</span><span class="p">):</span>
-    <span class="kn">from</span> <span class="nn">.</span> <span class="k">import</span> <span class="n">importers</span>
+    <span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">importers</span>
     <span class="k">return</span> <span class="n">importers</span><span class="o">.</span><span class="n">add_file</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span></div>
 
 
@@ -730,13 +728,13 @@
 <span class="k">def</span> <span class="nf">_mpi_exchange_if_needed</span><span class="p">(</span><span class="n">filename</span><span class="p">):</span>
     <span class="k">global</span> <span class="n">_temp_directory</span>
 
-    <span class="kn">from</span> <span class="nn">..modules.vtkRemotingCore</span> <span class="k">import</span> <span class="n">vtkProcessModule</span>
+    <span class="kn">from</span> <span class="nn">..modules.vtkRemotingCore</span> <span class="kn">import</span> <span class="n">vtkProcessModule</span>
     <span class="n">pm</span> <span class="o">=</span> <span class="n">vtkProcessModule</span><span class="o">.</span><span class="n">GetProcessModule</span><span class="p">()</span>
     <span class="k">if</span> <span class="n">pm</span><span class="o">.</span><span class="n">GetNumberOfLocalPartitions</span><span class="p">()</span> <span class="o">&lt;=</span> <span class="mi">1</span><span class="p">:</span>
         <span class="k">return</span> <span class="n">filename</span>
 
-    <span class="kn">from</span> <span class="nn">mpi4py</span> <span class="k">import</span> <span class="n">MPI</span>
-    <span class="kn">from</span> <span class="nn">vtkmodules.vtkParallelMPI4Py</span> <span class="k">import</span> <span class="n">vtkMPI4PyCommunicator</span>
+    <span class="kn">from</span> <span class="nn">mpi4py</span> <span class="kn">import</span> <span class="n">MPI</span>
+    <span class="kn">from</span> <span class="nn">vtkmodules.vtkParallelMPI4Py</span> <span class="kn">import</span> <span class="n">vtkMPI4PyCommunicator</span>
     <span class="n">comm</span> <span class="o">=</span> <span class="n">vtkMPI4PyCommunicator</span><span class="o">.</span><span class="n">ConvertToPython</span><span class="p">(</span><span class="n">pm</span><span class="o">.</span><span class="n">GetGlobalController</span><span class="p">()</span><span class="o">.</span><span class="n">GetCommunicator</span><span class="p">())</span>
     <span class="k">if</span> <span class="n">comm</span><span class="o">.</span><span class="n">Get_rank</span><span class="p">()</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
         <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="s1">&#39;rb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>

@@ -7,12 +7,10 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>util Package &mdash; ParaView/Python 5.9.0-RC1-193-gf1bb9b526b documentation</title>
+  <title>util Package &mdash; ParaView/Python 5.9.0-RC1-211-gf85ab347b3 documentation</title>
   
 
   
-  
-    <link rel="shortcut icon" href="_static/pvIcon.ico"/>
   
 
   
@@ -24,7 +22,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:'./',
-        VERSION:'5.9.0-RC1-193-gf1bb9b526b',
+        VERSION:'5.9.0-RC1-211-gf85ab347b3',
         COLLAPSE_INDEX:false,
         FILE_SUFFIX:'.html',
         HAS_SOURCE:  true
@@ -49,7 +47,7 @@
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="ParaView/Python 5.9.0-RC1-193-gf1bb9b526b documentation" href="index.html"/>
+    <link rel="top" title="ParaView/Python 5.9.0-RC1-211-gf85ab347b3 documentation" href="index.html"/>
         <link rel="up" title="paraview Package" href="paraview.html"/>
         <link rel="next" title="util.vtkAlgorithm Module" href="paraview.util.vtkAlgorithm.html"/>
         <link rel="prev" title="viewers Package" href="paraview.tpl.cinemasci.viewers.html"/> 
@@ -69,7 +67,7 @@
           <li> <a href="index.html">
             <img src="_static/paraview-logo-small.png"
             alt="ParaView/Python"></img></a> </li>
-          <li class="version"> version 5.9.0-RC1-193-gf1bb9b526b</li>
+          <li class="version"> version 5.9.0-RC1-211-gf85ab347b3</li>
         </ul>
         <form id ="rtd-search-form" class="wy-form" action="search.html" method="get">
   <input type="text" name="q" placeholder="Search docs" />
@@ -586,9 +584,9 @@
 <h1>util Package<a class="headerlink" href="#util-package" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="id1">
 <h2><code class="xref py py-mod docutils literal notranslate"><span class="pre">util</span></code> Package<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
-<span class="target" id="module-paraview.util"></span><dl class="function">
+<span class="target" id="module-paraview.util"></span><dl class="py function">
 <dt id="paraview.util.IntegrateCell">
-<code class="sig-prename descclassname">paraview.util.</code><code class="sig-name descname">IntegrateCell</code><span class="sig-paren">(</span><em class="sig-param">dataset</em>, <em class="sig-param">cellId</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/util.html#IntegrateCell"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.util.IntegrateCell" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">paraview.util.</code><code class="sig-name descname">IntegrateCell</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">dataset</span></em>, <em class="sig-param"><span class="n">cellId</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/util.html#IntegrateCell"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.util.IntegrateCell" title="Permalink to this definition">¶</a></dt>
 <dd><p>This functions uses vtkCellIntegrator’s Integrate method that calculates
 the length/area/volume of a 1D/2D/3D cell. The calculation is exact for
 lines, polylines, triangles, triangle strips, pixels, voxels, convex
@@ -596,17 +594,17 @@ polygons, quads and tetrahedra. All other 3D cells are triangulated
 during volume calculation. In such cases, the result may not be exact.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="paraview.util.ReplaceDollarVariablesWithEnvironment">
-<code class="sig-prename descclassname">paraview.util.</code><code class="sig-name descname">ReplaceDollarVariablesWithEnvironment</code><span class="sig-paren">(</span><em class="sig-param">text</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/util.html#ReplaceDollarVariablesWithEnvironment"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.util.ReplaceDollarVariablesWithEnvironment" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">paraview.util.</code><code class="sig-name descname">ReplaceDollarVariablesWithEnvironment</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">text</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/util.html#ReplaceDollarVariablesWithEnvironment"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.util.ReplaceDollarVariablesWithEnvironment" title="Permalink to this definition">¶</a></dt>
 <dd><p>Replaces all substrings of the type <cite>${FOO}</cite> with <cite>FOO</cite> obtained
 from the <cite>os.environ</cite>. If the key is not defined in the environment, this
 raises a <cite>KeyError</cite>.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="paraview.util.SetOutputWholeExtent">
-<code class="sig-prename descclassname">paraview.util.</code><code class="sig-name descname">SetOutputWholeExtent</code><span class="sig-paren">(</span><em class="sig-param">algorithm</em>, <em class="sig-param">extent</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/util.html#SetOutputWholeExtent"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.util.SetOutputWholeExtent" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">paraview.util.</code><code class="sig-name descname">SetOutputWholeExtent</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">algorithm</span></em>, <em class="sig-param"><span class="n">extent</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/util.html#SetOutputWholeExtent"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.util.SetOutputWholeExtent" title="Permalink to this definition">¶</a></dt>
 <dd><p>Convenience method to help set the WHOLE_EXTENT() in RequestInformation.
 Commonly used by programmable filters. The arguments are the algorithm
 and a tuple/list with 6 elements (xmin, xmax, ymin, ymax, zmin, zmax).</p>

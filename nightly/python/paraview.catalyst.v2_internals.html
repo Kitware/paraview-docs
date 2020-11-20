@@ -7,12 +7,10 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>catalyst.v2_internals Module &mdash; ParaView/Python 5.9.0-RC1-193-gf1bb9b526b documentation</title>
+  <title>catalyst.v2_internals Module &mdash; ParaView/Python 5.9.0-RC1-211-gf85ab347b3 documentation</title>
   
 
   
-  
-    <link rel="shortcut icon" href="_static/pvIcon.ico"/>
   
 
   
@@ -24,7 +22,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:'./',
-        VERSION:'5.9.0-RC1-193-gf1bb9b526b',
+        VERSION:'5.9.0-RC1-211-gf85ab347b3',
         COLLAPSE_INDEX:false,
         FILE_SUFFIX:'.html',
         HAS_SOURCE:  true
@@ -49,7 +47,7 @@
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="ParaView/Python 5.9.0-RC1-193-gf1bb9b526b documentation" href="index.html"/>
+    <link rel="top" title="ParaView/Python 5.9.0-RC1-211-gf85ab347b3 documentation" href="index.html"/>
         <link rel="up" title="catalyst Package" href="paraview.catalyst.html"/>
         <link rel="next" title="demos Package" href="paraview.demos.html"/>
         <link rel="prev" title="catalyst.importers Module" href="paraview.catalyst.importers.html"/> 
@@ -69,7 +67,7 @@
           <li> <a href="index.html">
             <img src="_static/paraview-logo-small.png"
             alt="ParaView/Python"></img></a> </li>
-          <li class="version"> version 5.9.0-RC1-193-gf1bb9b526b</li>
+          <li class="version"> version 5.9.0-RC1-211-gf85ab347b3</li>
         </ul>
         <form id ="rtd-search-form" class="wy-form" action="search.html" method="get">
   <input type="text" name="q" placeholder="Search docs" />
@@ -586,30 +584,30 @@
 <span id="catalyst-v2-internals-module"></span><h1>catalyst.v2_internals Module<a class="headerlink" href="#module-paraview.catalyst.v2_internals" title="Permalink to this headline">¶</a></h1>
 <p>INTERNAL MODULE, NOT FOR PUBLIC CONSUMPTION.</p>
 <p>Used by vtkCPPythonScriptV2Pipeline and may change without notice.</p>
-<dl class="class">
+<dl class="py class">
 <dt id="paraview.catalyst.v2_internals.CatalystV1Information">
-<em class="property">class </em><code class="sig-prename descclassname">paraview.catalyst.v2_internals.</code><code class="sig-name descname">CatalystV1Information</code><span class="sig-paren">(</span><em class="sig-param">dataDescription</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/catalyst/v2_internals.html#CatalystV1Information"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.catalyst.v2_internals.CatalystV1Information" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">paraview.catalyst.v2_internals.</code><code class="sig-name descname">CatalystV1Information</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">dataDescription</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/catalyst/v2_internals.html#CatalystV1Information"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.catalyst.v2_internals.CatalystV1Information" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Provides information to the current <cite>catalyst_execute</cite> call.</p>
-<dl class="method">
+<dl class="py method">
 <dt id="paraview.catalyst.v2_internals.CatalystV1Information.cycle">
 <em class="property">property </em><code class="sig-name descname">cycle</code><a class="headerlink" href="#paraview.catalyst.v2_internals.CatalystV1Information.cycle" title="Permalink to this definition">¶</a></dt>
 <dd><p>returns the current simulation cycle or timestep index</p>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="paraview.catalyst.v2_internals.CatalystV1Information.dataDescription">
 <em class="property">property </em><code class="sig-name descname">dataDescription</code><a class="headerlink" href="#paraview.catalyst.v2_internals.CatalystV1Information.dataDescription" title="Permalink to this definition">¶</a></dt>
 <dd><p>avoid using this unless absolutely sure what you’re doing</p>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="paraview.catalyst.v2_internals.CatalystV1Information.time">
 <em class="property">property </em><code class="sig-name descname">time</code><a class="headerlink" href="#paraview.catalyst.v2_internals.CatalystV1Information.time" title="Permalink to this definition">¶</a></dt>
 <dd><p>returns the current simulation time</p>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="paraview.catalyst.v2_internals.CatalystV1Information.timestep">
 <em class="property">property </em><code class="sig-name descname">timestep</code><a class="headerlink" href="#paraview.catalyst.v2_internals.CatalystV1Information.timestep" title="Permalink to this definition">¶</a></dt>
 <dd><p>returns the current simulation cycle or timestep index</p>
@@ -617,23 +615,23 @@
 
 </dd></dl>
 
-<dl class="class">
+<dl class="py class">
 <dt id="paraview.catalyst.v2_internals.CatalystV2Information">
 <em class="property">class </em><code class="sig-prename descclassname">paraview.catalyst.v2_internals.</code><code class="sig-name descname">CatalystV2Information</code><a class="reference internal" href="_modules/paraview/catalyst/v2_internals.html#CatalystV2Information"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.catalyst.v2_internals.CatalystV2Information" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
-<dl class="method">
+<dl class="py method">
 <dt id="paraview.catalyst.v2_internals.CatalystV2Information.cycle">
 <em class="property">property </em><code class="sig-name descname">cycle</code><a class="headerlink" href="#paraview.catalyst.v2_internals.CatalystV2Information.cycle" title="Permalink to this definition">¶</a></dt>
 <dd><p>returns the current simulation cycle or timestep index</p>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="paraview.catalyst.v2_internals.CatalystV2Information.time">
 <em class="property">property </em><code class="sig-name descname">time</code><a class="headerlink" href="#paraview.catalyst.v2_internals.CatalystV2Information.time" title="Permalink to this definition">¶</a></dt>
 <dd><p>returns the current simulation time</p>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="paraview.catalyst.v2_internals.CatalystV2Information.timestep">
 <em class="property">property </em><code class="sig-name descname">timestep</code><a class="headerlink" href="#paraview.catalyst.v2_internals.CatalystV2Information.timestep" title="Permalink to this definition">¶</a></dt>
 <dd><p>returns the current simulation cycle or timestep index</p>
@@ -641,39 +639,39 @@
 
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="paraview.catalyst.v2_internals.do_catalyst_execute">
-<code class="sig-prename descclassname">paraview.catalyst.v2_internals.</code><code class="sig-name descname">do_catalyst_execute</code><span class="sig-paren">(</span><em class="sig-param">module</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/catalyst/v2_internals.html#do_catalyst_execute"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.catalyst.v2_internals.do_catalyst_execute" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">paraview.catalyst.v2_internals.</code><code class="sig-name descname">do_catalyst_execute</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">module</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/catalyst/v2_internals.html#do_catalyst_execute"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.catalyst.v2_internals.do_catalyst_execute" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="paraview.catalyst.v2_internals.do_catalyst_finalize">
-<code class="sig-prename descclassname">paraview.catalyst.v2_internals.</code><code class="sig-name descname">do_catalyst_finalize</code><span class="sig-paren">(</span><em class="sig-param">module</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/catalyst/v2_internals.html#do_catalyst_finalize"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.catalyst.v2_internals.do_catalyst_finalize" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">paraview.catalyst.v2_internals.</code><code class="sig-name descname">do_catalyst_finalize</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">module</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/catalyst/v2_internals.html#do_catalyst_finalize"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.catalyst.v2_internals.do_catalyst_finalize" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="paraview.catalyst.v2_internals.do_catalyst_initialize">
-<code class="sig-prename descclassname">paraview.catalyst.v2_internals.</code><code class="sig-name descname">do_catalyst_initialize</code><span class="sig-paren">(</span><em class="sig-param">module</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/catalyst/v2_internals.html#do_catalyst_initialize"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.catalyst.v2_internals.do_catalyst_initialize" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">paraview.catalyst.v2_internals.</code><code class="sig-name descname">do_catalyst_initialize</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">module</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/catalyst/v2_internals.html#do_catalyst_initialize"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.catalyst.v2_internals.do_catalyst_initialize" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="paraview.catalyst.v2_internals.do_request_data_description">
-<code class="sig-prename descclassname">paraview.catalyst.v2_internals.</code><code class="sig-name descname">do_request_data_description</code><span class="sig-paren">(</span><em class="sig-param">module</em>, <em class="sig-param">dataDescription</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/catalyst/v2_internals.html#do_request_data_description"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.catalyst.v2_internals.do_request_data_description" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">paraview.catalyst.v2_internals.</code><code class="sig-name descname">do_request_data_description</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">module</span></em>, <em class="sig-param"><span class="n">dataDescription</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/catalyst/v2_internals.html#do_request_data_description"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.catalyst.v2_internals.do_request_data_description" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="paraview.catalyst.v2_internals.has_customized_execution">
-<code class="sig-prename descclassname">paraview.catalyst.v2_internals.</code><code class="sig-name descname">has_customized_execution</code><span class="sig-paren">(</span><em class="sig-param">module</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/catalyst/v2_internals.html#has_customized_execution"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.catalyst.v2_internals.has_customized_execution" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">paraview.catalyst.v2_internals.</code><code class="sig-name descname">has_customized_execution</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">module</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/catalyst/v2_internals.html#has_customized_execution"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.catalyst.v2_internals.has_customized_execution" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="paraview.catalyst.v2_internals.import_and_validate">
-<code class="sig-prename descclassname">paraview.catalyst.v2_internals.</code><code class="sig-name descname">import_and_validate</code><span class="sig-paren">(</span><em class="sig-param">modulename</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/catalyst/v2_internals.html#import_and_validate"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.catalyst.v2_internals.import_and_validate" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">paraview.catalyst.v2_internals.</code><code class="sig-name descname">import_and_validate</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">modulename</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/catalyst/v2_internals.html#import_and_validate"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.catalyst.v2_internals.import_and_validate" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="paraview.catalyst.v2_internals.register_module">
-<code class="sig-prename descclassname">paraview.catalyst.v2_internals.</code><code class="sig-name descname">register_module</code><span class="sig-paren">(</span><em class="sig-param">path</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/catalyst/v2_internals.html#register_module"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.catalyst.v2_internals.register_module" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">paraview.catalyst.v2_internals.</code><code class="sig-name descname">register_module</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">path</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/catalyst/v2_internals.html#register_module"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.catalyst.v2_internals.register_module" title="Permalink to this definition">¶</a></dt>
 <dd><p>register a file/directory as an importable module.
 Returns the name to use to import the module, on success, otherwise <cite>None</cite>.</p>
 </dd></dl>

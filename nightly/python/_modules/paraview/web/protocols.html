@@ -7,12 +7,10 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>paraview.web.protocols &mdash; ParaView/Python 5.9.0-RC1-193-gf1bb9b526b documentation</title>
+  <title>paraview.web.protocols &mdash; ParaView/Python 5.9.0-RC1-211-gf85ab347b3 documentation</title>
   
 
   
-  
-    <link rel="shortcut icon" href="../../../_static/pvIcon.ico"/>
   
 
   
@@ -24,7 +22,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:'../../../',
-        VERSION:'5.9.0-RC1-193-gf1bb9b526b',
+        VERSION:'5.9.0-RC1-211-gf85ab347b3',
         COLLAPSE_INDEX:false,
         FILE_SUFFIX:'.html',
         HAS_SOURCE:  true
@@ -49,7 +47,7 @@
         <link rel="index" title="Index"
               href="../../../genindex.html"/>
         <link rel="search" title="Search" href="../../../search.html"/>
-    <link rel="top" title="ParaView/Python 5.9.0-RC1-193-gf1bb9b526b documentation" href="../../../index.html"/>
+    <link rel="top" title="ParaView/Python 5.9.0-RC1-211-gf85ab347b3 documentation" href="../../../index.html"/>
         <link rel="up" title="Module code" href="../../index.html"/> 
 
   <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
@@ -67,7 +65,7 @@
           <li> <a href="../../../index.html">
             <img src="../../../_static/paraview-logo-small.png"
             alt="ParaView/Python"></img></a> </li>
-          <li class="version"> version 5.9.0-RC1-193-gf1bb9b526b</li>
+          <li class="version"> version 5.9.0-RC1-211-gf85ab347b3</li>
         </ul>
         <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
   <input type="text" name="q" placeholder="Search docs" />
@@ -586,32 +584,32 @@
 <span class="sd">very specific web application.</span>
 <span class="sd">&quot;&quot;&quot;</span>
 
-<span class="kn">from</span> <span class="nn">__future__</span> <span class="k">import</span> <span class="n">absolute_import</span><span class="p">,</span> <span class="n">division</span><span class="p">,</span> <span class="n">print_function</span>
+<span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">absolute_import</span><span class="p">,</span> <span class="n">division</span><span class="p">,</span> <span class="n">print_function</span>
 
 <span class="kn">import</span> <span class="nn">os</span><span class="o">,</span> <span class="nn">sys</span><span class="o">,</span> <span class="nn">types</span><span class="o">,</span> <span class="nn">inspect</span><span class="o">,</span> <span class="nn">traceback</span><span class="o">,</span> <span class="nn">logging</span><span class="o">,</span> <span class="nn">re</span><span class="o">,</span> <span class="nn">json</span><span class="o">,</span> <span class="nn">fnmatch</span><span class="o">,</span> <span class="nn">time</span>
 
 <span class="c1"># import Twisted reactor for later callback</span>
-<span class="kn">from</span> <span class="nn">twisted.internet</span> <span class="k">import</span> <span class="n">reactor</span>
+<span class="kn">from</span> <span class="nn">twisted.internet</span> <span class="kn">import</span> <span class="n">reactor</span>
 
 <span class="c1"># import RPC annotation</span>
-<span class="kn">from</span> <span class="nn">wslink</span> <span class="k">import</span> <span class="n">register</span> <span class="k">as</span> <span class="n">exportRpc</span>
+<span class="kn">from</span> <span class="nn">wslink</span> <span class="kn">import</span> <span class="n">register</span> <span class="k">as</span> <span class="n">exportRpc</span>
 
 <span class="c1"># import paraview modules.</span>
 <span class="kn">import</span> <span class="nn">paraview</span>
 
-<span class="kn">from</span> <span class="nn">paraview</span> <span class="k">import</span> <span class="n">simple</span><span class="p">,</span> <span class="n">servermanager</span>
-<span class="kn">from</span> <span class="nn">paraview.servermanager</span> <span class="k">import</span> <span class="n">ProxyProperty</span><span class="p">,</span> <span class="n">InputProperty</span>
-<span class="kn">from</span> <span class="nn">paraview.web</span> <span class="k">import</span> <span class="n">helper</span>
-<span class="kn">from</span> <span class="nn">vtkmodules.web</span> <span class="k">import</span> <span class="n">protocols</span> <span class="k">as</span> <span class="n">vtk_protocols</span>
-<span class="kn">from</span> <span class="nn">vtkmodules.web</span> <span class="k">import</span> <span class="n">iteritems</span>
-<span class="kn">from</span> <span class="nn">vtkmodules.web.render_window_serializer</span> <span class="k">import</span> <span class="n">SynchronizationContext</span><span class="p">,</span> <span class="n">initializeSerializers</span><span class="p">,</span> <span class="n">serializeInstance</span><span class="p">,</span> <span class="n">getReferenceId</span>
-<span class="kn">from</span> <span class="nn">paraview.web.decorators</span> <span class="k">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">paraview</span> <span class="kn">import</span> <span class="n">simple</span><span class="p">,</span> <span class="n">servermanager</span>
+<span class="kn">from</span> <span class="nn">paraview.servermanager</span> <span class="kn">import</span> <span class="n">ProxyProperty</span><span class="p">,</span> <span class="n">InputProperty</span>
+<span class="kn">from</span> <span class="nn">paraview.web</span> <span class="kn">import</span> <span class="n">helper</span>
+<span class="kn">from</span> <span class="nn">vtkmodules.web</span> <span class="kn">import</span> <span class="n">protocols</span> <span class="k">as</span> <span class="n">vtk_protocols</span>
+<span class="kn">from</span> <span class="nn">vtkmodules.web</span> <span class="kn">import</span> <span class="n">iteritems</span>
+<span class="kn">from</span> <span class="nn">vtkmodules.web.render_window_serializer</span> <span class="kn">import</span> <span class="n">SynchronizationContext</span><span class="p">,</span> <span class="n">initializeSerializers</span><span class="p">,</span> <span class="n">serializeInstance</span><span class="p">,</span> <span class="n">getReferenceId</span>
+<span class="kn">from</span> <span class="nn">paraview.web.decorators</span> <span class="kn">import</span> <span class="o">*</span>
 
-<span class="kn">from</span> <span class="nn">vtkmodules.vtkCommonDataModel</span> <span class="k">import</span> <span class="n">vtkImageData</span><span class="p">,</span> <span class="n">vtkDataObject</span>
-<span class="kn">from</span> <span class="nn">vtkmodules.vtkCommonCore</span>      <span class="k">import</span> <span class="n">vtkUnsignedCharArray</span><span class="p">,</span> <span class="n">vtkCollection</span>
-<span class="kn">from</span> <span class="nn">vtkmodules.vtkWebCore</span>         <span class="k">import</span> <span class="n">vtkDataEncoder</span><span class="p">,</span> <span class="n">vtkWebInteractionEvent</span>
+<span class="kn">from</span> <span class="nn">vtkmodules.vtkCommonDataModel</span> <span class="kn">import</span> <span class="n">vtkImageData</span><span class="p">,</span> <span class="n">vtkDataObject</span>
+<span class="kn">from</span> <span class="nn">vtkmodules.vtkCommonCore</span>      <span class="kn">import</span> <span class="n">vtkUnsignedCharArray</span><span class="p">,</span> <span class="n">vtkCollection</span>
+<span class="kn">from</span> <span class="nn">vtkmodules.vtkWebCore</span>         <span class="kn">import</span> <span class="n">vtkDataEncoder</span><span class="p">,</span> <span class="n">vtkWebInteractionEvent</span>
 
-<span class="kn">from</span> <span class="nn">paraview.servermanager</span> <span class="k">import</span> <span class="n">vtkSMPVRepresentationProxy</span><span class="p">,</span> \
+<span class="kn">from</span> <span class="nn">paraview.servermanager</span> <span class="kn">import</span> <span class="n">vtkSMPVRepresentationProxy</span><span class="p">,</span> \
         <span class="n">vtkSMTransferFunctionProxy</span><span class="p">,</span> <span class="n">vtkSMTransferFunctionManager</span><span class="p">,</span> \
         <span class="n">vtkSMProxyManager</span><span class="p">,</span> <span class="n">vtkProcessModule</span><span class="p">,</span> <span class="n">vtkPVRenderView</span>
 
@@ -653,7 +651,7 @@
 
 <div class="viewcode-block" id="ParaViewWebProtocol"><a class="viewcode-back" href="../../../paraview.web.protocols.html#paraview.web.protocols.ParaViewWebProtocol">[docs]</a><span class="k">class</span> <span class="nc">ParaViewWebProtocol</span><span class="p">(</span><span class="n">vtk_protocols</span><span class="o">.</span><span class="n">vtkWebProtocol</span><span class="p">):</span>
 
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="c1"># self.Application = None</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">coreServer</span> <span class="o">=</span> <span class="kc">None</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">multiRoot</span> <span class="o">=</span> <span class="kc">False</span>
@@ -775,7 +773,7 @@
 
 <div class="viewcode-block" id="ParaViewWebMouseHandler"><a class="viewcode-back" href="../../../paraview.web.protocols.html#paraview.web.protocols.ParaViewWebMouseHandler">[docs]</a><span class="k">class</span> <span class="nc">ParaViewWebMouseHandler</span><span class="p">(</span><span class="n">ParaViewWebProtocol</span><span class="p">):</span>
 
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
         <span class="nb">super</span><span class="p">(</span><span class="n">ParaViewWebMouseHandler</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">lastAction</span> <span class="o">=</span> <span class="s1">&#39;up&#39;</span>
 
@@ -842,7 +840,7 @@
 
 <div class="viewcode-block" id="ParaViewWebViewPort"><a class="viewcode-back" href="../../../paraview.web.protocols.html#paraview.web.protocols.ParaViewWebViewPort">[docs]</a><span class="k">class</span> <span class="nc">ParaViewWebViewPort</span><span class="p">(</span><span class="n">ParaViewWebProtocol</span><span class="p">):</span>
 
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">maxWidth</span><span class="o">=</span><span class="mi">2560</span><span class="p">,</span> <span class="n">maxHeight</span><span class="o">=</span><span class="mi">1440</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">maxWidth</span><span class="o">=</span><span class="mi">2560</span><span class="p">,</span> <span class="n">maxHeight</span><span class="o">=</span><span class="mi">1440</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
         <span class="nb">super</span><span class="p">(</span><span class="n">ParaViewWebViewPort</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">scale</span> <span class="o">=</span> <span class="n">scale</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">maxWidth</span> <span class="o">=</span> <span class="n">maxWidth</span>
@@ -1008,7 +1006,7 @@
 <span class="c1"># =============================================================================</span>
 
 <div class="viewcode-block" id="ParaViewWebPublishImageDelivery"><a class="viewcode-back" href="../../../paraview.web.protocols.html#paraview.web.protocols.ParaViewWebPublishImageDelivery">[docs]</a><span class="k">class</span> <span class="nc">ParaViewWebPublishImageDelivery</span><span class="p">(</span><span class="n">ParaViewWebProtocol</span><span class="p">):</span>
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">decode</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">decode</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
         <span class="n">ParaViewWebProtocol</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">trackingViews</span> <span class="o">=</span> <span class="p">{}</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">lastStaleTime</span> <span class="o">=</span> <span class="p">{}</span>
@@ -1368,7 +1366,7 @@
 <div class="viewcode-block" id="ParaViewWebProgressUpdate"><a class="viewcode-back" href="../../../paraview.web.protocols.html#paraview.web.protocols.ParaViewWebProgressUpdate">[docs]</a><span class="k">class</span> <span class="nc">ParaViewWebProgressUpdate</span><span class="p">(</span><span class="n">ParaViewWebProtocol</span><span class="p">):</span>
     <span class="n">progressObserverTag</span> <span class="o">=</span> <span class="kc">None</span>
 
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
         <span class="nb">super</span><span class="p">(</span><span class="n">ParaViewWebProgressUpdate</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">listenToProgress</span><span class="p">()</span>
 
@@ -1392,7 +1390,7 @@
 
 <div class="viewcode-block" id="ParaViewWebViewPortGeometryDelivery"><a class="viewcode-back" href="../../../paraview.web.protocols.html#paraview.web.protocols.ParaViewWebViewPortGeometryDelivery">[docs]</a><span class="k">class</span> <span class="nc">ParaViewWebViewPortGeometryDelivery</span><span class="p">(</span><span class="n">ParaViewWebProtocol</span><span class="p">):</span>
 
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
         <span class="nb">super</span><span class="p">(</span><span class="n">ParaViewWebViewPortGeometryDelivery</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
 
         <span class="bp">self</span><span class="o">.</span><span class="n">dataCache</span> <span class="o">=</span> <span class="p">{}</span>
@@ -1489,7 +1487,7 @@
 <span class="c1"># =============================================================================</span>
 
 <div class="viewcode-block" id="ParaViewWebLocalRendering"><a class="viewcode-back" href="../../../paraview.web.protocols.html#paraview.web.protocols.ParaViewWebLocalRendering">[docs]</a><span class="k">class</span> <span class="nc">ParaViewWebLocalRendering</span><span class="p">(</span><span class="n">ParaViewWebProtocol</span><span class="p">):</span>
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
         <span class="nb">super</span><span class="p">(</span><span class="n">ParaViewWebLocalRendering</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">context</span> <span class="o">=</span> <span class="n">SynchronizationContext</span><span class="p">()</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">trackingViews</span> <span class="o">=</span> <span class="p">{}</span>
@@ -1591,7 +1589,7 @@
 
 <div class="viewcode-block" id="ParaViewWebTimeHandler"><a class="viewcode-back" href="../../../paraview.web.protocols.html#paraview.web.protocols.ParaViewWebTimeHandler">[docs]</a><span class="k">class</span> <span class="nc">ParaViewWebTimeHandler</span><span class="p">(</span><span class="n">ParaViewWebProtocol</span><span class="p">):</span>
 
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
         <span class="nb">super</span><span class="p">(</span><span class="n">ParaViewWebTimeHandler</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
         <span class="c1"># setup animation scene</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">scene</span> <span class="o">=</span> <span class="n">simple</span><span class="o">.</span><span class="n">GetAnimationScene</span><span class="p">()</span>
@@ -1692,7 +1690,7 @@
 
 <div class="viewcode-block" id="ParaViewWebColorManager"><a class="viewcode-back" href="../../../paraview.web.protocols.html#paraview.web.protocols.ParaViewWebColorManager">[docs]</a><span class="k">class</span> <span class="nc">ParaViewWebColorManager</span><span class="p">(</span><span class="n">ParaViewWebProtocol</span><span class="p">):</span>
 
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pathToColorMaps</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">showBuiltin</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pathToColorMaps</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">showBuiltin</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
         <span class="nb">super</span><span class="p">(</span><span class="n">ParaViewWebColorManager</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
         <span class="k">if</span> <span class="n">pathToColorMaps</span><span class="p">:</span>
             <span class="n">simple</span><span class="o">.</span><span class="n">ImportPresets</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="n">pathToColorMaps</span><span class="p">)</span>
@@ -2191,7 +2189,7 @@
                        <span class="s1">&#39;unspecified&#39;</span><span class="p">,</span>     <span class="c1"># 14</span>
                        <span class="s1">&#39;signed_char&#39;</span> <span class="p">]</span>    <span class="c1"># 15</span>
 
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">allowedProxiesFile</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">baseDir</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">fileToLoad</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">allowUnconfiguredReaders</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">groupProxyEditorWidgets</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">respectPropertyGroups</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">allowedProxiesFile</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">baseDir</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">fileToLoad</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">allowUnconfiguredReaders</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">groupProxyEditorWidgets</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">respectPropertyGroups</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        basePath: specify the base directory (or directories) that we should start with, if this</span>
 <span class="sd">        parameter takes the form: &quot;name1=path1|name2=path2|...&quot;, then we will treat this as the</span>
@@ -2240,7 +2238,7 @@
         <span class="k">if</span> <span class="n">allowedProxiesFile</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">readAllowedProxies</span><span class="p">(</span><span class="n">allowedProxiesFile</span><span class="p">)</span>
         <span class="k">else</span><span class="p">:</span>
-            <span class="kn">from</span> <span class="nn">._default_proxies</span> <span class="k">import</span> <span class="n">getDefaultProxies</span>
+            <span class="kn">from</span> <span class="nn">._default_proxies</span> <span class="kn">import</span> <span class="n">getDefaultProxies</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">readAllowedProxies</span><span class="p">(</span><span class="n">getDefaultProxies</span><span class="p">())</span>
 
         <span class="k">if</span> <span class="n">fileToLoad</span><span class="p">:</span>
@@ -3388,7 +3386,7 @@
 
 <div class="viewcode-block" id="ParaViewWebKeyValuePairStore"><a class="viewcode-back" href="../../../paraview.web.protocols.html#paraview.web.protocols.ParaViewWebKeyValuePairStore">[docs]</a><span class="k">class</span> <span class="nc">ParaViewWebKeyValuePairStore</span><span class="p">(</span><span class="n">ParaViewWebProtocol</span><span class="p">):</span>
 
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
         <span class="nb">super</span><span class="p">(</span><span class="n">ParaViewWebKeyValuePairStore</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">keyValStore</span> <span class="o">=</span> <span class="p">{}</span>
 
@@ -3414,7 +3412,7 @@
 
 <div class="viewcode-block" id="ParaViewWebSaveData"><a class="viewcode-back" href="../../../paraview.web.protocols.html#paraview.web.protocols.ParaViewWebSaveData">[docs]</a><span class="k">class</span> <span class="nc">ParaViewWebSaveData</span><span class="p">(</span><span class="n">ParaViewWebProtocol</span><span class="p">):</span>
 
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">baseSavePath</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">baseSavePath</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
         <span class="nb">super</span><span class="p">(</span><span class="n">ParaViewWebSaveData</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
 
         <span class="n">savePath</span> <span class="o">=</span> <span class="n">baseSavePath</span>
@@ -3562,7 +3560,7 @@
 
     <span class="n">connected</span> <span class="o">=</span> <span class="kc">False</span>
 
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dsHost</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">dsPort</span> <span class="o">=</span> <span class="mi">11111</span><span class="p">,</span> <span class="n">rsHost</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">rsPort</span><span class="o">=</span><span class="mi">22221</span><span class="p">,</span> <span class="n">rcPort</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dsHost</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">dsPort</span> <span class="o">=</span> <span class="mi">11111</span><span class="p">,</span> <span class="n">rsHost</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">rsPort</span><span class="o">=</span><span class="mi">22221</span><span class="p">,</span> <span class="n">rcPort</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
         <span class="nb">super</span><span class="p">(</span><span class="n">ParaViewWebStartupRemoteConnection</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="n">ParaViewWebStartupRemoteConnection</span><span class="o">.</span><span class="n">connected</span> <span class="ow">and</span> <span class="n">dsHost</span><span class="p">:</span>
             <span class="n">ParaViewWebStartupRemoteConnection</span><span class="o">.</span><span class="n">connected</span> <span class="o">=</span> <span class="kc">True</span>
@@ -3582,7 +3580,7 @@
 
     <span class="n">loaded</span> <span class="o">=</span> <span class="kc">False</span>
 
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">plugins</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">pathSeparator</span><span class="o">=</span><span class="s1">&#39;:&#39;</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">plugins</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">pathSeparator</span><span class="o">=</span><span class="s1">&#39;:&#39;</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
         <span class="nb">super</span><span class="p">(</span><span class="n">ParaViewWebStartupPluginLoader</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="n">ParaViewWebStartupPluginLoader</span><span class="o">.</span><span class="n">loaded</span> <span class="ow">and</span> <span class="n">plugins</span><span class="p">:</span>
             <span class="n">ParaViewWebStartupPluginLoader</span><span class="o">.</span><span class="n">loaded</span> <span class="o">=</span> <span class="kc">True</span>
@@ -3597,7 +3595,7 @@
 
 <div class="viewcode-block" id="ParaViewWebStateLoader"><a class="viewcode-back" href="../../../paraview.web.protocols.html#paraview.web.protocols.ParaViewWebStateLoader">[docs]</a><span class="k">class</span> <span class="nc">ParaViewWebStateLoader</span><span class="p">(</span><span class="n">ParaViewWebProtocol</span><span class="p">):</span>
 
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">state_path</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">state_path</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
         <span class="nb">super</span><span class="p">(</span><span class="n">ParaViewWebStateLoader</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
         <span class="k">if</span> <span class="n">state_path</span> <span class="ow">and</span> <span class="n">state_path</span><span class="p">[</span><span class="o">-</span><span class="mi">5</span><span class="p">:]</span> <span class="o">==</span> <span class="s1">&#39;.pvsm&#39;</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">loadState</span><span class="p">(</span><span class="n">state_path</span><span class="p">)</span>
@@ -3625,7 +3623,7 @@
 
 <div class="viewcode-block" id="ParaViewWebFileListing"><a class="viewcode-back" href="../../../paraview.web.protocols.html#paraview.web.protocols.ParaViewWebFileListing">[docs]</a><span class="k">class</span> <span class="nc">ParaViewWebFileListing</span><span class="p">(</span><span class="n">ParaViewWebProtocol</span><span class="p">):</span>
 
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">basePath</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">excludeRegex</span><span class="o">=</span><span class="sa">r</span><span class="s2">&quot;^\.|~$|^\$&quot;</span><span class="p">,</span> <span class="n">groupRegex</span><span class="o">=</span><span class="sa">r</span><span class="s2">&quot;[0-9]+\.&quot;</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">basePath</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">excludeRegex</span><span class="o">=</span><span class="sa">r</span><span class="s2">&quot;^\.|~$|^\$&quot;</span><span class="p">,</span> <span class="n">groupRegex</span><span class="o">=</span><span class="sa">r</span><span class="s2">&quot;[0-9]+\.&quot;</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Configure the way the WebFile browser will expose the server content.</span>
 <span class="sd">         - basePath: specify the base directory (or directories) that we should start with, if this</span>
@@ -3739,12 +3737,12 @@
 <span class="c1"># Handle Data Selection</span>
 <span class="c1">#</span>
 <span class="c1"># =============================================================================</span>
-<span class="kn">from</span> <span class="nn">paraview.modules.vtkRemotingCore</span> <span class="k">import</span> <span class="o">*</span>
-<span class="kn">from</span> <span class="nn">vtkmodules.vtkCommonCore</span> <span class="k">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">paraview.modules.vtkRemotingCore</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">vtkmodules.vtkCommonCore</span> <span class="kn">import</span> <span class="o">*</span>
 
 <div class="viewcode-block" id="ParaViewWebSelectionHandler"><a class="viewcode-back" href="../../../paraview.web.protocols.html#paraview.web.protocols.ParaViewWebSelectionHandler">[docs]</a><span class="k">class</span> <span class="nc">ParaViewWebSelectionHandler</span><span class="p">(</span><span class="n">ParaViewWebProtocol</span><span class="p">):</span>
 
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">active_view</span> <span class="o">=</span> <span class="kc">None</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">previous_interaction</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">selection_type</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
@@ -3805,7 +3803,7 @@
 
 <div class="viewcode-block" id="ParaViewWebExportData"><a class="viewcode-back" href="../../../paraview.web.protocols.html#paraview.web.protocols.ParaViewWebExportData">[docs]</a><span class="k">class</span> <span class="nc">ParaViewWebExportData</span><span class="p">(</span><span class="n">ParaViewWebProtocol</span><span class="p">):</span>
 
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">basePath</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">basePath</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">base_export_path</span> <span class="o">=</span> <span class="n">basePath</span>
 
     <span class="c1"># RpcName: exportData =&gt; pv.export.data</span>

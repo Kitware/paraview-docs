@@ -7,12 +7,10 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>paraview.detail.pythonalgorithm &mdash; ParaView/Python 5.9.0-RC1-193-gf1bb9b526b documentation</title>
+  <title>paraview.detail.pythonalgorithm &mdash; ParaView/Python 5.9.0-RC1-211-gf85ab347b3 documentation</title>
   
 
   
-  
-    <link rel="shortcut icon" href="../../../_static/pvIcon.ico"/>
   
 
   
@@ -24,7 +22,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:'../../../',
-        VERSION:'5.9.0-RC1-193-gf1bb9b526b',
+        VERSION:'5.9.0-RC1-211-gf85ab347b3',
         COLLAPSE_INDEX:false,
         FILE_SUFFIX:'.html',
         HAS_SOURCE:  true
@@ -49,7 +47,7 @@
         <link rel="index" title="Index"
               href="../../../genindex.html"/>
         <link rel="search" title="Search" href="../../../search.html"/>
-    <link rel="top" title="ParaView/Python 5.9.0-RC1-193-gf1bb9b526b documentation" href="../../../index.html"/>
+    <link rel="top" title="ParaView/Python 5.9.0-RC1-211-gf85ab347b3 documentation" href="../../../index.html"/>
         <link rel="up" title="paraview.detail" href="../detail.html"/> 
 
   <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
@@ -67,7 +65,7 @@
           <li> <a href="../../../index.html">
             <img src="../../../_static/paraview-logo-small.png"
             alt="ParaView/Python"></img></a> </li>
-          <li class="version"> version 5.9.0-RC1-193-gf1bb9b526b</li>
+          <li class="version"> version 5.9.0-RC1-211-gf85ab347b3</li>
         </ul>
         <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
   <input type="text" name="q" placeholder="Search docs" />
@@ -581,12 +579,12 @@
 <hr/>
           
   <h1>Source code for paraview.detail.pythonalgorithm</h1><div class="highlight"><pre>
-<span></span><span class="kn">from</span> <span class="nn">__future__</span> <span class="k">import</span> <span class="n">absolute_import</span><span class="p">,</span> <span class="n">print_function</span>
+<span></span><span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">absolute_import</span><span class="p">,</span> <span class="n">print_function</span>
 
-<span class="kn">from</span> <span class="nn">functools</span> <span class="k">import</span> <span class="n">wraps</span>
-<span class="kn">from</span> <span class="nn">xml.dom.minidom</span> <span class="k">import</span> <span class="n">parseString</span>
-<span class="kn">from</span> <span class="nn">xml.parsers.expat</span> <span class="k">import</span> <span class="n">ExpatError</span>
-<span class="kn">from</span> <span class="nn">inspect</span> <span class="k">import</span> <span class="n">getargspec</span>
+<span class="kn">from</span> <span class="nn">functools</span> <span class="kn">import</span> <span class="n">wraps</span>
+<span class="kn">from</span> <span class="nn">xml.dom.minidom</span> <span class="kn">import</span> <span class="n">parseString</span>
+<span class="kn">from</span> <span class="nn">xml.parsers.expat</span> <span class="kn">import</span> <span class="n">ExpatError</span>
+<span class="kn">from</span> <span class="nn">inspect</span> <span class="kn">import</span> <span class="n">getargspec</span>
 
 <span class="kn">import</span> <span class="nn">sys</span>
 
@@ -1041,7 +1039,7 @@
 <span class="sd">    all &quot;proxy&quot; decorated classes in the module or package. We don&#39;t recurse</span>
 <span class="sd">    into the package, on simply needs to export all classes that form the</span>
 <span class="sd">    ParaView plugin in the __init__.py for the package.&quot;&quot;&quot;</span>
-    <span class="kn">from</span> <span class="nn">inspect</span> <span class="k">import</span> <span class="n">ismodule</span><span class="p">,</span> <span class="n">isclass</span>
+    <span class="kn">from</span> <span class="nn">inspect</span> <span class="kn">import</span> <span class="n">ismodule</span><span class="p">,</span> <span class="n">isclass</span>
     <span class="n">items</span> <span class="o">=</span> <span class="p">[]</span>
     <span class="k">if</span> <span class="n">ismodule</span><span class="p">(</span><span class="n">module_or_package</span><span class="p">):</span>
         <span class="n">items</span> <span class="o">=</span> <span class="n">module_or_package</span><span class="o">.</span><span class="vm">__dict__</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>
@@ -1058,7 +1056,7 @@
 <div class="viewcode-block" id="get_plugin_name"><a class="viewcode-back" href="../../../paraview.detail.pythonalgorithm.html#paraview.detail.pythonalgorithm.get_plugin_name">[docs]</a><span class="k">def</span> <span class="nf">get_plugin_name</span><span class="p">(</span><span class="n">module_or_package</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;helper function called by vtkPVPythonAlgorithmPlugin to discover</span>
 <span class="sd">    ParaView plugin name, if any.&quot;&quot;&quot;</span>
-    <span class="kn">from</span> <span class="nn">inspect</span> <span class="k">import</span> <span class="n">ismodule</span><span class="p">,</span> <span class="n">isclass</span>
+    <span class="kn">from</span> <span class="nn">inspect</span> <span class="kn">import</span> <span class="n">ismodule</span><span class="p">,</span> <span class="n">isclass</span>
     <span class="k">if</span> <span class="n">ismodule</span><span class="p">(</span><span class="n">module_or_package</span><span class="p">)</span> <span class="ow">and</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">module_or_package</span><span class="p">,</span> <span class="s2">&quot;paraview_plugin_name&quot;</span><span class="p">):</span>
         <span class="k">return</span> <span class="nb">str</span><span class="p">(</span><span class="nb">getattr</span><span class="p">(</span><span class="n">module_or_package</span><span class="p">,</span> <span class="s2">&quot;paraview_plugin_name&quot;</span><span class="p">))</span>
     <span class="k">else</span><span class="p">:</span>
@@ -1067,7 +1065,7 @@
 <div class="viewcode-block" id="get_plugin_version"><a class="viewcode-back" href="../../../paraview.detail.pythonalgorithm.html#paraview.detail.pythonalgorithm.get_plugin_version">[docs]</a><span class="k">def</span> <span class="nf">get_plugin_version</span><span class="p">(</span><span class="n">module_or_package</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;helper function called by vtkPVPythonAlgorithmPlugin to discover</span>
 <span class="sd">    ParaView plugin version, if any.&quot;&quot;&quot;</span>
-    <span class="kn">from</span> <span class="nn">inspect</span> <span class="k">import</span> <span class="n">ismodule</span><span class="p">,</span> <span class="n">isclass</span>
+    <span class="kn">from</span> <span class="nn">inspect</span> <span class="kn">import</span> <span class="n">ismodule</span><span class="p">,</span> <span class="n">isclass</span>
     <span class="k">if</span> <span class="n">ismodule</span><span class="p">(</span><span class="n">module_or_package</span><span class="p">)</span> <span class="ow">and</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">module_or_package</span><span class="p">,</span> <span class="s2">&quot;paraview_plugin_version&quot;</span><span class="p">):</span>
         <span class="k">return</span> <span class="nb">str</span><span class="p">(</span><span class="nb">getattr</span><span class="p">(</span><span class="n">module_or_package</span><span class="p">,</span> <span class="s2">&quot;paraview_plugin_version&quot;</span><span class="p">))</span>
     <span class="k">else</span><span class="p">:</span>
@@ -1086,7 +1084,7 @@
 
     <span class="k">try</span><span class="p">:</span>
         <span class="c1"># for Python 3.5+</span>
-        <span class="kn">from</span> <span class="nn">importlib.util</span> <span class="k">import</span> <span class="n">spec_from_file_location</span><span class="p">,</span> <span class="n">module_from_spec</span>
+        <span class="kn">from</span> <span class="nn">importlib.util</span> <span class="kn">import</span> <span class="n">spec_from_file_location</span><span class="p">,</span> <span class="n">module_from_spec</span>
         <span class="n">spec</span> <span class="o">=</span> <span class="n">spec_from_file_location</span><span class="p">(</span><span class="n">modulename</span><span class="p">,</span> <span class="n">filepath</span><span class="p">)</span>
         <span class="n">module</span> <span class="o">=</span> <span class="n">module_from_spec</span><span class="p">(</span><span class="n">spec</span><span class="p">)</span>
         <span class="n">spec</span><span class="o">.</span><span class="n">loader</span><span class="o">.</span><span class="n">exec_module</span><span class="p">(</span><span class="n">module</span><span class="p">)</span>
@@ -1102,7 +1100,7 @@
 <div class="viewcode-block" id="reload_plugin_module"><a class="viewcode-back" href="../../../paraview.detail.pythonalgorithm.html#paraview.detail.pythonalgorithm.reload_plugin_module">[docs]</a><span class="k">def</span> <span class="nf">reload_plugin_module</span><span class="p">(</span><span class="n">module</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;helper function to reload a plugin module previously loaded via</span>
 <span class="sd">    load_plugin&quot;&quot;&quot;</span>
-    <span class="kn">from</span> <span class="nn">inspect</span> <span class="k">import</span> <span class="n">getsourcefile</span><span class="p">,</span> <span class="n">ismodule</span>
+    <span class="kn">from</span> <span class="nn">inspect</span> <span class="kn">import</span> <span class="n">getsourcefile</span><span class="p">,</span> <span class="n">ismodule</span>
     <span class="k">if</span> <span class="n">ismodule</span><span class="p">(</span><span class="n">module</span><span class="p">)</span> <span class="ow">and</span> <span class="n">getsourcefile</span><span class="p">(</span><span class="n">module</span><span class="p">):</span>
         <span class="k">return</span> <span class="n">load_plugin</span><span class="p">(</span><span class="n">getsourcefile</span><span class="p">(</span><span class="n">module</span><span class="p">),</span> <span class="n">module</span><span class="o">.</span><span class="vm">__name__</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">module</span></div>

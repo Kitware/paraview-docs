@@ -7,12 +7,10 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>paraview.benchmark.waveletvolume &mdash; ParaView/Python 5.9.0-RC1-193-gf1bb9b526b documentation</title>
+  <title>paraview.benchmark.waveletvolume &mdash; ParaView/Python 5.9.0-RC1-211-gf85ab347b3 documentation</title>
   
 
   
-  
-    <link rel="shortcut icon" href="../../../_static/pvIcon.ico"/>
   
 
   
@@ -24,7 +22,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:'../../../',
-        VERSION:'5.9.0-RC1-193-gf1bb9b526b',
+        VERSION:'5.9.0-RC1-211-gf85ab347b3',
         COLLAPSE_INDEX:false,
         FILE_SUFFIX:'.html',
         HAS_SOURCE:  true
@@ -49,7 +47,7 @@
         <link rel="index" title="Index"
               href="../../../genindex.html"/>
         <link rel="search" title="Search" href="../../../search.html"/>
-    <link rel="top" title="ParaView/Python 5.9.0-RC1-193-gf1bb9b526b documentation" href="../../../index.html"/>
+    <link rel="top" title="ParaView/Python 5.9.0-RC1-211-gf85ab347b3 documentation" href="../../../index.html"/>
         <link rel="up" title="Module code" href="../../index.html"/> 
 
   <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
@@ -67,7 +65,7 @@
           <li> <a href="../../../index.html">
             <img src="../../../_static/paraview-logo-small.png"
             alt="ParaView/Python"></img></a> </li>
-          <li class="version"> version 5.9.0-RC1-193-gf1bb9b526b</li>
+          <li class="version"> version 5.9.0-RC1-211-gf85ab347b3</li>
         </ul>
         <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
   <input type="text" name="q" placeholder="Search docs" />
@@ -582,9 +580,9 @@
           
   <h1>Source code for paraview.benchmark.waveletvolume</h1><div class="highlight"><pre>
 <span></span><span class="kn">import</span> <span class="nn">datetime</span> <span class="k">as</span> <span class="nn">dt</span>
-<span class="kn">from</span> <span class="nn">paraview</span> <span class="k">import</span> <span class="n">servermanager</span>
-<span class="kn">from</span> <span class="nn">paraview.simple</span> <span class="k">import</span> <span class="o">*</span>
-<span class="kn">from</span> <span class="nn">paraview.benchmark</span> <span class="k">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">paraview</span> <span class="kn">import</span> <span class="n">servermanager</span>
+<span class="kn">from</span> <span class="nn">paraview.simple</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">paraview.benchmark</span> <span class="kn">import</span> <span class="o">*</span>
 <span class="c1">#import logbase, logparser</span>
 
 <span class="n">logbase</span><span class="o">.</span><span class="n">maximize_logs</span><span class="p">()</span>
@@ -607,7 +605,7 @@
 
 <div class="viewcode-block" id="save_render_buffer"><a class="viewcode-back" href="../../../paraview.benchmark.waveletvolume.html#paraview.benchmark.waveletvolume.save_render_buffer">[docs]</a><span class="k">def</span> <span class="nf">save_render_buffer</span><span class="p">(</span><span class="n">fname</span><span class="p">):</span>
     <span class="sd">&#39;&#39;&#39;Similar to SaveScreenshot except a re-render will not be triggered&#39;&#39;&#39;</span>
-    <span class="kn">from</span> <span class="nn">vtkmodules.vtkRenderingCore</span> <span class="k">import</span> <span class="n">vtkWindowToImageFilter</span>
+    <span class="kn">from</span> <span class="nn">vtkmodules.vtkRenderingCore</span> <span class="kn">import</span> <span class="n">vtkWindowToImageFilter</span>
     <span class="n">w</span> <span class="o">=</span> <span class="n">GetRenderView</span><span class="p">()</span><span class="o">.</span><span class="n">SMProxy</span><span class="o">.</span><span class="n">GetRenderWindow</span><span class="p">()</span>
     <span class="n">w2i</span> <span class="o">=</span> <span class="n">vtkWindowToImageFilter</span><span class="p">()</span>
     <span class="n">w2i</span><span class="o">.</span><span class="n">ReadFrontBufferOff</span><span class="p">()</span>
@@ -634,8 +632,8 @@
     <span class="k">if</span> <span class="ow">not</span> <span class="n">w</span><span class="o">.</span><span class="n">GetOffScreenRendering</span><span class="p">():</span>
         <span class="k">return</span>
 
-    <span class="kn">from</span> <span class="nn">vtkmodules.vtkParallelCore</span> <span class="k">import</span> <span class="n">vtkMultiProcessController</span>
-    <span class="kn">from</span> <span class="nn">vtkmodules.vtkRenderingCore</span> <span class="k">import</span> <span class="n">vtkWindowToImageFilter</span>
+    <span class="kn">from</span> <span class="nn">vtkmodules.vtkParallelCore</span> <span class="kn">import</span> <span class="n">vtkMultiProcessController</span>
+    <span class="kn">from</span> <span class="nn">vtkmodules.vtkRenderingCore</span> <span class="kn">import</span> <span class="n">vtkWindowToImageFilter</span>
 
     <span class="c1"># If we&#39;re using MPI we can also bypass this since compositing will</span>
     <span class="c1"># for a GL flush</span>
@@ -666,8 +664,8 @@
 <div class="viewcode-block" id="run"><a class="viewcode-back" href="../../../paraview.benchmark.waveletvolume.html#paraview.benchmark.waveletvolume.run">[docs]</a><span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="n">output_basename</span><span class="o">=</span><span class="s1">&#39;log&#39;</span><span class="p">,</span> <span class="n">dimension</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">view_size</span><span class="o">=</span><span class="p">(</span><span class="mi">1920</span><span class="p">,</span> <span class="mi">1080</span><span class="p">),</span>
         <span class="n">num_frames</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">save_logs</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">ospray</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
 
-    <span class="kn">from</span> <span class="nn">vtkmodules.vtkParallelCore</span> <span class="k">import</span> <span class="n">vtkMultiProcessController</span>
-    <span class="kn">from</span> <span class="nn">vtkmodules.vtkCommonSystem</span> <span class="k">import</span> <span class="n">vtkTimerLog</span>
+    <span class="kn">from</span> <span class="nn">vtkmodules.vtkParallelCore</span> <span class="kn">import</span> <span class="n">vtkMultiProcessController</span>
+    <span class="kn">from</span> <span class="nn">vtkmodules.vtkCommonSystem</span> <span class="kn">import</span> <span class="n">vtkTimerLog</span>
 
     <span class="n">controller</span> <span class="o">=</span> <span class="n">vtkMultiProcessController</span><span class="o">.</span><span class="n">GetGlobalController</span><span class="p">()</span>
 

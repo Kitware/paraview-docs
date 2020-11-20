@@ -7,12 +7,10 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>paraview.demos.filedriver_miniapp &mdash; ParaView/Python 5.9.0-RC1-193-gf1bb9b526b documentation</title>
+  <title>paraview.demos.filedriver_miniapp &mdash; ParaView/Python 5.9.0-RC1-211-gf85ab347b3 documentation</title>
   
 
   
-  
-    <link rel="shortcut icon" href="../../../_static/pvIcon.ico"/>
   
 
   
@@ -24,7 +22,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:'../../../',
-        VERSION:'5.9.0-RC1-193-gf1bb9b526b',
+        VERSION:'5.9.0-RC1-211-gf85ab347b3',
         COLLAPSE_INDEX:false,
         FILE_SUFFIX:'.html',
         HAS_SOURCE:  true
@@ -49,7 +47,7 @@
         <link rel="index" title="Index"
               href="../../../genindex.html"/>
         <link rel="search" title="Search" href="../../../search.html"/>
-    <link rel="top" title="ParaView/Python 5.9.0-RC1-193-gf1bb9b526b documentation" href="../../../index.html"/>
+    <link rel="top" title="ParaView/Python 5.9.0-RC1-211-gf85ab347b3 documentation" href="../../../index.html"/>
         <link rel="up" title="Module code" href="../../index.html"/> 
 
   <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
@@ -67,7 +65,7 @@
           <li> <a href="../../../index.html">
             <img src="../../../_static/paraview-logo-small.png"
             alt="ParaView/Python"></img></a> </li>
-          <li class="version"> version 5.9.0-RC1-193-gf1bb9b526b</li>
+          <li class="version"> version 5.9.0-RC1-211-gf85ab347b3</li>
         </ul>
         <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
   <input type="text" name="q" placeholder="Search docs" />
@@ -615,7 +613,7 @@
     <span class="n">help</span><span class="o">=</span><span class="s2">&quot;Pattern to use to locate input filenames.&quot;</span><span class="p">,</span> <span class="n">required</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
 <div class="viewcode-block" id="create_reader"><a class="viewcode-back" href="../../../paraview.demos.filedriver_miniapp.html#paraview.demos.filedriver_miniapp.create_reader">[docs]</a><span class="k">def</span> <span class="nf">create_reader</span><span class="p">(</span><span class="n">files</span><span class="p">):</span>
-    <span class="kn">from</span> <span class="nn">paraview</span> <span class="k">import</span> <span class="n">simple</span>
+    <span class="kn">from</span> <span class="nn">paraview</span> <span class="kn">import</span> <span class="n">simple</span>
     <span class="n">reader</span> <span class="o">=</span> <span class="n">simple</span><span class="o">.</span><span class="n">OpenDataFile</span><span class="p">(</span><span class="n">files</span><span class="p">)</span>
     <span class="k">if</span> <span class="ow">not</span> <span class="n">reader</span><span class="p">:</span>
         <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="s2">&quot;Failed to create a suitable reader for files: </span><span class="si">%s</span><span class="s2">&quot;</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">files</span><span class="p">))</span>
@@ -647,8 +645,8 @@
     <span class="n">files</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">item</span><span class="p">:</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">item</span><span class="p">),</span> <span class="n">item</span><span class="p">))</span>
 
     <span class="c1"># initialize Catalyst</span>
-    <span class="kn">from</span> <span class="nn">paraview.catalyst</span> <span class="k">import</span> <span class="n">bridge</span>
-    <span class="kn">from</span> <span class="nn">paraview</span> <span class="k">import</span> <span class="n">print_info</span><span class="p">,</span> <span class="n">print_warning</span>
+    <span class="kn">from</span> <span class="nn">paraview.catalyst</span> <span class="kn">import</span> <span class="n">bridge</span>
+    <span class="kn">from</span> <span class="nn">paraview</span> <span class="kn">import</span> <span class="n">print_info</span><span class="p">,</span> <span class="n">print_warning</span>
     <span class="n">bridge</span><span class="o">.</span><span class="n">initialize</span><span class="p">()</span>
 
     <span class="c1"># add analysis script</span>
@@ -658,7 +656,7 @@
     <span class="c1"># Some MPI related stuff to figure out if we&#39;re running with MPI</span>
     <span class="c1"># and if so, on how many ranks.</span>
     <span class="k">try</span><span class="p">:</span>
-        <span class="kn">from</span> <span class="nn">mpi4py</span> <span class="k">import</span> <span class="n">MPI</span>
+        <span class="kn">from</span> <span class="nn">mpi4py</span> <span class="kn">import</span> <span class="n">MPI</span>
         <span class="n">comm</span> <span class="o">=</span> <span class="n">MPI</span><span class="o">.</span><span class="n">COMM_WORLD</span>
         <span class="n">rank</span> <span class="o">=</span> <span class="n">comm</span><span class="o">.</span><span class="n">Get_rank</span><span class="p">()</span>
         <span class="n">num_ranks</span> <span class="o">=</span> <span class="n">comm</span><span class="o">.</span><span class="n">Get_size</span><span class="p">()</span>

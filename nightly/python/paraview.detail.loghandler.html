@@ -7,12 +7,10 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>detail.loghandler Module &mdash; ParaView/Python 5.9.0-RC1-193-gf1bb9b526b documentation</title>
+  <title>detail.loghandler Module &mdash; ParaView/Python 5.9.0-RC1-211-gf85ab347b3 documentation</title>
   
 
   
-  
-    <link rel="shortcut icon" href="_static/pvIcon.ico"/>
   
 
   
@@ -24,7 +22,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:'./',
-        VERSION:'5.9.0-RC1-193-gf1bb9b526b',
+        VERSION:'5.9.0-RC1-211-gf85ab347b3',
         COLLAPSE_INDEX:false,
         FILE_SUFFIX:'.html',
         HAS_SOURCE:  true
@@ -49,7 +47,7 @@
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="ParaView/Python 5.9.0-RC1-193-gf1bb9b526b documentation" href="index.html"/>
+    <link rel="top" title="ParaView/Python 5.9.0-RC1-211-gf85ab347b3 documentation" href="index.html"/>
         <link rel="up" title="detail Package" href="paraview.detail.html"/>
         <link rel="next" title="detail.python_selector Module" href="paraview.detail.python_selector.html"/>
         <link rel="prev" title="detail.extract_selection Module" href="paraview.detail.extract_selection.html"/> 
@@ -69,7 +67,7 @@
           <li> <a href="index.html">
             <img src="_static/paraview-logo-small.png"
             alt="ParaView/Python"></img></a> </li>
-          <li class="version"> version 5.9.0-RC1-193-gf1bb9b526b</li>
+          <li class="version"> version 5.9.0-RC1-211-gf85ab347b3</li>
         </ul>
         <form id ="rtd-search-form" class="wy-form" action="search.html" method="get">
   <input type="text" name="q" placeholder="Search docs" />
@@ -584,28 +582,28 @@
           
   <div class="section" id="module-paraview.detail.loghandler">
 <span id="detail-loghandler-module"></span><h1>detail.loghandler Module<a class="headerlink" href="#module-paraview.detail.loghandler" title="Permalink to this headline">¶</a></h1>
-<dl class="class">
+<dl class="py class">
 <dt id="paraview.detail.loghandler.VTKHandler">
-<em class="property">class </em><code class="sig-prename descclassname">paraview.detail.loghandler.</code><code class="sig-name descname">VTKHandler</code><span class="sig-paren">(</span><em class="sig-param">*args</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/detail/loghandler.html#VTKHandler"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.detail.loghandler.VTKHandler" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">paraview.detail.loghandler.</code><code class="sig-name descname">VTKHandler</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/detail/loghandler.html#VTKHandler"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.detail.loghandler.VTKHandler" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">logging.Handler</span></code></p>
-<dl class="method">
+<dl class="py method">
 <dt id="paraview.detail.loghandler.VTKHandler.emit">
-<code class="sig-name descname">emit</code><span class="sig-paren">(</span><em class="sig-param">record</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/detail/loghandler.html#VTKHandler.emit"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.detail.loghandler.VTKHandler.emit" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">emit</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">record</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/detail/loghandler.html#VTKHandler.emit"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.detail.loghandler.VTKHandler.emit" title="Permalink to this definition">¶</a></dt>
 <dd><p>Do whatever it takes to actually log the specified logging record.</p>
 <p>This version is intended to be implemented by subclasses and so
 raises a NotImplementedError.</p>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="paraview.detail.loghandler.VTKHandler.get_vtk_level">
-<code class="sig-name descname">get_vtk_level</code><span class="sig-paren">(</span><em class="sig-param">level</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/detail/loghandler.html#VTKHandler.get_vtk_level"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.detail.loghandler.VTKHandler.get_vtk_level" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">get_vtk_level</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">level</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/detail/loghandler.html#VTKHandler.get_vtk_level"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.detail.loghandler.VTKHandler.get_vtk_level" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="paraview.detail.loghandler.get_level">
-<code class="sig-prename descclassname">paraview.detail.loghandler.</code><code class="sig-name descname">get_level</code><span class="sig-paren">(</span><em class="sig-param">vtklevel=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/detail/loghandler.html#get_level"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.detail.loghandler.get_level" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">paraview.detail.loghandler.</code><code class="sig-name descname">get_level</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">vtklevel</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/detail/loghandler.html#get_level"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.detail.loghandler.get_level" title="Permalink to this definition">¶</a></dt>
 <dd><p>returns current log level used by vtkLogger</p>
 </dd></dl>
 

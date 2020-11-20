@@ -7,12 +7,10 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>paraview.smtrace &mdash; ParaView/Python 5.9.0-RC1-193-gf1bb9b526b documentation</title>
+  <title>paraview.smtrace &mdash; ParaView/Python 5.9.0-RC1-211-gf85ab347b3 documentation</title>
   
 
   
-  
-    <link rel="shortcut icon" href="../../_static/pvIcon.ico"/>
   
 
   
@@ -24,7 +22,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:'../../',
-        VERSION:'5.9.0-RC1-193-gf1bb9b526b',
+        VERSION:'5.9.0-RC1-211-gf85ab347b3',
         COLLAPSE_INDEX:false,
         FILE_SUFFIX:'.html',
         HAS_SOURCE:  true
@@ -49,7 +47,7 @@
         <link rel="index" title="Index"
               href="../../genindex.html"/>
         <link rel="search" title="Search" href="../../search.html"/>
-    <link rel="top" title="ParaView/Python 5.9.0-RC1-193-gf1bb9b526b documentation" href="../../index.html"/>
+    <link rel="top" title="ParaView/Python 5.9.0-RC1-211-gf85ab347b3 documentation" href="../../index.html"/>
         <link rel="up" title="Module code" href="../index.html"/> 
 
   <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
@@ -67,7 +65,7 @@
           <li> <a href="../../index.html">
             <img src="../../_static/paraview-logo-small.png"
             alt="ParaView/Python"></img></a> </li>
-          <li class="version"> version 5.9.0-RC1-193-gf1bb9b526b</li>
+          <li class="version"> version 5.9.0-RC1-211-gf85ab347b3</li>
         </ul>
         <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
   <input type="text" name="q" placeholder="Search docs" />
@@ -645,13 +643,13 @@
 <span class="sd">garbage collected since there&#39;s no reference to it.</span>
 
 <span class="sd">&quot;&quot;&quot;</span>
-<span class="kn">from</span> <span class="nn">__future__</span> <span class="k">import</span> <span class="n">absolute_import</span><span class="p">,</span> <span class="n">division</span><span class="p">,</span> <span class="n">print_function</span>
+<span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">absolute_import</span><span class="p">,</span> <span class="n">division</span><span class="p">,</span> <span class="n">print_function</span>
 
 <span class="kn">import</span> <span class="nn">weakref</span>
 <span class="kn">import</span> <span class="nn">paraview.servermanager</span> <span class="k">as</span> <span class="nn">sm</span>
 <span class="kn">import</span> <span class="nn">paraview.simple</span> <span class="k">as</span> <span class="nn">simple</span>
 <span class="kn">import</span> <span class="nn">sys</span>
-<span class="kn">from</span> <span class="nn">paraview.vtk</span> <span class="k">import</span> <span class="n">vtkTimeStamp</span>
+<span class="kn">from</span> <span class="nn">paraview.vtk</span> <span class="kn">import</span> <span class="n">vtkTimeStamp</span>
 
 <span class="k">if</span> <span class="n">sys</span><span class="o">.</span><span class="n">version_info</span> <span class="o">&gt;=</span> <span class="p">(</span><span class="mi">3</span><span class="p">,):</span>
     <span class="n">xrange</span> <span class="o">=</span> <span class="nb">range</span>
@@ -664,7 +662,7 @@
 <span class="sd">  this using the append API, we ensure that the trace is updated. Trace</span>
 <span class="sd">  doesn&#39;t put commands to the trace-output as soon as modifications are noticed</span>
 <span class="sd">  to try to consolidate the state changes.&quot;&quot;&quot;</span>
-  <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+  <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
     <span class="bp">self</span><span class="o">.</span><span class="n">__data</span> <span class="o">=</span> <span class="p">[]</span>
     <span class="bp">self</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">data</span><span class="p">)</span> <span class="k">if</span> <span class="n">data</span> <span class="k">else</span> <span class="kc">None</span>
 
@@ -686,7 +684,7 @@
       <span class="bp">self</span><span class="o">.</span><span class="n">append_separator</span><span class="p">()</span>
       <span class="bp">self</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">data</span><span class="p">)</span></div>
 
-  <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+  <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
     <span class="k">return</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">__data</span><span class="p">)</span>
 
 <div class="viewcode-block" id="TraceOutput.raw_data"><a class="viewcode-back" href="../../paraview.smtrace.html#paraview.smtrace.TraceOutput.raw_data">[docs]</a>  <span class="k">def</span> <span class="nf">raw_data</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span> <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__data</span></div>
@@ -1005,14 +1003,14 @@
         <span class="k">return</span> <span class="kc">False</span></div>
 
 <div class="viewcode-block" id="Untraceable"><a class="viewcode-back" href="../../paraview.smtrace.html#paraview.smtrace.Untraceable">[docs]</a><span class="k">class</span> <span class="nc">Untraceable</span><span class="p">(</span><span class="ne">Exception</span><span class="p">):</span>
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">logmessage</span><span class="o">=</span><span class="s2">&quot;&lt;unspecified&gt;&quot;</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">logmessage</span><span class="o">=</span><span class="s2">&quot;&lt;unspecified&gt;&quot;</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">LogMessage</span> <span class="o">=</span> <span class="n">logmessage</span>
 
-    <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="nb">repr</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">LogMessage</span><span class="p">)</span></div>
 
 <div class="viewcode-block" id="Accessor"><a class="viewcode-back" href="../../paraview.smtrace.html#paraview.smtrace.Accessor">[docs]</a><span class="k">class</span> <span class="nc">Accessor</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">varname</span><span class="p">,</span> <span class="n">obj</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">varname</span><span class="p">,</span> <span class="n">obj</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">Varname</span> <span class="o">=</span> <span class="n">varname</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">__Object</span> <span class="o">=</span> <span class="n">obj</span>
         <span class="n">Trace</span><span class="o">.</span><span class="n">register_accessor</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
@@ -1021,7 +1019,7 @@
         <span class="n">Trace</span><span class="o">.</span><span class="n">unregister_accessor</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">__Object</span> <span class="o">=</span> <span class="kc">None</span></div>
 
-    <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">Varname</span>
 
 <div class="viewcode-block" id="Accessor.get_object"><a class="viewcode-back" href="../../paraview.smtrace.html#paraview.smtrace.Accessor.get_object">[docs]</a>    <span class="k">def</span> <span class="nf">get_object</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
@@ -1046,7 +1044,7 @@
             <span class="k">except</span> <span class="ne">NotImplementedError</span><span class="p">:</span> <span class="k">pass</span>
         <span class="k">return</span> <span class="n">RealProxyAccessor</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></div>
 
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">varname</span><span class="p">,</span> <span class="n">proxy</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">varname</span><span class="p">,</span> <span class="n">proxy</span><span class="p">):</span>
         <span class="n">Accessor</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">varname</span><span class="p">,</span> <span class="n">proxy</span><span class="p">)</span>
 
         <span class="bp">self</span><span class="o">.</span><span class="n">OrderedProperties</span> <span class="o">=</span> <span class="p">[]</span>
@@ -1151,7 +1149,7 @@
 <span class="sd">    properites. In its constructor, RealProxyAccessor creates a</span>
 <span class="sd">    PropertyTraceHelper for each of its properties that could potentially need</span>
 <span class="sd">    to be traced.&quot;&quot;&quot;</span>
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">propertyname</span><span class="p">,</span> <span class="n">proxyAccessor</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">propertyname</span><span class="p">,</span> <span class="n">proxyAccessor</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Constructor.</span>
 
 <span class="sd">          :param propertyname: name used to access the property. This is the</span>
@@ -1183,7 +1181,7 @@
                 <span class="n">plda</span> <span class="o">=</span> <span class="n">ProxyAccessor</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">get_varname</span><span class="p">(),</span> <span class="n">sm</span><span class="o">.</span><span class="n">_getPyProxy</span><span class="p">(</span><span class="n">domain_proxy</span><span class="p">))</span>
                 <span class="bp">self</span><span class="o">.</span><span class="n">ProxyListDomainProxyAccessors</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">plda</span><span class="p">)</span>
 
-    <span class="k">def</span> <span class="nf">__del__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__del__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">finalize</span><span class="p">()</span>
 
 <div class="viewcode-block" id="PropertyTraceHelper.finalize"><a class="viewcode-back" href="../../paraview.smtrace.html#paraview.smtrace.PropertyTraceHelper.finalize">[docs]</a>    <span class="k">def</span> <span class="nf">finalize</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
@@ -1292,7 +1290,7 @@
 <span class="c1"># === Filters used to filter properties traced ===</span>
 <span class="c1"># ===================================================================================================</span>
 <div class="viewcode-block" id="ProxyFilter"><a class="viewcode-back" href="../../paraview.smtrace.html#paraview.smtrace.ProxyFilter">[docs]</a><span class="k">class</span> <span class="nc">ProxyFilter</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">trace_all_in_ctor</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">trace_all_in_ctor</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">trace_all_in_ctor</span> <span class="o">=</span> <span class="n">trace_all_in_ctor</span>
 
 <div class="viewcode-block" id="ProxyFilter.should_never_trace"><a class="viewcode-back" href="../../paraview.smtrace.html#paraview.smtrace.ProxyFilter.should_never_trace">[docs]</a>    <span class="k">def</span> <span class="nf">should_never_trace</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">prop</span><span class="p">,</span> <span class="n">hide_gui_hidden</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
@@ -1482,7 +1480,7 @@
         <span class="k">return</span> <span class="kc">False</span></div>
 
 <div class="viewcode-block" id="TraceItem"><a class="viewcode-back" href="../../paraview.smtrace.html#paraview.smtrace.TraceItem">[docs]</a><span class="k">class</span> <span class="nc">TraceItem</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">try</span><span class="p">:</span>
             <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">skip_from_trace</span><span class="p">:</span>
                 <span class="k">raise</span> <span class="n">Untraceable</span><span class="p">(</span><span class="s2">&quot;skipped&quot;</span><span class="p">)</span>
@@ -1506,7 +1504,7 @@
     <span class="sd">&quot;&quot;&quot;This traces the creation of a Pipeline Proxy such as</span>
 <span class="sd">    sources/filters/readers etc.&quot;&quot;&quot;</span>
 
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">proxy</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">proxy</span><span class="p">):</span>
         <span class="n">TraceItem</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">Proxy</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">_getPyProxy</span><span class="p">(</span><span class="n">proxy</span><span class="p">)</span>
 
@@ -1531,7 +1529,7 @@
 
 <div class="viewcode-block" id="Delete"><a class="viewcode-back" href="../../paraview.smtrace.html#paraview.smtrace.Delete">[docs]</a><span class="k">class</span> <span class="nc">Delete</span><span class="p">(</span><span class="n">TraceItem</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;This traces the deletion of a Pipeline proxy&quot;&quot;&quot;</span>
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">proxy</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">proxy</span><span class="p">):</span>
         <span class="n">TraceItem</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
         <span class="n">proxy</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">_getPyProxy</span><span class="p">(</span><span class="n">proxy</span><span class="p">)</span>
         <span class="n">accessor</span> <span class="o">=</span> <span class="n">Trace</span><span class="o">.</span><span class="n">get_accessor</span><span class="p">(</span><span class="n">proxy</span><span class="p">)</span>
@@ -1545,7 +1543,7 @@
         <span class="n">gc</span><span class="o">.</span><span class="n">collect</span><span class="p">()</span></div>
 
 <div class="viewcode-block" id="CleanupAccessor"><a class="viewcode-back" href="../../paraview.smtrace.html#paraview.smtrace.CleanupAccessor">[docs]</a><span class="k">class</span> <span class="nc">CleanupAccessor</span><span class="p">(</span><span class="n">BookkeepingItem</span><span class="p">):</span>
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">proxy</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">proxy</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">Proxy</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">_getPyProxy</span><span class="p">(</span><span class="n">proxy</span><span class="p">)</span>
 <div class="viewcode-block" id="CleanupAccessor.finalize"><a class="viewcode-back" href="../../paraview.smtrace.html#paraview.smtrace.CleanupAccessor.finalize">[docs]</a>    <span class="k">def</span> <span class="nf">finalize</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">if</span> <span class="n">Trace</span><span class="o">.</span><span class="n">has_accessor</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">Proxy</span><span class="p">):</span>
@@ -1565,7 +1563,7 @@
 
 <div class="viewcode-block" id="PropertiesModified"><a class="viewcode-back" href="../../paraview.smtrace.html#paraview.smtrace.PropertiesModified">[docs]</a><span class="k">class</span> <span class="nc">PropertiesModified</span><span class="p">(</span><span class="n">NestableTraceItem</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Traces properties modified on a specific proxy.&quot;&quot;&quot;</span>
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">proxy</span><span class="p">,</span> <span class="n">comment</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">proxy</span><span class="p">,</span> <span class="n">comment</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
         <span class="n">TraceItem</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
 
         <span class="n">proxy</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">_getPyProxy</span><span class="p">(</span><span class="n">proxy</span><span class="p">)</span>
@@ -1615,7 +1613,7 @@
 
 <div class="viewcode-block" id="ScalarBarInteraction"><a class="viewcode-back" href="../../paraview.smtrace.html#paraview.smtrace.ScalarBarInteraction">[docs]</a><span class="k">class</span> <span class="nc">ScalarBarInteraction</span><span class="p">(</span><span class="n">RenderingMixin</span><span class="p">,</span> <span class="n">NestableTraceItem</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Traces scalar bar interactions&quot;&quot;&quot;</span>
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">proxy</span><span class="p">,</span> <span class="n">comment</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">proxy</span><span class="p">,</span> <span class="n">comment</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
         <span class="n">TraceItem</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
         <span class="n">proxy</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">_getPyProxy</span><span class="p">(</span><span class="n">proxy</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">ProxyAccessor</span> <span class="o">=</span> <span class="n">Trace</span><span class="o">.</span><span class="n">get_accessor</span><span class="p">(</span><span class="n">proxy</span><span class="p">)</span>
@@ -1636,7 +1634,7 @@
 
 <div class="viewcode-block" id="Show"><a class="viewcode-back" href="../../paraview.smtrace.html#paraview.smtrace.Show">[docs]</a><span class="k">class</span> <span class="nc">Show</span><span class="p">(</span><span class="n">RenderingMixin</span><span class="p">,</span> <span class="n">TraceItem</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Traces Show&quot;&quot;&quot;</span>
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">producer</span><span class="p">,</span> <span class="n">port</span><span class="p">,</span> <span class="n">view</span><span class="p">,</span> <span class="n">display</span><span class="p">,</span> <span class="n">comment</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">producer</span><span class="p">,</span> <span class="n">port</span><span class="p">,</span> <span class="n">view</span><span class="p">,</span> <span class="n">display</span><span class="p">,</span> <span class="n">comment</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
         <span class="n">TraceItem</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
 
         <span class="n">producer</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">_getPyProxy</span><span class="p">(</span><span class="n">producer</span><span class="p">)</span>
@@ -1687,7 +1685,7 @@
 
 <div class="viewcode-block" id="Hide"><a class="viewcode-back" href="../../paraview.smtrace.html#paraview.smtrace.Hide">[docs]</a><span class="k">class</span> <span class="nc">Hide</span><span class="p">(</span><span class="n">RenderingMixin</span><span class="p">,</span> <span class="n">TraceItem</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Traces Hide&quot;&quot;&quot;</span>
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">producer</span><span class="p">,</span> <span class="n">port</span><span class="p">,</span> <span class="n">view</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">producer</span><span class="p">,</span> <span class="n">port</span><span class="p">,</span> <span class="n">view</span><span class="p">):</span>
         <span class="n">TraceItem</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
 
         <span class="n">producer</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">_getPyProxy</span><span class="p">(</span><span class="n">producer</span><span class="p">)</span>
@@ -1702,7 +1700,7 @@
 
 <div class="viewcode-block" id="SetScalarColoring"><a class="viewcode-back" href="../../paraview.smtrace.html#paraview.smtrace.SetScalarColoring">[docs]</a><span class="k">class</span> <span class="nc">SetScalarColoring</span><span class="p">(</span><span class="n">RenderingMixin</span><span class="p">,</span> <span class="n">TraceItem</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Trace vtkSMPVRepresentationProxy.SetScalarColoring&quot;&quot;&quot;</span>
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">display</span><span class="p">,</span> <span class="n">arrayname</span><span class="p">,</span> <span class="n">attribute_type</span><span class="p">,</span> <span class="n">component</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">separate</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">lut</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">display</span><span class="p">,</span> <span class="n">arrayname</span><span class="p">,</span> <span class="n">attribute_type</span><span class="p">,</span> <span class="n">component</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">separate</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">lut</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
         <span class="n">TraceItem</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
 
         <span class="bp">self</span><span class="o">.</span><span class="n">Display</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">_getPyProxy</span><span class="p">(</span><span class="n">display</span><span class="p">)</span>
@@ -1757,7 +1755,7 @@
 
 <div class="viewcode-block" id="RegisterViewProxy"><a class="viewcode-back" href="../../paraview.smtrace.html#paraview.smtrace.RegisterViewProxy">[docs]</a><span class="k">class</span> <span class="nc">RegisterViewProxy</span><span class="p">(</span><span class="n">RenderingMixin</span><span class="p">,</span> <span class="n">TraceItem</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Traces creation of a new view (vtkSMParaViewPipelineController::RegisterViewProxy).&quot;&quot;&quot;</span>
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">proxy</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">proxy</span><span class="p">):</span>
         <span class="n">TraceItem</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">Proxy</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">_getPyProxy</span><span class="p">(</span><span class="n">proxy</span><span class="p">)</span>
         <span class="k">assert</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">Proxy</span> <span class="ow">is</span> <span class="kc">None</span>
@@ -1796,7 +1794,7 @@
 
 <div class="viewcode-block" id="RegisterLightProxy"><a class="viewcode-back" href="../../paraview.smtrace.html#paraview.smtrace.RegisterLightProxy">[docs]</a><span class="k">class</span> <span class="nc">RegisterLightProxy</span><span class="p">(</span><span class="n">RenderingMixin</span><span class="p">,</span> <span class="n">TraceItem</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Traces creation of a new light (vtkSMParaViewPipelineController::RegisterLightProxy).&quot;&quot;&quot;</span>
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">proxy</span><span class="p">,</span> <span class="n">view</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">proxy</span><span class="p">,</span> <span class="n">view</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
         <span class="n">TraceItem</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">Proxy</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">_getPyProxy</span><span class="p">(</span><span class="n">proxy</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">View</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">_getPyProxy</span><span class="p">(</span><span class="n">view</span><span class="p">)</span>
@@ -1819,7 +1817,7 @@
         <span class="n">TraceItem</span><span class="o">.</span><span class="n">finalize</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span></div></div>
 
 <div class="viewcode-block" id="ExportView"><a class="viewcode-back" href="../../paraview.smtrace.html#paraview.smtrace.ExportView">[docs]</a><span class="k">class</span> <span class="nc">ExportView</span><span class="p">(</span><span class="n">RenderingMixin</span><span class="p">,</span> <span class="n">TraceItem</span><span class="p">):</span>
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">view</span><span class="p">,</span> <span class="n">exporter</span><span class="p">,</span> <span class="n">filename</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">view</span><span class="p">,</span> <span class="n">exporter</span><span class="p">,</span> <span class="n">filename</span><span class="p">):</span>
         <span class="n">TraceItem</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
 
         <span class="n">view</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">_getPyProxy</span><span class="p">(</span><span class="n">view</span><span class="p">)</span>
@@ -1839,7 +1837,7 @@
         <span class="n">Trace</span><span class="o">.</span><span class="n">Output</span><span class="o">.</span><span class="n">append_separated</span><span class="p">(</span><span class="n">trace</span><span class="o">.</span><span class="n">raw_data</span><span class="p">())</span></div>
 
 <div class="viewcode-block" id="SaveData"><a class="viewcode-back" href="../../paraview.smtrace.html#paraview.smtrace.SaveData">[docs]</a><span class="k">class</span> <span class="nc">SaveData</span><span class="p">(</span><span class="n">TraceItem</span><span class="p">):</span>
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">writer</span><span class="p">,</span> <span class="n">filename</span><span class="p">,</span> <span class="n">source</span><span class="p">,</span> <span class="n">port</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">writer</span><span class="p">,</span> <span class="n">filename</span><span class="p">,</span> <span class="n">source</span><span class="p">,</span> <span class="n">port</span><span class="p">):</span>
         <span class="n">TraceItem</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
 
         <span class="n">source</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">_getPyProxy</span><span class="p">(</span><span class="n">source</span><span class="p">,</span> <span class="n">port</span><span class="p">)</span>
@@ -1864,7 +1862,7 @@
         <span class="n">Trace</span><span class="o">.</span><span class="n">Output</span><span class="o">.</span><span class="n">append_separated</span><span class="p">(</span><span class="n">trace</span><span class="o">.</span><span class="n">raw_data</span><span class="p">())</span></div>
 
 <div class="viewcode-block" id="SaveScreenshotOrAnimation"><a class="viewcode-back" href="../../paraview.smtrace.html#paraview.smtrace.SaveScreenshotOrAnimation">[docs]</a><span class="k">class</span> <span class="nc">SaveScreenshotOrAnimation</span><span class="p">(</span><span class="n">RenderingMixin</span><span class="p">,</span> <span class="n">TraceItem</span><span class="p">):</span>
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">helper</span><span class="p">,</span> <span class="n">filename</span><span class="p">,</span> <span class="n">view</span><span class="p">,</span> <span class="n">layout</span><span class="p">,</span> <span class="n">mode_screenshot</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">helper</span><span class="p">,</span> <span class="n">filename</span><span class="p">,</span> <span class="n">view</span><span class="p">,</span> <span class="n">layout</span><span class="p">,</span> <span class="n">mode_screenshot</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
         <span class="n">TraceItem</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
         <span class="k">assert</span><span class="p">(</span><span class="n">view</span> <span class="o">!=</span> <span class="kc">None</span> <span class="ow">or</span> <span class="n">layout</span> <span class="o">!=</span> <span class="kc">None</span><span class="p">)</span>
 
@@ -1910,7 +1908,7 @@
 <div class="viewcode-block" id="SaveAnimationExtracts"><a class="viewcode-back" href="../../paraview.smtrace.html#paraview.smtrace.SaveAnimationExtracts">[docs]</a><span class="k">class</span> <span class="nc">SaveAnimationExtracts</span><span class="p">(</span><span class="n">TraceItem</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Used by vtkSMSaveAnimationExtractsProxy to trace saving of extracts</span>
 <span class="sd">    generation.&quot;&quot;&quot;</span>
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">proxy</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">proxy</span><span class="p">):</span>
         <span class="n">TraceItem</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
         <span class="k">assert</span><span class="p">(</span><span class="n">proxy</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">)</span>
 
@@ -1927,7 +1925,7 @@
         <span class="n">Trace</span><span class="o">.</span><span class="n">Output</span><span class="o">.</span><span class="n">append_separated</span><span class="p">(</span><span class="n">trace</span><span class="o">.</span><span class="n">raw_data</span><span class="p">())</span></div>
 
 <div class="viewcode-block" id="LoadState"><a class="viewcode-back" href="../../paraview.smtrace.html#paraview.smtrace.LoadState">[docs]</a><span class="k">class</span> <span class="nc">LoadState</span><span class="p">(</span><span class="n">TraceItem</span><span class="p">):</span>
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">filename</span><span class="p">,</span> <span class="n">options</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">filename</span><span class="p">,</span> <span class="n">options</span><span class="p">):</span>
         <span class="n">TraceItem</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
 
         <span class="n">options</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">_getPyProxy</span><span class="p">(</span><span class="n">options</span><span class="p">)</span>
@@ -1945,7 +1943,7 @@
         <span class="n">Trace</span><span class="o">.</span><span class="n">Output</span><span class="o">.</span><span class="n">append_separated</span><span class="p">(</span><span class="n">trace</span><span class="o">.</span><span class="n">raw_data</span><span class="p">())</span></div>
 
 <div class="viewcode-block" id="RegisterLayoutProxy"><a class="viewcode-back" href="../../paraview.smtrace.html#paraview.smtrace.RegisterLayoutProxy">[docs]</a><span class="k">class</span> <span class="nc">RegisterLayoutProxy</span><span class="p">(</span><span class="n">RenderingMixin</span><span class="p">,</span> <span class="n">TraceItem</span><span class="p">):</span>
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">layout</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">layout</span><span class="p">):</span>
         <span class="n">TraceItem</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">Layout</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">_getPyProxy</span><span class="p">(</span><span class="n">layout</span><span class="p">)</span>
 <div class="viewcode-block" id="RegisterLayoutProxy.finalize"><a class="viewcode-back" href="../../paraview.smtrace.html#paraview.smtrace.RegisterLayoutProxy.finalize">[docs]</a>    <span class="k">def</span> <span class="nf">finalize</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">filter</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
@@ -1986,7 +1984,7 @@
         <span class="n">TraceItem</span><span class="o">.</span><span class="n">finalize</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span></div></div>
 
 <div class="viewcode-block" id="LoadPlugin"><a class="viewcode-back" href="../../paraview.smtrace.html#paraview.smtrace.LoadPlugin">[docs]</a><span class="k">class</span> <span class="nc">LoadPlugin</span><span class="p">(</span><span class="n">TraceItem</span><span class="p">):</span>
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">filename</span><span class="p">,</span> <span class="n">remote</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">filename</span><span class="p">,</span> <span class="n">remote</span><span class="p">):</span>
         <span class="n">Trace</span><span class="o">.</span><span class="n">Output</span><span class="o">.</span><span class="n">append_separated</span><span class="p">([</span>\
                 <span class="s2">&quot;# load plugin&quot;</span><span class="p">,</span>
                 <span class="s2">&quot;LoadPlugin(&#39;</span><span class="si">%s</span><span class="s2">&#39;, remote=</span><span class="si">%s</span><span class="s2">, ns=globals())&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">remote</span><span class="p">)])</span></div>
@@ -1994,7 +1992,7 @@
 <div class="viewcode-block" id="CreateAnimationTrack"><a class="viewcode-back" href="../../paraview.smtrace.html#paraview.smtrace.CreateAnimationTrack">[docs]</a><span class="k">class</span> <span class="nc">CreateAnimationTrack</span><span class="p">(</span><span class="n">TraceItem</span><span class="p">):</span>
     <span class="c1"># FIXME: animation tracing support in general needs to be revamped after moving</span>
     <span class="c1"># animation control logic to the server manager from Qt layer.</span>
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cue</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cue</span><span class="p">):</span>
         <span class="n">TraceItem</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">Cue</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">_getPyProxy</span><span class="p">(</span><span class="n">cue</span><span class="p">)</span>
 
@@ -2023,7 +2021,7 @@
 
 <div class="viewcode-block" id="RenameProxy"><a class="viewcode-back" href="../../paraview.smtrace.html#paraview.smtrace.RenameProxy">[docs]</a><span class="k">class</span> <span class="nc">RenameProxy</span><span class="p">(</span><span class="n">TraceItem</span><span class="p">):</span>
     <span class="s2">&quot;Trace renaming of a source proxy.&quot;</span>
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">proxy</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">proxy</span><span class="p">):</span>
         <span class="n">TraceItem</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
         <span class="n">proxy</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">_getPyProxy</span><span class="p">(</span><span class="n">proxy</span><span class="p">)</span>
 
@@ -2043,7 +2041,7 @@
 
 <div class="viewcode-block" id="SetCurrentProxy"><a class="viewcode-back" href="../../paraview.smtrace.html#paraview.smtrace.SetCurrentProxy">[docs]</a><span class="k">class</span> <span class="nc">SetCurrentProxy</span><span class="p">(</span><span class="n">TraceItem</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Traces change in active view/source etc.&quot;&quot;&quot;</span>
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">selmodel</span><span class="p">,</span> <span class="n">proxy</span><span class="p">,</span> <span class="n">command</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">selmodel</span><span class="p">,</span> <span class="n">proxy</span><span class="p">,</span> <span class="n">command</span><span class="p">):</span>
         <span class="n">TraceItem</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
         <span class="k">if</span> <span class="n">proxy</span> <span class="ow">and</span> <span class="n">proxy</span><span class="o">.</span><span class="n">IsA</span><span class="p">(</span><span class="s2">&quot;vtkSMOutputPort&quot;</span><span class="p">):</span>
             <span class="c1"># FIXME: need to handle port number.</span>
@@ -2066,7 +2064,7 @@
             <span class="k">raise</span> <span class="n">Untraceable</span><span class="p">(</span><span class="s2">&quot;Unknown selection model&quot;</span><span class="p">)</span></div>
 
 <div class="viewcode-block" id="CallMethod"><a class="viewcode-back" href="../../paraview.smtrace.html#paraview.smtrace.CallMethod">[docs]</a><span class="k">class</span> <span class="nc">CallMethod</span><span class="p">(</span><span class="n">TraceItem</span><span class="p">):</span>
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">proxy</span><span class="p">,</span> <span class="n">methodname</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">proxy</span><span class="p">,</span> <span class="n">methodname</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
         <span class="n">TraceItem</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
         <span class="n">trace</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_trace</span><span class="p">(</span><span class="n">proxy</span><span class="p">,</span> <span class="n">methodname</span><span class="p">,</span> <span class="n">args</span><span class="p">,</span> <span class="n">kwargs</span><span class="p">)</span>
         <span class="k">if</span> <span class="n">trace</span><span class="p">:</span>
@@ -2102,7 +2100,7 @@
     <span class="sd">&quot;&quot;&quot;Similar to CallMethod, except that the trace will get logged only</span>
 <span class="sd">    if the proxy fires PropertiesModified event before the trace-item is</span>
 <span class="sd">    finalized.&quot;&quot;&quot;</span>
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">proxy</span><span class="p">,</span> <span class="n">methodname</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">proxy</span><span class="p">,</span> <span class="n">methodname</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">proxy</span> <span class="o">=</span> <span class="n">proxy</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">methodname</span> <span class="o">=</span> <span class="n">methodname</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">args</span> <span class="o">=</span> <span class="n">args</span>
@@ -2118,12 +2116,12 @@
             <span class="n">trace</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_trace</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">proxy</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">methodname</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">kwargs</span><span class="p">)</span>
             <span class="n">Trace</span><span class="o">.</span><span class="n">Output</span><span class="o">.</span><span class="n">append_separated</span><span class="p">(</span><span class="n">trace</span><span class="p">)</span>
         <span class="n">CallMethod</span><span class="o">.</span><span class="n">finalize</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span></div>
-    <span class="k">def</span> <span class="nf">__del__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__del__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">proxy</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">tag</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">proxy</span><span class="o">.</span><span class="n">RemoveObserver</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">tag</span><span class="p">)</span></div>
 
 <div class="viewcode-block" id="CallFunction"><a class="viewcode-back" href="../../paraview.smtrace.html#paraview.smtrace.CallFunction">[docs]</a><span class="k">class</span> <span class="nc">CallFunction</span><span class="p">(</span><span class="n">TraceItem</span><span class="p">):</span>
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">functionname</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">functionname</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
         <span class="n">TraceItem</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
         <span class="n">to_trace</span> <span class="o">=</span> <span class="p">[]</span>
         <span class="k">try</span><span class="p">:</span>
@@ -2138,7 +2136,7 @@
 
 <div class="viewcode-block" id="ChooseTexture"><a class="viewcode-back" href="../../paraview.smtrace.html#paraview.smtrace.ChooseTexture">[docs]</a><span class="k">class</span> <span class="nc">ChooseTexture</span><span class="p">(</span><span class="n">RenderingMixin</span><span class="p">,</span> <span class="n">TraceItem</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Traces changes of texture object selection. For example renderview background.&quot;&quot;&quot;</span>
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">owner</span><span class="p">,</span> <span class="n">texture</span><span class="p">,</span> <span class="n">prop</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">owner</span><span class="p">,</span> <span class="n">texture</span><span class="p">,</span> <span class="n">prop</span><span class="p">):</span>
         <span class="n">TraceItem</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
         <span class="n">owner</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">_getPyProxy</span><span class="p">(</span><span class="n">owner</span><span class="p">)</span>
         <span class="n">texture</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">_getPyProxy</span><span class="p">(</span><span class="n">texture</span><span class="p">)</span>
@@ -2153,7 +2151,7 @@
     <span class="sd">&quot;&quot;&quot;This is used to request recording of cameras in trace&quot;&quot;&quot;</span>
     <span class="c1"># This is a little hackish at this point. We&#39;ll figure something cleaner out</span>
     <span class="c1"># in time.</span>
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">proxy</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">proxy</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
         <span class="n">trace</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_trace</span><span class="p">(</span><span class="n">proxy</span><span class="p">)</span>
         <span class="k">if</span> <span class="n">trace</span><span class="p">:</span>
             <span class="n">Trace</span><span class="o">.</span><span class="n">Output</span><span class="o">.</span><span class="n">append_separated</span><span class="p">(</span><span class="n">trace</span><span class="p">)</span>
@@ -2199,7 +2197,7 @@
 <span class="sd">    This ensures that all the layouts (and consequently views in those layout)</span>
 <span class="sd">    are setup with sizes similar to those in the UI (BUG #20102).</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">proxy</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">proxy</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
         <span class="n">trace</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_trace</span><span class="p">(</span><span class="n">proxy</span><span class="p">)</span>
         <span class="k">if</span> <span class="n">trace</span><span class="p">:</span>
             <span class="n">Trace</span><span class="o">.</span><span class="n">Output</span><span class="o">.</span><span class="n">append_separated</span><span class="p">(</span><span class="n">trace</span><span class="p">)</span>
@@ -2232,7 +2230,7 @@
 
 <div class="viewcode-block" id="CreateExtractor"><a class="viewcode-back" href="../../paraview.smtrace.html#paraview.smtrace.CreateExtractor">[docs]</a><span class="k">class</span> <span class="nc">CreateExtractor</span><span class="p">(</span><span class="n">TraceItem</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Traces creation of extractors&quot;&quot;&quot;</span>
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">xmlname</span><span class="p">,</span> <span class="n">producer</span><span class="p">,</span> <span class="n">extractor</span><span class="p">,</span> <span class="n">registrationName</span><span class="p">,</span> <span class="n">comment</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">xmlname</span><span class="p">,</span> <span class="n">producer</span><span class="p">,</span> <span class="n">extractor</span><span class="p">,</span> <span class="n">registrationName</span><span class="p">,</span> <span class="n">comment</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
         <span class="nb">super</span><span class="p">(</span><span class="n">CreateExtractor</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
 
         <span class="n">producer</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">_getPyProxy</span><span class="p">(</span><span class="n">producer</span><span class="p">)</span>

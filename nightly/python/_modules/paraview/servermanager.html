@@ -7,12 +7,10 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>paraview.servermanager &mdash; ParaView/Python 5.9.0-RC1-193-gf1bb9b526b documentation</title>
+  <title>paraview.servermanager &mdash; ParaView/Python 5.9.0-RC1-211-gf85ab347b3 documentation</title>
   
 
   
-  
-    <link rel="shortcut icon" href="../../_static/pvIcon.ico"/>
   
 
   
@@ -24,7 +22,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:'../../',
-        VERSION:'5.9.0-RC1-193-gf1bb9b526b',
+        VERSION:'5.9.0-RC1-211-gf85ab347b3',
         COLLAPSE_INDEX:false,
         FILE_SUFFIX:'.html',
         HAS_SOURCE:  true
@@ -49,7 +47,7 @@
         <link rel="index" title="Index"
               href="../../genindex.html"/>
         <link rel="search" title="Search" href="../../search.html"/>
-    <link rel="top" title="ParaView/Python 5.9.0-RC1-193-gf1bb9b526b documentation" href="../../index.html"/>
+    <link rel="top" title="ParaView/Python 5.9.0-RC1-211-gf85ab347b3 documentation" href="../../index.html"/>
         <link rel="up" title="Module code" href="../index.html"/> 
 
   <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
@@ -67,7 +65,7 @@
           <li> <a href="../../index.html">
             <img src="../../_static/paraview-logo-small.png"
             alt="ParaView/Python"></img></a> </li>
-          <li class="version"> version 5.9.0-RC1-193-gf1bb9b526b</li>
+          <li class="version"> version 5.9.0-RC1-211-gf85ab347b3</li>
         </ul>
         <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
   <input type="text" name="q" placeholder="Search docs" />
@@ -628,42 +626,42 @@
 <span class="c1">#     PURPOSE.  See the above copyright notice for more information.</span>
 <span class="c1">#</span>
 <span class="c1">#==============================================================================</span>
-<span class="kn">from</span> <span class="nn">__future__</span> <span class="k">import</span> <span class="n">print_function</span>
+<span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">print_function</span>
 <span class="kn">import</span> <span class="nn">paraview</span><span class="o">,</span> <span class="nn">re</span><span class="o">,</span> <span class="nn">os</span><span class="o">,</span> <span class="nn">os.path</span><span class="o">,</span> <span class="nn">types</span><span class="o">,</span> <span class="nn">sys</span>
 
 <span class="c1"># prefer `vtk` from `paraview` since it doesn&#39;t import all</span>
 <span class="c1"># vtk modules.</span>
-<span class="kn">from</span> <span class="nn">paraview</span> <span class="k">import</span> <span class="n">vtk</span>
-<span class="kn">from</span> <span class="nn">paraview</span> <span class="k">import</span> <span class="n">_backwardscompatibilityhelper</span> <span class="k">as</span> <span class="n">_bc</span>
+<span class="kn">from</span> <span class="nn">paraview</span> <span class="kn">import</span> <span class="n">vtk</span>
+<span class="kn">from</span> <span class="nn">paraview</span> <span class="kn">import</span> <span class="n">_backwardscompatibilityhelper</span> <span class="k">as</span> <span class="n">_bc</span>
 
-<span class="kn">from</span> <span class="nn">paraview.modules.vtkPVVTKExtensionsCore</span> <span class="k">import</span> <span class="o">*</span>
-<span class="kn">from</span> <span class="nn">paraview.modules.vtkRemotingCore</span> <span class="k">import</span> <span class="o">*</span>
-<span class="kn">from</span> <span class="nn">paraview.modules.vtkRemotingServerManager</span> <span class="k">import</span> <span class="o">*</span>
-<span class="kn">from</span> <span class="nn">paraview.modules.vtkRemotingSettings</span> <span class="k">import</span> <span class="o">*</span>
-<span class="kn">from</span> <span class="nn">paraview.modules.vtkRemotingApplication</span> <span class="k">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">paraview.modules.vtkPVVTKExtensionsCore</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">paraview.modules.vtkRemotingCore</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">paraview.modules.vtkRemotingServerManager</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">paraview.modules.vtkRemotingSettings</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">paraview.modules.vtkRemotingApplication</span> <span class="kn">import</span> <span class="o">*</span>
 
 <span class="k">try</span><span class="p">:</span>
-    <span class="kn">from</span> <span class="nn">paraview.modules.vtkRemotingViews</span> <span class="k">import</span> <span class="o">*</span>
+    <span class="kn">from</span> <span class="nn">paraview.modules.vtkRemotingViews</span> <span class="kn">import</span> <span class="o">*</span>
 <span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
     <span class="k">pass</span>
 
 <span class="k">try</span><span class="p">:</span>
-    <span class="kn">from</span> <span class="nn">paraview.modules.vtkRemotingAnimation</span> <span class="k">import</span> <span class="o">*</span>
+    <span class="kn">from</span> <span class="nn">paraview.modules.vtkRemotingAnimation</span> <span class="kn">import</span> <span class="o">*</span>
 <span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
     <span class="k">pass</span>
 
 <span class="k">try</span><span class="p">:</span>
-    <span class="kn">from</span> <span class="nn">paraview.modules.vtkRemotingExport</span> <span class="k">import</span> <span class="o">*</span>
+    <span class="kn">from</span> <span class="nn">paraview.modules.vtkRemotingExport</span> <span class="kn">import</span> <span class="o">*</span>
 <span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
     <span class="k">pass</span>
 
 <span class="k">try</span><span class="p">:</span>
-    <span class="kn">from</span> <span class="nn">paraview.modules.vtkRemotingMisc</span> <span class="k">import</span> <span class="o">*</span>
+    <span class="kn">from</span> <span class="nn">paraview.modules.vtkRemotingMisc</span> <span class="kn">import</span> <span class="o">*</span>
 <span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
     <span class="k">pass</span>
 
 <span class="k">try</span><span class="p">:</span>
-    <span class="kn">from</span> <span class="nn">paraview.modules.vtkRemotingLive</span> <span class="k">import</span> <span class="o">*</span>
+    <span class="kn">from</span> <span class="nn">paraview.modules.vtkRemotingLive</span> <span class="kn">import</span> <span class="o">*</span>
 <span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
     <span class="k">pass</span>
 
@@ -722,7 +720,7 @@
     <span class="sd">&quot;&quot;&quot;ParaViewPipelineController wraps vtkSMParaViewPipelineController class</span>
 <span class="sd">    to manage conversion of arguments passed around from Python Proxy objects to</span>
 <span class="sd">    vtkSMProxy instances are vice-versa.&quot;&quot;&quot;</span>
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Constructor. Creates a new instance of</span>
 <span class="sd">        vtkSMParaViewPipelineController.&quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">SMController</span> <span class="o">=</span> <span class="n">vtkSMParaViewPipelineController</span><span class="p">()</span>
@@ -747,7 +745,7 @@
         <span class="k">else</span><span class="p">:</span>
             <span class="k">return</span> <span class="n">retVal</span>
 
-    <span class="k">def</span> <span class="nf">__getattr__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__getattr__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Returns attribute from the ParaViewPipelineController.&quot;&quot;&quot;</span>
         <span class="k">try</span><span class="p">:</span>
             <span class="n">pmAttr</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">SMController</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
@@ -836,7 +834,7 @@
 <span class="sd">    of the ``vtkSMProxy`` C++ class.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">args</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">args</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot; Default constructor. It can be used to initialize properties</span>
 <span class="sd">        by passing keyword arguments where the key is the name of the</span>
 <span class="sd">        property. In addition registrationGroup and registrationName (optional)</span>
@@ -885,7 +883,7 @@
 <div class="viewcode-block" id="Proxy.add_attribute"><a class="viewcode-back" href="../../paraview.servermanager.html#paraview.servermanager.Proxy.add_attribute">[docs]</a>    <span class="k">def</span> <span class="nf">add_attribute</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="vm">__dict__</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span></div>
 
-    <span class="k">def</span> <span class="nf">__del__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__del__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Destructor. Cleans up all observers as well as remove</span>
 <span class="sd">        the proxy from the _pyproxies dictionary&quot;&quot;&quot;</span>
         <span class="c1"># Make sure that we remove observers we added</span>
@@ -911,7 +909,7 @@
         <span class="s2">&quot;Overridden by the subclass created automatically&quot;</span>
         <span class="k">pass</span></div>
 
-    <span class="k">def</span> <span class="nf">__eq__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__eq__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
         <span class="s2">&quot;Returns true if the underlying SMProxies are the same.&quot;</span>
         <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="n">Proxy</span><span class="p">):</span>
             <span class="k">try</span><span class="p">:</span>
@@ -922,14 +920,14 @@
             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">SMProxy</span> <span class="o">==</span> <span class="n">other</span><span class="o">.</span><span class="n">SMProxy</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">SMProxy</span> <span class="o">==</span> <span class="n">other</span>
 
-    <span class="k">def</span> <span class="nf">__ne__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__ne__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
         <span class="s2">&quot;Returns false if the underlying SMProxies are the same.&quot;</span>
         <span class="k">return</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="fm">__eq__</span><span class="p">(</span><span class="n">other</span><span class="p">)</span>
 
-    <span class="k">def</span> <span class="nf">__hash__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__hash__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="nb">hash</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">SMProxy</span><span class="p">)</span>
 
-    <span class="k">def</span> <span class="nf">__iter__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__iter__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="s2">&quot;Creates an iterator for the properties.&quot;</span>
         <span class="k">return</span> <span class="n">PropertyIterator</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
 
@@ -1032,7 +1030,7 @@
         <span class="n">camera</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">SMProxy</span><span class="o">.</span><span class="n">GetActiveCamera</span><span class="p">()</span>
         <span class="n">proxy</span> <span class="o">=</span> <span class="n">weakref</span><span class="o">.</span><span class="n">ref</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
 
-        <span class="kn">from</span> <span class="nn">functools</span> <span class="k">import</span> <span class="n">wraps</span>
+        <span class="kn">from</span> <span class="nn">functools</span> <span class="kn">import</span> <span class="n">wraps</span>
         <span class="k">def</span> <span class="nf">_camera_sync</span><span class="p">(</span><span class="n">method</span><span class="p">):</span>
             <span class="nd">@wraps</span><span class="p">(</span><span class="n">method</span><span class="p">)</span>
             <span class="k">def</span> <span class="nf">newfunc</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
@@ -1044,12 +1042,12 @@
 
         <span class="c1"># Camera eventually inherit from Object</span>
         <span class="k">class</span> <span class="nc">_camera_wrapper</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
-            <span class="k">def</span> <span class="nf">__getattribute__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">s</span><span class="p">):</span>
+            <span class="k">def</span> <span class="fm">__getattribute__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">s</span><span class="p">):</span>
                 <span class="k">return</span> <span class="n">_camera_sync</span><span class="p">(</span><span class="n">camera</span><span class="o">.</span><span class="fm">__getattribute__</span><span class="p">(</span><span class="n">s</span><span class="p">))</span>
 
             <span class="c1"># Calls to __dir__ bypass the __getattribute__ function, so override it here</span>
             <span class="c1"># to delegate it to the vtkCameara class</span>
-            <span class="k">def</span> <span class="nf">__dir__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+            <span class="k">def</span> <span class="fm">__dir__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
                 <span class="k">try</span><span class="p">:</span>
                     <span class="k">return</span> <span class="n">camera</span><span class="o">.</span><span class="fm">__dir__</span><span class="p">()</span>
                 <span class="k">except</span><span class="p">:</span>
@@ -1057,7 +1055,7 @@
 
         <span class="k">return</span> <span class="n">_camera_wrapper</span><span class="p">()</span>
 
-    <span class="k">def</span> <span class="nf">__setattr__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__setattr__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
         <span class="k">try</span><span class="p">:</span>
             <span class="n">setter</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
             <span class="n">setter</span> <span class="o">=</span> <span class="n">setter</span><span class="o">.</span><span class="fm">__set__</span>
@@ -1089,7 +1087,7 @@
                 <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
                     <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%s</span><span class="s2"> is not a valid value for attribute </span><span class="si">%s</span><span class="s2">.&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">name</span><span class="p">))</span>
 
-    <span class="k">def</span> <span class="nf">__getattr__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__getattr__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;With the exception of a few overloaded methods,</span>
 <span class="sd">        returns the SMProxy method&quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">SMProxy</span><span class="p">:</span>
@@ -1155,7 +1153,7 @@
                 <span class="bp">self</span><span class="o">.</span><span class="n">SMProxy</span><span class="o">.</span><span class="n">GetDataInformation</span><span class="p">(</span><span class="n">idx</span><span class="p">),</span> \
                 <span class="bp">self</span><span class="o">.</span><span class="n">SMProxy</span><span class="p">,</span> <span class="n">idx</span><span class="p">)</span></div>
 
-    <span class="k">def</span> <span class="nf">__getitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">idx</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__getitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">idx</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Given a slice, int or string, returns the corresponding</span>
 <span class="sd">        output port&quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">idx</span><span class="p">,</span> <span class="nb">slice</span><span class="p">):</span>
@@ -1289,23 +1287,23 @@
 <span class="sd">    see also dir(proxy.SMProperty). See also the doxygen based documentation</span>
 <span class="sd">    of the vtkSMProperty C++ class.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">proxy</span><span class="p">,</span> <span class="n">smproperty</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">proxy</span><span class="p">,</span> <span class="n">smproperty</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Default constructor. Stores a reference to the proxy.&quot;&quot;&quot;</span>
         <span class="kn">import</span> <span class="nn">weakref</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">SMProperty</span> <span class="o">=</span> <span class="n">smproperty</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">Proxy</span> <span class="o">=</span> <span class="n">proxy</span>
 
-    <span class="k">def</span> <span class="nf">__eq__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__eq__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
         <span class="s2">&quot;Returns true if the properties or properties values are the same.&quot;</span>
         <span class="k">return</span> <span class="p">((</span><span class="bp">self</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">other</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">)</span> <span class="ow">or</span>
                 <span class="p">(</span><span class="bp">self</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">other</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="fm">__repr__</span><span class="p">()</span> <span class="o">==</span> <span class="n">other</span><span class="o">.</span><span class="fm">__repr__</span><span class="p">()))</span>
 
     <span class="k">if</span> <span class="n">sys</span><span class="o">.</span><span class="n">version_info</span> <span class="o">&lt;</span> <span class="p">(</span><span class="mi">3</span><span class="p">,):</span>
-        <span class="k">def</span> <span class="nf">__ne__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+        <span class="k">def</span> <span class="fm">__ne__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
             <span class="s2">&quot;Returns true if the properties or properties values are not the same.&quot;</span>
             <span class="k">return</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="fm">__eq__</span><span class="p">(</span><span class="n">other</span><span class="p">)</span>
 
-    <span class="k">def</span> <span class="nf">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Returns a string representation containing property name</span>
 <span class="sd">        and value&quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="nb">type</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="ow">is</span> <span class="n">Property</span><span class="p">:</span>
@@ -1324,7 +1322,7 @@
                 <span class="nb">repr</span> <span class="o">+=</span> <span class="s2">&quot;Unknown&quot;</span>
         <span class="k">return</span> <span class="nb">repr</span>
 
-    <span class="k">def</span> <span class="nf">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Forces a property update using InvokeCommand.&quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="ow">is</span> <span class="n">Property</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">Proxy</span><span class="o">.</span><span class="n">SMProxy</span><span class="o">.</span><span class="n">InvokeCommand</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_FindPropertyName</span><span class="p">())</span>
@@ -1346,7 +1344,7 @@
         <span class="c1"># self.Proxy.SMProxy.UpdateProperty(self._FindPropertyName())</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">Proxy</span><span class="o">.</span><span class="n">SMProxy</span><span class="o">.</span><span class="n">UpdateVTKObjects</span><span class="p">()</span>
 
-    <span class="k">def</span> <span class="nf">__getattr__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__getattr__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
         <span class="s2">&quot;Unknown attribute requests get forwarded to SMProperty.&quot;</span>
         <span class="k">return</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">SMProperty</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
 
@@ -1356,14 +1354,14 @@
 <div class="viewcode-block" id="GenericIterator"><a class="viewcode-back" href="../../paraview.servermanager.html#paraview.servermanager.GenericIterator">[docs]</a><span class="k">class</span> <span class="nc">GenericIterator</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Iterator for container type objects&quot;&quot;&quot;</span>
 
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">obj</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">obj</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">Object</span> <span class="o">=</span> <span class="n">obj</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">index</span> <span class="o">=</span> <span class="mi">0</span>
 
-    <span class="k">def</span> <span class="nf">__iter__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__iter__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="bp">self</span>
 
-    <span class="k">def</span> <span class="nf">__next__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__next__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">index</span> <span class="o">&gt;=</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">Object</span><span class="p">):</span>
             <span class="k">raise</span> <span class="ne">StopIteration</span>
 
@@ -1385,15 +1383,15 @@
 <div class="viewcode-block" id="VectorProperty.ConvertValue"><a class="viewcode-back" href="../../paraview.servermanager.html#paraview.servermanager.VectorProperty.ConvertValue">[docs]</a>    <span class="k">def</span> <span class="nf">ConvertValue</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
         <span class="k">return</span> <span class="n">value</span></div>
 
-    <span class="k">def</span> <span class="nf">__len__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__len__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Returns the number of elements.&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">SMProperty</span><span class="o">.</span><span class="n">GetNumberOfElements</span><span class="p">()</span>
 
-    <span class="k">def</span> <span class="nf">__iter__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__iter__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Implementation of the sequence API&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="n">GenericIterator</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
 
-    <span class="k">def</span> <span class="nf">__setitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">idx</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__setitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">idx</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Given a list or tuple of values, sets a slice of values [min, max)&quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">idx</span><span class="p">,</span> <span class="nb">slice</span><span class="p">):</span>
             <span class="n">indices</span> <span class="o">=</span> <span class="n">idx</span><span class="o">.</span><span class="n">indices</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="p">))</span>
@@ -1409,7 +1407,7 @@
 <div class="viewcode-block" id="VectorProperty.GetElement"><a class="viewcode-back" href="../../paraview.servermanager.html#paraview.servermanager.VectorProperty.GetElement">[docs]</a>    <span class="k">def</span> <span class="nf">GetElement</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">index</span><span class="p">):</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">SMProperty</span><span class="o">.</span><span class="n">GetElement</span><span class="p">(</span><span class="n">index</span><span class="p">)</span></div>
 
-    <span class="k">def</span> <span class="nf">__getitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">idx</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__getitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">idx</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Returns the range [min, max) of elements. Raises an IndexError</span>
 <span class="sd">        exception if an argument is out of bounds.&quot;&quot;&quot;</span>
         <span class="n">ls</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
@@ -1475,21 +1473,21 @@
 <div class="viewcode-block" id="DoubleMapProperty"><a class="viewcode-back" href="../../paraview.servermanager.html#paraview.servermanager.DoubleMapProperty">[docs]</a><span class="k">class</span> <span class="nc">DoubleMapProperty</span><span class="p">(</span><span class="n">Property</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;A DoubleMapProperty provides access to a map of double vector values.&quot;&quot;&quot;</span>
 
-    <span class="k">def</span> <span class="nf">__len__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__len__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Returns the number of elements.&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">SMProperty</span><span class="o">.</span><span class="n">GetNumberOfElements</span><span class="p">()</span>
 
-    <span class="k">def</span> <span class="nf">__getitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__getitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Returns the values for key.&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">GetData</span><span class="p">()[</span><span class="n">key</span><span class="p">]</span>
 
-    <span class="k">def</span> <span class="nf">__setitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">values</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__setitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">values</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Sets the values for key.&quot;&quot;&quot;</span>
         <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">values</span><span class="p">):</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">SMProperty</span><span class="o">.</span><span class="n">SetElementComponent</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_UpdateProperty</span><span class="p">()</span>
 
-    <span class="k">def</span> <span class="nf">__contains__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__contains__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Returns True if the property contains key.&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="n">key</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
 
@@ -1607,14 +1605,14 @@
 <div class="viewcode-block" id="ArraySelectionProperty.GetArrayName"><a class="viewcode-back" href="../../paraview.servermanager.html#paraview.servermanager.ArraySelectionProperty.GetArrayName">[docs]</a>    <span class="k">def</span> <span class="nf">GetArrayName</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">GetElement</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span></div>
 
-    <span class="k">def</span> <span class="nf">__len__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__len__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Returns the number of elements.&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="mi">2</span>
 
-    <span class="k">def</span> <span class="nf">__setitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">idx</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__setitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">idx</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
         <span class="k">raise</span> <span class="ne">RuntimeError</span> <span class="p">(</span><span class="s2">&quot;This property cannot be accessed using __setitem__&quot;</span><span class="p">)</span>
 
-    <span class="k">def</span> <span class="nf">__getitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">idx</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__getitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">idx</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Returns attribute type for index 0, array name for index 1&quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">idx</span><span class="p">,</span> <span class="nb">slice</span><span class="p">):</span>
             <span class="n">indices</span> <span class="o">=</span> <span class="n">idx</span><span class="o">.</span><span class="n">indices</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="p">))</span>
@@ -1698,7 +1696,7 @@
 <span class="sd">    Simply assign a list of arrays that should be loaded by the reader.</span>
 <span class="sd">    Use the Available property to get a list of available arrays.&quot;&quot;&quot;</span>
 
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">proxy</span><span class="p">,</span> <span class="n">smproperty</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">proxy</span><span class="p">,</span> <span class="n">smproperty</span><span class="p">):</span>
         <span class="n">VectorProperty</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">proxy</span><span class="p">,</span> <span class="n">smproperty</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">__arrays</span> <span class="o">=</span> <span class="p">[]</span>
 
@@ -1724,15 +1722,15 @@
         <span class="s2">&quot;Deselects all arrays.&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">SetData</span><span class="p">([])</span></div>
 
-    <span class="k">def</span> <span class="nf">__iter__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__iter__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Implementation of the sequence API&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="n">GenericIterator</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
 
-    <span class="k">def</span> <span class="nf">__len__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__len__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Returns the number of elements.&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">GetData</span><span class="p">())</span>
 
-    <span class="k">def</span> <span class="nf">__setitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">idx</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__setitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">idx</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
       <span class="sd">&quot;&quot;&quot;Given a list or tuple of values, sets a slice of values [min, max)&quot;&quot;&quot;</span>
       <span class="bp">self</span><span class="o">.</span><span class="n">GetData</span><span class="p">()</span>
       <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">idx</span><span class="p">,</span> <span class="nb">slice</span><span class="p">):</span>
@@ -1746,7 +1744,7 @@
           <span class="bp">self</span><span class="o">.</span><span class="n">__arrays</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">ConvertValue</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
           <span class="bp">self</span><span class="o">.</span><span class="n">SetData</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">__arrays</span><span class="p">)</span>
 
-    <span class="k">def</span> <span class="nf">__getitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">idx</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__getitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">idx</span><span class="p">):</span>
       <span class="sd">&quot;&quot;&quot;Returns the range [min, max) of elements. Raises an IndexError</span>
 <span class="sd">      exception if an argument is out of bounds.&quot;&quot;&quot;</span>
       <span class="bp">self</span><span class="o">.</span><span class="n">GetData</span><span class="p">()</span>
@@ -1839,7 +1837,7 @@
 <span class="sd">    Note that some properties expect only 1 proxy and will complain if</span>
 <span class="sd">    you set the number of values to be something else.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">proxy</span><span class="p">,</span> <span class="n">smproperty</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">proxy</span><span class="p">,</span> <span class="n">smproperty</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Default constructor.  Stores a reference to the proxy.  Also looks</span>
 <span class="sd">        at domains to find valid values.&quot;&quot;&quot;</span>
         <span class="n">Property</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">proxy</span><span class="p">,</span> <span class="n">smproperty</span><span class="p">)</span>
@@ -1874,11 +1872,11 @@
 <span class="sd">                         use to select from the list domain.  If there is no</span>
 <span class="sd">                         such list domain, the array is empty.&quot;&quot;&quot;</span><span class="p">)</span>
 
-    <span class="k">def</span> <span class="nf">__iter__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__iter__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Implementation of the sequence API&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="n">GenericIterator</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
 
-    <span class="k">def</span> <span class="nf">__len__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__len__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Returns the number of elements.&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">SMProperty</span><span class="o">.</span><span class="n">GetNumberOfProxies</span><span class="p">()</span>
 
@@ -1887,7 +1885,7 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">SMProperty</span><span class="o">.</span><span class="n">RemoveProxy</span><span class="p">(</span><span class="n">proxy</span><span class="o">.</span><span class="n">SMProxy</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_UpdateProperty</span><span class="p">()</span></div>
 
-    <span class="k">def</span> <span class="nf">__setitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">idx</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__setitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">idx</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
       <span class="sd">&quot;&quot;&quot;Given a list or tuple of values, sets a slice of values [min, max)&quot;&quot;&quot;</span>
       <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">idx</span><span class="p">,</span> <span class="nb">slice</span><span class="p">):</span>
         <span class="n">indices</span> <span class="o">=</span> <span class="n">idx</span><span class="o">.</span><span class="n">indices</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="p">))</span>
@@ -1900,7 +1898,7 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">SMProperty</span><span class="o">.</span><span class="n">SetProxy</span><span class="p">(</span><span class="n">idx</span><span class="p">,</span> <span class="n">value</span><span class="o">.</span><span class="n">SMProxy</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_UpdateProperty</span><span class="p">()</span>
 
-    <span class="k">def</span> <span class="nf">__delitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">idx</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__delitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">idx</span><span class="p">):</span>
       <span class="sd">&quot;&quot;&quot;Removes the element idx&quot;&quot;&quot;</span>
       <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">idx</span><span class="p">,</span> <span class="nb">slice</span><span class="p">):</span>
         <span class="n">indices</span> <span class="o">=</span> <span class="n">idx</span><span class="o">.</span><span class="n">indices</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="p">))</span>
@@ -1919,7 +1917,7 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">SMProperty</span><span class="o">.</span><span class="n">RemoveProxy</span><span class="p">(</span><span class="bp">self</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span><span class="o">.</span><span class="n">SMProxy</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_UpdateProperty</span><span class="p">()</span>
 
-    <span class="k">def</span> <span class="nf">__getitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">idx</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__getitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">idx</span><span class="p">):</span>
       <span class="sd">&quot;&quot;&quot;Returns the range [min, max) of elements. Raises an IndexError</span>
 <span class="sd">      exception if an argument is out of bounds.&quot;&quot;&quot;</span>
       <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">idx</span><span class="p">,</span> <span class="nb">slice</span><span class="p">):</span>
@@ -1932,7 +1930,7 @@
         <span class="k">raise</span> <span class="ne">IndexError</span>
       <span class="k">return</span> <span class="n">_getPyProxy</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">SMProperty</span><span class="o">.</span><span class="n">GetProxy</span><span class="p">(</span><span class="n">idx</span><span class="p">))</span>
 
-    <span class="k">def</span> <span class="nf">__getattr__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__getattr__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
         <span class="s2">&quot;Unknown attribute requests get forwarded to SMProperty.&quot;</span>
         <span class="k">return</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">SMProperty</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
 
@@ -2002,7 +2000,7 @@
 <span class="sd">    or</span>
 <span class="sd">    &gt; property.append(OutputPort(proxy, 0))</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="k">def</span> <span class="nf">__setitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">idx</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__setitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">idx</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
       <span class="sd">&quot;&quot;&quot;Given a list or tuple of values, sets a slice of values [min, max)&quot;&quot;&quot;</span>
       <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">idx</span><span class="p">,</span> <span class="nb">slice</span><span class="p">):</span>
         <span class="n">indices</span> <span class="o">=</span> <span class="n">idx</span><span class="o">.</span><span class="n">indices</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="p">))</span>
@@ -2016,7 +2014,7 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">SMProperty</span><span class="o">.</span><span class="n">SetInputConnection</span><span class="p">(</span><span class="n">idx</span><span class="p">,</span> <span class="n">value</span><span class="o">.</span><span class="n">SMProxy</span><span class="p">,</span> <span class="n">value</span><span class="o">.</span><span class="n">Port</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_UpdateProperty</span><span class="p">()</span>
 
-    <span class="k">def</span> <span class="nf">__getitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">idx</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__getitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">idx</span><span class="p">):</span>
       <span class="sd">&quot;&quot;&quot;Returns the range [min, max) of elements. Raises an IndexError</span>
 <span class="sd">      exception if an argument is out of bounds.&quot;&quot;&quot;</span>
       <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">idx</span><span class="p">,</span> <span class="nb">slice</span><span class="p">):</span>
@@ -2090,7 +2088,7 @@
 <span class="sd">    See also the doxygen based documentation of the vtkPVDataInformation C++</span>
 <span class="sd">    class.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dataInformation</span><span class="p">,</span> <span class="n">proxy</span><span class="p">,</span> <span class="n">idx</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dataInformation</span><span class="p">,</span> <span class="n">proxy</span><span class="p">,</span> <span class="n">idx</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Default constructor. Requires a vtkPVDataInformation, a source proxy</span>
 <span class="sd">        and an output port id.&quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">DataInformation</span> <span class="o">=</span> <span class="n">dataInformation</span>
@@ -2121,7 +2119,7 @@
 <span class="sd">        not the same as the enumaration used by VTK&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="n">vtk</span><span class="o">.</span><span class="n">vtkDataObjectTypes</span><span class="o">.</span><span class="n">GetClassNameFromTypeId</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">GetDataSetType</span><span class="p">())</span></div>
 
-    <span class="k">def</span> <span class="nf">__getattr__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__getattr__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Forwards unknown attribute requests to the underlying</span>
 <span class="sd">        vtkPVInformation.&quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">DataInformation</span><span class="p">:</span>
@@ -2140,18 +2138,18 @@
 <span class="sd">    See the doxygen based documentation of the vtkPVArrayInformation C++</span>
 <span class="sd">    class for a full list.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">proxy</span><span class="p">,</span> <span class="n">field</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">proxy</span><span class="p">,</span> <span class="n">field</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">Proxy</span> <span class="o">=</span> <span class="n">proxy</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">FieldData</span> <span class="o">=</span> <span class="n">field</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">Name</span> <span class="o">=</span> <span class="n">name</span>
 
-    <span class="k">def</span> <span class="nf">__getattr__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__getattr__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Forward unknown methods to vtkPVArrayInformation&quot;&quot;&quot;</span>
         <span class="n">array</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">FieldData</span><span class="o">.</span><span class="n">GetFieldData</span><span class="p">()</span><span class="o">.</span><span class="n">GetArrayInformation</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">Name</span><span class="p">)</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="n">array</span><span class="p">:</span> <span class="k">return</span> <span class="kc">None</span>
         <span class="k">return</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">array</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
 
-    <span class="k">def</span> <span class="nf">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Returns a user-friendly representation string.&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="s2">&quot;Array: &quot;</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">Name</span>
 
@@ -2168,15 +2166,15 @@
 <div class="viewcode-block" id="FieldDataInformationIterator"><a class="viewcode-back" href="../../paraview.servermanager.html#paraview.servermanager.FieldDataInformationIterator">[docs]</a><span class="k">class</span> <span class="nc">FieldDataInformationIterator</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Iterator for FieldDataInformation&quot;&quot;&quot;</span>
 
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">info</span><span class="p">,</span> <span class="n">items</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">info</span><span class="p">,</span> <span class="n">items</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">FieldDataInformation</span> <span class="o">=</span> <span class="n">info</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">index</span> <span class="o">=</span> <span class="mi">0</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">items</span> <span class="o">=</span> <span class="n">items</span>
 
-    <span class="k">def</span> <span class="nf">__iter__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__iter__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="bp">self</span>
 
-    <span class="k">def</span> <span class="nf">__next__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__next__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">index</span> <span class="o">&gt;=</span> <span class="bp">self</span><span class="o">.</span><span class="n">FieldDataInformation</span><span class="o">.</span><span class="n">GetNumberOfArrays</span><span class="p">():</span>
             <span class="k">raise</span> <span class="ne">StopIteration</span>
 
@@ -2204,7 +2202,7 @@
 <span class="sd">    The number of arrays can also be accessed using the NumberOfArrays</span>
 <span class="sd">    property.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">proxy</span><span class="p">,</span> <span class="n">idx</span><span class="p">,</span> <span class="n">field</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">proxy</span><span class="p">,</span> <span class="n">idx</span><span class="p">,</span> <span class="n">field</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">Proxy</span> <span class="o">=</span> <span class="n">proxy</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">OutputPort</span> <span class="o">=</span> <span class="n">idx</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">FieldData</span> <span class="o">=</span> <span class="n">field</span>
@@ -2231,11 +2229,11 @@
             <span class="k">raise</span> <span class="ne">IndexError</span>
         <span class="k">return</span> <span class="n">ArrayInformation</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">Proxy</span><span class="p">,</span> <span class="bp">self</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">GetFieldData</span><span class="p">()</span><span class="o">.</span><span class="n">GetArrayInformation</span><span class="p">(</span><span class="n">idx</span><span class="p">)</span><span class="o">.</span><span class="n">GetName</span><span class="p">())</span></div>
 
-    <span class="k">def</span> <span class="nf">__len__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__len__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Returns the number of arrays.&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">GetNumberOfArrays</span><span class="p">()</span>
 
-    <span class="k">def</span> <span class="nf">__getitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">idx</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__getitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">idx</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Implements the [] operator. Accepts an array name.&quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">idx</span><span class="p">,</span> <span class="nb">slice</span><span class="p">):</span>
             <span class="n">indices</span> <span class="o">=</span> <span class="n">idx</span><span class="o">.</span><span class="n">indices</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">GetNumberOfArrays</span><span class="p">())</span>
@@ -2280,11 +2278,11 @@
             <span class="k">return</span> <span class="kc">True</span>
         <span class="k">return</span> <span class="kc">False</span></div>
 
-    <span class="k">def</span> <span class="nf">__iter__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__iter__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Implementation of the dictionary API&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="n">FieldDataInformationIterator</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
 
-    <span class="k">def</span> <span class="nf">__getattr__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__getattr__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Forwards unknown attributes to the underlying</span>
 <span class="sd">        vtkPVDataSetAttributesInformation&quot;&quot;&quot;</span>
         <span class="n">array</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">GetArray</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
@@ -2334,7 +2332,7 @@
 <span class="sd">    of the vtkSMProxyManager C++ class.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">session</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">session</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Constructor. Assigned self.SMProxyManager to</span>
 <span class="sd">        vtkSMProxyManager.GetProxyManager().&quot;&quot;&quot;</span>
         <span class="k">global</span> <span class="n">ActiveConnection</span>
@@ -2419,7 +2417,7 @@
 
         <span class="k">return</span> <span class="n">result</span></div>
 
-    <span class="k">def</span> <span class="nf">__iter__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__iter__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Returns a new ProxyIterator.&quot;&quot;&quot;</span>
         <span class="nb">iter</span> <span class="o">=</span> <span class="n">ProxyIterator</span><span class="p">()</span>
         <span class="nb">iter</span><span class="o">.</span><span class="n">Begin</span><span class="p">()</span>
@@ -2460,7 +2458,7 @@
       <span class="k">else</span><span class="p">:</span>
           <span class="k">return</span> <span class="n">retVal</span>
 
-    <span class="k">def</span> <span class="nf">__getattr__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__getattr__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Returns attribute from the ProxyManager&quot;&quot;&quot;</span>
         <span class="k">try</span><span class="p">:</span>
             <span class="n">pmAttr</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">SMProxyManager</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
@@ -2485,7 +2483,7 @@
 <span class="sd">       class for details.</span>
 <span class="sd">       &quot;&quot;&quot;</span>
 
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">aProxy</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">aProxy</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">SMIterator</span> <span class="o">=</span> <span class="n">aProxy</span><span class="o">.</span><span class="n">NewPropertyIterator</span><span class="p">()</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">SMIterator</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">SMIterator</span><span class="o">.</span><span class="n">UnRegister</span><span class="p">(</span><span class="kc">None</span><span class="p">)</span>
@@ -2494,10 +2492,10 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">PropertyLabel</span> <span class="o">=</span> <span class="kc">None</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">Proxy</span> <span class="o">=</span> <span class="n">aProxy</span>
 
-    <span class="k">def</span> <span class="nf">__iter__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__iter__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="bp">self</span>
 
-    <span class="k">def</span> <span class="nf">__next__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__next__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">SMIterator</span><span class="p">:</span>
             <span class="k">raise</span> <span class="ne">StopIteration</span>
 
@@ -2523,7 +2521,7 @@
         <span class="sd">&quot;&quot;&quot;Returns the property last returned by the call to &#39;__next__()&#39; &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">Proxy</span><span class="o">.</span><span class="n">GetProperty</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">Key</span><span class="p">)</span></div>
 
-    <span class="k">def</span> <span class="nf">__getattr__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__getattr__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;returns attributes from the vtkSMPropertyIterator.&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">SMIterator</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span></div>
 
@@ -2532,7 +2530,7 @@
 <span class="sd">       the python iterator protocol.</span>
 <span class="sd">       See the doxygen documentation of the vtkPVProxyDefinitionIterator</span>
 <span class="sd">       C++ class for more information.&quot;&quot;&quot;</span>
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">iter</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">iter</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">SMIterator</span> <span class="o">=</span> <span class="nb">iter</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">SMIterator</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">SMIterator</span><span class="o">.</span><span class="n">UnRegister</span><span class="p">(</span><span class="kc">None</span><span class="p">)</span>
@@ -2540,10 +2538,10 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">Group</span> <span class="o">=</span> <span class="kc">None</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">Key</span> <span class="o">=</span> <span class="kc">None</span>
 
-    <span class="k">def</span> <span class="nf">__iter__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__iter__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="bp">self</span>
 
-    <span class="k">def</span> <span class="nf">__next__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__next__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">SMIterator</span><span class="o">.</span><span class="n">IsDoneWithTraversal</span><span class="p">():</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">Group</span> <span class="o">=</span> <span class="kc">None</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">Key</span> <span class="o">=</span> <span class="kc">None</span>
@@ -2563,7 +2561,7 @@
 <span class="sd">        call to &#39;__next__()&#39; &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">Group</span></div>
 
-    <span class="k">def</span> <span class="nf">__getattr__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__getattr__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;returns attributes from the vtkPVProxyDefinitionIterator.&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">SMIterator</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span></div>
 
@@ -2573,7 +2571,7 @@
 <span class="sd">     See the doxygen documentation of vtkSMProxyIterator C++ class for</span>
 <span class="sd">     more information.</span>
 <span class="sd">     &quot;&quot;&quot;</span>
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">SMIterator</span> <span class="o">=</span> <span class="n">vtkSMProxyIterator</span><span class="p">()</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">SMIterator</span><span class="o">.</span><span class="n">SetSession</span><span class="p">(</span><span class="n">ActiveConnection</span><span class="o">.</span><span class="n">Session</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">SMIterator</span><span class="o">.</span><span class="n">Begin</span><span class="p">()</span>
@@ -2581,10 +2579,10 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">Group</span> <span class="o">=</span> <span class="kc">None</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">Key</span> <span class="o">=</span> <span class="kc">None</span>
 
-    <span class="k">def</span> <span class="nf">__iter__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__iter__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="bp">self</span>
 
-    <span class="k">def</span> <span class="nf">__next__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__next__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">SMIterator</span><span class="o">.</span><span class="n">IsAtEnd</span><span class="p">():</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">AProxy</span> <span class="o">=</span> <span class="kc">None</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">Group</span> <span class="o">=</span> <span class="kc">None</span>
@@ -2611,7 +2609,7 @@
 <span class="sd">        &#39;__next__()&#39; &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">Group</span></div>
 
-    <span class="k">def</span> <span class="nf">__getattr__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__getattr__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;returns attributes from the vtkSMProxyIterator.&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">SMIterator</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span></div>
 
@@ -2632,7 +2630,7 @@
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">      This is a python representation for a session/connection.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">connectionId</span><span class="p">,</span> <span class="n">session</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">connectionId</span><span class="p">,</span> <span class="n">session</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Default constructor. Creates a Connection with the given</span>
 <span class="sd">        ID, all other data members initialized to None.&quot;&quot;&quot;</span>
         <span class="k">global</span> <span class="n">ActiveConnection</span>
@@ -2655,13 +2653,13 @@
         <span class="n">ActiveConnection</span> <span class="o">=</span> <span class="kc">None</span>
         <span class="c1">#SetActiveConnection(self)</span>
 
-    <span class="k">def</span> <span class="nf">__eq__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__eq__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
         <span class="s2">&quot;Returns true if the connection ids are the same.&quot;</span>
         <span class="c1">#Python3 - this is now called when self is None</span>
         <span class="k">return</span> <span class="p">((</span><span class="bp">self</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">other</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">)</span> <span class="ow">or</span>
                 <span class="p">((</span><span class="bp">self</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">other</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">ID</span> <span class="o">==</span> <span class="n">other</span><span class="o">.</span><span class="n">ID</span><span class="p">)))</span>
 
-    <span class="k">def</span> <span class="nf">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;User friendly string representation&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="s2">&quot;Connection (</span><span class="si">%s</span><span class="s2">) [</span><span class="si">%d</span><span class="s2">]&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">Session</span><span class="o">.</span><span class="n">GetURI</span><span class="p">(),</span> <span class="bp">self</span><span class="o">.</span><span class="n">ID</span><span class="p">)</span>
 
@@ -2698,7 +2696,7 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">Modules</span> <span class="o">=</span> <span class="kc">None</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">Alive</span> <span class="o">=</span> <span class="kc">False</span></div>
 
-    <span class="k">def</span> <span class="nf">__del__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__del__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">Alive</span><span class="p">:</span>
            <span class="bp">self</span><span class="o">.</span><span class="n">close</span><span class="p">()</span></div>
 
@@ -2929,7 +2927,7 @@
 
 <span class="kn">import</span> <span class="nn">importlib</span><span class="o">,</span> <span class="nn">importlib.abc</span>
 <div class="viewcode-block" id="ParaViewMetaPathFinder"><a class="viewcode-back" href="../../paraview.servermanager.html#paraview.servermanager.ParaViewMetaPathFinder">[docs]</a><span class="k">class</span> <span class="nc">ParaViewMetaPathFinder</span><span class="p">(</span><span class="n">importlib</span><span class="o">.</span><span class="n">abc</span><span class="o">.</span><span class="n">MetaPathFinder</span><span class="p">):</span>
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_loader</span> <span class="o">=</span> <span class="n">ParaViewLoader</span><span class="p">()</span>
 
 <div class="viewcode-block" id="ParaViewMetaPathFinder.find_spec"><a class="viewcode-back" href="../../paraview.servermanager.html#paraview.servermanager.ParaViewMetaPathFinder.find_spec">[docs]</a>    <span class="k">def</span> <span class="nf">find_spec</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">fullname</span><span class="p">,</span> <span class="n">path</span><span class="p">,</span> <span class="n">target</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
@@ -3648,7 +3646,7 @@
 <span class="sd">    probes it with a line, delivers the result to the client using Fetch</span>
 <span class="sd">    and plots it using pylab. This demo requires numpy and pylab installed.</span>
 <span class="sd">    It returns a tuple of (data, render view).&quot;&quot;&quot;</span>
-    <span class="kn">from</span> <span class="nn">vtkmodules.util</span> <span class="k">import</span> <span class="n">numpy_support</span>
+    <span class="kn">from</span> <span class="nn">vtkmodules.util</span> <span class="kn">import</span> <span class="n">numpy_support</span>
     <span class="kn">import</span> <span class="nn">pylab</span>
 
     <span class="k">if</span> <span class="ow">not</span> <span class="n">ActiveConnection</span><span class="p">:</span>

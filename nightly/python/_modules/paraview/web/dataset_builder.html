@@ -7,12 +7,10 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>paraview.web.dataset_builder &mdash; ParaView/Python 5.9.0-RC1-193-gf1bb9b526b documentation</title>
+  <title>paraview.web.dataset_builder &mdash; ParaView/Python 5.9.0-RC1-211-gf85ab347b3 documentation</title>
   
 
   
-  
-    <link rel="shortcut icon" href="../../../_static/pvIcon.ico"/>
   
 
   
@@ -24,7 +22,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:'../../../',
-        VERSION:'5.9.0-RC1-193-gf1bb9b526b',
+        VERSION:'5.9.0-RC1-211-gf85ab347b3',
         COLLAPSE_INDEX:false,
         FILE_SUFFIX:'.html',
         HAS_SOURCE:  true
@@ -49,7 +47,7 @@
         <link rel="index" title="Index"
               href="../../../genindex.html"/>
         <link rel="search" title="Search" href="../../../search.html"/>
-    <link rel="top" title="ParaView/Python 5.9.0-RC1-193-gf1bb9b526b documentation" href="../../../index.html"/>
+    <link rel="top" title="ParaView/Python 5.9.0-RC1-211-gf85ab347b3 documentation" href="../../../index.html"/>
         <link rel="up" title="Module code" href="../../index.html"/> 
 
   <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
@@ -67,7 +65,7 @@
           <li> <a href="../../../index.html">
             <img src="../../../_static/paraview-logo-small.png"
             alt="ParaView/Python"></img></a> </li>
-          <li class="version"> version 5.9.0-RC1-193-gf1bb9b526b</li>
+          <li class="version"> version 5.9.0-RC1-211-gf85ab347b3</li>
         </ul>
         <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
   <input type="text" name="q" placeholder="Search docs" />
@@ -581,18 +579,18 @@
 <hr/>
           
   <h1>Source code for paraview.web.dataset_builder</h1><div class="highlight"><pre>
-<span></span><span class="kn">from</span> <span class="nn">vtkmodules.web</span> <span class="k">import</span> <span class="n">camera</span>
-<span class="kn">from</span> <span class="nn">paraview.web</span> <span class="k">import</span> <span class="n">data_writer</span>
-<span class="kn">from</span> <span class="nn">paraview.web</span> <span class="k">import</span> <span class="n">data_converter</span>
+<span></span><span class="kn">from</span> <span class="nn">vtkmodules.web</span> <span class="kn">import</span> <span class="n">camera</span>
+<span class="kn">from</span> <span class="nn">paraview.web</span> <span class="kn">import</span> <span class="n">data_writer</span>
+<span class="kn">from</span> <span class="nn">paraview.web</span> <span class="kn">import</span> <span class="n">data_converter</span>
 
-<span class="kn">from</span> <span class="nn">vtkmodules.web.query_data_model</span> <span class="k">import</span> <span class="o">*</span>
-<span class="kn">from</span> <span class="nn">paraview.web.camera</span> <span class="k">import</span> <span class="o">*</span>
-<span class="kn">from</span> <span class="nn">vtkmodules.web</span> <span class="k">import</span> <span class="n">iteritems</span><span class="p">,</span> <span class="n">buffer</span>
-<span class="kn">from</span> <span class="nn">paraview</span> <span class="k">import</span> <span class="n">simple</span>
-<span class="kn">from</span> <span class="nn">paraview</span> <span class="k">import</span> <span class="n">servermanager</span>
+<span class="kn">from</span> <span class="nn">vtkmodules.web.query_data_model</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">paraview.web.camera</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">vtkmodules.web</span> <span class="kn">import</span> <span class="n">iteritems</span><span class="p">,</span> <span class="n">buffer</span>
+<span class="kn">from</span> <span class="nn">paraview</span> <span class="kn">import</span> <span class="n">simple</span>
+<span class="kn">from</span> <span class="nn">paraview</span> <span class="kn">import</span> <span class="n">servermanager</span>
 
-<span class="kn">from</span> <span class="nn">vtkmodules.vtkCommonCore</span> <span class="k">import</span> <span class="n">vtkFloatArray</span><span class="p">,</span> <span class="n">vtkIdList</span><span class="p">,</span> <span class="n">vtkUnsignedCharArray</span><span class="p">,</span> <span class="n">vtkTypeUInt32Array</span>
-<span class="kn">from</span> <span class="nn">vtkmodules.vtkCommonDataModel</span> <span class="k">import</span> <span class="n">vtkDataSetAttributes</span>
+<span class="kn">from</span> <span class="nn">vtkmodules.vtkCommonCore</span> <span class="kn">import</span> <span class="n">vtkFloatArray</span><span class="p">,</span> <span class="n">vtkIdList</span><span class="p">,</span> <span class="n">vtkUnsignedCharArray</span><span class="p">,</span> <span class="n">vtkTypeUInt32Array</span>
+<span class="kn">from</span> <span class="nn">vtkmodules.vtkCommonDataModel</span> <span class="kn">import</span> <span class="n">vtkDataSetAttributes</span>
 
 <span class="kn">import</span> <span class="nn">json</span><span class="o">,</span> <span class="nn">os</span><span class="o">,</span> <span class="nn">math</span><span class="o">,</span> <span class="nn">gzip</span><span class="o">,</span> <span class="nn">shutil</span><span class="o">,</span> <span class="nn">hashlib</span>
 
@@ -617,7 +615,7 @@
 <span class="c1"># -----------------------------------------------------------------------------</span>
 
 <div class="viewcode-block" id="DataSetBuilder"><a class="viewcode-back" href="../../../paraview.web.dataset_builder.html#paraview.web.dataset_builder.DataSetBuilder">[docs]</a><span class="k">class</span> <span class="nc">DataSetBuilder</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">location</span><span class="p">,</span> <span class="n">camera_data</span><span class="p">,</span> <span class="n">metadata</span><span class="o">=</span><span class="p">{},</span> <span class="n">sections</span><span class="o">=</span><span class="p">{}):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">location</span><span class="p">,</span> <span class="n">camera_data</span><span class="p">,</span> <span class="n">metadata</span><span class="o">=</span><span class="p">{},</span> <span class="n">sections</span><span class="o">=</span><span class="p">{}):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">dataHandler</span> <span class="o">=</span> <span class="n">DataHandler</span><span class="p">(</span><span class="n">location</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">cameraDescription</span> <span class="o">=</span> <span class="n">camera_data</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">camera</span> <span class="o">=</span> <span class="kc">None</span>
@@ -678,7 +676,7 @@
 <span class="c1"># -----------------------------------------------------------------------------</span>
 
 <div class="viewcode-block" id="ImageDataSetBuilder"><a class="viewcode-back" href="../../../paraview.web.dataset_builder.html#paraview.web.dataset_builder.ImageDataSetBuilder">[docs]</a><span class="k">class</span> <span class="nc">ImageDataSetBuilder</span><span class="p">(</span><span class="n">DataSetBuilder</span><span class="p">):</span>
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">location</span><span class="p">,</span> <span class="n">imageMimeType</span><span class="p">,</span> <span class="n">cameraInfo</span><span class="p">,</span> <span class="n">metadata</span><span class="o">=</span><span class="p">{}):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">location</span><span class="p">,</span> <span class="n">imageMimeType</span><span class="p">,</span> <span class="n">cameraInfo</span><span class="p">,</span> <span class="n">metadata</span><span class="o">=</span><span class="p">{}):</span>
         <span class="n">DataSetBuilder</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">location</span><span class="p">,</span> <span class="n">cameraInfo</span><span class="p">,</span> <span class="n">metadata</span><span class="p">)</span>
         <span class="n">imageExtenstion</span> <span class="o">=</span> <span class="s1">&#39;.&#39;</span> <span class="o">+</span> <span class="n">imageMimeType</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">dataHandler</span><span class="o">.</span><span class="n">registerData</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;image&#39;</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="s1">&#39;blob&#39;</span><span class="p">,</span> <span class="n">mimeType</span><span class="o">=</span><span class="n">imageMimeType</span><span class="p">,</span> <span class="n">fileName</span><span class="o">=</span><span class="n">imageExtenstion</span><span class="p">)</span>
@@ -692,7 +690,7 @@
 <span class="c1"># Data Prober Dataset Builder</span>
 <span class="c1"># -----------------------------------------------------------------------------</span>
 <div class="viewcode-block" id="DataProberDataSetBuilder"><a class="viewcode-back" href="../../../paraview.web.dataset_builder.html#paraview.web.dataset_builder.DataProberDataSetBuilder">[docs]</a><span class="k">class</span> <span class="nc">DataProberDataSetBuilder</span><span class="p">(</span><span class="n">DataSetBuilder</span><span class="p">):</span>
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">input</span><span class="p">,</span> <span class="n">location</span><span class="p">,</span> <span class="n">sampling_dimesions</span><span class="p">,</span> <span class="n">fields_to_keep</span><span class="p">,</span> <span class="n">custom_probing_bounds</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">metadata</span><span class="o">=</span><span class="p">{}):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">input</span><span class="p">,</span> <span class="n">location</span><span class="p">,</span> <span class="n">sampling_dimesions</span><span class="p">,</span> <span class="n">fields_to_keep</span><span class="p">,</span> <span class="n">custom_probing_bounds</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">metadata</span><span class="o">=</span><span class="p">{}):</span>
         <span class="n">DataSetBuilder</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">location</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="n">metadata</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">fieldsToWrite</span> <span class="o">=</span> <span class="n">fields_to_keep</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">resamplerFilter</span> <span class="o">=</span> <span class="n">simple</span><span class="o">.</span><span class="n">ResampleToImage</span><span class="p">(</span><span class="n">Input</span><span class="o">=</span><span class="nb">input</span><span class="p">)</span>
@@ -802,7 +800,7 @@
 <span class="c1"># -----------------------------------------------------------------------------</span>
 
 <div class="viewcode-block" id="LayerDataSetBuilder"><a class="viewcode-back" href="../../../paraview.web.dataset_builder.html#paraview.web.dataset_builder.LayerDataSetBuilder">[docs]</a><span class="k">class</span> <span class="nc">LayerDataSetBuilder</span><span class="p">(</span><span class="n">DataSetBuilder</span><span class="p">):</span>
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">input</span><span class="p">,</span> <span class="n">location</span><span class="p">,</span> <span class="n">cameraInfo</span><span class="p">,</span> <span class="n">imageSize</span><span class="o">=</span><span class="p">[</span><span class="mi">500</span><span class="p">,</span><span class="mi">500</span><span class="p">],</span> <span class="n">metadata</span><span class="o">=</span><span class="p">{}):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">input</span><span class="p">,</span> <span class="n">location</span><span class="p">,</span> <span class="n">cameraInfo</span><span class="p">,</span> <span class="n">imageSize</span><span class="o">=</span><span class="p">[</span><span class="mi">500</span><span class="p">,</span><span class="mi">500</span><span class="p">],</span> <span class="n">metadata</span><span class="o">=</span><span class="p">{}):</span>
         <span class="n">DataSetBuilder</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">location</span><span class="p">,</span> <span class="n">cameraInfo</span><span class="p">,</span> <span class="n">metadata</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">dataRenderer</span> <span class="o">=</span> <span class="n">data_writer</span><span class="o">.</span><span class="n">ScalarRenderer</span><span class="p">(</span><span class="n">isWriter</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">dataHandler</span><span class="o">.</span><span class="n">can_write</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">view</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">dataRenderer</span><span class="o">.</span><span class="n">getView</span><span class="p">()</span>
@@ -923,7 +921,7 @@
 <span class="c1"># -----------------------------------------------------------------------------</span>
 
 <div class="viewcode-block" id="CompositeDataSetBuilder"><a class="viewcode-back" href="../../../paraview.web.dataset_builder.html#paraview.web.dataset_builder.CompositeDataSetBuilder">[docs]</a><span class="k">class</span> <span class="nc">CompositeDataSetBuilder</span><span class="p">(</span><span class="n">DataSetBuilder</span><span class="p">):</span>
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">location</span><span class="p">,</span> <span class="n">sceneConfig</span><span class="p">,</span> <span class="n">cameraInfo</span><span class="p">,</span> <span class="n">metadata</span><span class="o">=</span><span class="p">{},</span> <span class="n">sections</span><span class="o">=</span><span class="p">{},</span> <span class="n">view</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">location</span><span class="p">,</span> <span class="n">sceneConfig</span><span class="p">,</span> <span class="n">cameraInfo</span><span class="p">,</span> <span class="n">metadata</span><span class="o">=</span><span class="p">{},</span> <span class="n">sections</span><span class="o">=</span><span class="p">{},</span> <span class="n">view</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
         <span class="n">DataSetBuilder</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">location</span><span class="p">,</span> <span class="n">cameraInfo</span><span class="p">,</span> <span class="n">metadata</span><span class="p">,</span> <span class="n">sections</span><span class="p">)</span>
 
         <span class="k">if</span> <span class="n">view</span><span class="p">:</span>
@@ -1245,7 +1243,7 @@
         <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">iBuffer</span><span class="p">)</span></div>
 
 <div class="viewcode-block" id="VTKGeometryDataSetBuilder"><a class="viewcode-back" href="../../../paraview.web.dataset_builder.html#paraview.web.dataset_builder.VTKGeometryDataSetBuilder">[docs]</a><span class="k">class</span> <span class="nc">VTKGeometryDataSetBuilder</span><span class="p">(</span><span class="n">DataSetBuilder</span><span class="p">):</span>
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">location</span><span class="p">,</span> <span class="n">sceneConfig</span><span class="p">,</span> <span class="n">metadata</span><span class="o">=</span><span class="p">{},</span> <span class="n">sections</span><span class="o">=</span><span class="p">{}):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">location</span><span class="p">,</span> <span class="n">sceneConfig</span><span class="p">,</span> <span class="n">metadata</span><span class="o">=</span><span class="p">{},</span> <span class="n">sections</span><span class="o">=</span><span class="p">{}):</span>
         <span class="n">DataSetBuilder</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">location</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="n">metadata</span><span class="p">,</span> <span class="n">sections</span><span class="p">)</span>
 
         <span class="c1"># Update data type</span>
@@ -1459,7 +1457,7 @@
 <span class="c1"># -----------------------------------------------------------------------------</span>
 
 <div class="viewcode-block" id="GeometryDataSetBuilder"><a class="viewcode-back" href="../../../paraview.web.dataset_builder.html#paraview.web.dataset_builder.GeometryDataSetBuilder">[docs]</a><span class="k">class</span> <span class="nc">GeometryDataSetBuilder</span><span class="p">(</span><span class="n">DataSetBuilder</span><span class="p">):</span>
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">location</span><span class="p">,</span> <span class="n">sceneConfig</span><span class="p">,</span> <span class="n">metadata</span><span class="o">=</span><span class="p">{},</span> <span class="n">sections</span><span class="o">=</span><span class="p">{}):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">location</span><span class="p">,</span> <span class="n">sceneConfig</span><span class="p">,</span> <span class="n">metadata</span><span class="o">=</span><span class="p">{},</span> <span class="n">sections</span><span class="o">=</span><span class="p">{}):</span>
         <span class="n">DataSetBuilder</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">location</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="n">metadata</span><span class="p">,</span> <span class="n">sections</span><span class="p">)</span>
 
         <span class="c1"># Update data type</span>

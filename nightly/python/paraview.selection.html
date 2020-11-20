@@ -7,12 +7,10 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>selection Module &mdash; ParaView/Python 5.9.0-RC1-193-gf1bb9b526b documentation</title>
+  <title>selection Module &mdash; ParaView/Python 5.9.0-RC1-211-gf85ab347b3 documentation</title>
   
 
   
-  
-    <link rel="shortcut icon" href="_static/pvIcon.ico"/>
   
 
   
@@ -24,7 +22,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:'./',
-        VERSION:'5.9.0-RC1-193-gf1bb9b526b',
+        VERSION:'5.9.0-RC1-211-gf85ab347b3',
         COLLAPSE_INDEX:false,
         FILE_SUFFIX:'.html',
         HAS_SOURCE:  true
@@ -49,7 +47,7 @@
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="ParaView/Python 5.9.0-RC1-193-gf1bb9b526b documentation" href="index.html"/>
+    <link rel="top" title="ParaView/Python 5.9.0-RC1-211-gf85ab347b3 documentation" href="index.html"/>
         <link rel="up" title="paraview Package" href="paraview.html"/>
         <link rel="next" title="servermanager Module" href="paraview.servermanager.html"/>
         <link rel="prev" title="python_view Module" href="paraview.python_view.html"/> 
@@ -69,7 +67,7 @@
           <li> <a href="index.html">
             <img src="_static/paraview-logo-small.png"
             alt="ParaView/Python"></img></a> </li>
-          <li class="version"> version 5.9.0-RC1-193-gf1bb9b526b</li>
+          <li class="version"> version 5.9.0-RC1-211-gf85ab347b3</li>
         </ul>
         <form id ="rtd-search-form" class="wy-form" action="search.html" method="get">
   <input type="text" name="q" placeholder="Search docs" />
@@ -587,7 +585,7 @@
 <p>selection is a module for defining and using selections via Python. It provides
 a convenience layer to provide functionality provided by the underlying C++ classes.</p>
 <p>A simple example:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">paraview.selection</span> <span class="k">import</span> <span class="o">*</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">paraview.selection</span> <span class="kn">import</span> <span class="o">*</span>
 
 <span class="c1"># Create a new sphere proxy on the active connection and register it</span>
 <span class="c1"># in the sources group.</span>
@@ -611,16 +609,16 @@ a convenience layer to provide functionality provided by the underlying C++ clas
 <span class="n">Show</span><span class="p">(</span><span class="n">es</span><span class="p">)</span>
 </pre></div>
 </div>
-<dl class="function">
+<dl class="py function">
 <dt id="paraview.selection.ClearSelection">
-<code class="sig-prename descclassname">paraview.selection.</code><code class="sig-name descname">ClearSelection</code><span class="sig-paren">(</span><em class="sig-param">Source=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/selection.html#ClearSelection"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.selection.ClearSelection" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">paraview.selection.</code><code class="sig-name descname">ClearSelection</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">Source</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/selection.html#ClearSelection"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.selection.ClearSelection" title="Permalink to this definition">¶</a></dt>
 <dd><p>Clears the selection on the source passed in to the source parameter
 or the active source if no source is provided.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="paraview.selection.QuerySelect">
-<code class="sig-prename descclassname">paraview.selection.</code><code class="sig-name descname">QuerySelect</code><span class="sig-paren">(</span><em class="sig-param">QueryString=''</em>, <em class="sig-param">FieldType='POINT'</em>, <em class="sig-param">Source=None</em>, <em class="sig-param">InsideOut=False</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/selection.html#QuerySelect"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.selection.QuerySelect" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">paraview.selection.</code><code class="sig-name descname">QuerySelect</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">QueryString</span><span class="o">=</span><span class="default_value">''</span></em>, <em class="sig-param"><span class="n">FieldType</span><span class="o">=</span><span class="default_value">'POINT'</span></em>, <em class="sig-param"><span class="n">Source</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">InsideOut</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/selection.html#QuerySelect"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.selection.QuerySelect" title="Permalink to this definition">¶</a></dt>
 <dd><p>Selection by query expression.
 - QueryString - string with NumPy-like boolean expression defining which attributes are selected
 - FieldType - atttribute to select, e.g., ‘POINT’ or ‘CELL’
@@ -631,9 +629,9 @@ or the active source if no source is provided.</p>
 </div></blockquote>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="paraview.selection.SelectCellsThrough">
-<code class="sig-prename descclassname">paraview.selection.</code><code class="sig-name descname">SelectCellsThrough</code><span class="sig-paren">(</span><em class="sig-param">Rectangle=[]</em>, <em class="sig-param">View=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/selection.html#SelectCellsThrough"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.selection.SelectCellsThrough" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">paraview.selection.</code><code class="sig-name descname">SelectCellsThrough</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">Rectangle</span><span class="o">=</span><span class="default_value">[]</span></em>, <em class="sig-param"><span class="n">View</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/selection.html#SelectCellsThrough"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.selection.SelectCellsThrough" title="Permalink to this definition">¶</a></dt>
 <dd><p>Select all cells within a rectangular region regardless of their visibility.</p>
 <ul class="simple">
 <li><p>Rectangle - list containing bottom left (x1, y1) and top right (x2, y2) corner of a
@@ -642,9 +640,9 @@ rectangle defining the selection region in the format [x1, y1, x2, y2]. Defined 
 </ul>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="paraview.selection.SelectCompositeDataIDs">
-<code class="sig-prename descclassname">paraview.selection.</code><code class="sig-name descname">SelectCompositeDataIDs</code><span class="sig-paren">(</span><em class="sig-param">IDs=[]</em>, <em class="sig-param">FieldType='POINT'</em>, <em class="sig-param">ContainingCells=False</em>, <em class="sig-param">Source=None</em>, <em class="sig-param">Modifier=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/selection.html#SelectCompositeDataIDs"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.selection.SelectCompositeDataIDs" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">paraview.selection.</code><code class="sig-name descname">SelectCompositeDataIDs</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">IDs</span><span class="o">=</span><span class="default_value">[]</span></em>, <em class="sig-param"><span class="n">FieldType</span><span class="o">=</span><span class="default_value">'POINT'</span></em>, <em class="sig-param"><span class="n">ContainingCells</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">Source</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">Modifier</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/selection.html#SelectCompositeDataIDs"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.selection.SelectCompositeDataIDs" title="Permalink to this definition">¶</a></dt>
 <dd><p>Select attributes by composite attribute IDs.</p>
 <ul class="simple">
 <li><p>IDs - list of IDs of attribute types to select. Defined as 3-tuples of
@@ -664,9 +662,9 @@ rectangle defining the selection region in the format [x1, y1, x2, y2]. Defined 
 </ul>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="paraview.selection.SelectGlobalIDs">
-<code class="sig-prename descclassname">paraview.selection.</code><code class="sig-name descname">SelectGlobalIDs</code><span class="sig-paren">(</span><em class="sig-param">IDs=[]</em>, <em class="sig-param">FieldType='POINT'</em>, <em class="sig-param">ContainingCells=False</em>, <em class="sig-param">Source=None</em>, <em class="sig-param">Modifier=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/selection.html#SelectGlobalIDs"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.selection.SelectGlobalIDs" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">paraview.selection.</code><code class="sig-name descname">SelectGlobalIDs</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">IDs</span><span class="o">=</span><span class="default_value">[]</span></em>, <em class="sig-param"><span class="n">FieldType</span><span class="o">=</span><span class="default_value">'POINT'</span></em>, <em class="sig-param"><span class="n">ContainingCells</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">Source</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">Modifier</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/selection.html#SelectGlobalIDs"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.selection.SelectGlobalIDs" title="Permalink to this definition">¶</a></dt>
 <dd><p>Select attributes by global IDs.</p>
 <ul class="simple">
 <li><p>IDs - list of IDs of attribute types to select. Defined as a list of global IDs.</p></li>
@@ -685,9 +683,9 @@ rectangle defining the selection region in the format [x1, y1, x2, y2]. Defined 
 </ul>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="paraview.selection.SelectHierarchicalDataIDs">
-<code class="sig-prename descclassname">paraview.selection.</code><code class="sig-name descname">SelectHierarchicalDataIDs</code><span class="sig-paren">(</span><em class="sig-param">IDs=[]</em>, <em class="sig-param">FieldType='POINT'</em>, <em class="sig-param">ContainingCells=False</em>, <em class="sig-param">Source=None</em>, <em class="sig-param">Modifier=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/selection.html#SelectHierarchicalDataIDs"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.selection.SelectHierarchicalDataIDs" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">paraview.selection.</code><code class="sig-name descname">SelectHierarchicalDataIDs</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">IDs</span><span class="o">=</span><span class="default_value">[]</span></em>, <em class="sig-param"><span class="n">FieldType</span><span class="o">=</span><span class="default_value">'POINT'</span></em>, <em class="sig-param"><span class="n">ContainingCells</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">Source</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">Modifier</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/selection.html#SelectHierarchicalDataIDs"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.selection.SelectHierarchicalDataIDs" title="Permalink to this definition">¶</a></dt>
 <dd><p>Select attributes by hierarchical data IDs.</p>
 <ul class="simple">
 <li><p>IDs - list of IDs of attribute types to select. Defined as 3-tuples of
@@ -707,9 +705,9 @@ rectangle defining the selection region in the format [x1, y1, x2, y2]. Defined 
 </ul>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="paraview.selection.SelectIDs">
-<code class="sig-prename descclassname">paraview.selection.</code><code class="sig-name descname">SelectIDs</code><span class="sig-paren">(</span><em class="sig-param">IDs=[]</em>, <em class="sig-param">FieldType='POINT'</em>, <em class="sig-param">ContainingCells=False</em>, <em class="sig-param">Source=None</em>, <em class="sig-param">Modifier=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/selection.html#SelectIDs"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.selection.SelectIDs" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">paraview.selection.</code><code class="sig-name descname">SelectIDs</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">IDs</span><span class="o">=</span><span class="default_value">[]</span></em>, <em class="sig-param"><span class="n">FieldType</span><span class="o">=</span><span class="default_value">'POINT'</span></em>, <em class="sig-param"><span class="n">ContainingCells</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">Source</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">Modifier</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/selection.html#SelectIDs"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.selection.SelectIDs" title="Permalink to this definition">¶</a></dt>
 <dd><p>Select attributes by attribute IDs.</p>
 <ul class="simple">
 <li><p>IDs - list of IDs of attribute types to select. Defined as (process number, attribute ID) pairs
@@ -730,9 +728,9 @@ blocks of the provided (processor number, attribute ID) pairs</p></li>
 </ul>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="paraview.selection.SelectLocation">
-<code class="sig-prename descclassname">paraview.selection.</code><code class="sig-name descname">SelectLocation</code><span class="sig-paren">(</span><em class="sig-param">Locations=[]</em>, <em class="sig-param">Source=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/selection.html#SelectLocation"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.selection.SelectLocation" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">paraview.selection.</code><code class="sig-name descname">SelectLocation</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">Locations</span><span class="o">=</span><span class="default_value">[]</span></em>, <em class="sig-param"><span class="n">Source</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/selection.html#SelectLocation"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.selection.SelectLocation" title="Permalink to this definition">¶</a></dt>
 <dd><p>Select points by location.</p>
 <ul class="simple">
 <li><p>Locations - list of x, y, z points to select.</p></li>
@@ -740,9 +738,9 @@ blocks of the provided (processor number, attribute ID) pairs</p></li>
 </ul>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="paraview.selection.SelectPedigreeIDs">
-<code class="sig-prename descclassname">paraview.selection.</code><code class="sig-name descname">SelectPedigreeIDs</code><span class="sig-paren">(</span><em class="sig-param">IDs=[]</em>, <em class="sig-param">FieldType='POINT'</em>, <em class="sig-param">ContainingCells=False</em>, <em class="sig-param">Source=None</em>, <em class="sig-param">Modifier=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/selection.html#SelectPedigreeIDs"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.selection.SelectPedigreeIDs" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">paraview.selection.</code><code class="sig-name descname">SelectPedigreeIDs</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">IDs</span><span class="o">=</span><span class="default_value">[]</span></em>, <em class="sig-param"><span class="n">FieldType</span><span class="o">=</span><span class="default_value">'POINT'</span></em>, <em class="sig-param"><span class="n">ContainingCells</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">Source</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">Modifier</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/selection.html#SelectPedigreeIDs"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.selection.SelectPedigreeIDs" title="Permalink to this definition">¶</a></dt>
 <dd><p>Select attributes by Pedigree IDs.</p>
 <ul class="simple">
 <li><p>IDs - list of IDs of attribute types to select. Defined as (domain, ID) pairs
@@ -762,9 +760,9 @@ interleaved in a single list.</p></li>
 </ul>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="paraview.selection.SelectPointsThrough">
-<code class="sig-prename descclassname">paraview.selection.</code><code class="sig-name descname">SelectPointsThrough</code><span class="sig-paren">(</span><em class="sig-param">Rectangle=[]</em>, <em class="sig-param">View=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/selection.html#SelectPointsThrough"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.selection.SelectPointsThrough" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">paraview.selection.</code><code class="sig-name descname">SelectPointsThrough</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">Rectangle</span><span class="o">=</span><span class="default_value">[]</span></em>, <em class="sig-param"><span class="n">View</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/selection.html#SelectPointsThrough"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.selection.SelectPointsThrough" title="Permalink to this definition">¶</a></dt>
 <dd><p>Select all points within a rectangular region regardless of their visibility.</p>
 <ul class="simple">
 <li><p>Rectangle - list containing bottom left (x1, y1) and top right (x2, y2) corner of a
@@ -773,9 +771,9 @@ rectangle defining the selection region in the format [x1, y1, x2, y2]. Defined 
 </ul>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="paraview.selection.SelectSurfaceBlocks">
-<code class="sig-prename descclassname">paraview.selection.</code><code class="sig-name descname">SelectSurfaceBlocks</code><span class="sig-paren">(</span><em class="sig-param">Rectangle=[]</em>, <em class="sig-param">View=None</em>, <em class="sig-param">Modifier=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/selection.html#SelectSurfaceBlocks"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.selection.SelectSurfaceBlocks" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">paraview.selection.</code><code class="sig-name descname">SelectSurfaceBlocks</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">Rectangle</span><span class="o">=</span><span class="default_value">[]</span></em>, <em class="sig-param"><span class="n">View</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">Modifier</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/selection.html#SelectSurfaceBlocks"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.selection.SelectSurfaceBlocks" title="Permalink to this definition">¶</a></dt>
 <dd><p>Select visible blocks within a rectangular region.</p>
 <ul class="simple">
 <li><p>Rectangle - list containing bottom left (x1, y1) and top right (x2, y2) corner of a
@@ -786,9 +784,9 @@ should modify the existing selection.</p></li>
 </ul>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="paraview.selection.SelectSurfaceCells">
-<code class="sig-prename descclassname">paraview.selection.</code><code class="sig-name descname">SelectSurfaceCells</code><span class="sig-paren">(</span><em class="sig-param">Rectangle=[]</em>, <em class="sig-param">Polygon=[]</em>, <em class="sig-param">View=None</em>, <em class="sig-param">Modifier=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/selection.html#SelectSurfaceCells"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.selection.SelectSurfaceCells" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">paraview.selection.</code><code class="sig-name descname">SelectSurfaceCells</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">Rectangle</span><span class="o">=</span><span class="default_value">[]</span></em>, <em class="sig-param"><span class="n">Polygon</span><span class="o">=</span><span class="default_value">[]</span></em>, <em class="sig-param"><span class="n">View</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">Modifier</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/selection.html#SelectSurfaceCells"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.selection.SelectSurfaceCells" title="Permalink to this definition">¶</a></dt>
 <dd><p>Select visible cells within a rectangular or polygon region.</p>
 <ul class="simple">
 <li><p>Rectangle - list containing bottom left (x1, y1) and top right (x2, y2) corner of a
@@ -806,9 +804,9 @@ should modify the existing selection.</p></li>
 </ul>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="paraview.selection.SelectSurfacePoints">
-<code class="sig-prename descclassname">paraview.selection.</code><code class="sig-name descname">SelectSurfacePoints</code><span class="sig-paren">(</span><em class="sig-param">Rectangle=[]</em>, <em class="sig-param">Polygon=[]</em>, <em class="sig-param">View=None</em>, <em class="sig-param">Modifier=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/selection.html#SelectSurfacePoints"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.selection.SelectSurfacePoints" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">paraview.selection.</code><code class="sig-name descname">SelectSurfacePoints</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">Rectangle</span><span class="o">=</span><span class="default_value">[]</span></em>, <em class="sig-param"><span class="n">Polygon</span><span class="o">=</span><span class="default_value">[]</span></em>, <em class="sig-param"><span class="n">View</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">Modifier</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/selection.html#SelectSurfacePoints"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.selection.SelectSurfacePoints" title="Permalink to this definition">¶</a></dt>
 <dd><p>Select visible points within a rectangular or polygon region.</p>
 <ul class="simple">
 <li><p>Rectangle - list containing bottom left (x1, y1) and top right (x2, y2) corner of a
@@ -826,9 +824,9 @@ should modify the existing selection.</p></li>
 </ul>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="paraview.selection.SelectThresholds">
-<code class="sig-prename descclassname">paraview.selection.</code><code class="sig-name descname">SelectThresholds</code><span class="sig-paren">(</span><em class="sig-param">Thresholds=[]</em>, <em class="sig-param">ArrayName=''</em>, <em class="sig-param">FieldType='POINT'</em>, <em class="sig-param">Source=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/selection.html#SelectThresholds"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.selection.SelectThresholds" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">paraview.selection.</code><code class="sig-name descname">SelectThresholds</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">Thresholds</span><span class="o">=</span><span class="default_value">[]</span></em>, <em class="sig-param"><span class="n">ArrayName</span><span class="o">=</span><span class="default_value">''</span></em>, <em class="sig-param"><span class="n">FieldType</span><span class="o">=</span><span class="default_value">'POINT'</span></em>, <em class="sig-param"><span class="n">Source</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/selection.html#SelectThresholds"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.selection.SelectThresholds" title="Permalink to this definition">¶</a></dt>
 <dd><p>Select attributes in a source by thresholding on values in an associated array.</p>
 <ul class="simple">
 <li><p>Thresholds - list of lower and upper threshold bounds. Attributes with associated
@@ -839,9 +837,9 @@ values in the selected array between any set of bounds will be selected.</p></li
 </ul>
 </dd></dl>
 
-<dl class="class">
+<dl class="py class">
 <dt id="paraview.selection.SelectionProxy">
-<em class="property">class </em><code class="sig-prename descclassname">paraview.selection.</code><code class="sig-name descname">SelectionProxy</code><span class="sig-paren">(</span><em class="sig-param">**args</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/selection.html#SelectionProxy"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.selection.SelectionProxy" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">paraview.selection.</code><code class="sig-name descname">SelectionProxy</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">**</span><span class="n">args</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/selection.html#SelectionProxy"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.selection.SelectionProxy" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="paraview.servermanager.html#paraview.servermanager.Proxy" title="paraview.servermanager.Proxy"><code class="xref py py-class docutils literal notranslate"><span class="pre">paraview.servermanager.Proxy</span></code></a></p>
 <p>Special proxy wrapper type for Selections.</p>
 </dd></dl>

@@ -7,12 +7,10 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>paraview.catalyst.v2_internals &mdash; ParaView/Python 5.9.0-RC1-193-gf1bb9b526b documentation</title>
+  <title>paraview.catalyst.v2_internals &mdash; ParaView/Python 5.9.0-RC1-211-gf85ab347b3 documentation</title>
   
 
   
-  
-    <link rel="shortcut icon" href="../../../_static/pvIcon.ico"/>
   
 
   
@@ -24,7 +22,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:'../../../',
-        VERSION:'5.9.0-RC1-193-gf1bb9b526b',
+        VERSION:'5.9.0-RC1-211-gf85ab347b3',
         COLLAPSE_INDEX:false,
         FILE_SUFFIX:'.html',
         HAS_SOURCE:  true
@@ -49,7 +47,7 @@
         <link rel="index" title="Index"
               href="../../../genindex.html"/>
         <link rel="search" title="Search" href="../../../search.html"/>
-    <link rel="top" title="ParaView/Python 5.9.0-RC1-193-gf1bb9b526b documentation" href="../../../index.html"/>
+    <link rel="top" title="ParaView/Python 5.9.0-RC1-211-gf85ab347b3 documentation" href="../../../index.html"/>
         <link rel="up" title="paraview.catalyst" href="../catalyst.html"/> 
 
   <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
@@ -67,7 +65,7 @@
           <li> <a href="../../../index.html">
             <img src="../../../_static/paraview-logo-small.png"
             alt="ParaView/Python"></img></a> </li>
-          <li class="version"> version 5.9.0-RC1-193-gf1bb9b526b</li>
+          <li class="version"> version 5.9.0-RC1-211-gf85ab347b3</li>
         </ul>
         <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
   <input type="text" name="q" placeholder="Search docs" />
@@ -587,20 +585,20 @@
 <span class="sd">Used by vtkCPPythonScriptV2Pipeline and may change without notice.</span>
 
 <span class="sd">&quot;&quot;&quot;</span>
-<span class="kn">from</span> <span class="nn">.</span> <span class="k">import</span> <span class="n">log_level</span>
-<span class="kn">from</span> <span class="nn">..</span> <span class="k">import</span> <span class="n">log</span><span class="p">,</span> <span class="n">print_warning</span>
-<span class="kn">from</span> <span class="nn">..modules.vtkPVPythonCatalyst</span> <span class="k">import</span> <span class="n">vtkCPPythonScriptV2Helper</span>
+<span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">log_level</span>
+<span class="kn">from</span> <span class="nn">..</span> <span class="kn">import</span> <span class="n">log</span><span class="p">,</span> <span class="n">print_warning</span>
+<span class="kn">from</span> <span class="nn">..modules.vtkPVPythonCatalyst</span> <span class="kn">import</span> <span class="n">vtkCPPythonScriptV2Helper</span>
 
 <div class="viewcode-block" id="register_module"><a class="viewcode-back" href="../../../paraview.catalyst.v2_internals.html#paraview.catalyst.v2_internals.register_module">[docs]</a><span class="k">def</span> <span class="nf">register_module</span><span class="p">(</span><span class="n">path</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;register a file/directory as an importable module.</span>
 <span class="sd">    Returns the name to use to import the module, on success, otherwise `None`.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="kn">from</span> <span class="nn">.detail</span> <span class="k">import</span> <span class="n">RegisterPackageFromZip</span>
-    <span class="kn">from</span> <span class="nn">.detail</span> <span class="k">import</span> <span class="n">RegisterPackageFromDir</span>
-    <span class="kn">from</span> <span class="nn">.detail</span> <span class="k">import</span> <span class="n">RegisterModuleFromFile</span>
-    <span class="kn">from</span> <span class="nn">paraview.vtk.vtkParallelCore</span> <span class="k">import</span> <span class="n">vtkPSystemTools</span>
+    <span class="kn">from</span> <span class="nn">.detail</span> <span class="kn">import</span> <span class="n">RegisterPackageFromZip</span>
+    <span class="kn">from</span> <span class="nn">.detail</span> <span class="kn">import</span> <span class="n">RegisterPackageFromDir</span>
+    <span class="kn">from</span> <span class="nn">.detail</span> <span class="kn">import</span> <span class="n">RegisterModuleFromFile</span>
+    <span class="kn">from</span> <span class="nn">paraview.vtk.vtkParallelCore</span> <span class="kn">import</span> <span class="n">vtkPSystemTools</span>
 
-    <span class="kn">from</span> <span class="nn">.</span> <span class="k">import</span> <span class="n">importers</span>
+    <span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">importers</span>
     <span class="c1"># plug into Python import machinery to help import pipeline modules</span>
     <span class="c1"># seamlessly.</span>
     <span class="n">importers</span><span class="o">.</span><span class="n">install_pathfinder</span><span class="p">()</span>
@@ -617,7 +615,7 @@
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Provides information to the current `catalyst_execute` call.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dataDescription</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dataDescription</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_dataDescription</span> <span class="o">=</span> <span class="n">dataDescription</span>
 
     <span class="nd">@property</span>
@@ -641,8 +639,8 @@
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_dataDescription</span></div>
 
 <div class="viewcode-block" id="CatalystV2Information"><a class="viewcode-back" href="../../../paraview.catalyst.v2_internals.html#paraview.catalyst.v2_internals.CatalystV2Information">[docs]</a><span class="k">class</span> <span class="nc">CatalystV2Information</span><span class="p">:</span>
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="kn">from</span> <span class="nn">paraview.modules.vtkPVInSitu</span> <span class="k">import</span> <span class="n">vtkInSituInitializationHelper</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="kn">from</span> <span class="nn">paraview.modules.vtkPVInSitu</span> <span class="kn">import</span> <span class="n">vtkInSituInitializationHelper</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">helper</span> <span class="o">=</span> <span class="n">vtkInSituInitializationHelper</span>
 
     <span class="nd">@property</span>
@@ -731,7 +729,7 @@
 <span class="sd">    module will use during exection.&quot;&quot;&quot;</span>
     <span class="k">if</span> <span class="ow">not</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">module</span><span class="p">,</span> <span class="s2">&quot;options&quot;</span><span class="p">):</span>
         <span class="n">print_warning</span><span class="p">(</span><span class="s2">&quot;Module &#39;</span><span class="si">%s</span><span class="s2">&#39; missing Catalyst &#39;options&#39;, will use a default options object&quot;</span><span class="p">,</span> <span class="n">module</span><span class="o">.</span><span class="vm">__name__</span><span class="p">)</span>
-        <span class="kn">from</span> <span class="nn">.</span> <span class="k">import</span> <span class="n">Options</span>
+        <span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">Options</span>
         <span class="n">module</span><span class="o">.</span><span class="n">options</span> <span class="o">=</span> <span class="n">Options</span><span class="p">()</span>
     <span class="c1"># provide the options to vtkCPPythonScriptV2Helper.</span>
     <span class="n">helper</span> <span class="o">=</span> <span class="n">vtkCPPythonScriptV2Helper</span><span class="o">.</span><span class="n">GetActiveInstance</span><span class="p">()</span>

@@ -7,12 +7,10 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>paraview.detail.calculator &mdash; ParaView/Python 5.9.0-RC1-193-gf1bb9b526b documentation</title>
+  <title>paraview.detail.calculator &mdash; ParaView/Python 5.9.0-RC1-211-gf85ab347b3 documentation</title>
   
 
   
-  
-    <link rel="shortcut icon" href="../../../_static/pvIcon.ico"/>
   
 
   
@@ -24,7 +22,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:'../../../',
-        VERSION:'5.9.0-RC1-193-gf1bb9b526b',
+        VERSION:'5.9.0-RC1-211-gf85ab347b3',
         COLLAPSE_INDEX:false,
         FILE_SUFFIX:'.html',
         HAS_SOURCE:  true
@@ -49,7 +47,7 @@
         <link rel="index" title="Index"
               href="../../../genindex.html"/>
         <link rel="search" title="Search" href="../../../search.html"/>
-    <link rel="top" title="ParaView/Python 5.9.0-RC1-193-gf1bb9b526b documentation" href="../../../index.html"/>
+    <link rel="top" title="ParaView/Python 5.9.0-RC1-211-gf85ab347b3 documentation" href="../../../index.html"/>
         <link rel="up" title="paraview.detail" href="../detail.html"/> 
 
   <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
@@ -67,7 +65,7 @@
           <li> <a href="../../../index.html">
             <img src="../../../_static/paraview-logo-small.png"
             alt="ParaView/Python"></img></a> </li>
-          <li class="version"> version 5.9.0-RC1-193-gf1bb9b526b</li>
+          <li class="version"> version 5.9.0-RC1-211-gf85ab347b3</li>
         </ul>
         <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
   <input type="text" name="q" placeholder="Search docs" />
@@ -594,11 +592,11 @@
 
 <span class="kn">import</span> <span class="nn">paraview</span>
 <span class="kn">import</span> <span class="nn">vtkmodules.numpy_interface.dataset_adapter</span> <span class="k">as</span> <span class="nn">dsa</span>
-<span class="kn">from</span> <span class="nn">vtkmodules.numpy_interface.algorithms</span> <span class="k">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">vtkmodules.numpy_interface.algorithms</span> <span class="kn">import</span> <span class="o">*</span>
     <span class="c1"># -- this will import vtkMultiProcessController and vtkMPI4PyCommunicator</span>
 
-<span class="kn">from</span> <span class="nn">paraview.vtk</span> <span class="k">import</span> <span class="n">vtkDoubleArray</span><span class="p">,</span> <span class="n">vtkSelectionNode</span><span class="p">,</span> <span class="n">vtkSelection</span><span class="p">,</span> <span class="n">vtkStreamingDemandDrivenPipeline</span>
-<span class="kn">from</span> <span class="nn">paraview.modules</span> <span class="k">import</span> <span class="n">vtkPVVTKExtensionsFiltersPython</span>
+<span class="kn">from</span> <span class="nn">paraview.vtk</span> <span class="kn">import</span> <span class="n">vtkDoubleArray</span><span class="p">,</span> <span class="n">vtkSelectionNode</span><span class="p">,</span> <span class="n">vtkSelection</span><span class="p">,</span> <span class="n">vtkStreamingDemandDrivenPipeline</span>
+<span class="kn">from</span> <span class="nn">paraview.modules</span> <span class="kn">import</span> <span class="n">vtkPVVTKExtensionsFiltersPython</span>
 
 <span class="kn">import</span> <span class="nn">sys</span>
 <span class="k">if</span> <span class="n">sys</span><span class="o">.</span><span class="n">version_info</span> <span class="o">&gt;=</span> <span class="p">(</span><span class="mi">3</span><span class="p">,):</span>
@@ -629,7 +627,7 @@
     <span class="k">if</span> <span class="n">controller</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">vtkMultiProcessController</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
         <span class="n">controller</span> <span class="o">=</span> <span class="n">vtkMultiProcessController</span><span class="o">.</span><span class="n">GetGlobalController</span><span class="p">()</span>
     <span class="k">if</span> <span class="n">controller</span> <span class="ow">and</span> <span class="n">controller</span><span class="o">.</span><span class="n">IsA</span><span class="p">(</span><span class="s2">&quot;vtkMPIController&quot;</span><span class="p">)</span> <span class="ow">and</span> <span class="n">controller</span><span class="o">.</span><span class="n">GetNumberOfProcesses</span><span class="p">()</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
-        <span class="kn">from</span> <span class="nn">mpi4py</span> <span class="k">import</span> <span class="n">MPI</span>
+        <span class="kn">from</span> <span class="nn">mpi4py</span> <span class="kn">import</span> <span class="n">MPI</span>
         <span class="n">comm</span> <span class="o">=</span> <span class="n">vtkMPI4PyCommunicator</span><span class="o">.</span><span class="n">ConvertToPython</span><span class="p">(</span><span class="n">controller</span><span class="o">.</span><span class="n">GetCommunicator</span><span class="p">())</span>
         <span class="n">rank</span> <span class="o">=</span> <span class="n">comm</span><span class="o">.</span><span class="n">Get_rank</span><span class="p">()</span>
 
@@ -663,7 +661,7 @@
     <span class="n">node</span><span class="o">.</span><span class="n">GetProperties</span><span class="p">()</span><span class="o">.</span><span class="n">Set</span><span class="p">(</span><span class="n">vtkSelectionNode</span><span class="o">.</span><span class="n">EPSILON</span><span class="p">(),</span> <span class="n">distance</span><span class="p">)</span>
     <span class="n">node</span><span class="o">.</span><span class="n">SetSelectionList</span><span class="p">(</span><span class="n">array</span><span class="p">)</span>
 
-    <span class="kn">from</span> <span class="nn">paraview.vtk.vtkFiltersExtraction</span> <span class="k">import</span> <span class="n">vtkLocationSelector</span>
+    <span class="kn">from</span> <span class="nn">paraview.vtk.vtkFiltersExtraction</span> <span class="kn">import</span> <span class="n">vtkLocationSelector</span>
     <span class="n">selector</span> <span class="o">=</span> <span class="n">vtkLocationSelector</span><span class="p">()</span>
     <span class="n">selector</span><span class="o">.</span><span class="n">SetInsidednessArrayName</span><span class="p">(</span><span class="s2">&quot;vtkInsidedness&quot;</span><span class="p">)</span>
     <span class="n">selector</span><span class="o">.</span><span class="n">Initialize</span><span class="p">(</span><span class="n">node</span><span class="p">)</span>
@@ -694,7 +692,7 @@
     <span class="n">node</span><span class="o">.</span><span class="n">SetContentType</span><span class="p">(</span><span class="n">vtkSelectionNode</span><span class="o">.</span><span class="n">LOCATIONS</span><span class="p">)</span>
     <span class="n">node</span><span class="o">.</span><span class="n">SetSelectionList</span><span class="p">(</span><span class="n">array</span><span class="p">)</span>
 
-    <span class="kn">from</span> <span class="nn">paraview.vtk.vtkFiltersExtraction</span> <span class="k">import</span> <span class="n">vtkLocationSelector</span>
+    <span class="kn">from</span> <span class="nn">paraview.vtk.vtkFiltersExtraction</span> <span class="kn">import</span> <span class="n">vtkLocationSelector</span>
     <span class="n">selector</span> <span class="o">=</span> <span class="n">vtkLocationSelector</span><span class="p">()</span>
     <span class="n">selector</span><span class="o">.</span><span class="n">SetInsidednessArrayName</span><span class="p">(</span><span class="s2">&quot;vtkInsidedness&quot;</span><span class="p">)</span>
     <span class="n">selector</span><span class="o">.</span><span class="n">Initialize</span><span class="p">(</span><span class="n">node</span><span class="p">)</span>

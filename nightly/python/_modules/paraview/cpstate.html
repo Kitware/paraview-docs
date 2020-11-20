@@ -7,12 +7,10 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>paraview.cpstate &mdash; ParaView/Python 5.9.0-RC1-193-gf1bb9b526b documentation</title>
+  <title>paraview.cpstate &mdash; ParaView/Python 5.9.0-RC1-211-gf85ab347b3 documentation</title>
   
 
   
-  
-    <link rel="shortcut icon" href="../../_static/pvIcon.ico"/>
   
 
   
@@ -24,7 +22,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:'../../',
-        VERSION:'5.9.0-RC1-193-gf1bb9b526b',
+        VERSION:'5.9.0-RC1-211-gf85ab347b3',
         COLLAPSE_INDEX:false,
         FILE_SUFFIX:'.html',
         HAS_SOURCE:  true
@@ -49,7 +47,7 @@
         <link rel="index" title="Index"
               href="../../genindex.html"/>
         <link rel="search" title="Search" href="../../search.html"/>
-    <link rel="top" title="ParaView/Python 5.9.0-RC1-193-gf1bb9b526b documentation" href="../../index.html"/>
+    <link rel="top" title="ParaView/Python 5.9.0-RC1-211-gf85ab347b3 documentation" href="../../index.html"/>
         <link rel="up" title="Module code" href="../index.html"/> 
 
   <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
@@ -67,7 +65,7 @@
           <li> <a href="../../index.html">
             <img src="../../_static/paraview-logo-small.png"
             alt="ParaView/Python"></img></a> </li>
-          <li class="version"> version 5.9.0-RC1-193-gf1bb9b526b</li>
+          <li class="version"> version 5.9.0-RC1-211-gf85ab347b3</li>
         </ul>
         <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
   <input type="text" name="q" placeholder="Search docs" />
@@ -590,7 +588,7 @@
 <span class="sd">functions can be considered internal.</span>
 <span class="sd">&quot;&quot;&quot;</span>
 
-<span class="kn">from</span> <span class="nn">paraview</span> <span class="k">import</span> <span class="n">smtrace</span><span class="p">,</span> <span class="n">smstate</span><span class="p">,</span> <span class="n">servermanager</span>
+<span class="kn">from</span> <span class="nn">paraview</span> <span class="kn">import</span> <span class="n">smtrace</span><span class="p">,</span> <span class="n">smstate</span><span class="p">,</span> <span class="n">servermanager</span>
 <span class="kn">import</span> <span class="nn">numbers</span>
 
 <span class="n">_cpstate_globals</span> <span class="o">=</span> <span class="kc">None</span>
@@ -602,7 +600,7 @@
 <div class="viewcode-block" id="initialize_globals"><a class="viewcode-back" href="../../paraview.cpstate.html#paraview.cpstate.initialize_globals">[docs]</a><span class="k">def</span> <span class="nf">initialize_globals</span><span class="p">():</span>
     <span class="k">global</span> <span class="n">_cpstate_globals</span>
     <span class="k">class</span> <span class="nc">_state</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
-        <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">write_frequencies</span> <span class="o">=</span> <span class="p">{}</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">simulation_input_map</span> <span class="o">=</span> <span class="p">{}</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">view_proxies</span> <span class="o">=</span> <span class="p">[]</span>
@@ -664,7 +662,7 @@
 <span class="sd">    trace_ctor() method to trace the constructor as the CreateProducer() call,</span>
 <span class="sd">    since the proxy is a dummy, in this case.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">varname</span><span class="p">,</span> <span class="n">proxy</span><span class="p">,</span> <span class="n">simname</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">varname</span><span class="p">,</span> <span class="n">proxy</span><span class="p">,</span> <span class="n">simname</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">SimulationInputName</span> <span class="o">=</span> <span class="n">simname</span>
         <span class="n">smtrace</span><span class="o">.</span><span class="n">RealProxyAccessor</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">varname</span><span class="p">,</span> <span class="n">proxy</span><span class="p">)</span>
         <span class="c1"># this cpSimulationInput attribute is used to locate the proxy later on.</span>
@@ -693,7 +691,7 @@
 <span class="sd">    augments traces of slice filters with information to explore the</span>
 <span class="sd">    parameter space for cinema playback (if enabled)</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">varname</span><span class="p">,</span> <span class="n">proxy</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">varname</span><span class="p">,</span> <span class="n">proxy</span><span class="p">):</span>
         <span class="n">smtrace</span><span class="o">.</span><span class="n">RealProxyAccessor</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">varname</span><span class="p">,</span> <span class="n">proxy</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">varname</span> <span class="o">=</span> <span class="n">varname</span>
 
@@ -720,7 +718,7 @@
 <span class="sd">    augments traces of contour filters with information to explore the</span>
 <span class="sd">    parameter space for cinema playback (if enabled)</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">varname</span><span class="p">,</span> <span class="n">proxy</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">varname</span><span class="p">,</span> <span class="n">proxy</span><span class="p">):</span>
         <span class="n">smtrace</span><span class="o">.</span><span class="n">RealProxyAccessor</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">varname</span><span class="p">,</span> <span class="n">proxy</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">varname</span> <span class="o">=</span> <span class="n">varname</span>
 
@@ -746,7 +744,7 @@
 <span class="sd">    augments traces of clip filters with information to explore the</span>
 <span class="sd">    parameter space for cinema playback (if enabled)</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">varname</span><span class="p">,</span> <span class="n">proxy</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">varname</span><span class="p">,</span> <span class="n">proxy</span><span class="p">):</span>
         <span class="n">smtrace</span><span class="o">.</span><span class="n">RealProxyAccessor</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">varname</span><span class="p">,</span> <span class="n">proxy</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">varname</span> <span class="o">=</span> <span class="n">varname</span>
 
@@ -772,7 +770,7 @@
 <span class="c1"># -----------------------------------------------------------------------------</span>
 <div class="viewcode-block" id="ArrayAccessor"><a class="viewcode-back" href="../../paraview.cpstate.html#paraview.cpstate.ArrayAccessor">[docs]</a><span class="k">class</span> <span class="nc">ArrayAccessor</span><span class="p">(</span><span class="n">smtrace</span><span class="o">.</span><span class="n">RealProxyAccessor</span><span class="p">):</span>
     <span class="sd">&#39;&#39;&#39; Augments traces of filters by defining names of arrays to be explored.&#39;&#39;&#39;</span>
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">varname</span><span class="p">,</span> <span class="n">proxy</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">varname</span><span class="p">,</span> <span class="n">proxy</span><span class="p">):</span>
         <span class="n">smtrace</span><span class="o">.</span><span class="n">RealProxyAccessor</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">varname</span><span class="p">,</span> <span class="n">proxy</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">varname</span> <span class="o">=</span> <span class="n">varname</span>
 
@@ -795,7 +793,7 @@
 <span class="sd">    view with the coprocessor. (I wonder if this registering should be moved to</span>
 <span class="sd">    the end of the state for better readability of the generated state files.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">varname</span><span class="p">,</span> <span class="n">proxy</span><span class="p">,</span> <span class="n">proxyname</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">varname</span><span class="p">,</span> <span class="n">proxy</span><span class="p">,</span> <span class="n">proxyname</span><span class="p">):</span>
         <span class="n">smtrace</span><span class="o">.</span><span class="n">RealProxyAccessor</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">varname</span><span class="p">,</span> <span class="n">proxy</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">ProxyName</span> <span class="o">=</span> <span class="n">proxyname</span>
 
@@ -834,7 +832,7 @@
 <span class="sd">    write_frequencies maintained in cpstate_globals with the write frequencies</span>
 <span class="sd">    for the writer.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">varname</span><span class="p">,</span> <span class="n">proxy</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">varname</span><span class="p">,</span> <span class="n">proxy</span><span class="p">):</span>
         <span class="n">smtrace</span><span class="o">.</span><span class="n">RealProxyAccessor</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">varname</span><span class="p">,</span> <span class="n">proxy</span><span class="p">)</span>
         <span class="n">write_frequency</span> <span class="o">=</span> <span class="n">proxy</span><span class="o">.</span><span class="n">GetProperty</span><span class="p">(</span><span class="s2">&quot;WriteFrequency&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">GetElement</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
 
@@ -917,7 +915,7 @@
 <div class="viewcode-block" id="cpstate_filter_proxies_to_serialize"><a class="viewcode-back" href="../../paraview.cpstate.html#paraview.cpstate.cpstate_filter_proxies_to_serialize">[docs]</a><span class="k">class</span> <span class="nc">cpstate_filter_proxies_to_serialize</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;filter used to skip views and representations a when export_rendering is</span>
 <span class="sd">    disabled.&quot;&quot;&quot;</span>
-    <span class="k">def</span> <span class="nf">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">proxy</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">proxy</span><span class="p">):</span>
         <span class="n">cpstate_globals</span> <span class="o">=</span> <span class="n">get_globals</span><span class="p">()</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="n">smstate</span><span class="o">.</span><span class="n">visible_representations</span><span class="p">()(</span><span class="n">proxy</span><span class="p">):</span> <span class="k">return</span> <span class="kc">False</span>
         <span class="k">if</span> <span class="p">(</span><span class="ow">not</span> <span class="n">cpstate_globals</span><span class="o">.</span><span class="n">export_rendering</span><span class="p">)</span> <span class="ow">and</span> \
@@ -929,7 +927,7 @@
     <span class="sd">&quot;&quot;&quot;Helper to dump configured writer proxies, which are not in the pipeline,</span>
 <span class="sd">    into the script.&quot;&quot;&quot;</span>
 
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">make_temporal_script</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">make_temporal_script</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">__cnt</span> <span class="o">=</span> <span class="mi">1</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">__make_temporal_script</span> <span class="o">=</span> <span class="n">make_temporal_script</span>
 
@@ -1210,7 +1208,7 @@
     <span class="sd">&quot;&quot;&quot;Create a dummy pipeline and save the coprocessing state in the filename</span>
 <span class="sd">        specified, if any, else dumps it out on stdout.&quot;&quot;&quot;</span>
 
-    <span class="kn">from</span> <span class="nn">paraview</span> <span class="k">import</span> <span class="n">simple</span><span class="p">,</span> <span class="n">servermanager</span>
+    <span class="kn">from</span> <span class="nn">paraview</span> <span class="kn">import</span> <span class="n">simple</span><span class="p">,</span> <span class="n">servermanager</span>
     <span class="n">wavelet</span> <span class="o">=</span> <span class="n">simple</span><span class="o">.</span><span class="n">Wavelet</span><span class="p">(</span><span class="n">registrationName</span><span class="o">=</span><span class="s2">&quot;Wavelet1&quot;</span><span class="p">)</span>
     <span class="n">contour</span> <span class="o">=</span> <span class="n">simple</span><span class="o">.</span><span class="n">Contour</span><span class="p">()</span>
     <span class="n">display</span> <span class="o">=</span> <span class="n">simple</span><span class="o">.</span><span class="n">Show</span><span class="p">()</span>

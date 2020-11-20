@@ -7,12 +7,10 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>simple Module &mdash; ParaView/Python 5.9.0-RC1-193-gf1bb9b526b documentation</title>
+  <title>simple Module &mdash; ParaView/Python 5.9.0-RC1-211-gf85ab347b3 documentation</title>
   
 
   
-  
-    <link rel="shortcut icon" href="_static/pvIcon.ico"/>
   
 
   
@@ -24,7 +22,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:'./',
-        VERSION:'5.9.0-RC1-193-gf1bb9b526b',
+        VERSION:'5.9.0-RC1-211-gf85ab347b3',
         COLLAPSE_INDEX:false,
         FILE_SUFFIX:'.html',
         HAS_SOURCE:  true
@@ -49,7 +47,7 @@
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="ParaView/Python 5.9.0-RC1-193-gf1bb9b526b documentation" href="index.html"/>
+    <link rel="top" title="ParaView/Python 5.9.0-RC1-211-gf85ab347b3 documentation" href="index.html"/>
         <link rel="up" title="paraview Package" href="paraview.html"/>
         <link rel="next" title="Available readers, sources, writers, filters and animation cues" href="paraview.servermanager_proxies.html"/>
         <link rel="prev" title="servermanager Module" href="paraview.servermanager.html"/> 
@@ -69,7 +67,7 @@
           <li> <a href="index.html">
             <img src="_static/paraview-logo-small.png"
             alt="ParaView/Python"></img></a> </li>
-          <li class="version"> version 5.9.0-RC1-193-gf1bb9b526b</li>
+          <li class="version"> version 5.9.0-RC1-211-gf85ab347b3</li>
         </ul>
         <form id ="rtd-search-form" class="wy-form" action="search.html" method="get">
   <input type="text" name="q" placeholder="Search docs" />
@@ -589,7 +587,7 @@
 provides a simple convenience layer to functionality provided by the
 C++ classes wrapped to Python as well as the servermanager module.</p>
 <p>A simple example:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">paraview.simple</span> <span class="k">import</span> <span class="o">*</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">paraview.simple</span> <span class="kn">import</span> <span class="o">*</span>
 
 <span class="c1"># Create a new sphere proxy on the active connection and register it</span>
 <span class="c1"># in the sources group.</span>
@@ -605,30 +603,30 @@ C++ classes wrapped to Python as well as the servermanager module.</p>
 <span class="n">Render</span><span class="p">()</span>
 </pre></div>
 </div>
-<dl class="function">
+<dl class="py function">
 <dt id="paraview.simple.AddCameraLink">
-<code class="sig-prename descclassname">paraview.simple.</code><code class="sig-name descname">AddCameraLink</code><span class="sig-paren">(</span><em class="sig-param">viewProxy</em>, <em class="sig-param">viewProxyOther</em>, <em class="sig-param">linkName</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#AddCameraLink"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.AddCameraLink" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">paraview.simple.</code><code class="sig-name descname">AddCameraLink</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">viewProxy</span></em>, <em class="sig-param"><span class="n">viewProxyOther</span></em>, <em class="sig-param"><span class="n">linkName</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#AddCameraLink"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.AddCameraLink" title="Permalink to this definition">¶</a></dt>
 <dd><p>Create a camera link between two view proxies.  A name must be given
 so that the link can be referred to by name.  If a link with the given
 name already exists it will be removed first.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="paraview.simple.AddLight">
-<code class="sig-prename descclassname">paraview.simple.</code><code class="sig-name descname">AddLight</code><span class="sig-paren">(</span><em class="sig-param">view=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#AddLight"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.AddLight" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">paraview.simple.</code><code class="sig-name descname">AddLight</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">view</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#AddLight"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.AddLight" title="Permalink to this definition">¶</a></dt>
 <dd><p>Makes a new vtkLight and adds it to the designated or active view.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="paraview.simple.AnimateReader">
-<code class="sig-prename descclassname">paraview.simple.</code><code class="sig-name descname">AnimateReader</code><span class="sig-paren">(</span><em class="sig-param">reader=None</em>, <em class="sig-param">view=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#AnimateReader"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.AnimateReader" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">paraview.simple.</code><code class="sig-name descname">AnimateReader</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">reader</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">view</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#AnimateReader"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.AnimateReader" title="Permalink to this definition">¶</a></dt>
 <dd><p>This is a utility function that, given a reader and a view
 animates over all time steps of the reader.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="paraview.simple.AssignLookupTable">
-<code class="sig-prename descclassname">paraview.simple.</code><code class="sig-name descname">AssignLookupTable</code><span class="sig-paren">(</span><em class="sig-param">arrayInfo</em>, <em class="sig-param">lutName</em>, <em class="sig-param">rangeOveride=[]</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#AssignLookupTable"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.AssignLookupTable" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">paraview.simple.</code><code class="sig-name descname">AssignLookupTable</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">arrayInfo</span></em>, <em class="sig-param"><span class="n">lutName</span></em>, <em class="sig-param"><span class="n">rangeOveride</span><span class="o">=</span><span class="default_value">[]</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#AssignLookupTable"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.AssignLookupTable" title="Permalink to this definition">¶</a></dt>
 <dd><p>Assign a lookup table to an array by lookup table name.</p>
 <p><cite>arrayInfo</cite> is the information object for the array. The array name and its
 range is determined using the info object provided.</p>
@@ -643,9 +641,9 @@ array determined using the <cite>arrayInfo</cite>.</p>
 </div>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="paraview.simple.AssignViewToLayout">
-<code class="sig-prename descclassname">paraview.simple.</code><code class="sig-name descname">AssignViewToLayout</code><span class="sig-paren">(</span><em class="sig-param">view=None</em>, <em class="sig-param">layout=None</em>, <em class="sig-param">hint=0</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#AssignViewToLayout"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.AssignViewToLayout" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">paraview.simple.</code><code class="sig-name descname">AssignViewToLayout</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">view</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">layout</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">hint</span><span class="o">=</span><span class="default_value">0</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#AssignViewToLayout"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.AssignViewToLayout" title="Permalink to this definition">¶</a></dt>
 <dd><p>Assigns the view provided (or active view if None) to the
 layout provided. If layout is None, then either the active layout or an
 existing layout on the same server will be used. If no layout exists, then
@@ -653,15 +651,15 @@ a new layout will be created. Returns True on success.</p>
 <p>It is an error to assign the same view to multiple layouts.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="paraview.simple.ClearSelection">
-<code class="sig-prename descclassname">paraview.simple.</code><code class="sig-name descname">ClearSelection</code><span class="sig-paren">(</span><em class="sig-param">proxy=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#ClearSelection"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.ClearSelection" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">paraview.simple.</code><code class="sig-name descname">ClearSelection</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">proxy</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#ClearSelection"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.ClearSelection" title="Permalink to this definition">¶</a></dt>
 <dd><p>Clears the selection on the active source.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="paraview.simple.ColorBy">
-<code class="sig-prename descclassname">paraview.simple.</code><code class="sig-name descname">ColorBy</code><span class="sig-paren">(</span><em class="sig-param">rep=None</em>, <em class="sig-param">value=None</em>, <em class="sig-param">separate=False</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#ColorBy"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.ColorBy" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">paraview.simple.</code><code class="sig-name descname">ColorBy</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">rep</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">value</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">separate</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#ColorBy"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.ColorBy" title="Permalink to this definition">¶</a></dt>
 <dd><p>Set scalar color. This will automatically setup the color maps and others
 necessary state for the representations. ‘rep’ must be the display
 properties proxy i.e. the value returned by GetDisplayProperties() function.
@@ -670,9 +668,9 @@ used, if possible. Set separate to True in order to use a separate color
 map for this representation</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="paraview.simple.Connect">
-<code class="sig-prename descclassname">paraview.simple.</code><code class="sig-name descname">Connect</code><span class="sig-paren">(</span><em class="sig-param">ds_host=None</em>, <em class="sig-param">ds_port=11111</em>, <em class="sig-param">rs_host=None</em>, <em class="sig-param">rs_port=11111</em>, <em class="sig-param">timeout=60</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#Connect"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.Connect" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">paraview.simple.</code><code class="sig-name descname">Connect</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">ds_host</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">ds_port</span><span class="o">=</span><span class="default_value">11111</span></em>, <em class="sig-param"><span class="n">rs_host</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">rs_port</span><span class="o">=</span><span class="default_value">11111</span></em>, <em class="sig-param"><span class="n">timeout</span><span class="o">=</span><span class="default_value">60</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#Connect"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.Connect" title="Permalink to this definition">¶</a></dt>
 <dd><p>Creates a connection to a server. Example usage:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="n">Connect</span><span class="p">(</span><span class="s2">&quot;amber&quot;</span><span class="p">)</span> <span class="c1"># Connect to a single server at default port</span>
 <span class="o">&gt;</span> <span class="n">Connect</span><span class="p">(</span><span class="s2">&quot;amber&quot;</span><span class="p">,</span> <span class="mi">12345</span><span class="p">)</span> <span class="c1"># Connect to a single server at port 12345</span>
@@ -684,44 +682,44 @@ map for this representation</p>
 </div>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="paraview.simple.Create2DRenderView">
-<code class="sig-prename descclassname">paraview.simple.</code><code class="sig-name descname">Create2DRenderView</code><span class="sig-paren">(</span><em class="sig-param">detachedFromLayout=False</em>, <em class="sig-param">**params</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#Create2DRenderView"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.Create2DRenderView" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">paraview.simple.</code><code class="sig-name descname">Create2DRenderView</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">detachedFromLayout</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">params</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#Create2DRenderView"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.Create2DRenderView" title="Permalink to this definition">¶</a></dt>
 <dd><p>“Create the standard 3D render view with the 2D interaction mode turned ON.
 See CreateView for arguments documentation</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="paraview.simple.CreateBarChartView">
-<code class="sig-prename descclassname">paraview.simple.</code><code class="sig-name descname">CreateBarChartView</code><span class="sig-paren">(</span><em class="sig-param">detachedFromLayout=False</em>, <em class="sig-param">**params</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#CreateBarChartView"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.CreateBarChartView" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">paraview.simple.</code><code class="sig-name descname">CreateBarChartView</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">detachedFromLayout</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">params</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#CreateBarChartView"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.CreateBarChartView" title="Permalink to this definition">¶</a></dt>
 <dd><p>“Create Bar Chart view.
 See CreateView for arguments documentation</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="paraview.simple.CreateComparativeBarChartView">
-<code class="sig-prename descclassname">paraview.simple.</code><code class="sig-name descname">CreateComparativeBarChartView</code><span class="sig-paren">(</span><em class="sig-param">detachedFromLayout=False</em>, <em class="sig-param">**params</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#CreateComparativeBarChartView"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.CreateComparativeBarChartView" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">paraview.simple.</code><code class="sig-name descname">CreateComparativeBarChartView</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">detachedFromLayout</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">params</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#CreateComparativeBarChartView"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.CreateComparativeBarChartView" title="Permalink to this definition">¶</a></dt>
 <dd><p>“Create comparative Bar Chart view.
 See CreateView for arguments documentation</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="paraview.simple.CreateComparativeRenderView">
-<code class="sig-prename descclassname">paraview.simple.</code><code class="sig-name descname">CreateComparativeRenderView</code><span class="sig-paren">(</span><em class="sig-param">detachedFromLayout=False</em>, <em class="sig-param">**params</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#CreateComparativeRenderView"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.CreateComparativeRenderView" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">paraview.simple.</code><code class="sig-name descname">CreateComparativeRenderView</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">detachedFromLayout</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">params</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#CreateComparativeRenderView"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.CreateComparativeRenderView" title="Permalink to this definition">¶</a></dt>
 <dd><p>“Create Comparative view.
 See CreateView for arguments documentation</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="paraview.simple.CreateComparativeXYPlotView">
-<code class="sig-prename descclassname">paraview.simple.</code><code class="sig-name descname">CreateComparativeXYPlotView</code><span class="sig-paren">(</span><em class="sig-param">detachedFromLayout=False</em>, <em class="sig-param">**params</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#CreateComparativeXYPlotView"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.CreateComparativeXYPlotView" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">paraview.simple.</code><code class="sig-name descname">CreateComparativeXYPlotView</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">detachedFromLayout</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">params</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#CreateComparativeXYPlotView"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.CreateComparativeXYPlotView" title="Permalink to this definition">¶</a></dt>
 <dd><p>“Create comparative XY plot Chart view.
 See CreateView for arguments documentation</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="paraview.simple.CreateExtractor">
-<code class="sig-prename descclassname">paraview.simple.</code><code class="sig-name descname">CreateExtractor</code><span class="sig-paren">(</span><em class="sig-param">name</em>, <em class="sig-param">proxy=None</em>, <em class="sig-param">registrationName=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#CreateExtractor"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.CreateExtractor" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">paraview.simple.</code><code class="sig-name descname">CreateExtractor</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em>, <em class="sig-param"><span class="n">proxy</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">registrationName</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#CreateExtractor"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.CreateExtractor" title="Permalink to this definition">¶</a></dt>
 <dd><p>Creates a new extractor and returns it.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -747,49 +745,49 @@ will be generated.
 </dl>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="paraview.simple.CreateLayout">
-<code class="sig-prename descclassname">paraview.simple.</code><code class="sig-name descname">CreateLayout</code><span class="sig-paren">(</span><em class="sig-param">name=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#CreateLayout"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.CreateLayout" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">paraview.simple.</code><code class="sig-name descname">CreateLayout</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#CreateLayout"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.CreateLayout" title="Permalink to this definition">¶</a></dt>
 <dd><p>Create a new layout with no active view.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="paraview.simple.CreateLight">
 <code class="sig-prename descclassname">paraview.simple.</code><code class="sig-name descname">CreateLight</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#CreateLight"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.CreateLight" title="Permalink to this definition">¶</a></dt>
 <dd><p>Makes a new vtkLight, unattached to a view.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="paraview.simple.CreateLookupTable">
-<code class="sig-prename descclassname">paraview.simple.</code><code class="sig-name descname">CreateLookupTable</code><span class="sig-paren">(</span><em class="sig-param">**params</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#CreateLookupTable"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.CreateLookupTable" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">paraview.simple.</code><code class="sig-name descname">CreateLookupTable</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">**</span><span class="n">params</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#CreateLookupTable"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.CreateLookupTable" title="Permalink to this definition">¶</a></dt>
 <dd><p>Create and return a lookup table.  Optionally, parameters can be given
 to assign to the lookup table.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="paraview.simple.CreateParallelCoordinatesChartView">
-<code class="sig-prename descclassname">paraview.simple.</code><code class="sig-name descname">CreateParallelCoordinatesChartView</code><span class="sig-paren">(</span><em class="sig-param">detachedFromLayout=False</em>, <em class="sig-param">**params</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#CreateParallelCoordinatesChartView"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.CreateParallelCoordinatesChartView" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">paraview.simple.</code><code class="sig-name descname">CreateParallelCoordinatesChartView</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">detachedFromLayout</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">params</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#CreateParallelCoordinatesChartView"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.CreateParallelCoordinatesChartView" title="Permalink to this definition">¶</a></dt>
 <dd><p>“Create Parallele coordinate Chart view.
 See CreateView for arguments documentation</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="paraview.simple.CreatePiecewiseFunction">
-<code class="sig-prename descclassname">paraview.simple.</code><code class="sig-name descname">CreatePiecewiseFunction</code><span class="sig-paren">(</span><em class="sig-param">**params</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#CreatePiecewiseFunction"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.CreatePiecewiseFunction" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">paraview.simple.</code><code class="sig-name descname">CreatePiecewiseFunction</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">**</span><span class="n">params</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#CreatePiecewiseFunction"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.CreatePiecewiseFunction" title="Permalink to this definition">¶</a></dt>
 <dd><p>Create and return a piecewise function.  Optionally, parameters can be
 given to assign to the piecewise function.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="paraview.simple.CreateRenderView">
-<code class="sig-prename descclassname">paraview.simple.</code><code class="sig-name descname">CreateRenderView</code><span class="sig-paren">(</span><em class="sig-param">detachedFromLayout=False</em>, <em class="sig-param">**params</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#CreateRenderView"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.CreateRenderView" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">paraview.simple.</code><code class="sig-name descname">CreateRenderView</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">detachedFromLayout</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">params</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#CreateRenderView"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.CreateRenderView" title="Permalink to this definition">¶</a></dt>
 <dd><p>“Create standard 3D render view.
 See CreateView for arguments documentation</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="paraview.simple.CreateScalarBar">
-<code class="sig-prename descclassname">paraview.simple.</code><code class="sig-name descname">CreateScalarBar</code><span class="sig-paren">(</span><em class="sig-param">**params</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#CreateScalarBar"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.CreateScalarBar" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">paraview.simple.</code><code class="sig-name descname">CreateScalarBar</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">**</span><span class="n">params</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#CreateScalarBar"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.CreateScalarBar" title="Permalink to this definition">¶</a></dt>
 <dd><p>Create and return a scalar bar widget.  The returned widget may
 be added to a render view by appending it to the view’s representations
 The widget must have a valid lookup table before it is added to a view.
@@ -803,9 +801,9 @@ to this method:</p>
 <p>By default the returned widget is selectable and resizable.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="paraview.simple.CreateTexture">
-<code class="sig-prename descclassname">paraview.simple.</code><code class="sig-name descname">CreateTexture</code><span class="sig-paren">(</span><em class="sig-param">filename=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#CreateTexture"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.CreateTexture" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">paraview.simple.</code><code class="sig-name descname">CreateTexture</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">filename</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#CreateTexture"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.CreateTexture" title="Permalink to this definition">¶</a></dt>
 <dd><p>Creates and returns a new vtkTexture.
 The texture is not attached to anything by default but it can be applied
 to things, for example the view, like so.
@@ -813,77 +811,77 @@ to things, for example the view, like so.
 &gt;&gt;&gt; GetActiveView().BackgroundTexture = CreateTexture(“foo.png”)</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="paraview.simple.CreateView">
-<code class="sig-prename descclassname">paraview.simple.</code><code class="sig-name descname">CreateView</code><span class="sig-paren">(</span><em class="sig-param">view_xml_name</em>, <em class="sig-param">detachedFromLayout=None</em>, <em class="sig-param">**params</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#CreateView"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.CreateView" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">paraview.simple.</code><code class="sig-name descname">CreateView</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">view_xml_name</span></em>, <em class="sig-param"><span class="n">detachedFromLayout</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">params</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#CreateView"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.CreateView" title="Permalink to this definition">¶</a></dt>
 <dd><p>Creates and returns the specified proxy view based on its name/label.
 Also set params keywords arguments as view properties.</p>
 <p><cite>detachedFromLayout</cite> has been deprecated in ParaView 5.7 as it is no longer
 needed. All views are created detached by default.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="paraview.simple.CreateWriter">
-<code class="sig-prename descclassname">paraview.simple.</code><code class="sig-name descname">CreateWriter</code><span class="sig-paren">(</span><em class="sig-param">filename</em>, <em class="sig-param">proxy=None</em>, <em class="sig-param">**extraArgs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#CreateWriter"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.CreateWriter" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">paraview.simple.</code><code class="sig-name descname">CreateWriter</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">filename</span></em>, <em class="sig-param"><span class="n">proxy</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">extraArgs</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#CreateWriter"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.CreateWriter" title="Permalink to this definition">¶</a></dt>
 <dd><p>Creates a writer that can write the data produced by the source proxy in
 the given file format (identified by the extension). If no source is
 provided, then the active source is used. This doesn’t actually write the
 data, it simply creates the writer and returns it.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="paraview.simple.CreateXYPlotView">
-<code class="sig-prename descclassname">paraview.simple.</code><code class="sig-name descname">CreateXYPlotView</code><span class="sig-paren">(</span><em class="sig-param">detachedFromLayout=False</em>, <em class="sig-param">**params</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#CreateXYPlotView"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.CreateXYPlotView" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">paraview.simple.</code><code class="sig-name descname">CreateXYPlotView</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">detachedFromLayout</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">params</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#CreateXYPlotView"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.CreateXYPlotView" title="Permalink to this definition">¶</a></dt>
 <dd><p>Create XY plot Chart view.
 See CreateView for arguments documentation</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="paraview.simple.CreateXYPointPlotView">
-<code class="sig-prename descclassname">paraview.simple.</code><code class="sig-name descname">CreateXYPointPlotView</code><span class="sig-paren">(</span><em class="sig-param">detachedFromLayout=False</em>, <em class="sig-param">**params</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#CreateXYPointPlotView"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.CreateXYPointPlotView" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">paraview.simple.</code><code class="sig-name descname">CreateXYPointPlotView</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">detachedFromLayout</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">params</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#CreateXYPointPlotView"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.CreateXYPointPlotView" title="Permalink to this definition">¶</a></dt>
 <dd><p>Create XY plot point Chart view.
 See CreateView for arguments documentation</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="paraview.simple.Delete">
-<code class="sig-prename descclassname">paraview.simple.</code><code class="sig-name descname">Delete</code><span class="sig-paren">(</span><em class="sig-param">proxy=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#Delete"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.Delete" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">paraview.simple.</code><code class="sig-name descname">Delete</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">proxy</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#Delete"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.Delete" title="Permalink to this definition">¶</a></dt>
 <dd><p>Deletes the given pipeline object or the active source if no argument
 is specified.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="paraview.simple.Disconnect">
-<code class="sig-prename descclassname">paraview.simple.</code><code class="sig-name descname">Disconnect</code><span class="sig-paren">(</span><em class="sig-param">ns=None</em>, <em class="sig-param">force=True</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#Disconnect"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.Disconnect" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">paraview.simple.</code><code class="sig-name descname">Disconnect</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">ns</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">force</span><span class="o">=</span><span class="default_value">True</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#Disconnect"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.Disconnect" title="Permalink to this definition">¶</a></dt>
 <dd><p>Free the current active session</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="paraview.simple.ExportTransferFunction">
-<code class="sig-prename descclassname">paraview.simple.</code><code class="sig-name descname">ExportTransferFunction</code><span class="sig-paren">(</span><em class="sig-param">colortransferfunction</em>, <em class="sig-param">opacitytransferfunction</em>, <em class="sig-param">tfname</em>, <em class="sig-param">filename</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#ExportTransferFunction"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.ExportTransferFunction" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">paraview.simple.</code><code class="sig-name descname">ExportTransferFunction</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">colortransferfunction</span></em>, <em class="sig-param"><span class="n">opacitytransferfunction</span></em>, <em class="sig-param"><span class="n">tfname</span></em>, <em class="sig-param"><span class="n">filename</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#ExportTransferFunction"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.ExportTransferFunction" title="Permalink to this definition">¶</a></dt>
 <dd><p>Export transfer function to a file. The file will be saved in the new JSON format.
 Note that opacitytransferfunction can be None. The tfname is the name that will be
 given to the transfer function preset when imported back into ParaView.
 Returns True on success.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="paraview.simple.ExportView">
-<code class="sig-prename descclassname">paraview.simple.</code><code class="sig-name descname">ExportView</code><span class="sig-paren">(</span><em class="sig-param">filename</em>, <em class="sig-param">view=None</em>, <em class="sig-param">**params</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#ExportView"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.ExportView" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">paraview.simple.</code><code class="sig-name descname">ExportView</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">filename</span></em>, <em class="sig-param"><span class="n">view</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">params</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#ExportView"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.ExportView" title="Permalink to this definition">¶</a></dt>
 <dd><p>Export a view to the specified output file.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="paraview.simple.ExtendFileSeries">
-<code class="sig-prename descclassname">paraview.simple.</code><code class="sig-name descname">ExtendFileSeries</code><span class="sig-paren">(</span><em class="sig-param">proxy=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#ExtendFileSeries"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.ExtendFileSeries" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">paraview.simple.</code><code class="sig-name descname">ExtendFileSeries</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">proxy</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#ExtendFileSeries"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.ExtendFileSeries" title="Permalink to this definition">¶</a></dt>
 <dd><p>For a reader <cite>proxy</cite> that supports reading files series, detect any new files
 added to the series and update the reader’s filename property.
 If no <cite>proxy</cite> is provided, active source is used.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="paraview.simple.FindExtractor">
-<code class="sig-prename descclassname">paraview.simple.</code><code class="sig-name descname">FindExtractor</code><span class="sig-paren">(</span><em class="sig-param">registrationName</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#FindExtractor"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.FindExtractor" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">paraview.simple.</code><code class="sig-name descname">FindExtractor</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">registrationName</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#FindExtractor"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.FindExtractor" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns an extractor with a specific registrationName.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -898,9 +896,9 @@ If no <cite>proxy</cite> is provided, active source is used.</p>
 </dl>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="paraview.simple.FindSource">
-<code class="sig-prename descclassname">paraview.simple.</code><code class="sig-name descname">FindSource</code><span class="sig-paren">(</span><em class="sig-param">name</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#FindSource"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.FindSource" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">paraview.simple.</code><code class="sig-name descname">FindSource</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#FindSource"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.FindSource" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return a proxy base on the name that was used to register it
 into the ProxyManager.
 Example usage:</p>
@@ -912,9 +910,9 @@ Example usage:</p>
 </div>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="paraview.simple.FindView">
-<code class="sig-prename descclassname">paraview.simple.</code><code class="sig-name descname">FindView</code><span class="sig-paren">(</span><em class="sig-param">name</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#FindView"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.FindView" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">paraview.simple.</code><code class="sig-name descname">FindView</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#FindView"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.FindView" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return a view proxy on the name that was used to register it
 into the ProxyManager.
 Example usage:</p>
@@ -924,51 +922,51 @@ Example usage:</p>
 </div>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="paraview.simple.FindViewOrCreate">
-<code class="sig-prename descclassname">paraview.simple.</code><code class="sig-name descname">FindViewOrCreate</code><span class="sig-paren">(</span><em class="sig-param">name</em>, <em class="sig-param">viewtype</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#FindViewOrCreate"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.FindViewOrCreate" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">paraview.simple.</code><code class="sig-name descname">FindViewOrCreate</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em>, <em class="sig-param"><span class="n">viewtype</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#FindViewOrCreate"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.FindViewOrCreate" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the view, if a view with the given name exists and is of the
 the given type, otherwise creates a new view of the requested type.
 Note, if a new view is created, it will be assigned to a layout
 by calling <cite>AssignViewToLayout</cite>.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="paraview.simple.GetActiveCamera">
 <code class="sig-prename descclassname">paraview.simple.</code><code class="sig-name descname">GetActiveCamera</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#GetActiveCamera"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.GetActiveCamera" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the active camera for the active view. The returned object
 is an instance of vtkCamera.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="paraview.simple.GetActiveSource">
 <code class="sig-prename descclassname">paraview.simple.</code><code class="sig-name descname">GetActiveSource</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#GetActiveSource"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.GetActiveSource" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the active source.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="paraview.simple.GetActiveView">
 <code class="sig-prename descclassname">paraview.simple.</code><code class="sig-name descname">GetActiveView</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#GetActiveView"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.GetActiveView" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the active view.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="paraview.simple.GetActiveViewOrCreate">
-<code class="sig-prename descclassname">paraview.simple.</code><code class="sig-name descname">GetActiveViewOrCreate</code><span class="sig-paren">(</span><em class="sig-param">viewtype</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#GetActiveViewOrCreate"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.GetActiveViewOrCreate" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">paraview.simple.</code><code class="sig-name descname">GetActiveViewOrCreate</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">viewtype</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#GetActiveViewOrCreate"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.GetActiveViewOrCreate" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the active view, if the active view is of the given type,
 otherwise creates a new view of the requested type.
 Note, if a new view is created, it will be assigned to a layout
 by calling <cite>AssignViewToLayout</cite>.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="paraview.simple.GetAllSettings">
 <code class="sig-prename descclassname">paraview.simple.</code><code class="sig-name descname">GetAllSettings</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#GetAllSettings"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.GetAllSettings" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get a list of Strings, that return valid Proxies using
 the GetSettingsProxy function</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="paraview.simple.GetAnimationScene">
 <code class="sig-prename descclassname">paraview.simple.</code><code class="sig-name descname">GetAnimationScene</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#GetAnimationScene"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.GetAnimationScene" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the application-wide animation scene. ParaView has only one
@@ -977,9 +975,9 @@ free to create additional animation scenes directly, but those scenes
 won’t be shown in the ParaView GUI.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="paraview.simple.GetAnimationTrack">
-<code class="sig-prename descclassname">paraview.simple.</code><code class="sig-name descname">GetAnimationTrack</code><span class="sig-paren">(</span><em class="sig-param">propertyname_or_property</em>, <em class="sig-param">index=None</em>, <em class="sig-param">proxy=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#GetAnimationTrack"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.GetAnimationTrack" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">paraview.simple.</code><code class="sig-name descname">GetAnimationTrack</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">propertyname_or_property</span></em>, <em class="sig-param"><span class="n">index</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">proxy</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#GetAnimationTrack"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.GetAnimationTrack" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns an animation cue for the property. If one doesn’t exist then a
 new one will be created.
 Typical usage:</p>
@@ -999,17 +997,17 @@ signatures:</p>
 </div>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="paraview.simple.GetCameraTrack">
-<code class="sig-prename descclassname">paraview.simple.</code><code class="sig-name descname">GetCameraTrack</code><span class="sig-paren">(</span><em class="sig-param">view=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#GetCameraTrack"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.GetCameraTrack" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">paraview.simple.</code><code class="sig-name descname">GetCameraTrack</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">view</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#GetCameraTrack"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.GetCameraTrack" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the camera animation track for the given view. If no view is
 specified, active view will be used. If no existing camera animation track
 is found, a new one will be created.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="paraview.simple.GetColorTransferFunction">
-<code class="sig-prename descclassname">paraview.simple.</code><code class="sig-name descname">GetColorTransferFunction</code><span class="sig-paren">(</span><em class="sig-param">arrayname</em>, <em class="sig-param">representation=None</em>, <em class="sig-param">separate=False</em>, <em class="sig-param">**params</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#GetColorTransferFunction"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.GetColorTransferFunction" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">paraview.simple.</code><code class="sig-name descname">GetColorTransferFunction</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">arrayname</span></em>, <em class="sig-param"><span class="n">representation</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">separate</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">params</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#GetColorTransferFunction"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.GetColorTransferFunction" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get the color transfer function used to mapping a data array with the
 given name to colors. Representation is used to modify the array name
 when using a separate color transfer function. separate can be used to recover
@@ -1017,23 +1015,23 @@ the separate color transfer function even if it is not used currently by the rep
 This may create a new color transfer function if none exists, or return an existing one</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="paraview.simple.GetDisplayProperties">
-<code class="sig-prename descclassname">paraview.simple.</code><code class="sig-name descname">GetDisplayProperties</code><span class="sig-paren">(</span><em class="sig-param">proxy=None</em>, <em class="sig-param">view=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#GetDisplayProperties"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.GetDisplayProperties" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">paraview.simple.</code><code class="sig-name descname">GetDisplayProperties</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">proxy</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">view</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#GetDisplayProperties"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.GetDisplayProperties" title="Permalink to this definition">¶</a></dt>
 <dd><p>“Given a pipeline object and view, returns the corresponding representation object.
 If pipeline object and/or view are not specified, active objects are used.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="paraview.simple.GetDisplayProperty">
-<code class="sig-prename descclassname">paraview.simple.</code><code class="sig-name descname">GetDisplayProperty</code><span class="sig-paren">(</span><em class="sig-param">*arguments</em>, <em class="sig-param">**keywords</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#GetDisplayProperty"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.GetDisplayProperty" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">paraview.simple.</code><code class="sig-name descname">GetDisplayProperty</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">arguments</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">keywords</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#GetDisplayProperty"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.GetDisplayProperty" title="Permalink to this definition">¶</a></dt>
 <dd><p>Same as GetProperty, except that if no ‘proxy’ is passed, it will use
 the active display properties, rather than the active source</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="paraview.simple.GetExtractors">
-<code class="sig-prename descclassname">paraview.simple.</code><code class="sig-name descname">GetExtractors</code><span class="sig-paren">(</span><em class="sig-param">proxy=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#GetExtractors"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.GetExtractors" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">paraview.simple.</code><code class="sig-name descname">GetExtractors</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">proxy</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#GetExtractors"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.GetExtractors" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns a list of extractors associated with the proxy.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -1051,57 +1049,57 @@ the active display properties, rather than the active source</p>
 :rtype: list of <a class="reference internal" href="paraview.servermanager.html#paraview.servermanager.Proxy" title="paraview.servermanager.Proxy"><code class="xref py py-class docutils literal notranslate"><span class="pre">paraview.servermanager.Proxy</span></code></a></p>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="paraview.simple.GetLayout">
-<code class="sig-prename descclassname">paraview.simple.</code><code class="sig-name descname">GetLayout</code><span class="sig-paren">(</span><em class="sig-param">view=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#GetLayout"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.GetLayout" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">paraview.simple.</code><code class="sig-name descname">GetLayout</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">view</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#GetLayout"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.GetLayout" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the layout containing the give view, if any.
 If no view is specified, active view is used.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="paraview.simple.GetLayoutByName">
-<code class="sig-prename descclassname">paraview.simple.</code><code class="sig-name descname">GetLayoutByName</code><span class="sig-paren">(</span><em class="sig-param">name</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#GetLayoutByName"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.GetLayoutByName" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">paraview.simple.</code><code class="sig-name descname">GetLayoutByName</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#GetLayoutByName"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.GetLayoutByName" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the first layout with the given name, if any.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="paraview.simple.GetLayouts">
 <code class="sig-prename descclassname">paraview.simple.</code><code class="sig-name descname">GetLayouts</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#GetLayouts"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.GetLayouts" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the layout proxies on the active session.
 Layout proxies are used to place views in a grid.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="paraview.simple.GetLight">
-<code class="sig-prename descclassname">paraview.simple.</code><code class="sig-name descname">GetLight</code><span class="sig-paren">(</span><em class="sig-param">number</em>, <em class="sig-param">view=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#GetLight"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.GetLight" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">paraview.simple.</code><code class="sig-name descname">GetLight</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">number</span></em>, <em class="sig-param"><span class="n">view</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#GetLight"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.GetLight" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get a handle on a previously added light</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="paraview.simple.GetLookupTableForArray">
-<code class="sig-prename descclassname">paraview.simple.</code><code class="sig-name descname">GetLookupTableForArray</code><span class="sig-paren">(</span><em class="sig-param">arrayname</em>, <em class="sig-param">num_components</em>, <em class="sig-param">**params</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#GetLookupTableForArray"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.GetLookupTableForArray" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">paraview.simple.</code><code class="sig-name descname">GetLookupTableForArray</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">arrayname</span></em>, <em class="sig-param"><span class="n">num_components</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">params</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#GetLookupTableForArray"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.GetLookupTableForArray" title="Permalink to this definition">¶</a></dt>
 <dd><p>Used to get an existing lookuptable for a array or to create one if none
 exists. Keyword arguments can be passed in to initialize the LUT if a new
 one is created.
 <strong>* DEPRECATED *</strong>: Use GetColorTransferFunction instead</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="paraview.simple.GetLookupTableNames">
 <code class="sig-prename descclassname">paraview.simple.</code><code class="sig-name descname">GetLookupTableNames</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#GetLookupTableNames"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.GetLookupTableNames" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns a list containing the currently available transfer function
 presets.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="paraview.simple.GetMaterialLibrary">
 <code class="sig-prename descclassname">paraview.simple.</code><code class="sig-name descname">GetMaterialLibrary</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#GetMaterialLibrary"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.GetMaterialLibrary" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the material library for the active session.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="paraview.simple.GetOpacityTransferFunction">
-<code class="sig-prename descclassname">paraview.simple.</code><code class="sig-name descname">GetOpacityTransferFunction</code><span class="sig-paren">(</span><em class="sig-param">arrayname</em>, <em class="sig-param">representation=None</em>, <em class="sig-param">separate=False</em>, <em class="sig-param">**params</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#GetOpacityTransferFunction"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.GetOpacityTransferFunction" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">paraview.simple.</code><code class="sig-name descname">GetOpacityTransferFunction</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">arrayname</span></em>, <em class="sig-param"><span class="n">representation</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">separate</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">params</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#GetOpacityTransferFunction"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.GetOpacityTransferFunction" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get the opacity transfer function used to mapping a data array with the
 given name to opacity. Representation is used to modify the array name
 when using a separate opacity transfer function. separate can be used to recover
@@ -1109,28 +1107,28 @@ the separate opacity transfer function even if it is not used currently by the r
 This may create a new opacity transfer function if none exists, or return an existing one</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="paraview.simple.GetOpenGLInformation">
-<code class="sig-prename descclassname">paraview.simple.</code><code class="sig-name descname">GetOpenGLInformation</code><span class="sig-paren">(</span><em class="sig-param">location=16</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#GetOpenGLInformation"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.GetOpenGLInformation" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">paraview.simple.</code><code class="sig-name descname">GetOpenGLInformation</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">location</span><span class="o">=</span><span class="default_value">16</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#GetOpenGLInformation"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.GetOpenGLInformation" title="Permalink to this definition">¶</a></dt>
 <dd><p>Recover OpenGL information, by default on the client</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="paraview.simple.GetParaViewSourceVersion">
 <code class="sig-prename descclassname">paraview.simple.</code><code class="sig-name descname">GetParaViewSourceVersion</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#GetParaViewSourceVersion"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.GetParaViewSourceVersion" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the paraview source version string e.g.
 ‘paraview version x.x.x, Date: YYYY-MM-DD’.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="paraview.simple.GetParaViewVersion">
 <code class="sig-prename descclassname">paraview.simple.</code><code class="sig-name descname">GetParaViewVersion</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#GetParaViewVersion"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.GetParaViewVersion" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the version of the ParaView build</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="paraview.simple.GetProperty">
-<code class="sig-prename descclassname">paraview.simple.</code><code class="sig-name descname">GetProperty</code><span class="sig-paren">(</span><em class="sig-param">*arguments</em>, <em class="sig-param">**keywords</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#GetProperty"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.GetProperty" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">paraview.simple.</code><code class="sig-name descname">GetProperty</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">arguments</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">keywords</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#GetProperty"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.GetProperty" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get one property of the given pipeline object. If keywords are used,
 you can set the proxy and the name of the property that you want to get
 as shown in the following example:</p>
@@ -1153,60 +1151,60 @@ the proxy and the second one the property name.</p></li>
 </div>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="paraview.simple.GetRenderView">
 <code class="sig-prename descclassname">paraview.simple.</code><code class="sig-name descname">GetRenderView</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#GetRenderView"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.GetRenderView" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the active view if there is one. Else creates and returns a new view.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="paraview.simple.GetRenderViews">
 <code class="sig-prename descclassname">paraview.simple.</code><code class="sig-name descname">GetRenderViews</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#GetRenderViews"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.GetRenderViews" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns all render views as a list.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="paraview.simple.GetRepresentation">
-<code class="sig-prename descclassname">paraview.simple.</code><code class="sig-name descname">GetRepresentation</code><span class="sig-paren">(</span><em class="sig-param">proxy=None</em>, <em class="sig-param">view=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#GetRepresentation"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.GetRepresentation" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">paraview.simple.</code><code class="sig-name descname">GetRepresentation</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">proxy</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">view</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#GetRepresentation"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.GetRepresentation" title="Permalink to this definition">¶</a></dt>
 <dd><p>“Given a pipeline object and view, returns the corresponding representation object.
 If pipeline object and view are not specified, active objects are used.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="paraview.simple.GetRepresentations">
 <code class="sig-prename descclassname">paraview.simple.</code><code class="sig-name descname">GetRepresentations</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#GetRepresentations"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.GetRepresentations" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns all representations (display properties).</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="paraview.simple.GetScalarBar">
-<code class="sig-prename descclassname">paraview.simple.</code><code class="sig-name descname">GetScalarBar</code><span class="sig-paren">(</span><em class="sig-param">ctf</em>, <em class="sig-param">view=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#GetScalarBar"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.GetScalarBar" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">paraview.simple.</code><code class="sig-name descname">GetScalarBar</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">ctf</span></em>, <em class="sig-param"><span class="n">view</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#GetScalarBar"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.GetScalarBar" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the scalar bar for color transfer function in the given view.
 If view is None, the active view will be used, if possible.
 This will either return an existing scalar bar or create a new one.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="paraview.simple.GetSettingsProxy">
-<code class="sig-prename descclassname">paraview.simple.</code><code class="sig-name descname">GetSettingsProxy</code><span class="sig-paren">(</span><em class="sig-param">type</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#GetSettingsProxy"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.GetSettingsProxy" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">paraview.simple.</code><code class="sig-name descname">GetSettingsProxy</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">type</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#GetSettingsProxy"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.GetSettingsProxy" title="Permalink to this definition">¶</a></dt>
 <dd><p>Given a type as name returns the Proxy for those settings.
 For example for type=GeneralSettings</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="paraview.simple.GetSources">
 <code class="sig-prename descclassname">paraview.simple.</code><code class="sig-name descname">GetSources</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#GetSources"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.GetSources" title="Permalink to this definition">¶</a></dt>
 <dd><p>Given the name of a source, return its Python object.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="paraview.simple.GetTimeKeeper">
 <code class="sig-prename descclassname">paraview.simple.</code><code class="sig-name descname">GetTimeKeeper</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#GetTimeKeeper"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.GetTimeKeeper" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the time-keeper for the active session. Timekeeper is often used
 to manage time step information known to the ParaView application.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="paraview.simple.GetTimeTrack">
 <code class="sig-prename descclassname">paraview.simple.</code><code class="sig-name descname">GetTimeTrack</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#GetTimeTrack"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.GetTimeTrack" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the animation track used to control the time requested from all
@@ -1214,109 +1212,109 @@ readers/filters during playback.
 This is the “TimeKeeper - Time” track shown in ParaView’s ‘Animation View’.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="paraview.simple.GetViewForLight">
-<code class="sig-prename descclassname">paraview.simple.</code><code class="sig-name descname">GetViewForLight</code><span class="sig-paren">(</span><em class="sig-param">proxy</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#GetViewForLight"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.GetViewForLight" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">paraview.simple.</code><code class="sig-name descname">GetViewForLight</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">proxy</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#GetViewForLight"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.GetViewForLight" title="Permalink to this definition">¶</a></dt>
 <dd><p>Given a light proxy, find which view it belongs to</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="paraview.simple.GetViewProperties">
-<code class="sig-prename descclassname">paraview.simple.</code><code class="sig-name descname">GetViewProperties</code><span class="sig-paren">(</span><em class="sig-param">view=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#GetViewProperties"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.GetViewProperties" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">paraview.simple.</code><code class="sig-name descname">GetViewProperties</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">view</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#GetViewProperties"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.GetViewProperties" title="Permalink to this definition">¶</a></dt>
 <dd><p>“Same as GetActiveView(), this API is provided just for consistency with
 GetDisplayProperties().</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="paraview.simple.GetViewProperty">
-<code class="sig-prename descclassname">paraview.simple.</code><code class="sig-name descname">GetViewProperty</code><span class="sig-paren">(</span><em class="sig-param">*arguments</em>, <em class="sig-param">**keywords</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#GetViewProperty"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.GetViewProperty" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">paraview.simple.</code><code class="sig-name descname">GetViewProperty</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">arguments</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">keywords</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#GetViewProperty"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.GetViewProperty" title="Permalink to this definition">¶</a></dt>
 <dd><p>Same as GetProperty, except that if no ‘proxy’ is passed, it will use
 the active view properties, rather than the active source</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="paraview.simple.GetViews">
-<code class="sig-prename descclassname">paraview.simple.</code><code class="sig-name descname">GetViews</code><span class="sig-paren">(</span><em class="sig-param">viewtype=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#GetViews"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.GetViews" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">paraview.simple.</code><code class="sig-name descname">GetViews</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">viewtype</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#GetViews"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.GetViews" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns all views. If viewtype is specified, only the views of the
 specified type are returned</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="paraview.simple.GetViewsInLayout">
-<code class="sig-prename descclassname">paraview.simple.</code><code class="sig-name descname">GetViewsInLayout</code><span class="sig-paren">(</span><em class="sig-param">layout=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#GetViewsInLayout"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.GetViewsInLayout" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">paraview.simple.</code><code class="sig-name descname">GetViewsInLayout</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">layout</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#GetViewsInLayout"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.GetViewsInLayout" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns a list of views in the given layout. If not layout is specified,
 the layout for the active view is used, if possible.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="paraview.simple.Hide">
-<code class="sig-prename descclassname">paraview.simple.</code><code class="sig-name descname">Hide</code><span class="sig-paren">(</span><em class="sig-param">proxy=None</em>, <em class="sig-param">view=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#Hide"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.Hide" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">paraview.simple.</code><code class="sig-name descname">Hide</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">proxy</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">view</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#Hide"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.Hide" title="Permalink to this definition">¶</a></dt>
 <dd><p>Turns the visibility of a given pipeline object off in the given view.
 If pipeline object and/or view are not specified, active objects are used.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="paraview.simple.Hide3DWidgets">
-<code class="sig-prename descclassname">paraview.simple.</code><code class="sig-name descname">Hide3DWidgets</code><span class="sig-paren">(</span><em class="sig-param">proxy=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#Hide3DWidgets"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.Hide3DWidgets" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">paraview.simple.</code><code class="sig-name descname">Hide3DWidgets</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">proxy</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#Hide3DWidgets"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.Hide3DWidgets" title="Permalink to this definition">¶</a></dt>
 <dd><p>If possible in the current environment, this method will
 request the application to hide the 3D widget(s) for proxy</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="paraview.simple.HideAll">
-<code class="sig-prename descclassname">paraview.simple.</code><code class="sig-name descname">HideAll</code><span class="sig-paren">(</span><em class="sig-param">view=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#HideAll"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.HideAll" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">paraview.simple.</code><code class="sig-name descname">HideAll</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">view</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#HideAll"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.HideAll" title="Permalink to this definition">¶</a></dt>
 <dd><p>Hide all pipeline sources in the given view.
 If view is not specified, active view is used.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="paraview.simple.HideScalarBarIfNotNeeded">
-<code class="sig-prename descclassname">paraview.simple.</code><code class="sig-name descname">HideScalarBarIfNotNeeded</code><span class="sig-paren">(</span><em class="sig-param">lut</em>, <em class="sig-param">view=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#HideScalarBarIfNotNeeded"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.HideScalarBarIfNotNeeded" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">paraview.simple.</code><code class="sig-name descname">HideScalarBarIfNotNeeded</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">lut</span></em>, <em class="sig-param"><span class="n">view</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#HideScalarBarIfNotNeeded"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.HideScalarBarIfNotNeeded" title="Permalink to this definition">¶</a></dt>
 <dd><p>Hides the given scalar bar if it is not used by any of the displayed data.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="paraview.simple.HideUnusedScalarBars">
-<code class="sig-prename descclassname">paraview.simple.</code><code class="sig-name descname">HideUnusedScalarBars</code><span class="sig-paren">(</span><em class="sig-param">view=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#HideUnusedScalarBars"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.HideUnusedScalarBars" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">paraview.simple.</code><code class="sig-name descname">HideUnusedScalarBars</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">view</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#HideUnusedScalarBars"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.HideUnusedScalarBars" title="Permalink to this definition">¶</a></dt>
 <dd><p>Hides all unused scalar bars from the view. A scalar bar is used if some
 data is shown in that view that is coloring using the transfer function
 shown by the scalar bar.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="paraview.simple.ImportCinema">
-<code class="sig-prename descclassname">paraview.simple.</code><code class="sig-name descname">ImportCinema</code><span class="sig-paren">(</span><em class="sig-param">filename</em>, <em class="sig-param">view=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#ImportCinema"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.ImportCinema" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">paraview.simple.</code><code class="sig-name descname">ImportCinema</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">filename</span></em>, <em class="sig-param"><span class="n">view</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#ImportCinema"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.ImportCinema" title="Permalink to this definition">¶</a></dt>
 <dd><p>::deprecated:: 5.9</p>
 <p>Cinema import capabilities are no longer supported in this version.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="paraview.simple.ImportPresets">
-<code class="sig-prename descclassname">paraview.simple.</code><code class="sig-name descname">ImportPresets</code><span class="sig-paren">(</span><em class="sig-param">filename</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#ImportPresets"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.ImportPresets" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">paraview.simple.</code><code class="sig-name descname">ImportPresets</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">filename</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#ImportPresets"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.ImportPresets" title="Permalink to this definition">¶</a></dt>
 <dd><p>Import presets from a file. The file can be in the legacy color map xml
 format or in the new JSON format. Returns True on success.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="paraview.simple.Interact">
-<code class="sig-prename descclassname">paraview.simple.</code><code class="sig-name descname">Interact</code><span class="sig-paren">(</span><em class="sig-param">view=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#Interact"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.Interact" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">paraview.simple.</code><code class="sig-name descname">Interact</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">view</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#Interact"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.Interact" title="Permalink to this definition">¶</a></dt>
 <dd><p>Call this method to start interacting with a view. This method will
 block till the interaction is done. This method will simply return
 if the local process cannot support interactions.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="paraview.simple.LoadCustomFilters">
-<code class="sig-prename descclassname">paraview.simple.</code><code class="sig-name descname">LoadCustomFilters</code><span class="sig-paren">(</span><em class="sig-param">filename</em>, <em class="sig-param">ns=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#LoadCustomFilters"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.LoadCustomFilters" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">paraview.simple.</code><code class="sig-name descname">LoadCustomFilters</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">filename</span></em>, <em class="sig-param"><span class="n">ns</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#LoadCustomFilters"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.LoadCustomFilters" title="Permalink to this definition">¶</a></dt>
 <dd><p>Loads a custom filter XML file and updates this module with new
 constructors if any. If you loaded the simple module with
 <code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">paraview.simple</span> <span class="pre">import</span> <span class="pre">*</span></code>, make sure to pass <code class="docutils literal notranslate"><span class="pre">globals()</span></code> as an
 argument.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="paraview.simple.LoadDistributedPlugin">
-<code class="sig-prename descclassname">paraview.simple.</code><code class="sig-name descname">LoadDistributedPlugin</code><span class="sig-paren">(</span><em class="sig-param">pluginname</em>, <em class="sig-param">remote=True</em>, <em class="sig-param">ns=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#LoadDistributedPlugin"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.LoadDistributedPlugin" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">paraview.simple.</code><code class="sig-name descname">LoadDistributedPlugin</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">pluginname</span></em>, <em class="sig-param"><span class="n">remote</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">ns</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#LoadDistributedPlugin"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.LoadDistributedPlugin" title="Permalink to this definition">¶</a></dt>
 <dd><p>Loads a plugin that’s distributed with the executable. This uses the
 information known about plugins distributed with ParaView to locate the
 shared library for the plugin to load. Raises a RuntimeError if the plugin
@@ -1325,26 +1323,26 @@ was not found.</p>
 or when the active connection is not a client-server connection.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="paraview.simple.LoadLookupTable">
-<code class="sig-prename descclassname">paraview.simple.</code><code class="sig-name descname">LoadLookupTable</code><span class="sig-paren">(</span><em class="sig-param">fileName</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#LoadLookupTable"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.LoadLookupTable" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">paraview.simple.</code><code class="sig-name descname">LoadLookupTable</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">fileName</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#LoadLookupTable"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.LoadLookupTable" title="Permalink to this definition">¶</a></dt>
 <dd><p>Load transfer function preset from a file.
 Both JSON (new) and XML (legacy) preset formats are supported.
 If the filename ends with a .xml, it’s assumed to be a legacy color map XML
 and will be converted to the new format before processing.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="paraview.simple.LoadPalette">
-<code class="sig-prename descclassname">paraview.simple.</code><code class="sig-name descname">LoadPalette</code><span class="sig-paren">(</span><em class="sig-param">paletteName</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#LoadPalette"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.LoadPalette" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">paraview.simple.</code><code class="sig-name descname">LoadPalette</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">paletteName</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#LoadPalette"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.LoadPalette" title="Permalink to this definition">¶</a></dt>
 <dd><p>Load a color palette to override the default foreground and background
 colors used by ParaView views.  The current global palette’s colors are set
 to the colors in the loaded palette.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="paraview.simple.LoadPlugin">
-<code class="sig-prename descclassname">paraview.simple.</code><code class="sig-name descname">LoadPlugin</code><span class="sig-paren">(</span><em class="sig-param">filename</em>, <em class="sig-param">remote=True</em>, <em class="sig-param">ns=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#LoadPlugin"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.LoadPlugin" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">paraview.simple.</code><code class="sig-name descname">LoadPlugin</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">filename</span></em>, <em class="sig-param"><span class="n">remote</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">ns</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#LoadPlugin"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.LoadPlugin" title="Permalink to this definition">¶</a></dt>
 <dd><p>Loads a ParaView plugin and updates this module with new constructors
 if any. The remote argument (default to <code class="docutils literal notranslate"><span class="pre">True</span></code>) is to specify whether
 the plugin will be loaded on client (<code class="docutils literal notranslate"><span class="pre">remote=False</span></code>) or on server
@@ -1360,9 +1358,9 @@ make sure to pass <code class="docutils literal notranslate"><span class="pre">g
 <p>Note, remote=True has no effect when the connection is not remote.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="paraview.simple.LoadPlugins">
-<code class="sig-prename descclassname">paraview.simple.</code><code class="sig-name descname">LoadPlugins</code><span class="sig-paren">(</span><em class="sig-param">*args</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#LoadPlugins"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.LoadPlugins" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">paraview.simple.</code><code class="sig-name descname">LoadPlugins</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#LoadPlugins"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.LoadPlugins" title="Permalink to this definition">¶</a></dt>
 <dd><p>Loads ParaView plugins and updates this module with new constructors
 if any. The remote keword argument (default to <code class="docutils literal notranslate"><span class="pre">True</span></code>) is to specify
 whether the plugin will be loaded on client (<code class="docutils literal notranslate"><span class="pre">remote=False</span></code>) or on server
@@ -1380,14 +1378,14 @@ make sure to pass <code class="docutils literal notranslate"><span class="pre">g
 <p>Note, remote=True has no effect when the connection is not remote.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="paraview.simple.LoadState">
-<code class="sig-prename descclassname">paraview.simple.</code><code class="sig-name descname">LoadState</code><span class="sig-paren">(</span><em class="sig-param">filename</em>, <em class="sig-param">connection=None</em>, <em class="sig-param">**extraArgs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#LoadState"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.LoadState" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">paraview.simple.</code><code class="sig-name descname">LoadState</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">filename</span></em>, <em class="sig-param"><span class="n">connection</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">extraArgs</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#LoadState"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.LoadState" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="paraview.simple.LoadXML">
-<code class="sig-prename descclassname">paraview.simple.</code><code class="sig-name descname">LoadXML</code><span class="sig-paren">(</span><em class="sig-param">xmlstring</em>, <em class="sig-param">ns=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#LoadXML"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.LoadXML" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">paraview.simple.</code><code class="sig-name descname">LoadXML</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">xmlstring</span></em>, <em class="sig-param"><span class="n">ns</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#LoadXML"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.LoadXML" title="Permalink to this definition">¶</a></dt>
 <dd><p>Given a server manager XML as a string, parse and process it.
 If you loaded the simple module with <code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">paraview.simple</span> <span class="pre">import</span> <span class="pre">*</span></code>,
 make sure to pass <code class="docutils literal notranslate"><span class="pre">globals()</span></code> as the second arguments:</p>
@@ -1397,139 +1395,139 @@ make sure to pass <code class="docutils literal notranslate"><span class="pre">g
 <p>Otherwise, the new functions will not appear in the global namespace.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="paraview.simple.LocateView">
-<code class="sig-prename descclassname">paraview.simple.</code><code class="sig-name descname">LocateView</code><span class="sig-paren">(</span><em class="sig-param">displayProperties=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#LocateView"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.LocateView" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">paraview.simple.</code><code class="sig-name descname">LocateView</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">displayProperties</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#LocateView"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.LocateView" title="Permalink to this definition">¶</a></dt>
 <dd><p>Given a displayProperties object i.e. the object returned by
 GetDisplayProperties() or Show() functions, this function will locate a view
 to which the displayProperties object corresponds.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="paraview.simple.MakeBlueToRedLT">
-<code class="sig-prename descclassname">paraview.simple.</code><code class="sig-name descname">MakeBlueToRedLT</code><span class="sig-paren">(</span><em class="sig-param">min</em>, <em class="sig-param">max</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#MakeBlueToRedLT"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.MakeBlueToRedLT" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">paraview.simple.</code><code class="sig-name descname">MakeBlueToRedLT</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">min</span></em>, <em class="sig-param"><span class="n">max</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#MakeBlueToRedLT"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.MakeBlueToRedLT" title="Permalink to this definition">¶</a></dt>
 <dd><p>Create a LookupTable that go from blue to red using the scalar range
 provided by the min and max arguments.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="paraview.simple.OpenDataFile">
-<code class="sig-prename descclassname">paraview.simple.</code><code class="sig-name descname">OpenDataFile</code><span class="sig-paren">(</span><em class="sig-param">filename</em>, <em class="sig-param">**extraArgs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#OpenDataFile"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.OpenDataFile" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">paraview.simple.</code><code class="sig-name descname">OpenDataFile</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">filename</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">extraArgs</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#OpenDataFile"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.OpenDataFile" title="Permalink to this definition">¶</a></dt>
 <dd><p>Creates a reader to read the give file, if possible.
 This uses extension matching to determine the best reader possible.
 If a reader cannot be identified, then this returns None.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="paraview.simple.ReloadFiles">
-<code class="sig-prename descclassname">paraview.simple.</code><code class="sig-name descname">ReloadFiles</code><span class="sig-paren">(</span><em class="sig-param">proxy=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#ReloadFiles"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.ReloadFiles" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">paraview.simple.</code><code class="sig-name descname">ReloadFiles</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">proxy</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#ReloadFiles"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.ReloadFiles" title="Permalink to this definition">¶</a></dt>
 <dd><p>Forces the <cite>proxy</cite> to reload the data files. If no <cite>proxy</cite> is provided,
 active source is used.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="paraview.simple.RemoveCameraLink">
-<code class="sig-prename descclassname">paraview.simple.</code><code class="sig-name descname">RemoveCameraLink</code><span class="sig-paren">(</span><em class="sig-param">linkName</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#RemoveCameraLink"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.RemoveCameraLink" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">paraview.simple.</code><code class="sig-name descname">RemoveCameraLink</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">linkName</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#RemoveCameraLink"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.RemoveCameraLink" title="Permalink to this definition">¶</a></dt>
 <dd><p>Remove a camera link with the given name.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="paraview.simple.RemoveLayout">
-<code class="sig-prename descclassname">paraview.simple.</code><code class="sig-name descname">RemoveLayout</code><span class="sig-paren">(</span><em class="sig-param">proxy=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#RemoveLayout"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.RemoveLayout" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">paraview.simple.</code><code class="sig-name descname">RemoveLayout</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">proxy</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#RemoveLayout"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.RemoveLayout" title="Permalink to this definition">¶</a></dt>
 <dd><p>Remove the provided layout, if none is provided,
 remove the layout containing the active view.
 If it is the last layout it will create a new
 one with the same name as the removed one.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="paraview.simple.RemoveLight">
-<code class="sig-prename descclassname">paraview.simple.</code><code class="sig-name descname">RemoveLight</code><span class="sig-paren">(</span><em class="sig-param">light</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#RemoveLight"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.RemoveLight" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">paraview.simple.</code><code class="sig-name descname">RemoveLight</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">light</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#RemoveLight"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.RemoveLight" title="Permalink to this definition">¶</a></dt>
 <dd><p>Removes an existing vtkLight from its view.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="paraview.simple.RemoveViewsAndLayouts">
 <code class="sig-prename descclassname">paraview.simple.</code><code class="sig-name descname">RemoveViewsAndLayouts</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#RemoveViewsAndLayouts"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.RemoveViewsAndLayouts" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="paraview.simple.RenameLayout">
-<code class="sig-prename descclassname">paraview.simple.</code><code class="sig-name descname">RenameLayout</code><span class="sig-paren">(</span><em class="sig-param">newName</em>, <em class="sig-param">proxy=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#RenameLayout"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.RenameLayout" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">paraview.simple.</code><code class="sig-name descname">RenameLayout</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">newName</span></em>, <em class="sig-param"><span class="n">proxy</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#RenameLayout"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.RenameLayout" title="Permalink to this definition">¶</a></dt>
 <dd><p>Renames the given layout.  If the given proxy is not registered
 in the layout group this method will have no effect.  If no layout is
 provided, the active layout is used.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="paraview.simple.RenameProxy">
-<code class="sig-prename descclassname">paraview.simple.</code><code class="sig-name descname">RenameProxy</code><span class="sig-paren">(</span><em class="sig-param">proxy</em>, <em class="sig-param">group</em>, <em class="sig-param">newName</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#RenameProxy"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.RenameProxy" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">paraview.simple.</code><code class="sig-name descname">RenameProxy</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">proxy</span></em>, <em class="sig-param"><span class="n">group</span></em>, <em class="sig-param"><span class="n">newName</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#RenameProxy"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.RenameProxy" title="Permalink to this definition">¶</a></dt>
 <dd><p>Renames the given proxy.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="paraview.simple.RenameSource">
-<code class="sig-prename descclassname">paraview.simple.</code><code class="sig-name descname">RenameSource</code><span class="sig-paren">(</span><em class="sig-param">newName</em>, <em class="sig-param">proxy=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#RenameSource"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.RenameSource" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">paraview.simple.</code><code class="sig-name descname">RenameSource</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">newName</span></em>, <em class="sig-param"><span class="n">proxy</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#RenameSource"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.RenameSource" title="Permalink to this definition">¶</a></dt>
 <dd><p>Renames the given source.  If the given proxy is not registered
 in the sources group this method will have no effect.  If no source is
 provided, the active source is used.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="paraview.simple.RenameView">
-<code class="sig-prename descclassname">paraview.simple.</code><code class="sig-name descname">RenameView</code><span class="sig-paren">(</span><em class="sig-param">newName</em>, <em class="sig-param">proxy=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#RenameView"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.RenameView" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">paraview.simple.</code><code class="sig-name descname">RenameView</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">newName</span></em>, <em class="sig-param"><span class="n">proxy</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#RenameView"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.RenameView" title="Permalink to this definition">¶</a></dt>
 <dd><p>Renames the given view.  If the given proxy is not registered
 in the views group this method will have no effect.  If no view is
 provided, the active view is used.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="paraview.simple.Render">
-<code class="sig-prename descclassname">paraview.simple.</code><code class="sig-name descname">Render</code><span class="sig-paren">(</span><em class="sig-param">view=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#Render"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.Render" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">paraview.simple.</code><code class="sig-name descname">Render</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">view</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#Render"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.Render" title="Permalink to this definition">¶</a></dt>
 <dd><p>Renders the given view (default value is active view)</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="paraview.simple.RenderAllViews">
 <code class="sig-prename descclassname">paraview.simple.</code><code class="sig-name descname">RenderAllViews</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#RenderAllViews"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.RenderAllViews" title="Permalink to this definition">¶</a></dt>
 <dd><p>Render all views</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="paraview.simple.ResetCamera">
-<code class="sig-prename descclassname">paraview.simple.</code><code class="sig-name descname">ResetCamera</code><span class="sig-paren">(</span><em class="sig-param">view=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#ResetCamera"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.ResetCamera" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">paraview.simple.</code><code class="sig-name descname">ResetCamera</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">view</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#ResetCamera"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.ResetCamera" title="Permalink to this definition">¶</a></dt>
 <dd><p>Resets the settings of the camera to preserver orientation but include
 the whole scene. If an argument is not provided, the active view is
 used.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="paraview.simple.ResetCameraToDirection">
-<code class="sig-prename descclassname">paraview.simple.</code><code class="sig-name descname">ResetCameraToDirection</code><span class="sig-paren">(</span><em class="sig-param">position</em>, <em class="sig-param">direction</em>, <em class="sig-param">up=None</em>, <em class="sig-param">view=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#ResetCameraToDirection"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.ResetCameraToDirection" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">paraview.simple.</code><code class="sig-name descname">ResetCameraToDirection</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">position</span></em>, <em class="sig-param"><span class="n">direction</span></em>, <em class="sig-param"><span class="n">up</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">view</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#ResetCameraToDirection"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.ResetCameraToDirection" title="Permalink to this definition">¶</a></dt>
 <dd><p>Resets the settings of the camera to the given position and direction</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="paraview.simple.ResetProperty">
-<code class="sig-prename descclassname">paraview.simple.</code><code class="sig-name descname">ResetProperty</code><span class="sig-paren">(</span><em class="sig-param">propertyName</em>, <em class="sig-param">proxy=None</em>, <em class="sig-param">restoreFromSettings=True</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#ResetProperty"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.ResetProperty" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">paraview.simple.</code><code class="sig-name descname">ResetProperty</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">propertyName</span></em>, <em class="sig-param"><span class="n">proxy</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">restoreFromSettings</span><span class="o">=</span><span class="default_value">True</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#ResetProperty"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.ResetProperty" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="paraview.simple.ResetSession">
 <code class="sig-prename descclassname">paraview.simple.</code><code class="sig-name descname">ResetSession</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#ResetSession"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.ResetSession" title="Permalink to this definition">¶</a></dt>
 <dd><p>Reset the session to its initial state.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="paraview.simple.ReverseConnect">
-<code class="sig-prename descclassname">paraview.simple.</code><code class="sig-name descname">ReverseConnect</code><span class="sig-paren">(</span><em class="sig-param">port=11111</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#ReverseConnect"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.ReverseConnect" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">paraview.simple.</code><code class="sig-name descname">ReverseConnect</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">port</span><span class="o">=</span><span class="default_value">11111</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#ReverseConnect"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.ReverseConnect" title="Permalink to this definition">¶</a></dt>
 <dd><p>Create a reverse connection to a server.  Listens on port and waits for
 an incoming connection from the server.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="paraview.simple.SaveAnimation">
-<code class="sig-prename descclassname">paraview.simple.</code><code class="sig-name descname">SaveAnimation</code><span class="sig-paren">(</span><em class="sig-param">filename</em>, <em class="sig-param">viewOrLayout=None</em>, <em class="sig-param">scene=None</em>, <em class="sig-param">**params</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#SaveAnimation"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.SaveAnimation" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">paraview.simple.</code><code class="sig-name descname">SaveAnimation</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">filename</span></em>, <em class="sig-param"><span class="n">viewOrLayout</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">scene</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">params</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#SaveAnimation"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.SaveAnimation" title="Permalink to this definition">¶</a></dt>
 <dd><p>Save animation as a movie file or series of images.</p>
 <p><cite>SaveAnimation</cite> is used to save an animation as a movie file (avi or ogv) or
 a series of images.</p>
@@ -1619,9 +1617,9 @@ to use format-specific quality parameters based on the file format being used.</
 </div></blockquote>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="paraview.simple.SaveData">
-<code class="sig-prename descclassname">paraview.simple.</code><code class="sig-name descname">SaveData</code><span class="sig-paren">(</span><em class="sig-param">filename</em>, <em class="sig-param">proxy=None</em>, <em class="sig-param">**extraArgs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#SaveData"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.SaveData" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">paraview.simple.</code><code class="sig-name descname">SaveData</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">filename</span></em>, <em class="sig-param"><span class="n">proxy</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">extraArgs</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#SaveData"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.SaveData" title="Permalink to this definition">¶</a></dt>
 <dd><p>Save data produced by ‘proxy’ in a file. If no proxy is specified the
 active source is used. Properties to configure the writer can be passed in
 as keyword arguments. Example usage:</p>
@@ -1631,9 +1629,9 @@ as keyword arguments. Example usage:</p>
 </div>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="paraview.simple.SaveExtracts">
-<code class="sig-prename descclassname">paraview.simple.</code><code class="sig-name descname">SaveExtracts</code><span class="sig-paren">(</span><em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#SaveExtracts"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.SaveExtracts" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">paraview.simple.</code><code class="sig-name descname">SaveExtracts</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#SaveExtracts"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.SaveExtracts" title="Permalink to this definition">¶</a></dt>
 <dd><p>Generate extracts. Parameters are forwarded for ‘SaveAnimationExtracts’
 Currently, supported keyword parameters are:</p>
 <dl class="field-list simple">
@@ -1643,16 +1641,16 @@ Currently, supported keyword parameters are:</p>
 </dl>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="paraview.simple.SaveExtractsUsingCatalystOptions">
-<code class="sig-prename descclassname">paraview.simple.</code><code class="sig-name descname">SaveExtractsUsingCatalystOptions</code><span class="sig-paren">(</span><em class="sig-param">options</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#SaveExtractsUsingCatalystOptions"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.SaveExtractsUsingCatalystOptions" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">paraview.simple.</code><code class="sig-name descname">SaveExtractsUsingCatalystOptions</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">options</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#SaveExtractsUsingCatalystOptions"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.SaveExtractsUsingCatalystOptions" title="Permalink to this definition">¶</a></dt>
 <dd><p>Generates extracts using a CatalystOptions object. This is intended for use
 when a Catalyst analysis script is being run in batch.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="paraview.simple.SaveScreenshot">
-<code class="sig-prename descclassname">paraview.simple.</code><code class="sig-name descname">SaveScreenshot</code><span class="sig-paren">(</span><em class="sig-param">filename</em>, <em class="sig-param">viewOrLayout=None</em>, <em class="sig-param">**params</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#SaveScreenshot"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.SaveScreenshot" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">paraview.simple.</code><code class="sig-name descname">SaveScreenshot</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">filename</span></em>, <em class="sig-param"><span class="n">viewOrLayout</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">params</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#SaveScreenshot"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.SaveScreenshot" title="Permalink to this definition">¶</a></dt>
 <dd><p>Save screenshot for a view or layout (collection of views) to an image.</p>
 <p><cite>SaveScreenshot</cite> is used to save the rendering results to an image.</p>
 <p><strong>Parameters</strong></p>
@@ -1742,48 +1740,48 @@ to use format-specific quality parameters based on the file format being used.</
 </div></blockquote>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="paraview.simple.SaveState">
-<code class="sig-prename descclassname">paraview.simple.</code><code class="sig-name descname">SaveState</code><span class="sig-paren">(</span><em class="sig-param">filename</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#SaveState"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.SaveState" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">paraview.simple.</code><code class="sig-name descname">SaveState</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">filename</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#SaveState"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.SaveState" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="paraview.simple.SelectCells">
-<code class="sig-prename descclassname">paraview.simple.</code><code class="sig-name descname">SelectCells</code><span class="sig-paren">(</span><em class="sig-param">query=None</em>, <em class="sig-param">proxy=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#SelectCells"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.SelectCells" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">paraview.simple.</code><code class="sig-name descname">SelectCells</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">query</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">proxy</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#SelectCells"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.SelectCells" title="Permalink to this definition">¶</a></dt>
 <dd><p>Select cells satisfying the query. If query is None, then all cells are
 selected. If proxy is None, then the active source is used.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="paraview.simple.SelectPoints">
-<code class="sig-prename descclassname">paraview.simple.</code><code class="sig-name descname">SelectPoints</code><span class="sig-paren">(</span><em class="sig-param">query=None</em>, <em class="sig-param">proxy=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#SelectPoints"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.SelectPoints" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">paraview.simple.</code><code class="sig-name descname">SelectPoints</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">query</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">proxy</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#SelectPoints"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.SelectPoints" title="Permalink to this definition">¶</a></dt>
 <dd><p>Select points satisfying the query. If query is None, then all points are
 selected. If proxy is None, then the active source is used.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="paraview.simple.SetActiveConnection">
-<code class="sig-prename descclassname">paraview.simple.</code><code class="sig-name descname">SetActiveConnection</code><span class="sig-paren">(</span><em class="sig-param">connection=None</em>, <em class="sig-param">ns=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#SetActiveConnection"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.SetActiveConnection" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">paraview.simple.</code><code class="sig-name descname">SetActiveConnection</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">connection</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">ns</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#SetActiveConnection"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.SetActiveConnection" title="Permalink to this definition">¶</a></dt>
 <dd><p>Set the active connection. If the process was run without multi-server
 enabled and this method is called with a non-None argument while an
 ActiveConnection is present, it will raise a RuntimeError.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="paraview.simple.SetActiveSource">
-<code class="sig-prename descclassname">paraview.simple.</code><code class="sig-name descname">SetActiveSource</code><span class="sig-paren">(</span><em class="sig-param">source</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#SetActiveSource"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.SetActiveSource" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">paraview.simple.</code><code class="sig-name descname">SetActiveSource</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">source</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#SetActiveSource"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.SetActiveSource" title="Permalink to this definition">¶</a></dt>
 <dd><p>Sets the active source.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="paraview.simple.SetActiveView">
-<code class="sig-prename descclassname">paraview.simple.</code><code class="sig-name descname">SetActiveView</code><span class="sig-paren">(</span><em class="sig-param">view</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#SetActiveView"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.SetActiveView" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">paraview.simple.</code><code class="sig-name descname">SetActiveView</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">view</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#SetActiveView"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.SetActiveView" title="Permalink to this definition">¶</a></dt>
 <dd><p>Sets the active view.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="paraview.simple.SetDisplayProperties">
-<code class="sig-prename descclassname">paraview.simple.</code><code class="sig-name descname">SetDisplayProperties</code><span class="sig-paren">(</span><em class="sig-param">proxy=None</em>, <em class="sig-param">view=None</em>, <em class="sig-param">**params</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#SetDisplayProperties"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.SetDisplayProperties" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">paraview.simple.</code><code class="sig-name descname">SetDisplayProperties</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">proxy</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">view</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">params</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#SetDisplayProperties"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.SetDisplayProperties" title="Permalink to this definition">¶</a></dt>
 <dd><p>Sets one or more display properties of the given pipeline object. If an argument
 is not provided, the active source is used. Pass a list of property_name=value
 pairs to this function to set property values. For example:</p>
@@ -1792,9 +1790,9 @@ pairs to this function to set property values. For example:</p>
 </div>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="paraview.simple.SetProperties">
-<code class="sig-prename descclassname">paraview.simple.</code><code class="sig-name descname">SetProperties</code><span class="sig-paren">(</span><em class="sig-param">proxy=None</em>, <em class="sig-param">**params</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#SetProperties"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.SetProperties" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">paraview.simple.</code><code class="sig-name descname">SetProperties</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">proxy</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">params</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#SetProperties"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.SetProperties" title="Permalink to this definition">¶</a></dt>
 <dd><p>Sets one or more properties of the given pipeline object. If an argument
 is not provided, the active source is used. Pass a list of property_name=value
 pairs to this function to set property values. For example:</p>
@@ -1803,9 +1801,9 @@ pairs to this function to set property values. For example:</p>
 </div>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="paraview.simple.SetViewProperties">
-<code class="sig-prename descclassname">paraview.simple.</code><code class="sig-name descname">SetViewProperties</code><span class="sig-paren">(</span><em class="sig-param">view=None</em>, <em class="sig-param">**params</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#SetViewProperties"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.SetViewProperties" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">paraview.simple.</code><code class="sig-name descname">SetViewProperties</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">view</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">params</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#SetViewProperties"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.SetViewProperties" title="Permalink to this definition">¶</a></dt>
 <dd><p>Sets one or more properties of the given view. If an argument
 is not provided, the active view is used. Pass a list of property_name=value
 pairs to this function to set property values. For example:</p>
@@ -1814,54 +1812,54 @@ pairs to this function to set property values. For example:</p>
 </div>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="paraview.simple.Show">
-<code class="sig-prename descclassname">paraview.simple.</code><code class="sig-name descname">Show</code><span class="sig-paren">(</span><em class="sig-param">proxy=None</em>, <em class="sig-param">view=None</em>, <em class="sig-param">representationType=None</em>, <em class="sig-param">**params</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#Show"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.Show" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">paraview.simple.</code><code class="sig-name descname">Show</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">proxy</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">view</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">representationType</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">params</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#Show"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.Show" title="Permalink to this definition">¶</a></dt>
 <dd><p>Turns the visibility of a given pipeline object on in the given view.
 If pipeline object and/or view are not specified, active objects are used.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="paraview.simple.Show3DWidgets">
-<code class="sig-prename descclassname">paraview.simple.</code><code class="sig-name descname">Show3DWidgets</code><span class="sig-paren">(</span><em class="sig-param">proxy=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#Show3DWidgets"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.Show3DWidgets" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">paraview.simple.</code><code class="sig-name descname">Show3DWidgets</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">proxy</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#Show3DWidgets"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.Show3DWidgets" title="Permalink to this definition">¶</a></dt>
 <dd><p>If possible in the current environment, this method will
 request the application to show the 3D widget(s) for proxy</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="paraview.simple.ShowAll">
-<code class="sig-prename descclassname">paraview.simple.</code><code class="sig-name descname">ShowAll</code><span class="sig-paren">(</span><em class="sig-param">view=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#ShowAll"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.ShowAll" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">paraview.simple.</code><code class="sig-name descname">ShowAll</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">view</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#ShowAll"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.ShowAll" title="Permalink to this definition">¶</a></dt>
 <dd><p>Show all pipeline sources in the given view.
 If view is not specified, active view is used.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="paraview.simple.UpdatePipeline">
-<code class="sig-prename descclassname">paraview.simple.</code><code class="sig-name descname">UpdatePipeline</code><span class="sig-paren">(</span><em class="sig-param">time=None</em>, <em class="sig-param">proxy=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#UpdatePipeline"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.UpdatePipeline" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">paraview.simple.</code><code class="sig-name descname">UpdatePipeline</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">time</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">proxy</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#UpdatePipeline"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.UpdatePipeline" title="Permalink to this definition">¶</a></dt>
 <dd><p>Updates (executes) the given pipeline object for the given time as
 necessary (i.e. if it did not already execute). If no source is provided,
 the active source is used instead.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="paraview.simple.UpdateScalarBars">
-<code class="sig-prename descclassname">paraview.simple.</code><code class="sig-name descname">UpdateScalarBars</code><span class="sig-paren">(</span><em class="sig-param">view=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#UpdateScalarBars"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.UpdateScalarBars" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">paraview.simple.</code><code class="sig-name descname">UpdateScalarBars</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">view</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#UpdateScalarBars"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.UpdateScalarBars" title="Permalink to this definition">¶</a></dt>
 <dd><p>Hides all unused scalar bar and shows used scalar bars. A scalar bar is used
 if some data is shown in that view that is coloring using the transfer function
 shown by the scalar bar.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="paraview.simple.UpdateScalarBarsComponentTitle">
-<code class="sig-prename descclassname">paraview.simple.</code><code class="sig-name descname">UpdateScalarBarsComponentTitle</code><span class="sig-paren">(</span><em class="sig-param">ctf</em>, <em class="sig-param">representation=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#UpdateScalarBarsComponentTitle"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.UpdateScalarBarsComponentTitle" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">paraview.simple.</code><code class="sig-name descname">UpdateScalarBarsComponentTitle</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">ctf</span></em>, <em class="sig-param"><span class="n">representation</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#UpdateScalarBarsComponentTitle"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.UpdateScalarBarsComponentTitle" title="Permalink to this definition">¶</a></dt>
 <dd><p>Update all scalar bars using the provided lookup table. The representation is used to recover
 the array from which the component title was obtained. If None is provided the representation
 of the active source in the active view is used.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="paraview.simple.WriteAnimation">
-<code class="sig-prename descclassname">paraview.simple.</code><code class="sig-name descname">WriteAnimation</code><span class="sig-paren">(</span><em class="sig-param">filename</em>, <em class="sig-param">**params</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#WriteAnimation"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.WriteAnimation" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">paraview.simple.</code><code class="sig-name descname">WriteAnimation</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">filename</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">params</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#WriteAnimation"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.WriteAnimation" title="Permalink to this definition">¶</a></dt>
 <dd><p>::deprecated:: 5.3
 Use <a class="reference internal" href="#paraview.simple.SaveAnimation" title="paraview.simple.SaveAnimation"><code class="xref py py-func docutils literal notranslate"><span class="pre">SaveAnimation()</span></code></a> instead.</p>
 <p>This function can still be used to save an animation, but using
@@ -1890,22 +1888,22 @@ flexibility.</p>
 Subsampling, BackgroundColor, FrameRate, StartFileCount, PlaybackTimeWindow</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="paraview.simple.WriteAnimationGeometry">
-<code class="sig-prename descclassname">paraview.simple.</code><code class="sig-name descname">WriteAnimationGeometry</code><span class="sig-paren">(</span><em class="sig-param">filename</em>, <em class="sig-param">view=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#WriteAnimationGeometry"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.WriteAnimationGeometry" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">paraview.simple.</code><code class="sig-name descname">WriteAnimationGeometry</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">filename</span></em>, <em class="sig-param"><span class="n">view</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#WriteAnimationGeometry"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.WriteAnimationGeometry" title="Permalink to this definition">¶</a></dt>
 <dd><p>Save the animation geometry from a specific view to a file specified.
 The animation geometry is written out as a PVD file. If no view is
 specified, the active view will be used of possible.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="paraview.simple.WriteImage">
-<code class="sig-prename descclassname">paraview.simple.</code><code class="sig-name descname">WriteImage</code><span class="sig-paren">(</span><em class="sig-param">filename</em>, <em class="sig-param">view=None</em>, <em class="sig-param">**params</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#WriteImage"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.WriteImage" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">paraview.simple.</code><code class="sig-name descname">WriteImage</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">filename</span></em>, <em class="sig-param"><span class="n">view</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">params</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#WriteImage"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.WriteImage" title="Permalink to this definition">¶</a></dt>
 <dd><p>::deprecated:: 4.2
 Use <a class="reference internal" href="#paraview.simple.SaveScreenshot" title="paraview.simple.SaveScreenshot"><code class="xref py py-func docutils literal notranslate"><span class="pre">SaveScreenshot()</span></code></a> instead.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="paraview.simple.demo1">
 <code class="sig-prename descclassname">paraview.simple.</code><code class="sig-name descname">demo1</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#demo1"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.demo1" title="Permalink to this definition">¶</a></dt>
 <dd><p>Simple demo that create the following pipeline:</p>
@@ -1915,9 +1913,9 @@ Use <a class="reference internal" href="#paraview.simple.SaveScreenshot" title="
 </div>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="paraview.simple.demo2">
-<code class="sig-prename descclassname">paraview.simple.</code><code class="sig-name descname">demo2</code><span class="sig-paren">(</span><em class="sig-param">fname='/Users/berk/Work/ParaView/ParaViewData/Data/disk_out_ref.ex2'</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#demo2"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.demo2" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">paraview.simple.</code><code class="sig-name descname">demo2</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">fname</span><span class="o">=</span><span class="default_value">'/Users/berk/Work/ParaView/ParaViewData/Data/disk_out_ref.ex2'</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#demo2"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.demo2" title="Permalink to this definition">¶</a></dt>
 <dd><p>This demo shows the use of readers, data information and display
 properties.</p>
 </dd></dl>

@@ -7,12 +7,10 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>paraview.web.data_writer &mdash; ParaView/Python 5.9.0-RC1-193-gf1bb9b526b documentation</title>
+  <title>paraview.web.data_writer &mdash; ParaView/Python 5.9.0-RC1-211-gf85ab347b3 documentation</title>
   
 
   
-  
-    <link rel="shortcut icon" href="../../../_static/pvIcon.ico"/>
   
 
   
@@ -24,7 +22,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:'../../../',
-        VERSION:'5.9.0-RC1-193-gf1bb9b526b',
+        VERSION:'5.9.0-RC1-211-gf85ab347b3',
         COLLAPSE_INDEX:false,
         FILE_SUFFIX:'.html',
         HAS_SOURCE:  true
@@ -49,7 +47,7 @@
         <link rel="index" title="Index"
               href="../../../genindex.html"/>
         <link rel="search" title="Search" href="../../../search.html"/>
-    <link rel="top" title="ParaView/Python 5.9.0-RC1-193-gf1bb9b526b documentation" href="../../../index.html"/>
+    <link rel="top" title="ParaView/Python 5.9.0-RC1-211-gf85ab347b3 documentation" href="../../../index.html"/>
         <link rel="up" title="Module code" href="../../index.html"/> 
 
   <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
@@ -67,7 +65,7 @@
           <li> <a href="../../../index.html">
             <img src="../../../_static/paraview-logo-small.png"
             alt="ParaView/Python"></img></a> </li>
-          <li class="version"> version 5.9.0-RC1-193-gf1bb9b526b</li>
+          <li class="version"> version 5.9.0-RC1-211-gf85ab347b3</li>
         </ul>
         <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
   <input type="text" name="q" placeholder="Search docs" />
@@ -583,12 +581,12 @@
   <h1>Source code for paraview.web.data_writer</h1><div class="highlight"><pre>
 <span></span><span class="kn">import</span> <span class="nn">os</span><span class="o">,</span> <span class="nn">math</span>
 
-<span class="kn">from</span> <span class="nn">paraview</span> <span class="k">import</span> <span class="n">simple</span>
+<span class="kn">from</span> <span class="nn">paraview</span> <span class="kn">import</span> <span class="n">simple</span>
 
-<span class="kn">from</span> <span class="nn">vtkmodules.vtkIOImage</span> <span class="k">import</span> <span class="n">vtkPNGReader</span>
-<span class="kn">from</span> <span class="nn">vtkmodules.vtkCommonCore</span> <span class="k">import</span> <span class="n">vtkFloatArray</span><span class="p">,</span> <span class="n">vtkUnsignedCharArray</span>
+<span class="kn">from</span> <span class="nn">vtkmodules.vtkIOImage</span> <span class="kn">import</span> <span class="n">vtkPNGReader</span>
+<span class="kn">from</span> <span class="nn">vtkmodules.vtkCommonCore</span> <span class="kn">import</span> <span class="n">vtkFloatArray</span><span class="p">,</span> <span class="n">vtkUnsignedCharArray</span>
 
-<span class="kn">from</span> <span class="nn">vtkmodules.web</span> <span class="k">import</span> <span class="n">buffer</span>
+<span class="kn">from</span> <span class="nn">vtkmodules.web</span> <span class="kn">import</span> <span class="n">buffer</span>
 
 <span class="n">VTK_DATA_TYPES</span> <span class="o">=</span> <span class="p">[</span> <span class="s1">&#39;void&#39;</span><span class="p">,</span>            <span class="c1"># 0</span>
                    <span class="s1">&#39;bit&#39;</span><span class="p">,</span>             <span class="c1"># 1</span>
@@ -612,7 +610,7 @@
 <span class="c1"># -----------------------------------------------------------------------------</span>
 
 <div class="viewcode-block" id="ScalarRenderer"><a class="viewcode-back" href="../../../paraview.web.data_writer.html#paraview.web.data_writer.ScalarRenderer">[docs]</a><span class="k">class</span> <span class="nc">ScalarRenderer</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">isWriter</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">removePNG</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">isWriter</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">removePNG</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">view</span> <span class="o">=</span> <span class="n">simple</span><span class="o">.</span><span class="n">CreateView</span><span class="p">(</span><span class="s1">&#39;RenderView&#39;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">view</span><span class="o">.</span><span class="n">Background</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">]</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">view</span><span class="o">.</span><span class="n">CenterAxesVisibility</span> <span class="o">=</span> <span class="mi">0</span>

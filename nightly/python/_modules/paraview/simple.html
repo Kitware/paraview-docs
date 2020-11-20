@@ -7,12 +7,10 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>paraview.simple &mdash; ParaView/Python 5.9.0-RC1-193-gf1bb9b526b documentation</title>
+  <title>paraview.simple &mdash; ParaView/Python 5.9.0-RC1-211-gf85ab347b3 documentation</title>
   
 
   
-  
-    <link rel="shortcut icon" href="../../_static/pvIcon.ico"/>
   
 
   
@@ -24,7 +22,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:'../../',
-        VERSION:'5.9.0-RC1-193-gf1bb9b526b',
+        VERSION:'5.9.0-RC1-211-gf85ab347b3',
         COLLAPSE_INDEX:false,
         FILE_SUFFIX:'.html',
         HAS_SOURCE:  true
@@ -49,7 +47,7 @@
         <link rel="index" title="Index"
               href="../../genindex.html"/>
         <link rel="search" title="Search" href="../../search.html"/>
-    <link rel="top" title="ParaView/Python 5.9.0-RC1-193-gf1bb9b526b documentation" href="../../index.html"/>
+    <link rel="top" title="ParaView/Python 5.9.0-RC1-211-gf85ab347b3 documentation" href="../../index.html"/>
         <link rel="up" title="Module code" href="../index.html"/> 
 
   <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
@@ -67,7 +65,7 @@
           <li> <a href="../../index.html">
             <img src="../../_static/paraview-logo-small.png"
             alt="ParaView/Python"></img></a> </li>
-          <li class="version"> version 5.9.0-RC1-193-gf1bb9b526b</li>
+          <li class="version"> version 5.9.0-RC1-211-gf85ab347b3</li>
         </ul>
         <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
   <input type="text" name="q" placeholder="Search docs" />
@@ -618,17 +616,17 @@
 <span class="c1">#</span>
 <span class="c1">#==============================================================================</span>
 
-<span class="kn">from</span> <span class="nn">__future__</span> <span class="k">import</span> <span class="n">absolute_import</span><span class="p">,</span> <span class="n">division</span><span class="p">,</span> <span class="n">print_function</span>
+<span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">absolute_import</span><span class="p">,</span> <span class="n">division</span><span class="p">,</span> <span class="n">print_function</span>
 
 <span class="kn">import</span> <span class="nn">paraview</span>
-<span class="kn">from</span> <span class="nn">paraview</span> <span class="k">import</span> <span class="n">servermanager</span>
+<span class="kn">from</span> <span class="nn">paraview</span> <span class="kn">import</span> <span class="n">servermanager</span>
 <span class="kn">import</span> <span class="nn">paraview._backwardscompatibilityhelper</span>
 
 <span class="c1"># Bring OutputPort in our namespace.</span>
-<span class="kn">from</span> <span class="nn">paraview.servermanager</span> <span class="k">import</span> <span class="n">OutputPort</span>
+<span class="kn">from</span> <span class="nn">paraview.servermanager</span> <span class="kn">import</span> <span class="n">OutputPort</span>
 
 <span class="c1"># Bring in selection</span>
-<span class="kn">from</span> <span class="nn">.selection</span> <span class="k">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">.selection</span> <span class="kn">import</span> <span class="o">*</span>
 
 <span class="kn">import</span> <span class="nn">sys</span>
 <span class="kn">import</span> <span class="nn">warnings</span>
@@ -762,7 +760,7 @@
     <span class="c1"># segfaults if the interactor is created after the window was created.</span>
     <span class="n">view</span><span class="o">.</span><span class="n">MakeRenderWindowInteractor</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
 
-    <span class="kn">from</span> <span class="nn">.catalyst.detail</span> <span class="k">import</span> <span class="n">IsInsitu</span><span class="p">,</span> <span class="n">RegisterView</span>
+    <span class="kn">from</span> <span class="nn">.catalyst.detail</span> <span class="kn">import</span> <span class="n">IsInsitu</span><span class="p">,</span> <span class="n">RegisterView</span>
     <span class="k">if</span> <span class="n">IsInsitu</span><span class="p">():</span>
         <span class="c1"># tag the view to know which pipeline this came from.</span>
         <span class="n">RegisterView</span><span class="p">(</span><span class="n">view</span><span class="p">)</span>
@@ -1075,7 +1073,7 @@
     <span class="n">rawExtractor</span> <span class="o">=</span> <span class="n">controller</span><span class="o">.</span><span class="n">CreateExtractor</span><span class="p">(</span><span class="n">rawProxy</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">registrationName</span><span class="p">)</span>
     <span class="n">extractor</span> <span class="o">=</span> <span class="n">servermanager</span><span class="o">.</span><span class="n">_getPyProxy</span><span class="p">(</span><span class="n">rawExtractor</span><span class="p">)</span>
 
-    <span class="kn">from</span> <span class="nn">.catalyst.detail</span> <span class="k">import</span> <span class="n">IsInsitu</span><span class="p">,</span> <span class="n">RegisterExtractor</span>
+    <span class="kn">from</span> <span class="nn">.catalyst.detail</span> <span class="kn">import</span> <span class="n">IsInsitu</span><span class="p">,</span> <span class="n">RegisterExtractor</span>
     <span class="k">if</span> <span class="n">IsInsitu</span><span class="p">():</span>
         <span class="c1"># tag the extractor to know which pipeline this came from.</span>
         <span class="n">RegisterExtractor</span><span class="p">(</span><span class="n">extractor</span><span class="p">)</span>
@@ -3023,7 +3021,7 @@
         <span class="c1"># Create a controller instance.</span>
         <span class="n">controller</span> <span class="o">=</span> <span class="n">servermanager</span><span class="o">.</span><span class="n">ParaViewPipelineController</span><span class="p">()</span>
 
-        <span class="kn">from</span> <span class="nn">.catalyst.detail</span> <span class="k">import</span> <span class="n">IsInsituInput</span><span class="p">,</span> <span class="n">CreateProducer</span>
+        <span class="kn">from</span> <span class="nn">.catalyst.detail</span> <span class="kn">import</span> <span class="n">IsInsituInput</span><span class="p">,</span> <span class="n">CreateProducer</span>
         <span class="k">if</span> <span class="n">IsInsituInput</span><span class="p">(</span><span class="n">registrationName</span><span class="p">):</span>
             <span class="c1"># This is a catalyst input, replace with a trivial producer</span>
             <span class="n">px</span> <span class="o">=</span> <span class="n">CreateProducer</span><span class="p">(</span><span class="n">registrationName</span><span class="p">)</span>
@@ -3194,12 +3192,12 @@
 <span class="c1">#==============================================================================</span>
 
 <span class="k">class</span> <span class="nc">_active_session_observer</span><span class="p">:</span>
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="n">pxm</span> <span class="o">=</span> <span class="n">servermanager</span><span class="o">.</span><span class="n">vtkSMProxyManager</span><span class="o">.</span><span class="n">GetProxyManager</span><span class="p">()</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">ObserverTag</span> <span class="o">=</span> <span class="n">pxm</span><span class="o">.</span><span class="n">AddObserver</span><span class="p">(</span><span class="n">pxm</span><span class="o">.</span><span class="n">ActiveSessionChanged</span><span class="p">,</span>
             <span class="n">_switchToActiveConnectionCallback</span><span class="p">)</span>
 
-    <span class="k">def</span> <span class="nf">__del__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__del__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">if</span> <span class="n">servermanager</span><span class="p">:</span>
             <span class="k">if</span> <span class="n">servermanager</span><span class="o">.</span><span class="n">vtkSMProxyManager</span><span class="p">:</span>
                 <span class="n">servermanager</span><span class="o">.</span><span class="n">vtkSMProxyManager</span><span class="o">.</span><span class="n">GetProxyManager</span><span class="p">()</span><span class="o">.</span><span class="n">RemoveObserver</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">ObserverTag</span><span class="p">)</span>

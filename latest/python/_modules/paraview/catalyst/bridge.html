@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>paraview.catalyst.bridge &mdash; ParaView/Python 5.9.0-RC1-102-g93d122b293 documentation</title>
+  <title>paraview.catalyst.bridge &mdash; ParaView/Python 5.9.0-RC1-106-g767fe50d4c documentation</title>
   
 
   
@@ -24,7 +24,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:'../../../',
-        VERSION:'5.9.0-RC1-102-g93d122b293',
+        VERSION:'5.9.0-RC1-106-g767fe50d4c',
         COLLAPSE_INDEX:false,
         FILE_SUFFIX:'.html',
         HAS_SOURCE:  true
@@ -49,7 +49,7 @@
         <link rel="index" title="Index"
               href="../../../genindex.html"/>
         <link rel="search" title="Search" href="../../../search.html"/>
-    <link rel="top" title="ParaView/Python 5.9.0-RC1-102-g93d122b293 documentation" href="../../../index.html"/>
+    <link rel="top" title="ParaView/Python 5.9.0-RC1-106-g767fe50d4c documentation" href="../../../index.html"/>
         <link rel="up" title="paraview.catalyst" href="../catalyst.html"/> 
 
   <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
@@ -67,7 +67,7 @@
           <li> <a href="../../../index.html">
             <img src="../../../_static/paraview-logo-small.png"
             alt="ParaView/Python"></img></a> </li>
-          <li class="version"> version 5.9.0-RC1-102-g93d122b293</li>
+          <li class="version"> version 5.9.0-RC1-106-g767fe50d4c</li>
         </ul>
         <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
   <input type="text" name="q" placeholder="Search docs" />
@@ -675,7 +675,7 @@
 <span class="c1"># since we don&#39;t want to initialize ParaView yet.</span>
 <span class="kn">import</span> <span class="nn">paraview</span>
 <span class="kn">from</span> <span class="nn">paraview.modules.vtkPVCatalyst</span> <span class="k">import</span> <span class="n">vtkCPProcessor</span><span class="p">,</span> <span class="n">vtkCPDataDescription</span>
-<span class="kn">from</span> <span class="nn">paraview.modules.vtkPVPythonCatalyst</span> <span class="k">import</span> <span class="n">vtkCPPythonScriptV2Pipeline</span><span class="p">,</span> <span class="n">vtkCPPythonScriptPipeline</span>
+<span class="kn">from</span> <span class="nn">paraview.modules.vtkPVPythonCatalyst</span> <span class="k">import</span> <span class="n">vtkCPPythonScriptV2Pipeline</span><span class="p">,</span> <span class="n">vtkCPPythonScriptPipeline</span><span class="p">,</span> <span class="n">vtkCPPythonPipeline</span>
 <span class="kn">from</span> <span class="nn">paraview.modules.vtkRemotingCore</span> <span class="k">import</span> <span class="n">vtkProcessModule</span>
 
 
@@ -739,13 +739,16 @@
     <span class="k">elif</span> <span class="nb">int</span><span class="p">(</span><span class="n">version</span><span class="p">)</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
         <span class="n">add_pipeline_v2</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
 
-    <span class="c1"># if not, try to determine version using the filename.</span>
-    <span class="k">elif</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">splitext</span><span class="p">(</span><span class="n">filename</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;.py&quot;</span><span class="p">:</span>
-        <span class="c1"># old style co-processing analysis script</span>
-        <span class="n">add_pipeline_legacy</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="nb">int</span><span class="p">(</span><span class="n">version</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="c1"># if not, try to determine version using the filename.</span>
+        <span class="n">version</span> <span class="o">=</span> <span class="n">vtkCPPythonPipeline</span><span class="o">.</span><span class="n">DetectScriptVersion</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">version</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="c1"># default to version 1.0</span>
+            <span class="n">version</span> <span class="o">=</span> <span class="mi">1</span>
+        <span class="k">return</span> <span class="n">add_pipeline</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">version</span><span class="p">)</span>
+
     <span class="k">else</span><span class="p">:</span>
-        <span class="c1"># new style co-processing analsys script package (zip or directory)</span>
-        <span class="n">add_pipeline_v2</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span></div>
+        <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="s2">&quot;Invalid version &#39;</span><span class="si">%d</span><span class="s2">&#39;&quot;</span> <span class="o">%</span> <span class="n">version</span><span class="p">)</span></div>
 
 <div class="viewcode-block" id="coprocess"><a class="viewcode-back" href="../../../paraview.catalyst.bridge.html#paraview.catalyst.bridge.coprocess">[docs]</a><span class="k">def</span> <span class="nf">coprocess</span><span class="p">(</span><span class="n">time</span><span class="p">,</span> <span class="n">timestep</span><span class="p">,</span> <span class="n">dataset</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;input&quot;</span><span class="p">,</span> <span class="n">wholeExtent</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
     <span class="k">global</span> <span class="n">coprocessor</span>

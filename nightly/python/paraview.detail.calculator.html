@@ -7,12 +7,10 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>detail.calculator Module &mdash; ParaView/Python 5.9.0-RC1-193-gf1bb9b526b documentation</title>
+  <title>detail.calculator Module &mdash; ParaView/Python 5.9.0-RC1-211-gf85ab347b3 documentation</title>
   
 
   
-  
-    <link rel="shortcut icon" href="_static/pvIcon.ico"/>
   
 
   
@@ -24,7 +22,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:'./',
-        VERSION:'5.9.0-RC1-193-gf1bb9b526b',
+        VERSION:'5.9.0-RC1-211-gf85ab347b3',
         COLLAPSE_INDEX:false,
         FILE_SUFFIX:'.html',
         HAS_SOURCE:  true
@@ -49,7 +47,7 @@
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="ParaView/Python 5.9.0-RC1-193-gf1bb9b526b documentation" href="index.html"/>
+    <link rel="top" title="ParaView/Python 5.9.0-RC1-211-gf85ab347b3 documentation" href="index.html"/>
         <link rel="up" title="detail Package" href="paraview.detail.html"/>
         <link rel="next" title="detail.catalyst_export Module" href="paraview.detail.catalyst_export.html"/>
         <link rel="prev" title="detail.annotation Module" href="paraview.detail.annotation.html"/> 
@@ -69,7 +67,7 @@
           <li> <a href="index.html">
             <img src="_static/paraview-logo-small.png"
             alt="ParaView/Python"></img></a> </li>
-          <li class="version"> version 5.9.0-RC1-193-gf1bb9b526b</li>
+          <li class="version"> version 5.9.0-RC1-211-gf85ab347b3</li>
         </ul>
         <form id ="rtd-search-form" class="wy-form" action="search.html" method="get">
   <input type="text" name="q" placeholder="Search docs" />
@@ -587,28 +585,28 @@
 <p>This module is used by vtkPythonCalculator. It encapsulates the logic
 implemented by the vtkPythonCalculator to operate on datasets to compute
 derived quantities.</p>
-<dl class="function">
+<dl class="py function">
 <dt id="paraview.detail.calculator.cellContainsPoint">
-<code class="sig-prename descclassname">paraview.detail.calculator.</code><code class="sig-name descname">cellContainsPoint</code><span class="sig-paren">(</span><em class="sig-param">inputs</em>, <em class="sig-param">locations</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/detail/calculator.html#cellContainsPoint"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.detail.calculator.cellContainsPoint" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">paraview.detail.calculator.</code><code class="sig-name descname">cellContainsPoint</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">inputs</span></em>, <em class="sig-param"><span class="n">locations</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/detail/calculator.html#cellContainsPoint"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.detail.calculator.cellContainsPoint" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="paraview.detail.calculator.compute">
-<code class="sig-prename descclassname">paraview.detail.calculator.</code><code class="sig-name descname">compute</code><span class="sig-paren">(</span><em class="sig-param">inputs</em>, <em class="sig-param">expression</em>, <em class="sig-param">ns=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/detail/calculator.html#compute"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.detail.calculator.compute" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">paraview.detail.calculator.</code><code class="sig-name descname">compute</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">inputs</span></em>, <em class="sig-param"><span class="n">expression</span></em>, <em class="sig-param"><span class="n">ns</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/detail/calculator.html#compute"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.detail.calculator.compute" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="paraview.detail.calculator.execute">
-<code class="sig-prename descclassname">paraview.detail.calculator.</code><code class="sig-name descname">execute</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">expression</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/detail/calculator.html#execute"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.detail.calculator.execute" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">paraview.detail.calculator.</code><code class="sig-name descname">execute</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span></em>, <em class="sig-param"><span class="n">expression</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/detail/calculator.html#execute"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.detail.calculator.execute" title="Permalink to this definition">¶</a></dt>
 <dd><p><strong>Internal Method</strong>
 Called by vtkPythonCalculator in its RequestData(…) method. This is not
 intended for use externally except from within
 vtkPythonCalculator::RequestData(…).</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="paraview.detail.calculator.get_arrays">
-<code class="sig-prename descclassname">paraview.detail.calculator.</code><code class="sig-name descname">get_arrays</code><span class="sig-paren">(</span><em class="sig-param">attribs</em>, <em class="sig-param">controller=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/detail/calculator.html#get_arrays"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.detail.calculator.get_arrays" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">paraview.detail.calculator.</code><code class="sig-name descname">get_arrays</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">attribs</span></em>, <em class="sig-param"><span class="n">controller</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/detail/calculator.html#get_arrays"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.detail.calculator.get_arrays" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns a ‘dict’ referring to arrays in dsa.DataSetAttributes or
 dsa.CompositeDataSetAttributes instance.</p>
 <p>When running in parallel, this method will ensure that arraynames are
@@ -617,14 +615,14 @@ NoneArray will be added to the returned dictionary. This ensures that
 expressions evaluate without issues due to missing arrays on certain ranks.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="paraview.detail.calculator.get_data_time">
-<code class="sig-prename descclassname">paraview.detail.calculator.</code><code class="sig-name descname">get_data_time</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">do</em>, <em class="sig-param">ininfo</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/detail/calculator.html#get_data_time"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.detail.calculator.get_data_time" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">paraview.detail.calculator.</code><code class="sig-name descname">get_data_time</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">self</span></em>, <em class="sig-param"><span class="n">do</span></em>, <em class="sig-param"><span class="n">ininfo</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/detail/calculator.html#get_data_time"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.detail.calculator.get_data_time" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="paraview.detail.calculator.pointIsNear">
-<code class="sig-prename descclassname">paraview.detail.calculator.</code><code class="sig-name descname">pointIsNear</code><span class="sig-paren">(</span><em class="sig-param">locations</em>, <em class="sig-param">distance</em>, <em class="sig-param">inputs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/detail/calculator.html#pointIsNear"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.detail.calculator.pointIsNear" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">paraview.detail.calculator.</code><code class="sig-name descname">pointIsNear</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">locations</span></em>, <em class="sig-param"><span class="n">distance</span></em>, <em class="sig-param"><span class="n">inputs</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/detail/calculator.html#pointIsNear"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.detail.calculator.pointIsNear" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </div>

@@ -7,12 +7,10 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>paraview._backwardscompatibilityhelper &mdash; ParaView/Python 5.9.0-RC1-193-gf1bb9b526b documentation</title>
+  <title>paraview._backwardscompatibilityhelper &mdash; ParaView/Python 5.9.0-RC1-211-gf85ab347b3 documentation</title>
   
 
   
-  
-    <link rel="shortcut icon" href="../../_static/pvIcon.ico"/>
   
 
   
@@ -24,7 +22,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:'../../',
-        VERSION:'5.9.0-RC1-193-gf1bb9b526b',
+        VERSION:'5.9.0-RC1-211-gf85ab347b3',
         COLLAPSE_INDEX:false,
         FILE_SUFFIX:'.html',
         HAS_SOURCE:  true
@@ -49,7 +47,7 @@
         <link rel="index" title="Index"
               href="../../genindex.html"/>
         <link rel="search" title="Search" href="../../search.html"/>
-    <link rel="top" title="ParaView/Python 5.9.0-RC1-193-gf1bb9b526b documentation" href="../../index.html"/>
+    <link rel="top" title="ParaView/Python 5.9.0-RC1-211-gf85ab347b3 documentation" href="../../index.html"/>
         <link rel="up" title="Module code" href="../index.html"/> 
 
   <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
@@ -67,7 +65,7 @@
           <li> <a href="../../index.html">
             <img src="../../_static/paraview-logo-small.png"
             alt="ParaView/Python"></img></a> </li>
-          <li class="version"> version 5.9.0-RC1-193-gf1bb9b526b</li>
+          <li class="version"> version 5.9.0-RC1-211-gf85ab347b3</li>
         </ul>
         <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
   <input type="text" name="q" placeholder="Search docs" />
@@ -600,7 +598,7 @@
     <span class="k">pass</span></div>
 
 <span class="k">class</span> <span class="nc">_CubeAxesHelper</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">CubeAxesVisibility</span> <span class="o">=</span> <span class="mi">0</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">CubeAxesColor</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">CubeAxesCornerOffset</span> <span class="o">=</span> <span class="mf">0.0</span>
@@ -715,7 +713,7 @@
     <span class="k">if</span> <span class="n">pname</span> <span class="o">==</span> <span class="s2">&quot;LockScalarRange&quot;</span> <span class="ow">and</span> <span class="n">proxy</span><span class="o">.</span><span class="n">SMProxy</span><span class="o">.</span><span class="n">GetProperty</span><span class="p">(</span><span class="s2">&quot;AutomaticRescaleRangeMode&quot;</span><span class="p">):</span>
         <span class="k">if</span> <span class="n">paraview</span><span class="o">.</span><span class="n">compatibility</span><span class="o">.</span><span class="n">GetVersion</span><span class="p">()</span> <span class="o">&lt;=</span> <span class="mf">5.4</span><span class="p">:</span>
             <span class="k">if</span> <span class="n">value</span><span class="p">:</span>
-                <span class="kn">from</span> <span class="nn">paraview.modules.vtkRemotingViews</span> <span class="k">import</span> <span class="n">vtkSMTransferFunctionManager</span>
+                <span class="kn">from</span> <span class="nn">paraview.modules.vtkRemotingViews</span> <span class="kn">import</span> <span class="n">vtkSMTransferFunctionManager</span>
                 <span class="n">proxy</span><span class="o">.</span><span class="n">GetProperty</span><span class="p">(</span><span class="s2">&quot;AutomaticRescaleRangeMode&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">SetData</span><span class="p">(</span><span class="n">vtkSMTransferFunctionManager</span><span class="o">.</span><span class="n">NEVER</span><span class="p">)</span>
             <span class="k">else</span><span class="p">:</span>
                 <span class="n">pxm</span> <span class="o">=</span> <span class="n">proxy</span><span class="o">.</span><span class="n">SMProxy</span><span class="o">.</span><span class="n">GetSessionProxyManager</span><span class="p">()</span>
@@ -1047,7 +1045,7 @@
     <span class="c1"># replaced it with the enumeration AutomaticRescaleRangeMode.</span>
     <span class="k">if</span> <span class="n">pname</span> <span class="o">==</span> <span class="s2">&quot;LockScalarRange&quot;</span> <span class="ow">and</span> <span class="n">proxy</span><span class="o">.</span><span class="n">SMProxy</span><span class="o">.</span><span class="n">GetProperty</span><span class="p">(</span><span class="s2">&quot;AutomaticRescaleRangeMode&quot;</span><span class="p">):</span>
         <span class="k">if</span> <span class="n">version</span> <span class="o">&lt;=</span> <span class="mf">5.4</span><span class="p">:</span>
-            <span class="kn">from</span> <span class="nn">paraview.modules.vtkRemotingViews</span> <span class="k">import</span> <span class="n">vtkSMTransferFunctionManager</span>
+            <span class="kn">from</span> <span class="nn">paraview.modules.vtkRemotingViews</span> <span class="kn">import</span> <span class="n">vtkSMTransferFunctionManager</span>
             <span class="k">if</span> <span class="n">proxy</span><span class="o">.</span><span class="n">GetProperty</span><span class="p">(</span><span class="s2">&quot;AutomaticRescaleRangeMode&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">GetData</span><span class="p">()</span> <span class="o">==</span> <span class="s2">&quot;Never&quot;</span><span class="p">:</span>
                 <span class="k">return</span> <span class="mi">1</span>
             <span class="k">else</span><span class="p">:</span>

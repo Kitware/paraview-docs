@@ -7,12 +7,10 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>python_view Module &mdash; ParaView/Python 5.9.0-RC1-193-gf1bb9b526b documentation</title>
+  <title>python_view Module &mdash; ParaView/Python 5.9.0-RC1-211-gf85ab347b3 documentation</title>
   
 
   
-  
-    <link rel="shortcut icon" href="_static/pvIcon.ico"/>
   
 
   
@@ -24,7 +22,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:'./',
-        VERSION:'5.9.0-RC1-193-gf1bb9b526b',
+        VERSION:'5.9.0-RC1-211-gf85ab347b3',
         COLLAPSE_INDEX:false,
         FILE_SUFFIX:'.html',
         HAS_SOURCE:  true
@@ -49,7 +47,7 @@
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="ParaView/Python 5.9.0-RC1-193-gf1bb9b526b documentation" href="index.html"/>
+    <link rel="top" title="ParaView/Python 5.9.0-RC1-211-gf85ab347b3 documentation" href="index.html"/>
         <link rel="up" title="paraview Package" href="paraview.html"/>
         <link rel="next" title="selection Module" href="paraview.selection.html"/>
         <link rel="prev" title="pv-vtk-all Module" href="paraview.pv-vtk-all.html"/> 
@@ -69,7 +67,7 @@
           <li> <a href="index.html">
             <img src="_static/paraview-logo-small.png"
             alt="ParaView/Python"></img></a> </li>
-          <li class="version"> version 5.9.0-RC1-193-gf1bb9b526b</li>
+          <li class="version"> version 5.9.0-RC1-211-gf85ab347b3</li>
         </ul>
         <form id ="rtd-search-form" class="wy-form" action="search.html" method="get">
   <input type="text" name="q" placeholder="Search docs" />
@@ -587,9 +585,9 @@
 <p>python_view is a module providing access to a PythonView. It is
 possible to use the PythonView API directly, but this module provides
 convenience classes in Python.</p>
-<dl class="function">
+<dl class="py function">
 <dt id="paraview.python_view.call_render">
-<code class="sig-prename descclassname">paraview.python_view.</code><code class="sig-name descname">call_render</code><span class="sig-paren">(</span><em class="sig-param">render_function</em>, <em class="sig-param">view</em>, <em class="sig-param">width</em>, <em class="sig-param">height</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/python_view.html#call_render"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.python_view.call_render" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">paraview.python_view.</code><code class="sig-name descname">call_render</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">render_function</span></em>, <em class="sig-param"><span class="n">view</span></em>, <em class="sig-param"><span class="n">width</span></em>, <em class="sig-param"><span class="n">height</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/python_view.html#call_render"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.python_view.call_render" title="Permalink to this definition">¶</a></dt>
 <dd><p>Utility function to call the user-defined render function. This is called
 by the C++ side of the vtkPythonView class.</p>
 <dl class="simple">
@@ -602,9 +600,9 @@ by the C++ side of the vtkPythonView class.</p>
 </dl>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="paraview.python_view.figure_to_data">
-<code class="sig-prename descclassname">paraview.python_view.</code><code class="sig-name descname">figure_to_data</code><span class="sig-paren">(</span><em class="sig-param">figure</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/python_view.html#figure_to_data"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.python_view.figure_to_data" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">paraview.python_view.</code><code class="sig-name descname">figure_to_data</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">figure</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/python_view.html#figure_to_data"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.python_view.figure_to_data" title="Permalink to this definition">¶</a></dt>
 <dd><p>Convert a Matplotlib figure to a numpy 2D array with RGBA uint8 channels
 and return it.</p>
 <dl class="simple">
@@ -615,9 +613,9 @@ and return it.</p>
 </dl>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="paraview.python_view.figure_to_image">
-<code class="sig-prename descclassname">paraview.python_view.</code><code class="sig-name descname">figure_to_image</code><span class="sig-paren">(</span><em class="sig-param">figure</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/python_view.html#figure_to_image"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.python_view.figure_to_image" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">paraview.python_view.</code><code class="sig-name descname">figure_to_image</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">figure</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/python_view.html#figure_to_image"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.python_view.figure_to_image" title="Permalink to this definition">¶</a></dt>
 <dd><p>Convert a Matplotlib figure to a vtkImageData with RGBA unsigned char
 channels.</p>
 <dl class="simple">
@@ -628,9 +626,9 @@ channels.</p>
 </dl>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="paraview.python_view.matplotlib_figure">
-<code class="sig-prename descclassname">paraview.python_view.</code><code class="sig-name descname">matplotlib_figure</code><span class="sig-paren">(</span><em class="sig-param">width</em>, <em class="sig-param">height</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/python_view.html#matplotlib_figure"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.python_view.matplotlib_figure" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">paraview.python_view.</code><code class="sig-name descname">matplotlib_figure</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">width</span></em>, <em class="sig-param"><span class="n">height</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/python_view.html#matplotlib_figure"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.python_view.matplotlib_figure" title="Permalink to this definition">¶</a></dt>
 <dd><p>Create a Matplotlib figure with specified width and height for rendering.</p>
 <dl class="simple">
 <dt>w</dt><dd><p>Width of desired plot.</p>
@@ -642,9 +640,9 @@ channels.</p>
 </dl>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="paraview.python_view.numpy_to_image">
-<code class="sig-prename descclassname">paraview.python_view.</code><code class="sig-name descname">numpy_to_image</code><span class="sig-paren">(</span><em class="sig-param">numpy_array</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/python_view.html#numpy_to_image"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.python_view.numpy_to_image" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">paraview.python_view.</code><code class="sig-name descname">numpy_to_image</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">numpy_array</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/python_view.html#numpy_to_image"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.python_view.numpy_to_image" title="Permalink to this definition">¶</a></dt>
 <dd><p>Convert a numpy 2D or 3D array to a vtkImageData object.</p>
 <dl class="simple">
 <dt>numpy_array</dt><dd><p>2D or 3D numpy array containing image data</p>

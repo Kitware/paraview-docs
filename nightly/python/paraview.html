@@ -7,12 +7,10 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>paraview Package &mdash; ParaView/Python 5.9.0-RC1-193-gf1bb9b526b documentation</title>
+  <title>paraview Package &mdash; ParaView/Python 5.9.0-RC1-211-gf85ab347b3 documentation</title>
   
 
   
-  
-    <link rel="shortcut icon" href="_static/pvIcon.ico"/>
   
 
   
@@ -24,7 +22,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:'./',
-        VERSION:'5.9.0-RC1-193-gf1bb9b526b',
+        VERSION:'5.9.0-RC1-211-gf85ab347b3',
         COLLAPSE_INDEX:false,
         FILE_SUFFIX:'.html',
         HAS_SOURCE:  true
@@ -49,7 +47,7 @@
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="ParaView/Python 5.9.0-RC1-193-gf1bb9b526b documentation" href="index.html"/>
+    <link rel="top" title="ParaView/Python 5.9.0-RC1-211-gf85ab347b3 documentation" href="index.html"/>
         <link rel="next" title="_backwardscompatibilityhelper Module" href="paraview._backwardscompatibilityhelper.html"/>
         <link rel="prev" title="Quick-Start : A Tutorial" href="quick-start.html"/> 
 
@@ -68,7 +66,7 @@
           <li> <a href="index.html">
             <img src="_static/paraview-logo-small.png"
             alt="ParaView/Python"></img></a> </li>
-          <li class="version"> version 5.9.0-RC1-193-gf1bb9b526b</li>
+          <li class="version"> version 5.9.0-RC1-211-gf85ab347b3</li>
         </ul>
         <form id ="rtd-search-form" class="wy-form" action="search.html" method="get">
   <input type="text" name="q" placeholder="Search docs" />
@@ -587,7 +585,7 @@
 <h2><code class="xref py py-mod docutils literal notranslate"><span class="pre">paraview</span></code> Package<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
 <span class="target" id="module-paraview.__init__"></span><p>The paraview package provides modules used to script ParaView. Generally, users
 should import the modules of interest directly e.g.:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">paraview.simple</span> <span class="k">import</span> <span class="o">*</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">paraview.simple</span> <span class="kn">import</span> <span class="o">*</span>
 </pre></div>
 </div>
 <p>However, one may want to import paraview package before importing any of the
@@ -599,47 +597,47 @@ ParaView modules to force backwards compatibility to an older version:</p>
 <span class="n">paraview</span><span class="o">.</span><span class="n">compatibility</span><span class="o">.</span><span class="n">minor</span> <span class="o">=</span> <span class="mi">0</span>
 
 <span class="c1"># Now, import the modules of interest.</span>
-<span class="kn">from</span> <span class="nn">paraview.simple</span> <span class="k">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">paraview.simple</span> <span class="kn">import</span> <span class="o">*</span>
 </pre></div>
 </div>
-<dl class="exception">
+<dl class="py exception">
 <dt id="paraview.__init__.NotSupportedException">
-<em class="property">exception </em><code class="sig-prename descclassname">paraview.__init__.</code><code class="sig-name descname">NotSupportedException</code><span class="sig-paren">(</span><em class="sig-param">msg</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/__init__.html#NotSupportedException"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.__init__.NotSupportedException" title="Permalink to this definition">¶</a></dt>
+<em class="property">exception </em><code class="sig-prename descclassname">paraview.__init__.</code><code class="sig-name descname">NotSupportedException</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">msg</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/__init__.html#NotSupportedException"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.__init__.NotSupportedException" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></p>
 <p>Exception that is fired when obsolete API is used in a script.</p>
 </dd></dl>
 
-<dl class="class">
+<dl class="py class">
 <dt id="paraview.__init__.compatibility">
 <em class="property">class </em><code class="sig-prename descclassname">paraview.__init__.</code><code class="sig-name descname">compatibility</code><a class="reference internal" href="_modules/paraview/__init__.html#compatibility"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.__init__.compatibility" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Class used to check version number and compatibility. Users should only
 set the compatibility explicitly to force backwards compatibility to and
 older versions.</p>
-<dl class="method">
+<dl class="py method">
 <dt id="paraview.__init__.compatibility.GetVersion">
 <em class="property">classmethod </em><code class="sig-name descname">GetVersion</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/__init__.html#compatibility.GetVersion"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.__init__.compatibility.GetVersion" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="paraview.__init__.compatibility.major">
 <code class="sig-name descname">major</code><em class="property"> = None</em><a class="headerlink" href="#paraview.__init__.compatibility.major" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="paraview.__init__.compatibility.minor">
 <code class="sig-name descname">minor</code><em class="property"> = None</em><a class="headerlink" href="#paraview.__init__.compatibility.minor" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="paraview.__init__.make_name_valid">
-<code class="sig-prename descclassname">paraview.__init__.</code><code class="sig-name descname">make_name_valid</code><span class="sig-paren">(</span><em class="sig-param">name</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/__init__.html#make_name_valid"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.__init__.make_name_valid" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">paraview.__init__.</code><code class="sig-name descname">make_name_valid</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/__init__.html#make_name_valid"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.__init__.make_name_valid" title="Permalink to this definition">¶</a></dt>
 <dd><p>Make a string into a valid Python variable name.</p>
 </dd></dl>
 
-<dl class="class">
+<dl class="py class">
 <dt id="paraview.__init__.options">
 <em class="property">class </em><code class="sig-prename descclassname">paraview.__init__.</code><code class="sig-name descname">options</code><a class="reference internal" href="_modules/paraview/__init__.html#options"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.__init__.options" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
@@ -647,26 +645,26 @@ older versions.</p>
 in python interpretor directly i.e. not through pvpython or pvbatch. In
 that case, one should use command line arguments for the two
 executables</p>
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="paraview.__init__.options.batch">
 <code class="sig-name descname">batch</code><em class="property"> = False</em><a class="headerlink" href="#paraview.__init__.options.batch" title="Permalink to this definition">¶</a></dt>
 <dd><p>When True, acts like pvbatch –symmetric. Requires that batch is set to
 True to have any effect.</p>
 </dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="paraview.__init__.options.print_debug_messages">
 <code class="sig-name descname">print_debug_messages</code><em class="property"> = False</em><a class="headerlink" href="#paraview.__init__.options.print_debug_messages" title="Permalink to this definition">¶</a></dt>
 <dd><p>When True, This mean the current process is a satelite and should not try to
 connect or do anything else.</p>
 </dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="paraview.__init__.options.satelite">
 <code class="sig-name descname">satelite</code><em class="property"> = False</em><a class="headerlink" href="#paraview.__init__.options.satelite" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="paraview.__init__.options.symmetric">
 <code class="sig-name descname">symmetric</code><em class="property"> = False</em><a class="headerlink" href="#paraview.__init__.options.symmetric" title="Permalink to this definition">¶</a></dt>
 <dd><p>When True, <cite>paraview.print_debug_info()</cite> will result in printing the

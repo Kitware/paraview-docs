@@ -7,12 +7,10 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>_backwardscompatibilityhelper Module &mdash; ParaView/Python 5.9.0-RC1-193-gf1bb9b526b documentation</title>
+  <title>_backwardscompatibilityhelper Module &mdash; ParaView/Python 5.9.0-RC1-211-gf85ab347b3 documentation</title>
   
 
   
-  
-    <link rel="shortcut icon" href="_static/pvIcon.ico"/>
   
 
   
@@ -24,7 +22,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:'./',
-        VERSION:'5.9.0-RC1-193-gf1bb9b526b',
+        VERSION:'5.9.0-RC1-211-gf85ab347b3',
         COLLAPSE_INDEX:false,
         FILE_SUFFIX:'.html',
         HAS_SOURCE:  true
@@ -49,7 +47,7 @@
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="ParaView/Python 5.9.0-RC1-193-gf1bb9b526b documentation" href="index.html"/>
+    <link rel="top" title="ParaView/Python 5.9.0-RC1-211-gf85ab347b3 documentation" href="index.html"/>
         <link rel="up" title="paraview Package" href="paraview.html"/>
         <link rel="next" title="_colorMaps Module" href="paraview._colorMaps.html"/>
         <link rel="prev" title="paraview Package" href="paraview.html"/> 
@@ -69,7 +67,7 @@
           <li> <a href="index.html">
             <img src="_static/paraview-logo-small.png"
             alt="ParaView/Python"></img></a> </li>
-          <li class="version"> version 5.9.0-RC1-193-gf1bb9b526b</li>
+          <li class="version"> version 5.9.0-RC1-211-gf85ab347b3</li>
         </ul>
         <form id ="rtd-search-form" class="wy-form" action="search.html" method="get">
   <input type="text" name="q" placeholder="Search docs" />
@@ -591,20 +589,20 @@ property was removed, <cite>check_attr</cite> should ideally continue to work as
 or return a value of appropriate form so old code doesn’t fail. Otherwise
 <cite>check_attr</cite> should throw the NotSupportedException with appropriate debug
 message.</p>
-<dl class="exception">
+<dl class="py exception">
 <dt id="paraview._backwardscompatibilityhelper.Continue">
 <em class="property">exception </em><code class="sig-prename descclassname">paraview._backwardscompatibilityhelper.</code><code class="sig-name descname">Continue</code><a class="reference internal" href="_modules/paraview/_backwardscompatibilityhelper.html#Continue"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview._backwardscompatibilityhelper.Continue" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></p>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="paraview._backwardscompatibilityhelper.GetProxy">
-<code class="sig-prename descclassname">paraview._backwardscompatibilityhelper.</code><code class="sig-name descname">GetProxy</code><span class="sig-paren">(</span><em class="sig-param">module</em>, <em class="sig-param">key</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/_backwardscompatibilityhelper.html#GetProxy"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview._backwardscompatibilityhelper.GetProxy" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">paraview._backwardscompatibilityhelper.</code><code class="sig-name descname">GetProxy</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">module</span></em>, <em class="sig-param"><span class="n">key</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/_backwardscompatibilityhelper.html#GetProxy"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview._backwardscompatibilityhelper.GetProxy" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="paraview._backwardscompatibilityhelper.getattr">
-<code class="sig-prename descclassname">paraview._backwardscompatibilityhelper.</code><code class="sig-name descname">getattr</code><span class="sig-paren">(</span><em class="sig-param">proxy</em>, <em class="sig-param">pname</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/_backwardscompatibilityhelper.html#getattr"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview._backwardscompatibilityhelper.getattr" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">paraview._backwardscompatibilityhelper.</code><code class="sig-name descname">getattr</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">proxy</span></em>, <em class="sig-param"><span class="n">pname</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/_backwardscompatibilityhelper.html#getattr"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview._backwardscompatibilityhelper.getattr" title="Permalink to this definition">¶</a></dt>
 <dd><p>Attempts to emulate getattr() when called using a deprecated property name
 for a proxy.</p>
 <p>Will return a <em>reasonable</em> stand-in if the property was
@@ -617,15 +615,15 @@ any API deprecation and the caller should follow normal code execution
 paths.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="paraview._backwardscompatibilityhelper.lookupTableUpdate">
-<code class="sig-prename descclassname">paraview._backwardscompatibilityhelper.</code><code class="sig-name descname">lookupTableUpdate</code><span class="sig-paren">(</span><em class="sig-param">lutName</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/_backwardscompatibilityhelper.html#lookupTableUpdate"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview._backwardscompatibilityhelper.lookupTableUpdate" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">paraview._backwardscompatibilityhelper.</code><code class="sig-name descname">lookupTableUpdate</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">lutName</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/_backwardscompatibilityhelper.html#lookupTableUpdate"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview._backwardscompatibilityhelper.lookupTableUpdate" title="Permalink to this definition">¶</a></dt>
 <dd><p>Provide backwards compatibility for color lookup table name changes.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="paraview._backwardscompatibilityhelper.setattr">
-<code class="sig-prename descclassname">paraview._backwardscompatibilityhelper.</code><code class="sig-name descname">setattr</code><span class="sig-paren">(</span><em class="sig-param">proxy</em>, <em class="sig-param">pname</em>, <em class="sig-param">value</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/_backwardscompatibilityhelper.html#setattr"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview._backwardscompatibilityhelper.setattr" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">paraview._backwardscompatibilityhelper.</code><code class="sig-name descname">setattr</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">proxy</span></em>, <em class="sig-param"><span class="n">pname</span></em>, <em class="sig-param"><span class="n">value</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/_backwardscompatibilityhelper.html#setattr"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview._backwardscompatibilityhelper.setattr" title="Permalink to this definition">¶</a></dt>
 <dd><p>Attempts to emulate setattr() when called using a deprecated name for a
 proxy property.</p>
 <p>For properties that are no longer present on a proxy, the code should do the
@@ -642,9 +640,9 @@ to update the script.</p></li>
 </ol>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="paraview._backwardscompatibilityhelper.setattr_fix_value">
-<code class="sig-prename descclassname">paraview._backwardscompatibilityhelper.</code><code class="sig-name descname">setattr_fix_value</code><span class="sig-paren">(</span><em class="sig-param">proxy</em>, <em class="sig-param">pname</em>, <em class="sig-param">value</em>, <em class="sig-param">setter_func</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/_backwardscompatibilityhelper.html#setattr_fix_value"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview._backwardscompatibilityhelper.setattr_fix_value" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">paraview._backwardscompatibilityhelper.</code><code class="sig-name descname">setattr_fix_value</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">proxy</span></em>, <em class="sig-param"><span class="n">pname</span></em>, <em class="sig-param"><span class="n">value</span></em>, <em class="sig-param"><span class="n">setter_func</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/_backwardscompatibilityhelper.html#setattr_fix_value"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview._backwardscompatibilityhelper.setattr_fix_value" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </div>

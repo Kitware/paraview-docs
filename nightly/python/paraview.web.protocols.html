@@ -7,12 +7,10 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>web.protocols Module &mdash; ParaView/Python 5.9.0-RC1-193-gf1bb9b526b documentation</title>
+  <title>web.protocols Module &mdash; ParaView/Python 5.9.0-RC1-211-gf85ab347b3 documentation</title>
   
 
   
-  
-    <link rel="shortcut icon" href="_static/pvIcon.ico"/>
   
 
   
@@ -24,7 +22,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:'./',
-        VERSION:'5.9.0-RC1-193-gf1bb9b526b',
+        VERSION:'5.9.0-RC1-211-gf85ab347b3',
         COLLAPSE_INDEX:false,
         FILE_SUFFIX:'.html',
         HAS_SOURCE:  true
@@ -49,7 +47,7 @@
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="ParaView/Python 5.9.0-RC1-193-gf1bb9b526b documentation" href="index.html"/>
+    <link rel="top" title="ParaView/Python 5.9.0-RC1-211-gf85ab347b3 documentation" href="index.html"/>
         <link rel="up" title="web Package" href="paraview.web.html"/>
         <link rel="next" title="web.pv_wslink Module" href="paraview.web.pv_wslink.html"/>
         <link rel="prev" title="web.helper Module" href="paraview.web.helper.html"/> 
@@ -69,7 +67,7 @@
           <li> <a href="index.html">
             <img src="_static/paraview-logo-small.png"
             alt="ParaView/Python"></img></a> </li>
-          <li class="version"> version 5.9.0-RC1-193-gf1bb9b526b</li>
+          <li class="version"> version 5.9.0-RC1-211-gf85ab347b3</li>
         </ul>
         <form id ="rtd-search-form" class="wy-form" action="search.html" method="get">
   <input type="text" name="q" placeholder="Search docs" />
@@ -587,59 +585,59 @@
 <p>paraviewweb_protocols is a module that contains a set of ParaViewWeb related
 protocols that can be combined together to provide a flexible way to define
 very specific web application.</p>
-<dl class="class">
+<dl class="py class">
 <dt id="paraview.web.protocols.ParaViewWebColorManager">
-<em class="property">class </em><code class="sig-prename descclassname">paraview.web.protocols.</code><code class="sig-name descname">ParaViewWebColorManager</code><span class="sig-paren">(</span><em class="sig-param">pathToColorMaps=None</em>, <em class="sig-param">showBuiltin=True</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebColorManager"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebColorManager" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">paraview.web.protocols.</code><code class="sig-name descname">ParaViewWebColorManager</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">pathToColorMaps</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">showBuiltin</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebColorManager"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebColorManager" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#paraview.web.protocols.ParaViewWebProtocol" title="paraview.web.protocols.ParaViewWebProtocol"><code class="xref py py-class docutils literal notranslate"><span class="pre">paraview.web.protocols.ParaViewWebProtocol</span></code></a></p>
-<dl class="method">
+<dl class="py method">
 <dt id="paraview.web.protocols.ParaViewWebColorManager.colorBy">
-<code class="sig-name descname">colorBy</code><span class="sig-paren">(</span><em class="sig-param">representation</em>, <em class="sig-param">colorMode</em>, <em class="sig-param">arrayLocation='POINTS'</em>, <em class="sig-param">arrayName=''</em>, <em class="sig-param">vectorMode='Magnitude'</em>, <em class="sig-param">vectorComponent=0</em>, <em class="sig-param">rescale=False</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebColorManager.colorBy"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebColorManager.colorBy" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">colorBy</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">representation</span></em>, <em class="sig-param"><span class="n">colorMode</span></em>, <em class="sig-param"><span class="n">arrayLocation</span><span class="o">=</span><span class="default_value">'POINTS'</span></em>, <em class="sig-param"><span class="n">arrayName</span><span class="o">=</span><span class="default_value">''</span></em>, <em class="sig-param"><span class="n">vectorMode</span><span class="o">=</span><span class="default_value">'Magnitude'</span></em>, <em class="sig-param"><span class="n">vectorComponent</span><span class="o">=</span><span class="default_value">0</span></em>, <em class="sig-param"><span class="n">rescale</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebColorManager.colorBy"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebColorManager.colorBy" title="Permalink to this definition">¶</a></dt>
 <dd><p>Choose the array to color by, and optionally specify magnitude or a
 vector component in the case of vector array.</p>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="paraview.web.protocols.ParaViewWebColorManager.getCurrentScalarRange">
-<code class="sig-name descname">getCurrentScalarRange</code><span class="sig-paren">(</span><em class="sig-param">proxyId</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebColorManager.getCurrentScalarRange"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebColorManager.getCurrentScalarRange" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">getCurrentScalarRange</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">proxyId</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebColorManager.getCurrentScalarRange"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebColorManager.getCurrentScalarRange" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="paraview.web.protocols.ParaViewWebColorManager.getLutImage">
-<code class="sig-name descname">getLutImage</code><span class="sig-paren">(</span><em class="sig-param">representation</em>, <em class="sig-param">numSamples</em>, <em class="sig-param">customRange=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebColorManager.getLutImage"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebColorManager.getLutImage" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">getLutImage</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">representation</span></em>, <em class="sig-param"><span class="n">numSamples</span></em>, <em class="sig-param"><span class="n">customRange</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebColorManager.getLutImage"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebColorManager.getLutImage" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="paraview.web.protocols.ParaViewWebColorManager.getLutImages">
-<code class="sig-name descname">getLutImages</code><span class="sig-paren">(</span><em class="sig-param">numSamples</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebColorManager.getLutImages"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebColorManager.getLutImages" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">getLutImages</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">numSamples</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebColorManager.getLutImages"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebColorManager.getLutImages" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="paraview.web.protocols.ParaViewWebColorManager.getOpacityFunctionPoints">
-<code class="sig-name descname">getOpacityFunctionPoints</code><span class="sig-paren">(</span><em class="sig-param">arrayName</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebColorManager.getOpacityFunctionPoints"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebColorManager.getOpacityFunctionPoints" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">getOpacityFunctionPoints</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">arrayName</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebColorManager.getOpacityFunctionPoints"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebColorManager.getOpacityFunctionPoints" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="paraview.web.protocols.ParaViewWebColorManager.getRgbPoints">
-<code class="sig-name descname">getRgbPoints</code><span class="sig-paren">(</span><em class="sig-param">arrayName</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebColorManager.getRgbPoints"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebColorManager.getRgbPoints" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">getRgbPoints</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">arrayName</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebColorManager.getRgbPoints"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebColorManager.getRgbPoints" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="paraview.web.protocols.ParaViewWebColorManager.getScalarBarVisibilities">
-<code class="sig-name descname">getScalarBarVisibilities</code><span class="sig-paren">(</span><em class="sig-param">proxyIdList</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebColorManager.getScalarBarVisibilities"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebColorManager.getScalarBarVisibilities" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">getScalarBarVisibilities</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">proxyIdList</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebColorManager.getScalarBarVisibilities"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebColorManager.getScalarBarVisibilities" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns whether or not each specified scalar bar is visible.</p>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="paraview.web.protocols.ParaViewWebColorManager.getSurfaceOpacity">
-<code class="sig-name descname">getSurfaceOpacity</code><span class="sig-paren">(</span><em class="sig-param">representation</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebColorManager.getSurfaceOpacity"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebColorManager.getSurfaceOpacity" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">getSurfaceOpacity</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">representation</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebColorManager.getSurfaceOpacity"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebColorManager.getSurfaceOpacity" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="paraview.web.protocols.ParaViewWebColorManager.getSurfaceOpacityByArray">
-<code class="sig-name descname">getSurfaceOpacityByArray</code><span class="sig-paren">(</span><em class="sig-param">arrayName</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebColorManager.getSurfaceOpacityByArray"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebColorManager.getSurfaceOpacityByArray" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">getSurfaceOpacityByArray</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">arrayName</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebColorManager.getSurfaceOpacityByArray"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebColorManager.getSurfaceOpacityByArray" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="paraview.web.protocols.ParaViewWebColorManager.listColorMapNames">
 <code class="sig-name descname">listColorMapNames</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebColorManager.listColorMapNames"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebColorManager.listColorMapNames" title="Permalink to this definition">¶</a></dt>
 <dd><p>List the names of all color map presets available on the server.  This
@@ -647,202 +645,202 @@ list will contain the names of any presets you provided in the file you
 supplied to the constructor of this protocol.</p>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="paraview.web.protocols.ParaViewWebColorManager.rescaleTransferFunction">
-<code class="sig-name descname">rescaleTransferFunction</code><span class="sig-paren">(</span><em class="sig-param">options</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebColorManager.rescaleTransferFunction"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebColorManager.rescaleTransferFunction" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">rescaleTransferFunction</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">options</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebColorManager.rescaleTransferFunction"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebColorManager.rescaleTransferFunction" title="Permalink to this definition">¶</a></dt>
 <dd><p>Rescale the color transfer function to fit either the data range,
 the data range over time, or to a custom range, for the array by
 which the representation is currently being colored.</p>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="paraview.web.protocols.ParaViewWebColorManager.selectColorMap">
-<code class="sig-name descname">selectColorMap</code><span class="sig-paren">(</span><em class="sig-param">representation</em>, <em class="sig-param">paletteName</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebColorManager.selectColorMap"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebColorManager.selectColorMap" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">selectColorMap</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">representation</span></em>, <em class="sig-param"><span class="n">paletteName</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebColorManager.selectColorMap"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebColorManager.selectColorMap" title="Permalink to this definition">¶</a></dt>
 <dd><p>Choose the color map preset to use when coloring by an array.</p>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="paraview.web.protocols.ParaViewWebColorManager.setOpacityFunctionPoints">
-<code class="sig-name descname">setOpacityFunctionPoints</code><span class="sig-paren">(</span><em class="sig-param">arrayName</em>, <em class="sig-param">pointArray</em>, <em class="sig-param">enableOpacityMapping=False</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebColorManager.setOpacityFunctionPoints"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebColorManager.setOpacityFunctionPoints" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">setOpacityFunctionPoints</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">arrayName</span></em>, <em class="sig-param"><span class="n">pointArray</span></em>, <em class="sig-param"><span class="n">enableOpacityMapping</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebColorManager.setOpacityFunctionPoints"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebColorManager.setOpacityFunctionPoints" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="paraview.web.protocols.ParaViewWebColorManager.setRgbPoints">
-<code class="sig-name descname">setRgbPoints</code><span class="sig-paren">(</span><em class="sig-param">arrayName</em>, <em class="sig-param">rgbInfo</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebColorManager.setRgbPoints"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebColorManager.setRgbPoints" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">setRgbPoints</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">arrayName</span></em>, <em class="sig-param"><span class="n">rgbInfo</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebColorManager.setRgbPoints"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebColorManager.setRgbPoints" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="paraview.web.protocols.ParaViewWebColorManager.setScalarBarVisibilities">
-<code class="sig-name descname">setScalarBarVisibilities</code><span class="sig-paren">(</span><em class="sig-param">proxyIdMap</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebColorManager.setScalarBarVisibilities"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebColorManager.setScalarBarVisibilities" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">setScalarBarVisibilities</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">proxyIdMap</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebColorManager.setScalarBarVisibilities"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebColorManager.setScalarBarVisibilities" title="Permalink to this definition">¶</a></dt>
 <dd><p>Sets the visibility of the scalar bar corresponding to each specified
 proxy.  The representation for each proxy is found using the
 filter/source proxy id and the current view.</p>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="paraview.web.protocols.ParaViewWebColorManager.setSurfaceOpacity">
-<code class="sig-name descname">setSurfaceOpacity</code><span class="sig-paren">(</span><em class="sig-param">representation</em>, <em class="sig-param">enabled</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebColorManager.setSurfaceOpacity"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebColorManager.setSurfaceOpacity" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">setSurfaceOpacity</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">representation</span></em>, <em class="sig-param"><span class="n">enabled</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebColorManager.setSurfaceOpacity"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebColorManager.setSurfaceOpacity" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="paraview.web.protocols.ParaViewWebColorManager.setSurfaceOpacityByArray">
-<code class="sig-name descname">setSurfaceOpacityByArray</code><span class="sig-paren">(</span><em class="sig-param">arrayName</em>, <em class="sig-param">enabled</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebColorManager.setSurfaceOpacityByArray"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebColorManager.setSurfaceOpacityByArray" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">setSurfaceOpacityByArray</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">arrayName</span></em>, <em class="sig-param"><span class="n">enabled</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebColorManager.setSurfaceOpacityByArray"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebColorManager.setSurfaceOpacityByArray" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
-<dl class="class">
+<dl class="py class">
 <dt id="paraview.web.protocols.ParaViewWebExportData">
-<em class="property">class </em><code class="sig-prename descclassname">paraview.web.protocols.</code><code class="sig-name descname">ParaViewWebExportData</code><span class="sig-paren">(</span><em class="sig-param">basePath</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebExportData"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebExportData" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">paraview.web.protocols.</code><code class="sig-name descname">ParaViewWebExportData</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">basePath</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebExportData"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebExportData" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#paraview.web.protocols.ParaViewWebProtocol" title="paraview.web.protocols.ParaViewWebProtocol"><code class="xref py py-class docutils literal notranslate"><span class="pre">paraview.web.protocols.ParaViewWebProtocol</span></code></a></p>
-<dl class="method">
+<dl class="py method">
 <dt id="paraview.web.protocols.ParaViewWebExportData.exportData">
-<code class="sig-name descname">exportData</code><span class="sig-paren">(</span><em class="sig-param">proxy_id</em>, <em class="sig-param">path</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebExportData.exportData"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebExportData.exportData" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">exportData</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">proxy_id</span></em>, <em class="sig-param"><span class="n">path</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebExportData.exportData"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebExportData.exportData" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
-<dl class="class">
+<dl class="py class">
 <dt id="paraview.web.protocols.ParaViewWebFileListing">
-<em class="property">class </em><code class="sig-prename descclassname">paraview.web.protocols.</code><code class="sig-name descname">ParaViewWebFileListing</code><span class="sig-paren">(</span><em class="sig-param">basePath</em>, <em class="sig-param">name</em>, <em class="sig-param">excludeRegex='^\.|~$|^\$'</em>, <em class="sig-param">groupRegex='[0-9]+\.'</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebFileListing"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebFileListing" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">paraview.web.protocols.</code><code class="sig-name descname">ParaViewWebFileListing</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">basePath</span></em>, <em class="sig-param"><span class="n">name</span></em>, <em class="sig-param"><span class="n">excludeRegex</span><span class="o">=</span><span class="default_value">'^\\.|~$|^\\$'</span></em>, <em class="sig-param"><span class="n">groupRegex</span><span class="o">=</span><span class="default_value">'[0-9]+\\.'</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebFileListing"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebFileListing" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#paraview.web.protocols.ParaViewWebProtocol" title="paraview.web.protocols.ParaViewWebProtocol"><code class="xref py py-class docutils literal notranslate"><span class="pre">paraview.web.protocols.ParaViewWebProtocol</span></code></a></p>
-<dl class="method">
+<dl class="py method">
 <dt id="paraview.web.protocols.ParaViewWebFileListing.handleMultiRoot">
-<code class="sig-name descname">handleMultiRoot</code><span class="sig-paren">(</span><em class="sig-param">relativeDir</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebFileListing.handleMultiRoot"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebFileListing.handleMultiRoot" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">handleMultiRoot</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">relativeDir</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebFileListing.handleMultiRoot"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebFileListing.handleMultiRoot" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="paraview.web.protocols.ParaViewWebFileListing.handleSingleRoot">
-<code class="sig-name descname">handleSingleRoot</code><span class="sig-paren">(</span><em class="sig-param">baseDirectory</em>, <em class="sig-param">relativeDir</em>, <em class="sig-param">startPath=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebFileListing.handleSingleRoot"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebFileListing.handleSingleRoot" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">handleSingleRoot</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">baseDirectory</span></em>, <em class="sig-param"><span class="n">relativeDir</span></em>, <em class="sig-param"><span class="n">startPath</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebFileListing.handleSingleRoot"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebFileListing.handleSingleRoot" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="paraview.web.protocols.ParaViewWebFileListing.listServerDirectory">
-<code class="sig-name descname">listServerDirectory</code><span class="sig-paren">(</span><em class="sig-param">relativeDir='.'</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebFileListing.listServerDirectory"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebFileListing.listServerDirectory" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">listServerDirectory</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">relativeDir</span><span class="o">=</span><span class="default_value">'.'</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebFileListing.listServerDirectory"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebFileListing.listServerDirectory" title="Permalink to this definition">¶</a></dt>
 <dd><p>RPC Callback to list a server directory relative to the basePath
 provided at start-up.</p>
 </dd></dl>
 
 </dd></dl>
 
-<dl class="class">
+<dl class="py class">
 <dt id="paraview.web.protocols.ParaViewWebKeyValuePairStore">
-<em class="property">class </em><code class="sig-prename descclassname">paraview.web.protocols.</code><code class="sig-name descname">ParaViewWebKeyValuePairStore</code><span class="sig-paren">(</span><em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebKeyValuePairStore"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebKeyValuePairStore" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">paraview.web.protocols.</code><code class="sig-name descname">ParaViewWebKeyValuePairStore</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebKeyValuePairStore"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebKeyValuePairStore" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#paraview.web.protocols.ParaViewWebProtocol" title="paraview.web.protocols.ParaViewWebProtocol"><code class="xref py py-class docutils literal notranslate"><span class="pre">paraview.web.protocols.ParaViewWebProtocol</span></code></a></p>
-<dl class="method">
+<dl class="py method">
 <dt id="paraview.web.protocols.ParaViewWebKeyValuePairStore.retrieveKeyPair">
-<code class="sig-name descname">retrieveKeyPair</code><span class="sig-paren">(</span><em class="sig-param">key</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebKeyValuePairStore.retrieveKeyPair"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebKeyValuePairStore.retrieveKeyPair" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">retrieveKeyPair</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">key</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebKeyValuePairStore.retrieveKeyPair"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebKeyValuePairStore.retrieveKeyPair" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="paraview.web.protocols.ParaViewWebKeyValuePairStore.storeKeyPair">
-<code class="sig-name descname">storeKeyPair</code><span class="sig-paren">(</span><em class="sig-param">key</em>, <em class="sig-param">value</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebKeyValuePairStore.storeKeyPair"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebKeyValuePairStore.storeKeyPair" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">storeKeyPair</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">key</span></em>, <em class="sig-param"><span class="n">value</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebKeyValuePairStore.storeKeyPair"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebKeyValuePairStore.storeKeyPair" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
-<dl class="class">
+<dl class="py class">
 <dt id="paraview.web.protocols.ParaViewWebLocalRendering">
-<em class="property">class </em><code class="sig-prename descclassname">paraview.web.protocols.</code><code class="sig-name descname">ParaViewWebLocalRendering</code><span class="sig-paren">(</span><em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebLocalRendering"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebLocalRendering" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">paraview.web.protocols.</code><code class="sig-name descname">ParaViewWebLocalRendering</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebLocalRendering"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebLocalRendering" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#paraview.web.protocols.ParaViewWebProtocol" title="paraview.web.protocols.ParaViewWebProtocol"><code class="xref py py-class docutils literal notranslate"><span class="pre">paraview.web.protocols.ParaViewWebProtocol</span></code></a></p>
-<dl class="method">
+<dl class="py method">
 <dt id="paraview.web.protocols.ParaViewWebLocalRendering.addViewObserver">
-<code class="sig-name descname">addViewObserver</code><span class="sig-paren">(</span><em class="sig-param">viewId</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebLocalRendering.addViewObserver"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebLocalRendering.addViewObserver" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">addViewObserver</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">viewId</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebLocalRendering.addViewObserver"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebLocalRendering.addViewObserver" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="paraview.web.protocols.ParaViewWebLocalRendering.getArray">
-<code class="sig-name descname">getArray</code><span class="sig-paren">(</span><em class="sig-param">dataHash</em>, <em class="sig-param">binary=False</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebLocalRendering.getArray"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebLocalRendering.getArray" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">getArray</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">dataHash</span></em>, <em class="sig-param"><span class="n">binary</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebLocalRendering.getArray"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebLocalRendering.getArray" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="paraview.web.protocols.ParaViewWebLocalRendering.getViewState">
-<code class="sig-name descname">getViewState</code><span class="sig-paren">(</span><em class="sig-param">viewId</em>, <em class="sig-param">newSubscription=False</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebLocalRendering.getViewState"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebLocalRendering.getViewState" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">getViewState</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">viewId</span></em>, <em class="sig-param"><span class="n">newSubscription</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebLocalRendering.getViewState"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebLocalRendering.getViewState" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="paraview.web.protocols.ParaViewWebLocalRendering.removeViewObserver">
-<code class="sig-name descname">removeViewObserver</code><span class="sig-paren">(</span><em class="sig-param">viewId</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebLocalRendering.removeViewObserver"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebLocalRendering.removeViewObserver" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">removeViewObserver</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">viewId</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebLocalRendering.removeViewObserver"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebLocalRendering.removeViewObserver" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
-<dl class="class">
+<dl class="py class">
 <dt id="paraview.web.protocols.ParaViewWebMouseHandler">
-<em class="property">class </em><code class="sig-prename descclassname">paraview.web.protocols.</code><code class="sig-name descname">ParaViewWebMouseHandler</code><span class="sig-paren">(</span><em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebMouseHandler"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebMouseHandler" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">paraview.web.protocols.</code><code class="sig-name descname">ParaViewWebMouseHandler</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebMouseHandler"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebMouseHandler" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#paraview.web.protocols.ParaViewWebProtocol" title="paraview.web.protocols.ParaViewWebProtocol"><code class="xref py py-class docutils literal notranslate"><span class="pre">paraview.web.protocols.ParaViewWebProtocol</span></code></a></p>
-<dl class="method">
+<dl class="py method">
 <dt id="paraview.web.protocols.ParaViewWebMouseHandler.mouseInteraction">
-<code class="sig-name descname">mouseInteraction</code><span class="sig-paren">(</span><em class="sig-param">event</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebMouseHandler.mouseInteraction"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebMouseHandler.mouseInteraction" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">mouseInteraction</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">event</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebMouseHandler.mouseInteraction"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebMouseHandler.mouseInteraction" title="Permalink to this definition">¶</a></dt>
 <dd><p>RPC Callback for mouse interactions.</p>
 </dd></dl>
 
 </dd></dl>
 
-<dl class="class">
+<dl class="py class">
 <dt id="paraview.web.protocols.ParaViewWebProgressUpdate">
-<em class="property">class </em><code class="sig-prename descclassname">paraview.web.protocols.</code><code class="sig-name descname">ParaViewWebProgressUpdate</code><span class="sig-paren">(</span><em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebProgressUpdate"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebProgressUpdate" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">paraview.web.protocols.</code><code class="sig-name descname">ParaViewWebProgressUpdate</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebProgressUpdate"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebProgressUpdate" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#paraview.web.protocols.ParaViewWebProtocol" title="paraview.web.protocols.ParaViewWebProtocol"><code class="xref py py-class docutils literal notranslate"><span class="pre">paraview.web.protocols.ParaViewWebProtocol</span></code></a></p>
-<dl class="method">
+<dl class="py method">
 <dt id="paraview.web.protocols.ParaViewWebProgressUpdate.listenToProgress">
 <code class="sig-name descname">listenToProgress</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebProgressUpdate.listenToProgress"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebProgressUpdate.listenToProgress" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="paraview.web.protocols.ParaViewWebProgressUpdate.progressObserverTag">
 <code class="sig-name descname">progressObserverTag</code><em class="property"> = None</em><a class="headerlink" href="#paraview.web.protocols.ParaViewWebProgressUpdate.progressObserverTag" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="paraview.web.protocols.ParaViewWebProgressUpdate.updateProgress">
-<code class="sig-name descname">updateProgress</code><span class="sig-paren">(</span><em class="sig-param">caller</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebProgressUpdate.updateProgress"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebProgressUpdate.updateProgress" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">updateProgress</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">caller</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebProgressUpdate.updateProgress"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebProgressUpdate.updateProgress" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
-<dl class="class">
+<dl class="py class">
 <dt id="paraview.web.protocols.ParaViewWebProtocol">
 <em class="property">class </em><code class="sig-prename descclassname">paraview.web.protocols.</code><code class="sig-name descname">ParaViewWebProtocol</code><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebProtocol"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebProtocol" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">vtkmodules.web.protocols.vtkWebProtocol</span></code></p>
-<dl class="method">
+<dl class="py method">
 <dt id="paraview.web.protocols.ParaViewWebProtocol.debug">
-<code class="sig-name descname">debug</code><span class="sig-paren">(</span><em class="sig-param">msg</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebProtocol.debug"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebProtocol.debug" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">debug</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">msg</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebProtocol.debug"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebProtocol.debug" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="paraview.web.protocols.ParaViewWebProtocol.getAbsolutePath">
-<code class="sig-name descname">getAbsolutePath</code><span class="sig-paren">(</span><em class="sig-param">relativePath</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebProtocol.getAbsolutePath"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebProtocol.getAbsolutePath" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">getAbsolutePath</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">relativePath</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebProtocol.getAbsolutePath"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebProtocol.getAbsolutePath" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="paraview.web.protocols.ParaViewWebProtocol.getView">
-<code class="sig-name descname">getView</code><span class="sig-paren">(</span><em class="sig-param">vid</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebProtocol.getView"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebProtocol.getView" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">getView</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">vid</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebProtocol.getView"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebProtocol.getView" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the view for a given view ID, if vid is None then return the
 current active view.
 :param vid: The view ID
 :type vid: str</p>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="paraview.web.protocols.ParaViewWebProtocol.mapIdToProxy">
-<code class="sig-name descname">mapIdToProxy</code><span class="sig-paren">(</span><em class="sig-param">id</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebProtocol.mapIdToProxy"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebProtocol.mapIdToProxy" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">mapIdToProxy</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">id</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebProtocol.mapIdToProxy"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebProtocol.mapIdToProxy" title="Permalink to this definition">¶</a></dt>
 <dd><p>Maps global-id for a proxy to the proxy instance. May return None if the
 id is not valid.</p>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="paraview.web.protocols.ParaViewWebProtocol.publish">
-<code class="sig-name descname">publish</code><span class="sig-paren">(</span><em class="sig-param">topic</em>, <em class="sig-param">event</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebProtocol.publish"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebProtocol.publish" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">publish</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">topic</span></em>, <em class="sig-param"><span class="n">event</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebProtocol.publish"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebProtocol.publish" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="paraview.web.protocols.ParaViewWebProtocol.setBaseDirectory">
-<code class="sig-name descname">setBaseDirectory</code><span class="sig-paren">(</span><em class="sig-param">basePath</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebProtocol.setBaseDirectory"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebProtocol.setBaseDirectory" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">setBaseDirectory</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">basePath</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebProtocol.setBaseDirectory"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebProtocol.setBaseDirectory" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="paraview.web.protocols.ParaViewWebProtocol.updateScalarBars">
-<code class="sig-name descname">updateScalarBars</code><span class="sig-paren">(</span><em class="sig-param">view=None</em>, <em class="sig-param">mode=1</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebProtocol.updateScalarBars"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebProtocol.updateScalarBars" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">updateScalarBars</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">view</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">mode</span><span class="o">=</span><span class="default_value">1</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebProtocol.updateScalarBars"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebProtocol.updateScalarBars" title="Permalink to this definition">¶</a></dt>
 <dd><p>Manage scalarbar state</p>
 <blockquote>
 <div><dl class="simple">
@@ -857,25 +855,25 @@ SHOW_USED_SCALAR_BARS = 0x02</p>
 
 </dd></dl>
 
-<dl class="class">
+<dl class="py class">
 <dt id="paraview.web.protocols.ParaViewWebProxyManager">
-<em class="property">class </em><code class="sig-prename descclassname">paraview.web.protocols.</code><code class="sig-name descname">ParaViewWebProxyManager</code><span class="sig-paren">(</span><em class="sig-param">allowedProxiesFile=None</em>, <em class="sig-param">baseDir=None</em>, <em class="sig-param">fileToLoad=None</em>, <em class="sig-param">allowUnconfiguredReaders=True</em>, <em class="sig-param">groupProxyEditorWidgets=True</em>, <em class="sig-param">respectPropertyGroups=True</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebProxyManager"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebProxyManager" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">paraview.web.protocols.</code><code class="sig-name descname">ParaViewWebProxyManager</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">allowedProxiesFile</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">baseDir</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">fileToLoad</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">allowUnconfiguredReaders</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">groupProxyEditorWidgets</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">respectPropertyGroups</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebProxyManager"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebProxyManager" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#paraview.web.protocols.ParaViewWebProtocol" title="paraview.web.protocols.ParaViewWebProtocol"><code class="xref py py-class docutils literal notranslate"><span class="pre">paraview.web.protocols.ParaViewWebProtocol</span></code></a></p>
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="paraview.web.protocols.ParaViewWebProxyManager.VTK_DATA_TYPES">
 <code class="sig-name descname">VTK_DATA_TYPES</code><em class="property"> = ['void', 'bit', 'char', 'unsigned_char', 'short', 'unsigned_short', 'int', 'unsigned_int', 'long', 'unsigned_long', 'float', 'double', 'id_type', 'unspecified', 'unspecified', 'signed_char']</em><a class="headerlink" href="#paraview.web.protocols.ParaViewWebProxyManager.VTK_DATA_TYPES" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="paraview.web.protocols.ParaViewWebProxyManager.applyDomains">
-<code class="sig-name descname">applyDomains</code><span class="sig-paren">(</span><em class="sig-param">parentProxy</em>, <em class="sig-param">proxy_id</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebProxyManager.applyDomains"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebProxyManager.applyDomains" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">applyDomains</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">parentProxy</span></em>, <em class="sig-param"><span class="n">proxy_id</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebProxyManager.applyDomains"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebProxyManager.applyDomains" title="Permalink to this definition">¶</a></dt>
 <dd><p>This function is used to apply the domains so that queries for
 specific values like range min and max retrieve something useful.</p>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="paraview.web.protocols.ParaViewWebProxyManager.available">
-<code class="sig-name descname">available</code><span class="sig-paren">(</span><em class="sig-param">typeOfProxy</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebProxyManager.available"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebProxyManager.available" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">available</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">typeOfProxy</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebProxyManager.available"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebProxyManager.available" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns a list of the available sources or filters, depending on the
 argument typeOfProxy, which can be either ‘filters’ or ‘sources’.  If
 typeOfProxy is anything other than ‘filter’ or ‘source’, the empty
@@ -890,56 +888,56 @@ form:</p>
 <p>[ ‘Contour’, ‘Clip’, ‘Slice’, … ]</p>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="paraview.web.protocols.ParaViewWebProxyManager.configureFiltersOrSources">
-<code class="sig-name descname">configureFiltersOrSources</code><span class="sig-paren">(</span><em class="sig-param">key</em>, <em class="sig-param">flist</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebProxyManager.configureFiltersOrSources"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebProxyManager.configureFiltersOrSources" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">configureFiltersOrSources</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">key</span></em>, <em class="sig-param"><span class="n">flist</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebProxyManager.configureFiltersOrSources"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebProxyManager.configureFiltersOrSources" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="paraview.web.protocols.ParaViewWebProxyManager.configureReaders">
-<code class="sig-name descname">configureReaders</code><span class="sig-paren">(</span><em class="sig-param">rlist</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebProxyManager.configureReaders"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebProxyManager.configureReaders" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">configureReaders</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">rlist</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebProxyManager.configureReaders"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebProxyManager.configureReaders" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="paraview.web.protocols.ParaViewWebProxyManager.create">
-<code class="sig-name descname">create</code><span class="sig-paren">(</span><em class="sig-param">functionName</em>, <em class="sig-param">parentId</em>, <em class="sig-param">initialValues={}</em>, <em class="sig-param">skipDomain=False</em>, <em class="sig-param">subProxyValues={}</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebProxyManager.create"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebProxyManager.create" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">create</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">functionName</span></em>, <em class="sig-param"><span class="n">parentId</span></em>, <em class="sig-param"><span class="n">initialValues</span><span class="o">=</span><span class="default_value">{}</span></em>, <em class="sig-param"><span class="n">skipDomain</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">subProxyValues</span><span class="o">=</span><span class="default_value">{}</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebProxyManager.create"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebProxyManager.create" title="Permalink to this definition">¶</a></dt>
 <dd><p>Creates a new filter/source proxy as a child of the specified
 parent proxy.  Returns the proxy state for the newly created
 proxy as a JSON object.</p>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="paraview.web.protocols.ParaViewWebProxyManager.delete">
-<code class="sig-name descname">delete</code><span class="sig-paren">(</span><em class="sig-param">proxyId</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebProxyManager.delete"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebProxyManager.delete" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">delete</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">proxyId</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebProxyManager.delete"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebProxyManager.delete" title="Permalink to this definition">¶</a></dt>
 <dd><p>Checks if the proxy can be deleted (it is not the input to another
 proxy), and then deletes it if so.  Returns True if the proxy was
 deleted, False otherwise.</p>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="paraview.web.protocols.ParaViewWebProxyManager.extractParentAttributes">
-<code class="sig-name descname">extractParentAttributes</code><span class="sig-paren">(</span><em class="sig-param">property</em>, <em class="sig-param">attributes</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebProxyManager.extractParentAttributes"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebProxyManager.extractParentAttributes" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">extractParentAttributes</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">property</span></em>, <em class="sig-param"><span class="n">attributes</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebProxyManager.extractParentAttributes"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebProxyManager.extractParentAttributes" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="paraview.web.protocols.ParaViewWebProxyManager.fillPropertyList">
-<code class="sig-name descname">fillPropertyList</code><span class="sig-paren">(</span><em class="sig-param">proxy_id</em>, <em class="sig-param">propertyList</em>, <em class="sig-param">dependency=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebProxyManager.fillPropertyList"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebProxyManager.fillPropertyList" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">fillPropertyList</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">proxy_id</span></em>, <em class="sig-param"><span class="n">propertyList</span></em>, <em class="sig-param"><span class="n">dependency</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebProxyManager.fillPropertyList"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebProxyManager.fillPropertyList" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="paraview.web.protocols.ParaViewWebProxyManager.findProxyId">
-<code class="sig-name descname">findProxyId</code><span class="sig-paren">(</span><em class="sig-param">groupName</em>, <em class="sig-param">proxyName</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebProxyManager.findProxyId"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebProxyManager.findProxyId" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">findProxyId</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">groupName</span></em>, <em class="sig-param"><span class="n">proxyName</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebProxyManager.findProxyId"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebProxyManager.findProxyId" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="paraview.web.protocols.ParaViewWebProxyManager.get">
-<code class="sig-name descname">get</code><span class="sig-paren">(</span><em class="sig-param">proxyId</em>, <em class="sig-param">ui=True</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebProxyManager.get"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebProxyManager.get" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">get</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">proxyId</span></em>, <em class="sig-param"><span class="n">ui</span><span class="o">=</span><span class="default_value">True</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebProxyManager.get"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebProxyManager.get" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the proxy state for the given proxyId as a JSON object.</p>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="paraview.web.protocols.ParaViewWebProxyManager.getColorInformation">
-<code class="sig-name descname">getColorInformation</code><span class="sig-paren">(</span><em class="sig-param">proxy</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebProxyManager.getColorInformation"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebProxyManager.getColorInformation" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">getColorInformation</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">proxy</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebProxyManager.getColorInformation"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebProxyManager.getColorInformation" title="Permalink to this definition">¶</a></dt>
 <dd><p>Generates a block of color information, given a representation proxy.</p>
 <blockquote>
 <div><dl class="simple">
@@ -955,29 +953,29 @@ deleted, False otherwise.</p>
 </div></blockquote>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="paraview.web.protocols.ParaViewWebProxyManager.getDataInformation">
-<code class="sig-name descname">getDataInformation</code><span class="sig-paren">(</span><em class="sig-param">proxy</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebProxyManager.getDataInformation"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebProxyManager.getDataInformation" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">getDataInformation</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">proxy</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebProxyManager.getDataInformation"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebProxyManager.getDataInformation" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="paraview.web.protocols.ParaViewWebProxyManager.getProxyDefinition">
-<code class="sig-name descname">getProxyDefinition</code><span class="sig-paren">(</span><em class="sig-param">group</em>, <em class="sig-param">name</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebProxyManager.getProxyDefinition"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebProxyManager.getProxyDefinition" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">getProxyDefinition</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">group</span></em>, <em class="sig-param"><span class="n">name</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebProxyManager.getProxyDefinition"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebProxyManager.getProxyDefinition" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="paraview.web.protocols.ParaViewWebProxyManager.getProxyListFromProperty">
-<code class="sig-name descname">getProxyListFromProperty</code><span class="sig-paren">(</span><em class="sig-param">proxy</em>, <em class="sig-param">proxyPropElement</em>, <em class="sig-param">inPropGroup</em>, <em class="sig-param">group</em>, <em class="sig-param">parentGroup</em>, <em class="sig-param">detailsKey</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebProxyManager.getProxyListFromProperty"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebProxyManager.getProxyListFromProperty" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">getProxyListFromProperty</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">proxy</span></em>, <em class="sig-param"><span class="n">proxyPropElement</span></em>, <em class="sig-param"><span class="n">inPropGroup</span></em>, <em class="sig-param"><span class="n">group</span></em>, <em class="sig-param"><span class="n">parentGroup</span></em>, <em class="sig-param"><span class="n">detailsKey</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebProxyManager.getProxyListFromProperty"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebProxyManager.getProxyListFromProperty" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="paraview.web.protocols.ParaViewWebProxyManager.getProxyXmlDefinitions">
-<code class="sig-name descname">getProxyXmlDefinitions</code><span class="sig-paren">(</span><em class="sig-param">proxy</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebProxyManager.getProxyXmlDefinitions"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebProxyManager.getProxyXmlDefinitions" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">getProxyXmlDefinitions</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">proxy</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebProxyManager.getProxyXmlDefinitions"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebProxyManager.getProxyXmlDefinitions" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="paraview.web.protocols.ParaViewWebProxyManager.getUiProperties">
-<code class="sig-name descname">getUiProperties</code><span class="sig-paren">(</span><em class="sig-param">proxyId</em>, <em class="sig-param">proxyProperties</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebProxyManager.getUiProperties"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebProxyManager.getUiProperties" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">getUiProperties</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">proxyId</span></em>, <em class="sig-param"><span class="n">proxyProperties</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebProxyManager.getUiProperties"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebProxyManager.getUiProperties" title="Permalink to this definition">¶</a></dt>
 <dd><p>Generates an array of objects, parallel to the properties, containing
 the information needed to render ui for each property.  Not all of the
 following attributes will always be present.</p>
@@ -1001,158 +999,158 @@ following attributes will always be present.</p>
 </dl>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="paraview.web.protocols.ParaViewWebProxyManager.list">
-<code class="sig-name descname">list</code><span class="sig-paren">(</span><em class="sig-param">viewId=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebProxyManager.list"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebProxyManager.list" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">list</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">viewId</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebProxyManager.list"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebProxyManager.list" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the current proxy list, specifying for each proxy it’s
 name, id, and parent (input) proxy id.  A ‘parent’ of ‘0’ means
 the proxy has no input.</p>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="paraview.web.protocols.ParaViewWebProxyManager.open">
-<code class="sig-name descname">open</code><span class="sig-paren">(</span><em class="sig-param">relativePath</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebProxyManager.open"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebProxyManager.open" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">open</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">relativePath</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebProxyManager.open"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebProxyManager.open" title="Permalink to this definition">¶</a></dt>
 <dd><p>Open relative file paths, attempting to use the file extension to select
 from the configured readers.</p>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="paraview.web.protocols.ParaViewWebProxyManager.processXmlElement">
-<code class="sig-name descname">processXmlElement</code><span class="sig-paren">(</span><em class="sig-param">proxy</em>, <em class="sig-param">xmlElement</em>, <em class="sig-param">inPropGroup</em>, <em class="sig-param">group</em>, <em class="sig-param">parentGroup</em>, <em class="sig-param">belongsToProxyProperty=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebProxyManager.processXmlElement"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebProxyManager.processXmlElement" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">processXmlElement</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">proxy</span></em>, <em class="sig-param"><span class="n">xmlElement</span></em>, <em class="sig-param"><span class="n">inPropGroup</span></em>, <em class="sig-param"><span class="n">group</span></em>, <em class="sig-param"><span class="n">parentGroup</span></em>, <em class="sig-param"><span class="n">belongsToProxyProperty</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebProxyManager.processXmlElement"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebProxyManager.processXmlElement" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="paraview.web.protocols.ParaViewWebProxyManager.readAllowedProxies">
-<code class="sig-name descname">readAllowedProxies</code><span class="sig-paren">(</span><em class="sig-param">filepathOrConfig</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebProxyManager.readAllowedProxies"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebProxyManager.readAllowedProxies" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">readAllowedProxies</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">filepathOrConfig</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebProxyManager.readAllowedProxies"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebProxyManager.readAllowedProxies" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="paraview.web.protocols.ParaViewWebProxyManager.reorderProperties">
-<code class="sig-name descname">reorderProperties</code><span class="sig-paren">(</span><em class="sig-param">rootProxyId</em>, <em class="sig-param">proxyProperties</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebProxyManager.reorderProperties"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebProxyManager.reorderProperties" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">reorderProperties</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">rootProxyId</span></em>, <em class="sig-param"><span class="n">proxyProperties</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebProxyManager.reorderProperties"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebProxyManager.reorderProperties" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="paraview.web.protocols.ParaViewWebProxyManager.restructureProperties">
-<code class="sig-name descname">restructureProperties</code><span class="sig-paren">(</span><em class="sig-param">groupList</em>, <em class="sig-param">propList</em>, <em class="sig-param">uiList</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebProxyManager.restructureProperties"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebProxyManager.restructureProperties" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">restructureProperties</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">groupList</span></em>, <em class="sig-param"><span class="n">propList</span></em>, <em class="sig-param"><span class="n">uiList</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebProxyManager.restructureProperties"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebProxyManager.restructureProperties" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="paraview.web.protocols.ParaViewWebProxyManager.setProperty">
-<code class="sig-name descname">setProperty</code><span class="sig-paren">(</span><em class="sig-param">property</em>, <em class="sig-param">propertyValue</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebProxyManager.setProperty"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebProxyManager.setProperty" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">setProperty</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">property</span></em>, <em class="sig-param"><span class="n">propertyValue</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebProxyManager.setProperty"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebProxyManager.setProperty" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="paraview.web.protocols.ParaViewWebProxyManager.trackProperty">
-<code class="sig-name descname">trackProperty</code><span class="sig-paren">(</span><em class="sig-param">detailsKey</em>, <em class="sig-param">name</em>, <em class="sig-param">panelVis</em>, <em class="sig-param">panelVisQualifier</em>, <em class="sig-param">size</em>, <em class="sig-param">inPropGroup</em>, <em class="sig-param">group</em>, <em class="sig-param">parentGroup</em>, <em class="sig-param">belongsToProxyProperty=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebProxyManager.trackProperty"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebProxyManager.trackProperty" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">trackProperty</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">detailsKey</span></em>, <em class="sig-param"><span class="n">name</span></em>, <em class="sig-param"><span class="n">panelVis</span></em>, <em class="sig-param"><span class="n">panelVisQualifier</span></em>, <em class="sig-param"><span class="n">size</span></em>, <em class="sig-param"><span class="n">inPropGroup</span></em>, <em class="sig-param"><span class="n">group</span></em>, <em class="sig-param"><span class="n">parentGroup</span></em>, <em class="sig-param"><span class="n">belongsToProxyProperty</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebProxyManager.trackProperty"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebProxyManager.trackProperty" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="paraview.web.protocols.ParaViewWebProxyManager.update">
-<code class="sig-name descname">update</code><span class="sig-paren">(</span><em class="sig-param">propertiesList</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebProxyManager.update"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebProxyManager.update" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">update</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">propertiesList</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebProxyManager.update"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebProxyManager.update" title="Permalink to this definition">¶</a></dt>
 <dd><p>Takes a list of properties and updates the corresponding proxies.</p>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="paraview.web.protocols.ParaViewWebProxyManager.validate">
-<code class="sig-name descname">validate</code><span class="sig-paren">(</span><em class="sig-param">functionName</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebProxyManager.validate"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebProxyManager.validate" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">validate</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">functionName</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebProxyManager.validate"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebProxyManager.validate" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
-<dl class="class">
+<dl class="py class">
 <dt id="paraview.web.protocols.ParaViewWebPublishImageDelivery">
-<em class="property">class </em><code class="sig-prename descclassname">paraview.web.protocols.</code><code class="sig-name descname">ParaViewWebPublishImageDelivery</code><span class="sig-paren">(</span><em class="sig-param">decode=True</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebPublishImageDelivery"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebPublishImageDelivery" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">paraview.web.protocols.</code><code class="sig-name descname">ParaViewWebPublishImageDelivery</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">decode</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebPublishImageDelivery"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebPublishImageDelivery" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#paraview.web.protocols.ParaViewWebProtocol" title="paraview.web.protocols.ParaViewWebProtocol"><code class="xref py py-class docutils literal notranslate"><span class="pre">paraview.web.protocols.ParaViewWebProtocol</span></code></a></p>
-<dl class="method">
+<dl class="py method">
 <dt id="paraview.web.protocols.ParaViewWebPublishImageDelivery.addRenderObserver">
-<code class="sig-name descname">addRenderObserver</code><span class="sig-paren">(</span><em class="sig-param">viewId</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebPublishImageDelivery.addRenderObserver"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebPublishImageDelivery.addRenderObserver" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">addRenderObserver</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">viewId</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebPublishImageDelivery.addRenderObserver"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebPublishImageDelivery.addRenderObserver" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="paraview.web.protocols.ParaViewWebPublishImageDelivery.animate">
 <code class="sig-name descname">animate</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebPublishImageDelivery.animate"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebPublishImageDelivery.animate" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="paraview.web.protocols.ParaViewWebPublishImageDelivery.enableView">
-<code class="sig-name descname">enableView</code><span class="sig-paren">(</span><em class="sig-param">viewId</em>, <em class="sig-param">enabled</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebPublishImageDelivery.enableView"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebPublishImageDelivery.enableView" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">enableView</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">viewId</span></em>, <em class="sig-param"><span class="n">enabled</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebPublishImageDelivery.enableView"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebPublishImageDelivery.enableView" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="paraview.web.protocols.ParaViewWebPublishImageDelivery.getCurrentFrameRate">
 <code class="sig-name descname">getCurrentFrameRate</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebPublishImageDelivery.getCurrentFrameRate"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebPublishImageDelivery.getCurrentFrameRate" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="paraview.web.protocols.ParaViewWebPublishImageDelivery.imagePush">
-<code class="sig-name descname">imagePush</code><span class="sig-paren">(</span><em class="sig-param">options</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebPublishImageDelivery.imagePush"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebPublishImageDelivery.imagePush" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">imagePush</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">options</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebPublishImageDelivery.imagePush"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebPublishImageDelivery.imagePush" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="paraview.web.protocols.ParaViewWebPublishImageDelivery.invalidateCache">
-<code class="sig-name descname">invalidateCache</code><span class="sig-paren">(</span><em class="sig-param">viewId</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebPublishImageDelivery.invalidateCache"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebPublishImageDelivery.invalidateCache" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">invalidateCache</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">viewId</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebPublishImageDelivery.invalidateCache"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebPublishImageDelivery.invalidateCache" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="paraview.web.protocols.ParaViewWebPublishImageDelivery.progressiveRender">
-<code class="sig-name descname">progressiveRender</code><span class="sig-paren">(</span><em class="sig-param">viewId='-1'</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebPublishImageDelivery.progressiveRender"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebPublishImageDelivery.progressiveRender" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">progressiveRender</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">viewId</span><span class="o">=</span><span class="default_value">'-1'</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebPublishImageDelivery.progressiveRender"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebPublishImageDelivery.progressiveRender" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="paraview.web.protocols.ParaViewWebPublishImageDelivery.pushRender">
-<code class="sig-name descname">pushRender</code><span class="sig-paren">(</span><em class="sig-param">vId</em>, <em class="sig-param">ignoreAnimation=False</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebPublishImageDelivery.pushRender"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebPublishImageDelivery.pushRender" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">pushRender</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">vId</span></em>, <em class="sig-param"><span class="n">ignoreAnimation</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebPublishImageDelivery.pushRender"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebPublishImageDelivery.pushRender" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="paraview.web.protocols.ParaViewWebPublishImageDelivery.removeRenderObserver">
-<code class="sig-name descname">removeRenderObserver</code><span class="sig-paren">(</span><em class="sig-param">viewId</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebPublishImageDelivery.removeRenderObserver"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebPublishImageDelivery.removeRenderObserver" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">removeRenderObserver</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">viewId</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebPublishImageDelivery.removeRenderObserver"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebPublishImageDelivery.removeRenderObserver" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="paraview.web.protocols.ParaViewWebPublishImageDelivery.renderStaleImage">
-<code class="sig-name descname">renderStaleImage</code><span class="sig-paren">(</span><em class="sig-param">vId</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebPublishImageDelivery.renderStaleImage"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebPublishImageDelivery.renderStaleImage" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">renderStaleImage</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">vId</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebPublishImageDelivery.renderStaleImage"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebPublishImageDelivery.renderStaleImage" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="paraview.web.protocols.ParaViewWebPublishImageDelivery.setMaxFrameRate">
-<code class="sig-name descname">setMaxFrameRate</code><span class="sig-paren">(</span><em class="sig-param">fps=30</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebPublishImageDelivery.setMaxFrameRate"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebPublishImageDelivery.setMaxFrameRate" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">setMaxFrameRate</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">fps</span><span class="o">=</span><span class="default_value">30</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebPublishImageDelivery.setMaxFrameRate"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebPublishImageDelivery.setMaxFrameRate" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="paraview.web.protocols.ParaViewWebPublishImageDelivery.setViewQuality">
-<code class="sig-name descname">setViewQuality</code><span class="sig-paren">(</span><em class="sig-param">viewId</em>, <em class="sig-param">quality</em>, <em class="sig-param">ratio=1</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebPublishImageDelivery.setViewQuality"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebPublishImageDelivery.setViewQuality" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">setViewQuality</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">viewId</span></em>, <em class="sig-param"><span class="n">quality</span></em>, <em class="sig-param"><span class="n">ratio</span><span class="o">=</span><span class="default_value">1</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebPublishImageDelivery.setViewQuality"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebPublishImageDelivery.setViewQuality" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="paraview.web.protocols.ParaViewWebPublishImageDelivery.setViewSize">
-<code class="sig-name descname">setViewSize</code><span class="sig-paren">(</span><em class="sig-param">viewId</em>, <em class="sig-param">width</em>, <em class="sig-param">height</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebPublishImageDelivery.setViewSize"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebPublishImageDelivery.setViewSize" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">setViewSize</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">viewId</span></em>, <em class="sig-param"><span class="n">width</span></em>, <em class="sig-param"><span class="n">height</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebPublishImageDelivery.setViewSize"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebPublishImageDelivery.setViewSize" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="paraview.web.protocols.ParaViewWebPublishImageDelivery.startViewAnimation">
-<code class="sig-name descname">startViewAnimation</code><span class="sig-paren">(</span><em class="sig-param">viewId='-1'</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebPublishImageDelivery.startViewAnimation"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebPublishImageDelivery.startViewAnimation" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">startViewAnimation</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">viewId</span><span class="o">=</span><span class="default_value">'-1'</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebPublishImageDelivery.startViewAnimation"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebPublishImageDelivery.startViewAnimation" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="paraview.web.protocols.ParaViewWebPublishImageDelivery.stillRender">
-<code class="sig-name descname">stillRender</code><span class="sig-paren">(</span><em class="sig-param">options</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebPublishImageDelivery.stillRender"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebPublishImageDelivery.stillRender" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">stillRender</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">options</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebPublishImageDelivery.stillRender"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebPublishImageDelivery.stillRender" title="Permalink to this definition">¶</a></dt>
 <dd><p>RPC Callback to render a view and obtain the rendered image.</p>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="paraview.web.protocols.ParaViewWebPublishImageDelivery.stopViewAnimation">
-<code class="sig-name descname">stopViewAnimation</code><span class="sig-paren">(</span><em class="sig-param">viewId='-1'</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebPublishImageDelivery.stopViewAnimation"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebPublishImageDelivery.stopViewAnimation" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">stopViewAnimation</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">viewId</span><span class="o">=</span><span class="default_value">'-1'</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebPublishImageDelivery.stopViewAnimation"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebPublishImageDelivery.stopViewAnimation" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
-<dl class="class">
+<dl class="py class">
 <dt id="paraview.web.protocols.ParaViewWebRemoteConnection">
 <em class="property">class </em><code class="sig-prename descclassname">paraview.web.protocols.</code><code class="sig-name descname">ParaViewWebRemoteConnection</code><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebRemoteConnection"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebRemoteConnection" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#paraview.web.protocols.ParaViewWebProtocol" title="paraview.web.protocols.ParaViewWebProtocol"><code class="xref py py-class docutils literal notranslate"><span class="pre">paraview.web.protocols.ParaViewWebProtocol</span></code></a></p>
-<dl class="method">
+<dl class="py method">
 <dt id="paraview.web.protocols.ParaViewWebRemoteConnection.connect">
-<code class="sig-name descname">connect</code><span class="sig-paren">(</span><em class="sig-param">options</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebRemoteConnection.connect"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebRemoteConnection.connect" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">connect</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">options</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebRemoteConnection.connect"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebRemoteConnection.connect" title="Permalink to this definition">¶</a></dt>
 <dd><p>Creates a connection to a remote pvserver.
 Expect an option argument which should override any of
 those default properties:</p>
@@ -1166,28 +1164,28 @@ those default properties:</p>
 </div>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="paraview.web.protocols.ParaViewWebRemoteConnection.pvDisconnect">
-<code class="sig-name descname">pvDisconnect</code><span class="sig-paren">(</span><em class="sig-param">message</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebRemoteConnection.pvDisconnect"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebRemoteConnection.pvDisconnect" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">pvDisconnect</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">message</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebRemoteConnection.pvDisconnect"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebRemoteConnection.pvDisconnect" title="Permalink to this definition">¶</a></dt>
 <dd><p>Free the current active session</p>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="paraview.web.protocols.ParaViewWebRemoteConnection.reverseConnect">
-<code class="sig-name descname">reverseConnect</code><span class="sig-paren">(</span><em class="sig-param">port=11111</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebRemoteConnection.reverseConnect"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebRemoteConnection.reverseConnect" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">reverseConnect</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">port</span><span class="o">=</span><span class="default_value">11111</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebRemoteConnection.reverseConnect"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebRemoteConnection.reverseConnect" title="Permalink to this definition">¶</a></dt>
 <dd><p>Create a reverse connection to a server.  Listens on port and waits for
 an incoming connection from the server.</p>
 </dd></dl>
 
 </dd></dl>
 
-<dl class="class">
+<dl class="py class">
 <dt id="paraview.web.protocols.ParaViewWebSaveData">
-<em class="property">class </em><code class="sig-prename descclassname">paraview.web.protocols.</code><code class="sig-name descname">ParaViewWebSaveData</code><span class="sig-paren">(</span><em class="sig-param">baseSavePath=''</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebSaveData"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebSaveData" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">paraview.web.protocols.</code><code class="sig-name descname">ParaViewWebSaveData</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">baseSavePath</span><span class="o">=</span><span class="default_value">''</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebSaveData"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebSaveData" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#paraview.web.protocols.ParaViewWebProtocol" title="paraview.web.protocols.ParaViewWebProtocol"><code class="xref py py-class docutils literal notranslate"><span class="pre">paraview.web.protocols.ParaViewWebProtocol</span></code></a></p>
-<dl class="method">
+<dl class="py method">
 <dt id="paraview.web.protocols.ParaViewWebSaveData.saveData">
-<code class="sig-name descname">saveData</code><span class="sig-paren">(</span><em class="sig-param">filePath</em>, <em class="sig-param">options=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebSaveData.saveData"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebSaveData.saveData" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">saveData</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">filePath</span></em>, <em class="sig-param"><span class="n">options</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebSaveData.saveData"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebSaveData.saveData" title="Permalink to this definition">¶</a></dt>
 <dd><p>Save some data on the server side.  Can save data from a proxy, a
 screenshot, or else the current state.  Options may be different
 depending on the type of data to be save.  Saving a screenshot
@@ -1206,251 +1204,251 @@ id specifying which filter or source to save output from.</p>
 
 </dd></dl>
 
-<dl class="class">
+<dl class="py class">
 <dt id="paraview.web.protocols.ParaViewWebSelectionHandler">
-<em class="property">class </em><code class="sig-prename descclassname">paraview.web.protocols.</code><code class="sig-name descname">ParaViewWebSelectionHandler</code><span class="sig-paren">(</span><em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebSelectionHandler"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebSelectionHandler" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">paraview.web.protocols.</code><code class="sig-name descname">ParaViewWebSelectionHandler</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebSelectionHandler"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebSelectionHandler" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#paraview.web.protocols.ParaViewWebProtocol" title="paraview.web.protocols.ParaViewWebProtocol"><code class="xref py py-class docutils literal notranslate"><span class="pre">paraview.web.protocols.ParaViewWebProtocol</span></code></a></p>
-<dl class="method">
+<dl class="py method">
 <dt id="paraview.web.protocols.ParaViewWebSelectionHandler.endSelection">
-<code class="sig-name descname">endSelection</code><span class="sig-paren">(</span><em class="sig-param">area</em>, <em class="sig-param">extract</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebSelectionHandler.endSelection"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebSelectionHandler.endSelection" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">endSelection</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">area</span></em>, <em class="sig-param"><span class="n">extract</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebSelectionHandler.endSelection"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebSelectionHandler.endSelection" title="Permalink to this definition">¶</a></dt>
 <dd><p>Method used to finalize an interactive selection by providing
 the [ startPointX, startPointY, endPointX, endPointY ] area
 where (0,0) match the lower left corner of the pixel screen.</p>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="paraview.web.protocols.ParaViewWebSelectionHandler.startSelection">
-<code class="sig-name descname">startSelection</code><span class="sig-paren">(</span><em class="sig-param">viewId</em>, <em class="sig-param">selectionType</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebSelectionHandler.startSelection"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebSelectionHandler.startSelection" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">startSelection</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">viewId</span></em>, <em class="sig-param"><span class="n">selectionType</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebSelectionHandler.startSelection"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebSelectionHandler.startSelection" title="Permalink to this definition">¶</a></dt>
 <dd><p>Method used to initialize an interactive selection</p>
 </dd></dl>
 
 </dd></dl>
 
-<dl class="class">
+<dl class="py class">
 <dt id="paraview.web.protocols.ParaViewWebStartupPluginLoader">
-<em class="property">class </em><code class="sig-prename descclassname">paraview.web.protocols.</code><code class="sig-name descname">ParaViewWebStartupPluginLoader</code><span class="sig-paren">(</span><em class="sig-param">plugins=None</em>, <em class="sig-param">pathSeparator=':'</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebStartupPluginLoader"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebStartupPluginLoader" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">paraview.web.protocols.</code><code class="sig-name descname">ParaViewWebStartupPluginLoader</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">plugins</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">pathSeparator</span><span class="o">=</span><span class="default_value">':'</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebStartupPluginLoader"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebStartupPluginLoader" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#paraview.web.protocols.ParaViewWebProtocol" title="paraview.web.protocols.ParaViewWebProtocol"><code class="xref py py-class docutils literal notranslate"><span class="pre">paraview.web.protocols.ParaViewWebProtocol</span></code></a></p>
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="paraview.web.protocols.ParaViewWebStartupPluginLoader.loaded">
 <code class="sig-name descname">loaded</code><em class="property"> = False</em><a class="headerlink" href="#paraview.web.protocols.ParaViewWebStartupPluginLoader.loaded" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
-<dl class="class">
+<dl class="py class">
 <dt id="paraview.web.protocols.ParaViewWebStartupRemoteConnection">
-<em class="property">class </em><code class="sig-prename descclassname">paraview.web.protocols.</code><code class="sig-name descname">ParaViewWebStartupRemoteConnection</code><span class="sig-paren">(</span><em class="sig-param">dsHost=None</em>, <em class="sig-param">dsPort=11111</em>, <em class="sig-param">rsHost=None</em>, <em class="sig-param">rsPort=22221</em>, <em class="sig-param">rcPort=-1</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebStartupRemoteConnection"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebStartupRemoteConnection" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">paraview.web.protocols.</code><code class="sig-name descname">ParaViewWebStartupRemoteConnection</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">dsHost</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">dsPort</span><span class="o">=</span><span class="default_value">11111</span></em>, <em class="sig-param"><span class="n">rsHost</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">rsPort</span><span class="o">=</span><span class="default_value">22221</span></em>, <em class="sig-param"><span class="n">rcPort</span><span class="o">=</span><span class="default_value">- 1</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebStartupRemoteConnection"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebStartupRemoteConnection" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#paraview.web.protocols.ParaViewWebProtocol" title="paraview.web.protocols.ParaViewWebProtocol"><code class="xref py py-class docutils literal notranslate"><span class="pre">paraview.web.protocols.ParaViewWebProtocol</span></code></a></p>
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="paraview.web.protocols.ParaViewWebStartupRemoteConnection.connected">
 <code class="sig-name descname">connected</code><em class="property"> = False</em><a class="headerlink" href="#paraview.web.protocols.ParaViewWebStartupRemoteConnection.connected" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
-<dl class="class">
+<dl class="py class">
 <dt id="paraview.web.protocols.ParaViewWebStateLoader">
-<em class="property">class </em><code class="sig-prename descclassname">paraview.web.protocols.</code><code class="sig-name descname">ParaViewWebStateLoader</code><span class="sig-paren">(</span><em class="sig-param">state_path=None</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebStateLoader"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebStateLoader" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">paraview.web.protocols.</code><code class="sig-name descname">ParaViewWebStateLoader</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">state_path</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebStateLoader"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebStateLoader" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#paraview.web.protocols.ParaViewWebProtocol" title="paraview.web.protocols.ParaViewWebProtocol"><code class="xref py py-class docutils literal notranslate"><span class="pre">paraview.web.protocols.ParaViewWebProtocol</span></code></a></p>
-<dl class="method">
+<dl class="py method">
 <dt id="paraview.web.protocols.ParaViewWebStateLoader.loadState">
-<code class="sig-name descname">loadState</code><span class="sig-paren">(</span><em class="sig-param">state_file</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebStateLoader.loadState"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebStateLoader.loadState" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">loadState</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">state_file</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebStateLoader.loadState"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebStateLoader.loadState" title="Permalink to this definition">¶</a></dt>
 <dd><p>Load a state file and return the list of view ids</p>
 </dd></dl>
 
 </dd></dl>
 
-<dl class="class">
+<dl class="py class">
 <dt id="paraview.web.protocols.ParaViewWebTestProtocols">
 <em class="property">class </em><code class="sig-prename descclassname">paraview.web.protocols.</code><code class="sig-name descname">ParaViewWebTestProtocols</code><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebTestProtocols"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebTestProtocols" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#paraview.web.protocols.ParaViewWebProtocol" title="paraview.web.protocols.ParaViewWebProtocol"><code class="xref py py-class docutils literal notranslate"><span class="pre">paraview.web.protocols.ParaViewWebProtocol</span></code></a></p>
-<dl class="method">
+<dl class="py method">
 <dt id="paraview.web.protocols.ParaViewWebTestProtocols.clearAll">
 <code class="sig-name descname">clearAll</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebTestProtocols.clearAll"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebTestProtocols.clearAll" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="paraview.web.protocols.ParaViewWebTestProtocols.getColoringInfo">
-<code class="sig-name descname">getColoringInfo</code><span class="sig-paren">(</span><em class="sig-param">proxyId</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebTestProtocols.getColoringInfo"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebTestProtocols.getColoringInfo" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">getColoringInfo</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">proxyId</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebTestProtocols.getColoringInfo"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebTestProtocols.getColoringInfo" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="paraview.web.protocols.ParaViewWebTestProtocols.getReprFromSource">
-<code class="sig-name descname">getReprFromSource</code><span class="sig-paren">(</span><em class="sig-param">srcProxyId</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebTestProtocols.getReprFromSource"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebTestProtocols.getReprFromSource" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">getReprFromSource</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">srcProxyId</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebTestProtocols.getReprFromSource"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebTestProtocols.getReprFromSource" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
-<dl class="class">
+<dl class="py class">
 <dt id="paraview.web.protocols.ParaViewWebTimeHandler">
-<em class="property">class </em><code class="sig-prename descclassname">paraview.web.protocols.</code><code class="sig-name descname">ParaViewWebTimeHandler</code><span class="sig-paren">(</span><em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebTimeHandler"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebTimeHandler" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">paraview.web.protocols.</code><code class="sig-name descname">ParaViewWebTimeHandler</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebTimeHandler"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebTimeHandler" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#paraview.web.protocols.ParaViewWebProtocol" title="paraview.web.protocols.ParaViewWebProtocol"><code class="xref py py-class docutils literal notranslate"><span class="pre">paraview.web.protocols.ParaViewWebProtocol</span></code></a></p>
-<dl class="method">
+<dl class="py method">
 <dt id="paraview.web.protocols.ParaViewWebTimeHandler.getTimeStep">
 <code class="sig-name descname">getTimeStep</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebTimeHandler.getTimeStep"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebTimeHandler.getTimeStep" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="paraview.web.protocols.ParaViewWebTimeHandler.getTimeValue">
 <code class="sig-name descname">getTimeValue</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebTimeHandler.getTimeValue"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebTimeHandler.getTimeValue" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="paraview.web.protocols.ParaViewWebTimeHandler.getTimeValues">
 <code class="sig-name descname">getTimeValues</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebTimeHandler.getTimeValues"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebTimeHandler.getTimeValues" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="paraview.web.protocols.ParaViewWebTimeHandler.nextPlay">
 <code class="sig-name descname">nextPlay</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebTimeHandler.nextPlay"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebTimeHandler.nextPlay" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="paraview.web.protocols.ParaViewWebTimeHandler.play">
-<code class="sig-name descname">play</code><span class="sig-paren">(</span><em class="sig-param">deltaT=0.1</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebTimeHandler.play"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebTimeHandler.play" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">play</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">deltaT</span><span class="o">=</span><span class="default_value">0.1</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebTimeHandler.play"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebTimeHandler.play" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="paraview.web.protocols.ParaViewWebTimeHandler.setTimeStep">
-<code class="sig-name descname">setTimeStep</code><span class="sig-paren">(</span><em class="sig-param">timeIdx</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebTimeHandler.setTimeStep"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebTimeHandler.setTimeStep" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">setTimeStep</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">timeIdx</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebTimeHandler.setTimeStep"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebTimeHandler.setTimeStep" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="paraview.web.protocols.ParaViewWebTimeHandler.setTimeValue">
-<code class="sig-name descname">setTimeValue</code><span class="sig-paren">(</span><em class="sig-param">t</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebTimeHandler.setTimeValue"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebTimeHandler.setTimeValue" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">setTimeValue</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">t</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebTimeHandler.setTimeValue"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebTimeHandler.setTimeValue" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="paraview.web.protocols.ParaViewWebTimeHandler.stop">
 <code class="sig-name descname">stop</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebTimeHandler.stop"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebTimeHandler.stop" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="paraview.web.protocols.ParaViewWebTimeHandler.updateTime">
-<code class="sig-name descname">updateTime</code><span class="sig-paren">(</span><em class="sig-param">action</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebTimeHandler.updateTime"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebTimeHandler.updateTime" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">updateTime</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">action</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebTimeHandler.updateTime"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebTimeHandler.updateTime" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
-<dl class="class">
+<dl class="py class">
 <dt id="paraview.web.protocols.ParaViewWebViewPort">
-<em class="property">class </em><code class="sig-prename descclassname">paraview.web.protocols.</code><code class="sig-name descname">ParaViewWebViewPort</code><span class="sig-paren">(</span><em class="sig-param">scale=1.0</em>, <em class="sig-param">maxWidth=2560</em>, <em class="sig-param">maxHeight=1440</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebViewPort"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebViewPort" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">paraview.web.protocols.</code><code class="sig-name descname">ParaViewWebViewPort</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">scale</span><span class="o">=</span><span class="default_value">1.0</span></em>, <em class="sig-param"><span class="n">maxWidth</span><span class="o">=</span><span class="default_value">2560</span></em>, <em class="sig-param"><span class="n">maxHeight</span><span class="o">=</span><span class="default_value">1440</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebViewPort"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebViewPort" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#paraview.web.protocols.ParaViewWebProtocol" title="paraview.web.protocols.ParaViewWebProtocol"><code class="xref py py-class docutils literal notranslate"><span class="pre">paraview.web.protocols.ParaViewWebProtocol</span></code></a></p>
-<dl class="method">
+<dl class="py method">
 <dt id="paraview.web.protocols.ParaViewWebViewPort.getCamera">
-<code class="sig-name descname">getCamera</code><span class="sig-paren">(</span><em class="sig-param">view_id</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebViewPort.getCamera"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebViewPort.getCamera" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">getCamera</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">view_id</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebViewPort.getCamera"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebViewPort.getCamera" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="paraview.web.protocols.ParaViewWebViewPort.resetCamera">
-<code class="sig-name descname">resetCamera</code><span class="sig-paren">(</span><em class="sig-param">viewId</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebViewPort.resetCamera"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebViewPort.resetCamera" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">resetCamera</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">viewId</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebViewPort.resetCamera"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebViewPort.resetCamera" title="Permalink to this definition">¶</a></dt>
 <dd><p>RPC callback to reset camera.</p>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="paraview.web.protocols.ParaViewWebViewPort.updateCamera">
-<code class="sig-name descname">updateCamera</code><span class="sig-paren">(</span><em class="sig-param">view_id</em>, <em class="sig-param">focal_point</em>, <em class="sig-param">view_up</em>, <em class="sig-param">position</em>, <em class="sig-param">forceUpdate=True</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebViewPort.updateCamera"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebViewPort.updateCamera" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">updateCamera</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">view_id</span></em>, <em class="sig-param"><span class="n">focal_point</span></em>, <em class="sig-param"><span class="n">view_up</span></em>, <em class="sig-param"><span class="n">position</span></em>, <em class="sig-param"><span class="n">forceUpdate</span><span class="o">=</span><span class="default_value">True</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebViewPort.updateCamera"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebViewPort.updateCamera" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="paraview.web.protocols.ParaViewWebViewPort.updateCenterAxesVisibility">
-<code class="sig-name descname">updateCenterAxesVisibility</code><span class="sig-paren">(</span><em class="sig-param">viewId</em>, <em class="sig-param">showAxis</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebViewPort.updateCenterAxesVisibility"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebViewPort.updateCenterAxesVisibility" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">updateCenterAxesVisibility</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">viewId</span></em>, <em class="sig-param"><span class="n">showAxis</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebViewPort.updateCenterAxesVisibility"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebViewPort.updateCenterAxesVisibility" title="Permalink to this definition">¶</a></dt>
 <dd><p>RPC callback to show/hide CenterAxesVisibility.</p>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="paraview.web.protocols.ParaViewWebViewPort.updateOrientationAxesVisibility">
-<code class="sig-name descname">updateOrientationAxesVisibility</code><span class="sig-paren">(</span><em class="sig-param">viewId</em>, <em class="sig-param">showAxis</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebViewPort.updateOrientationAxesVisibility"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebViewPort.updateOrientationAxesVisibility" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">updateOrientationAxesVisibility</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">viewId</span></em>, <em class="sig-param"><span class="n">showAxis</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebViewPort.updateOrientationAxesVisibility"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebViewPort.updateOrientationAxesVisibility" title="Permalink to this definition">¶</a></dt>
 <dd><p>RPC callback to show/hide OrientationAxis.</p>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="paraview.web.protocols.ParaViewWebViewPort.updateSize">
-<code class="sig-name descname">updateSize</code><span class="sig-paren">(</span><em class="sig-param">view_id</em>, <em class="sig-param">width</em>, <em class="sig-param">height</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebViewPort.updateSize"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebViewPort.updateSize" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">updateSize</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">view_id</span></em>, <em class="sig-param"><span class="n">width</span></em>, <em class="sig-param"><span class="n">height</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebViewPort.updateSize"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebViewPort.updateSize" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
-<dl class="class">
+<dl class="py class">
 <dt id="paraview.web.protocols.ParaViewWebViewPortGeometryDelivery">
-<em class="property">class </em><code class="sig-prename descclassname">paraview.web.protocols.</code><code class="sig-name descname">ParaViewWebViewPortGeometryDelivery</code><span class="sig-paren">(</span><em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebViewPortGeometryDelivery"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebViewPortGeometryDelivery" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">paraview.web.protocols.</code><code class="sig-name descname">ParaViewWebViewPortGeometryDelivery</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebViewPortGeometryDelivery"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebViewPortGeometryDelivery" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#paraview.web.protocols.ParaViewWebProtocol" title="paraview.web.protocols.ParaViewWebProtocol"><code class="xref py py-class docutils literal notranslate"><span class="pre">paraview.web.protocols.ParaViewWebProtocol</span></code></a></p>
-<dl class="method">
+<dl class="py method">
 <dt id="paraview.web.protocols.ParaViewWebViewPortGeometryDelivery.getCachedWebGLData">
-<code class="sig-name descname">getCachedWebGLData</code><span class="sig-paren">(</span><em class="sig-param">sha</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebViewPortGeometryDelivery.getCachedWebGLData"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebViewPortGeometryDelivery.getCachedWebGLData" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">getCachedWebGLData</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">sha</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebViewPortGeometryDelivery.getCachedWebGLData"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebViewPortGeometryDelivery.getCachedWebGLData" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="paraview.web.protocols.ParaViewWebViewPortGeometryDelivery.getSceneMetaData">
-<code class="sig-name descname">getSceneMetaData</code><span class="sig-paren">(</span><em class="sig-param">view_id</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebViewPortGeometryDelivery.getSceneMetaData"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebViewPortGeometryDelivery.getSceneMetaData" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">getSceneMetaData</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">view_id</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebViewPortGeometryDelivery.getSceneMetaData"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebViewPortGeometryDelivery.getSceneMetaData" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="paraview.web.protocols.ParaViewWebViewPortGeometryDelivery.getSceneMetaDataAllTimesteps">
-<code class="sig-name descname">getSceneMetaDataAllTimesteps</code><span class="sig-paren">(</span><em class="sig-param">view_id=-1</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebViewPortGeometryDelivery.getSceneMetaDataAllTimesteps"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebViewPortGeometryDelivery.getSceneMetaDataAllTimesteps" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">getSceneMetaDataAllTimesteps</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">view_id</span><span class="o">=</span><span class="default_value">- 1</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebViewPortGeometryDelivery.getSceneMetaDataAllTimesteps"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebViewPortGeometryDelivery.getSceneMetaDataAllTimesteps" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="paraview.web.protocols.ParaViewWebViewPortGeometryDelivery.getWebGLData">
-<code class="sig-name descname">getWebGLData</code><span class="sig-paren">(</span><em class="sig-param">view_id</em>, <em class="sig-param">object_id</em>, <em class="sig-param">part</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebViewPortGeometryDelivery.getWebGLData"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebViewPortGeometryDelivery.getWebGLData" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">getWebGLData</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">view_id</span></em>, <em class="sig-param"><span class="n">object_id</span></em>, <em class="sig-param"><span class="n">part</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebViewPortGeometryDelivery.getWebGLData"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebViewPortGeometryDelivery.getWebGLData" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
-<dl class="class">
+<dl class="py class">
 <dt id="paraview.web.protocols.ParaViewWebViewPortImageDelivery">
 <em class="property">class </em><code class="sig-prename descclassname">paraview.web.protocols.</code><code class="sig-name descname">ParaViewWebViewPortImageDelivery</code><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebViewPortImageDelivery"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebViewPortImageDelivery" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#paraview.web.protocols.ParaViewWebProtocol" title="paraview.web.protocols.ParaViewWebProtocol"><code class="xref py py-class docutils literal notranslate"><span class="pre">paraview.web.protocols.ParaViewWebProtocol</span></code></a></p>
-<dl class="method">
+<dl class="py method">
 <dt id="paraview.web.protocols.ParaViewWebViewPortImageDelivery.stillRender">
-<code class="sig-name descname">stillRender</code><span class="sig-paren">(</span><em class="sig-param">options</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebViewPortImageDelivery.stillRender"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebViewPortImageDelivery.stillRender" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">stillRender</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">options</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebViewPortImageDelivery.stillRender"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebViewPortImageDelivery.stillRender" title="Permalink to this definition">¶</a></dt>
 <dd><p>RPC Callback to render a view and obtain the rendered image.</p>
 </dd></dl>
 
 </dd></dl>
 
-<dl class="class">
+<dl class="py class">
 <dt id="paraview.web.protocols.ParaViewWebWidgetManager">
 <em class="property">class </em><code class="sig-prename descclassname">paraview.web.protocols.</code><code class="sig-name descname">ParaViewWebWidgetManager</code><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebWidgetManager"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebWidgetManager" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#paraview.web.protocols.ParaViewWebProtocol" title="paraview.web.protocols.ParaViewWebProtocol"><code class="xref py py-class docutils literal notranslate"><span class="pre">paraview.web.protocols.ParaViewWebProtocol</span></code></a></p>
-<dl class="method">
+<dl class="py method">
 <dt id="paraview.web.protocols.ParaViewWebWidgetManager.CreateWidgetRepresentation">
-<code class="sig-name descname">CreateWidgetRepresentation</code><span class="sig-paren">(</span><em class="sig-param">view</em>, <em class="sig-param">name</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebWidgetManager.CreateWidgetRepresentation"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebWidgetManager.CreateWidgetRepresentation" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">CreateWidgetRepresentation</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">view</span></em>, <em class="sig-param"><span class="n">name</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebWidgetManager.CreateWidgetRepresentation"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebWidgetManager.CreateWidgetRepresentation" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="paraview.web.protocols.ParaViewWebWidgetManager.addRuler">
-<code class="sig-name descname">addRuler</code><span class="sig-paren">(</span><em class="sig-param">view_id=-1</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebWidgetManager.addRuler"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebWidgetManager.addRuler" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">addRuler</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">view_id</span><span class="o">=</span><span class="default_value">- 1</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebWidgetManager.addRuler"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebWidgetManager.addRuler" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="paraview.web.protocols.ParaViewWebWidgetManager.createWidgetRepresentation">
-<code class="sig-name descname">createWidgetRepresentation</code><span class="sig-paren">(</span><em class="sig-param">proxy_id</em>, <em class="sig-param">view_id</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebWidgetManager.createWidgetRepresentation"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebWidgetManager.createWidgetRepresentation" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">createWidgetRepresentation</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">proxy_id</span></em>, <em class="sig-param"><span class="n">view_id</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebWidgetManager.createWidgetRepresentation"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebWidgetManager.createWidgetRepresentation" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="paraview.web.protocols.alphanum_key">
-<code class="sig-prename descclassname">paraview.web.protocols.</code><code class="sig-name descname">alphanum_key</code><span class="sig-paren">(</span><em class="sig-param">s</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#alphanum_key"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.alphanum_key" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">paraview.web.protocols.</code><code class="sig-name descname">alphanum_key</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">s</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#alphanum_key"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.alphanum_key" title="Permalink to this definition">¶</a></dt>
 <dd><p>Turn a string into a list of string and number chunks.
 “z23a” -&gt; [“z”, 23, “a”]</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="paraview.web.protocols.buffer_shared">
 <code class="sig-prename descclassname">paraview.web.protocols.</code><code class="sig-name descname">buffer_shared</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#paraview.web.protocols.buffer_shared" title="Permalink to this definition">¶</a></dt>
 <dd><p>Check if two objects share the same buffer, meaning that they point to the same block of memory.  An TypeError exception will be raised if either of the objects does not provide a buffer.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="paraview.web.protocols.sanitizeKeys">
-<code class="sig-prename descclassname">paraview.web.protocols.</code><code class="sig-name descname">sanitizeKeys</code><span class="sig-paren">(</span><em class="sig-param">mapObj</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#sanitizeKeys"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.sanitizeKeys" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">paraview.web.protocols.</code><code class="sig-name descname">sanitizeKeys</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mapObj</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#sanitizeKeys"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.sanitizeKeys" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="paraview.web.protocols.tryint">
-<code class="sig-prename descclassname">paraview.web.protocols.</code><code class="sig-name descname">tryint</code><span class="sig-paren">(</span><em class="sig-param">s</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#tryint"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.tryint" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">paraview.web.protocols.</code><code class="sig-name descname">tryint</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">s</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#tryint"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.tryint" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </div>

@@ -7,12 +7,10 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>util.vtkAlgorithm Module &mdash; ParaView/Python 5.9.0-RC1-193-gf1bb9b526b documentation</title>
+  <title>util.vtkAlgorithm Module &mdash; ParaView/Python 5.9.0-RC1-211-gf85ab347b3 documentation</title>
   
 
   
-  
-    <link rel="shortcut icon" href="_static/pvIcon.ico"/>
   
 
   
@@ -24,7 +22,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:'./',
-        VERSION:'5.9.0-RC1-193-gf1bb9b526b',
+        VERSION:'5.9.0-RC1-211-gf85ab347b3',
         COLLAPSE_INDEX:false,
         FILE_SUFFIX:'.html',
         HAS_SOURCE:  true
@@ -49,7 +47,7 @@
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="ParaView/Python 5.9.0-RC1-193-gf1bb9b526b documentation" href="index.html"/>
+    <link rel="top" title="ParaView/Python 5.9.0-RC1-211-gf85ab347b3 documentation" href="index.html"/>
         <link rel="up" title="util Package" href="paraview.util.html"/>
         <link rel="next" title="web Package" href="paraview.web.html"/>
         <link rel="prev" title="util Package" href="paraview.util.html"/> 
@@ -69,7 +67,7 @@
           <li> <a href="index.html">
             <img src="_static/paraview-logo-small.png"
             alt="ParaView/Python"></img></a> </li>
-          <li class="version"> version 5.9.0-RC1-193-gf1bb9b526b</li>
+          <li class="version"> version 5.9.0-RC1-211-gf85ab347b3</li>
         </ul>
         <form id ="rtd-search-form" class="wy-form" action="search.html" method="get">
   <input type="text" name="q" placeholder="Search docs" />
@@ -622,9 +620,9 @@ to build the ParaView-specific XML via decorators.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">vtkmodules.util.vtkAlgorithm</span> <span class="kn">import</span> <span class="n">VTKPythonAlgorithmBase</span>
 <span class="kn">from</span> <span class="nn">paraview.util.vtkAlgorithm</span> <span class="kn">import</span> <span class="n">smproxy</span><span class="p">,</span> <span class="n">smproperty</span><span class="p">,</span> <span class="n">smdomain</span>
 
-<span class="nd">@smproxy.filter</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="s2">&quot;Contour Shrink&quot;</span><span class="p">)</span>
-<span class="nd">@smproperty.input</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;Input&quot;</span><span class="p">)</span>
-<span class="nd">@smdomain.datatype</span><span class="p">(</span><span class="n">dataTypes</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;vtkDataSet&quot;</span><span class="p">],</span> <span class="n">composite_data_supported</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+<span class="nd">@smproxy</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="s2">&quot;Contour Shrink&quot;</span><span class="p">)</span>
+<span class="nd">@smproperty</span><span class="o">.</span><span class="n">input</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;Input&quot;</span><span class="p">)</span>
+<span class="nd">@smdomain</span><span class="o">.</span><span class="n">datatype</span><span class="p">(</span><span class="n">dataTypes</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;vtkDataSet&quot;</span><span class="p">],</span> <span class="n">composite_data_supported</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 <span class="k">class</span> <span class="nc">ContourShrink</span><span class="p">(</span><span class="n">VTKPythonAlgorithmBase</span><span class="p">):</span>
   <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
       <span class="n">VTKPythonAlgorithmBase</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
@@ -663,28 +661,28 @@ generated node or to explicit limit the arguments provided.</p></li>
 the direction of nesting in the XML e.g. to add a domain to a property, one
 would nest decorators as follows:</p></li>
 </ol>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span> <span class="nd">@smproperty.intvector</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;Radius&quot;</span><span class="p">,</span> <span class="n">default_values</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
- <span class="nd">@smdomain.intrange</span><span class="p">(</span><span class="nb">min</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="nb">max</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
- <span class="nd">@smhint.xml</span><span class="p">(</span><span class="s2">&quot;&lt;SomeHint/&gt;&quot;</span><span class="p">)</span>
- <span class="k">def</span> <span class="nf">SetRadius</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">radius</span><span class="p">):</span>
-     <span class="o">...</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span> @smproperty.intvector(name=&quot;Radius&quot;, default_values=[0])
+ @smdomain.intrange(min=0, max=10)
+ @smhint.xml(&quot;&lt;SomeHint/&gt;&quot;)
+ def SetRadius(self, radius):
+     ...
 
 
-<span class="n">Note</span><span class="p">,</span> <span class="n">since</span> <span class="n">domains</span> <span class="n">can</span><span class="s1">&#39;t have nested hints, the hint specified after the</span>
-<span class="sb">`smdomain.intrange`</span> <span class="n">invocation</span> <span class="ow">is</span> <span class="n">intended</span> <span class="k">for</span> <span class="n">the</span> <span class="sb">`smproperty`</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">the</span>
-<span class="sb">`smdomain`</span><span class="o">.</span>
+Note, since domains can&#39;t have nested hints, the hint specified after the
+`smdomain.intrange` invocation is intended for the `smproperty` and not the
+`smdomain`.
 
-<span class="n">When</span> <span class="n">chaining</span> <span class="sb">`smproperty`</span> <span class="n">decorators</span> <span class="n">under</span> <span class="n">a</span> <span class="sb">`smproxy`</span><span class="p">,</span> <span class="n">the</span> <span class="n">order</span> <span class="ow">in</span> <span class="n">which</span>
-<span class="n">the</span> <span class="n">properties</span> <span class="n">are</span> <span class="n">shown</span> <span class="ow">in</span> <span class="n">ParaView</span> <span class="n">UI</span> <span class="ow">is</span> <span class="n">reverse</span> <span class="n">of</span> <span class="n">the</span> <span class="n">order</span> <span class="ow">in</span> <span class="n">the</span>
-<span class="n">Python</span> <span class="n">code</span> <span class="n">e</span><span class="o">.</span><span class="n">g</span><span class="o">.</span> <span class="n">the</span> <span class="ow">in</span> <span class="n">following</span> <span class="n">snippets</span> <span class="n">the</span> <span class="n">UI</span> <span class="n">will</span> <span class="n">show</span> <span class="s2">&quot;PolyDataInput&quot;</span>
-<span class="n">above</span> <span class="s2">&quot;TableInput&quot;</span><span class="o">.</span>
+When chaining `smproperty` decorators under a `smproxy`, the order in which
+the properties are shown in ParaView UI is reverse of the order in the
+Python code e.g. the in following snippets the UI will show &quot;PolyDataInput&quot;
+above &quot;TableInput&quot;.
 </pre></div>
 </div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nd">@smproxy.filter</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
-<span class="nd">@smproperty.input</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;TableInput&quot;</span><span class="p">,</span> <span class="n">port_index</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="o">...</span><span class="p">)</span>
-<span class="nd">@smdomain.datatype</span><span class="p">(</span><span class="n">dataTypes</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;vtkTable&quot;</span><span class="p">])</span>
-<span class="nd">@smproperty.input</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;PolyDataInput&quot;</span><span class="p">,</span> <span class="n">port_index</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="o">...</span><span class="p">)</span>
-<span class="nd">@smdomain.datatype</span><span class="p">(</span><span class="n">dataTypes</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;vtkPolyData&quot;</span><span class="p">])</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nd">@smproxy</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
+<span class="nd">@smproperty</span><span class="o">.</span><span class="n">input</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;TableInput&quot;</span><span class="p">,</span> <span class="n">port_index</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="o">...</span><span class="p">)</span>
+<span class="nd">@smdomain</span><span class="o">.</span><span class="n">datatype</span><span class="p">(</span><span class="n">dataTypes</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;vtkTable&quot;</span><span class="p">])</span>
+<span class="nd">@smproperty</span><span class="o">.</span><span class="n">input</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;PolyDataInput&quot;</span><span class="p">,</span> <span class="n">port_index</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="o">...</span><span class="p">)</span>
+<span class="nd">@smdomain</span><span class="o">.</span><span class="n">datatype</span><span class="p">(</span><span class="n">dataTypes</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;vtkPolyData&quot;</span><span class="p">])</span>
 <span class="k">class</span> <span class="nc">MyFilter</span><span class="p">(</span><span class="n">VTKPythonAlgorithmBase</span><span class="p">):</span>
    <span class="o">...</span>
 </pre></div>
@@ -775,7 +773,7 @@ objects (with the exception of <cite>smproperty.input</cite>).</p></li>
 <h3><cite>smproperty.xml</cite><a class="headerlink" href="#smproperty-xml" title="Permalink to this headline">¶</a></h3>
 <p>This is a catch-all decorator. One can use this to add arbitrary XML to the
 proxy definition.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nd">@smproperty.xml</span><span class="p">(</span><span class="n">xmlstr</span><span class="o">=</span><span class="s2">&quot;&lt;IntVectorProperty name=..&gt; ....  &lt;/IntVectorProperty&gt;&quot;</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nd">@smproperty</span><span class="o">.</span><span class="n">xml</span><span class="p">(</span><span class="n">xmlstr</span><span class="o">=</span><span class="s2">&quot;&lt;IntVectorProperty name=..&gt; ....  &lt;/IntVectorProperty&gt;&quot;</span><span class="p">)</span>
 <span class="k">def</span> <span class="nf">MyMethod</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">...</span><span class="p">):</span>
     <span class="o">...</span>
 </pre></div>
@@ -798,9 +796,9 @@ takes another VTK object as argument.</p>
 have custom methods in Python in the <cite>VTKPythonAlgorithmBase</cite> subclass. Hence,
 this decorator is often simply added to the class definition rather than a
 particular method.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nd">@smproxy.filter</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
-<span class="nd">@smproperty.input</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;TableInput&quot;</span><span class="p">,</span> <span class="n">port_index</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">multiple_input</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
-<span class="nd">@smdomain.datatype</span><span class="p">(</span><span class="n">dataTypes</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;vtkTable&quot;</span><span class="p">],</span> <span class="n">composite_data_supported</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nd">@smproxy</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
+<span class="nd">@smproperty</span><span class="o">.</span><span class="n">input</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;TableInput&quot;</span><span class="p">,</span> <span class="n">port_index</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">multiple_input</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="nd">@smdomain</span><span class="o">.</span><span class="n">datatype</span><span class="p">(</span><span class="n">dataTypes</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;vtkTable&quot;</span><span class="p">],</span> <span class="n">composite_data_supported</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 <span class="k">class</span> <span class="nc">MyFilter</span><span class="p">(</span><span class="n">VTKPythonAlgorithmBase</span><span class="p">):</span>
    <span class="o">...</span>
 </pre></div>
@@ -843,7 +841,7 @@ several of the decorators described here may be used.</p>
 <span class="c1"># This is module to import. It provides VTKPythonAlgorithmBase, the base class</span>
 <span class="c1"># for all python-based vtkAlgorithm subclasses in VTK and decorators used to</span>
 <span class="c1"># &#39;register&#39; the algorithm with ParaView along with information about UI.</span>
-<span class="kn">from</span> <span class="nn">paraview.util.vtkAlgorithm</span> <span class="k">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">paraview.util.vtkAlgorithm</span> <span class="kn">import</span> <span class="o">*</span>
 
 <span class="c1">#------------------------------------------------------------------------------</span>
 <span class="c1"># A source example.</span>
@@ -854,16 +852,16 @@ several of the decorators described here may be used.</p>
     <span class="sd">&quot;&quot;&quot;This is dummy VTKPythonAlgorithmBase subclass that</span>
 <span class="sd">    simply puts out a Superquadric poly data using a vtkSuperquadricSource</span>
 <span class="sd">    internally&quot;&quot;&quot;</span>
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="n">VTKPythonAlgorithmBase</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
                 <span class="n">nInputPorts</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
                 <span class="n">nOutputPorts</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
                 <span class="n">outputType</span><span class="o">=</span><span class="s1">&#39;vtkPolyData&#39;</span><span class="p">)</span>
-        <span class="kn">from</span> <span class="nn">vtkmodules.vtkFiltersSources</span> <span class="k">import</span> <span class="n">vtkSuperquadricSource</span>
+        <span class="kn">from</span> <span class="nn">vtkmodules.vtkFiltersSources</span> <span class="kn">import</span> <span class="n">vtkSuperquadricSource</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_realAlgorithm</span> <span class="o">=</span> <span class="n">vtkSuperquadricSource</span><span class="p">()</span>
 
     <span class="k">def</span> <span class="nf">RequestData</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">request</span><span class="p">,</span> <span class="n">inInfo</span><span class="p">,</span> <span class="n">outInfo</span><span class="p">):</span>
-        <span class="kn">from</span> <span class="nn">vtkmodules.vtkCommonDataModel</span> <span class="k">import</span> <span class="n">vtkPolyData</span>
+        <span class="kn">from</span> <span class="nn">vtkmodules.vtkCommonDataModel</span> <span class="kn">import</span> <span class="n">vtkPolyData</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_realAlgorithm</span><span class="o">.</span><span class="n">Update</span><span class="p">()</span>
         <span class="n">output</span> <span class="o">=</span> <span class="n">vtkPolyData</span><span class="o">.</span><span class="n">GetData</span><span class="p">(</span><span class="n">outInfo</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
         <span class="n">output</span><span class="o">.</span><span class="n">ShallowCopy</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_realAlgorithm</span><span class="o">.</span><span class="n">GetOutput</span><span class="p">())</span>
@@ -969,13 +967,13 @@ several of the decorators described here may be used.</p>
 <span class="k">class</span> <span class="nc">PythonCSVReader</span><span class="p">(</span><span class="n">VTKPythonAlgorithmBase</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;A reader that reads a CSV file. If the CSV has a &quot;time&quot; column, then</span>
 <span class="sd">    the data is treated as a temporal dataset&quot;&quot;&quot;</span>
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="n">VTKPythonAlgorithmBase</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nInputPorts</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">nOutputPorts</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">outputType</span><span class="o">=</span><span class="s1">&#39;vtkTable&#39;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_filename</span> <span class="o">=</span> <span class="kc">None</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_ndata</span> <span class="o">=</span> <span class="kc">None</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_timesteps</span> <span class="o">=</span> <span class="kc">None</span>
 
-        <span class="kn">from</span> <span class="nn">vtkmodules.vtkCommonCore</span> <span class="k">import</span> <span class="n">vtkDataArraySelection</span>
+        <span class="kn">from</span> <span class="nn">vtkmodules.vtkCommonCore</span> <span class="kn">import</span> <span class="n">vtkDataArraySelection</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_arrayselection</span> <span class="o">=</span> <span class="n">vtkDataArraySelection</span><span class="p">()</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_arrayselection</span><span class="o">.</span><span class="n">AddObserver</span><span class="p">(</span><span class="s2">&quot;ModifiedEvent&quot;</span><span class="p">,</span> <span class="n">createModifiedCallback</span><span class="p">(</span><span class="bp">self</span><span class="p">))</span>
 
@@ -1065,8 +1063,8 @@ several of the decorators described here may be used.</p>
         <span class="k">return</span> <span class="mi">1</span>
 
     <span class="k">def</span> <span class="nf">RequestData</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">request</span><span class="p">,</span> <span class="n">inInfoVec</span><span class="p">,</span> <span class="n">outInfoVec</span><span class="p">):</span>
-        <span class="kn">from</span> <span class="nn">vtkmodules.vtkCommonDataModel</span> <span class="k">import</span> <span class="n">vtkTable</span>
-        <span class="kn">from</span> <span class="nn">vtkmodules.numpy_interface</span> <span class="k">import</span> <span class="n">dataset_adapter</span> <span class="k">as</span> <span class="n">dsa</span>
+        <span class="kn">from</span> <span class="nn">vtkmodules.vtkCommonDataModel</span> <span class="kn">import</span> <span class="n">vtkTable</span>
+        <span class="kn">from</span> <span class="nn">vtkmodules.numpy_interface</span> <span class="kn">import</span> <span class="n">dataset_adapter</span> <span class="k">as</span> <span class="n">dsa</span>
 
         <span class="n">data_time</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_update_time</span><span class="p">(</span><span class="n">outInfoVec</span><span class="o">.</span><span class="n">GetInformationObject</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span>
         <span class="n">raw_data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_raw_data</span><span class="p">(</span><span class="n">data_time</span><span class="p">)</span>
@@ -1086,7 +1084,7 @@ several of the decorators described here may be used.</p>
 <span class="nd">@smproperty</span><span class="o">.</span><span class="n">input</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;Input&quot;</span><span class="p">,</span> <span class="n">port_index</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
 <span class="nd">@smdomain</span><span class="o">.</span><span class="n">datatype</span><span class="p">(</span><span class="n">dataTypes</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;vtkTable&quot;</span><span class="p">],</span> <span class="n">composite_data_supported</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 <span class="k">class</span> <span class="nc">NumpyWriter</span><span class="p">(</span><span class="n">VTKPythonAlgorithmBase</span><span class="p">):</span>
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="n">VTKPythonAlgorithmBase</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nInputPorts</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">nOutputPorts</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">inputType</span><span class="o">=</span><span class="s1">&#39;vtkTable&#39;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_filename</span> <span class="o">=</span> <span class="kc">None</span>
 
@@ -1099,8 +1097,8 @@ several of the decorators described here may be used.</p>
             <span class="bp">self</span><span class="o">.</span><span class="n">Modified</span><span class="p">()</span>
 
     <span class="k">def</span> <span class="nf">RequestData</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">request</span><span class="p">,</span> <span class="n">inInfoVec</span><span class="p">,</span> <span class="n">outInfoVec</span><span class="p">):</span>
-        <span class="kn">from</span> <span class="nn">vtkmodules.vtkCommonDataModel</span> <span class="k">import</span> <span class="n">vtkTable</span>
-        <span class="kn">from</span> <span class="nn">vtkmodules.numpy_interface</span> <span class="k">import</span> <span class="n">dataset_adapter</span> <span class="k">as</span> <span class="n">dsa</span>
+        <span class="kn">from</span> <span class="nn">vtkmodules.vtkCommonDataModel</span> <span class="kn">import</span> <span class="n">vtkTable</span>
+        <span class="kn">from</span> <span class="nn">vtkmodules.numpy_interface</span> <span class="kn">import</span> <span class="n">dataset_adapter</span> <span class="k">as</span> <span class="n">dsa</span>
 
         <span class="n">table</span> <span class="o">=</span> <span class="n">dsa</span><span class="o">.</span><span class="n">WrapDataObject</span><span class="p">(</span><span class="n">vtkTable</span><span class="o">.</span><span class="n">GetData</span><span class="p">(</span><span class="n">inInfoVec</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="mi">0</span><span class="p">))</span>
         <span class="n">kwargs</span> <span class="o">=</span> <span class="p">{}</span>
@@ -1124,7 +1122,7 @@ several of the decorators described here may be used.</p>
 <span class="nd">@smproperty</span><span class="o">.</span><span class="n">input</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;InputDataset&quot;</span><span class="p">,</span> <span class="n">port_index</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
 <span class="nd">@smdomain</span><span class="o">.</span><span class="n">datatype</span><span class="p">(</span><span class="n">dataTypes</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;vtkDataSet&quot;</span><span class="p">],</span> <span class="n">composite_data_supported</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 <span class="k">class</span> <span class="nc">ExampleTwoInputFilter</span><span class="p">(</span><span class="n">VTKPythonAlgorithmBase</span><span class="p">):</span>
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="n">VTKPythonAlgorithmBase</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nInputPorts</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">nOutputPorts</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">outputType</span><span class="o">=</span><span class="s2">&quot;vtkPolyData&quot;</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">FillInputPortInformation</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">port</span><span class="p">,</span> <span class="n">info</span><span class="p">):</span>
@@ -1135,7 +1133,7 @@ several of the decorators described here may be used.</p>
         <span class="k">return</span> <span class="mi">1</span>
 
     <span class="k">def</span> <span class="nf">RequestData</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">request</span><span class="p">,</span> <span class="n">inInfoVec</span><span class="p">,</span> <span class="n">outInfoVec</span><span class="p">):</span>
-        <span class="kn">from</span> <span class="nn">vtkmodules.vtkCommonDataModel</span> <span class="k">import</span> <span class="n">vtkTable</span><span class="p">,</span> <span class="n">vtkDataSet</span><span class="p">,</span> <span class="n">vtkPolyData</span>
+        <span class="kn">from</span> <span class="nn">vtkmodules.vtkCommonDataModel</span> <span class="kn">import</span> <span class="n">vtkTable</span><span class="p">,</span> <span class="n">vtkDataSet</span><span class="p">,</span> <span class="n">vtkPolyData</span>
         <span class="n">input0</span> <span class="o">=</span> <span class="n">vtkDataSet</span><span class="o">.</span><span class="n">GetData</span><span class="p">(</span><span class="n">inInfoVec</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="mi">0</span><span class="p">)</span>
         <span class="n">input1</span> <span class="o">=</span> <span class="n">vtkDataSet</span><span class="o">.</span><span class="n">GetData</span><span class="p">(</span><span class="n">inInfoVec</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="mi">0</span><span class="p">)</span>
         <span class="n">output</span> <span class="o">=</span> <span class="n">vtkPolyData</span><span class="o">.</span><span class="n">GetData</span><span class="p">(</span><span class="n">outInfoVec</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
@@ -1151,7 +1149,7 @@ several of the decorators described here may be used.</p>
 <span class="sd">    Example filter demonstrating how to write a filter that preserves the input</span>
 <span class="sd">    dataset type.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">nInputPorts</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">nOutputPorts</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">outputType</span><span class="o">=</span><span class="s2">&quot;vtkDataSet&quot;</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">RequestDataObject</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">request</span><span class="p">,</span> <span class="n">inInfo</span><span class="p">,</span> <span class="n">outInfo</span><span class="p">):</span>
@@ -1194,8 +1192,8 @@ several of the decorators described here may be used.</p>
     <span class="c1">#test_PythonSuperquadricSource()</span>
     <span class="c1">#test_PythonCSVReader(&quot;/tmp/data.csv&quot;)</span>
 
-    <span class="kn">from</span> <span class="nn">paraview.detail.pythonalgorithm</span> <span class="k">import</span> <span class="n">get_plugin_xmls</span>
-    <span class="kn">from</span> <span class="nn">xml.dom.minidom</span> <span class="k">import</span> <span class="n">parseString</span>
+    <span class="kn">from</span> <span class="nn">paraview.detail.pythonalgorithm</span> <span class="kn">import</span> <span class="n">get_plugin_xmls</span>
+    <span class="kn">from</span> <span class="nn">xml.dom.minidom</span> <span class="kn">import</span> <span class="n">parseString</span>
     <span class="k">for</span> <span class="n">xml</span> <span class="ow">in</span> <span class="n">get_plugin_xmls</span><span class="p">(</span><span class="nb">globals</span><span class="p">()):</span>
         <span class="n">dom</span> <span class="o">=</span> <span class="n">parseString</span><span class="p">(</span><span class="n">xml</span><span class="p">)</span>
         <span class="nb">print</span><span class="p">(</span><span class="n">dom</span><span class="o">.</span><span class="n">toprettyxml</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="p">,</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">))</span>

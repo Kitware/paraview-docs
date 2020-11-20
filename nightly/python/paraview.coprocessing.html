@@ -7,12 +7,10 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>coprocessing Module &mdash; ParaView/Python 5.9.0-RC1-193-gf1bb9b526b documentation</title>
+  <title>coprocessing Module &mdash; ParaView/Python 5.9.0-RC1-211-gf85ab347b3 documentation</title>
   
 
   
-  
-    <link rel="shortcut icon" href="_static/pvIcon.ico"/>
   
 
   
@@ -24,7 +22,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:'./',
-        VERSION:'5.9.0-RC1-193-gf1bb9b526b',
+        VERSION:'5.9.0-RC1-211-gf85ab347b3',
         COLLAPSE_INDEX:false,
         FILE_SUFFIX:'.html',
         HAS_SOURCE:  true
@@ -49,7 +47,7 @@
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="ParaView/Python 5.9.0-RC1-193-gf1bb9b526b documentation" href="index.html"/>
+    <link rel="top" title="ParaView/Python 5.9.0-RC1-211-gf85ab347b3 documentation" href="index.html"/>
         <link rel="up" title="paraview Package" href="paraview.html"/>
         <link rel="next" title="cpstate Module" href="paraview.cpstate.html"/>
         <link rel="prev" title="collaboration Module" href="paraview.collaboration.html"/> 
@@ -69,7 +67,7 @@
           <li> <a href="index.html">
             <img src="_static/paraview-logo-small.png"
             alt="ParaView/Python"></img></a> </li>
-          <li class="version"> version 5.9.0-RC1-193-gf1bb9b526b</li>
+          <li class="version"> version 5.9.0-RC1-211-gf85ab347b3</li>
         </ul>
         <form id ="rtd-search-form" class="wy-form" action="search.html" method="get">
   <input type="text" name="q" placeholder="Search docs" />
@@ -588,7 +586,7 @@
 class, Pipeline, which is designed to be used as the base-class for Python
 pipeline. Additionally, this module has several other utility functions that are
 appropriate for co-processing.</p>
-<dl class="class">
+<dl class="py class">
 <dt id="paraview.coprocessing.CoProcessor">
 <em class="property">class </em><code class="sig-prename descclassname">paraview.coprocessing.</code><code class="sig-name descname">CoProcessor</code><a class="reference internal" href="_modules/paraview/coprocessing.html#CoProcessor"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.coprocessing.CoProcessor" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
@@ -612,82 +610,82 @@ names, etc. __CinemaTracks holds this information in the following structure:</p
 paraview.cpstate. paraview.cpstate uses accessor instances to set values and
 array names through the RegisterCinemaTrack and AddArrayssToCinemaTrack
 methods of this class.</p>
-<dl class="method">
+<dl class="py method">
 <dt id="paraview.coprocessing.CoProcessor.AddArraysToCinemaTrack">
-<code class="sig-name descname">AddArraysToCinemaTrack</code><span class="sig-paren">(</span><em class="sig-param">proxy</em>, <em class="sig-param">propertyName</em>, <em class="sig-param">arrayNames</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/coprocessing.html#CoProcessor.AddArraysToCinemaTrack"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.coprocessing.CoProcessor.AddArraysToCinemaTrack" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">AddArraysToCinemaTrack</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">proxy</span></em>, <em class="sig-param"><span class="n">propertyName</span></em>, <em class="sig-param"><span class="n">arrayNames</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/coprocessing.html#CoProcessor.AddArraysToCinemaTrack"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.coprocessing.CoProcessor.AddArraysToCinemaTrack" title="Permalink to this definition">¶</a></dt>
 <dd><p>Register user-defined target arrays by name.</p>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="paraview.coprocessing.CoProcessor.CreatePipeline">
-<code class="sig-name descname">CreatePipeline</code><span class="sig-paren">(</span><em class="sig-param">datadescription</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/coprocessing.html#CoProcessor.CreatePipeline"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.coprocessing.CoProcessor.CreatePipeline" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">CreatePipeline</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">datadescription</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/coprocessing.html#CoProcessor.CreatePipeline"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.coprocessing.CoProcessor.CreatePipeline" title="Permalink to this definition">¶</a></dt>
 <dd><p>This methods must be overridden by subclasses to create the
 visualization pipeline.</p>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="paraview.coprocessing.CoProcessor.CreateProducer">
-<code class="sig-name descname">CreateProducer</code><span class="sig-paren">(</span><em class="sig-param">datadescription</em>, <em class="sig-param">inputname</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/coprocessing.html#CoProcessor.CreateProducer"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.coprocessing.CoProcessor.CreateProducer" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">CreateProducer</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">datadescription</span></em>, <em class="sig-param"><span class="n">inputname</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/coprocessing.html#CoProcessor.CreateProducer"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.coprocessing.CoProcessor.CreateProducer" title="Permalink to this definition">¶</a></dt>
 <dd><p>Creates a producer proxy for the grid. This method is generally used in
 CreatePipeline() call to create producers.</p>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="paraview.coprocessing.CoProcessor.CreateTemporalProducer">
-<code class="sig-name descname">CreateTemporalProducer</code><span class="sig-paren">(</span><em class="sig-param">datadescription</em>, <em class="sig-param">inputname</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/coprocessing.html#CoProcessor.CreateTemporalProducer"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.coprocessing.CoProcessor.CreateTemporalProducer" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">CreateTemporalProducer</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">datadescription</span></em>, <em class="sig-param"><span class="n">inputname</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/coprocessing.html#CoProcessor.CreateTemporalProducer"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.coprocessing.CoProcessor.CreateTemporalProducer" title="Permalink to this definition">¶</a></dt>
 <dd><p>Python access to a temporal cache object associated with a specific
 one simulation product. Much like CreateProducer, only this ends up with
 a temporal cache filter instead of a PVTrivialProducer.</p>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="paraview.coprocessing.CoProcessor.CreateView">
-<code class="sig-name descname">CreateView</code><span class="sig-paren">(</span><em class="sig-param">proxy_ctor</em>, <em class="sig-param">filename</em>, <em class="sig-param">freq</em>, <em class="sig-param">fittoscreen</em>, <em class="sig-param">magnification</em>, <em class="sig-param">width</em>, <em class="sig-param">height</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/coprocessing.html#CoProcessor.CreateView"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.coprocessing.CoProcessor.CreateView" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">CreateView</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">proxy_ctor</span></em>, <em class="sig-param"><span class="n">filename</span></em>, <em class="sig-param"><span class="n">freq</span></em>, <em class="sig-param"><span class="n">fittoscreen</span></em>, <em class="sig-param"><span class="n">magnification</span></em>, <em class="sig-param"><span class="n">width</span></em>, <em class="sig-param"><span class="n">height</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/coprocessing.html#CoProcessor.CreateView"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.coprocessing.CoProcessor.CreateView" title="Permalink to this definition">¶</a></dt>
 <dd><p><strong>DEPRECATED!!! Use RegisterView instead</strong>
 Create a CoProcessing view for image capture with extra meta-data
 such as magnification, size and frequency.</p>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="paraview.coprocessing.CoProcessor.CreateWriter">
-<code class="sig-name descname">CreateWriter</code><span class="sig-paren">(</span><em class="sig-param">proxy_ctor</em>, <em class="sig-param">filename</em>, <em class="sig-param">freq</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/coprocessing.html#CoProcessor.CreateWriter"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.coprocessing.CoProcessor.CreateWriter" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">CreateWriter</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">proxy_ctor</span></em>, <em class="sig-param"><span class="n">filename</span></em>, <em class="sig-param"><span class="n">freq</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/coprocessing.html#CoProcessor.CreateWriter"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.coprocessing.CoProcessor.CreateWriter" title="Permalink to this definition">¶</a></dt>
 <dd><p><strong>DEPRECATED!!! Use RegisterWriter instead</strong>
 Creates a writer proxy. This method is generally used in
 reatePipeline() to create writers. All writes created as such will
 write the output files appropriately in WriteData() is called.</p>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="paraview.coprocessing.CoProcessor.DoLiveVisualization">
-<code class="sig-name descname">DoLiveVisualization</code><span class="sig-paren">(</span><em class="sig-param">datadescription</em>, <em class="sig-param">hostname</em>, <em class="sig-param">port</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/coprocessing.html#CoProcessor.DoLiveVisualization"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.coprocessing.CoProcessor.DoLiveVisualization" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">DoLiveVisualization</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">datadescription</span></em>, <em class="sig-param"><span class="n">hostname</span></em>, <em class="sig-param"><span class="n">port</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/coprocessing.html#CoProcessor.DoLiveVisualization"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.coprocessing.CoProcessor.DoLiveVisualization" title="Permalink to this definition">¶</a></dt>
 <dd><p>This method execute the code-stub needed to communicate with ParaView
 for live-visualization. Call this method only if you want to support
 live-visualization with your co-processing module.</p>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="paraview.coprocessing.CoProcessor.EnableCinemaDTable">
 <code class="sig-name descname">EnableCinemaDTable</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/coprocessing.html#CoProcessor.EnableCinemaDTable"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.coprocessing.CoProcessor.EnableCinemaDTable" title="Permalink to this definition">¶</a></dt>
 <dd><p>Enable the normally disabled cinema D table export feature</p>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="paraview.coprocessing.CoProcessor.EnableLiveVisualization">
-<code class="sig-name descname">EnableLiveVisualization</code><span class="sig-paren">(</span><em class="sig-param">enable</em>, <em class="sig-param">frequency=1</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/coprocessing.html#CoProcessor.EnableLiveVisualization"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.coprocessing.CoProcessor.EnableLiveVisualization" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">EnableLiveVisualization</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">enable</span></em>, <em class="sig-param"><span class="n">frequency</span><span class="o">=</span><span class="default_value">1</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/coprocessing.html#CoProcessor.EnableLiveVisualization"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.coprocessing.CoProcessor.EnableLiveVisualization" title="Permalink to this definition">¶</a></dt>
 <dd><p>Call this method to enable live-visualization. When enabled,
 DoLiveVisualization() will communicate with ParaView server if possible
 for live visualization. Frequency specifies how often the
 communication happens (default is every second).</p>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="paraview.coprocessing.CoProcessor.Finalize">
 <code class="sig-name descname">Finalize</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/coprocessing.html#CoProcessor.Finalize"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.coprocessing.CoProcessor.Finalize" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="paraview.coprocessing.CoProcessor.IsInModulo">
-<code class="sig-name descname">IsInModulo</code><span class="sig-paren">(</span><em class="sig-param">datadescription</em>, <em class="sig-param">frequencies</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/coprocessing.html#CoProcessor.IsInModulo"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.coprocessing.CoProcessor.IsInModulo" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">IsInModulo</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">datadescription</span></em>, <em class="sig-param"><span class="n">frequencies</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/coprocessing.html#CoProcessor.IsInModulo"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.coprocessing.CoProcessor.IsInModulo" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return True if the given timestep in datadescription is in one of the provided frequencies
 or output is forced. This can be interpreted as follow:</p>
 <p>isFM = IsInModulo(timestep-timeStepToStartOutputAt, [2,3,7])</p>
@@ -696,9 +694,9 @@ or output is forced. This can be interpreted as follow:</p>
 <p>The timeStepToStartOutputAt is the first timestep that will potentially be output.</p>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="paraview.coprocessing.CoProcessor.LoadRequestedData">
-<code class="sig-name descname">LoadRequestedData</code><span class="sig-paren">(</span><em class="sig-param">datadescription</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/coprocessing.html#CoProcessor.LoadRequestedData"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.coprocessing.CoProcessor.LoadRequestedData" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">LoadRequestedData</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">datadescription</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/coprocessing.html#CoProcessor.LoadRequestedData"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.coprocessing.CoProcessor.LoadRequestedData" title="Permalink to this definition">¶</a></dt>
 <dd><p>Call this method in RequestDataDescription co-processing pass to mark
 the datadescription with information about what fields and grids are
 required for this pipeline for the given timestep, if any.</p>
@@ -709,37 +707,37 @@ this method to provide additional customizations. If there is a Live
 connection that can also override the initial frequencies.</p>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="paraview.coprocessing.CoProcessor.NeedToOutput">
-<code class="sig-name descname">NeedToOutput</code><span class="sig-paren">(</span><em class="sig-param">datadescription</em>, <em class="sig-param">frequency</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/coprocessing.html#CoProcessor.NeedToOutput"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.coprocessing.CoProcessor.NeedToOutput" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">NeedToOutput</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">datadescription</span></em>, <em class="sig-param"><span class="n">frequency</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/coprocessing.html#CoProcessor.NeedToOutput"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.coprocessing.CoProcessor.NeedToOutput" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return True if we need to output based on the input timestep, frequency and forceOutput. Checks based
 __FirstTimeStepIndex, __FirstTimeStepIndex, __ForceOutputAtFirstCall and __TimeStepToStartOutputAt
 member variables.</p>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="paraview.coprocessing.CoProcessor.ProcessExodusIIWriter">
-<code class="sig-name descname">ProcessExodusIIWriter</code><span class="sig-paren">(</span><em class="sig-param">writer</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/coprocessing.html#CoProcessor.ProcessExodusIIWriter"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.coprocessing.CoProcessor.ProcessExodusIIWriter" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">ProcessExodusIIWriter</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">writer</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/coprocessing.html#CoProcessor.ProcessExodusIIWriter"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.coprocessing.CoProcessor.ProcessExodusIIWriter" title="Permalink to this definition">¶</a></dt>
 <dd><p>Extra work for the ExodusII writer to avoid undesired warnings
 and print out a message on how to read the files into Ensight.</p>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="paraview.coprocessing.CoProcessor.RegisterCinemaTrack">
-<code class="sig-name descname">RegisterCinemaTrack</code><span class="sig-paren">(</span><em class="sig-param">name</em>, <em class="sig-param">proxy</em>, <em class="sig-param">smproperty</em>, <em class="sig-param">valrange</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/coprocessing.html#CoProcessor.RegisterCinemaTrack"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.coprocessing.CoProcessor.RegisterCinemaTrack" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">RegisterCinemaTrack</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em>, <em class="sig-param"><span class="n">proxy</span></em>, <em class="sig-param"><span class="n">smproperty</span></em>, <em class="sig-param"><span class="n">valrange</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/coprocessing.html#CoProcessor.RegisterCinemaTrack"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.coprocessing.CoProcessor.RegisterCinemaTrack" title="Permalink to this definition">¶</a></dt>
 <dd><p>Register a point of control (filter’s property) that will be varied over in a cinema export.</p>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="paraview.coprocessing.CoProcessor.RegisterView">
-<code class="sig-name descname">RegisterView</code><span class="sig-paren">(</span><em class="sig-param">view</em>, <em class="sig-param">filename</em>, <em class="sig-param">freq</em>, <em class="sig-param">fittoscreen</em>, <em class="sig-param">magnification</em>, <em class="sig-param">width</em>, <em class="sig-param">height</em>, <em class="sig-param">cinema=None</em>, <em class="sig-param">compression=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/coprocessing.html#CoProcessor.RegisterView"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.coprocessing.CoProcessor.RegisterView" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">RegisterView</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">view</span></em>, <em class="sig-param"><span class="n">filename</span></em>, <em class="sig-param"><span class="n">freq</span></em>, <em class="sig-param"><span class="n">fittoscreen</span></em>, <em class="sig-param"><span class="n">magnification</span></em>, <em class="sig-param"><span class="n">width</span></em>, <em class="sig-param"><span class="n">height</span></em>, <em class="sig-param"><span class="n">cinema</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">compression</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/coprocessing.html#CoProcessor.RegisterView"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.coprocessing.CoProcessor.RegisterView" title="Permalink to this definition">¶</a></dt>
 <dd><p>Register a view for image capture with extra meta-data such
 as magnification, size and frequency.</p>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="paraview.coprocessing.CoProcessor.RegisterWriter">
-<code class="sig-name descname">RegisterWriter</code><span class="sig-paren">(</span><em class="sig-param">writer</em>, <em class="sig-param">filename</em>, <em class="sig-param">freq</em>, <em class="sig-param">paddingamount=0</em>, <em class="sig-param">**params</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/coprocessing.html#CoProcessor.RegisterWriter"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.coprocessing.CoProcessor.RegisterWriter" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">RegisterWriter</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">writer</span></em>, <em class="sig-param"><span class="n">filename</span></em>, <em class="sig-param"><span class="n">freq</span></em>, <em class="sig-param"><span class="n">paddingamount</span><span class="o">=</span><span class="default_value">0</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">params</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/coprocessing.html#CoProcessor.RegisterWriter"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.coprocessing.CoProcessor.RegisterWriter" title="Permalink to this definition">¶</a></dt>
 <dd><p>Registers a writer proxy. This method is generally used in
 CreatePipeline() to register writers. All writes created as such will
 write the output files appropriately in WriteData() is called.
@@ -747,28 +745,28 @@ params should be empty as of ParaView 5.9 but is passed in for
 backwards compatibility.</p>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="paraview.coprocessing.CoProcessor.RescaleDataRange">
-<code class="sig-name descname">RescaleDataRange</code><span class="sig-paren">(</span><em class="sig-param">view</em>, <em class="sig-param">time</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/coprocessing.html#CoProcessor.RescaleDataRange"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.coprocessing.CoProcessor.RescaleDataRange" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">RescaleDataRange</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">view</span></em>, <em class="sig-param"><span class="n">time</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/coprocessing.html#CoProcessor.RescaleDataRange"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.coprocessing.CoProcessor.RescaleDataRange" title="Permalink to this definition">¶</a></dt>
 <dd><p>DataRange can change across time, sometime we want to rescale the
 color map to match to the closer actual data range.</p>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="paraview.coprocessing.CoProcessor.SetDataRootDirectory">
-<code class="sig-name descname">SetDataRootDirectory</code><span class="sig-paren">(</span><em class="sig-param">root_directory</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/coprocessing.html#CoProcessor.SetDataRootDirectory"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.coprocessing.CoProcessor.SetDataRootDirectory" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">SetDataRootDirectory</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">root_directory</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/coprocessing.html#CoProcessor.SetDataRootDirectory"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.coprocessing.CoProcessor.SetDataRootDirectory" title="Permalink to this definition">¶</a></dt>
 <dd><p>Specify root directory for data extracts</p>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="paraview.coprocessing.CoProcessor.SetImageRootDirectory">
-<code class="sig-name descname">SetImageRootDirectory</code><span class="sig-paren">(</span><em class="sig-param">root_directory</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/coprocessing.html#CoProcessor.SetImageRootDirectory"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.coprocessing.CoProcessor.SetImageRootDirectory" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">SetImageRootDirectory</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">root_directory</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/coprocessing.html#CoProcessor.SetImageRootDirectory"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.coprocessing.CoProcessor.SetImageRootDirectory" title="Permalink to this definition">¶</a></dt>
 <dd><p>Specify root directory for image extracts</p>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="paraview.coprocessing.CoProcessor.SetInitialOutputOptions">
-<code class="sig-name descname">SetInitialOutputOptions</code><span class="sig-paren">(</span><em class="sig-param">timeStepToStartOutputAt</em>, <em class="sig-param">forceOutputAtFirstCall</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/coprocessing.html#CoProcessor.SetInitialOutputOptions"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.coprocessing.CoProcessor.SetInitialOutputOptions" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">SetInitialOutputOptions</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">timeStepToStartOutputAt</span></em>, <em class="sig-param"><span class="n">forceOutputAtFirstCall</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/coprocessing.html#CoProcessor.SetInitialOutputOptions"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.coprocessing.CoProcessor.SetInitialOutputOptions" title="Permalink to this definition">¶</a></dt>
 <dd><p>Set the frequencies at which the pipeline needs to be updated.
 Typically, this is called by the subclass once it has determined what
 timesteps co-processing will be needed to be done.
@@ -776,29 +774,29 @@ frequencies is a map, with key-&gt;string name of for the simulation
 input, and value is a list of frequencies.</p>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="paraview.coprocessing.CoProcessor.SetPrintEnsightFormatString">
-<code class="sig-name descname">SetPrintEnsightFormatString</code><span class="sig-paren">(</span><em class="sig-param">enable</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/coprocessing.html#CoProcessor.SetPrintEnsightFormatString"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.coprocessing.CoProcessor.SetPrintEnsightFormatString" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">SetPrintEnsightFormatString</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">enable</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/coprocessing.html#CoProcessor.SetPrintEnsightFormatString"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.coprocessing.CoProcessor.SetPrintEnsightFormatString" title="Permalink to this definition">¶</a></dt>
 <dd><p>If outputting ExodusII files with the purpose of reading them into
 Ensight, print a message on process 0 on what to use for the ‘Set string’
 input to properly read the generated files into Ensight.</p>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="paraview.coprocessing.CoProcessor.SetRequestedArrays">
-<code class="sig-name descname">SetRequestedArrays</code><span class="sig-paren">(</span><em class="sig-param">channelname</em>, <em class="sig-param">requestedarrays</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/coprocessing.html#CoProcessor.SetRequestedArrays"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.coprocessing.CoProcessor.SetRequestedArrays" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">SetRequestedArrays</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">channelname</span></em>, <em class="sig-param"><span class="n">requestedarrays</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/coprocessing.html#CoProcessor.SetRequestedArrays"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.coprocessing.CoProcessor.SetRequestedArrays" title="Permalink to this definition">¶</a></dt>
 <dd><p>Set which arrays this script will request from the adaptor for the given channel name.</p>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="paraview.coprocessing.CoProcessor.SetRootDirectory">
-<code class="sig-name descname">SetRootDirectory</code><span class="sig-paren">(</span><em class="sig-param">root_directory</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/coprocessing.html#CoProcessor.SetRootDirectory"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.coprocessing.CoProcessor.SetRootDirectory" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">SetRootDirectory</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">root_directory</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/coprocessing.html#CoProcessor.SetRootDirectory"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.coprocessing.CoProcessor.SetRootDirectory" title="Permalink to this definition">¶</a></dt>
 <dd><p>Makes Catalyst put all output under this directory.</p>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="paraview.coprocessing.CoProcessor.SetUpdateFrequencies">
-<code class="sig-name descname">SetUpdateFrequencies</code><span class="sig-paren">(</span><em class="sig-param">frequencies</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/coprocessing.html#CoProcessor.SetUpdateFrequencies"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.coprocessing.CoProcessor.SetUpdateFrequencies" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">SetUpdateFrequencies</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">frequencies</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/coprocessing.html#CoProcessor.SetUpdateFrequencies"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.coprocessing.CoProcessor.SetUpdateFrequencies" title="Permalink to this definition">¶</a></dt>
 <dd><p>Set the frequencies at which the pipeline needs to be updated.
 Typically, this is called by the subclass once it has determined what
 timesteps co-processing will be needed to be done.
@@ -806,31 +804,31 @@ frequencies is a map, with key-&gt;string name of for the simulation
 input, and value is a list of frequencies.</p>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="paraview.coprocessing.CoProcessor.UpdateCinema">
-<code class="sig-name descname">UpdateCinema</code><span class="sig-paren">(</span><em class="sig-param">view</em>, <em class="sig-param">datadescription</em>, <em class="sig-param">specLevel</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/coprocessing.html#CoProcessor.UpdateCinema"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.coprocessing.CoProcessor.UpdateCinema" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">UpdateCinema</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">view</span></em>, <em class="sig-param"><span class="n">datadescription</span></em>, <em class="sig-param"><span class="n">specLevel</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/coprocessing.html#CoProcessor.UpdateCinema"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.coprocessing.CoProcessor.UpdateCinema" title="Permalink to this definition">¶</a></dt>
 <dd><p>called from catalyst at each timestep to add to the cinema database</p>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="paraview.coprocessing.CoProcessor.UpdateProducers">
-<code class="sig-name descname">UpdateProducers</code><span class="sig-paren">(</span><em class="sig-param">datadescription</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/coprocessing.html#CoProcessor.UpdateProducers"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.coprocessing.CoProcessor.UpdateProducers" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">UpdateProducers</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">datadescription</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/coprocessing.html#CoProcessor.UpdateProducers"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.coprocessing.CoProcessor.UpdateProducers" title="Permalink to this definition">¶</a></dt>
 <dd><p>This method will update the producers in the pipeline. If the
 pipeline is not created, it will be created using
 self.CreatePipeline().</p>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="paraview.coprocessing.CoProcessor.WriteData">
-<code class="sig-name descname">WriteData</code><span class="sig-paren">(</span><em class="sig-param">datadescription</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/coprocessing.html#CoProcessor.WriteData"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.coprocessing.CoProcessor.WriteData" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">WriteData</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">datadescription</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/coprocessing.html#CoProcessor.WriteData"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.coprocessing.CoProcessor.WriteData" title="Permalink to this definition">¶</a></dt>
 <dd><p>This method will update all writes present in the pipeline, as
 needed, to generate the output data files, respecting the
 write-frequencies set on the writers.</p>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="paraview.coprocessing.CoProcessor.WriteImages">
-<code class="sig-name descname">WriteImages</code><span class="sig-paren">(</span><em class="sig-param">datadescription</em>, <em class="sig-param">rescale_lookuptable=False</em>, <em class="sig-param">image_quality=None</em>, <em class="sig-param">padding_amount=0</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/coprocessing.html#CoProcessor.WriteImages"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.coprocessing.CoProcessor.WriteImages" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">WriteImages</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">datadescription</span></em>, <em class="sig-param"><span class="n">rescale_lookuptable</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">image_quality</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">padding_amount</span><span class="o">=</span><span class="default_value">0</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/coprocessing.html#CoProcessor.WriteImages"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.coprocessing.CoProcessor.WriteImages" title="Permalink to this definition">¶</a></dt>
 <dd><p>This method will update all views, if present and write output
 images, as needed.</p>
 <p><strong>Parameters</strong></p>
@@ -858,9 +856,9 @@ performance impact.</p>
 </div></blockquote>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="paraview.coprocessing.CoProcessor.WriterParametersProxy">
-<code class="sig-name descname">WriterParametersProxy</code><span class="sig-paren">(</span><em class="sig-param">writer</em>, <em class="sig-param">filename</em>, <em class="sig-param">freq</em>, <em class="sig-param">paddingamount</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/coprocessing.html#CoProcessor.WriterParametersProxy"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.coprocessing.CoProcessor.WriterParametersProxy" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">WriterParametersProxy</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">writer</span></em>, <em class="sig-param"><span class="n">filename</span></em>, <em class="sig-param"><span class="n">freq</span></em>, <em class="sig-param"><span class="n">paddingamount</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/coprocessing.html#CoProcessor.WriterParametersProxy"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.coprocessing.CoProcessor.WriterParametersProxy" title="Permalink to this definition">¶</a></dt>
 <dd><p>Creates a client only proxy that will be synchronized with ParaView
 Live, allowing a user to set the filename and frequency.</p>
 </dd></dl>

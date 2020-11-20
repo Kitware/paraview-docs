@@ -7,12 +7,10 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>paraview.__init__ &mdash; ParaView/Python 5.9.0-RC1-193-gf1bb9b526b documentation</title>
+  <title>paraview.__init__ &mdash; ParaView/Python 5.9.0-RC1-211-gf85ab347b3 documentation</title>
   
 
   
-  
-    <link rel="shortcut icon" href="../../_static/pvIcon.ico"/>
   
 
   
@@ -24,7 +22,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:'../../',
-        VERSION:'5.9.0-RC1-193-gf1bb9b526b',
+        VERSION:'5.9.0-RC1-211-gf85ab347b3',
         COLLAPSE_INDEX:false,
         FILE_SUFFIX:'.html',
         HAS_SOURCE:  true
@@ -49,7 +47,7 @@
         <link rel="index" title="Index"
               href="../../genindex.html"/>
         <link rel="search" title="Search" href="../../search.html"/>
-    <link rel="top" title="ParaView/Python 5.9.0-RC1-193-gf1bb9b526b documentation" href="../../index.html"/>
+    <link rel="top" title="ParaView/Python 5.9.0-RC1-211-gf85ab347b3 documentation" href="../../index.html"/>
         <link rel="up" title="Module code" href="../index.html"/> 
 
   <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
@@ -67,7 +65,7 @@
           <li> <a href="../../index.html">
             <img src="../../_static/paraview-logo-small.png"
             alt="ParaView/Python"></img></a> </li>
-          <li class="version"> version 5.9.0-RC1-193-gf1bb9b526b</li>
+          <li class="version"> version 5.9.0-RC1-211-gf85ab347b3</li>
         </ul>
         <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
   <input type="text" name="q" placeholder="Search docs" />
@@ -599,7 +597,7 @@
 <span class="sd">  # Now, import the modules of interest.</span>
 <span class="sd">  from paraview.simple import *</span>
 <span class="sd">&quot;&quot;&quot;</span>
-<span class="kn">from</span> <span class="nn">__future__</span> <span class="k">import</span> <span class="n">absolute_import</span>
+<span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">absolute_import</span>
 
 <span class="c1">#==============================================================================</span>
 <span class="c1">#</span>
@@ -617,7 +615,7 @@
 <span class="c1">#==============================================================================</span>
 
 <span class="k">class</span> <span class="nc">_version</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">major</span><span class="p">,</span> <span class="n">minor</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">major</span><span class="p">,</span> <span class="n">minor</span><span class="p">):</span>
       <span class="bp">self</span><span class="o">.</span><span class="n">major</span> <span class="o">=</span> <span class="n">major</span>
       <span class="bp">self</span><span class="o">.</span><span class="n">minor</span> <span class="o">=</span> <span class="n">minor</span>
     <span class="k">def</span> <span class="nf">GetVersion</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
@@ -630,7 +628,7 @@
             <span class="n">version</span> <span class="o">+=</span> <span class="nb">float</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">major</span><span class="p">)</span>
             <span class="k">return</span> <span class="n">version</span>
         <span class="k">return</span> <span class="kc">None</span>
-    <span class="k">def</span> <span class="nf">__lt__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__lt__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;This will always return False if compatibility is not being forced</span>
 <span class="sd">        to a particular version.&quot;&quot;&quot;</span>
         <span class="n">myversion</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">GetVersion</span><span class="p">()</span>
@@ -638,7 +636,7 @@
             <span class="k">return</span> <span class="kc">False</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="k">return</span> <span class="n">myversion</span> <span class="o">&lt;</span> <span class="n">other</span>
-    <span class="k">def</span> <span class="nf">__le__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__le__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;This will always return False if compatibility is not forced to a</span>
 <span class="sd">        particular version.&quot;&quot;&quot;</span>
         <span class="n">myversion</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">GetVersion</span><span class="p">()</span>
@@ -646,11 +644,11 @@
             <span class="k">return</span> <span class="kc">False</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="k">return</span> <span class="n">myversion</span> <span class="o">&lt;=</span> <span class="n">other</span>
-    <span class="k">def</span> <span class="nf">__eq__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__eq__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
         <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="s2">&quot;Equal operation not supported.&quot;</span><span class="p">)</span>
-    <span class="k">def</span> <span class="nf">__ne__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__ne__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
         <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="s2">&quot;NotEqual operation not supported.&quot;</span><span class="p">)</span>
-    <span class="k">def</span> <span class="nf">__gt__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__gt__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;This will always return True if compatibility is not being forced to</span>
 <span class="sd">        a particular version&quot;&quot;&quot;</span>
         <span class="n">myversion</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">GetVersion</span><span class="p">()</span>
@@ -658,7 +656,7 @@
             <span class="k">return</span> <span class="kc">True</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="k">return</span> <span class="n">myversion</span> <span class="o">&gt;</span> <span class="n">other</span>
-    <span class="k">def</span> <span class="nf">__ge__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__ge__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;This will always return True if compatibility is not being forced to</span>
 <span class="sd">        a particular version&quot;&quot;&quot;</span>
         <span class="n">myversion</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">GetVersion</span><span class="p">()</span>
@@ -666,7 +664,7 @@
             <span class="k">return</span> <span class="kc">True</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="k">return</span> <span class="n">myversion</span> <span class="o">&gt;=</span> <span class="n">other</span>
-    <span class="k">def</span> <span class="nf">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="n">myversion</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">GetVersion</span><span class="p">()</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="n">myversion</span><span class="p">:</span>
           <span class="k">return</span> <span class="s2">&quot;(none)&quot;</span>
@@ -721,11 +719,11 @@
 
 <div class="viewcode-block" id="NotSupportedException"><a class="viewcode-back" href="../../paraview.html#paraview.__init__.NotSupportedException">[docs]</a><span class="k">class</span> <span class="nc">NotSupportedException</span><span class="p">(</span><span class="ne">Exception</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Exception that is fired when obsolete API is used in a script.&quot;&quot;&quot;</span>
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">msg</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">msg</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">msg</span> <span class="o">=</span> <span class="n">msg</span>
         <span class="n">print_debug_info</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">DEBUG: </span><span class="si">%s</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">msg</span><span class="p">)</span>
 
-    <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="s2">&quot;</span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">msg</span><span class="p">)</span></div>
 
 
@@ -741,7 +739,7 @@
 <span class="c1"># interpreter i.e. not of the of the ParaView-python executables, then we import the</span>
 <span class="c1"># static components importer module.</span>
 <span class="k">try</span><span class="p">:</span>
-    <span class="kn">from</span> <span class="nn">.modules</span> <span class="k">import</span> <span class="n">vtkRemotingCore</span>
+    <span class="kn">from</span> <span class="nn">.modules</span> <span class="kn">import</span> <span class="n">vtkRemotingCore</span>
 <span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
     <span class="kn">import</span> <span class="nn">_paraview_modules_static</span>
 <span class="c1">#------------------------------------------------------------------------------</span>
@@ -752,7 +750,7 @@
     <span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
     <span class="k">if</span> <span class="ow">not</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">logger</span><span class="p">,</span> <span class="s2">&quot;_paraview_initialized&quot;</span><span class="p">):</span>
         <span class="n">logger</span><span class="o">.</span><span class="n">_paraview_initialized</span> <span class="o">=</span> <span class="kc">True</span>
-        <span class="kn">from</span> <span class="nn">paraview.detail</span> <span class="k">import</span> <span class="n">loghandler</span>
+        <span class="kn">from</span> <span class="nn">paraview.detail</span> <span class="kn">import</span> <span class="n">loghandler</span>
         <span class="n">logger</span><span class="o">.</span><span class="n">addHandler</span><span class="p">(</span><span class="n">loghandler</span><span class="o">.</span><span class="n">VTKHandler</span><span class="p">())</span>
         <span class="n">logger</span><span class="o">.</span><span class="n">setLevel</span><span class="p">(</span><span class="n">loghandler</span><span class="o">.</span><span class="n">get_level</span><span class="p">())</span>
     <span class="k">return</span> <span class="n">logger</span>
