@@ -103,6 +103,10 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:acb71932a24002c97e72f4ca01bdfc4e4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkConduitSource.html#acb71932a24002c97e72f4ca01bdfc4e4">SetNode</a> (const <a class="el" href="vtkConduitArrayUtilities_8h.html#ae3581e4dead1dadad172dd443290a62e">conduit_node</a> *node)</td></tr>
 <tr class="memdesc:acb71932a24002c97e72f4ca01bdfc4e4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get/Set the conduit_node.  <a href="#acb71932a24002c97e72f4ca01bdfc4e4">More...</a><br /></td></tr>
 <tr class="separator:acb71932a24002c97e72f4ca01bdfc4e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr><td colspan="2"><div class="groupHeader"></div></td></tr>
+<tr class="memitem:aa7b3c6a3863fa1d7b0c467b69bad0d06"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkConduitSource.html#aa7b3c6a3863fa1d7b0c467b69bad0d06">SetGlobalFieldsNode</a> (const <a class="el" href="vtkConduitArrayUtilities_8h.html#ae3581e4dead1dadad172dd443290a62e">conduit_node</a> *node)</td></tr>
+<tr class="memdesc:aa7b3c6a3863fa1d7b0c467b69bad0d06"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mechanism to add global / field-data arrays.  <a href="#aa7b3c6a3863fa1d7b0c467b69bad0d06">More...</a><br /></td></tr>
+<tr class="separator:aa7b3c6a3863fa1d7b0c467b69bad0d06"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classvtkDataObjectAlgorithm"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classvtkDataObjectAlgorithm')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el"  href="http://www.vtk.org/doc/nightly/html/classvtkDataObjectAlgorithm.html">vtkDataObjectAlgorithm</a></td></tr>
 <tr class="memitem:a635aa73e9c907a28881c5e69742a547d inherit pub_methods_classvtkDataObjectAlgorithm"><td class="memItemLeft" align="right" valign="top"><a class="elRef" doxygen="/home/kitware/dashboards/buildbot/paraview_release-vall-linux-shared-release_adios2_doc_extdeps_gui_mpi_python3/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/classvtkDataObjectAlgorithm.html">vtkDataObjectAlgorithm</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="elRef" doxygen="/home/kitware/dashboards/buildbot/paraview_release-vall-linux-shared-release_adios2_doc_extdeps_gui_mpi_python3/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/classvtkDataObjectAlgorithm.html#a635aa73e9c907a28881c5e69742a547d">NewInstance</a> () const</td></tr>
 <tr class="separator:a635aa73e9c907a28881c5e69742a547d inherit pub_methods_classvtkDataObjectAlgorithm"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -1089,6 +1093,27 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Get/Set the conduit_node. </p>
 <p>This must be the node satisfying the Conduit Mesh Blueprint. </p>
+
+</div>
+</div>
+<a id="aa7b3c6a3863fa1d7b0c467b69bad0d06"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa7b3c6a3863fa1d7b0c467b69bad0d06">&#9670;&nbsp;</a></span>SetGlobalFieldsNode()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void vtkConduitSource::SetGlobalFieldsNode </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="vtkConduitArrayUtilities_8h.html#ae3581e4dead1dadad172dd443290a62e">conduit_node</a> *&#160;</td>
+          <td class="paramname"><em>node</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Mechanism to add global / field-data arrays. </p>
+<p>This is currently experimental and expected to change. It is experimental since it's unclear to the developer if Conduit Blueprint already supports specifying global fields i.e. without any association. Doesn't look like it, but if it does, this should be changed to directly leverage that. </p>
 
 </div>
 </div>
