@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>web.protocols Module &mdash; ParaView/Python 5.9.0-RC1-269-g30787f22f5 documentation</title>
+  <title>web.protocols Module &mdash; ParaView/Python 5.9.0-RC1-286-g9093c2ab45 documentation</title>
   
 
   
@@ -22,7 +22,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:'./',
-        VERSION:'5.9.0-RC1-269-g30787f22f5',
+        VERSION:'5.9.0-RC1-286-g9093c2ab45',
         COLLAPSE_INDEX:false,
         FILE_SUFFIX:'.html',
         HAS_SOURCE:  true
@@ -47,7 +47,7 @@
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="ParaView/Python 5.9.0-RC1-269-g30787f22f5 documentation" href="index.html"/>
+    <link rel="top" title="ParaView/Python 5.9.0-RC1-286-g9093c2ab45 documentation" href="index.html"/>
         <link rel="up" title="web Package" href="paraview.web.html"/>
         <link rel="next" title="web.pv_wslink Module" href="paraview.web.pv_wslink.html"/>
         <link rel="prev" title="web.helper Module" href="paraview.web.helper.html"/> 
@@ -67,7 +67,7 @@
           <li> <a href="index.html">
             <img src="_static/paraview-logo-small.png"
             alt="ParaView/Python"></img></a> </li>
-          <li class="version"> version 5.9.0-RC1-269-g30787f22f5</li>
+          <li class="version"> version 5.9.0-RC1-286-g9093c2ab45</li>
         </ul>
         <form id ="rtd-search-form" class="wy-form" action="search.html" method="get">
   <input type="text" name="q" placeholder="Search docs" />
@@ -1068,7 +1068,7 @@ from the configured readers.</p>
 
 <dl class="py method">
 <dt id="paraview.web.protocols.ParaViewWebPublishImageDelivery.animate">
-<code class="sig-name descname">animate</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebPublishImageDelivery.animate"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebPublishImageDelivery.animate" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">animate</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">renderAllViews</span><span class="o">=</span><span class="default_value">True</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebPublishImageDelivery.animate"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebPublishImageDelivery.animate" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
@@ -1092,13 +1092,19 @@ from the configured readers.</p>
 <dd></dd></dl>
 
 <dl class="py method">
+<dt id="paraview.web.protocols.ParaViewWebPublishImageDelivery.mouseInteraction">
+<code class="sig-name descname">mouseInteraction</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">event</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebPublishImageDelivery.mouseInteraction"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebPublishImageDelivery.mouseInteraction" title="Permalink to this definition">¶</a></dt>
+<dd><p>RPC Callback for mouse interactions.</p>
+</dd></dl>
+
+<dl class="py method">
 <dt id="paraview.web.protocols.ParaViewWebPublishImageDelivery.progressiveRender">
 <code class="sig-name descname">progressiveRender</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">viewId</span><span class="o">=</span><span class="default_value">'-1'</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebPublishImageDelivery.progressiveRender"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebPublishImageDelivery.progressiveRender" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt id="paraview.web.protocols.ParaViewWebPublishImageDelivery.pushRender">
-<code class="sig-name descname">pushRender</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">vId</span></em>, <em class="sig-param"><span class="n">ignoreAnimation</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebPublishImageDelivery.pushRender"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebPublishImageDelivery.pushRender" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">pushRender</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">vId</span></em>, <em class="sig-param"><span class="n">ignoreAnimation</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">staleCount</span><span class="o">=</span><span class="default_value">0</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebPublishImageDelivery.pushRender"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebPublishImageDelivery.pushRender" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
@@ -1108,7 +1114,12 @@ from the configured readers.</p>
 
 <dl class="py method">
 <dt id="paraview.web.protocols.ParaViewWebPublishImageDelivery.renderStaleImage">
-<code class="sig-name descname">renderStaleImage</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">vId</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebPublishImageDelivery.renderStaleImage"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebPublishImageDelivery.renderStaleImage" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">renderStaleImage</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">vId</span></em>, <em class="sig-param"><span class="n">staleCount</span><span class="o">=</span><span class="default_value">0</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebPublishImageDelivery.renderStaleImage"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebPublishImageDelivery.renderStaleImage" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="paraview.web.protocols.ParaViewWebPublishImageDelivery.setLinkChangeCallback">
+<code class="sig-name descname">setLinkChangeCallback</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">fn</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebPublishImageDelivery.setLinkChangeCallback"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebPublishImageDelivery.setLinkChangeCallback" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
@@ -1140,6 +1151,21 @@ from the configured readers.</p>
 <dl class="py method">
 <dt id="paraview.web.protocols.ParaViewWebPublishImageDelivery.stopViewAnimation">
 <code class="sig-name descname">stopViewAnimation</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">viewId</span><span class="o">=</span><span class="default_value">'-1'</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebPublishImageDelivery.stopViewAnimation"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebPublishImageDelivery.stopViewAnimation" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="paraview.web.protocols.ParaViewWebPublishImageDelivery.updateViewLink">
+<code class="sig-name descname">updateViewLink</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">viewId</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">linkState</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebPublishImageDelivery.updateViewLink"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebPublishImageDelivery.updateViewLink" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="paraview.web.protocols.ParaViewWebPublishImageDelivery.updateZoomFromWheel">
+<code class="sig-name descname">updateZoomFromWheel</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">event</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebPublishImageDelivery.updateZoomFromWheel"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebPublishImageDelivery.updateZoomFromWheel" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="paraview.web.protocols.ParaViewWebPublishImageDelivery.validateViewLinks">
+<code class="sig-name descname">validateViewLinks</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebPublishImageDelivery.validateViewLinks"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebPublishImageDelivery.validateViewLinks" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>

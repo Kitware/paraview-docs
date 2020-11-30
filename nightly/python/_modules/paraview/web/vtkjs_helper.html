@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>paraview.web.vtkjs_helper &mdash; ParaView/Python 5.9.0-RC1-269-g30787f22f5 documentation</title>
+  <title>paraview.web.vtkjs_helper &mdash; ParaView/Python 5.9.0-RC1-286-g9093c2ab45 documentation</title>
   
 
   
@@ -22,7 +22,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:'../../../',
-        VERSION:'5.9.0-RC1-269-g30787f22f5',
+        VERSION:'5.9.0-RC1-286-g9093c2ab45',
         COLLAPSE_INDEX:false,
         FILE_SUFFIX:'.html',
         HAS_SOURCE:  true
@@ -47,7 +47,7 @@
         <link rel="index" title="Index"
               href="../../../genindex.html"/>
         <link rel="search" title="Search" href="../../../search.html"/>
-    <link rel="top" title="ParaView/Python 5.9.0-RC1-269-g30787f22f5 documentation" href="../../../index.html"/>
+    <link rel="top" title="ParaView/Python 5.9.0-RC1-286-g9093c2ab45 documentation" href="../../../index.html"/>
         <link rel="up" title="Module code" href="../../index.html"/> 
 
   <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
@@ -65,7 +65,7 @@
           <li> <a href="../../../index.html">
             <img src="../../../_static/paraview-logo-small.png"
             alt="ParaView/Python"></img></a> </li>
-          <li class="version"> version 5.9.0-RC1-269-g30787f22f5</li>
+          <li class="version"> version 5.9.0-RC1-286-g9093c2ab45</li>
         </ul>
         <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
   <input type="text" name="q" placeholder="Search docs" />
@@ -625,11 +625,12 @@
     <span class="n">view</span> <span class="o">=</span> <span class="n">simple</span><span class="o">.</span><span class="n">GetActiveView</span><span class="p">()</span>
     <span class="n">renderer</span> <span class="o">=</span> <span class="n">view</span><span class="o">.</span><span class="n">GetClientSideObject</span><span class="p">()</span><span class="o">.</span><span class="n">GetRenderer</span><span class="p">()</span>
     <span class="n">viewProps</span> <span class="o">=</span> <span class="n">renderer</span><span class="o">.</span><span class="n">GetViewProps</span><span class="p">()</span>
+    <span class="n">volumes</span> <span class="o">=</span> <span class="n">renderer</span><span class="o">.</span><span class="n">GetVolumes</span><span class="p">()</span>
     <span class="n">idx</span> <span class="o">=</span> <span class="mi">1</span>
     <span class="k">for</span> <span class="n">viewProp</span> <span class="ow">in</span> <span class="n">viewProps</span><span class="p">:</span>
-        <span class="k">if</span> <span class="ow">not</span> <span class="n">viewProp</span><span class="o">.</span><span class="n">GetVisibility</span><span class="p">():</span>
-            <span class="k">continue</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="n">viewProp</span><span class="o">.</span><span class="n">IsA</span><span class="p">(</span><span class="s1">&#39;vtkActor&#39;</span><span class="p">):</span>
+            <span class="k">continue</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">viewProp</span><span class="o">.</span><span class="n">GetVisibility</span><span class="p">():</span>
             <span class="k">continue</span>
         <span class="n">bounds</span> <span class="o">=</span> <span class="n">viewProp</span><span class="o">.</span><span class="n">GetBounds</span><span class="p">()</span>
         <span class="k">if</span> <span class="n">bounds</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">bounds</span><span class="p">[</span><span class="mi">1</span><span class="p">]:</span>
@@ -640,6 +641,18 @@
         <span class="n">strIdx</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">idx</span>
         <span class="n">renameMap</span><span class="p">[</span><span class="n">strIdx</span><span class="p">]</span> <span class="o">=</span> <span class="n">findName</span><span class="p">(</span><span class="n">names</span><span class="p">,</span> <span class="n">viewProp</span><span class="p">,</span> <span class="n">strIdx</span><span class="p">)</span>
         <span class="n">idx</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="k">for</span> <span class="n">volume</span> <span class="ow">in</span> <span class="n">volumes</span><span class="p">:</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">volume</span><span class="o">.</span><span class="n">IsA</span><span class="p">(</span><span class="s1">&#39;vtkVolume&#39;</span><span class="p">):</span>
+            <span class="k">continue</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">volume</span><span class="o">.</span><span class="n">GetVisibility</span><span class="p">():</span>
+            <span class="k">continue</span>
+        <span class="n">bounds</span> <span class="o">=</span> <span class="n">volume</span><span class="o">.</span><span class="n">GetBounds</span><span class="p">()</span>
+        <span class="k">if</span> <span class="n">bounds</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">bounds</span><span class="p">[</span><span class="mi">1</span><span class="p">]:</span>
+            <span class="k">continue</span>
+        <span class="n">strIdx</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">idx</span>
+        <span class="n">renameMap</span><span class="p">[</span><span class="n">strIdx</span><span class="p">]</span> <span class="o">=</span> <span class="n">findName</span><span class="p">(</span><span class="n">names</span><span class="p">,</span> <span class="n">volume</span><span class="p">,</span> <span class="n">strIdx</span><span class="p">)</span>
+        <span class="n">idx</span> <span class="o">+=</span> <span class="mi">1</span>
+
     <span class="k">return</span> <span class="n">renameMap</span></div>
 
 

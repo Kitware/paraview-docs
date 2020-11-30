@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>paraview.web.protocols &mdash; ParaView/Python 5.9.0-RC1-269-g30787f22f5 documentation</title>
+  <title>paraview.web.protocols &mdash; ParaView/Python 5.9.0-RC1-286-g9093c2ab45 documentation</title>
   
 
   
@@ -22,7 +22,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:'../../../',
-        VERSION:'5.9.0-RC1-269-g30787f22f5',
+        VERSION:'5.9.0-RC1-286-g9093c2ab45',
         COLLAPSE_INDEX:false,
         FILE_SUFFIX:'.html',
         HAS_SOURCE:  true
@@ -47,7 +47,7 @@
         <link rel="index" title="Index"
               href="../../../genindex.html"/>
         <link rel="search" title="Search" href="../../../search.html"/>
-    <link rel="top" title="ParaView/Python 5.9.0-RC1-269-g30787f22f5 documentation" href="../../../index.html"/>
+    <link rel="top" title="ParaView/Python 5.9.0-RC1-286-g9093c2ab45 documentation" href="../../../index.html"/>
         <link rel="up" title="Module code" href="../../index.html"/> 
 
   <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
@@ -65,7 +65,7 @@
           <li> <a href="../../../index.html">
             <img src="../../../_static/paraview-logo-small.png"
             alt="ParaView/Python"></img></a> </li>
-          <li class="version"> version 5.9.0-RC1-269-g30787f22f5</li>
+          <li class="version"> version 5.9.0-RC1-286-g9093c2ab45</li>
         </ul>
         <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
   <input type="text" name="q" placeholder="Search docs" />
@@ -1005,6 +1005,24 @@
 <span class="c1">#</span>
 <span class="c1"># =============================================================================</span>
 
+<span class="n">CAMERA_PROP_NAMES</span> <span class="o">=</span> <span class="p">[</span>
+  <span class="s1">&#39;CameraFocalPoint&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;CameraParallelProjection&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;CameraParallelScale&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;CameraPosition&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;CameraViewAngle&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;CameraViewUp&#39;</span><span class="p">,</span>
+<span class="p">]</span>
+
+<span class="k">def</span> <span class="nf">_pushCameraLink</span><span class="p">(</span><span class="n">viewSrc</span><span class="p">,</span> <span class="n">viewDstList</span><span class="p">):</span>
+  <span class="n">props</span> <span class="o">=</span> <span class="p">{}</span>
+  <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">CAMERA_PROP_NAMES</span><span class="p">:</span>
+    <span class="n">props</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">viewSrc</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
+  <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">viewDstList</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">CAMERA_PROP_NAMES</span><span class="p">:</span>
+      <span class="n">v</span><span class="o">.</span><span class="fm">__setattr__</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">props</span><span class="p">[</span><span class="n">name</span><span class="p">])</span>
+  <span class="k">return</span> <span class="n">props</span>
+
 <div class="viewcode-block" id="ParaViewWebPublishImageDelivery"><a class="viewcode-back" href="../../../paraview.web.protocols.html#paraview.web.protocols.ParaViewWebPublishImageDelivery">[docs]</a><span class="k">class</span> <span class="nc">ParaViewWebPublishImageDelivery</span><span class="p">(</span><span class="n">ParaViewWebProtocol</span><span class="p">):</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">decode</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
         <span class="n">ParaViewWebProtocol</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
@@ -1018,8 +1036,20 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">minFrameRate</span> <span class="o">=</span> <span class="mf">12.0</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">maxFrameRate</span> <span class="o">=</span> <span class="mf">30.0</span>
 
+        <span class="c1"># Camera link handling</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">linkedViews</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">linkNames</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">onLinkChange</span> <span class="o">=</span> <span class="kc">None</span>
 
-<div class="viewcode-block" id="ParaViewWebPublishImageDelivery.pushRender"><a class="viewcode-back" href="../../../paraview.web.protocols.html#paraview.web.protocols.ParaViewWebPublishImageDelivery.pushRender">[docs]</a>    <span class="k">def</span> <span class="nf">pushRender</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">vId</span><span class="p">,</span> <span class="n">ignoreAnimation</span> <span class="o">=</span> <span class="kc">False</span><span class="p">):</span>
+        <span class="c1"># Mouse handling</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">lastAction</span> <span class="o">=</span> <span class="s1">&#39;up&#39;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">activeViewId</span> <span class="o">=</span> <span class="kc">None</span>
+
+    <span class="c1"># In case some external protocol wants to monitor when link views change</span>
+<div class="viewcode-block" id="ParaViewWebPublishImageDelivery.setLinkChangeCallback"><a class="viewcode-back" href="../../../paraview.web.protocols.html#paraview.web.protocols.ParaViewWebPublishImageDelivery.setLinkChangeCallback">[docs]</a>    <span class="k">def</span> <span class="nf">setLinkChangeCallback</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">fn</span><span class="p">):</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">onLinkChange</span> <span class="o">=</span> <span class="n">fn</span></div>
+
+<div class="viewcode-block" id="ParaViewWebPublishImageDelivery.pushRender"><a class="viewcode-back" href="../../../paraview.web.protocols.html#paraview.web.protocols.ParaViewWebPublishImageDelivery.pushRender">[docs]</a>    <span class="k">def</span> <span class="nf">pushRender</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">vId</span><span class="p">,</span> <span class="n">ignoreAnimation</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span> <span class="n">staleCount</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
         <span class="k">if</span> <span class="n">vId</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">trackingViews</span><span class="p">:</span>
             <span class="k">return</span>
 
@@ -1031,7 +1061,7 @@
 
         <span class="k">if</span> <span class="s2">&quot;originalSize&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">trackingViews</span><span class="p">[</span><span class="n">vId</span><span class="p">]:</span>
             <span class="n">view</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">getView</span><span class="p">(</span><span class="n">vId</span><span class="p">)</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">trackingViews</span><span class="p">[</span><span class="n">vId</span><span class="p">][</span><span class="s2">&quot;originalSize&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">view</span><span class="o">.</span><span class="n">ViewSize</span><span class="p">);</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">trackingViews</span><span class="p">[</span><span class="n">vId</span><span class="p">][</span><span class="s2">&quot;originalSize&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">view</span><span class="o">.</span><span class="n">ViewSize</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span> <span class="nb">int</span><span class="p">(</span><span class="n">view</span><span class="o">.</span><span class="n">ViewSize</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span>
 
         <span class="k">if</span> <span class="s2">&quot;ratio&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">trackingViews</span><span class="p">[</span><span class="n">vId</span><span class="p">]:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">trackingViews</span><span class="p">[</span><span class="n">vId</span><span class="p">][</span><span class="s2">&quot;ratio&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
@@ -1042,6 +1072,11 @@
         <span class="n">size</span> <span class="o">=</span> <span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="n">s</span> <span class="o">*</span> <span class="n">ratio</span><span class="p">)</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">trackingViews</span><span class="p">[</span><span class="n">vId</span><span class="p">][</span><span class="s2">&quot;originalSize&quot;</span><span class="p">]]</span>
 
         <span class="n">reply</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">stillRender</span><span class="p">({</span> <span class="s2">&quot;view&quot;</span><span class="p">:</span> <span class="n">vId</span><span class="p">,</span> <span class="s2">&quot;mtime&quot;</span><span class="p">:</span> <span class="n">mtime</span><span class="p">,</span> <span class="s2">&quot;quality&quot;</span><span class="p">:</span> <span class="n">quality</span><span class="p">,</span> <span class="s2">&quot;size&quot;</span><span class="p">:</span> <span class="n">size</span> <span class="p">})</span>
+
+        <span class="c1"># View might have been deleted</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">reply</span><span class="p">:</span>
+          <span class="k">return</span>
+
         <span class="n">stale</span> <span class="o">=</span> <span class="n">reply</span><span class="p">[</span><span class="s2">&quot;stale&quot;</span><span class="p">]</span>
         <span class="k">if</span> <span class="n">reply</span><span class="p">[</span><span class="s2">&quot;image&quot;</span><span class="p">]:</span>
             <span class="c1"># depending on whether the app has encoding enabled:</span>
@@ -1059,31 +1094,40 @@
             <span class="bp">self</span><span class="o">.</span><span class="n">lastStaleTime</span><span class="p">[</span><span class="n">vId</span><span class="p">]</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
             <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">staleHandlerCount</span><span class="p">[</span><span class="n">vId</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
                 <span class="bp">self</span><span class="o">.</span><span class="n">staleHandlerCount</span><span class="p">[</span><span class="n">vId</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
-                <span class="n">reactor</span><span class="o">.</span><span class="n">callLater</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">deltaStaleTimeBeforeRender</span><span class="p">,</span> <span class="k">lambda</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">renderStaleImage</span><span class="p">(</span><span class="n">vId</span><span class="p">))</span>
+                <span class="n">reactor</span><span class="o">.</span><span class="n">callLater</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">deltaStaleTimeBeforeRender</span><span class="p">,</span> <span class="k">lambda</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">renderStaleImage</span><span class="p">(</span><span class="n">vId</span><span class="p">,</span> <span class="n">staleCount</span><span class="p">))</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">lastStaleTime</span><span class="p">[</span><span class="n">vId</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span></div>
 
 
-<div class="viewcode-block" id="ParaViewWebPublishImageDelivery.renderStaleImage"><a class="viewcode-back" href="../../../paraview.web.protocols.html#paraview.web.protocols.ParaViewWebPublishImageDelivery.renderStaleImage">[docs]</a>    <span class="k">def</span> <span class="nf">renderStaleImage</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">vId</span><span class="p">):</span>
-        <span class="k">if</span> <span class="n">vId</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">staleHandlerCount</span><span class="p">:</span>
+<div class="viewcode-block" id="ParaViewWebPublishImageDelivery.renderStaleImage"><a class="viewcode-back" href="../../../paraview.web.protocols.html#paraview.web.protocols.ParaViewWebPublishImageDelivery.renderStaleImage">[docs]</a>    <span class="k">def</span> <span class="nf">renderStaleImage</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">vId</span><span class="p">,</span> <span class="n">staleCount</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">vId</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">staleHandlerCount</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">staleHandlerCount</span><span class="p">[</span><span class="n">vId</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">staleHandlerCount</span><span class="p">[</span><span class="n">vId</span><span class="p">]</span> <span class="o">-=</span> <span class="mi">1</span>
 
             <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">lastStaleTime</span><span class="p">[</span><span class="n">vId</span><span class="p">]</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
                 <span class="n">delta</span> <span class="o">=</span> <span class="p">(</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">lastStaleTime</span><span class="p">[</span><span class="n">vId</span><span class="p">])</span>
-                <span class="k">if</span> <span class="n">delta</span> <span class="o">&gt;=</span> <span class="bp">self</span><span class="o">.</span><span class="n">deltaStaleTimeBeforeRender</span><span class="p">:</span>
-                    <span class="bp">self</span><span class="o">.</span><span class="n">pushRender</span><span class="p">(</span><span class="n">vId</span><span class="p">)</span>
-                <span class="k">else</span><span class="p">:</span>
+                <span class="c1"># Break on staleCount otherwise linked view will always report to be stale</span>
+                <span class="c1"># And loop forever</span>
+                <span class="k">if</span> <span class="n">delta</span> <span class="o">&gt;=</span> <span class="bp">self</span><span class="o">.</span><span class="n">deltaStaleTimeBeforeRender</span> <span class="ow">and</span> <span class="n">staleCount</span> <span class="o">&lt;</span> <span class="mi">3</span><span class="p">:</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">pushRender</span><span class="p">(</span><span class="n">vId</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="n">staleCount</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+                <span class="k">elif</span> <span class="n">delta</span> <span class="o">&lt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">deltaStaleTimeBeforeRender</span><span class="p">:</span>
                     <span class="bp">self</span><span class="o">.</span><span class="n">staleHandlerCount</span><span class="p">[</span><span class="n">vId</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
-                    <span class="n">reactor</span><span class="o">.</span><span class="n">callLater</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">deltaStaleTimeBeforeRender</span> <span class="o">-</span> <span class="n">delta</span> <span class="o">+</span> <span class="mf">0.001</span><span class="p">,</span> <span class="k">lambda</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">renderStaleImage</span><span class="p">(</span><span class="n">vId</span><span class="p">))</span></div>
+                    <span class="n">reactor</span><span class="o">.</span><span class="n">callLater</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">deltaStaleTimeBeforeRender</span> <span class="o">-</span> <span class="n">delta</span> <span class="o">+</span> <span class="mf">0.001</span><span class="p">,</span> <span class="k">lambda</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">renderStaleImage</span><span class="p">(</span><span class="n">vId</span><span class="p">,</span> <span class="n">staleCount</span><span class="p">))</span></div>
 
 
-<div class="viewcode-block" id="ParaViewWebPublishImageDelivery.animate"><a class="viewcode-back" href="../../../paraview.web.protocols.html#paraview.web.protocols.ParaViewWebPublishImageDelivery.animate">[docs]</a>    <span class="k">def</span> <span class="nf">animate</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="ParaViewWebPublishImageDelivery.animate"><a class="viewcode-back" href="../../../paraview.web.protocols.html#paraview.web.protocols.ParaViewWebPublishImageDelivery.animate">[docs]</a>    <span class="k">def</span> <span class="nf">animate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">renderAllViews</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
         <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">viewsInAnimations</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
             <span class="k">return</span>
 
         <span class="n">nextAnimateTime</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span> <span class="o">+</span> <span class="mf">1.0</span> <span class="o">/</span>  <span class="bp">self</span><span class="o">.</span><span class="n">targetFrameRate</span>
-        <span class="k">for</span> <span class="n">vId</span> <span class="ow">in</span> <span class="nb">set</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">viewsInAnimations</span><span class="p">):</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">pushRender</span><span class="p">(</span><span class="n">vId</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span>
+
+        <span class="c1"># Handle the rendering of the views</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">activeViewId</span><span class="p">:</span>
+          <span class="bp">self</span><span class="o">.</span><span class="n">pushRender</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">activeViewId</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">renderAllViews</span><span class="p">:</span>
+          <span class="k">for</span> <span class="n">vId</span> <span class="ow">in</span> <span class="nb">set</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">viewsInAnimations</span><span class="p">):</span>
+              <span class="k">if</span> <span class="n">vId</span> <span class="o">!=</span> <span class="bp">self</span><span class="o">.</span><span class="n">activeViewId</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">pushRender</span><span class="p">(</span><span class="n">vId</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span>
 
         <span class="n">nextAnimateTime</span> <span class="o">-=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
 
@@ -1095,8 +1139,15 @@
                 <span class="bp">self</span><span class="o">.</span><span class="n">targetFrameRate</span> <span class="o">=</span> <span class="mi">1</span>
             <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">targetFrameRate</span> <span class="o">&gt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">minFrameRate</span><span class="p">:</span>
                 <span class="bp">self</span><span class="o">.</span><span class="n">targetFrameRate</span> <span class="o">-=</span> <span class="mf">1.0</span>
-            <span class="n">reactor</span><span class="o">.</span><span class="n">callLater</span><span class="p">(</span><span class="mf">0.001</span><span class="p">,</span> <span class="k">lambda</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">animate</span><span class="p">())</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">activeViewId</span><span class="p">:</span>
+                <span class="c1"># If active view, prioritize that one over the others</span>
+                <span class="c1"># -&gt; Divide by 2 the refresh rate of the other views</span>
+                <span class="n">reactor</span><span class="o">.</span><span class="n">callLater</span><span class="p">(</span><span class="mf">0.001</span><span class="p">,</span> <span class="k">lambda</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">animate</span><span class="p">(</span><span class="ow">not</span> <span class="n">renderAllViews</span><span class="p">))</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="c1"># Keep animating at the best rate we can</span>
+                <span class="n">reactor</span><span class="o">.</span><span class="n">callLater</span><span class="p">(</span><span class="mf">0.001</span><span class="p">,</span> <span class="k">lambda</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">animate</span><span class="p">())</span>
         <span class="k">else</span><span class="p">:</span>
+            <span class="c1"># We have time so let&#39;s render all</span>
             <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">targetFrameRate</span> <span class="o">&lt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">maxFrameRate</span> <span class="ow">and</span> <span class="n">nextAnimateTime</span> <span class="o">&gt;</span> <span class="mf">0.005</span><span class="p">:</span>
                 <span class="bp">self</span><span class="o">.</span><span class="n">targetFrameRate</span> <span class="o">+=</span> <span class="mf">1.0</span>
             <span class="n">reactor</span><span class="o">.</span><span class="n">callLater</span><span class="p">(</span><span class="n">nextAnimateTime</span><span class="p">,</span> <span class="k">lambda</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">animate</span><span class="p">())</span></div>
@@ -1127,7 +1178,7 @@
         <span class="n">sView</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">getView</span><span class="p">(</span><span class="n">viewId</span><span class="p">)</span>
         <span class="n">realViewId</span> <span class="o">=</span> <span class="n">sView</span><span class="o">.</span><span class="n">GetGlobalIDAsString</span><span class="p">()</span>
 
-        <span class="k">if</span> <span class="n">realViewId</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">viewsInAnimations</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">realViewId</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">viewsInAnimations</span> <span class="ow">and</span> <span class="n">realViewId</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">trackingViews</span><span class="p">:</span>
             <span class="n">progressRendering</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">trackingViews</span><span class="p">[</span><span class="n">realViewId</span><span class="p">][</span><span class="s1">&#39;streaming&#39;</span><span class="p">]</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">viewsInAnimations</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">realViewId</span><span class="p">)</span>
             <span class="k">if</span> <span class="n">progressRendering</span><span class="p">:</span>
@@ -1169,13 +1220,47 @@
 <span class="sd">        RPC Callback to render a view and obtain the rendered image.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">beginTime</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span> <span class="o">*</span> <span class="mi">1000</span><span class="p">))</span>
-        <span class="n">view</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">getView</span><span class="p">(</span><span class="n">options</span><span class="p">[</span><span class="s2">&quot;view&quot;</span><span class="p">])</span>
+        <span class="n">viewId</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">options</span><span class="p">[</span><span class="s2">&quot;view&quot;</span><span class="p">])</span>
+        <span class="n">view</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">getView</span><span class="p">(</span><span class="n">viewId</span><span class="p">)</span>
+
+        <span class="c1"># If no view id provided, skip rendering</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">viewId</span><span class="p">:</span>
+          <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;No view&#39;</span><span class="p">)</span>
+          <span class="nb">print</span><span class="p">(</span><span class="n">options</span><span class="p">)</span>
+          <span class="k">return</span> <span class="kc">None</span>
+
+        <span class="c1"># Make sure request match our selected view</span>
+        <span class="k">if</span> <span class="n">viewId</span> <span class="o">!=</span> <span class="s1">&#39;-1&#39;</span> <span class="ow">and</span> <span class="n">view</span><span class="o">.</span><span class="n">GetGlobalIDAsString</span><span class="p">()</span> <span class="o">!=</span> <span class="n">viewId</span><span class="p">:</span>
+          <span class="c1"># We got active view rather than our request</span>
+          <span class="n">view</span> <span class="o">=</span> <span class="kc">None</span>
+
+        <span class="c1"># No view to render =&gt; need some cleanup</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">view</span><span class="p">:</span>
+          <span class="c1"># The view has been deleted, we can not render it...</span>
+          <span class="c1"># Clean up old view state</span>
+          <span class="k">if</span> <span class="n">viewId</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">viewsInAnimations</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">viewsInAnimations</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">viewId</span><span class="p">)</span>
+
+          <span class="k">if</span> <span class="n">viewId</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">trackingViews</span><span class="p">:</span>
+            <span class="k">del</span> <span class="bp">self</span><span class="o">.</span><span class="n">trackingViews</span><span class="p">[</span><span class="n">viewId</span><span class="p">]</span>
+
+          <span class="k">if</span> <span class="n">viewId</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">staleHandlerCount</span><span class="p">:</span>
+            <span class="k">del</span> <span class="bp">self</span><span class="o">.</span><span class="n">staleHandlerCount</span><span class="p">[</span><span class="n">viewId</span><span class="p">]</span>
+
+          <span class="c1"># the view does not exist anymore, skip rendering</span>
+          <span class="k">return</span> <span class="kc">None</span>
+
+        <span class="c1"># We are in business to render our view...</span>
+
+        <span class="c1"># Make sure our view size match our request</span>
         <span class="n">size</span> <span class="o">=</span> <span class="n">view</span><span class="o">.</span><span class="n">ViewSize</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">2</span><span class="p">]</span>
         <span class="n">resize</span> <span class="o">=</span> <span class="n">size</span> <span class="o">!=</span> <span class="n">options</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;size&quot;</span><span class="p">,</span> <span class="n">size</span><span class="p">)</span>
         <span class="k">if</span> <span class="n">resize</span><span class="p">:</span>
             <span class="n">size</span> <span class="o">=</span> <span class="n">options</span><span class="p">[</span><span class="s2">&quot;size&quot;</span><span class="p">]</span>
             <span class="k">if</span> <span class="n">size</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">10</span> <span class="ow">and</span> <span class="n">size</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">10</span><span class="p">:</span>
               <span class="n">view</span><span class="o">.</span><span class="n">ViewSize</span> <span class="o">=</span> <span class="n">size</span>
+
+        <span class="c1"># Rendering options</span>
         <span class="n">t</span> <span class="o">=</span> <span class="mi">0</span>
         <span class="k">if</span> <span class="n">options</span> <span class="ow">and</span> <span class="s2">&quot;mtime&quot;</span> <span class="ow">in</span> <span class="n">options</span><span class="p">:</span>
             <span class="n">t</span> <span class="o">=</span> <span class="n">options</span><span class="p">[</span><span class="s2">&quot;mtime&quot;</span><span class="p">]</span>
@@ -1208,6 +1293,7 @@
             <span class="n">app</span><span class="o">.</span><span class="n">InvalidateCache</span><span class="p">(</span><span class="n">view</span><span class="o">.</span><span class="n">SMProxy</span><span class="p">)</span>
             <span class="n">reply_image</span> <span class="o">=</span> <span class="n">stillRender</span><span class="p">(</span><span class="n">view</span><span class="o">.</span><span class="n">SMProxy</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">quality</span><span class="p">)</span>
 
+        <span class="c1"># Pack the result</span>
         <span class="n">reply</span><span class="p">[</span><span class="s2">&quot;stale&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">app</span><span class="o">.</span><span class="n">GetHasImagesBeingProcessed</span><span class="p">(</span><span class="n">view</span><span class="o">.</span><span class="n">SMProxy</span><span class="p">)</span>
         <span class="n">reply</span><span class="p">[</span><span class="s2">&quot;mtime&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">app</span><span class="o">.</span><span class="n">GetLastStillRenderToMTime</span><span class="p">()</span>
         <span class="n">reply</span><span class="p">[</span><span class="s2">&quot;size&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">view</span><span class="o">.</span><span class="n">ViewSize</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">2</span><span class="p">]</span>
@@ -1298,6 +1384,11 @@
         <span class="n">observerInfo</span><span class="p">[</span><span class="s1">&#39;quality&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">quality</span>
         <span class="n">observerInfo</span><span class="p">[</span><span class="s1">&#39;ratio&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">ratio</span>
 
+        <span class="c1"># Handle linked view quality/ratio synch</span>
+        <span class="k">if</span> <span class="n">updateLinkedView</span> <span class="ow">and</span> <span class="n">realViewId</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">linkedViews</span><span class="p">:</span>
+          <span class="k">for</span> <span class="n">vid</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">linkedViews</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">setViewQuality</span><span class="p">(</span><span class="n">vid</span><span class="p">,</span> <span class="n">quality</span><span class="p">,</span> <span class="n">ratio</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
+
         <span class="c1"># Update image size right now!</span>
         <span class="k">if</span> <span class="s2">&quot;originalSize&quot;</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">trackingViews</span><span class="p">[</span><span class="n">realViewId</span><span class="p">]:</span>
             <span class="n">size</span> <span class="o">=</span> <span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="n">s</span> <span class="o">*</span> <span class="n">ratio</span><span class="p">)</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">trackingViews</span><span class="p">[</span><span class="n">realViewId</span><span class="p">][</span><span class="s2">&quot;originalSize&quot;</span><span class="p">]]</span>
@@ -1323,7 +1414,7 @@
         <span class="k">if</span> <span class="ow">not</span> <span class="n">observerInfo</span><span class="p">:</span>
             <span class="k">return</span> <span class="p">{</span> <span class="s1">&#39;error&#39;</span><span class="p">:</span> <span class="s1">&#39;Unable to find subscription for view </span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">realViewId</span> <span class="p">}</span>
 
-        <span class="n">observerInfo</span><span class="p">[</span><span class="s1">&#39;originalSize&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">]</span>
+        <span class="n">observerInfo</span><span class="p">[</span><span class="s1">&#39;originalSize&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">width</span><span class="p">),</span> <span class="nb">int</span><span class="p">(</span><span class="n">height</span><span class="p">))</span>
 
         <span class="k">return</span> <span class="p">{</span> <span class="s1">&#39;result&#39;</span><span class="p">:</span> <span class="s1">&#39;success&#39;</span> <span class="p">}</span></div>
 
@@ -1355,7 +1446,151 @@
 
         <span class="bp">self</span><span class="o">.</span><span class="n">getApplication</span><span class="p">()</span><span class="o">.</span><span class="n">InvalidateCache</span><span class="p">(</span><span class="n">sView</span><span class="o">.</span><span class="n">SMProxy</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">getApplication</span><span class="p">()</span><span class="o">.</span><span class="n">InvokeEvent</span><span class="p">(</span><span class="s1">&#39;UpdateEvent&#39;</span><span class="p">)</span>
-        <span class="k">return</span> <span class="p">{</span> <span class="s1">&#39;result&#39;</span><span class="p">:</span> <span class="s1">&#39;success&#39;</span> <span class="p">}</span></div></div>
+        <span class="k">return</span> <span class="p">{</span> <span class="s1">&#39;result&#39;</span><span class="p">:</span> <span class="s1">&#39;success&#39;</span> <span class="p">}</span></div>
+
+    <span class="c1"># -------------------------------------------------------------------------</span>
+    <span class="c1"># View linked</span>
+    <span class="c1"># -------------------------------------------------------------------------</span>
+
+<div class="viewcode-block" id="ParaViewWebPublishImageDelivery.validateViewLinks"><a class="viewcode-back" href="../../../paraview.web.protocols.html#paraview.web.protocols.ParaViewWebPublishImageDelivery.validateViewLinks">[docs]</a>    <span class="k">def</span> <span class="nf">validateViewLinks</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+      <span class="k">for</span> <span class="n">linkName</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">linkNames</span><span class="p">:</span>
+        <span class="n">simple</span><span class="o">.</span><span class="n">RemoveCameraLink</span><span class="p">(</span><span class="n">linkName</span><span class="p">)</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">linkNames</span> <span class="o">=</span> <span class="p">[]</span>
+
+      <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">linkedViews</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="n">viewList</span> <span class="o">=</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">getView</span><span class="p">(</span><span class="n">vid</span><span class="p">)</span> <span class="k">for</span> <span class="n">vid</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">linkedViews</span><span class="p">]</span>
+        <span class="n">refView</span> <span class="o">=</span> <span class="n">viewList</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">view</span> <span class="ow">in</span> <span class="n">viewList</span><span class="p">:</span>
+          <span class="n">linkName</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="si">%s</span><span class="s1">_</span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">refView</span><span class="o">.</span><span class="n">GetGlobalIDAsString</span><span class="p">(),</span> <span class="n">view</span><span class="o">.</span><span class="n">GetGlobalIDAsString</span><span class="p">())</span>
+          <span class="n">simple</span><span class="o">.</span><span class="n">AddCameraLink</span><span class="p">(</span><span class="n">refView</span><span class="p">,</span> <span class="n">view</span><span class="p">,</span> <span class="n">linkName</span><span class="p">)</span>
+          <span class="bp">self</span><span class="o">.</span><span class="n">linkNames</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">linkName</span><span class="p">)</span>
+
+        <span class="c1"># Synch camera state</span>
+        <span class="n">srcView</span> <span class="o">=</span> <span class="n">viewList</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="n">dstViews</span> <span class="o">=</span> <span class="n">viewList</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>
+        <span class="n">_pushCameraLink</span><span class="p">(</span><span class="n">srcView</span><span class="p">,</span> <span class="n">dstViews</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="ParaViewWebPublishImageDelivery.updateViewLink"><a class="viewcode-back" href="../../../paraview.web.protocols.html#paraview.web.protocols.ParaViewWebPublishImageDelivery.updateViewLink">[docs]</a>    <span class="nd">@exportRpc</span><span class="p">(</span><span class="s2">&quot;viewport.view.link&quot;</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">updateViewLink</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">viewId</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">linkState</span> <span class="o">=</span> <span class="kc">False</span><span class="p">):</span>
+      <span class="k">if</span> <span class="n">viewId</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">linkState</span><span class="p">:</span>
+          <span class="bp">self</span><span class="o">.</span><span class="n">linkedViews</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">viewId</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+          <span class="k">try</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">linkedViews</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">viewId</span><span class="p">)</span>
+          <span class="k">except</span><span class="p">:</span>
+            <span class="k">pass</span>
+        <span class="c1">#self.validateViewLinks()</span>
+
+      <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">linkedViews</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="n">allViews</span> <span class="o">=</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">getView</span><span class="p">(</span><span class="n">vid</span><span class="p">)</span> <span class="k">for</span> <span class="n">vid</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">linkedViews</span><span class="p">]</span>
+        <span class="n">_pushCameraLink</span><span class="p">(</span><span class="n">allViews</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">allViews</span><span class="p">[</span><span class="mi">1</span><span class="p">:])</span>
+
+      <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">onLinkChange</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">onLinkChange</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">linkedViews</span><span class="p">)</span>
+
+      <span class="k">if</span> <span class="n">linkState</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">getApplication</span><span class="p">()</span><span class="o">.</span><span class="n">InvokeEvent</span><span class="p">(</span><span class="s1">&#39;UpdateEvent&#39;</span><span class="p">)</span>
+
+      <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">linkedViews</span></div>
+
+
+    <span class="c1"># -------------------------------------------------------------------------</span>
+    <span class="c1"># Mouse handling</span>
+    <span class="c1"># -------------------------------------------------------------------------</span>
+
+<div class="viewcode-block" id="ParaViewWebPublishImageDelivery.mouseInteraction"><a class="viewcode-back" href="../../../paraview.web.protocols.html#paraview.web.protocols.ParaViewWebPublishImageDelivery.mouseInteraction">[docs]</a>    <span class="nd">@exportRpc</span><span class="p">(</span><span class="s2">&quot;viewport.mouse.interaction&quot;</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">mouseInteraction</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">event</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        RPC Callback for mouse interactions.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">view</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">getView</span><span class="p">(</span><span class="n">event</span><span class="p">[</span><span class="s1">&#39;view&#39;</span><span class="p">])</span>
+
+        <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">view</span><span class="p">,</span> <span class="s1">&#39;UseInteractiveRenderingForScreenshots&#39;</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">event</span><span class="p">[</span><span class="s2">&quot;action&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;down&#39;</span><span class="p">:</span>
+                <span class="n">view</span><span class="o">.</span><span class="n">UseInteractiveRenderingForScreenshots</span> <span class="o">=</span> <span class="mi">1</span>
+            <span class="k">elif</span> <span class="n">event</span><span class="p">[</span><span class="s2">&quot;action&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;up&#39;</span><span class="p">:</span>
+                <span class="n">view</span><span class="o">.</span><span class="n">UseInteractiveRenderingForScreenshots</span> <span class="o">=</span> <span class="mi">0</span>
+
+        <span class="n">buttons</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">if</span> <span class="n">event</span><span class="p">[</span><span class="s2">&quot;buttonLeft&quot;</span><span class="p">]:</span>
+            <span class="n">buttons</span> <span class="o">|=</span> <span class="n">vtkWebInteractionEvent</span><span class="o">.</span><span class="n">LEFT_BUTTON</span>
+        <span class="k">if</span> <span class="n">event</span><span class="p">[</span><span class="s2">&quot;buttonMiddle&quot;</span><span class="p">]:</span>
+            <span class="n">buttons</span> <span class="o">|=</span> <span class="n">vtkWebInteractionEvent</span><span class="o">.</span><span class="n">MIDDLE_BUTTON</span>
+        <span class="k">if</span> <span class="n">event</span><span class="p">[</span><span class="s2">&quot;buttonRight&quot;</span><span class="p">]:</span>
+            <span class="n">buttons</span> <span class="o">|=</span> <span class="n">vtkWebInteractionEvent</span><span class="o">.</span><span class="n">RIGHT_BUTTON</span>
+
+        <span class="n">modifiers</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">if</span> <span class="n">event</span><span class="p">[</span><span class="s2">&quot;shiftKey&quot;</span><span class="p">]:</span>
+            <span class="n">modifiers</span> <span class="o">|=</span> <span class="n">vtkWebInteractionEvent</span><span class="o">.</span><span class="n">SHIFT_KEY</span>
+        <span class="k">if</span> <span class="n">event</span><span class="p">[</span><span class="s2">&quot;ctrlKey&quot;</span><span class="p">]:</span>
+            <span class="n">modifiers</span> <span class="o">|=</span> <span class="n">vtkWebInteractionEvent</span><span class="o">.</span><span class="n">CTRL_KEY</span>
+        <span class="k">if</span> <span class="n">event</span><span class="p">[</span><span class="s2">&quot;altKey&quot;</span><span class="p">]:</span>
+            <span class="n">modifiers</span> <span class="o">|=</span> <span class="n">vtkWebInteractionEvent</span><span class="o">.</span><span class="n">ALT_KEY</span>
+        <span class="k">if</span> <span class="n">event</span><span class="p">[</span><span class="s2">&quot;metaKey&quot;</span><span class="p">]:</span>
+            <span class="n">modifiers</span> <span class="o">|=</span> <span class="n">vtkWebInteractionEvent</span><span class="o">.</span><span class="n">META_KEY</span>
+
+        <span class="n">pvevent</span> <span class="o">=</span> <span class="n">vtkWebInteractionEvent</span><span class="p">()</span>
+        <span class="n">pvevent</span><span class="o">.</span><span class="n">SetButtons</span><span class="p">(</span><span class="n">buttons</span><span class="p">)</span>
+        <span class="n">pvevent</span><span class="o">.</span><span class="n">SetModifiers</span><span class="p">(</span><span class="n">modifiers</span><span class="p">)</span>
+        <span class="n">pvevent</span><span class="o">.</span><span class="n">SetX</span><span class="p">(</span><span class="n">event</span><span class="p">[</span><span class="s2">&quot;x&quot;</span><span class="p">])</span>
+        <span class="n">pvevent</span><span class="o">.</span><span class="n">SetY</span><span class="p">(</span><span class="n">event</span><span class="p">[</span><span class="s2">&quot;y&quot;</span><span class="p">])</span>
+        <span class="c1">#pvevent.SetKeyCode(event[&quot;charCode&quot;])</span>
+        <span class="n">retVal</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">getApplication</span><span class="p">()</span><span class="o">.</span><span class="n">HandleInteractionEvent</span><span class="p">(</span><span class="n">view</span><span class="o">.</span><span class="n">SMProxy</span><span class="p">,</span> <span class="n">pvevent</span><span class="p">)</span>
+        <span class="k">del</span> <span class="n">pvevent</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">activeViewId</span> <span class="o">=</span> <span class="n">view</span><span class="o">.</span><span class="n">GetGlobalIDAsString</span><span class="p">()</span>
+
+        <span class="k">if</span> <span class="n">event</span><span class="p">[</span><span class="s2">&quot;action&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;down&#39;</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">lastAction</span> <span class="o">!=</span> <span class="n">event</span><span class="p">[</span><span class="s2">&quot;action&quot;</span><span class="p">]:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">getApplication</span><span class="p">()</span><span class="o">.</span><span class="n">InvokeEvent</span><span class="p">(</span><span class="s1">&#39;StartInteractionEvent&#39;</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">event</span><span class="p">[</span><span class="s2">&quot;action&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;up&#39;</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">lastAction</span> <span class="o">!=</span> <span class="n">event</span><span class="p">[</span><span class="s2">&quot;action&quot;</span><span class="p">]:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">getApplication</span><span class="p">()</span><span class="o">.</span><span class="n">InvokeEvent</span><span class="p">(</span><span class="s1">&#39;EndInteractionEvent&#39;</span><span class="p">)</span>
+
+        <span class="c1">#if retVal :</span>
+        <span class="c1">#  self.getApplication().InvokeEvent(&#39;UpdateEvent&#39;)</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">activeViewId</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">linkedViews</span><span class="p">:</span>
+          <span class="n">dstViews</span> <span class="o">=</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">getView</span><span class="p">(</span><span class="n">vid</span><span class="p">)</span> <span class="k">for</span> <span class="n">vid</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">linkedViews</span><span class="p">]</span>
+          <span class="n">_pushCameraLink</span><span class="p">(</span><span class="n">view</span><span class="p">,</span> <span class="n">dstViews</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">lastAction</span> <span class="o">=</span> <span class="n">event</span><span class="p">[</span><span class="s2">&quot;action&quot;</span><span class="p">]</span>
+
+        <span class="k">return</span> <span class="n">retVal</span></div>
+
+
+<div class="viewcode-block" id="ParaViewWebPublishImageDelivery.updateZoomFromWheel"><a class="viewcode-back" href="../../../paraview.web.protocols.html#paraview.web.protocols.ParaViewWebPublishImageDelivery.updateZoomFromWheel">[docs]</a>    <span class="nd">@exportRpc</span><span class="p">(</span><span class="s2">&quot;viewport.mouse.zoom.wheel&quot;</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">updateZoomFromWheel</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">event</span><span class="p">):</span>
+      <span class="k">if</span> <span class="s1">&#39;Start&#39;</span> <span class="ow">in</span> <span class="n">event</span><span class="p">[</span><span class="s2">&quot;type&quot;</span><span class="p">]:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">getApplication</span><span class="p">()</span><span class="o">.</span><span class="n">InvokeEvent</span><span class="p">(</span><span class="s1">&#39;StartInteractionEvent&#39;</span><span class="p">)</span>
+
+      <span class="n">viewProxy</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">getView</span><span class="p">(</span><span class="n">event</span><span class="p">[</span><span class="s1">&#39;view&#39;</span><span class="p">])</span>
+      <span class="k">if</span> <span class="n">viewProxy</span> <span class="ow">and</span> <span class="s1">&#39;spinY&#39;</span> <span class="ow">in</span> <span class="n">event</span><span class="p">:</span>
+        <span class="n">rootId</span> <span class="o">=</span> <span class="n">viewProxy</span><span class="o">.</span><span class="n">GetGlobalIDAsString</span><span class="p">()</span>
+        <span class="n">zoomFactor</span> <span class="o">=</span> <span class="mf">1.0</span> <span class="o">-</span> <span class="n">event</span><span class="p">[</span><span class="s1">&#39;spinY&#39;</span><span class="p">]</span> <span class="o">/</span> <span class="mf">10.0</span>
+
+        <span class="k">if</span> <span class="n">rootId</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">linkedViews</span><span class="p">:</span>
+          <span class="n">fp</span> <span class="o">=</span> <span class="n">viewProxy</span><span class="o">.</span><span class="n">CameraFocalPoint</span>
+          <span class="n">pos</span> <span class="o">=</span> <span class="n">viewProxy</span><span class="o">.</span><span class="n">CameraPosition</span>
+          <span class="n">delta</span> <span class="o">=</span> <span class="p">[</span><span class="n">fp</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">-</span> <span class="n">pos</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">)]</span>
+          <span class="n">viewProxy</span><span class="o">.</span><span class="n">GetActiveCamera</span><span class="p">()</span><span class="o">.</span><span class="n">Zoom</span><span class="p">(</span><span class="n">zoomFactor</span><span class="p">)</span>
+          <span class="n">viewProxy</span><span class="o">.</span><span class="n">UpdatePropertyInformation</span><span class="p">()</span>
+          <span class="n">pos2</span> <span class="o">=</span> <span class="n">viewProxy</span><span class="o">.</span><span class="n">CameraPosition</span>
+          <span class="n">viewProxy</span><span class="o">.</span><span class="n">CameraFocalPoint</span> <span class="o">=</span> <span class="p">[</span><span class="n">pos2</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="n">delta</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">)]</span>
+          <span class="n">dstViews</span> <span class="o">=</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">getView</span><span class="p">(</span><span class="n">vid</span><span class="p">)</span> <span class="k">for</span> <span class="n">vid</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">linkedViews</span><span class="p">]</span>
+          <span class="n">_pushCameraLink</span><span class="p">(</span><span class="n">viewProxy</span><span class="p">,</span> <span class="n">dstViews</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+          <span class="n">fp</span> <span class="o">=</span> <span class="n">viewProxy</span><span class="o">.</span><span class="n">CameraFocalPoint</span>
+          <span class="n">pos</span> <span class="o">=</span> <span class="n">viewProxy</span><span class="o">.</span><span class="n">CameraPosition</span>
+          <span class="n">delta</span> <span class="o">=</span> <span class="p">[</span><span class="n">fp</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">-</span> <span class="n">pos</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">)]</span>
+          <span class="n">viewProxy</span><span class="o">.</span><span class="n">GetActiveCamera</span><span class="p">()</span><span class="o">.</span><span class="n">Zoom</span><span class="p">(</span><span class="n">zoomFactor</span><span class="p">)</span>
+          <span class="n">viewProxy</span><span class="o">.</span><span class="n">UpdatePropertyInformation</span><span class="p">()</span>
+          <span class="n">pos2</span> <span class="o">=</span> <span class="n">viewProxy</span><span class="o">.</span><span class="n">CameraPosition</span>
+          <span class="n">viewProxy</span><span class="o">.</span><span class="n">CameraFocalPoint</span> <span class="o">=</span> <span class="p">[</span><span class="n">pos2</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="n">delta</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">)]</span>
+
+      <span class="k">if</span> <span class="s1">&#39;End&#39;</span> <span class="ow">in</span> <span class="n">event</span><span class="p">[</span><span class="s2">&quot;type&quot;</span><span class="p">]:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">getApplication</span><span class="p">()</span><span class="o">.</span><span class="n">InvokeEvent</span><span class="p">(</span><span class="s1">&#39;EndInteractionEvent&#39;</span><span class="p">)</span></div></div>
 
 <span class="c1"># =============================================================================</span>
 <span class="c1">#</span>
