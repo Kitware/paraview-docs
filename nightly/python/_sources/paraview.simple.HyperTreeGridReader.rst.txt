@@ -10,6 +10,13 @@ Data Descriptors
 
 
    
+   BoundingBoxByCoordinates
+       This property sets the bounding box to select HyperTrees.
+       HyperTrees completely included or intersecting with the bounding box will be
+       selected and fully loaded (no partial tree).
+       The 6 fields are coordinates of the bounding box, in the following order:
+       Xmin, Xmax, Ymin, Ymax, Zmin, Zmax.
+   
    FileNames
        The list of files to be read by the
        reader.
