@@ -99,7 +99,7 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Wrap a set of modules for use in Python. </p>
-<div class="fragment"><div class="line"><a class="code" href="group__module-wrapping-python.html#ga0ed7f9062d579088b86e38cc3f66505a">vtk_module_wrap_python</a>(</div><div class="line">  MODULES &lt;module&gt;...</div><div class="line">  [TARGET &lt;target&gt;]</div><div class="line">  [WRAPPED_MODULES &lt;varname&gt;]</div><div class="line"></div><div class="line">  [BUILD_STATIC &lt;ON|OFF&gt;]</div><div class="line">  [INSTALL_HEADERS &lt;ON|OFF&gt;]</div><div class="line"></div><div class="line">  [DEPENDS &lt;target&gt;...]</div><div class="line"></div><div class="line">  [MODULE_DESTINATION &lt;destination&gt;]</div><div class="line">  [STATIC_MODULE_DESTINATION &lt;destination&gt;]</div><div class="line">  [CMAKE_DESTINATION &lt;destination&gt;]</div><div class="line">  [LIBRARY_DESTINATION &lt;destination&gt;]</div><div class="line"></div><div class="line">  [PYTHON_PACKAGE &lt;package&gt;]</div><div class="line">  [SOABI &lt;soabi&gt;]</div><div class="line"></div><div class="line">  [INSTALL_EXPORT &lt;export&gt;]</div><div class="line">  [COMPONENT &lt;component&gt;])</div><div class="line">  [TARGET_SPECIFIC_COMPONENTS &lt;ON|OFF&gt;]</div></div><!-- fragment --><ul>
+<div class="fragment"><div class="line"><a class="code" href="group__module-wrapping-python.html#ga0ed7f9062d579088b86e38cc3f66505a">vtk_module_wrap_python</a>(</div><div class="line">  MODULES &lt;module&gt;...</div><div class="line">  [TARGET &lt;target&gt;]</div><div class="line">  [WRAPPED_MODULES &lt;varname&gt;]</div><div class="line"></div><div class="line">  [BUILD_STATIC &lt;ON|OFF&gt;]</div><div class="line">  [INSTALL_HEADERS &lt;ON|OFF&gt;]</div><div class="line"></div><div class="line">  [DEPENDS &lt;target&gt;...]</div><div class="line"></div><div class="line">  [MODULE_DESTINATION &lt;destination&gt;]</div><div class="line">  [STATIC_MODULE_DESTINATION &lt;destination&gt;]</div><div class="line">  [CMAKE_DESTINATION &lt;destination&gt;]</div><div class="line">  [LIBRARY_DESTINATION &lt;destination&gt;]</div><div class="line"></div><div class="line">  [PYTHON_PACKAGE &lt;package&gt;]</div><div class="line">  [SOABI &lt;soabi&gt;]</div><div class="line">  [USE_DEBUG_SUFFIX &lt;ON|OFF&gt;]</div><div class="line"></div><div class="line">  [INSTALL_EXPORT &lt;export&gt;]</div><div class="line">  [COMPONENT &lt;component&gt;])</div><div class="line">  [TARGET_SPECIFIC_COMPONENTS &lt;ON|OFF&gt;]</div></div><!-- fragment --><ul>
 <li><code>MODULES</code>: (Required) The list of modules to wrap.</li>
 <li><code>TARGET</code>: (Recommended) The target to create which represents all wrapped Python modules. This is mostly useful when supporting static Python modules in order to add the generated modules to the built-in table.</li>
 <li><code>WRAPPED_MODULES</code>: (Recommended) Not all modules are wrappable. This variable will be set to contain the list of modules which were wrapped. These modules will have a <code>INTERFACE_vtk_module_python_package</code> property set on them which is the name that should be given to <code>import</code> statements in Python code.</li>
@@ -113,11 +113,12 @@ Functions</h2></td></tr>
 <li><code>LIBRARY_DESTINATION</code> (Recommended): If provided, dynamic loader information will be added to modules for loading dependent libraries.</li>
 <li><code>PYTHON_PACKAGE</code>: (Recommended) All generated modules will be added to this Python package. The format is in Python syntax (e.g., <code>package.subpackage</code>).</li>
 <li><code>SOABI</code>: (Required for wheel support): If given, generate libraries with the SOABI tag in the module filename.</li>
+<li><code>USE_DEBUG_SUFFIX</code> (Defaults to <code>OFF</code>): If <code>ON</code>, Windows modules will have a <code>_d</code> suffix appended to the module name. This is intended for use with debug Python builds.</li>
 <li><code>INSTALL_EXPORT</code>: If provided, static installs will add the installed libraries to the provided export set.</li>
 <li><code>COMPONENT</code>: Defaults to <code>python</code>. All install rules created by this function will use this installation component. </li>
 </ul>
 
-<p class="definition">Definition at line <a class="el" href="vtkModuleWrapPython_8cmake_source.html#l00582">582</a> of file <a class="el" href="vtkModuleWrapPython_8cmake_source.html">vtkModuleWrapPython.cmake</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vtkModuleWrapPython_8cmake_source.html#l00585">585</a> of file <a class="el" href="vtkModuleWrapPython_8cmake_source.html">vtkModuleWrapPython.cmake</a>.</p>
 
 </div>
 </div>
@@ -149,7 +150,7 @@ Functions</h2></td></tr>
 <p>A <code>&lt;module&gt;-&lt;package&gt;</code> target is created which ensures that all Python modules have been copied to the correct location in the build tree.</p>
 <dl class="todo"><dt><b><a class="el" href="todo.html#_todo000002">Todo:</a></b></dt><dd>Support freezing the Python package. This should create a header and the associated target should provide an interface for including this header. The target should then be exported and the header installed properly. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="vtkModuleWrapPython_8cmake_source.html#l01000">1000</a> of file <a class="el" href="vtkModuleWrapPython_8cmake_source.html">vtkModuleWrapPython.cmake</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vtkModuleWrapPython_8cmake_source.html#l01007">1007</a> of file <a class="el" href="vtkModuleWrapPython_8cmake_source.html">vtkModuleWrapPython.cmake</a>.</p>
 
 </div>
 </div>
@@ -175,7 +176,7 @@ Functions</h2></td></tr>
 <li><code>PACKAGES</code>: (Required) The list of packages installed by this module. These must have been created by the <a class="el" href="group__module-wrapping-python.html#ga2e3cbd2bec4f3c67919e6922b826d55a">vtk_module_add_python_package</a> function. </li>
 </ul>
 
-<p class="definition">Definition at line <a class="el" href="vtkModuleWrapPython_8cmake_source.html#l01098">1098</a> of file <a class="el" href="vtkModuleWrapPython_8cmake_source.html">vtkModuleWrapPython.cmake</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vtkModuleWrapPython_8cmake_source.html#l01105">1105</a> of file <a class="el" href="vtkModuleWrapPython_8cmake_source.html">vtkModuleWrapPython.cmake</a>.</p>
 
 </div>
 </div>
@@ -185,7 +186,7 @@ Functions</h2></td></tr>
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.13 on Mon Dec 7 2020
+</a> 1.8.13 on Tue Jan 26 2021
 </small></address>
 <!-- KW:BEGIN -->
 <!-- this adds the version selection header -->

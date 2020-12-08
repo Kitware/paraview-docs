@@ -81,7 +81,9 @@ Public Types</h2></td></tr>
 <a class="el" href="classpqCameraReaction.html#aafa13818af3a9a8d2f5a62209c874b04a8de6fd57943f8b540009aae77193ac69">ZOOM_TO_DATA</a>, 
 <br />
 &#160;&#160;<a class="el" href="classpqCameraReaction.html#aafa13818af3a9a8d2f5a62209c874b04af580c581009625763665c5796b5a28ff">ROTATE_CAMERA_CW</a>, 
-<a class="el" href="classpqCameraReaction.html#aafa13818af3a9a8d2f5a62209c874b04ad6aea1dbcb9ddf34c651bad35e637966">ROTATE_CAMERA_CCW</a>
+<a class="el" href="classpqCameraReaction.html#aafa13818af3a9a8d2f5a62209c874b04ad6aea1dbcb9ddf34c651bad35e637966">ROTATE_CAMERA_CCW</a>, 
+<a class="el" href="classpqCameraReaction.html#aafa13818af3a9a8d2f5a62209c874b04aaf8a036844a9a7bafff3a68d04862c00">ZOOM_CLOSEST_TO_DATA</a>, 
+<a class="el" href="classpqCameraReaction.html#aafa13818af3a9a8d2f5a62209c874b04aac61c47a808ef16eb477016bf09f2ddc">RESET_CAMERA_CLOSEST</a>
 <br />
  }</td></tr>
 <tr class="separator:aafa13818af3a9a8d2f5a62209c874b04"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -108,8 +110,8 @@ Public Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:a2b0060443528d0880b4255431b7040d1"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpqCameraReaction.html#a2b0060443528d0880b4255431b7040d1">resetCamera</a> ()</td></tr>
-<tr class="separator:a2b0060443528d0880b4255431b7040d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab26a7d2b51106e9587841fb115107529"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpqCameraReaction.html#ab26a7d2b51106e9587841fb115107529">resetCamera</a> (bool closest=false)</td></tr>
+<tr class="separator:ab26a7d2b51106e9587841fb115107529"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a075c8e94e5215369db43019c376a143a"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpqCameraReaction.html#a075c8e94e5215369db43019c376a143a">resetPositiveX</a> ()</td></tr>
 <tr class="separator:a075c8e94e5215369db43019c376a143a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1f858eed099adf1bb3a9ef171b7dd8f9"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpqCameraReaction.html#a1f858eed099adf1bb3a9ef171b7dd8f9">resetPositiveY</a> ()</td></tr>
@@ -124,8 +126,8 @@ Static Public Member Functions</h2></td></tr>
 <tr class="separator:a1a796f7705b47c436a05efd47d1ec075"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3239e83fa3a2f9d4841db55642e486fb"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpqCameraReaction.html#a3239e83fa3a2f9d4841db55642e486fb">resetDirection</a> (<a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkVectorOperators_8h.html#a45c855d65dd0e2b57b08024500ff9159">double</a> look_x, <a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkVectorOperators_8h.html#a45c855d65dd0e2b57b08024500ff9159">double</a> look_y, <a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkVectorOperators_8h.html#a45c855d65dd0e2b57b08024500ff9159">double</a> look_z, <a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkVectorOperators_8h.html#a45c855d65dd0e2b57b08024500ff9159">double</a> up_x, <a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkVectorOperators_8h.html#a45c855d65dd0e2b57b08024500ff9159">double</a> up_y, <a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkVectorOperators_8h.html#a45c855d65dd0e2b57b08024500ff9159">double</a> up_z)</td></tr>
 <tr class="separator:a3239e83fa3a2f9d4841db55642e486fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad474062240302f081841fa949d7dd051"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpqCameraReaction.html#ad474062240302f081841fa949d7dd051">zoomToData</a> ()</td></tr>
-<tr class="separator:ad474062240302f081841fa949d7dd051"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ade20eae7c863821c9c6265ace5fef24a"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpqCameraReaction.html#ade20eae7c863821c9c6265ace5fef24a">zoomToData</a> (bool closest=false)</td></tr>
+<tr class="separator:ade20eae7c863821c9c6265ace5fef24a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0ac94d976fb3cb6d40f9b3ed64010235"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpqCameraReaction.html#a0ac94d976fb3cb6d40f9b3ed64010235">rotateCamera</a> (<a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkVectorOperators_8h.html#a45c855d65dd0e2b57b08024500ff9159">double</a> angle)</td></tr>
 <tr class="separator:a0ac94d976fb3cb6d40f9b3ed64010235"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -173,6 +175,8 @@ Additional Inherited Members</h2></td></tr>
 <tr><td class="fieldname"><a id="aafa13818af3a9a8d2f5a62209c874b04a8de6fd57943f8b540009aae77193ac69"></a>ZOOM_TO_DATA&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="aafa13818af3a9a8d2f5a62209c874b04af580c581009625763665c5796b5a28ff"></a>ROTATE_CAMERA_CW&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="aafa13818af3a9a8d2f5a62209c874b04ad6aea1dbcb9ddf34c651bad35e637966"></a>ROTATE_CAMERA_CCW&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="aafa13818af3a9a8d2f5a62209c874b04aaf8a036844a9a7bafff3a68d04862c00"></a>ZOOM_CLOSEST_TO_DATA&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="aafa13818af3a9a8d2f5a62209c874b04aac61c47a808ef16eb477016bf09f2ddc"></a>RESET_CAMERA_CLOSEST&#160;</td><td class="fielddoc"></td></tr>
 </table>
 
 <p class="definition">Definition at line <a class="el" href="pqCameraReaction_8h_source.html#l00048">48</a> of file <a class="el" href="pqCameraReaction_8h_source.html">pqCameraReaction.h</a>.</p>
@@ -209,8 +213,8 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a2b0060443528d0880b4255431b7040d1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2b0060443528d0880b4255431b7040d1">&#9670;&nbsp;</a></span>resetCamera()</h2>
+<a id="ab26a7d2b51106e9587841fb115107529"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab26a7d2b51106e9587841fb115107529">&#9670;&nbsp;</a></span>resetCamera()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -221,7 +225,8 @@ Additional Inherited Members</h2></td></tr>
         <tr>
           <td class="memname">static void pqCameraReaction::resetCamera </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>closest</em> = <code>false</code></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -444,8 +449,8 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="ad474062240302f081841fa949d7dd051"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad474062240302f081841fa949d7dd051">&#9670;&nbsp;</a></span>zoomToData()</h2>
+<a id="ade20eae7c863821c9c6265ace5fef24a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ade20eae7c863821c9c6265ace5fef24a">&#9670;&nbsp;</a></span>zoomToData()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -456,7 +461,8 @@ Additional Inherited Members</h2></td></tr>
         <tr>
           <td class="memname">static void pqCameraReaction::zoomToData </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>closest</em> = <code>false</code></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -561,7 +567,7 @@ Additional Inherited Members</h2></td></tr>
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.13 on Mon Dec 7 2020
+</a> 1.8.13 on Tue Jan 26 2021
 </small></address>
 <!-- KW:BEGIN -->
 <!-- this adds the version selection header -->

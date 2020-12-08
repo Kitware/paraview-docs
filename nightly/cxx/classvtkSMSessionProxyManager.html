@@ -263,9 +263,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ab1e60b1613170596665cd891f76bd2d6"><td class="memItemLeft" align="right" valign="top"><a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/classvtkSmartPointer.html">vtkSmartPointer</a>&lt; <a class="el" href="classvtkPVXMLElement.html">vtkPVXMLElement</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkSMSessionProxyManager.html#ab1e60b1613170596665cd891f76bd2d6">GetXMLState</a> ()</td></tr>
 <tr class="memdesc:ab1e60b1613170596665cd891f76bd2d6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the XML state for the proxy manager.  <a href="#ab1e60b1613170596665cd891f76bd2d6">More...</a><br /></td></tr>
 <tr class="separator:ab1e60b1613170596665cd891f76bd2d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a856c162056b19612a167d93e0a9b507e"><td class="memItemLeft" align="right" valign="top"><a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/classvtkSmartPointer.html">vtkSmartPointer</a>&lt; <a class="el" href="classvtkPVXMLElement.html">vtkPVXMLElement</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkSMSessionProxyManager.html#a856c162056b19612a167d93e0a9b507e">GetXMLState</a> (<a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> std::set&lt; <a class="el" href="classvtkSMProxy.html">vtkSMProxy</a> *&gt; &amp;restrictionSet)</td></tr>
-<tr class="memdesc:a856c162056b19612a167d93e0a9b507e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the XML state for the proxy manager.  <a href="#a856c162056b19612a167d93e0a9b507e">More...</a><br /></td></tr>
-<tr class="separator:a856c162056b19612a167d93e0a9b507e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4c22861ba3add31b36a1dd67a2fc381c"><td class="memItemLeft" align="right" valign="top"><a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/classvtkSmartPointer.html">vtkSmartPointer</a>&lt; <a class="el" href="classvtkPVXMLElement.html">vtkPVXMLElement</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkSMSessionProxyManager.html#a4c22861ba3add31b36a1dd67a2fc381c">GetXMLState</a> (<a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> std::set&lt; <a class="el" href="classvtkSMProxy.html">vtkSMProxy</a> *&gt; &amp;restrictionSet, bool forceRestriction=false)</td></tr>
+<tr class="memdesc:a4c22861ba3add31b36a1dd67a2fc381c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the XML state for the proxy manager.  <a href="#a4c22861ba3add31b36a1dd67a2fc381c">More...</a><br /></td></tr>
+<tr class="separator:a4c22861ba3add31b36a1dd67a2fc381c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr><td colspan="2"><div class="groupHeader"></div></td></tr>
 <tr class="memitem:a3b9f252781cf7ea57088f53d7931ad56"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classvtkPVXMLElement.html">vtkPVXMLElement</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkSMSessionProxyManager.html#a3b9f252781cf7ea57088f53d7931ad56">GetProxyHints</a> (<a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *xmlgroup, <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *xmlname)</td></tr>
 <tr class="memdesc:a3b9f252781cf7ea57088f53d7931ad56"><td class="mdescLeft">&#160;</td><td class="mdescRight">The server manager configuration XML may define <code>&lt;Hints/&gt;</code> element for a proxy/property.  <a href="#a3b9f252781cf7ea57088f53d7931ad56">More...</a><br /></td></tr>
@@ -2119,15 +2119,15 @@ For custom behaviour the user can add some extra attributes:</dd></dl>
 </div><div class="memdoc">
 
 <p>Returns the XML state for the proxy manager. </p>
-<p>If a non-empty set of proxies is passed, then state is limited to those chosen proxies.</p>
+<p>If a non-empty set of proxies is passed, then state is limited to those chosen proxies. If forceRestriction is true, then state will be limited even when the restrictionSet is non-empty.</p>
 <p>Unlike <code>SaveXMLState</code>, this does not fire the <code>vtkCommand::SaveStateEvent</code>. This API is primarily intended for use-cases where complete application XML state is not being saved. </p>
 
-<p class="definition">Definition at line <a class="el" href="vtkSMSessionProxyManager_8h_source.html#l00455">455</a> of file <a class="el" href="vtkSMSessionProxyManager_8h_source.html">vtkSMSessionProxyManager.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vtkSMSessionProxyManager_8h_source.html#l00457">457</a> of file <a class="el" href="vtkSMSessionProxyManager_8h_source.html">vtkSMSessionProxyManager.h</a>.</p>
 
 </div>
 </div>
-<a id="a856c162056b19612a167d93e0a9b507e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a856c162056b19612a167d93e0a9b507e">&#9670;&nbsp;</a></span>GetXMLState() <span class="overload">[2/2]</span></h2>
+<a id="a4c22861ba3add31b36a1dd67a2fc381c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4c22861ba3add31b36a1dd67a2fc381c">&#9670;&nbsp;</a></span>GetXMLState() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -2136,14 +2136,24 @@ For custom behaviour the user can add some extra attributes:</dd></dl>
           <td class="memname"><a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/classvtkSmartPointer.html">vtkSmartPointer</a>&lt;<a class="el" href="classvtkPVXMLElement.html">vtkPVXMLElement</a>&gt; vtkSMSessionProxyManager::GetXMLState </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> std::set&lt; <a class="el" href="classvtkSMProxy.html">vtkSMProxy</a> *&gt; &amp;&#160;</td>
-          <td class="paramname"><em>restrictionSet</em></td><td>)</td>
+          <td class="paramname"><em>restrictionSet</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>forceRestriction</em> = <code>false</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p>Returns the XML state for the proxy manager. </p>
-<p>If a non-empty set of proxies is passed, then state is limited to those chosen proxies.</p>
+<p>If a non-empty set of proxies is passed, then state is limited to those chosen proxies. If forceRestriction is true, then state will be limited even when the restrictionSet is non-empty.</p>
 <p>Unlike <code>SaveXMLState</code>, this does not fire the <code>vtkCommand::SaveStateEvent</code>. This API is primarily intended for use-cases where complete application XML state is not being saved. </p>
 
 </div>
@@ -3027,7 +3037,7 @@ For custom behaviour the user can add some extra attributes:</dd></dl>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="vtkSMSessionProxyManager_8h_source.html#l00601">601</a> of file <a class="el" href="vtkSMSessionProxyManager_8h_source.html">vtkSMSessionProxyManager.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vtkSMSessionProxyManager_8h_source.html#l00604">604</a> of file <a class="el" href="vtkSMSessionProxyManager_8h_source.html">vtkSMSessionProxyManager.h</a>.</p>
 
 </div>
 </div>
@@ -3051,7 +3061,7 @@ For custom behaviour the user can add some extra attributes:</dd></dl>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="vtkSMSessionProxyManager_8h_source.html#l00602">602</a> of file <a class="el" href="vtkSMSessionProxyManager_8h_source.html">vtkSMSessionProxyManager.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vtkSMSessionProxyManager_8h_source.html#l00605">605</a> of file <a class="el" href="vtkSMSessionProxyManager_8h_source.html">vtkSMSessionProxyManager.h</a>.</p>
 
 </div>
 </div>
@@ -3075,7 +3085,7 @@ For custom behaviour the user can add some extra attributes:</dd></dl>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="vtkSMSessionProxyManager_8h_source.html#l00603">603</a> of file <a class="el" href="vtkSMSessionProxyManager_8h_source.html">vtkSMSessionProxyManager.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vtkSMSessionProxyManager_8h_source.html#l00606">606</a> of file <a class="el" href="vtkSMSessionProxyManager_8h_source.html">vtkSMSessionProxyManager.h</a>.</p>
 
 </div>
 </div>
@@ -3099,7 +3109,7 @@ For custom behaviour the user can add some extra attributes:</dd></dl>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="vtkSMSessionProxyManager_8h_source.html#l00604">604</a> of file <a class="el" href="vtkSMSessionProxyManager_8h_source.html">vtkSMSessionProxyManager.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vtkSMSessionProxyManager_8h_source.html#l00607">607</a> of file <a class="el" href="vtkSMSessionProxyManager_8h_source.html">vtkSMSessionProxyManager.h</a>.</p>
 
 </div>
 </div>
@@ -3124,7 +3134,7 @@ For custom behaviour the user can add some extra attributes:</dd></dl>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="vtkSMSessionProxyManager_8h_source.html#l00643">643</a> of file <a class="el" href="vtkSMSessionProxyManager_8h_source.html">vtkSMSessionProxyManager.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vtkSMSessionProxyManager_8h_source.html#l00646">646</a> of file <a class="el" href="vtkSMSessionProxyManager_8h_source.html">vtkSMSessionProxyManager.h</a>.</p>
 
 </div>
 </div>
@@ -3148,7 +3158,7 @@ For custom behaviour the user can add some extra attributes:</dd></dl>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="vtkSMSessionProxyManager_8h_source.html#l00644">644</a> of file <a class="el" href="vtkSMSessionProxyManager_8h_source.html">vtkSMSessionProxyManager.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vtkSMSessionProxyManager_8h_source.html#l00647">647</a> of file <a class="el" href="vtkSMSessionProxyManager_8h_source.html">vtkSMSessionProxyManager.h</a>.</p>
 
 </div>
 </div>
@@ -3172,7 +3182,7 @@ For custom behaviour the user can add some extra attributes:</dd></dl>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="vtkSMSessionProxyManager_8h_source.html#l00645">645</a> of file <a class="el" href="vtkSMSessionProxyManager_8h_source.html">vtkSMSessionProxyManager.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vtkSMSessionProxyManager_8h_source.html#l00648">648</a> of file <a class="el" href="vtkSMSessionProxyManager_8h_source.html">vtkSMSessionProxyManager.h</a>.</p>
 
 </div>
 </div>
@@ -3196,7 +3206,7 @@ For custom behaviour the user can add some extra attributes:</dd></dl>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="vtkSMSessionProxyManager_8h_source.html#l00646">646</a> of file <a class="el" href="vtkSMSessionProxyManager_8h_source.html">vtkSMSessionProxyManager.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vtkSMSessionProxyManager_8h_source.html#l00649">649</a> of file <a class="el" href="vtkSMSessionProxyManager_8h_source.html">vtkSMSessionProxyManager.h</a>.</p>
 
 </div>
 </div>
@@ -3220,7 +3230,7 @@ For custom behaviour the user can add some extra attributes:</dd></dl>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="vtkSMSessionProxyManager_8h_source.html#l00647">647</a> of file <a class="el" href="vtkSMSessionProxyManager_8h_source.html">vtkSMSessionProxyManager.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vtkSMSessionProxyManager_8h_source.html#l00650">650</a> of file <a class="el" href="vtkSMSessionProxyManager_8h_source.html">vtkSMSessionProxyManager.h</a>.</p>
 
 </div>
 </div>
@@ -3233,7 +3243,7 @@ For custom behaviour the user can add some extra attributes:</dd></dl>
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.13 on Mon Dec 7 2020
+</a> 1.8.13 on Tue Jan 26 2021
 </small></address>
 <!-- KW:BEGIN -->
 <!-- this adds the version selection header -->

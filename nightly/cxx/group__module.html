@@ -789,12 +789,13 @@ Scanning multiple groups of modules</h1>
 
 <p>External third party package. </p>
 <p>A third party dependency may be expressed as a module using this function. Third party packages are found using CMake's <code>find_package</code> function. It is highly recommended that imported targets are used to make usage easier. The module itself will be created as an <code>INTERFACE</code> library which exposes the package.</p>
-<div class="fragment"><div class="line"><a class="code" href="group__module.html#ga7e6f9b94d0da54f4a170e91e40c61878">vtk_module_third_party_external</a>(</div><div class="line">  PACKAGE               &lt;package&gt;</div><div class="line">  [VERSION              &lt;version&gt;]</div><div class="line">  [COMPONENTS           &lt;component&gt;...]</div><div class="line">  [OPTIONAL_COMPONENTS  &lt;component&gt;...]</div><div class="line">  [INCLUDE_DIRS &lt;path-or-variable&gt;...]</div><div class="line">  [LIBRARIES    &lt;target-or-variable&gt;...]</div><div class="line">  [DEFINITIONS  &lt;variable&gt;...]</div><div class="line">  [FORWARD_VERSION_REQ  &lt;MAJOR|MINOR|PATCH|EXACT&gt;]</div><div class="line">  [VERSION_VAR          &lt;version-spec&gt;]</div><div class="line">  [USE_VARIABLES        &lt;variable&gt;...]</div><div class="line">  [CONFIG_MODE]</div><div class="line">  [STANDARD_INCLUDE_DIRS])</div></div><!-- fragment --><p>Only the <code>PACKAGE</code> argument is required. The arguments are as follows:</p>
+<div class="fragment"><div class="line"><a class="code" href="group__module.html#ga7e6f9b94d0da54f4a170e91e40c61878">vtk_module_third_party_external</a>(</div><div class="line">  PACKAGE               &lt;package&gt;</div><div class="line">  [VERSION              &lt;version&gt;]</div><div class="line">  [COMPONENTS           &lt;component&gt;...]</div><div class="line">  [OPTIONAL_COMPONENTS  &lt;component&gt;...]</div><div class="line">  [TARGETS              &lt;target&gt;...]</div><div class="line">  [INCLUDE_DIRS &lt;path-or-variable&gt;...]</div><div class="line">  [LIBRARIES    &lt;target-or-variable&gt;...]</div><div class="line">  [DEFINITIONS  &lt;variable&gt;...]</div><div class="line">  [FORWARD_VERSION_REQ  &lt;MAJOR|MINOR|PATCH|EXACT&gt;]</div><div class="line">  [VERSION_VAR          &lt;version-spec&gt;]</div><div class="line">  [USE_VARIABLES        &lt;variable&gt;...]</div><div class="line">  [CONFIG_MODE]</div><div class="line">  [STANDARD_INCLUDE_DIRS])</div></div><!-- fragment --><p>Only the <code>PACKAGE</code> argument is required. The arguments are as follows:</p>
 <ul>
 <li><code>PACKAGE</code>: (Required) The name of the package to find.</li>
 <li><code>VERSION</code>: If specified, the minimum version of the dependency that must be found.</li>
 <li><code>COMPONENTS</code>: The list of components to request from the package.</li>
 <li><code>OPTIONAL_COMPONENTS</code>: The list of optional components to request from the package.</li>
+<li><code>TARGETS</code>: The list of targets to search for when using this package. Targets which do not exist will be ignored to support different versions of a package using different target names.</li>
 <li><code>STANDARD_INCLUDE_DIRS</code>: If present, standard include directories will be added to the module target. This is usually only required if both internal and external are supported for a given dependency.</li>
 <li><code>INCLUDE_DIRS</code>: If specified, this is added as a <code>SYSTEM INTERFACE</code> include directory for the target. If a variable name is given, it will be dereferenced.</li>
 <li><code>LIBRARIES</code>: The libraries to link from the package. If a variable name is given, it will be dereferenced, however a warning that imported targets are not being used will be emitted.</li>
@@ -804,7 +805,7 @@ Scanning multiple groups of modules</h1>
 <li><code>USE_VARIABLES</code>: List of variables from the <code>find_package</code> to make available to the caller. </li>
 </ul>
 
-<p class="definition">Definition at line <a class="el" href="vtkModule_8cmake_source.html#l04738">4738</a> of file <a class="el" href="vtkModule_8cmake_source.html">vtkModule.cmake</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vtkModule_8cmake_source.html#l04742">4742</a> of file <a class="el" href="vtkModule_8cmake_source.html">vtkModule.cmake</a>.</p>
 
 </div>
 </div>
@@ -836,7 +837,7 @@ Scanning multiple groups of modules</h1>
 <li><code>STANDARD_INCLUDE_DIRS</code>: If present, module-standard include directories will be added to the module target. </li>
 </ul>
 
-<p class="definition">Definition at line <a class="el" href="vtkModule_8cmake_source.html#l04996">4996</a> of file <a class="el" href="vtkModule_8cmake_source.html">vtkModule.cmake</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vtkModule_8cmake_source.html#l04994">4994</a> of file <a class="el" href="vtkModule_8cmake_source.html">vtkModule.cmake</a>.</p>
 
 </div>
 </div>
@@ -846,7 +847,7 @@ Scanning multiple groups of modules</h1>
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.13 on Mon Dec 7 2020
+</a> 1.8.13 on Tue Jan 26 2021
 </small></address>
 <!-- KW:BEGIN -->
 <!-- this adds the version selection header -->

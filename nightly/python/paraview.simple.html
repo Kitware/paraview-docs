@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>simple Module &mdash; ParaView/Python 5.9.0-RC2-177-gf752ed177f documentation</title>
+  <title>simple Module &mdash; ParaView/Python 5.9.0-362-g446518d53e documentation</title>
   
 
   
@@ -22,7 +22,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:'./',
-        VERSION:'5.9.0-RC2-177-gf752ed177f',
+        VERSION:'5.9.0-362-g446518d53e',
         COLLAPSE_INDEX:false,
         FILE_SUFFIX:'.html',
         HAS_SOURCE:  true
@@ -47,7 +47,7 @@
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="ParaView/Python 5.9.0-RC2-177-gf752ed177f documentation" href="index.html"/>
+    <link rel="top" title="ParaView/Python 5.9.0-362-g446518d53e documentation" href="index.html"/>
         <link rel="up" title="paraview Package" href="paraview.html"/>
         <link rel="next" title="Available readers, sources, writers, filters and animation cues" href="paraview.servermanager_proxies.html"/>
         <link rel="prev" title="servermanager Module" href="paraview.servermanager.html"/> 
@@ -67,7 +67,7 @@
           <li> <a href="index.html">
             <img src="_static/paraview-logo-small.png"
             alt="ParaView/Python"></img></a> </li>
-          <li class="version"> version 5.9.0-RC2-177-gf752ed177f</li>
+          <li class="version"> version 5.9.0-362-g446518d53e</li>
         </ul>
         <form id ="rtd-search-form" class="wy-form" action="search.html" method="get">
   <input type="text" name="q" placeholder="Search docs" />
@@ -616,6 +616,14 @@ name already exists it will be removed first.</p>
 <dt id="paraview.simple.AddLight">
 <code class="sig-prename descclassname">paraview.simple.</code><code class="sig-name descname">AddLight</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">view</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#AddLight"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.AddLight" title="Permalink to this definition">¶</a></dt>
 <dd><p>Makes a new vtkLight and adds it to the designated or active view.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="paraview.simple.AddSelectionLink">
+<code class="sig-prename descclassname">paraview.simple.</code><code class="sig-name descname">AddSelectionLink</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">objProxy</span></em>, <em class="sig-param"><span class="n">objProxyOther</span></em>, <em class="sig-param"><span class="n">linkName</span></em>, <em class="sig-param"><span class="n">convertToIndices</span><span class="o">=</span><span class="default_value">True</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#AddSelectionLink"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.AddSelectionLink" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a selection link between two filters proxies.
+A name must be given so that the link can be referred to by name.
+If a link with the given name already exists it will be removed first.</p>
 </dd></dl>
 
 <dl class="py function">
@@ -1445,6 +1453,18 @@ one with the same name as the removed one.</p>
 <dt id="paraview.simple.RemoveLight">
 <code class="sig-prename descclassname">paraview.simple.</code><code class="sig-name descname">RemoveLight</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">light</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#RemoveLight"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.RemoveLight" title="Permalink to this definition">¶</a></dt>
 <dd><p>Removes an existing vtkLight from its view.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="paraview.simple.RemoveLink">
+<code class="sig-prename descclassname">paraview.simple.</code><code class="sig-name descname">RemoveLink</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">linkName</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#RemoveLink"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.RemoveLink" title="Permalink to this definition">¶</a></dt>
+<dd><p>Remove a link with the given name.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="paraview.simple.RemoveSelectionLink">
+<code class="sig-prename descclassname">paraview.simple.</code><code class="sig-name descname">RemoveSelectionLink</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">linkName</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#RemoveSelectionLink"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.simple.RemoveSelectionLink" title="Permalink to this definition">¶</a></dt>
+<dd><p>Remove a selection link with the given name.</p>
 </dd></dl>
 
 <dl class="py function">

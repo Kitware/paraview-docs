@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>paraview.detail.annotation &mdash; ParaView/Python 5.9.0-RC2-177-gf752ed177f documentation</title>
+  <title>paraview.detail.annotation &mdash; ParaView/Python 5.9.0-362-g446518d53e documentation</title>
   
 
   
@@ -22,7 +22,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:'../../../',
-        VERSION:'5.9.0-RC2-177-gf752ed177f',
+        VERSION:'5.9.0-362-g446518d53e',
         COLLAPSE_INDEX:false,
         FILE_SUFFIX:'.html',
         HAS_SOURCE:  true
@@ -47,7 +47,7 @@
         <link rel="index" title="Index"
               href="../../../genindex.html"/>
         <link rel="search" title="Search" href="../../../search.html"/>
-    <link rel="top" title="ParaView/Python 5.9.0-RC2-177-gf752ed177f documentation" href="../../../index.html"/>
+    <link rel="top" title="ParaView/Python 5.9.0-362-g446518d53e documentation" href="../../../index.html"/>
         <link rel="up" title="paraview.detail" href="../detail.html"/> 
 
   <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
@@ -65,7 +65,7 @@
           <li> <a href="../../../index.html">
             <img src="../../../_static/paraview-logo-small.png"
             alt="ParaView/Python"></img></a> </li>
-          <li class="version"> version 5.9.0-RC2-177-gf752ed177f</li>
+          <li class="version"> version 5.9.0-362-g446518d53e</li>
         </ul>
         <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
   <input type="text" name="q" placeholder="Search docs" />
@@ -683,58 +683,6 @@
             <span class="s2">&quot;Variables in current scope are </span><span class="si">%s</span><span class="s2"> </span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">expression</span><span class="p">,</span> <span class="nb">list</span><span class="p">(</span><span class="n">ns</span><span class="p">)),</span> <span class="n">file</span><span class="o">=</span><span class="n">sys</span><span class="o">.</span><span class="n">stderr</span><span class="p">)</span>
         <span class="k">raise</span>
     <span class="bp">self</span><span class="o">.</span><span class="n">SetComputedAnnotationValue</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">result</span><span class="p">)</span>
-    <span class="k">return</span> <span class="kc">True</span></div>
-
-
-<div class="viewcode-block" id="execute_on_global_data"><a class="viewcode-back" href="../../../paraview.detail.annotation.html#paraview.detail.annotation.execute_on_global_data">[docs]</a><span class="k">def</span> <span class="nf">execute_on_global_data</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Called by vtkAnnotateGlobalDataFilter.&quot;&quot;&quot;</span>
-    <span class="n">inputDO</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">GetCurrentInputDataObject</span><span class="p">()</span>
-    <span class="k">if</span> <span class="ow">not</span> <span class="n">inputDO</span><span class="p">:</span>
-        <span class="k">return</span> <span class="kc">True</span>
-
-    <span class="n">inputs</span> <span class="o">=</span> <span class="p">[</span><span class="n">dsa</span><span class="o">.</span><span class="n">WrapDataObject</span><span class="p">(</span><span class="n">inputDO</span><span class="p">)]</span>
-    <span class="n">association</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">GetArrayAssociation</span><span class="p">()</span>
-    <span class="n">ns</span> <span class="o">=</span> <span class="n">_get_ns</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">inputs</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">association</span><span class="p">)</span>
-    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">GetFieldArrayName</span><span class="p">()</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">ns</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Failed to locate global array &#39;</span><span class="si">%s</span><span class="s2">&#39;.&quot;</span> <span class="o">%</span> <span class="bp">self</span><span class="o">.</span><span class="n">GetFieldArrayName</span><span class="p">(),</span> <span class="n">file</span><span class="o">=</span><span class="n">sys</span><span class="o">.</span><span class="n">stderr</span><span class="p">)</span>
-        <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="s2">&quot;Failed to locate global array&quot;</span><span class="p">)</span>
-
-    <span class="n">array</span> <span class="o">=</span> <span class="n">ns</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">GetFieldArrayName</span><span class="p">()]</span>
-    <span class="n">chosen_element</span> <span class="o">=</span> <span class="n">array</span>
-    <span class="k">try</span><span class="p">:</span>
-        <span class="c1"># if the array has as many elements as the timesteps, pick the element</span>
-        <span class="c1"># matching the current timestep.</span>
-        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">GetNumberOfTimeSteps</span><span class="p">()</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="ow">and</span> \
-            <span class="n">array</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">GetNumberOfTimeSteps</span><span class="p">():</span>
-                <span class="n">chosen_element</span> <span class="o">=</span> <span class="n">array</span><span class="p">[</span><span class="n">ns</span><span class="p">[</span><span class="s2">&quot;time_index&quot;</span><span class="p">]]</span>
-
-        <span class="c1"># if the array has as many elements as the `mode_shape_range`, pick the</span>
-        <span class="c1"># element matching the `mode_shape` (BUG #0015322).</span>
-        <span class="k">elif</span> <span class="s2">&quot;mode_shape&quot;</span> <span class="ow">in</span> <span class="n">ns</span> <span class="ow">and</span> <span class="s2">&quot;mode_shape_range&quot;</span> <span class="ow">in</span> <span class="n">ns</span> <span class="ow">and</span> \
-            <span class="n">ns</span><span class="p">[</span><span class="s2">&quot;mode_shape_range&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="mi">2</span> <span class="ow">and</span> \
-            <span class="n">array</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="p">(</span><span class="n">ns</span><span class="p">[</span><span class="s2">&quot;mode_shape_range&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">GetValue</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="o">-</span> <span class="n">ns</span><span class="p">[</span><span class="s2">&quot;mode_shape_range&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">GetValue</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
-                <span class="n">chosen_element</span> <span class="o">=</span> <span class="n">array</span><span class="p">[</span><span class="n">ns</span><span class="p">[</span><span class="s2">&quot;mode_shape&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">GetValue</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span> <span class="o">-</span> <span class="n">ns</span><span class="p">[</span><span class="s2">&quot;mode_shape_range&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">GetValue</span><span class="p">(</span><span class="mi">0</span><span class="p">)]</span>
-        <span class="k">elif</span> <span class="n">array</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
-            <span class="c1"># for single element arrays, just extract the value.</span>
-            <span class="c1"># This avoids the extra () when converting to string</span>
-            <span class="c1"># (see BUG #15321).</span>
-            <span class="n">chosen_element</span> <span class="o">=</span> <span class="n">array</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-    <span class="k">except</span> <span class="ne">AttributeError</span><span class="p">:</span> <span class="k">pass</span>
-
-    <span class="k">try</span><span class="p">:</span>
-        <span class="c1"># hack for string array.</span>
-        <span class="k">if</span> <span class="n">chosen_element</span><span class="o">.</span><span class="n">IsA</span><span class="p">(</span><span class="s2">&quot;vtkStringArray&quot;</span><span class="p">):</span>
-            <span class="n">chosen_element</span> <span class="o">=</span> <span class="n">chosen_element</span><span class="o">.</span><span class="n">GetValue</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
-    <span class="k">except</span><span class="p">:</span> <span class="k">pass</span>
-    <span class="n">expression</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">GetPrefix</span><span class="p">()</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">GetPrefix</span><span class="p">()</span> <span class="k">else</span> <span class="s2">&quot;&quot;</span>
-    <span class="k">try</span><span class="p">:</span>
-        <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">chosen_element</span><span class="p">)</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">dsa</span><span class="o">.</span><span class="n">VTKNoneArray</span><span class="p">:</span>
-            <span class="n">expression</span> <span class="o">+=</span> <span class="bp">self</span><span class="o">.</span><span class="n">GetFormat</span><span class="p">()</span> <span class="o">%</span> <span class="p">(</span><span class="n">chosen_element</span><span class="p">,)</span>
-    <span class="k">except</span> <span class="ne">TypeError</span><span class="p">:</span>
-        <span class="n">expression</span> <span class="o">+=</span> <span class="n">chosen_element</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Warning: invalid format for Annotate Global Data&quot;</span><span class="p">)</span>
-    <span class="n">expression</span> <span class="o">+=</span> <span class="bp">self</span><span class="o">.</span><span class="n">GetPostfix</span><span class="p">()</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">GetPostfix</span><span class="p">()</span> <span class="k">else</span> <span class="s2">&quot;&quot;</span>
-    <span class="bp">self</span><span class="o">.</span><span class="n">SetComputedAnnotationValue</span><span class="p">(</span><span class="n">expression</span><span class="p">)</span>
     <span class="k">return</span> <span class="kc">True</span></div>
 
 <div class="viewcode-block" id="execute_on_attribute_data"><a class="viewcode-back" href="../../../paraview.detail.annotation.html#paraview.detail.annotation.execute_on_attribute_data">[docs]</a><span class="k">def</span> <span class="nf">execute_on_attribute_data</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">evaluate_locally</span><span class="p">):</span>

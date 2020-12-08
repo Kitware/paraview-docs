@@ -206,33 +206,26 @@ Cc: @user1 @user2
 <p>The "Kitware Robot" automatically performs basic checks on the commits and adds a comment acknowledging or rejecting the topic. This will be repeated automatically whenever the topic is pushed to your fork again. A re-check may be explicitly requested by adding a comment with a single <a href="#trailing-lines"><em>trailing</em> line</a>: </p><pre class="fragment">Do: check
 </pre><p>A topic cannot be <a href="#merge-a-topic">merged</a> until the automatic review succeeds.</p>
 <h3>Testing</h3>
-<p>ParaView has a <a href="http://buildbot.net">buildbot</a> instance watching for merge requests to test. A developer must issue a command to buildbot to enable builds: </p><pre class="fragment">Do: test
-</pre><p>The buildbot user () will respond with a comment linking to the CDash results when it schedules builds.</p>
-<p>The <code>Do: test</code> command accepts the following arguments:</p>
+<p>ParaView uses https://gitlab.kitware.com/help/ci/README.md "GitLab CI" to test merge requests, configured by the top-level <code>.gitlab-ci.yml</code> file. Results may be seen both on the merge request's pipeline page and on the <a href="https://open.cdash.org/index.php?project=ParaView">ParaView CDash Page</a>. Filtered CDash results showing just the pipeline's jobs can be reached by selecting the <code>cdash-commit</code> job in the <code>External</code> stage of the pipeline. Note that due to GitLab changes, the <code>External</code> stage may be in a separate pipeline for the same commit.</p>
+<p>Lint build jobs run automatically after every push. Heavier jobs require a manual trigger to run:</p>
 <ul>
-<li><code>--oneshot</code> only build the <em>current</em> hash of the branch; updates will not be built using this command</li>
-<li><code>--stop</code> clear the list of commands for the merge request</li>
-<li><code>--superbuild</code> build the superbuilds related to the project</li>
-<li><code>--clear</code> clear previous commands before adding this command</li>
-<li><code>--regex-include &lt;arg&gt;</code> or <code>-i &lt;arg&gt;</code> only build on builders matching <code>&lt;arg&gt;</code> (a Python regular expression)</li>
-<li><code>--regex-exclude &lt;arg&gt;</code> or <code>-e &lt;arg&gt;</code> excludes builds on builders matching <code>&lt;arg&gt;</code> (a Python regular expression)</li>
+<li>Merge request authors may visit their merge request's pipeline and click the "Play" button on one or more jobs manually. If the merge request has the "Allow commits from members who can merge to the target branch" check box enabled, ParaView maintainers may use the "Play" button too.</li>
+<li><p class="startli"><a href="https://gitlab.kitware.com/cmake/cmake/-/settings/members">ParaView GitLab Project Developers</a> may trigger CI on a merge request by adding a comment with a command among the <a href="#trailing-lines">comment trailing lines</a>: </p><pre class="fragment">  Do: test
+</pre><p class="startli"><code>@kwrobot</code> will add an award emoji to the comment to indicate that it was processed and also trigger all manual jobs in the merge request's pipeline.</p>
+<p class="startli">The <code>Do: test</code> command accepts the following arguments:</p><ul>
+<li><code>--named &lt;regex&gt;</code>, <code>-n &lt;regex&gt;</code>: Trigger jobs matching <code>&lt;regex&gt;</code> anywhere in their name. Job names may be seen on the merge request's pipeline page.</li>
+<li><code>--stage &lt;stage&gt;</code>, <code>-s &lt;stage&gt;</code>: Only affect jobs in a given stage. Stage names may be seen on the merge request's pipeline page. Note that the names are determined by what is in the <code>.gitlab-ci.yml</code> file and may be capitalized in the web page, so lowercasing the webpage's display name for stages may be required.</li>
+<li><code>--action &lt;action&gt;</code>, <code>-a &lt;action&gt;</code>: The action to perform on the jobs. Possible actions:<ul>
+<li><code>manual</code> (the default): Start jobs awaiting manual interaction.</li>
+<li><code>unsuccessful</code>: Start or restart jobs which have not completed successfully.</li>
+<li><code>failed</code>: Restart jobs which have completed, but without success.</li>
+<li><code>completed</code>: Restart all completed jobs.</li>
 </ul>
-<p>Multiple <code>Do: test</code> commands may be given in separate comments. A new <code>Do: test</code> command must be explicitly issued for each branch update for which testing is desired. Buildbot may skip tests for older branch updates that have not started before a test for a new update is requested.</p>
-<p>Builder names always follow this pattern: </p><pre class="fragment">    project-host-os-libtype-buildtype+feature1+feature2
-</pre><ul>
-<li>project: always <code>paraview</code> for paraview</li>
-<li>host: the buildbot host</li>
-<li>os: one of <code>windows</code>, <code>osx</code>, or <code>linux</code></li>
-<li>libtype: <code>shared</code> or <code>static</code></li>
-<li>buildtype: <code>release</code> or <code>debug</code></li>
-<li>feature: alphabetical list of features enabled for the build</li>
+</li>
 </ul>
-<p>For a list of all builders, see:</p>
-<ul>
-<li><a href="https://buildbot.kitware.com/builders?category=paraview-expected">paraview-expected</a></li>
-<li><a href="https://buildbot.kitware.com/builders?category=paraview-superbuild">paraview-superbuild</a></li>
-<li><a href="https://buildbot.kitware.com/builders?category=paraview-experimental">paraview-experimental</a></li>
+</li>
 </ul>
+<p>If the merge request topic branch is updated by a push, a new manual trigger using one of the above methods is needed to start CI again. Currently running jobs will generally be canceled automatically.</p>
 <h2>Revise a Topic </h2>
 <p>If a topic is approved during GitLab review, skip to the <a href="#merge-a-topic">next step</a>. Otherwise, revise the topic and push it back to GitLab for another review as follows:</p>
 <ol type="1">
@@ -283,7 +276,7 @@ $ git pull
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.13 on Mon Dec 7 2020
+</a> 1.8.13 on Tue Jan 26 2021
 </small></address>
 <!-- KW:BEGIN -->
 <!-- this adds the version selection header -->

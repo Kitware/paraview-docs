@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>paraview.smtrace &mdash; ParaView/Python 5.9.0-RC2-177-gf752ed177f documentation</title>
+  <title>paraview.smtrace &mdash; ParaView/Python 5.9.0-362-g446518d53e documentation</title>
   
 
   
@@ -22,7 +22,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:'../../',
-        VERSION:'5.9.0-RC2-177-gf752ed177f',
+        VERSION:'5.9.0-362-g446518d53e',
         COLLAPSE_INDEX:false,
         FILE_SUFFIX:'.html',
         HAS_SOURCE:  true
@@ -47,7 +47,7 @@
         <link rel="index" title="Index"
               href="../../genindex.html"/>
         <link rel="search" title="Search" href="../../search.html"/>
-    <link rel="top" title="ParaView/Python 5.9.0-RC2-177-gf752ed177f documentation" href="../../index.html"/>
+    <link rel="top" title="ParaView/Python 5.9.0-362-g446518d53e documentation" href="../../index.html"/>
         <link rel="up" title="Module code" href="../index.html"/> 
 
   <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
@@ -65,7 +65,7 @@
           <li> <a href="../../index.html">
             <img src="../../_static/paraview-logo-small.png"
             alt="ParaView/Python"></img></a> </li>
-          <li class="version"> version 5.9.0-RC2-177-gf752ed177f</li>
+          <li class="version"> version 5.9.0-362-g446518d53e</li>
         </ul>
         <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
   <input type="text" name="q" placeholder="Search docs" />
@@ -1446,7 +1446,7 @@
 <div class="viewcode-block" id="ExtractorFilter"><a class="viewcode-back" href="../../paraview.smtrace.html#paraview.smtrace.ExtractorFilter">[docs]</a><span class="k">class</span> <span class="nc">ExtractorFilter</span><span class="p">(</span><span class="n">ProxyFilter</span><span class="p">):</span>
 <div class="viewcode-block" id="ExtractorFilter.should_trace_in_ctor"><a class="viewcode-back" href="../../paraview.smtrace.html#paraview.smtrace.ExtractorFilter.should_trace_in_ctor">[docs]</a>    <span class="k">def</span> <span class="nf">should_trace_in_ctor</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">prop</span><span class="p">):</span> <span class="k">return</span> <span class="kc">False</span></div>
 <div class="viewcode-block" id="ExtractorFilter.should_never_trace"><a class="viewcode-back" href="../../paraview.smtrace.html#paraview.smtrace.ExtractorFilter.should_never_trace">[docs]</a>    <span class="k">def</span> <span class="nf">should_never_trace</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">prop</span><span class="p">):</span>
-        <span class="k">if</span> <span class="n">prop</span><span class="o">.</span><span class="n">get_property_name</span><span class="p">()</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;Trigger&quot;</span><span class="p">,</span> <span class="s2">&quot;Writer&quot;</span><span class="p">]:</span>
+        <span class="k">if</span> <span class="n">prop</span><span class="o">.</span><span class="n">get_property_name</span><span class="p">()</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;Writer&quot;</span><span class="p">]:</span>
             <span class="k">return</span> <span class="kc">True</span>
         <span class="k">return</span> <span class="nb">super</span><span class="p">(</span><span class="n">ExtractorFilter</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">should_never_trace</span><span class="p">(</span><span class="n">prop</span><span class="p">)</span></div></div>
 

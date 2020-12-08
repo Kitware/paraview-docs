@@ -131,9 +131,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a002010cd975ec8704a03d3817a9a1b7f"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkSMRenderViewProxy.html#a002010cd975ec8704a03d3817a9a1b7f">IsSelectionAvailable</a> ()</td></tr>
 <tr class="memdesc:a002010cd975ec8704a03d3817a9a1b7f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if color depth is sufficient to support selection.  <a href="#a002010cd975ec8704a03d3817a9a1b7f">More...</a><br /></td></tr>
 <tr class="separator:a002010cd975ec8704a03d3817a9a1b7f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4896c1dde814dc9270fbc9bad36b56ff"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkSMRenderViewProxy.html#a4896c1dde814dc9270fbc9bad36b56ff">ZoomTo</a> (<a class="el" href="classvtkSMProxy.html">vtkSMProxy</a> *representation)</td></tr>
-<tr class="memdesc:a4896c1dde814dc9270fbc9bad36b56ff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convenience method for zooming to a representation.  <a href="#a4896c1dde814dc9270fbc9bad36b56ff">More...</a><br /></td></tr>
-<tr class="separator:a4896c1dde814dc9270fbc9bad36b56ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afa0319f8869f4fb86fd63e4de6b0ff35"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkSMRenderViewProxy.html#afa0319f8869f4fb86fd63e4de6b0ff35">ZoomTo</a> (<a class="el" href="classvtkSMProxy.html">vtkSMProxy</a> *representation, bool closest=false)</td></tr>
+<tr class="memdesc:afa0319f8869f4fb86fd63e4de6b0ff35"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convenience method for zooming to a representation.  <a href="#afa0319f8869f4fb86fd63e4de6b0ff35">More...</a><br /></td></tr>
+<tr class="separator:afa0319f8869f4fb86fd63e4de6b0ff35"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae466b78149d51a69fc37e29070fdf0b3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkSMRenderViewProxy.html#ae466b78149d51a69fc37e29070fdf0b3">SetupInteractor</a> (<a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/classvtkRenderWindowInteractor.html">vtkRenderWindowInteractor</a> *iren) override</td></tr>
 <tr class="memdesc:ae466b78149d51a69fc37e29070fdf0b3"><td class="mdescLeft">&#160;</td><td class="mdescRight">A client process need to set the interactor to enable interactivity.  <a href="#ae466b78149d51a69fc37e29070fdf0b3">More...</a><br /></td></tr>
 <tr class="separator:ae466b78149d51a69fc37e29070fdf0b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -203,15 +203,15 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a21d522edde8f8f20a717fd3ed0678664"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the range for visible elements in the current view.  <a href="#a21d522edde8f8f20a717fd3ed0678664">More...</a><br /></td></tr>
 <tr class="separator:a21d522edde8f8f20a717fd3ed0678664"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr><td colspan="2"><div class="groupHeader"></div></td></tr>
-<tr class="memitem:a7b4507a0f803142f2ecf6925a7d4e1a3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkSMRenderViewProxy.html#a7b4507a0f803142f2ecf6925a7d4e1a3">ResetCamera</a> ()</td></tr>
-<tr class="memdesc:a7b4507a0f803142f2ecf6925a7d4e1a3"><td class="mdescLeft">&#160;</td><td class="mdescRight">For backwards compatibility in Python scripts.  <a href="#a7b4507a0f803142f2ecf6925a7d4e1a3">More...</a><br /></td></tr>
-<tr class="separator:a7b4507a0f803142f2ecf6925a7d4e1a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acdfffe23dc5a4069e641ce376c6b4892"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkSMRenderViewProxy.html#acdfffe23dc5a4069e641ce376c6b4892">ResetCamera</a> (<a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkVectorOperators_8h.html#a45c855d65dd0e2b57b08024500ff9159">double</a> bounds[6])</td></tr>
-<tr class="memdesc:acdfffe23dc5a4069e641ce376c6b4892"><td class="mdescLeft">&#160;</td><td class="mdescRight">For backwards compatibility in Python scripts.  <a href="#acdfffe23dc5a4069e641ce376c6b4892">More...</a><br /></td></tr>
-<tr class="separator:acdfffe23dc5a4069e641ce376c6b4892"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac6c92a7f4df8402d0b6a6e28a4881ed7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkSMRenderViewProxy.html#ac6c92a7f4df8402d0b6a6e28a4881ed7">ResetCamera</a> (<a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkVectorOperators_8h.html#a45c855d65dd0e2b57b08024500ff9159">double</a> xmin, <a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkVectorOperators_8h.html#a45c855d65dd0e2b57b08024500ff9159">double</a> xmax, <a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkVectorOperators_8h.html#a45c855d65dd0e2b57b08024500ff9159">double</a> ymin, <a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkVectorOperators_8h.html#a45c855d65dd0e2b57b08024500ff9159">double</a> ymax, <a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkVectorOperators_8h.html#a45c855d65dd0e2b57b08024500ff9159">double</a> zmin, <a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkVectorOperators_8h.html#a45c855d65dd0e2b57b08024500ff9159">double</a> zmax)</td></tr>
-<tr class="memdesc:ac6c92a7f4df8402d0b6a6e28a4881ed7"><td class="mdescLeft">&#160;</td><td class="mdescRight">For backwards compatibility in Python scripts.  <a href="#ac6c92a7f4df8402d0b6a6e28a4881ed7">More...</a><br /></td></tr>
-<tr class="separator:ac6c92a7f4df8402d0b6a6e28a4881ed7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aabe1582837480fd96c7ed7e587553f7c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkSMRenderViewProxy.html#aabe1582837480fd96c7ed7e587553f7c">ResetCamera</a> (bool closest=false)</td></tr>
+<tr class="memdesc:aabe1582837480fd96c7ed7e587553f7c"><td class="mdescLeft">&#160;</td><td class="mdescRight">For backwards compatibility in Python scripts.  <a href="#aabe1582837480fd96c7ed7e587553f7c">More...</a><br /></td></tr>
+<tr class="separator:aabe1582837480fd96c7ed7e587553f7c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a167d211b6c98cf9e8f79216c38ba8771"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkSMRenderViewProxy.html#a167d211b6c98cf9e8f79216c38ba8771">ResetCamera</a> (<a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkVectorOperators_8h.html#a45c855d65dd0e2b57b08024500ff9159">double</a> bounds[6], bool closest=false)</td></tr>
+<tr class="memdesc:a167d211b6c98cf9e8f79216c38ba8771"><td class="mdescLeft">&#160;</td><td class="mdescRight">For backwards compatibility in Python scripts.  <a href="#a167d211b6c98cf9e8f79216c38ba8771">More...</a><br /></td></tr>
+<tr class="separator:a167d211b6c98cf9e8f79216c38ba8771"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af1acfe671b1c023e5f6964965910dbe9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkSMRenderViewProxy.html#af1acfe671b1c023e5f6964965910dbe9">ResetCamera</a> (<a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkVectorOperators_8h.html#a45c855d65dd0e2b57b08024500ff9159">double</a> xmin, <a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkVectorOperators_8h.html#a45c855d65dd0e2b57b08024500ff9159">double</a> xmax, <a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkVectorOperators_8h.html#a45c855d65dd0e2b57b08024500ff9159">double</a> ymin, <a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkVectorOperators_8h.html#a45c855d65dd0e2b57b08024500ff9159">double</a> ymax, <a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkVectorOperators_8h.html#a45c855d65dd0e2b57b08024500ff9159">double</a> zmin, <a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkVectorOperators_8h.html#a45c855d65dd0e2b57b08024500ff9159">double</a> zmax, bool closest=false)</td></tr>
+<tr class="memdesc:af1acfe671b1c023e5f6964965910dbe9"><td class="mdescLeft">&#160;</td><td class="mdescRight">For backwards compatibility in Python scripts.  <a href="#af1acfe671b1c023e5f6964965910dbe9">More...</a><br /></td></tr>
+<tr class="separator:af1acfe671b1c023e5f6964965910dbe9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr><td colspan="2"><div class="groupHeader"></div></td></tr>
 <tr class="memitem:a6ea39901eacfe4e4c341058ad3adc972"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkSMRenderViewProxy.html#a6ea39901eacfe4e4c341058ad3adc972">IsSelectVisibleCellsAvailable</a> ()</td></tr>
 <tr class="memdesc:a6ea39901eacfe4e4c341058ad3adc972"><td class="mdescLeft">&#160;</td><td class="mdescRight">Similar to <a class="el" href="classvtkSMRenderViewProxy.html#a002010cd975ec8704a03d3817a9a1b7f" title="Checks if color depth is sufficient to support selection. ">IsSelectionAvailable()</a>, however, on failure returns the error message otherwise 0.  <a href="#a6ea39901eacfe4e4c341058ad3adc972">More...</a><br /></td></tr>
@@ -1850,8 +1850,8 @@ Protected Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a7b4507a0f803142f2ecf6925a7d4e1a3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7b4507a0f803142f2ecf6925a7d4e1a3">&#9670;&nbsp;</a></span>ResetCamera() <span class="overload">[1/3]</span></h2>
+<a id="aabe1582837480fd96c7ed7e587553f7c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aabe1582837480fd96c7ed7e587553f7c">&#9670;&nbsp;</a></span>ResetCamera() <span class="overload">[1/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1859,7 +1859,8 @@ Protected Attributes</h2></td></tr>
         <tr>
           <td class="memname">void vtkSMRenderViewProxy::ResetCamera </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>closest</em> = <code>false</code></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -1869,8 +1870,8 @@ Protected Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="acdfffe23dc5a4069e641ce376c6b4892"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acdfffe23dc5a4069e641ce376c6b4892">&#9670;&nbsp;</a></span>ResetCamera() <span class="overload">[2/3]</span></h2>
+<a id="a167d211b6c98cf9e8f79216c38ba8771"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a167d211b6c98cf9e8f79216c38ba8771">&#9670;&nbsp;</a></span>ResetCamera() <span class="overload">[2/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1879,8 +1880,18 @@ Protected Attributes</h2></td></tr>
           <td class="memname">void vtkSMRenderViewProxy::ResetCamera </td>
           <td>(</td>
           <td class="paramtype"><a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkVectorOperators_8h.html#a45c855d65dd0e2b57b08024500ff9159">double</a>&#160;</td>
-          <td class="paramname"><em>bounds</em>[6]</td><td>)</td>
+          <td class="paramname"><em>bounds</em>[6], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>closest</em> = <code>false</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -1889,8 +1900,8 @@ Protected Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="ac6c92a7f4df8402d0b6a6e28a4881ed7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac6c92a7f4df8402d0b6a6e28a4881ed7">&#9670;&nbsp;</a></span>ResetCamera() <span class="overload">[3/3]</span></h2>
+<a id="af1acfe671b1c023e5f6964965910dbe9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af1acfe671b1c023e5f6964965910dbe9">&#9670;&nbsp;</a></span>ResetCamera() <span class="overload">[3/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1929,7 +1940,13 @@ Protected Attributes</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype"><a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkVectorOperators_8h.html#a45c855d65dd0e2b57b08024500ff9159">double</a>&#160;</td>
-          <td class="paramname"><em>zmax</em>&#160;</td>
+          <td class="paramname"><em>zmax</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>closest</em> = <code>false</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -1943,8 +1960,8 @@ Protected Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a4896c1dde814dc9270fbc9bad36b56ff"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4896c1dde814dc9270fbc9bad36b56ff">&#9670;&nbsp;</a></span>ZoomTo()</h2>
+<a id="afa0319f8869f4fb86fd63e4de6b0ff35"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afa0319f8869f4fb86fd63e4de6b0ff35">&#9670;&nbsp;</a></span>ZoomTo()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1956,8 +1973,18 @@ Protected Attributes</h2></td></tr>
           <td class="memname">virtual void vtkSMRenderViewProxy::ZoomTo </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classvtkSMProxy.html">vtkSMProxy</a> *&#160;</td>
-          <td class="paramname"><em>representation</em></td><td>)</td>
+          <td class="paramname"><em>representation</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>closest</em> = <code>false</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
   </td>
@@ -2917,7 +2944,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="vtkSMRenderViewProxy_8h_source.html#l00278">278</a> of file <a class="el" href="vtkSMRenderViewProxy_8h_source.html">vtkSMRenderViewProxy.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vtkSMRenderViewProxy_8h_source.html#l00279">279</a> of file <a class="el" href="vtkSMRenderViewProxy_8h_source.html">vtkSMRenderViewProxy.h</a>.</p>
 
 </div>
 </div>
@@ -2941,7 +2968,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="vtkSMRenderViewProxy_8h_source.html#l00283">283</a> of file <a class="el" href="vtkSMRenderViewProxy_8h_source.html">vtkSMRenderViewProxy.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vtkSMRenderViewProxy_8h_source.html#l00284">284</a> of file <a class="el" href="vtkSMRenderViewProxy_8h_source.html">vtkSMRenderViewProxy.h</a>.</p>
 
 </div>
 </div>
@@ -2965,7 +2992,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="vtkSMRenderViewProxy_8h_source.html#l00286">286</a> of file <a class="el" href="vtkSMRenderViewProxy_8h_source.html">vtkSMRenderViewProxy.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vtkSMRenderViewProxy_8h_source.html#l00287">287</a> of file <a class="el" href="vtkSMRenderViewProxy_8h_source.html">vtkSMRenderViewProxy.h</a>.</p>
 
 </div>
 </div>
@@ -2978,7 +3005,7 @@ Protected Attributes</h2></td></tr>
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.13 on Mon Dec 7 2020
+</a> 1.8.13 on Tue Jan 26 2021
 </small></address>
 <!-- KW:BEGIN -->
 <!-- this adds the version selection header -->

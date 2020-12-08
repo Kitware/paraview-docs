@@ -36,8 +36,8 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#pub-slots">Public Slots</a> &#124;
-<a href="#signals">Signals</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pub-static-methods">Static Public Member Functions</a> &#124;
 <a href="#pro-methods">Protected Member Functions</a> &#124;
 <a href="classpqPythonScriptEditor-members.html">List of all members</a>  </div>
   <div class="headertitle">
@@ -45,43 +45,56 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
+<p>Paraview Python Editor widget.  
+ <a href="classpqPythonScriptEditor.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="pqPythonScriptEditor_8h_source.html">pqPythonScriptEditor.h</a>&gt;</code></p>
 
 <p>Inherits QMainWindow.</p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-slots"></a>
 Public Slots</h2></td></tr>
-<tr class="memitem:aa19fc155f8df0493062580279626eb7b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpqPythonScriptEditor.html#aa19fc155f8df0493062580279626eb7b">open</a> (<a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> QString &amp;filename)</td></tr>
-<tr class="separator:aa19fc155f8df0493062580279626eb7b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afbf3eb9385ba37ec6cf1d93288b85e25"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpqPythonScriptEditor.html#afbf3eb9385ba37ec6cf1d93288b85e25">setText</a> (<a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> QString &amp;text)</td></tr>
+<tr class="memdesc:afbf3eb9385ba37ec6cf1d93288b85e25"><td class="mdescLeft">&#160;</td><td class="mdescRight">Q_SLOT that sets the current buffer to text.  <a href="#afbf3eb9385ba37ec6cf1d93288b85e25">More...</a><br /></td></tr>
 <tr class="separator:afbf3eb9385ba37ec6cf1d93288b85e25"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8af18e96ab3ec3325e01b9bf237ebc66"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpqPythonScriptEditor.html#a8af18e96ab3ec3325e01b9bf237ebc66">newFile</a> ()</td></tr>
-<tr class="separator:a8af18e96ab3ec3325e01b9bf237ebc66"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="signals"></a>
-Signals</h2></td></tr>
-<tr class="memitem:a1096057f0f2a6bbe972c9e05341c9a94"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpqPythonScriptEditor.html#a1096057f0f2a6bbe972c9e05341c9a94">fileSaved</a> ()</td></tr>
-<tr class="separator:a1096057f0f2a6bbe972c9e05341c9a94"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a40386c74f0e46f346671ef01bef72ab9"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpqPythonScriptEditor.html#a40386c74f0e46f346671ef01bef72ab9">pqPythonScriptEditor</a> (QWidget *parent=nullptr)</td></tr>
 <tr class="separator:a40386c74f0e46f346671ef01bef72ab9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af02d7ff9dc61a43633e3caf961e668a1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpqPythonScriptEditor.html#af02d7ff9dc61a43633e3caf961e668a1">setSaveDialogDefaultDirectory</a> (<a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> QString &amp;<a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/namespacevtkX3D.html#ac6551f7bf833e8254b2b3ecdaea0d210a652910e0524bce5b8ec2644cad351b81">dir</a>)</td></tr>
+<tr class="memdesc:af02d7ff9dc61a43633e3caf961e668a1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the default save directory for the current buffer.  <a href="#af02d7ff9dc61a43633e3caf961e668a1">More...</a><br /></td></tr>
 <tr class="separator:af02d7ff9dc61a43633e3caf961e668a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0af5abf70fb58906287317a664029e61"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpqPythonScriptEditor.html#a0af5abf70fb58906287317a664029e61">setPythonManager</a> (<a class="el" href="classpqPythonManager.html">pqPythonManager</a> *manager)</td></tr>
+<tr class="memdesc:a0af5abf70fb58906287317a664029e61"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the <a class="el" href="classpqPythonManager.html">pqPythonManager</a> used for the macros.  <a href="#a0af5abf70fb58906287317a664029e61">More...</a><br /></td></tr>
 <tr class="separator:a0af5abf70fb58906287317a664029e61"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa0422e7e5e3b8ea2b15111014a6eb278"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpqPythonScriptEditor.html#aa0422e7e5e3b8ea2b15111014a6eb278">scrollToBottom</a> ()</td></tr>
+<tr class="memdesc:aa0422e7e5e3b8ea2b15111014a6eb278"><td class="mdescLeft">&#160;</td><td class="mdescRight">Scroll the editor to the bottom of the scroll area.  <a href="#aa0422e7e5e3b8ea2b15111014a6eb278">More...</a><br /></td></tr>
 <tr class="separator:aa0422e7e5e3b8ea2b15111014a6eb278"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa19fc155f8df0493062580279626eb7b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpqPythonScriptEditor.html#aa19fc155f8df0493062580279626eb7b">open</a> (<a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> QString &amp;filename)</td></tr>
+<tr class="memdesc:aa19fc155f8df0493062580279626eb7b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Open a file inside the editor.  <a href="#aa19fc155f8df0493062580279626eb7b">More...</a><br /></td></tr>
+<tr class="separator:aa19fc155f8df0493062580279626eb7b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
+Static Public Member Functions</h2></td></tr>
+<tr class="memitem:a01dd1717826f90f244fc06c132e6fa5f"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classpqPythonScriptEditor.html">pqPythonScriptEditor</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpqPythonScriptEditor.html#a01dd1717826f90f244fc06c132e6fa5f">GetUniqueInstance</a> ()</td></tr>
+<tr class="memdesc:a01dd1717826f90f244fc06c132e6fa5f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Utility function that provides a single instance of the editor.  <a href="#a01dd1717826f90f244fc06c132e6fa5f">More...</a><br /></td></tr>
+<tr class="separator:a01dd1717826f90f244fc06c132e6fa5f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
 <tr class="memitem:a5f080b9664a7ce2e5f3dd67a87766dfb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpqPythonScriptEditor.html#a5f080b9664a7ce2e5f3dd67a87766dfb">closeEvent</a> (QCloseEvent *event) override</td></tr>
+<tr class="memdesc:a5f080b9664a7ce2e5f3dd67a87766dfb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Override the QMainWindow closeEvent.  <a href="#a5f080b9664a7ce2e5f3dd67a87766dfb">More...</a><br /></td></tr>
 <tr class="separator:a5f080b9664a7ce2e5f3dd67a87766dfb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock">
-<p class="definition">Definition at line <a class="el" href="pqPythonScriptEditor_8h_source.html#l00045">45</a> of file <a class="el" href="pqPythonScriptEditor_8h_source.html">pqPythonScriptEditor.h</a>.</p>
+<div class="textblock"><p>Paraview Python Editor widget. </p>
+<p>This widget can be used as a embedded Qt python editor inside paraview. It provides functionality to read, write and edit python script and paraview macros within paraview itself. The text editor provides basic functionality such as undo/redo, line numbering and syntax highlighting (through pygments).</p>
+<p>You can either use this widget as a sole editor, or get the paraview static one from <a class="el" href="classpqPythonScriptEditor.html#a01dd1717826f90f244fc06c132e6fa5f">GetUniqueInstance</a> (which gives you the editor used for the macro and the scripts).</p>
+<p>Note that <a class="el" href="classpqPythonScriptEditor.html#a01dd1717826f90f244fc06c132e6fa5f">GetUniqueInstance</a> is a lazy way of having a unique instance of the editor ready to be used. A better approach would be to actually change the code that uses this class to reflect that peculiar behavior (and not embed it inside the class). Also note that you can freely instantiate as many editor as you want as two instances of this class don't share any common data.</p>
+<dl class="section note"><dt>Note</dt><dd>This class handles the main window components. If you are interested only in the text editor itself, please see <a class="el" href="classpqPythonTextArea.html">pqPythonTextArea</a>. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="pqPythonScriptEditor_8h_source.html#l00068">68</a> of file <a class="el" href="pqPythonScriptEditor_8h_source.html">pqPythonScriptEditor.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a40386c74f0e46f346671ef01bef72ab9"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a40386c74f0e46f346671ef01bef72ab9">&#9670;&nbsp;</a></span>pqPythonScriptEditor()</h2>
@@ -126,6 +139,9 @@ Protected Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Sets the default save directory for the current buffer. </p>
+<p>Internally, it is only used for the QFileDialog directory argument when saving or loading a file (ie the folder from which the QFileDialog is launched). </p>
+
 </div>
 </div>
 <a id="a0af5abf70fb58906287317a664029e61"></a>
@@ -144,6 +160,8 @@ Protected Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Sets the <a class="el" href="classpqPythonManager.html">pqPythonManager</a> used for the macros. </p>
+
 </div>
 </div>
 <a id="aa0422e7e5e3b8ea2b15111014a6eb278"></a>
@@ -161,16 +179,15 @@ Protected Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Scroll the editor to the bottom of the scroll area. </p>
+
 </div>
 </div>
 <a id="aa19fc155f8df0493062580279626eb7b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa19fc155f8df0493062580279626eb7b">&#9670;&nbsp;</a></span>open</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#aa19fc155f8df0493062580279626eb7b">&#9670;&nbsp;</a></span>open()</h2>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">void pqPythonScriptEditor::open </td>
@@ -180,12 +197,38 @@ Protected Member Functions</h2></td></tr>
           <td></td>
         </tr>
       </table>
+</div><div class="memdoc">
+
+<p>Open a file inside the editor. </p>
+
+</div>
+</div>
+<a id="a01dd1717826f90f244fc06c132e6fa5f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a01dd1717826f90f244fc06c132e6fa5f">&#9670;&nbsp;</a></span>GetUniqueInstance()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="classpqPythonScriptEditor.html">pqPythonScriptEditor</a>* pqPythonScriptEditor::GetUniqueInstance </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">slot</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Utility function that provides a single instance of the editor. </p>
+
+<p class="definition">Definition at line <a class="el" href="pqPythonScriptEditor_8h_source.html#l00102">102</a> of file <a class="el" href="pqPythonScriptEditor_8h_source.html">pqPythonScriptEditor.h</a>.</p>
 
 </div>
 </div>
@@ -213,55 +256,8 @@ Protected Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-</div>
-</div>
-<a id="a8af18e96ab3ec3325e01b9bf237ebc66"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8af18e96ab3ec3325e01b9bf237ebc66">&#9670;&nbsp;</a></span>newFile</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool pqPythonScriptEditor::newFile </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">slot</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a1096057f0f2a6bbe972c9e05341c9a94"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1096057f0f2a6bbe972c9e05341c9a94">&#9670;&nbsp;</a></span>fileSaved</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void pqPythonScriptEditor::fileSaved </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
+<p>Q_SLOT that sets the current buffer to text. </p>
+<p>Override the current buffer (even if it is not saved). This method is only used by the pqTraceAction widget. </p>
 
 </div>
 </div>
@@ -289,6 +285,9 @@ Protected Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Override the QMainWindow closeEvent. </p>
+<p>We ask the user wants to save the current file if it's not already saved </p>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
@@ -300,7 +299,7 @@ Protected Member Functions</h2></td></tr>
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.13 on Mon Dec 7 2020
+</a> 1.8.13 on Tue Jan 26 2021
 </small></address>
 <!-- KW:BEGIN -->
 <!-- this adds the version selection header -->

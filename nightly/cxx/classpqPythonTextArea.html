@@ -35,7 +35,9 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
+<a href="#signals">Signals</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pro-methods">Protected Member Functions</a> &#124;
 <a href="classpqPythonTextArea-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">pqPythonTextArea Class Reference</div>  </div>
@@ -49,6 +51,21 @@ $(function() {
 
 <p>Inherits QWidget.</p>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="signals"></a>
+Signals</h2></td></tr>
+<tr class="memitem:a6ed705b25a6189b67aa2d25e1d9c2c4a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpqPythonTextArea.html#a6ed705b25a6189b67aa2d25e1d9c2c4a">BufferErased</a> ()</td></tr>
+<tr class="memdesc:a6ed705b25a6189b67aa2d25e1d9c2c4a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Triggered when the current text buffer is erased.  <a href="#a6ed705b25a6189b67aa2d25e1d9c2c4a">More...</a><br /></td></tr>
+<tr class="separator:a6ed705b25a6189b67aa2d25e1d9c2c4a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2dfed1a2d1351510e8a2d114cf178e11"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpqPythonTextArea.html#a2dfed1a2d1351510e8a2d114cf178e11">FileOpened</a> (<a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> QString &amp;)</td></tr>
+<tr class="memdesc:a2dfed1a2d1351510e8a2d114cf178e11"><td class="mdescLeft">&#160;</td><td class="mdescRight">Triggers after a file has been successfuly opened in the current buffer.  <a href="#a2dfed1a2d1351510e8a2d114cf178e11">More...</a><br /></td></tr>
+<tr class="separator:a2dfed1a2d1351510e8a2d114cf178e11"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afae26e468acf21d68a4edb1194385655"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpqPythonTextArea.html#afae26e468acf21d68a4edb1194385655">FileSaved</a> (<a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> QString &amp;)</td></tr>
+<tr class="memdesc:afae26e468acf21d68a4edb1194385655"><td class="mdescLeft">&#160;</td><td class="mdescRight">Triggers after a successful saves of the current buffer.  <a href="#afae26e468acf21d68a4edb1194385655">More...</a><br /></td></tr>
+<tr class="separator:afae26e468acf21d68a4edb1194385655"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad4d6e02776cccfa039f57c1c19cf98ed"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpqPythonTextArea.html#ad4d6e02776cccfa039f57c1c19cf98ed">FileSavedAsMacro</a> (<a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> QString &amp;)</td></tr>
+<tr class="memdesc:ad4d6e02776cccfa039f57c1c19cf98ed"><td class="mdescLeft">&#160;</td><td class="mdescRight">Triggers after a successful copy of the current buffer to a new file.  <a href="#ad4d6e02776cccfa039f57c1c19cf98ed">More...</a><br /></td></tr>
+<tr class="separator:ad4d6e02776cccfa039f57c1c19cf98ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:ae15996d861e202a09345b2420e54df5c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpqPythonTextArea.html#ae15996d861e202a09345b2420e54df5c">pqPythonTextArea</a> (QWidget *parent)</td></tr>
@@ -57,12 +74,48 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:af974072b7a3d40a849e6ccde461d7578"><td class="memItemLeft" align="right" valign="top">QTextEdit *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpqPythonTextArea.html#af974072b7a3d40a849e6ccde461d7578">GetTextEdit</a> ()</td></tr>
 <tr class="memdesc:af974072b7a3d40a849e6ccde461d7578"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the underlying TextEdit.  <a href="#af974072b7a3d40a849e6ccde461d7578">More...</a><br /></td></tr>
 <tr class="separator:af974072b7a3d40a849e6ccde461d7578"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acd299ff8a95445ea00d02a367c1ae426"><td class="memItemLeft" align="right" valign="top">QAction *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpqPythonTextArea.html#acd299ff8a95445ea00d02a367c1ae426">GetUndoAction</a> ()</td></tr>
+<tr class="memdesc:acd299ff8a95445ea00d02a367c1ae426"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a unique action that triggers an undo command on the text.  <a href="#acd299ff8a95445ea00d02a367c1ae426">More...</a><br /></td></tr>
+<tr class="separator:acd299ff8a95445ea00d02a367c1ae426"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaa58cfa391f908e6ba29e3489aed94ab"><td class="memItemLeft" align="right" valign="top">QAction *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpqPythonTextArea.html#aaa58cfa391f908e6ba29e3489aed94ab">GetRedoAction</a> ()</td></tr>
+<tr class="memdesc:aaa58cfa391f908e6ba29e3489aed94ab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a unique action that triggers an redo command on the text.  <a href="#aaa58cfa391f908e6ba29e3489aed94ab">More...</a><br /></td></tr>
+<tr class="separator:aaa58cfa391f908e6ba29e3489aed94ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a40552ab59e7aa495c8b2f0c0a667fc61"><td class="memItemLeft" align="right" valign="top">QAction *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpqPythonTextArea.html#a40552ab59e7aa495c8b2f0c0a667fc61">GetNewFileAction</a> ()</td></tr>
+<tr class="memdesc:a40552ab59e7aa495c8b2f0c0a667fc61"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the new file unique action.  <a href="#a40552ab59e7aa495c8b2f0c0a667fc61">More...</a><br /></td></tr>
+<tr class="separator:a40552ab59e7aa495c8b2f0c0a667fc61"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad41f4d4ebda04333aea88d737df880ce"><td class="memItemLeft" align="right" valign="top">QAction *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpqPythonTextArea.html#ad41f4d4ebda04333aea88d737df880ce">GetOpenFileAction</a> ()</td></tr>
+<tr class="memdesc:ad41f4d4ebda04333aea88d737df880ce"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the open file unique action.  <a href="#ad41f4d4ebda04333aea88d737df880ce">More...</a><br /></td></tr>
+<tr class="separator:ad41f4d4ebda04333aea88d737df880ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af58de219b249ecf7b484501aa5ba5c73"><td class="memItemLeft" align="right" valign="top">QAction *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpqPythonTextArea.html#af58de219b249ecf7b484501aa5ba5c73">GetSaveFileAction</a> ()</td></tr>
+<tr class="memdesc:af58de219b249ecf7b484501aa5ba5c73"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the save file unique action.  <a href="#af58de219b249ecf7b484501aa5ba5c73">More...</a><br /></td></tr>
+<tr class="separator:af58de219b249ecf7b484501aa5ba5c73"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae9c6b6586631482cefca7ed6e0d8bc12"><td class="memItemLeft" align="right" valign="top">QAction *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpqPythonTextArea.html#ae9c6b6586631482cefca7ed6e0d8bc12">GetSaveFileAsAction</a> ()</td></tr>
+<tr class="memdesc:ae9c6b6586631482cefca7ed6e0d8bc12"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the save as file action.  <a href="#ae9c6b6586631482cefca7ed6e0d8bc12">More...</a><br /></td></tr>
+<tr class="separator:ae9c6b6586631482cefca7ed6e0d8bc12"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa049ff2c8fe5c7f0c07142f73300936e"><td class="memItemLeft" align="right" valign="top">QAction *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpqPythonTextArea.html#aa049ff2c8fe5c7f0c07142f73300936e">GetSaveFileAsMacroAction</a> ()</td></tr>
+<tr class="memdesc:aa049ff2c8fe5c7f0c07142f73300936e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Same as <a class="el" href="classpqPythonTextArea.html#ae9c6b6586631482cefca7ed6e0d8bc12">GetSaveFileAsAction</a> but saves a copy of the buffer as a ParaView Python macro.  <a href="#aa049ff2c8fe5c7f0c07142f73300936e">More...</a><br /></td></tr>
+<tr class="separator:aa049ff2c8fe5c7f0c07142f73300936e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a40731e855a5636c3fcbcc43a2ba0fd1d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpqPythonTextArea.html#a40731e855a5636c3fcbcc43a2ba0fd1d">SaveOnClose</a> ()</td></tr>
+<tr class="memdesc:a40731e855a5636c3fcbcc43a2ba0fd1d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Saves and closes the current opened buffer when a Qt close event occurs.  <a href="#a40731e855a5636c3fcbcc43a2ba0fd1d">More...</a><br /></td></tr>
+<tr class="separator:a40731e855a5636c3fcbcc43a2ba0fd1d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a228cb66ea7ba818333afea6761fff46e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpqPythonTextArea.html#a228cb66ea7ba818333afea6761fff46e">OpenFile</a> (<a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> QString &amp;filename)</td></tr>
+<tr class="memdesc:a228cb66ea7ba818333afea6761fff46e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Opens a file in the editor.  <a href="#a228cb66ea7ba818333afea6761fff46e">More...</a><br /></td></tr>
+<tr class="separator:a228cb66ea7ba818333afea6761fff46e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aace4d5ce0041ef985ea9c64e88f95520"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpqPythonTextArea.html#aace4d5ce0041ef985ea9c64e88f95520">SetDefaultSaveDirectory</a> (<a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> QString &amp;<a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/namespacevtkX3D.html#ac6551f7bf833e8254b2b3ecdaea0d210a652910e0524bce5b8ec2644cad351b81">dir</a>)</td></tr>
+<tr class="memdesc:aace4d5ce0041ef985ea9c64e88f95520"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the default save directory.  <a href="#aace4d5ce0041ef985ea9c64e88f95520">More...</a><br /></td></tr>
+<tr class="separator:aace4d5ce0041ef985ea9c64e88f95520"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
+Protected Member Functions</h2></td></tr>
+<tr class="memitem:ab78eb9bcefcfd6a099690ffae913079d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpqPythonTextArea.html#ab78eb9bcefcfd6a099690ffae913079d">eventFilter</a> (QObject *obj, QEvent *event) override</td></tr>
+<tr class="memdesc:ab78eb9bcefcfd6a099690ffae913079d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Filter the KeyEvent CTRL+Z.  <a href="#ab78eb9bcefcfd6a099690ffae913079d">More...</a><br /></td></tr>
+<tr class="separator:ab78eb9bcefcfd6a099690ffae913079d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>A python text editor widget. </p>
 <p>Displays an editable text area with syntax python highlighting and line numbering. </p>
 
-<p class="definition">Definition at line <a class="el" href="pqPythonTextArea_8h_source.html#l00051">51</a> of file <a class="el" href="pqPythonTextArea_8h_source.html">pqPythonTextArea.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="pqPythonTextArea_8h_source.html#l00056">56</a> of file <a class="el" href="pqPythonTextArea_8h_source.html">pqPythonTextArea.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="ae15996d861e202a09345b2420e54df5c"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ae15996d861e202a09345b2420e54df5c">&#9670;&nbsp;</a></span>pqPythonTextArea()</h2>
@@ -118,7 +171,353 @@ Public Member Functions</h2></td></tr>
 
 <p>Returns the underlying TextEdit. </p>
 
-<p class="definition">Definition at line <a class="el" href="pqPythonTextArea_8h_source.html#l00065">65</a> of file <a class="el" href="pqPythonTextArea_8h_source.html">pqPythonTextArea.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="pqPythonTextArea_8h_source.html#l00070">70</a> of file <a class="el" href="pqPythonTextArea_8h_source.html">pqPythonTextArea.h</a>.</p>
+
+</div>
+</div>
+<a id="acd299ff8a95445ea00d02a367c1ae426"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acd299ff8a95445ea00d02a367c1ae426">&#9670;&nbsp;</a></span>GetUndoAction()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QAction* pqPythonTextArea::GetUndoAction </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns a unique action that triggers an undo command on the text. </p>
+
+</div>
+</div>
+<a id="aaa58cfa391f908e6ba29e3489aed94ab"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaa58cfa391f908e6ba29e3489aed94ab">&#9670;&nbsp;</a></span>GetRedoAction()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QAction* pqPythonTextArea::GetRedoAction </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns a unique action that triggers an redo command on the text. </p>
+
+</div>
+</div>
+<a id="a40552ab59e7aa495c8b2f0c0a667fc61"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a40552ab59e7aa495c8b2f0c0a667fc61">&#9670;&nbsp;</a></span>GetNewFileAction()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QAction* pqPythonTextArea::GetNewFileAction </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns the new file unique action. </p>
+
+</div>
+</div>
+<a id="ad41f4d4ebda04333aea88d737df880ce"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad41f4d4ebda04333aea88d737df880ce">&#9670;&nbsp;</a></span>GetOpenFileAction()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QAction* pqPythonTextArea::GetOpenFileAction </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns the open file unique action. </p>
+
+</div>
+</div>
+<a id="af58de219b249ecf7b484501aa5ba5c73"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af58de219b249ecf7b484501aa5ba5c73">&#9670;&nbsp;</a></span>GetSaveFileAction()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QAction* pqPythonTextArea::GetSaveFileAction </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns the save file unique action. </p>
+
+</div>
+</div>
+<a id="ae9c6b6586631482cefca7ed6e0d8bc12"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae9c6b6586631482cefca7ed6e0d8bc12">&#9670;&nbsp;</a></span>GetSaveFileAsAction()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QAction* pqPythonTextArea::GetSaveFileAsAction </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns the save as file action. </p>
+<p>Compared to the SaveFile action, this one always open a dialog asking where to save the copy of the current opened buffer. </p>
+
+</div>
+</div>
+<a id="aa049ff2c8fe5c7f0c07142f73300936e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa049ff2c8fe5c7f0c07142f73300936e">&#9670;&nbsp;</a></span>GetSaveFileAsMacroAction()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QAction* pqPythonTextArea::GetSaveFileAsMacroAction </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Same as <a class="el" href="classpqPythonTextArea.html#ae9c6b6586631482cefca7ed6e0d8bc12">GetSaveFileAsAction</a> but saves a copy of the buffer as a ParaView Python macro. </p>
+
+</div>
+</div>
+<a id="a40731e855a5636c3fcbcc43a2ba0fd1d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a40731e855a5636c3fcbcc43a2ba0fd1d">&#9670;&nbsp;</a></span>SaveOnClose()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool pqPythonTextArea::SaveOnClose </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Saves and closes the current opened buffer when a Qt close event occurs. </p>
+<p>Return false if the buffer has not been saved. </p>
+
+</div>
+</div>
+<a id="a228cb66ea7ba818333afea6761fff46e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a228cb66ea7ba818333afea6761fff46e">&#9670;&nbsp;</a></span>OpenFile()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool pqPythonTextArea::OpenFile </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> QString &amp;&#160;</td>
+          <td class="paramname"><em>filename</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Opens a file in the editor. </p>
+<p>Triggers a saving wizard if the current buffer has not beed saved on the disk. </p>
+
+</div>
+</div>
+<a id="aace4d5ce0041ef985ea9c64e88f95520"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aace4d5ce0041ef985ea9c64e88f95520">&#9670;&nbsp;</a></span>SetDefaultSaveDirectory()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void pqPythonTextArea::SetDefaultSaveDirectory </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> QString &amp;&#160;</td>
+          <td class="paramname"><em>dir</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sets the default save directory. </p>
+<p>Only used for the directory displayed when the save popup window is shown. </p>
+
+</div>
+</div>
+<a id="a6ed705b25a6189b67aa2d25e1d9c2c4a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6ed705b25a6189b67aa2d25e1d9c2c4a">&#9670;&nbsp;</a></span>BufferErased</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void pqPythonTextArea::BufferErased </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Triggered when the current text buffer is erased. </p>
+
+</div>
+</div>
+<a id="a2dfed1a2d1351510e8a2d114cf178e11"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2dfed1a2d1351510e8a2d114cf178e11">&#9670;&nbsp;</a></span>FileOpened</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void pqPythonTextArea::FileOpened </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> QString &amp;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Triggers after a file has been successfuly opened in the current buffer. </p>
+
+</div>
+</div>
+<a id="afae26e468acf21d68a4edb1194385655"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afae26e468acf21d68a4edb1194385655">&#9670;&nbsp;</a></span>FileSaved</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void pqPythonTextArea::FileSaved </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> QString &amp;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Triggers after a successful saves of the current buffer. </p>
+
+</div>
+</div>
+<a id="ad4d6e02776cccfa039f57c1c19cf98ed"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad4d6e02776cccfa039f57c1c19cf98ed">&#9670;&nbsp;</a></span>FileSavedAsMacro</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void pqPythonTextArea::FileSavedAsMacro </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> QString &amp;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Triggers after a successful copy of the current buffer to a new file. </p>
+
+</div>
+</div>
+<a id="ab78eb9bcefcfd6a099690ffae913079d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab78eb9bcefcfd6a099690ffae913079d">&#9670;&nbsp;</a></span>eventFilter()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool pqPythonTextArea::eventFilter </td>
+          <td>(</td>
+          <td class="paramtype">QObject *&#160;</td>
+          <td class="paramname"><em>obj</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QEvent *&#160;</td>
+          <td class="paramname"><em>event</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Filter the KeyEvent CTRL+Z. </p>
+<p>We need to filter the QTextEdit KeyEvent otherwise our undo/redo actions are not triggered. </p>
 
 </div>
 </div>
@@ -131,7 +530,7 @@ Public Member Functions</h2></td></tr>
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.13 on Mon Dec 7 2020
+</a> 1.8.13 on Tue Jan 26 2021
 </small></address>
 <!-- KW:BEGIN -->
 <!-- this adds the version selection header -->

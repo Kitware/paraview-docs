@@ -76,12 +76,12 @@ Collaboration diagram for pqRenderViewBase:</div>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:aa697f15cf997b7f97748d9d25d1bfedb"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpqRenderViewBase.html#aa697f15cf997b7f97748d9d25d1bfedb">~pqRenderViewBase</a> () override</td></tr>
 <tr class="separator:aa697f15cf997b7f97748d9d25d1bfedb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8afa3a9ef667889fb2f3e72de3813afc"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpqRenderViewBase.html#a8afa3a9ef667889fb2f3e72de3813afc">resetCamera</a> ()=0</td></tr>
-<tr class="memdesc:a8afa3a9ef667889fb2f3e72de3813afc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resets the camera to include all visible data.  <a href="#a8afa3a9ef667889fb2f3e72de3813afc">More...</a><br /></td></tr>
-<tr class="separator:a8afa3a9ef667889fb2f3e72de3813afc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2ca0171fcf5929a99d7393a2a1538869"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpqRenderViewBase.html#a2ca0171fcf5929a99d7393a2a1538869">resetDisplay</a> () override</td></tr>
-<tr class="memdesc:a2ca0171fcf5929a99d7393a2a1538869"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called to reset the view's display.  <a href="#a2ca0171fcf5929a99d7393a2a1538869">More...</a><br /></td></tr>
-<tr class="separator:a2ca0171fcf5929a99d7393a2a1538869"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a96fc06ca4ebea47fe3dd84c39b47e69e"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpqRenderViewBase.html#a96fc06ca4ebea47fe3dd84c39b47e69e">resetCamera</a> (bool closest=false)=0</td></tr>
+<tr class="memdesc:a96fc06ca4ebea47fe3dd84c39b47e69e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resets the camera to include all visible data.  <a href="#a96fc06ca4ebea47fe3dd84c39b47e69e">More...</a><br /></td></tr>
+<tr class="separator:a96fc06ca4ebea47fe3dd84c39b47e69e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5cdcc1fcdbf84b7c360dc3bba1e11080"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpqRenderViewBase.html#a5cdcc1fcdbf84b7c360dc3bba1e11080">resetDisplay</a> (bool closest=false) override</td></tr>
+<tr class="memdesc:a5cdcc1fcdbf84b7c360dc3bba1e11080"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called to reset the view's display.  <a href="#a5cdcc1fcdbf84b7c360dc3bba1e11080">More...</a><br /></td></tr>
+<tr class="separator:a5cdcc1fcdbf84b7c360dc3bba1e11080"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classpqView"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classpqView')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classpqView.html">pqView</a></td></tr>
 <tr class="memitem:ab9438b35b64dee148e00298bce2b5f13 inherit pub_methods_classpqView"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpqView.html#ab9438b35b64dee148e00298bce2b5f13">~pqView</a> () override</td></tr>
 <tr class="separator:ab9438b35b64dee148e00298bce2b5f13 inherit pub_methods_classpqView"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -430,8 +430,8 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a8afa3a9ef667889fb2f3e72de3813afc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8afa3a9ef667889fb2f3e72de3813afc">&#9670;&nbsp;</a></span>resetCamera()</h2>
+<a id="a96fc06ca4ebea47fe3dd84c39b47e69e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a96fc06ca4ebea47fe3dd84c39b47e69e">&#9670;&nbsp;</a></span>resetCamera()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -442,7 +442,8 @@ Additional Inherited Members</h2></td></tr>
         <tr>
           <td class="memname">virtual void pqRenderViewBase::resetCamera </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>closest</em> = <code>false</code></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -456,12 +457,12 @@ Additional Inherited Members</h2></td></tr>
 <p>Resets the camera to include all visible data. </p>
 <p>It is essential to call this resetCamera, to ensure that the reset camera action gets pushed on the interaction undo stack. </p>
 
-<p>Implemented in <a class="el" href="classpqRenderView.html#a50dd8f95eb704e0c127a083ae4197c38">pqRenderView</a>.</p>
+<p>Implemented in <a class="el" href="classpqRenderView.html#aac1ebd9444d33fec20042201083678f1">pqRenderView</a>.</p>
 
 </div>
 </div>
-<a id="a2ca0171fcf5929a99d7393a2a1538869"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2ca0171fcf5929a99d7393a2a1538869">&#9670;&nbsp;</a></span>resetDisplay()</h2>
+<a id="a5cdcc1fcdbf84b7c360dc3bba1e11080"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5cdcc1fcdbf84b7c360dc3bba1e11080">&#9670;&nbsp;</a></span>resetDisplay()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -472,7 +473,8 @@ Additional Inherited Members</h2></td></tr>
         <tr>
           <td class="memname">void pqRenderViewBase::resetDisplay </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>closest</em> = <code>false</code></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -484,9 +486,9 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Called to reset the view's display. </p>
-<p>This method calls <a class="el" href="classpqRenderViewBase.html#a8afa3a9ef667889fb2f3e72de3813afc" title="Resets the camera to include all visible data. ">resetCamera()</a>. </p>
+<p>This method calls <a class="el" href="classpqRenderViewBase.html#a96fc06ca4ebea47fe3dd84c39b47e69e" title="Resets the camera to include all visible data. ">resetCamera()</a>. </p>
 
-<p>Reimplemented from <a class="el" href="classpqView.html#a7f5238ec073f52e5abbdc3451aaa4cfa">pqView</a>.</p>
+<p>Reimplemented from <a class="el" href="classpqView.html#af36463ee79f52f90e9bd8ff3ca697c15">pqView</a>.</p>
 
 </div>
 </div>
@@ -701,7 +703,7 @@ Additional Inherited Members</h2></td></tr>
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.13 on Mon Dec 7 2020
+</a> 1.8.13 on Tue Jan 26 2021
 </small></address>
 <!-- KW:BEGIN -->
 <!-- this adds the version selection header -->
