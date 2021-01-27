@@ -39,14 +39,14 @@ $(function() {
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-static-methods">Static Public Member Functions</a> &#124;
 <a href="#pro-methods">Protected Member Functions</a> &#124;
-<a href="#pro-attribs">Protected Attributes</a> &#124;
+<a href="#friends">Friends</a> &#124;
 <a href="classvtkPVArrayInformation-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">vtkPVArrayInformation Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>Data array information like type.  
+<p>provides meta data about arrays.  
  <a href="classvtkPVArrayInformation.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="vtkPVArrayInformation_8h_source.html">vtkPVArrayInformation.h</a>&gt;</code></p>
@@ -55,10 +55,8 @@ Inheritance diagram for vtkPVArrayInformation:</div>
 <div class="dyncontent">
 <div class="center"><img src="classvtkPVArrayInformation__inherit__graph.png" border="0" usemap="#vtkPVArrayInformation_inherit__map" alt="Inheritance graph"/></div>
 <map name="vtkPVArrayInformation_inherit__map" id="vtkPVArrayInformation_inherit__map">
-<area shape="rect" id="node5" href="classvtkPVGenericAttributeInformation.html" title="Generic attribute information like type. " alt="" coords="5,304,220,331"/>
-<area shape="rect" id="node2" href="classvtkPVInformation.html" title="Superclass for information objects. " alt="" coords="51,155,174,181"/>
-<area shape="rect" id="node3" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/classvtkObject.html" title="vtkObject" alt="" coords="73,80,152,107"/>
-<area shape="rect" id="node4" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/classvtkObjectBase.html" title="vtkObjectBase" alt="" coords="59,5,167,32"/>
+<area shape="rect" id="node2" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/classvtkObject.html" title="vtkObject" alt="" coords="42,80,121,107"/>
+<area shape="rect" id="node3" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/classvtkObjectBase.html" title="vtkObjectBase" alt="" coords="27,5,135,32"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <div class="dynheader">
@@ -66,20 +64,17 @@ Collaboration diagram for vtkPVArrayInformation:</div>
 <div class="dyncontent">
 <div class="center"><img src="classvtkPVArrayInformation__coll__graph.png" border="0" usemap="#vtkPVArrayInformation_coll__map" alt="Collaboration graph"/></div>
 <map name="vtkPVArrayInformation_coll__map" id="vtkPVArrayInformation_coll__map">
-<area shape="rect" id="node2" href="classvtkPVInformation.html" title="Superclass for information objects. " alt="" coords="63,171,186,197"/>
-<area shape="rect" id="node3" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/classvtkObject.html" title="vtkObject" alt="" coords="85,95,164,121"/>
-<area shape="rect" id="node4" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/classvtkObjectBase.html" title="vtkObjectBase" alt="" coords="5,5,113,32"/>
-<area shape="rect" id="node5" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/classvtkTimeStamp.html" title="vtkTimeStamp" alt="" coords="138,5,245,32"/>
+<area shape="rect" id="node2" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/classvtkObject.html" title="vtkObject" alt="" coords="195,95,274,121"/>
+<area shape="rect" id="node3" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/classvtkObjectBase.html" title="vtkObjectBase" alt="" coords="53,5,161,32"/>
+<area shape="rect" id="node4" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/classvtkWeakPointerBase.html" title="vtkWeakPointerBase" alt="" coords="5,95,149,121"/>
+<area shape="rect" id="node5" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/classvtkTimeStamp.html" title="vtkTimeStamp" alt="" coords="204,5,311,32"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
 Public Types</h2></td></tr>
-<tr class="memitem:a9aadf62fa54151884237b7b1fa995a6c"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="classvtkPVInformation.html">vtkPVInformation</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkPVArrayInformation.html#a9aadf62fa54151884237b7b1fa995a6c">Superclass</a></td></tr>
-<tr class="separator:a9aadf62fa54151884237b7b1fa995a6c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="inherit_header pub_types_classvtkPVInformation"><td colspan="2" onclick="javascript:toggleInherit('pub_types_classvtkPVInformation')"><img src="closed.png" alt="-"/>&#160;Public Types inherited from <a class="el" href="classvtkPVInformation.html">vtkPVInformation</a></td></tr>
-<tr class="memitem:a1900e425545e4c21fe4d61ad44c255ab inherit pub_types_classvtkPVInformation"><td class="memItemLeft" align="right" valign="top">typedef <a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/classvtkObject.html">vtkObject</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkPVInformation.html#a1900e425545e4c21fe4d61ad44c255ab">Superclass</a></td></tr>
-<tr class="separator:a1900e425545e4c21fe4d61ad44c255ab inherit pub_types_classvtkPVInformation"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa32d00d31fa0319b66821c6b227b0edf"><td class="memItemLeft" align="right" valign="top">typedef <a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/classvtkObject.html">vtkObject</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkPVArrayInformation.html#aa32d00d31fa0319b66821c6b227b0edf">Superclass</a></td></tr>
+<tr class="separator:aa32d00d31fa0319b66821c6b227b0edf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -89,120 +84,72 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:aaa924d0b33f1bd3ac51926635967278d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a78ee40c4acd75682daa42672fc6e1734"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkPVArrayInformation.html#a78ee40c4acd75682daa42672fc6e1734">PrintSelf</a> (ostream &amp;os, <a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/classvtkIndent.html">vtkIndent</a> indent) override</td></tr>
 <tr class="separator:a78ee40c4acd75682daa42672fc6e1734"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af1e119f757e89348d8171bad8f253ce8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkPVArrayInformation.html#af1e119f757e89348d8171bad8f253ce8">SetComponentName</a> (<a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkType_8h.html#a20bd6b6dedfe1bbb096c50354d52cc7e">vtkIdType</a> <a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/namespacevtkX3D.html#a88ade42854f67d6297898362e17a515fa78fb09245c9bd345bf96d579664f9736">component</a>, <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *<a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/namespacevtkX3D.html#ac6551f7bf833e8254b2b3ecdaea0d210ac713735f1d46c2694d66e85217207be2">name</a>)</td></tr>
-<tr class="memdesc:af1e119f757e89348d8171bad8f253ce8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the name for a component.  <a href="#af1e119f757e89348d8171bad8f253ce8">More...</a><br /></td></tr>
-<tr class="separator:af1e119f757e89348d8171bad8f253ce8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2ab26678baa300648118c3f153320b01"><td class="memItemLeft" align="right" valign="top"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkPVArrayInformation.html#a2ab26678baa300648118c3f153320b01">GetComponentName</a> (<a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkType_8h.html#a20bd6b6dedfe1bbb096c50354d52cc7e">vtkIdType</a> <a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/namespacevtkX3D.html#a88ade42854f67d6297898362e17a515fa78fb09245c9bd345bf96d579664f9736">component</a>)</td></tr>
-<tr class="memdesc:a2ab26678baa300648118c3f153320b01"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the component name for a given component.  <a href="#a2ab26678baa300648118c3f153320b01">More...</a><br /></td></tr>
-<tr class="separator:a2ab26678baa300648118c3f153320b01"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac688875ef502b84c64a9cb3360882aa7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkPVArrayInformation.html#ac688875ef502b84c64a9cb3360882aa7">GetDataTypeRange</a> (<a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkVectorOperators_8h.html#a45c855d65dd0e2b57b08024500ff9159">double</a> <a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/namespacevtkX3D.html#ac6551f7bf833e8254b2b3ecdaea0d210a76786d084c43d32f242990f932679539">range</a>[2])</td></tr>
-<tr class="memdesc:ac688875ef502b84c64a9cb3360882aa7"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method return the Min and Max possible range of the native data type.  <a href="#ac688875ef502b84c64a9cb3360882aa7">More...</a><br /></td></tr>
-<tr class="separator:ac688875ef502b84c64a9cb3360882aa7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aade16d7eaa1cac42c5ffab36633911fa"><td class="memItemLeft" align="right" valign="top"><a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkShaderProgram2_8h.html#a61569f2965b7a369eb10b6d75d410d11">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkPVArrayInformation.html#aade16d7eaa1cac42c5ffab36633911fa">Compare</a> (<a class="el" href="classvtkPVArrayInformation.html">vtkPVArrayInformation</a> *<a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/namespacevtkX3D.html#ac6551f7bf833e8254b2b3ecdaea0d210a23da246d4a744e861548382bb79fad81">info</a>)</td></tr>
-<tr class="memdesc:aade16d7eaa1cac42c5ffab36633911fa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns 1 if the array can be combined.  <a href="#aade16d7eaa1cac42c5ffab36633911fa">More...</a><br /></td></tr>
-<tr class="separator:aade16d7eaa1cac42c5ffab36633911fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa1b998d6e5d9bae1b15742a98056fed4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkPVArrayInformation.html#aa1b998d6e5d9bae1b15742a98056fed4">DeepCopy</a> (<a class="el" href="classvtkPVArrayInformation.html">vtkPVArrayInformation</a> *<a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/namespacevtkX3D.html#ac6551f7bf833e8254b2b3ecdaea0d210a23da246d4a744e861548382bb79fad81">info</a>)</td></tr>
-<tr class="separator:aa1b998d6e5d9bae1b15742a98056fed4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6a11084e529bcb222592199d2e888c5d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkPVArrayInformation.html#a6a11084e529bcb222592199d2e888c5d">CopyFromObject</a> (<a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/classvtkObject.html">vtkObject</a> *) override</td></tr>
-<tr class="memdesc:a6a11084e529bcb222592199d2e888c5d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Transfer information about a single object into this object.  <a href="#a6a11084e529bcb222592199d2e888c5d">More...</a><br /></td></tr>
-<tr class="separator:a6a11084e529bcb222592199d2e888c5d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adad882e3f384a2427015efcb7776a0f5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkPVArrayInformation.html#adad882e3f384a2427015efcb7776a0f5">AddInformation</a> (<a class="el" href="classvtkPVInformation.html">vtkPVInformation</a> *) override</td></tr>
-<tr class="memdesc:adad882e3f384a2427015efcb7776a0f5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Merge another information object.  <a href="#adad882e3f384a2427015efcb7776a0f5">More...</a><br /></td></tr>
-<tr class="separator:adad882e3f384a2427015efcb7776a0f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a98d251e09a6253f39cd3760b22eafdad"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkPVArrayInformation.html#a98d251e09a6253f39cd3760b22eafdad">Initialize</a> ()</td></tr>
-<tr class="memdesc:a98d251e09a6253f39cd3760b22eafdad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remove all infommation.  <a href="#a98d251e09a6253f39cd3760b22eafdad">More...</a><br /></td></tr>
+<tr class="memdesc:a98d251e09a6253f39cd3760b22eafdad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resets to default state.  <a href="#a98d251e09a6253f39cd3760b22eafdad">More...</a><br /></td></tr>
 <tr class="separator:a98d251e09a6253f39cd3760b22eafdad"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr><td colspan="2"><div class="groupHeader"></div></td></tr>
-<tr class="memitem:aca4501bd34ebcb4af73504601fb3c52a"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkPVArrayInformation.html#aca4501bd34ebcb4af73504601fb3c52a">SetDataType</a> (<a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkShaderProgram2_8h.html#a61569f2965b7a369eb10b6d75d410d11">int</a>)</td></tr>
-<tr class="memdesc:aca4501bd34ebcb4af73504601fb3c52a"><td class="mdescLeft">&#160;</td><td class="mdescRight">DataType is the string name of the data type: VTK_FLOAT ...  <a href="#aca4501bd34ebcb4af73504601fb3c52a">More...</a><br /></td></tr>
-<tr class="separator:aca4501bd34ebcb4af73504601fb3c52a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a93d9f7feca800f1b0f17c6af77d4c6ee"><td class="memItemLeft" align="right" valign="top">virtual <a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkShaderProgram2_8h.html#a61569f2965b7a369eb10b6d75d410d11">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkPVArrayInformation.html#a93d9f7feca800f1b0f17c6af77d4c6ee">GetDataType</a> ()</td></tr>
-<tr class="memdesc:a93d9f7feca800f1b0f17c6af77d4c6ee"><td class="mdescLeft">&#160;</td><td class="mdescRight">DataType is the string name of the data type: VTK_FLOAT ...  <a href="#a93d9f7feca800f1b0f17c6af77d4c6ee">More...</a><br /></td></tr>
+<tr class="memdesc:a93d9f7feca800f1b0f17c6af77d4c6ee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the type for values in the array e.g.  <a href="#a93d9f7feca800f1b0f17c6af77d4c6ee">More...</a><br /></td></tr>
 <tr class="separator:a93d9f7feca800f1b0f17c6af77d4c6ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr><td colspan="2"><div class="groupHeader"></div></td></tr>
-<tr class="memitem:a592adb1e3aaa972badcde0de0ad877c0"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkPVArrayInformation.html#a592adb1e3aaa972badcde0de0ad877c0">SetName</a> (<a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *)</td></tr>
-<tr class="memdesc:a592adb1e3aaa972badcde0de0ad877c0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set/get array's name.  <a href="#a592adb1e3aaa972badcde0de0ad877c0">More...</a><br /></td></tr>
-<tr class="separator:a592adb1e3aaa972badcde0de0ad877c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad5432c76ed3360c57e9c2cfe35a75f31"><td class="memItemLeft" align="right" valign="top">virtual char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkPVArrayInformation.html#ad5432c76ed3360c57e9c2cfe35a75f31">GetName</a> ()</td></tr>
-<tr class="memdesc:ad5432c76ed3360c57e9c2cfe35a75f31"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set/get array's name.  <a href="#ad5432c76ed3360c57e9c2cfe35a75f31">More...</a><br /></td></tr>
-<tr class="separator:ad5432c76ed3360c57e9c2cfe35a75f31"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr><td colspan="2"><div class="groupHeader"></div></td></tr>
-<tr class="memitem:a8c7087818245f4aa44e92838bbd60d6f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkPVArrayInformation.html#a8c7087818245f4aa44e92838bbd60d6f">SetNumberOfComponents</a> (<a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkShaderProgram2_8h.html#a61569f2965b7a369eb10b6d75d410d11">int</a> numComps)</td></tr>
-<tr class="memdesc:a8c7087818245f4aa44e92838bbd60d6f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Changing the number of components clears the ranges back to the default.  <a href="#a8c7087818245f4aa44e92838bbd60d6f">More...</a><br /></td></tr>
-<tr class="separator:a8c7087818245f4aa44e92838bbd60d6f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af63e34c65635f2469c4fcc23063bcea6"><td class="memItemLeft" align="right" valign="top">virtual <a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkShaderProgram2_8h.html#a61569f2965b7a369eb10b6d75d410d11">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkPVArrayInformation.html#af63e34c65635f2469c4fcc23063bcea6">GetNumberOfComponents</a> ()</td></tr>
-<tr class="memdesc:af63e34c65635f2469c4fcc23063bcea6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Changing the number of components clears the ranges back to the default.  <a href="#af63e34c65635f2469c4fcc23063bcea6">More...</a><br /></td></tr>
-<tr class="separator:af63e34c65635f2469c4fcc23063bcea6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr><td colspan="2"><div class="groupHeader"></div></td></tr>
-<tr class="memitem:a2df45fd7cb1d35d039517f8b4634eef2"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkPVArrayInformation.html#a2df45fd7cb1d35d039517f8b4634eef2">SetNumberOfTuples</a> (vtkTypeInt64)</td></tr>
-<tr class="memdesc:a2df45fd7cb1d35d039517f8b4634eef2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set/get the array's length.  <a href="#a2df45fd7cb1d35d039517f8b4634eef2">More...</a><br /></td></tr>
-<tr class="separator:a2df45fd7cb1d35d039517f8b4634eef2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1c9fb052b1a31acabf12ec5cd72fd42f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkPVArrayInformation.html#a1c9fb052b1a31acabf12ec5cd72fd42f">GetDataTypeAsString</a> () <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a></td></tr>
+<tr class="memdesc:a1c9fb052b1a31acabf12ec5cd72fd42f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a printable string for the array value type.  <a href="#a1c9fb052b1a31acabf12ec5cd72fd42f">More...</a><br /></td></tr>
+<tr class="separator:a1c9fb052b1a31acabf12ec5cd72fd42f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3f28e4e5aa61f2e6774f42938a62e6f5"><td class="memItemLeft" align="right" valign="top"><a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/namespacevtkX3D.html#ac6551f7bf833e8254b2b3ecdaea0d210aff2af282e340f7884417cb571d333ccc">std::string</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkPVArrayInformation.html#a3f28e4e5aa61f2e6774f42938a62e6f5">GetRangesAsString</a> () <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a></td></tr>
+<tr class="memdesc:a3f28e4e5aa61f2e6774f42938a62e6f5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns range as a string.  <a href="#a3f28e4e5aa61f2e6774f42938a62e6f5">More...</a><br /></td></tr>
+<tr class="separator:a3f28e4e5aa61f2e6774f42938a62e6f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0ad556c71032c1d9962d67e274583afa"><td class="memItemLeft" align="right" valign="top"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkPVArrayInformation.html#a0ad556c71032c1d9962d67e274583afa">GetName</a> () <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a></td></tr>
+<tr class="memdesc:a0ad556c71032c1d9962d67e274583afa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get array's name.  <a href="#a0ad556c71032c1d9962d67e274583afa">More...</a><br /></td></tr>
+<tr class="separator:a0ad556c71032c1d9962d67e274583afa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a95afafcff634f1d854549717ffd2b901"><td class="memItemLeft" align="right" valign="top"><a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkShaderProgram2_8h.html#a61569f2965b7a369eb10b6d75d410d11">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkPVArrayInformation.html#a95afafcff634f1d854549717ffd2b901">GetNumberOfComponents</a> () <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a></td></tr>
+<tr class="memdesc:a95afafcff634f1d854549717ffd2b901"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get number of components.  <a href="#a95afafcff634f1d854549717ffd2b901">More...</a><br /></td></tr>
+<tr class="separator:a95afafcff634f1d854549717ffd2b901"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae7376beeb9361e56defca6a748d606ad"><td class="memItemLeft" align="right" valign="top"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkPVArrayInformation.html#ae7376beeb9361e56defca6a748d606ad">GetComponentName</a> (<a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkShaderProgram2_8h.html#a61569f2965b7a369eb10b6d75d410d11">int</a> <a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/namespacevtkX3D.html#a88ade42854f67d6297898362e17a515fa78fb09245c9bd345bf96d579664f9736">component</a>) <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a></td></tr>
+<tr class="memdesc:ae7376beeb9361e56defca6a748d606ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the name for a component.  <a href="#ae7376beeb9361e56defca6a748d606ad">More...</a><br /></td></tr>
+<tr class="separator:ae7376beeb9361e56defca6a748d606ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a766cb496b9ee281dec49e373ea7336b3"><td class="memItemLeft" align="right" valign="top">virtual vtkTypeInt64&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkPVArrayInformation.html#a766cb496b9ee281dec49e373ea7336b3">GetNumberOfTuples</a> ()</td></tr>
-<tr class="memdesc:a766cb496b9ee281dec49e373ea7336b3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set/get the array's length.  <a href="#a766cb496b9ee281dec49e373ea7336b3">More...</a><br /></td></tr>
+<tr class="memdesc:a766cb496b9ee281dec49e373ea7336b3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the number of tuples in this array.  <a href="#a766cb496b9ee281dec49e373ea7336b3">More...</a><br /></td></tr>
 <tr class="separator:a766cb496b9ee281dec49e373ea7336b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a38d978a5b00394924eed05de9a82def2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkPVArrayInformation.html#a38d978a5b00394924eed05de9a82def2">GetDataTypeRange</a> (<a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkVectorOperators_8h.html#a45c855d65dd0e2b57b08024500ff9159">double</a> <a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/namespacevtkX3D.html#ac6551f7bf833e8254b2b3ecdaea0d210a76786d084c43d32f242990f932679539">range</a>[2]) <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a></td></tr>
+<tr class="memdesc:a38d978a5b00394924eed05de9a82def2"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method return the Min and Max possible range of the native data type.  <a href="#a38d978a5b00394924eed05de9a82def2">More...</a><br /></td></tr>
+<tr class="separator:a38d978a5b00394924eed05de9a82def2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a115f8e4202313400c5f9b681afcad3f2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkPVArrayInformation.html#a115f8e4202313400c5f9b681afcad3f2">CopyFromArray</a> (<a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/classvtkAbstractArray.html">vtkAbstractArray</a> *array)</td></tr>
+<tr class="separator:a115f8e4202313400c5f9b681afcad3f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7069553946986fe8645281b86bca8b19"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkPVArrayInformation.html#a7069553946986fe8645281b86bca8b19">CopyFromGenericAttribute</a> (<a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/classvtkGenericAttribute.html">vtkGenericAttribute</a> *array)</td></tr>
+<tr class="separator:a7069553946986fe8645281b86bca8b19"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac18db76eaacbbaf683068bb91bdb891a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkPVArrayInformation.html#ac18db76eaacbbaf683068bb91bdb891a">CopyToStream</a> (<a class="el" href="classvtkClientServerStream.html">vtkClientServerStream</a> *) <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a></td></tr>
+<tr class="separator:ac18db76eaacbbaf683068bb91bdb891a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac6915d259420c7042b20847b286b13d4"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkPVArrayInformation.html#ac6915d259420c7042b20847b286b13d4">CopyFromStream</a> (<a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="classvtkClientServerStream.html">vtkClientServerStream</a> *)</td></tr>
+<tr class="separator:ac6915d259420c7042b20847b286b13d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr><td colspan="2"><div class="groupHeader"></div></td></tr>
-<tr class="memitem:ac2889e91a99b38e6d08877333caa3a34"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkPVArrayInformation.html#ac2889e91a99b38e6d08877333caa3a34">SetComponentRange</a> (<a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkShaderProgram2_8h.html#a61569f2965b7a369eb10b6d75d410d11">int</a> comp, <a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkVectorOperators_8h.html#a45c855d65dd0e2b57b08024500ff9159">double</a> min, <a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkVectorOperators_8h.html#a45c855d65dd0e2b57b08024500ff9159">double</a> <a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkX3DExporterFIWriterHelper_8h.html#affe776513b24d84b39af8ab0930fef7f">max</a>)</td></tr>
-<tr class="memdesc:ac2889e91a99b38e6d08877333caa3a34"><td class="mdescLeft">&#160;</td><td class="mdescRight">There is a range for each component.  <a href="#ac2889e91a99b38e6d08877333caa3a34">More...</a><br /></td></tr>
-<tr class="separator:ac2889e91a99b38e6d08877333caa3a34"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a036d992d19f9f7bc357755d56cc398bd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkPVArrayInformation.html#a036d992d19f9f7bc357755d56cc398bd">SetComponentRange</a> (<a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkShaderProgram2_8h.html#a61569f2965b7a369eb10b6d75d410d11">int</a> comp, <a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkVectorOperators_8h.html#a45c855d65dd0e2b57b08024500ff9159">double</a> *<a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/namespacevtkX3D.html#ac6551f7bf833e8254b2b3ecdaea0d210a76786d084c43d32f242990f932679539">range</a>)</td></tr>
-<tr class="memdesc:a036d992d19f9f7bc357755d56cc398bd"><td class="mdescLeft">&#160;</td><td class="mdescRight">There is a range for each component.  <a href="#a036d992d19f9f7bc357755d56cc398bd">More...</a><br /></td></tr>
-<tr class="separator:a036d992d19f9f7bc357755d56cc398bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab41d2b09550c89c30db4dc6d499758a0"><td class="memItemLeft" align="right" valign="top"><a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkVectorOperators_8h.html#a45c855d65dd0e2b57b08024500ff9159">double</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkPVArrayInformation.html#ab41d2b09550c89c30db4dc6d499758a0">GetComponentRange</a> (<a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkShaderProgram2_8h.html#a61569f2965b7a369eb10b6d75d410d11">int</a> <a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/namespacevtkX3D.html#a88ade42854f67d6297898362e17a515fa78fb09245c9bd345bf96d579664f9736">component</a>) VTK_SIZEHINT(2)</td></tr>
-<tr class="memdesc:ab41d2b09550c89c30db4dc6d499758a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">There is a range for each component.  <a href="#ab41d2b09550c89c30db4dc6d499758a0">More...</a><br /></td></tr>
-<tr class="separator:ab41d2b09550c89c30db4dc6d499758a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a308728cf6255387ff7129b2e0fe44664"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkPVArrayInformation.html#a308728cf6255387ff7129b2e0fe44664">GetComponentRange</a> (<a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkShaderProgram2_8h.html#a61569f2965b7a369eb10b6d75d410d11">int</a> comp, <a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkVectorOperators_8h.html#a45c855d65dd0e2b57b08024500ff9159">double</a> <a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/namespacevtkX3D.html#ac6551f7bf833e8254b2b3ecdaea0d210a76786d084c43d32f242990f932679539">range</a>[2])</td></tr>
-<tr class="memdesc:a308728cf6255387ff7129b2e0fe44664"><td class="mdescLeft">&#160;</td><td class="mdescRight">There is a range for each component.  <a href="#a308728cf6255387ff7129b2e0fe44664">More...</a><br /></td></tr>
-<tr class="separator:a308728cf6255387ff7129b2e0fe44664"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a84b5b95d9a51a4b66a528abd7208a7f4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkVectorOperators_8h.html#a45c855d65dd0e2b57b08024500ff9159">double</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkPVArrayInformation.html#a84b5b95d9a51a4b66a528abd7208a7f4">GetComponentRange</a> (<a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkShaderProgram2_8h.html#a61569f2965b7a369eb10b6d75d410d11">int</a> comp) <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> VTK_SIZEHINT(2)</td></tr>
+<tr class="memdesc:a84b5b95d9a51a4b66a528abd7208a7f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns component range.  <a href="#a84b5b95d9a51a4b66a528abd7208a7f4">More...</a><br /></td></tr>
+<tr class="separator:a84b5b95d9a51a4b66a528abd7208a7f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abcd4e89774e7a483bf5ae02550311def"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkPVArrayInformation.html#abcd4e89774e7a483bf5ae02550311def">GetComponentRange</a> (<a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkShaderProgram2_8h.html#a61569f2965b7a369eb10b6d75d410d11">int</a> comp, <a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkVectorOperators_8h.html#a45c855d65dd0e2b57b08024500ff9159">double</a> <a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/namespacevtkX3D.html#ac6551f7bf833e8254b2b3ecdaea0d210a76786d084c43d32f242990f932679539">range</a>[2]) <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a></td></tr>
+<tr class="memdesc:abcd4e89774e7a483bf5ae02550311def"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns component range.  <a href="#abcd4e89774e7a483bf5ae02550311def">More...</a><br /></td></tr>
+<tr class="separator:abcd4e89774e7a483bf5ae02550311def"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr><td colspan="2"><div class="groupHeader"></div></td></tr>
-<tr class="memitem:a57c995c4dbb26678b0e4eea8076d29e6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkPVArrayInformation.html#a57c995c4dbb26678b0e4eea8076d29e6">SetComponentFiniteRange</a> (<a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkShaderProgram2_8h.html#a61569f2965b7a369eb10b6d75d410d11">int</a> comp, <a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkVectorOperators_8h.html#a45c855d65dd0e2b57b08024500ff9159">double</a> min, <a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkVectorOperators_8h.html#a45c855d65dd0e2b57b08024500ff9159">double</a> <a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkX3DExporterFIWriterHelper_8h.html#affe776513b24d84b39af8ab0930fef7f">max</a>)</td></tr>
-<tr class="memdesc:a57c995c4dbb26678b0e4eea8076d29e6"><td class="mdescLeft">&#160;</td><td class="mdescRight">There is a range for each component.  <a href="#a57c995c4dbb26678b0e4eea8076d29e6">More...</a><br /></td></tr>
-<tr class="separator:a57c995c4dbb26678b0e4eea8076d29e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4a20bdd973d79859ad4a00487ba942a4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkPVArrayInformation.html#a4a20bdd973d79859ad4a00487ba942a4">SetComponentFiniteRange</a> (<a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkShaderProgram2_8h.html#a61569f2965b7a369eb10b6d75d410d11">int</a> comp, <a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkVectorOperators_8h.html#a45c855d65dd0e2b57b08024500ff9159">double</a> *<a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/namespacevtkX3D.html#ac6551f7bf833e8254b2b3ecdaea0d210a76786d084c43d32f242990f932679539">range</a>)</td></tr>
-<tr class="memdesc:a4a20bdd973d79859ad4a00487ba942a4"><td class="mdescLeft">&#160;</td><td class="mdescRight">There is a range for each component.  <a href="#a4a20bdd973d79859ad4a00487ba942a4">More...</a><br /></td></tr>
-<tr class="separator:a4a20bdd973d79859ad4a00487ba942a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab7b5f4f302a8651e7c2ade38e381e27d"><td class="memItemLeft" align="right" valign="top"><a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkVectorOperators_8h.html#a45c855d65dd0e2b57b08024500ff9159">double</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkPVArrayInformation.html#ab7b5f4f302a8651e7c2ade38e381e27d">GetComponentFiniteRange</a> (<a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkShaderProgram2_8h.html#a61569f2965b7a369eb10b6d75d410d11">int</a> <a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/namespacevtkX3D.html#a88ade42854f67d6297898362e17a515fa78fb09245c9bd345bf96d579664f9736">component</a>)</td></tr>
-<tr class="memdesc:ab7b5f4f302a8651e7c2ade38e381e27d"><td class="mdescLeft">&#160;</td><td class="mdescRight">There is a range for each component.  <a href="#ab7b5f4f302a8651e7c2ade38e381e27d">More...</a><br /></td></tr>
-<tr class="separator:ab7b5f4f302a8651e7c2ade38e381e27d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a067ef98e84beca00eae431b908e01a04"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkPVArrayInformation.html#a067ef98e84beca00eae431b908e01a04">GetComponentFiniteRange</a> (<a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkShaderProgram2_8h.html#a61569f2965b7a369eb10b6d75d410d11">int</a> comp, <a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkVectorOperators_8h.html#a45c855d65dd0e2b57b08024500ff9159">double</a> <a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/namespacevtkX3D.html#ac6551f7bf833e8254b2b3ecdaea0d210a76786d084c43d32f242990f932679539">range</a>[2])</td></tr>
-<tr class="memdesc:a067ef98e84beca00eae431b908e01a04"><td class="mdescLeft">&#160;</td><td class="mdescRight">There is a range for each component.  <a href="#a067ef98e84beca00eae431b908e01a04">More...</a><br /></td></tr>
-<tr class="separator:a067ef98e84beca00eae431b908e01a04"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa1037706d81f019251dce6e68159e44a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkVectorOperators_8h.html#a45c855d65dd0e2b57b08024500ff9159">double</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkPVArrayInformation.html#aa1037706d81f019251dce6e68159e44a">GetComponentFiniteRange</a> (<a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkShaderProgram2_8h.html#a61569f2965b7a369eb10b6d75d410d11">int</a> <a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/namespacevtkX3D.html#a88ade42854f67d6297898362e17a515fa78fb09245c9bd345bf96d579664f9736">component</a>) <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> VTK_SIZEHINT(2)</td></tr>
+<tr class="memdesc:aa1037706d81f019251dce6e68159e44a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the finite range for each component.  <a href="#aa1037706d81f019251dce6e68159e44a">More...</a><br /></td></tr>
+<tr class="separator:aa1037706d81f019251dce6e68159e44a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af0b5f951240ff5bd54eb60fdccb9e600"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkPVArrayInformation.html#af0b5f951240ff5bd54eb60fdccb9e600">GetComponentFiniteRange</a> (<a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkShaderProgram2_8h.html#a61569f2965b7a369eb10b6d75d410d11">int</a> comp, <a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkVectorOperators_8h.html#a45c855d65dd0e2b57b08024500ff9159">double</a> <a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/namespacevtkX3D.html#ac6551f7bf833e8254b2b3ecdaea0d210a76786d084c43d32f242990f932679539">range</a>[2]) <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a></td></tr>
+<tr class="memdesc:af0b5f951240ff5bd54eb60fdccb9e600"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the finite range for each component.  <a href="#af0b5f951240ff5bd54eb60fdccb9e600">More...</a><br /></td></tr>
+<tr class="separator:af0b5f951240ff5bd54eb60fdccb9e600"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr><td colspan="2"><div class="groupHeader"></div></td></tr>
-<tr class="memitem:a0461411d3cddfac6cae0e0a78eefa3c6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkPVArrayInformation.html#a0461411d3cddfac6cae0e0a78eefa3c6">CopyToStream</a> (<a class="el" href="classvtkClientServerStream.html">vtkClientServerStream</a> *) override</td></tr>
-<tr class="memdesc:a0461411d3cddfac6cae0e0a78eefa3c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Manage a serialized version of the information.  <a href="#a0461411d3cddfac6cae0e0a78eefa3c6">More...</a><br /></td></tr>
-<tr class="separator:a0461411d3cddfac6cae0e0a78eefa3c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae7344e43938b403c680766be3b95cf65"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkPVArrayInformation.html#ae7344e43938b403c680766be3b95cf65">CopyFromStream</a> (<a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="classvtkClientServerStream.html">vtkClientServerStream</a> *) override</td></tr>
-<tr class="memdesc:ae7344e43938b403c680766be3b95cf65"><td class="mdescLeft">&#160;</td><td class="mdescRight">Manage a serialized version of the information.  <a href="#ae7344e43938b403c680766be3b95cf65">More...</a><br /></td></tr>
-<tr class="separator:ae7344e43938b403c680766be3b95cf65"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9f587b49c93d18e34f2976e4659bb5a2"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkPVArrayInformation.html#a9f587b49c93d18e34f2976e4659bb5a2">GetIsPartial</a> ()</td></tr>
+<tr class="memdesc:a9f587b49c93d18e34f2976e4659bb5a2"><td class="mdescLeft">&#160;</td><td class="mdescRight">If IsPartial is true, this array is in only some of the parts of a multi-block dataset.  <a href="#a9f587b49c93d18e34f2976e4659bb5a2">More...</a><br /></td></tr>
+<tr class="separator:a9f587b49c93d18e34f2976e4659bb5a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr><td colspan="2"><div class="groupHeader"></div></td></tr>
-<tr class="memitem:a79b201f7ceddaae331188505a39db528"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkPVArrayInformation.html#a79b201f7ceddaae331188505a39db528">SetIsPartial</a> (<a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkShaderProgram2_8h.html#a61569f2965b7a369eb10b6d75d410d11">int</a>)</td></tr>
-<tr class="memdesc:a79b201f7ceddaae331188505a39db528"><td class="mdescLeft">&#160;</td><td class="mdescRight">If IsPartial is true, this array is in only some of the parts of a multi-block dataset.  <a href="#a79b201f7ceddaae331188505a39db528">More...</a><br /></td></tr>
-<tr class="separator:a79b201f7ceddaae331188505a39db528"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a06136de8b1374a4f6b9bc738943677e1"><td class="memItemLeft" align="right" valign="top">virtual <a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkShaderProgram2_8h.html#a61569f2965b7a369eb10b6d75d410d11">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkPVArrayInformation.html#a06136de8b1374a4f6b9bc738943677e1">GetIsPartial</a> ()</td></tr>
-<tr class="memdesc:a06136de8b1374a4f6b9bc738943677e1"><td class="mdescLeft">&#160;</td><td class="mdescRight">If IsPartial is true, this array is in only some of the parts of a multi-block dataset.  <a href="#a06136de8b1374a4f6b9bc738943677e1">More...</a><br /></td></tr>
-<tr class="separator:a06136de8b1374a4f6b9bc738943677e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr><td colspan="2"><div class="groupHeader"></div></td></tr>
-<tr class="memitem:a1c28cf35a0b8c8c5d7693f94ecbe9e19"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkPVArrayInformation.html#a1c28cf35a0b8c8c5d7693f94ecbe9e19">AddInformationKeys</a> (<a class="el" href="classvtkPVArrayInformation.html">vtkPVArrayInformation</a> *<a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/namespacevtkX3D.html#ac6551f7bf833e8254b2b3ecdaea0d210a23da246d4a744e861548382bb79fad81">info</a>)</td></tr>
-<tr class="memdesc:a1c28cf35a0b8c8c5d7693f94ecbe9e19"><td class="mdescLeft">&#160;</td><td class="mdescRight">Merge (union) keys into this object.  <a href="#a1c28cf35a0b8c8c5d7693f94ecbe9e19">More...</a><br /></td></tr>
-<tr class="separator:a1c28cf35a0b8c8c5d7693f94ecbe9e19"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5b182c6c9710e0a40de67247fab2c844"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkPVArrayInformation.html#a5b182c6c9710e0a40de67247fab2c844">AddInformationKey</a> (<a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *<a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/namespacevtkX3D.html#ac6551f7bf833e8254b2b3ecdaea0d210a13c73d49b0f10fc872e9c7895421e213">location</a>, <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *<a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/namespacevtkX3D.html#ac6551f7bf833e8254b2b3ecdaea0d210ac713735f1d46c2694d66e85217207be2">name</a>)</td></tr>
-<tr class="memdesc:a5b182c6c9710e0a40de67247fab2c844"><td class="mdescLeft">&#160;</td><td class="mdescRight">Merge (union) keys into this object.  <a href="#a5b182c6c9710e0a40de67247fab2c844">More...</a><br /></td></tr>
-<tr class="separator:a5b182c6c9710e0a40de67247fab2c844"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aab99f704a657171843a9fd67d6242bb3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkPVArrayInformation.html#aab99f704a657171843a9fd67d6242bb3">AddUniqueInformationKey</a> (<a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *<a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/namespacevtkX3D.html#ac6551f7bf833e8254b2b3ecdaea0d210a13c73d49b0f10fc872e9c7895421e213">location</a>, <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *<a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/namespacevtkX3D.html#ac6551f7bf833e8254b2b3ecdaea0d210ac713735f1d46c2694d66e85217207be2">name</a>)</td></tr>
-<tr class="memdesc:aab99f704a657171843a9fd67d6242bb3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Merge (union) keys into this object.  <a href="#aab99f704a657171843a9fd67d6242bb3">More...</a><br /></td></tr>
-<tr class="separator:aab99f704a657171843a9fd67d6242bb3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr><td colspan="2"><div class="groupHeader"></div></td></tr>
-<tr class="memitem:ae8289ac0d7166ca5b8d733ba23b4e884"><td class="memItemLeft" align="right" valign="top"><a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkShaderProgram2_8h.html#a61569f2965b7a369eb10b6d75d410d11">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkPVArrayInformation.html#ae8289ac0d7166ca5b8d733ba23b4e884">GetNumberOfInformationKeys</a> ()</td></tr>
-<tr class="memdesc:ae8289ac0d7166ca5b8d733ba23b4e884"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get information on the InformationKeys of this array.  <a href="#ae8289ac0d7166ca5b8d733ba23b4e884">More...</a><br /></td></tr>
-<tr class="separator:ae8289ac0d7166ca5b8d733ba23b4e884"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac09a9832d5ec7a23d039a61d48d87bf9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkPVArrayInformation.html#ac09a9832d5ec7a23d039a61d48d87bf9">GetInformationKeyLocation</a> (<a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkShaderProgram2_8h.html#a61569f2965b7a369eb10b6d75d410d11">int</a>)</td></tr>
-<tr class="memdesc:ac09a9832d5ec7a23d039a61d48d87bf9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get information on the InformationKeys of this array.  <a href="#ac09a9832d5ec7a23d039a61d48d87bf9">More...</a><br /></td></tr>
-<tr class="separator:ac09a9832d5ec7a23d039a61d48d87bf9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2fcc4d6c5e6c15743ed57c5ccf747782"><td class="memItemLeft" align="right" valign="top"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkPVArrayInformation.html#a2fcc4d6c5e6c15743ed57c5ccf747782">GetInformationKeyName</a> (<a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkShaderProgram2_8h.html#a61569f2965b7a369eb10b6d75d410d11">int</a>)</td></tr>
-<tr class="memdesc:a2fcc4d6c5e6c15743ed57c5ccf747782"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get information on the InformationKeys of this array.  <a href="#a2fcc4d6c5e6c15743ed57c5ccf747782">More...</a><br /></td></tr>
-<tr class="separator:a2fcc4d6c5e6c15743ed57c5ccf747782"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a02608a3b18dc819c3889d036db947b8b"><td class="memItemLeft" align="right" valign="top"><a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkShaderProgram2_8h.html#a61569f2965b7a369eb10b6d75d410d11">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkPVArrayInformation.html#a02608a3b18dc819c3889d036db947b8b">HasInformationKey</a> (<a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *<a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/namespacevtkX3D.html#ac6551f7bf833e8254b2b3ecdaea0d210a13c73d49b0f10fc872e9c7895421e213">location</a>, <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *<a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/namespacevtkX3D.html#ac6551f7bf833e8254b2b3ecdaea0d210ac713735f1d46c2694d66e85217207be2">name</a>)</td></tr>
-<tr class="memdesc:a02608a3b18dc819c3889d036db947b8b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get information on the InformationKeys of this array.  <a href="#a02608a3b18dc819c3889d036db947b8b">More...</a><br /></td></tr>
-<tr class="separator:a02608a3b18dc819c3889d036db947b8b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2ff9b3c8f406abc7acd855239d6a792d"><td class="memItemLeft" align="right" valign="top"><a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkShaderProgram2_8h.html#a61569f2965b7a369eb10b6d75d410d11">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkPVArrayInformation.html#a2ff9b3c8f406abc7acd855239d6a792d">GetNumberOfInformationKeys</a> () <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a></td></tr>
+<tr class="memdesc:a2ff9b3c8f406abc7acd855239d6a792d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get information on the InformationKeys of this array.  <a href="#a2ff9b3c8f406abc7acd855239d6a792d">More...</a><br /></td></tr>
+<tr class="separator:a2ff9b3c8f406abc7acd855239d6a792d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a42c055b2fedb70825076caf50c0fd9e1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkPVArrayInformation.html#a42c055b2fedb70825076caf50c0fd9e1">GetInformationKeyLocation</a> (<a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkShaderProgram2_8h.html#a61569f2965b7a369eb10b6d75d410d11">int</a>) <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a></td></tr>
+<tr class="memdesc:a42c055b2fedb70825076caf50c0fd9e1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get information on the InformationKeys of this array.  <a href="#a42c055b2fedb70825076caf50c0fd9e1">More...</a><br /></td></tr>
+<tr class="separator:a42c055b2fedb70825076caf50c0fd9e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5f913b3f6eb04481627a5a24b767c99a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkPVArrayInformation.html#a5f913b3f6eb04481627a5a24b767c99a">GetInformationKeyName</a> (<a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkShaderProgram2_8h.html#a61569f2965b7a369eb10b6d75d410d11">int</a>) <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a></td></tr>
+<tr class="memdesc:a5f913b3f6eb04481627a5a24b767c99a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get information on the InformationKeys of this array.  <a href="#a5f913b3f6eb04481627a5a24b767c99a">More...</a><br /></td></tr>
+<tr class="separator:a5f913b3f6eb04481627a5a24b767c99a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac580c1f2dbd9d57639920cd32173ac97"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkPVArrayInformation.html#ac580c1f2dbd9d57639920cd32173ac97">HasInformationKey</a> (<a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *<a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/namespacevtkX3D.html#ac6551f7bf833e8254b2b3ecdaea0d210a13c73d49b0f10fc872e9c7895421e213">location</a>, <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *<a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/namespacevtkX3D.html#ac6551f7bf833e8254b2b3ecdaea0d210ac713735f1d46c2694d66e85217207be2">name</a>) <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a></td></tr>
+<tr class="memdesc:ac580c1f2dbd9d57639920cd32173ac97"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get information on the InformationKeys of this array.  <a href="#ac580c1f2dbd9d57639920cd32173ac97">More...</a><br /></td></tr>
+<tr class="separator:ac580c1f2dbd9d57639920cd32173ac97"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr><td colspan="2"><div class="groupHeader"></div></td></tr>
 <tr class="memitem:ac644c284f2320f03c315d9ba7eb16f42"><td class="memItemLeft" align="right" valign="top"><a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkShaderProgram2_8h.html#a61569f2965b7a369eb10b6d75d410d11">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkPVArrayInformation.html#ac644c284f2320f03c315d9ba7eb16f42">GetNumberOfStringValues</a> ()</td></tr>
 <tr class="memdesc:ac644c284f2320f03c315d9ba7eb16f42"><td class="mdescLeft">&#160;</td><td class="mdescRight">For string arrays, this returns first few non-empty values.  <a href="#ac644c284f2320f03c315d9ba7eb16f42">More...</a><br /></td></tr>
@@ -210,18 +157,6 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a0ce5437cdb04bb9847d6560a2d21ce32"><td class="memItemLeft" align="right" valign="top"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkPVArrayInformation.html#a0ce5437cdb04bb9847d6560a2d21ce32">GetStringValue</a> (<a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkShaderProgram2_8h.html#a61569f2965b7a369eb10b6d75d410d11">int</a>)</td></tr>
 <tr class="memdesc:a0ce5437cdb04bb9847d6560a2d21ce32"><td class="mdescLeft">&#160;</td><td class="mdescRight">For string arrays, this returns first few non-empty values.  <a href="#a0ce5437cdb04bb9847d6560a2d21ce32">More...</a><br /></td></tr>
 <tr class="separator:a0ce5437cdb04bb9847d6560a2d21ce32"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="inherit_header pub_methods_classvtkPVInformation"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classvtkPVInformation')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classvtkPVInformation.html">vtkPVInformation</a></td></tr>
-<tr class="memitem:a5e40b9f41a0dba0c7676c570764b6b7f inherit pub_methods_classvtkPVInformation"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkPVInformation.html#a5e40b9f41a0dba0c7676c570764b6b7f">PrintSelf</a> (ostream &amp;os, <a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/classvtkIndent.html">vtkIndent</a> indent) override</td></tr>
-<tr class="separator:a5e40b9f41a0dba0c7676c570764b6b7f inherit pub_methods_classvtkPVInformation"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a25672e1a90b28a2bbf2ed6c91e8a3a92 inherit pub_methods_classvtkPVInformation"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkPVInformation.html#a25672e1a90b28a2bbf2ed6c91e8a3a92">CopyParametersToStream</a> (<a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/classvtkMultiProcessStream.html">vtkMultiProcessStream</a> &amp;)</td></tr>
-<tr class="memdesc:a25672e1a90b28a2bbf2ed6c91e8a3a92 inherit pub_methods_classvtkPVInformation"><td class="mdescLeft">&#160;</td><td class="mdescRight">Serialize/Deserialize the parameters that control how/what information is gathered.  <a href="classvtkPVInformation.html#a25672e1a90b28a2bbf2ed6c91e8a3a92">More...</a><br /></td></tr>
-<tr class="separator:a25672e1a90b28a2bbf2ed6c91e8a3a92 inherit pub_methods_classvtkPVInformation"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0b59e754e808fa350fd9ed96214374a8 inherit pub_methods_classvtkPVInformation"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkPVInformation.html#a0b59e754e808fa350fd9ed96214374a8">CopyParametersFromStream</a> (<a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/classvtkMultiProcessStream.html">vtkMultiProcessStream</a> &amp;)</td></tr>
-<tr class="memdesc:a0b59e754e808fa350fd9ed96214374a8 inherit pub_methods_classvtkPVInformation"><td class="mdescLeft">&#160;</td><td class="mdescRight">Serialize/Deserialize the parameters that control how/what information is gathered.  <a href="classvtkPVInformation.html#a0b59e754e808fa350fd9ed96214374a8">More...</a><br /></td></tr>
-<tr class="separator:a0b59e754e808fa350fd9ed96214374a8 inherit pub_methods_classvtkPVInformation"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a218bd8270478dcfe19eb12a735b311e6 inherit pub_methods_classvtkPVInformation"><td class="memItemLeft" align="right" valign="top">virtual <a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkShaderProgram2_8h.html#a61569f2965b7a369eb10b6d75d410d11">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkPVInformation.html#a218bd8270478dcfe19eb12a735b311e6">GetRootOnly</a> ()</td></tr>
-<tr class="memdesc:a218bd8270478dcfe19eb12a735b311e6 inherit pub_methods_classvtkPVInformation"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set/get whether to gather information only from the root.  <a href="classvtkPVInformation.html#a218bd8270478dcfe19eb12a735b311e6">More...</a><br /></td></tr>
-<tr class="separator:a218bd8270478dcfe19eb12a735b311e6 inherit pub_methods_classvtkPVInformation"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classvtkObject"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classvtkObject')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="http://www.vtk.org/doc/nightly/html/classvtkObject.html">vtkObject</a></td></tr>
 <tr class="memitem:a00cdba298c8042c44020c20d876d9dce inherit pub_methods_classvtkObject"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/classvtkObject.html#a00cdba298c8042c44020c20d876d9dce">vtkBaseTypeMacro</a> (<a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/classvtkObject.html">vtkObject</a>, <a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/classvtkObjectBase.html">vtkObjectBase</a>)</td></tr>
 <tr class="separator:a00cdba298c8042c44020c20d876d9dce inherit pub_methods_classvtkObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -345,11 +280,6 @@ Static Public Member Functions</h2></td></tr>
 <tr class="separator:a3a549899e451a43d44c8a7a88257cd28"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9a906324ce88486cf10ef39def083d1e"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classvtkPVArrayInformation.html">vtkPVArrayInformation</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkPVArrayInformation.html#a9a906324ce88486cf10ef39def083d1e">SafeDownCast</a> (<a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/classvtkObject.html">vtkObject</a> *o)</td></tr>
 <tr class="separator:a9a906324ce88486cf10ef39def083d1e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="inherit_header pub_static_methods_classvtkPVInformation"><td colspan="2" onclick="javascript:toggleInherit('pub_static_methods_classvtkPVInformation')"><img src="closed.png" alt="-"/>&#160;Static Public Member Functions inherited from <a class="el" href="classvtkPVInformation.html">vtkPVInformation</a></td></tr>
-<tr class="memitem:a8a5f918d7ba30763ed69f098cd540de3 inherit pub_static_methods_classvtkPVInformation"><td class="memItemLeft" align="right" valign="top">static <a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkShaderProgram2_8h.html#a61569f2965b7a369eb10b6d75d410d11">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkPVInformation.html#a8a5f918d7ba30763ed69f098cd540de3">IsTypeOf</a> (<a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *<a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/namespacevtkX3D.html#ac6551f7bf833e8254b2b3ecdaea0d210a8e7f81709ed57920a45c02a954726847">type</a>)</td></tr>
-<tr class="separator:a8a5f918d7ba30763ed69f098cd540de3 inherit pub_static_methods_classvtkPVInformation"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a98ede3ee4af0f52b3e2918a844e6dd9b inherit pub_static_methods_classvtkPVInformation"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classvtkPVInformation.html">vtkPVInformation</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkPVInformation.html#a98ede3ee4af0f52b3e2918a844e6dd9b">SafeDownCast</a> (<a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/classvtkObject.html">vtkObject</a> *o)</td></tr>
-<tr class="separator:a98ede3ee4af0f52b3e2918a844e6dd9b inherit pub_static_methods_classvtkPVInformation"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_static_methods_classvtkObject"><td colspan="2" onclick="javascript:toggleInherit('pub_static_methods_classvtkObject')"><img src="closed.png" alt="-"/>&#160;Static Public Member Functions inherited from <a class="el" href="http://www.vtk.org/doc/nightly/html/classvtkObject.html">vtkObject</a></td></tr>
 <tr class="memitem:a4d5b227267c076d6f9e38483370b6612 inherit pub_static_methods_classvtkObject"><td class="memItemLeft" align="right" valign="top">static <a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/classvtkObject.html">vtkObject</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/classvtkObject.html#a4d5b227267c076d6f9e38483370b6612">New</a> ()</td></tr>
 <tr class="separator:a4d5b227267c076d6f9e38483370b6612 inherit pub_static_methods_classvtkObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -385,31 +315,18 @@ Protected Member Functions</h2></td></tr>
 <tr class="separator:ad0b1af2c7b91bc85e3f13ab797ba1a89"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afb13ba114b2f39b9d4e59c6848ac93d1"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkPVArrayInformation.html#afb13ba114b2f39b9d4e59c6848ac93d1">~vtkPVArrayInformation</a> () override</td></tr>
 <tr class="separator:afb13ba114b2f39b9d4e59c6848ac93d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3387480a41ae3d6037cd7d9ff46b534e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkPVArrayInformation.html#a3387480a41ae3d6037cd7d9ff46b534e">AddRanges</a> (<a class="el" href="classvtkPVArrayInformation.html">vtkPVArrayInformation</a> *<a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/namespacevtkX3D.html#ac6551f7bf833e8254b2b3ecdaea0d210a23da246d4a744e861548382bb79fad81">info</a>)</td></tr>
-<tr class="memdesc:a3387480a41ae3d6037cd7d9ff46b534e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Merge (union) ranges/values into this object.  <a href="#a3387480a41ae3d6037cd7d9ff46b534e">More...</a><br /></td></tr>
-<tr class="separator:a3387480a41ae3d6037cd7d9ff46b534e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7f76967277f527a8805e3f55291dd7d3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkPVArrayInformation.html#a7f76967277f527a8805e3f55291dd7d3">AddFiniteRanges</a> (<a class="el" href="classvtkPVArrayInformation.html">vtkPVArrayInformation</a> *<a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/namespacevtkX3D.html#ac6551f7bf833e8254b2b3ecdaea0d210a23da246d4a744e861548382bb79fad81">info</a>)</td></tr>
-<tr class="separator:a7f76967277f527a8805e3f55291dd7d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1389c34db0729f0b83b9de255b7271c2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkPVArrayInformation.html#a1389c34db0729f0b83b9de255b7271c2">AddValues</a> (<a class="el" href="classvtkPVArrayInformation.html">vtkPVArrayInformation</a> *<a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/namespacevtkX3D.html#ac6551f7bf833e8254b2b3ecdaea0d210a23da246d4a744e861548382bb79fad81">info</a>)</td></tr>
-<tr class="separator:a1389c34db0729f0b83b9de255b7271c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac2c57c5968c05824adcf9673c6e20a14"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkPVArrayInformation.html#ac2c57c5968c05824adcf9673c6e20a14">DetermineDefaultComponentName</a> (<a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkShaderProgram2_8h.html#a61569f2965b7a369eb10b6d75d410d11">int</a> &amp;component_no, <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkShaderProgram2_8h.html#a61569f2965b7a369eb10b6d75d410d11">int</a> &amp;numComps)</td></tr>
-<tr class="memdesc:ac2c57c5968c05824adcf9673c6e20a14"><td class="mdescLeft">&#160;</td><td class="mdescRight">assigns to a string to DefaultComponentName for this component  <a href="#ac2c57c5968c05824adcf9673c6e20a14">More...</a><br /></td></tr>
-<tr class="separator:ac2c57c5968c05824adcf9673c6e20a14"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a22ed9afbd2e957bb7485ad4af6f6b35b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkPVArrayInformation.html#a22ed9afbd2e957bb7485ad4af6f6b35b">vtkPVArrayInformation</a> (<a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="classvtkPVArrayInformation.html">vtkPVArrayInformation</a> &amp;)=delete</td></tr>
-<tr class="separator:a22ed9afbd2e957bb7485ad4af6f6b35b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5ae51e1797ee3b9ec272d44876f136c3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkPVArrayInformation.html#a5ae51e1797ee3b9ec272d44876f136c3">operator=</a> (<a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="classvtkPVArrayInformation.html">vtkPVArrayInformation</a> &amp;)=delete</td></tr>
-<tr class="separator:a5ae51e1797ee3b9ec272d44876f136c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="inherit_header pro_methods_classvtkPVInformation"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_classvtkPVInformation')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="classvtkPVInformation.html">vtkPVInformation</a></td></tr>
-<tr class="memitem:ac818d7c870b556a33d3f5e9b1d1548a2 inherit pro_methods_classvtkPVInformation"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkPVInformation.html#ac818d7c870b556a33d3f5e9b1d1548a2">vtkPVInformation</a> ()</td></tr>
-<tr class="separator:ac818d7c870b556a33d3f5e9b1d1548a2 inherit pro_methods_classvtkPVInformation"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae0432300203a74e07cfa52c9a220be0a inherit pro_methods_classvtkPVInformation"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkPVInformation.html#ae0432300203a74e07cfa52c9a220be0a">~vtkPVInformation</a> () override</td></tr>
-<tr class="separator:ae0432300203a74e07cfa52c9a220be0a inherit pro_methods_classvtkPVInformation"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae771f9f759789bbaac71c5065c7cc714 inherit pro_methods_classvtkPVInformation"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkPVInformation.html#ae771f9f759789bbaac71c5065c7cc714">SetRootOnly</a> (<a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkShaderProgram2_8h.html#a61569f2965b7a369eb10b6d75d410d11">int</a>)</td></tr>
-<tr class="separator:ae771f9f759789bbaac71c5065c7cc714 inherit pro_methods_classvtkPVInformation"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4e15a9c705b23781c5e23090fe50e92e inherit pro_methods_classvtkPVInformation"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkPVInformation.html#a4e15a9c705b23781c5e23090fe50e92e">vtkPVInformation</a> (<a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="classvtkPVInformation.html">vtkPVInformation</a> &amp;)=delete</td></tr>
-<tr class="separator:a4e15a9c705b23781c5e23090fe50e92e inherit pro_methods_classvtkPVInformation"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2779203afb391d233e615c0dd8367338 inherit pro_methods_classvtkPVInformation"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkPVInformation.html#a2779203afb391d233e615c0dd8367338">operator=</a> (<a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="classvtkPVInformation.html">vtkPVInformation</a> &amp;)=delete</td></tr>
-<tr class="separator:a2779203afb391d233e615c0dd8367338 inherit pro_methods_classvtkPVInformation"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab265e8fb6f1820b2f33129c889fca4bf"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkPVArrayInformation.html#ab265e8fb6f1820b2f33129c889fca4bf">SetName</a> (<a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/namespacevtkX3D.html#ac6551f7bf833e8254b2b3ecdaea0d210aff2af282e340f7884417cb571d333ccc">std::string</a>)</td></tr>
+<tr class="separator:ab265e8fb6f1820b2f33129c889fca4bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr><td colspan="2"><div class="groupHeader"></div></td></tr>
+<tr class="memitem:aa1b998d6e5d9bae1b15742a98056fed4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkPVArrayInformation.html#aa1b998d6e5d9bae1b15742a98056fed4">DeepCopy</a> (<a class="el" href="classvtkPVArrayInformation.html">vtkPVArrayInformation</a> *<a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/namespacevtkX3D.html#ac6551f7bf833e8254b2b3ecdaea0d210a23da246d4a744e861548382bb79fad81">info</a>)</td></tr>
+<tr class="memdesc:aa1b998d6e5d9bae1b15742a98056fed4"><td class="mdescLeft">&#160;</td><td class="mdescRight">API for <a class="el" href="classvtkPVDataSetAttributesInformation.html" title="List of array info. ">vtkPVDataSetAttributesInformation</a>.  <a href="#aa1b998d6e5d9bae1b15742a98056fed4">More...</a><br /></td></tr>
+<tr class="separator:aa1b998d6e5d9bae1b15742a98056fed4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a57dd332cda8e6c890db6493e21423420"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkPVArrayInformation.html#a57dd332cda8e6c890db6493e21423420">AddInformation</a> (<a class="el" href="classvtkPVArrayInformation.html">vtkPVArrayInformation</a> *, <a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkShaderProgram2_8h.html#a61569f2965b7a369eb10b6d75d410d11">int</a> fieldAssociation)</td></tr>
+<tr class="memdesc:a57dd332cda8e6c890db6493e21423420"><td class="mdescLeft">&#160;</td><td class="mdescRight">API for <a class="el" href="classvtkPVDataSetAttributesInformation.html" title="List of array info. ">vtkPVDataSetAttributesInformation</a>.  <a href="#a57dd332cda8e6c890db6493e21423420">More...</a><br /></td></tr>
+<tr class="separator:a57dd332cda8e6c890db6493e21423420"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4c962a22f7fa23eb21de58f3cfa6084d"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkPVArrayInformation.html#a4c962a22f7fa23eb21de58f3cfa6084d">SetIsPartial</a> (bool)</td></tr>
+<tr class="memdesc:a4c962a22f7fa23eb21de58f3cfa6084d"><td class="mdescLeft">&#160;</td><td class="mdescRight">API for <a class="el" href="classvtkPVDataSetAttributesInformation.html" title="List of array info. ">vtkPVDataSetAttributesInformation</a>.  <a href="#a4c962a22f7fa23eb21de58f3cfa6084d">More...</a><br /></td></tr>
+<tr class="separator:a4c962a22f7fa23eb21de58f3cfa6084d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_methods_classvtkObject"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_classvtkObject')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="http://www.vtk.org/doc/nightly/html/classvtkObject.html">vtkObject</a></td></tr>
 <tr class="memitem:ad3b6657d8e95fc2baf05fca466601397 inherit pro_methods_classvtkObject"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/classvtkObject.html#ad3b6657d8e95fc2baf05fca466601397">vtkObject</a> ()</td></tr>
 <tr class="separator:ad3b6657d8e95fc2baf05fca466601397 inherit pro_methods_classvtkObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -441,33 +358,15 @@ Protected Member Functions</h2></td></tr>
 <tr class="memitem:a2726f0dad4d247e86a8fe3be3d351fca inherit pro_methods_classvtkObjectBase"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/classvtkObjectBase.html#a2726f0dad4d247e86a8fe3be3d351fca">operator=</a> (<a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/classvtkObjectBase.html">vtkObjectBase</a> &amp;)</td></tr>
 <tr class="separator:a2726f0dad4d247e86a8fe3be3d351fca inherit pro_methods_classvtkObjectBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
-Protected Attributes</h2></td></tr>
-<tr class="memitem:a73bb67aeb6ce0327e08af07c830e802b"><td class="memItemLeft" align="right" valign="top"><a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkShaderProgram2_8h.html#a61569f2965b7a369eb10b6d75d410d11">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkPVArrayInformation.html#a73bb67aeb6ce0327e08af07c830e802b">IsPartial</a></td></tr>
-<tr class="separator:a73bb67aeb6ce0327e08af07c830e802b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7303b1c8b5433fa4e7d7d1e6e56b9959"><td class="memItemLeft" align="right" valign="top"><a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkShaderProgram2_8h.html#a61569f2965b7a369eb10b6d75d410d11">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkPVArrayInformation.html#a7303b1c8b5433fa4e7d7d1e6e56b9959">DataType</a></td></tr>
-<tr class="separator:a7303b1c8b5433fa4e7d7d1e6e56b9959"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2459e0f027917ec77acc55802e537387"><td class="memItemLeft" align="right" valign="top"><a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkShaderProgram2_8h.html#a61569f2965b7a369eb10b6d75d410d11">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkPVArrayInformation.html#a2459e0f027917ec77acc55802e537387">NumberOfComponents</a></td></tr>
-<tr class="separator:a2459e0f027917ec77acc55802e537387"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af404bdc2dac042d0f9c1025a04b74e55"><td class="memItemLeft" align="right" valign="top">vtkTypeInt64&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkPVArrayInformation.html#af404bdc2dac042d0f9c1025a04b74e55">NumberOfTuples</a></td></tr>
-<tr class="separator:af404bdc2dac042d0f9c1025a04b74e55"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af5dd0dabdd9b1ece09e96abfb13e60dc"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkPVArrayInformation.html#af5dd0dabdd9b1ece09e96abfb13e60dc">Name</a></td></tr>
-<tr class="separator:af5dd0dabdd9b1ece09e96abfb13e60dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a43e5868dba1730ba3b78307cee95770f"><td class="memItemLeft" align="right" valign="top"><a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkVectorOperators_8h.html#a45c855d65dd0e2b57b08024500ff9159">double</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkPVArrayInformation.html#a43e5868dba1730ba3b78307cee95770f">Ranges</a></td></tr>
-<tr class="separator:a43e5868dba1730ba3b78307cee95770f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae4fafd0aba21c0c6c7daffaf6f605948"><td class="memItemLeft" align="right" valign="top"><a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkVectorOperators_8h.html#a45c855d65dd0e2b57b08024500ff9159">double</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkPVArrayInformation.html#ae4fafd0aba21c0c6c7daffaf6f605948">FiniteRanges</a></td></tr>
-<tr class="separator:ae4fafd0aba21c0c6c7daffaf6f605948"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a80e4e467ac59e497cfd5f709318f5eeb"><td class="memItemLeft" align="right" valign="top"><a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/namespacevtkX3D.html#ac6551f7bf833e8254b2b3ecdaea0d210a1033bb9cd45a86c85601c24cbbf2fa22">std::vector</a>&lt; <a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/namespacevtkX3D.html#ac6551f7bf833e8254b2b3ecdaea0d210aff2af282e340f7884417cb571d333ccc">std::string</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkPVArrayInformation.html#a80e4e467ac59e497cfd5f709318f5eeb">StringValues</a></td></tr>
-<tr class="separator:a80e4e467ac59e497cfd5f709318f5eeb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aebcad60d25d247f7356096a7523f1a00"><td class="memItemLeft" align="right" valign="top">vtkInternalInformationKeys *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkPVArrayInformation.html#aebcad60d25d247f7356096a7523f1a00">InformationKeys</a></td></tr>
-<tr class="separator:aebcad60d25d247f7356096a7523f1a00"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a77fc499d29cf779eaab3b3a9ab08e5cb"><td class="memItemLeft" align="right" valign="top"><a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/namespacevtkX3D.html#ac6551f7bf833e8254b2b3ecdaea0d210aff2af282e340f7884417cb571d333ccc">std::string</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkPVArrayInformation.html#a77fc499d29cf779eaab3b3a9ab08e5cb">DefaultComponentName</a></td></tr>
-<tr class="separator:a77fc499d29cf779eaab3b3a9ab08e5cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:affa95e7fd0b5f17e2f9ad8ccd82e7301"><td class="memItemLeft" align="right" valign="top">vtkInternalComponentNames *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkPVArrayInformation.html#affa95e7fd0b5f17e2f9ad8ccd82e7301">ComponentNames</a></td></tr>
-<tr class="separator:affa95e7fd0b5f17e2f9ad8ccd82e7301"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="inherit_header pro_attribs_classvtkPVInformation"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_classvtkPVInformation')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="classvtkPVInformation.html">vtkPVInformation</a></td></tr>
-<tr class="memitem:afe3bda53a2349fc52cd6824ed232575d inherit pro_attribs_classvtkPVInformation"><td class="memItemLeft" align="right" valign="top"><a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkShaderProgram2_8h.html#a61569f2965b7a369eb10b6d75d410d11">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkPVInformation.html#afe3bda53a2349fc52cd6824ed232575d">RootOnly</a></td></tr>
-<tr class="separator:afe3bda53a2349fc52cd6824ed232575d inherit pro_attribs_classvtkPVInformation"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="friends"></a>
+Friends</h2></td></tr>
+<tr class="memitem:ab0634185092823f0cc532e10427014b9"><td class="memItemLeft" align="right" valign="top">class&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkPVArrayInformation.html#ab0634185092823f0cc532e10427014b9">vtkPVDataSetAttributesInformation</a></td></tr>
+<tr class="separator:ab0634185092823f0cc532e10427014b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aca825bd8d4db7677530b332415037ef4"><td class="memItemLeft" align="right" valign="top">class&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkPVArrayInformation.html#aca825bd8d4db7677530b332415037ef4">vtkPVDataInformation</a></td></tr>
+<tr class="separator:aca825bd8d4db7677530b332415037ef4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
+Additional Inherited Members</h2></td></tr>
 <tr class="inherit_header pro_attribs_classvtkObject"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_classvtkObject')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="http://www.vtk.org/doc/nightly/html/classvtkObject.html">vtkObject</a></td></tr>
 <tr class="memitem:aa1eff04a721088aa7dae855f012d3ac2 inherit pro_attribs_classvtkObject"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/classvtkObject.html#aa1eff04a721088aa7dae855f012d3ac2">Debug</a></td></tr>
 <tr class="separator:aa1eff04a721088aa7dae855f012d3ac2 inherit pro_attribs_classvtkObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -482,30 +381,30 @@ Protected Attributes</h2></td></tr>
 <tr class="separator:a8b1994de8f45ddb8ae8acd18240715e6 inherit pro_attribs_classvtkObjectBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Data array information like type. </p>
-<p>This objects is for eliminating direct access to vtkDataObjects by the "client". Only vtkPVPart and vtkPVProcessModule should access the data directly. At the moment, this object is only a container and has no useful methods for operating on data. Note: I could just use <a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/classvtkDataArray.html">vtkDataArray</a> objects and store the range as values in the array. This would eliminate this object. </p>
+<div class="textblock"><p>provides meta data about arrays. </p>
+<p><a class="el" href="classvtkPVArrayInformation.html" title="provides meta data about arrays. ">vtkPVArrayInformation</a> provides meta-data about individual arrays. It is accessed through <code><a class="el" href="classvtkPVDataInformation.html" title="provides meta data about a vtkDataObject subclass. ">vtkPVDataInformation</a></code> and provides information like ranges, component names, etc. for array present in a dataset. </p>
 
-<p class="definition">Definition at line <a class="el" href="vtkPVArrayInformation_8h_source.html#l00040">40</a> of file <a class="el" href="vtkPVArrayInformation_8h_source.html">vtkPVArrayInformation.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vtkPVArrayInformation_8h_source.html#l00039">39</a> of file <a class="el" href="vtkPVArrayInformation_8h_source.html">vtkPVArrayInformation.h</a>.</p>
 </div><h2 class="groupheader">Member Typedef Documentation</h2>
-<a id="a9aadf62fa54151884237b7b1fa995a6c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9aadf62fa54151884237b7b1fa995a6c">&#9670;&nbsp;</a></span>Superclass</h2>
+<a id="aa32d00d31fa0319b66821c6b227b0edf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa32d00d31fa0319b66821c6b227b0edf">&#9670;&nbsp;</a></span>Superclass</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">typedef <a class="el" href="classvtkPVInformation.html">vtkPVInformation</a> <a class="el" href="classvtkPVArrayInformation.html#a9aadf62fa54151884237b7b1fa995a6c">vtkPVArrayInformation::Superclass</a></td>
+          <td class="memname">typedef <a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/classvtkObject.html">vtkObject</a> <a class="el" href="classvtkPVArrayInformation.html#aa32d00d31fa0319b66821c6b227b0edf">vtkPVArrayInformation::Superclass</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="vtkPVArrayInformation_8h_source.html#l00044">44</a> of file <a class="el" href="vtkPVArrayInformation_8h_source.html">vtkPVArrayInformation.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vtkPVArrayInformation_8h_source.html#l00043">43</a> of file <a class="el" href="vtkPVArrayInformation_8h_source.html">vtkPVArrayInformation.h</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="ad0b1af2c7b91bc85e3f13ab797ba1a89"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad0b1af2c7b91bc85e3f13ab797ba1a89">&#9670;&nbsp;</a></span>vtkPVArrayInformation() <span class="overload">[1/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ad0b1af2c7b91bc85e3f13ab797ba1a89">&#9670;&nbsp;</a></span>vtkPVArrayInformation()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -548,32 +447,6 @@ Protected Attributes</h2></td></tr>
   </td>
   <td class="mlabels-right">
 <span class="mlabels"><span class="mlabel">override</span><span class="mlabel">protected</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a22ed9afbd2e957bb7485ad4af6f6b35b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a22ed9afbd2e957bb7485ad4af6f6b35b">&#9670;&nbsp;</a></span>vtkPVArrayInformation() <span class="overload">[2/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">vtkPVArrayInformation::vtkPVArrayInformation </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="classvtkPVArrayInformation.html">vtkPVArrayInformation</a> &amp;&#160;</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">delete</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -629,10 +502,6 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Reimplemented from <a class="el" href="classvtkPVInformation.html#a854aa0348f73c0803acd753c174e51cd">vtkPVInformation</a>.</p>
-
-<p>Reimplemented in <a class="el" href="classvtkPVGenericAttributeInformation.html#af3aaf9c8c894c3fcd9af4d16ecd99e17">vtkPVGenericAttributeInformation</a>.</p>
-
 </div>
 </div>
 <a id="a3a549899e451a43d44c8a7a88257cd28"></a>
@@ -685,9 +554,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Reimplemented from <a class="el" href="classvtkPVInformation.html#a0578dae2fd4a9bb982611197598ade59">vtkPVInformation</a>.</p>
-
-<p>Reimplemented in <a class="el" href="classvtkPVGenericAttributeInformation.html#aa9c16cb14ead5b3864190eeeb486d7c0">vtkPVGenericAttributeInformation</a>.</p>
+<p>Reimplemented from <a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/classvtkObjectBase.html#a44ecbcd4243dc6d6cbf619c9f983a438">vtkObjectBase</a>.</p>
 
 </div>
 </div>
@@ -753,36 +620,24 @@ Protected Attributes</h2></td></tr>
 
 <p>Reimplemented from <a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/classvtkObject.html#aaad76ea8f6abbbc0a8ffda1215ab691c">vtkObject</a>.</p>
 
-<p>Reimplemented in <a class="el" href="classvtkPVGenericAttributeInformation.html#aa29ee6ad91d28d15addafd88361019b5">vtkPVGenericAttributeInformation</a>.</p>
-
 </div>
 </div>
-<a id="aca4501bd34ebcb4af73504601fb3c52a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aca4501bd34ebcb4af73504601fb3c52a">&#9670;&nbsp;</a></span>SetDataType()</h2>
+<a id="a98d251e09a6253f39cd3760b22eafdad"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a98d251e09a6253f39cd3760b22eafdad">&#9670;&nbsp;</a></span>Initialize()</h2>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual void vtkPVArrayInformation::SetDataType </td>
+          <td class="memname">void vtkPVArrayInformation::Initialize </td>
           <td>(</td>
-          <td class="paramtype"><a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkShaderProgram2_8h.html#a61569f2965b7a369eb10b6d75d410d11">int</a>&#160;</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
-<p>DataType is the string name of the data type: VTK_FLOAT ... </p>
-<p>the value "VTK_VOID" means that different processes have different types. </p>
+<p>Resets to default state. </p>
 
 </div>
 </div>
@@ -809,13 +664,13 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>DataType is the string name of the data type: VTK_FLOAT ... </p>
-<p>the value "VTK_VOID" means that different processes have different types. </p>
+<p>Get the type for values in the array e.g. </p>
+<p>VTK_FLOAT, VTK_DOUBLE etc. </p>
 
 </div>
 </div>
-<a id="a592adb1e3aaa972badcde0de0ad877c0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a592adb1e3aaa972badcde0de0ad877c0">&#9670;&nbsp;</a></span>SetName()</h2>
+<a id="a1c9fb052b1a31acabf12ec5cd72fd42f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1c9fb052b1a31acabf12ec5cd72fd42f">&#9670;&nbsp;</a></span>GetDataTypeAsString()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -824,26 +679,47 @@ Protected Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual void vtkPVArrayInformation::SetName </td>
+          <td class="memname"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char* vtkPVArrayInformation::GetDataTypeAsString </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *&#160;</td>
           <td class="paramname"></td><td>)</td>
-          <td></td>
+          <td> const</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p>Set/get array's name. </p>
+<p>Returns a printable string for the array value type. </p>
+
+<p class="definition">Definition at line <a class="el" href="vtkPVArrayInformation_8h_source.html#l00059">59</a> of file <a class="el" href="vtkPVArrayInformation_8h_source.html">vtkPVArrayInformation.h</a>.</p>
 
 </div>
 </div>
-<a id="ad5432c76ed3360c57e9c2cfe35a75f31"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad5432c76ed3360c57e9c2cfe35a75f31">&#9670;&nbsp;</a></span>GetName()</h2>
+<a id="a3f28e4e5aa61f2e6774f42938a62e6f5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3f28e4e5aa61f2e6774f42938a62e6f5">&#9670;&nbsp;</a></span>GetRangesAsString()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/namespacevtkX3D.html#ac6551f7bf833e8254b2b3ecdaea0d210aff2af282e340f7884417cb571d333ccc">std::string</a> vtkPVArrayInformation::GetRangesAsString </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns range as a string. </p>
+<p>For string arrays, this lists string values instead. </p>
+
+</div>
+</div>
+<a id="a0ad556c71032c1d9962d67e274583afa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0ad556c71032c1d9962d67e274583afa">&#9670;&nbsp;</a></span>GetName()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -852,103 +728,46 @@ Protected Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual char* vtkPVArrayInformation::GetName </td>
+          <td class="memname"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char* vtkPVArrayInformation::GetName </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
-          <td></td>
+          <td> const</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p>Set/get array's name. </p>
+<p>Get array's name. </p>
+
+<p class="definition">Definition at line <a class="el" href="vtkPVArrayInformation_8h_source.html#l00070">70</a> of file <a class="el" href="vtkPVArrayInformation_8h_source.html">vtkPVArrayInformation.h</a>.</p>
 
 </div>
 </div>
-<a id="a8c7087818245f4aa44e92838bbd60d6f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8c7087818245f4aa44e92838bbd60d6f">&#9670;&nbsp;</a></span>SetNumberOfComponents()</h2>
+<a id="a95afafcff634f1d854549717ffd2b901"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a95afafcff634f1d854549717ffd2b901">&#9670;&nbsp;</a></span>GetNumberOfComponents()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void vtkPVArrayInformation::SetNumberOfComponents </td>
-          <td>(</td>
-          <td class="paramtype"><a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkShaderProgram2_8h.html#a61569f2965b7a369eb10b6d75d410d11">int</a>&#160;</td>
-          <td class="paramname"><em>numComps</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Changing the number of components clears the ranges back to the default. </p>
-
-</div>
-</div>
-<a id="af63e34c65635f2469c4fcc23063bcea6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af63e34c65635f2469c4fcc23063bcea6">&#9670;&nbsp;</a></span>GetNumberOfComponents()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual <a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkShaderProgram2_8h.html#a61569f2965b7a369eb10b6d75d410d11">int</a> vtkPVArrayInformation::GetNumberOfComponents </td>
+          <td class="memname"><a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkShaderProgram2_8h.html#a61569f2965b7a369eb10b6d75d410d11">int</a> vtkPVArrayInformation::GetNumberOfComponents </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Changing the number of components clears the ranges back to the default. </p>
-
-</div>
-</div>
-<a id="af1e119f757e89348d8171bad8f253ce8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af1e119f757e89348d8171bad8f253ce8">&#9670;&nbsp;</a></span>SetComponentName()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void vtkPVArrayInformation::SetComponentName </td>
-          <td>(</td>
-          <td class="paramtype"><a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkType_8h.html#a20bd6b6dedfe1bbb096c50354d52cc7e">vtkIdType</a>&#160;</td>
-          <td class="paramname"><em>component</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *&#160;</td>
-          <td class="paramname"><em>name</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
+          <td> const</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Set the name for a component. </p>
-<p>Must be &gt;= 1. </p>
+<p>Get number of components. </p>
 
 </div>
 </div>
-<a id="a2ab26678baa300648118c3f153320b01"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2ab26678baa300648118c3f153320b01">&#9670;&nbsp;</a></span>GetComponentName()</h2>
+<a id="ae7376beeb9361e56defca6a748d606ad"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae7376beeb9361e56defca6a748d606ad">&#9670;&nbsp;</a></span>GetComponentName()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -956,43 +775,15 @@ Protected Attributes</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char* vtkPVArrayInformation::GetComponentName </td>
           <td>(</td>
-          <td class="paramtype"><a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkType_8h.html#a20bd6b6dedfe1bbb096c50354d52cc7e">vtkIdType</a>&#160;</td>
+          <td class="paramtype"><a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkShaderProgram2_8h.html#a61569f2965b7a369eb10b6d75d410d11">int</a>&#160;</td>
           <td class="paramname"><em>component</em></td><td>)</td>
-          <td></td>
+          <td> const</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Get the component name for a given component. </p>
-<p>Note: the const char* that is returned is only valid intill the next call to this method! </p>
-
-</div>
-</div>
-<a id="a2df45fd7cb1d35d039517f8b4634eef2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2df45fd7cb1d35d039517f8b4634eef2">&#9670;&nbsp;</a></span>SetNumberOfTuples()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual void vtkPVArrayInformation::SetNumberOfTuples </td>
-          <td>(</td>
-          <td class="paramtype">vtkTypeInt64&#160;</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Set/get the array's length. </p>
+<p>Returns the name for a component. </p>
+<p>If none present, a default component name may be returned. </p>
 
 </div>
 </div>
@@ -1019,111 +810,34 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Set/get the array's length. </p>
+<p>Returns the number of tuples in this array. </p>
 
 </div>
 </div>
-<a id="ac2889e91a99b38e6d08877333caa3a34"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac2889e91a99b38e6d08877333caa3a34">&#9670;&nbsp;</a></span>SetComponentRange() <span class="overload">[1/2]</span></h2>
+<a id="a84b5b95d9a51a4b66a528abd7208a7f4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a84b5b95d9a51a4b66a528abd7208a7f4">&#9670;&nbsp;</a></span>GetComponentRange() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void vtkPVArrayInformation::SetComponentRange </td>
+          <td class="memname"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkVectorOperators_8h.html#a45c855d65dd0e2b57b08024500ff9159">double</a>* vtkPVArrayInformation::GetComponentRange </td>
           <td>(</td>
           <td class="paramtype"><a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkShaderProgram2_8h.html#a61569f2965b7a369eb10b6d75d410d11">int</a>&#160;</td>
-          <td class="paramname"><em>comp</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkVectorOperators_8h.html#a45c855d65dd0e2b57b08024500ff9159">double</a>&#160;</td>
-          <td class="paramname"><em>min</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkVectorOperators_8h.html#a45c855d65dd0e2b57b08024500ff9159">double</a>&#160;</td>
-          <td class="paramname"><em>max</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
+          <td class="paramname"><em>comp</em></td><td>)</td>
+          <td> const</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>There is a range for each component. </p>
-<p>Range for component -1 is the range of the vector magnitude. The number of components should be set before these ranges. </p>
+<p>Returns component range. </p>
+<p>If component is <code>-1</code>, then the range of the magnitude (L2 norm) over all components will be provided.</p>
+<p>Returns invalid range for non-numeric arrays. </p>
 
 </div>
 </div>
-<a id="a036d992d19f9f7bc357755d56cc398bd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a036d992d19f9f7bc357755d56cc398bd">&#9670;&nbsp;</a></span>SetComponentRange() <span class="overload">[2/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void vtkPVArrayInformation::SetComponentRange </td>
-          <td>(</td>
-          <td class="paramtype"><a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkShaderProgram2_8h.html#a61569f2965b7a369eb10b6d75d410d11">int</a>&#160;</td>
-          <td class="paramname"><em>comp</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkVectorOperators_8h.html#a45c855d65dd0e2b57b08024500ff9159">double</a> *&#160;</td>
-          <td class="paramname"><em>range</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>There is a range for each component. </p>
-<p>Range for component -1 is the range of the vector magnitude. The number of components should be set before these ranges. </p>
-
-<p class="definition">Definition at line <a class="el" href="vtkPVArrayInformation_8h_source.html#l00099">99</a> of file <a class="el" href="vtkPVArrayInformation_8h_source.html">vtkPVArrayInformation.h</a>.</p>
-
-</div>
-</div>
-<a id="ab41d2b09550c89c30db4dc6d499758a0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab41d2b09550c89c30db4dc6d499758a0">&#9670;&nbsp;</a></span>GetComponentRange() <span class="overload">[1/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkVectorOperators_8h.html#a45c855d65dd0e2b57b08024500ff9159">double</a>* vtkPVArrayInformation::GetComponentRange </td>
-          <td>(</td>
-          <td class="paramtype"><a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkShaderProgram2_8h.html#a61569f2965b7a369eb10b6d75d410d11">int</a>&#160;</td>
-          <td class="paramname"><em>component</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>There is a range for each component. </p>
-<p>Range for component -1 is the range of the vector magnitude. The number of components should be set before these ranges. </p>
-
-</div>
-</div>
-<a id="a308728cf6255387ff7129b2e0fe44664"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a308728cf6255387ff7129b2e0fe44664">&#9670;&nbsp;</a></span>GetComponentRange() <span class="overload">[2/2]</span></h2>
+<a id="abcd4e89774e7a483bf5ae02550311def"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abcd4e89774e7a483bf5ae02550311def">&#9670;&nbsp;</a></span>GetComponentRange() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1143,117 +857,41 @@ Protected Attributes</h2></td></tr>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td></td>
+          <td></td><td> const</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>There is a range for each component. </p>
-<p>Range for component -1 is the range of the vector magnitude. The number of components should be set before these ranges. </p>
+<p>Returns component range. </p>
+<p>If component is <code>-1</code>, then the range of the magnitude (L2 norm) over all components will be provided.</p>
+<p>Returns invalid range for non-numeric arrays. </p>
 
 </div>
 </div>
-<a id="a57c995c4dbb26678b0e4eea8076d29e6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a57c995c4dbb26678b0e4eea8076d29e6">&#9670;&nbsp;</a></span>SetComponentFiniteRange() <span class="overload">[1/2]</span></h2>
+<a id="aa1037706d81f019251dce6e68159e44a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa1037706d81f019251dce6e68159e44a">&#9670;&nbsp;</a></span>GetComponentFiniteRange() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void vtkPVArrayInformation::SetComponentFiniteRange </td>
-          <td>(</td>
-          <td class="paramtype"><a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkShaderProgram2_8h.html#a61569f2965b7a369eb10b6d75d410d11">int</a>&#160;</td>
-          <td class="paramname"><em>comp</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkVectorOperators_8h.html#a45c855d65dd0e2b57b08024500ff9159">double</a>&#160;</td>
-          <td class="paramname"><em>min</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkVectorOperators_8h.html#a45c855d65dd0e2b57b08024500ff9159">double</a>&#160;</td>
-          <td class="paramname"><em>max</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>There is a range for each component. </p>
-<p>Range for component -1 is the range of the vector magnitude. The number of components should be set before these ranges. </p>
-
-</div>
-</div>
-<a id="a4a20bdd973d79859ad4a00487ba942a4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4a20bdd973d79859ad4a00487ba942a4">&#9670;&nbsp;</a></span>SetComponentFiniteRange() <span class="overload">[2/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void vtkPVArrayInformation::SetComponentFiniteRange </td>
-          <td>(</td>
-          <td class="paramtype"><a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkShaderProgram2_8h.html#a61569f2965b7a369eb10b6d75d410d11">int</a>&#160;</td>
-          <td class="paramname"><em>comp</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkVectorOperators_8h.html#a45c855d65dd0e2b57b08024500ff9159">double</a> *&#160;</td>
-          <td class="paramname"><em>range</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>There is a range for each component. </p>
-<p>Range for component -1 is the range of the vector magnitude. The number of components should be set before these ranges. </p>
-
-<p class="definition">Definition at line <a class="el" href="vtkPVArrayInformation_8h_source.html#l00114">114</a> of file <a class="el" href="vtkPVArrayInformation_8h_source.html">vtkPVArrayInformation.h</a>.</p>
-
-</div>
-</div>
-<a id="ab7b5f4f302a8651e7c2ade38e381e27d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab7b5f4f302a8651e7c2ade38e381e27d">&#9670;&nbsp;</a></span>GetComponentFiniteRange() <span class="overload">[1/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkVectorOperators_8h.html#a45c855d65dd0e2b57b08024500ff9159">double</a>* vtkPVArrayInformation::GetComponentFiniteRange </td>
+          <td class="memname"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkVectorOperators_8h.html#a45c855d65dd0e2b57b08024500ff9159">double</a>* vtkPVArrayInformation::GetComponentFiniteRange </td>
           <td>(</td>
           <td class="paramtype"><a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkShaderProgram2_8h.html#a61569f2965b7a369eb10b6d75d410d11">int</a>&#160;</td>
           <td class="paramname"><em>component</em></td><td>)</td>
-          <td></td>
+          <td> const</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>There is a range for each component. </p>
-<p>Range for component -1 is the range of the vector magnitude. The number of components should be set before these ranges. </p>
+<p>Returns the finite range for each component. </p>
+<p>If component is <code>-1</code>, then the range of the magnitude (L2 norm) over all components will be provided.</p>
+<p>Returns invalid range for non-numeric arrays. </p>
 
 </div>
 </div>
-<a id="a067ef98e84beca00eae431b908e01a04"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a067ef98e84beca00eae431b908e01a04">&#9670;&nbsp;</a></span>GetComponentFiniteRange() <span class="overload">[2/2]</span></h2>
+<a id="af0b5f951240ff5bd54eb60fdccb9e600"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af0b5f951240ff5bd54eb60fdccb9e600">&#9670;&nbsp;</a></span>GetComponentFiniteRange() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1273,18 +911,19 @@ Protected Attributes</h2></td></tr>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td></td>
+          <td></td><td> const</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>There is a range for each component. </p>
-<p>Range for component -1 is the range of the vector magnitude. The number of components should be set before these ranges. </p>
+<p>Returns the finite range for each component. </p>
+<p>If component is <code>-1</code>, then the range of the magnitude (L2 norm) over all components will be provided.</p>
+<p>Returns invalid range for non-numeric arrays. </p>
 
 </div>
 </div>
-<a id="ac688875ef502b84c64a9cb3360882aa7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac688875ef502b84c64a9cb3360882aa7">&#9670;&nbsp;</a></span>GetDataTypeRange()</h2>
+<a id="a38d978a5b00394924eed05de9a82def2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a38d978a5b00394924eed05de9a82def2">&#9670;&nbsp;</a></span>GetDataTypeRange()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1294,7 +933,7 @@ Protected Attributes</h2></td></tr>
           <td>(</td>
           <td class="paramtype"><a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkVectorOperators_8h.html#a45c855d65dd0e2b57b08024500ff9159">double</a>&#160;</td>
           <td class="paramname"><em>range</em>[2]</td><td>)</td>
-          <td></td>
+          <td> const</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -1304,47 +943,8 @@ Protected Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="aade16d7eaa1cac42c5ffab36633911fa"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aade16d7eaa1cac42c5ffab36633911fa">&#9670;&nbsp;</a></span>Compare()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkShaderProgram2_8h.html#a61569f2965b7a369eb10b6d75d410d11">int</a> vtkPVArrayInformation::Compare </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="classvtkPVArrayInformation.html">vtkPVArrayInformation</a> *&#160;</td>
-          <td class="paramname"><em>info</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Returns 1 if the array can be combined. </p>
-<p>It must have the same name and number of components. </p>
-
-</div>
-</div>
-<a id="aa1b998d6e5d9bae1b15742a98056fed4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa1b998d6e5d9bae1b15742a98056fed4">&#9670;&nbsp;</a></span>DeepCopy()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void vtkPVArrayInformation::DeepCopy </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="classvtkPVArrayInformation.html">vtkPVArrayInformation</a> *&#160;</td>
-          <td class="paramname"><em>info</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a6a11084e529bcb222592199d2e888c5d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6a11084e529bcb222592199d2e888c5d">&#9670;&nbsp;</a></span>CopyFromObject()</h2>
+<a id="a9f587b49c93d18e34f2976e4659bb5a2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9f587b49c93d18e34f2976e4659bb5a2">&#9670;&nbsp;</a></span>GetIsPartial()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1353,158 +953,7 @@ Protected Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void vtkPVArrayInformation::CopyFromObject </td>
-          <td>(</td>
-          <td class="paramtype"><a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/classvtkObject.html">vtkObject</a> *&#160;</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Transfer information about a single object into this object. </p>
-
-<p>Reimplemented from <a class="el" href="classvtkPVInformation.html#aeb2a27a3f79a327aac6bbe459a5d9eb9">vtkPVInformation</a>.</p>
-
-<p>Reimplemented in <a class="el" href="classvtkPVGenericAttributeInformation.html#af923635461e1b17ebfa95d8e1ad7df4a">vtkPVGenericAttributeInformation</a>.</p>
-
-</div>
-</div>
-<a id="adad882e3f384a2427015efcb7776a0f5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adad882e3f384a2427015efcb7776a0f5">&#9670;&nbsp;</a></span>AddInformation()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void vtkPVArrayInformation::AddInformation </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="classvtkPVInformation.html">vtkPVInformation</a> *&#160;</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Merge another information object. </p>
-
-<p>Reimplemented from <a class="el" href="classvtkPVInformation.html#a2406caf60bf002b3ddb7380a8cc74bc3">vtkPVInformation</a>.</p>
-
-</div>
-</div>
-<a id="a0461411d3cddfac6cae0e0a78eefa3c6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0461411d3cddfac6cae0e0a78eefa3c6">&#9670;&nbsp;</a></span>CopyToStream()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void vtkPVArrayInformation::CopyToStream </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="classvtkClientServerStream.html">vtkClientServerStream</a> *&#160;</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Manage a serialized version of the information. </p>
-
-<p>Implements <a class="el" href="classvtkPVInformation.html#a99faf61c29f91d0301f67cc5030d5a87">vtkPVInformation</a>.</p>
-
-</div>
-</div>
-<a id="ae7344e43938b403c680766be3b95cf65"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae7344e43938b403c680766be3b95cf65">&#9670;&nbsp;</a></span>CopyFromStream()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void vtkPVArrayInformation::CopyFromStream </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="classvtkClientServerStream.html">vtkClientServerStream</a> *&#160;</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Manage a serialized version of the information. </p>
-
-<p>Reimplemented from <a class="el" href="classvtkPVInformation.html#a20b6acea4d7ddad5948e4896a3cc7858">vtkPVInformation</a>.</p>
-
-</div>
-</div>
-<a id="a79b201f7ceddaae331188505a39db528"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a79b201f7ceddaae331188505a39db528">&#9670;&nbsp;</a></span>SetIsPartial()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual void vtkPVArrayInformation::SetIsPartial </td>
-          <td>(</td>
-          <td class="paramtype"><a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkShaderProgram2_8h.html#a61569f2965b7a369eb10b6d75d410d11">int</a>&#160;</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>If IsPartial is true, this array is in only some of the parts of a multi-block dataset. </p>
-<p>By default, IsPartial is set to 0. </p>
-
-</div>
-</div>
-<a id="a06136de8b1374a4f6b9bc738943677e1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a06136de8b1374a4f6b9bc738943677e1">&#9670;&nbsp;</a></span>GetIsPartial()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual <a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkShaderProgram2_8h.html#a61569f2965b7a369eb10b6d75d410d11">int</a> vtkPVArrayInformation::GetIsPartial </td>
+          <td class="memname">virtual bool vtkPVArrayInformation::GetIsPartial </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -1522,108 +971,8 @@ Protected Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a98d251e09a6253f39cd3760b22eafdad"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a98d251e09a6253f39cd3760b22eafdad">&#9670;&nbsp;</a></span>Initialize()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void vtkPVArrayInformation::Initialize </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Remove all infommation. </p>
-<p>Next add will be like a copy. </p>
-
-</div>
-</div>
-<a id="a1c28cf35a0b8c8c5d7693f94ecbe9e19"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1c28cf35a0b8c8c5d7693f94ecbe9e19">&#9670;&nbsp;</a></span>AddInformationKeys()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void vtkPVArrayInformation::AddInformationKeys </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="classvtkPVArrayInformation.html">vtkPVArrayInformation</a> *&#160;</td>
-          <td class="paramname"><em>info</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Merge (union) keys into this object. </p>
-
-</div>
-</div>
-<a id="a5b182c6c9710e0a40de67247fab2c844"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5b182c6c9710e0a40de67247fab2c844">&#9670;&nbsp;</a></span>AddInformationKey()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void vtkPVArrayInformation::AddInformationKey </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *&#160;</td>
-          <td class="paramname"><em>location</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *&#160;</td>
-          <td class="paramname"><em>name</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Merge (union) keys into this object. </p>
-
-</div>
-</div>
-<a id="aab99f704a657171843a9fd67d6242bb3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aab99f704a657171843a9fd67d6242bb3">&#9670;&nbsp;</a></span>AddUniqueInformationKey()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void vtkPVArrayInformation::AddUniqueInformationKey </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *&#160;</td>
-          <td class="paramname"><em>location</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *&#160;</td>
-          <td class="paramname"><em>name</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Merge (union) keys into this object. </p>
-
-</div>
-</div>
-<a id="ae8289ac0d7166ca5b8d733ba23b4e884"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae8289ac0d7166ca5b8d733ba23b4e884">&#9670;&nbsp;</a></span>GetNumberOfInformationKeys()</h2>
+<a id="a2ff9b3c8f406abc7acd855239d6a792d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2ff9b3c8f406abc7acd855239d6a792d">&#9670;&nbsp;</a></span>GetNumberOfInformationKeys()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1632,7 +981,7 @@ Protected Attributes</h2></td></tr>
           <td class="memname"><a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkShaderProgram2_8h.html#a61569f2965b7a369eb10b6d75d410d11">int</a> vtkPVArrayInformation::GetNumberOfInformationKeys </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
-          <td></td>
+          <td> const</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -1641,8 +990,8 @@ Protected Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="ac09a9832d5ec7a23d039a61d48d87bf9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac09a9832d5ec7a23d039a61d48d87bf9">&#9670;&nbsp;</a></span>GetInformationKeyLocation()</h2>
+<a id="a42c055b2fedb70825076caf50c0fd9e1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a42c055b2fedb70825076caf50c0fd9e1">&#9670;&nbsp;</a></span>GetInformationKeyLocation()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1652,7 +1001,7 @@ Protected Attributes</h2></td></tr>
           <td>(</td>
           <td class="paramtype"><a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkShaderProgram2_8h.html#a61569f2965b7a369eb10b6d75d410d11">int</a>&#160;</td>
           <td class="paramname"></td><td>)</td>
-          <td></td>
+          <td> const</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -1661,8 +1010,8 @@ Protected Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a2fcc4d6c5e6c15743ed57c5ccf747782"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2fcc4d6c5e6c15743ed57c5ccf747782">&#9670;&nbsp;</a></span>GetInformationKeyName()</h2>
+<a id="a5f913b3f6eb04481627a5a24b767c99a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5f913b3f6eb04481627a5a24b767c99a">&#9670;&nbsp;</a></span>GetInformationKeyName()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1672,7 +1021,7 @@ Protected Attributes</h2></td></tr>
           <td>(</td>
           <td class="paramtype"><a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkShaderProgram2_8h.html#a61569f2965b7a369eb10b6d75d410d11">int</a>&#160;</td>
           <td class="paramname"></td><td>)</td>
-          <td></td>
+          <td> const</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -1681,14 +1030,14 @@ Protected Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a02608a3b18dc819c3889d036db947b8b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a02608a3b18dc819c3889d036db947b8b">&#9670;&nbsp;</a></span>HasInformationKey()</h2>
+<a id="ac580c1f2dbd9d57639920cd32173ac97"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac580c1f2dbd9d57639920cd32173ac97">&#9670;&nbsp;</a></span>HasInformationKey()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkShaderProgram2_8h.html#a61569f2965b7a369eb10b6d75d410d11">int</a> vtkPVArrayInformation::HasInformationKey </td>
+          <td class="memname">bool vtkPVArrayInformation::HasInformationKey </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *&#160;</td>
           <td class="paramname"><em>location</em>, </td>
@@ -1702,7 +1051,7 @@ Protected Attributes</h2></td></tr>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td></td>
+          <td></td><td> const</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -1750,8 +1099,80 @@ Protected Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a3387480a41ae3d6037cd7d9ff46b534e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3387480a41ae3d6037cd7d9ff46b534e">&#9670;&nbsp;</a></span>AddRanges()</h2>
+<a id="a115f8e4202313400c5f9b681afcad3f2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a115f8e4202313400c5f9b681afcad3f2">&#9670;&nbsp;</a></span>CopyFromArray()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void vtkPVArrayInformation::CopyFromArray </td>
+          <td>(</td>
+          <td class="paramtype"><a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/classvtkAbstractArray.html">vtkAbstractArray</a> *&#160;</td>
+          <td class="paramname"><em>array</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a7069553946986fe8645281b86bca8b19"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7069553946986fe8645281b86bca8b19">&#9670;&nbsp;</a></span>CopyFromGenericAttribute()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void vtkPVArrayInformation::CopyFromGenericAttribute </td>
+          <td>(</td>
+          <td class="paramtype"><a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/classvtkGenericAttribute.html">vtkGenericAttribute</a> *&#160;</td>
+          <td class="paramname"><em>array</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ac18db76eaacbbaf683068bb91bdb891a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac18db76eaacbbaf683068bb91bdb891a">&#9670;&nbsp;</a></span>CopyToStream()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void vtkPVArrayInformation::CopyToStream </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classvtkClientServerStream.html">vtkClientServerStream</a> *&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ac6915d259420c7042b20847b286b13d4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac6915d259420c7042b20847b286b13d4">&#9670;&nbsp;</a></span>CopyFromStream()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool vtkPVArrayInformation::CopyFromStream </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="classvtkClientServerStream.html">vtkClientServerStream</a> *&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aa1b998d6e5d9bae1b15742a98056fed4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa1b998d6e5d9bae1b15742a98056fed4">&#9670;&nbsp;</a></span>DeepCopy()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1760,7 +1181,7 @@ Protected Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void vtkPVArrayInformation::AddRanges </td>
+          <td class="memname">void vtkPVArrayInformation::DeepCopy </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classvtkPVArrayInformation.html">vtkPVArrayInformation</a> *&#160;</td>
           <td class="paramname"><em>info</em></td><td>)</td>
@@ -1774,12 +1195,12 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Merge (union) ranges/values into this object. </p>
+<p>API for <a class="el" href="classvtkPVDataSetAttributesInformation.html" title="List of array info. ">vtkPVDataSetAttributesInformation</a>. </p>
 
 </div>
 </div>
-<a id="a7f76967277f527a8805e3f55291dd7d3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7f76967277f527a8805e3f55291dd7d3">&#9670;&nbsp;</a></span>AddFiniteRanges()</h2>
+<a id="a57dd332cda8e6c890db6493e21423420"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a57dd332cda8e6c890db6493e21423420">&#9670;&nbsp;</a></span>AddInformation()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1788,68 +1209,16 @@ Protected Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void vtkPVArrayInformation::AddFiniteRanges </td>
+          <td class="memname">void vtkPVArrayInformation::AddInformation </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classvtkPVArrayInformation.html">vtkPVArrayInformation</a> *&#160;</td>
-          <td class="paramname"><em>info</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a1389c34db0729f0b83b9de255b7271c2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1389c34db0729f0b83b9de255b7271c2">&#9670;&nbsp;</a></span>AddValues()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void vtkPVArrayInformation::AddValues </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="classvtkPVArrayInformation.html">vtkPVArrayInformation</a> *&#160;</td>
-          <td class="paramname"><em>info</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="ac2c57c5968c05824adcf9673c6e20a14"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac2c57c5968c05824adcf9673c6e20a14">&#9670;&nbsp;</a></span>DetermineDefaultComponentName()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void vtkPVArrayInformation::DetermineDefaultComponentName </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkShaderProgram2_8h.html#a61569f2965b7a369eb10b6d75d410d11">int</a> &amp;&#160;</td>
-          <td class="paramname"><em>component_no</em>, </td>
+          <td class="paramname">, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkShaderProgram2_8h.html#a61569f2965b7a369eb10b6d75d410d11">int</a> &amp;&#160;</td>
-          <td class="paramname"><em>numComps</em>&#160;</td>
+          <td class="paramtype"><a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkShaderProgram2_8h.html#a61569f2965b7a369eb10b6d75d410d11">int</a>&#160;</td>
+          <td class="paramname"><em>fieldAssociation</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -1864,12 +1233,12 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>assigns to a string to DefaultComponentName for this component </p>
+<p>API for <a class="el" href="classvtkPVDataSetAttributesInformation.html" title="List of array info. ">vtkPVDataSetAttributesInformation</a>. </p>
 
 </div>
 </div>
-<a id="a5ae51e1797ee3b9ec272d44876f136c3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5ae51e1797ee3b9ec272d44876f136c3">&#9670;&nbsp;</a></span>operator=()</h2>
+<a id="a4c962a22f7fa23eb21de58f3cfa6084d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4c962a22f7fa23eb21de58f3cfa6084d">&#9670;&nbsp;</a></span>SetIsPartial()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1878,25 +1247,26 @@ Protected Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void vtkPVArrayInformation::operator= </td>
+          <td class="memname">virtual void vtkPVArrayInformation::SetIsPartial </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> <a class="el" href="classvtkPVArrayInformation.html">vtkPVArrayInformation</a> &amp;&#160;</td>
+          <td class="paramtype">bool&#160;</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">delete</span></span>  </td>
+<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
+<p>API for <a class="el" href="classvtkPVDataSetAttributesInformation.html" title="List of array info. ">vtkPVDataSetAttributesInformation</a>. </p>
+
 </div>
 </div>
-<h2 class="groupheader">Member Data Documentation</h2>
-<a id="a73bb67aeb6ce0327e08af07c830e802b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a73bb67aeb6ce0327e08af07c830e802b">&#9670;&nbsp;</a></span>IsPartial</h2>
+<a id="ab265e8fb6f1820b2f33129c889fca4bf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab265e8fb6f1820b2f33129c889fca4bf">&#9670;&nbsp;</a></span>SetName()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1905,22 +1275,25 @@ Protected Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkShaderProgram2_8h.html#a61569f2965b7a369eb10b6d75d410d11">int</a> vtkPVArrayInformation::IsPartial</td>
+          <td class="memname">virtual void vtkPVArrayInformation::SetName </td>
+          <td>(</td>
+          <td class="paramtype"><a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/namespacevtkX3D.html#ac6551f7bf833e8254b2b3ecdaea0d210aff2af282e340f7884417cb571d333ccc">std::string</a>&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="vtkPVArrayInformation_8h_source.html#l00209">209</a> of file <a class="el" href="vtkPVArrayInformation_8h_source.html">vtkPVArrayInformation.h</a>.</p>
-
 </div>
 </div>
-<a id="a7303b1c8b5433fa4e7d7d1e6e56b9959"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7303b1c8b5433fa4e7d7d1e6e56b9959">&#9670;&nbsp;</a></span>DataType</h2>
+<h2 class="groupheader">Friends And Related Function Documentation</h2>
+<a id="ab0634185092823f0cc532e10427014b9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab0634185092823f0cc532e10427014b9">&#9670;&nbsp;</a></span>vtkPVDataSetAttributesInformation</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1929,22 +1302,22 @@ Protected Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkShaderProgram2_8h.html#a61569f2965b7a369eb10b6d75d410d11">int</a> vtkPVArrayInformation::DataType</td>
+          <td class="memname">friend class <a class="el" href="classvtkPVDataSetAttributesInformation.html">vtkPVDataSetAttributesInformation</a></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+<span class="mlabels"><span class="mlabel">friend</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="vtkPVArrayInformation_8h_source.html#l00210">210</a> of file <a class="el" href="vtkPVArrayInformation_8h_source.html">vtkPVArrayInformation.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vtkPVArrayInformation_8h_source.html#l00155">155</a> of file <a class="el" href="vtkPVArrayInformation_8h_source.html">vtkPVArrayInformation.h</a>.</p>
 
 </div>
 </div>
-<a id="a2459e0f027917ec77acc55802e537387"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2459e0f027917ec77acc55802e537387">&#9670;&nbsp;</a></span>NumberOfComponents</h2>
+<a id="aca825bd8d4db7677530b332415037ef4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aca825bd8d4db7677530b332415037ef4">&#9670;&nbsp;</a></span>vtkPVDataInformation</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1953,209 +1326,17 @@ Protected Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkShaderProgram2_8h.html#a61569f2965b7a369eb10b6d75d410d11">int</a> vtkPVArrayInformation::NumberOfComponents</td>
+          <td class="memname">friend class <a class="el" href="classvtkPVDataInformation.html">vtkPVDataInformation</a></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+<span class="mlabels"><span class="mlabel">friend</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="vtkPVArrayInformation_8h_source.html#l00211">211</a> of file <a class="el" href="vtkPVArrayInformation_8h_source.html">vtkPVArrayInformation.h</a>.</p>
-
-</div>
-</div>
-<a id="af404bdc2dac042d0f9c1025a04b74e55"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af404bdc2dac042d0f9c1025a04b74e55">&#9670;&nbsp;</a></span>NumberOfTuples</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">vtkTypeInt64 vtkPVArrayInformation::NumberOfTuples</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="vtkPVArrayInformation_8h_source.html#l00212">212</a> of file <a class="el" href="vtkPVArrayInformation_8h_source.html">vtkPVArrayInformation.h</a>.</p>
-
-</div>
-</div>
-<a id="af5dd0dabdd9b1ece09e96abfb13e60dc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af5dd0dabdd9b1ece09e96abfb13e60dc">&#9670;&nbsp;</a></span>Name</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">char* vtkPVArrayInformation::Name</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="vtkPVArrayInformation_8h_source.html#l00213">213</a> of file <a class="el" href="vtkPVArrayInformation_8h_source.html">vtkPVArrayInformation.h</a>.</p>
-
-</div>
-</div>
-<a id="a43e5868dba1730ba3b78307cee95770f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a43e5868dba1730ba3b78307cee95770f">&#9670;&nbsp;</a></span>Ranges</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkVectorOperators_8h.html#a45c855d65dd0e2b57b08024500ff9159">double</a>* vtkPVArrayInformation::Ranges</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="vtkPVArrayInformation_8h_source.html#l00214">214</a> of file <a class="el" href="vtkPVArrayInformation_8h_source.html">vtkPVArrayInformation.h</a>.</p>
-
-</div>
-</div>
-<a id="ae4fafd0aba21c0c6c7daffaf6f605948"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae4fafd0aba21c0c6c7daffaf6f605948">&#9670;&nbsp;</a></span>FiniteRanges</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkVectorOperators_8h.html#a45c855d65dd0e2b57b08024500ff9159">double</a>* vtkPVArrayInformation::FiniteRanges</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="vtkPVArrayInformation_8h_source.html#l00215">215</a> of file <a class="el" href="vtkPVArrayInformation_8h_source.html">vtkPVArrayInformation.h</a>.</p>
-
-</div>
-</div>
-<a id="a80e4e467ac59e497cfd5f709318f5eeb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a80e4e467ac59e497cfd5f709318f5eeb">&#9670;&nbsp;</a></span>StringValues</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/namespacevtkX3D.html#ac6551f7bf833e8254b2b3ecdaea0d210a1033bb9cd45a86c85601c24cbbf2fa22">std::vector</a>&lt;<a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/namespacevtkX3D.html#ac6551f7bf833e8254b2b3ecdaea0d210aff2af282e340f7884417cb571d333ccc">std::string</a>&gt; vtkPVArrayInformation::StringValues</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="vtkPVArrayInformation_8h_source.html#l00216">216</a> of file <a class="el" href="vtkPVArrayInformation_8h_source.html">vtkPVArrayInformation.h</a>.</p>
-
-</div>
-</div>
-<a id="aebcad60d25d247f7356096a7523f1a00"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aebcad60d25d247f7356096a7523f1a00">&#9670;&nbsp;</a></span>InformationKeys</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">vtkInternalInformationKeys* vtkPVArrayInformation::InformationKeys</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="vtkPVArrayInformation_8h_source.html#l00220">220</a> of file <a class="el" href="vtkPVArrayInformation_8h_source.html">vtkPVArrayInformation.h</a>.</p>
-
-</div>
-</div>
-<a id="a77fc499d29cf779eaab3b3a9ab08e5cb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a77fc499d29cf779eaab3b3a9ab08e5cb">&#9670;&nbsp;</a></span>DefaultComponentName</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/namespacevtkX3D.html#ac6551f7bf833e8254b2b3ecdaea0d210aff2af282e340f7884417cb571d333ccc">std::string</a>* vtkPVArrayInformation::DefaultComponentName</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="vtkPVArrayInformation_8h_source.html#l00225">225</a> of file <a class="el" href="vtkPVArrayInformation_8h_source.html">vtkPVArrayInformation.h</a>.</p>
-
-</div>
-</div>
-<a id="affa95e7fd0b5f17e2f9ad8ccd82e7301"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#affa95e7fd0b5f17e2f9ad8ccd82e7301">&#9670;&nbsp;</a></span>ComponentNames</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">vtkInternalComponentNames* vtkPVArrayInformation::ComponentNames</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="vtkPVArrayInformation_8h_source.html#l00230">230</a> of file <a class="el" href="vtkPVArrayInformation_8h_source.html">vtkPVArrayInformation.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vtkPVArrayInformation_8h_source.html#l00156">156</a> of file <a class="el" href="vtkPVArrayInformation_8h_source.html">vtkPVArrayInformation.h</a>.</p>
 
 </div>
 </div>
@@ -2168,7 +1349,7 @@ Protected Attributes</h2></td></tr>
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.13 on Tue Jan 26 2021
+</a> 1.8.13 on Sat May 15 2021
 </small></address>
 <!-- KW:BEGIN -->
 <!-- this adds the version selection header -->

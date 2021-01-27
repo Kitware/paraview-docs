@@ -82,7 +82,7 @@ Signals</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a251a940899052ae39072470ce6d88649"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpqFileDialog.html#a251a940899052ae39072470ce6d88649">pqFileDialog</a> (<a class="el" href="classpqServer.html">pqServer</a> *server, QWidget *parent, <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> QString &amp;<a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/namespacevtkX3D.html#ac6551f7bf833e8254b2b3ecdaea0d210ae5f55b332df391315ae0ac7197e346b3">title</a>=QString(), <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> QString &amp;directory=QString(), <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> QString &amp;filter=QString())</td></tr>
-<tr class="memdesc:a251a940899052ae39072470ce6d88649"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a file dialog with the specified server if the server is NULL, files are browsed locally the title, and start directory may be specified the filter is a string of semi-colon separated filters.  <a href="#a251a940899052ae39072470ce6d88649">More...</a><br /></td></tr>
+<tr class="memdesc:a251a940899052ae39072470ce6d88649"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a file dialog with the specified server if the server is nullptr, files are browsed locally the title, and start directory may be specified the filter is a string of semi-colon separated filters.  <a href="#a251a940899052ae39072470ce6d88649">More...</a><br /></td></tr>
 <tr class="separator:a251a940899052ae39072470ce6d88649"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a012c9d0146cea9d6aaca6c3827edb740"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpqFileDialog.html#a012c9d0146cea9d6aaca6c3827edb740">~pqFileDialog</a> () override</td></tr>
 <tr class="separator:a012c9d0146cea9d6aaca6c3827edb740"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -132,11 +132,11 @@ Protected Member Functions</h2></td></tr>
 <div class="textblock"><p>Provides a standard file dialog "front-end" for the <a class="el" href="classpqFileDialogModel.html" title="pqFileDialogModel allows remote browsing of a connected ParaView server&#39;s filesystem, as well as browsing of the local file system. ">pqFileDialogModel</a> "back-end", i.e. </p>
 <p>it can be used for both local and remote file browsing.</p>
 <p><a class="el" href="classpqFileDialog.html" title="Provides a standard file dialog &quot;front-end&quot; for the pqFileDialogModel &quot;back-end&quot;, i...">pqFileDialog</a> can be used in both "modal" and "non-modal" operations. For "non-modal" operation, create an instance of <a class="el" href="classpqFileDialog.html" title="Provides a standard file dialog &quot;front-end&quot; for the pqFileDialogModel &quot;back-end&quot;, i...">pqFileDialog</a> on the heap, set the Qt::WA_DeleteOnClose flag, connect to the fileSelected() signal, and show the dialog. The dialog will be automatically destroyed when the user completes their file selection, and your slot will be called with the files the user selected:</p>
-<p>/code pqFileDialog* dialog = new <a class="el" href="classpqFileDialog.html" title="Provides a standard file dialog &quot;front-end&quot; for the pqFileDialogModel &quot;back-end&quot;, i...">pqFileDialog(NULL, this)</a>; dialog-&gt;setAttribute(Qt::WA_DeleteOnClose);</p>
+<p>/code pqFileDialog* dialog = new <a class="el" href="classpqFileDialog.html" title="Provides a standard file dialog &quot;front-end&quot; for the pqFileDialogModel &quot;back-end&quot;, i...">pqFileDialog(nullptr, this)</a>; dialog-&gt;setAttribute(Qt::WA_DeleteOnClose);</p>
 <p>QObject::connect( dialog, SIGNAL(filesSelected(const QList&lt;QStringList&gt;&amp;)), this, SLOT(onOpenSessionFile(const QList&lt;QStringList&gt;&amp;)));</p>
 <p>dialog-&gt;show(); /endcode</p>
 <p>For "modal" operation, create an instance of <a class="el" href="classpqFileDialog.html" title="Provides a standard file dialog &quot;front-end&quot; for the pqFileDialogModel &quot;back-end&quot;, i...">pqFileDialog</a> on the stack, call its exec() method, and retrieve the user's file selection with the <a class="el" href="classpqFileDialog.html#a6a309d8af93ea12c72e61d3d5ad53ef3" title="Returns the group of files for the given index. ">getSelectedFiles()</a> method:</p>
-<p>/code <a class="el" href="classpqFileDialog.html" title="Provides a standard file dialog &quot;front-end&quot; for the pqFileDialogModel &quot;back-end&quot;, i...">pqFileDialog</a> dialog(NULL, this); if(Qt::Accepted == dialog.exec()) { each string list holds a list of files that represent a file-series QList&lt;QStringList&gt; files = dialog.getAllSelectedFiles(); } /endcode</p>
+<p>/code <a class="el" href="classpqFileDialog.html" title="Provides a standard file dialog &quot;front-end&quot; for the pqFileDialogModel &quot;back-end&quot;, i...">pqFileDialog</a> dialog(nullptr, this); if(Qt::Accepted == dialog.exec()) { each string list holds a list of files that represent a file-series QList&lt;QStringList&gt; files = dialog.getAllSelectedFiles(); } /endcode</p>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="classpqFileDialogModel.html" title="pqFileDialogModel allows remote browsing of a connected ParaView server&#39;s filesystem, as well as browsing of the local file system. ">pqFileDialogModel</a> </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="pqFileDialog_8h_source.html#l00085">85</a> of file <a class="el" href="pqFileDialog_8h_source.html">pqFileDialog.h</a>.</p>
@@ -218,7 +218,7 @@ Protected Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Creates a file dialog with the specified server if the server is NULL, files are browsed locally the title, and start directory may be specified the filter is a string of semi-colon separated filters. </p>
+<p>Creates a file dialog with the specified server if the server is nullptr, files are browsed locally the title, and start directory may be specified the filter is a string of semi-colon separated filters. </p>
 
 </div>
 </div>
@@ -667,7 +667,7 @@ Protected Member Functions</h2></td></tr>
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.13 on Tue Jan 26 2021
+</a> 1.8.13 on Sat May 15 2021
 </small></address>
 <!-- KW:BEGIN -->
 <!-- this adds the version selection header -->

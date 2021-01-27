@@ -114,7 +114,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a5af2ea4cbdd528a97731dc022bbeb60f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns whether the producer/port are shown in the given view.  <a href="#a5af2ea4cbdd528a97731dc022bbeb60f">More...</a><br /></td></tr>
 <tr class="separator:a5af2ea4cbdd528a97731dc022bbeb60f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8e5e2a3c10324f470b41e26a94e72c23"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classvtkSMViewProxy.html">vtkSMViewProxy</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkSMParaViewPipelineControllerWithRendering.html#a8e5e2a3c10324f470b41e26a94e72c23">ShowInPreferredView</a> (<a class="el" href="classvtkSMSourceProxy.html">vtkSMSourceProxy</a> *producer, <a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkShaderProgram2_8h.html#a61569f2965b7a369eb10b6d75d410d11">int</a> outputPort, <a class="el" href="classvtkSMViewProxy.html">vtkSMViewProxy</a> *view)</td></tr>
-<tr class="memdesc:a8e5e2a3c10324f470b41e26a94e72c23"><td class="mdescLeft">&#160;</td><td class="mdescRight">Same as <a class="el" href="classvtkSMParaViewPipelineControllerWithRendering.html#aebca70705f304c8d1e86fdcbd062cce3" title="Show the output data in the view. ">Show()</a> except that if the <code>view</code> is NULL or not the preferred view for the producer's output, this method will create a new view and show the data in that new view.  <a href="#a8e5e2a3c10324f470b41e26a94e72c23">More...</a><br /></td></tr>
+<tr class="memdesc:a8e5e2a3c10324f470b41e26a94e72c23"><td class="mdescLeft">&#160;</td><td class="mdescRight">Same as <a class="el" href="classvtkSMParaViewPipelineControllerWithRendering.html#aebca70705f304c8d1e86fdcbd062cce3" title="Show the output data in the view. ">Show()</a> except that if the <code>view</code> is nullptr or not the preferred view for the producer's output, this method will create a new view and show the data in that new view.  <a href="#a8e5e2a3c10324f470b41e26a94e72c23">More...</a><br /></td></tr>
 <tr class="separator:a8e5e2a3c10324f470b41e26a94e72c23"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a85813f80557334cc3559519d4d49a94e"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkSMParaViewPipelineControllerWithRendering.html#a85813f80557334cc3559519d4d49a94e">GetPreferredViewType</a> (<a class="el" href="classvtkSMSourceProxy.html">vtkSMSourceProxy</a> *producer, <a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkShaderProgram2_8h.html#a61569f2965b7a369eb10b6d75d410d11">int</a> outputPort)</td></tr>
 <tr class="memdesc:a85813f80557334cc3559519d4d49a94e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the name for the preferred view type, if there is any.  <a href="#a85813f80557334cc3559519d4d49a94e">More...</a><br /></td></tr>
@@ -128,9 +128,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a84be19e36eb58da61e349bfbf9b4e3a8"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkSMParaViewPipelineControllerWithRendering.html#a84be19e36eb58da61e349bfbf9b4e3a8">PostInitializeProxy</a> (<a class="el" href="classvtkSMProxy.html">vtkSMProxy</a> *proxy) override</td></tr>
 <tr class="memdesc:a84be19e36eb58da61e349bfbf9b4e3a8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Overridden to handle default ColorArrayName for representations correctly.  <a href="#a84be19e36eb58da61e349bfbf9b4e3a8">More...</a><br /></td></tr>
 <tr class="separator:a84be19e36eb58da61e349bfbf9b4e3a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac30fddc97700dce5696879430cea9b30"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkSMParaViewPipelineControllerWithRendering.html#ac30fddc97700dce5696879430cea9b30">RegisterLayoutProxy</a> (<a class="el" href="classvtkSMProxy.html">vtkSMProxy</a> *proxy, <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *proxyname=NULL)</td></tr>
-<tr class="memdesc:ac30fddc97700dce5696879430cea9b30"><td class="mdescLeft">&#160;</td><td class="mdescRight">Register layout proxy.  <a href="#ac30fddc97700dce5696879430cea9b30">More...</a><br /></td></tr>
-<tr class="separator:ac30fddc97700dce5696879430cea9b30"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1dce15c5dc4932b17f995b419715eb02"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkSMParaViewPipelineControllerWithRendering.html#a1dce15c5dc4932b17f995b419715eb02">RegisterLayoutProxy</a> (<a class="el" href="classvtkSMProxy.html">vtkSMProxy</a> *proxy, <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *proxyname=nullptr)</td></tr>
+<tr class="memdesc:a1dce15c5dc4932b17f995b419715eb02"><td class="mdescLeft">&#160;</td><td class="mdescRight">Register layout proxy.  <a href="#a1dce15c5dc4932b17f995b419715eb02">More...</a><br /></td></tr>
+<tr class="separator:a1dce15c5dc4932b17f995b419715eb02"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afa86f839959e115135677a01285a6326"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkSMParaViewPipelineControllerWithRendering.html#afa86f839959e115135677a01285a6326">AssignViewToLayout</a> (<a class="el" href="classvtkSMViewProxy.html">vtkSMViewProxy</a> *view, <a class="el" href="classvtkSMViewLayoutProxy.html">vtkSMViewLayoutProxy</a> *layout=nullptr, <a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkShaderProgram2_8h.html#a61569f2965b7a369eb10b6d75d410d11">int</a> hint=0)</td></tr>
 <tr class="memdesc:afa86f839959e115135677a01285a6326"><td class="mdescLeft">&#160;</td><td class="mdescRight">Assigns the view to any cell in the layout.  <a href="#afa86f839959e115135677a01285a6326">More...</a><br /></td></tr>
 <tr class="separator:afa86f839959e115135677a01285a6326"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -781,7 +781,7 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Show the output data in the view. </p>
-<p>If data cannot be shown in the view, returns NULL. If <code>view</code> is NULL, this simply calls <a class="el" href="classvtkSMParaViewPipelineControllerWithRendering.html#a8e5e2a3c10324f470b41e26a94e72c23" title="Same as Show() except that if the view is NULL or not the preferred view for the producer&#39;s output...">ShowInPreferredView()</a>. </p>
+<p>If data cannot be shown in the view, returns nullptr. If <code>view</code> is nullptr, this simply calls <a class="el" href="classvtkSMParaViewPipelineControllerWithRendering.html#a8e5e2a3c10324f470b41e26a94e72c23" title="Same as Show() except that if the view is nullptr or not the preferred view for the producer&#39;s output...">ShowInPreferredView()</a>. </p>
 
 </div>
 </div>
@@ -832,7 +832,7 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Show the output data in the view. </p>
-<p>If data cannot be shown in the view, returns NULL. If <code>view</code> is NULL, this simply calls <a class="el" href="classvtkSMParaViewPipelineControllerWithRendering.html#a8e5e2a3c10324f470b41e26a94e72c23" title="Same as Show() except that if the view is NULL or not the preferred view for the producer&#39;s output...">ShowInPreferredView()</a>. <code>representationName</code> specifies which representation should be instantiated - if null, a default representation will be created based on hints in the XML. </p>
+<p>If data cannot be shown in the view, returns nullptr. If <code>view</code> is nullptr, this simply calls <a class="el" href="classvtkSMParaViewPipelineControllerWithRendering.html#a8e5e2a3c10324f470b41e26a94e72c23" title="Same as Show() except that if the view is nullptr or not the preferred view for the producer&#39;s output...">ShowInPreferredView()</a>. <code>representationName</code> specifies which representation should be instantiated - if nullptr, a default representation will be created based on hints in the XML. </p>
 
 </div>
 </div>
@@ -1103,7 +1103,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Same as <a class="el" href="classvtkSMParaViewPipelineControllerWithRendering.html#aebca70705f304c8d1e86fdcbd062cce3" title="Show the output data in the view. ">Show()</a> except that if the <code>view</code> is NULL or not the preferred view for the producer's output, this method will create a new view and show the data in that new view. </p>
+<p>Same as <a class="el" href="classvtkSMParaViewPipelineControllerWithRendering.html#aebca70705f304c8d1e86fdcbd062cce3" title="Show the output data in the view. ">Show()</a> except that if the <code>view</code> is nullptr or not the preferred view for the producer's output, this method will create a new view and show the data in that new view. </p>
 <p>There are several different strategies employed to determine the preferred view for the producer's output. See <a class="el" href="classvtkSMParaViewPipelineControllerWithRendering.html#a85813f80557334cc3559519d4d49a94e" title="Returns the name for the preferred view type, if there is any. ">vtkSMParaViewPipelineControllerWithRendering::GetPreferredViewType()</a> for details.</p>
 <dl class="section note"><dt>Note</dt><dd>if the source's hint indicates so, the data may also be shown in the <code>view</code> passed in, in addition to the preferred view. This is done by using the <code>also_show_in_current_view</code> attribute to the <code>&lt;View /&gt;</code> hint.</dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>the view in which the data ends up being shown, if any. It may return nullptr if the <code>view</code> is not the preferred type or the preferred cannot be determined or created. </dd></dl>
@@ -1349,8 +1349,8 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="ac30fddc97700dce5696879430cea9b30"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac30fddc97700dce5696879430cea9b30">&#9670;&nbsp;</a></span>RegisterLayoutProxy()</h2>
+<a id="a1dce15c5dc4932b17f995b419715eb02"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1dce15c5dc4932b17f995b419715eb02">&#9670;&nbsp;</a></span>RegisterLayoutProxy()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1368,7 +1368,7 @@ Additional Inherited Members</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *&#160;</td>
-          <td class="paramname"><em>proxyname</em> = <code>NULL</code>&#160;</td>
+          <td class="paramname"><em>proxyname</em> = <code>nullptr</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -1429,7 +1429,7 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Assigns the view to any cell in the layout. </p>
-<p>If the layout is null, then this will locate a layout on the same session and use it. If no layout is present on the session, a new layout will be created (and registered) before assigning the view to it.</p>
+<p>If the layout is nullptr, then this will locate a layout on the same session and use it. If no layout is present on the session, a new layout will be created (and registered) before assigning the view to it.</p>
 <p>If the view is already assigned to a layout then this method is a no-op.</p>
 <dl class="section see"><dt>See also</dt><dd>vtkSMViewProxy::AssignViewToAnyCell </dd></dl>
 
@@ -1560,7 +1560,7 @@ Additional Inherited Members</h2></td></tr>
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.13 on Tue Jan 26 2021
+</a> 1.8.13 on Sat May 15 2021
 </small></address>
 <!-- KW:BEGIN -->
 <!-- this adds the version selection header -->

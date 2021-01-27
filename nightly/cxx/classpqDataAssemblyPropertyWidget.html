@@ -67,8 +67,12 @@ Collaboration diagram for pqDataAssemblyPropertyWidget:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="signals"></a>
 Signals</h2></td></tr>
-<tr class="memitem:a514f8768e4bd7e7c4123716fe8681018"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpqDataAssemblyPropertyWidget.html#a514f8768e4bd7e7c4123716fe8681018">chosenPathsChanged</a> ()</td></tr>
-<tr class="separator:a514f8768e4bd7e7c4123716fe8681018"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1e5d0be57dd76f9532796086fec6f2b3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpqDataAssemblyPropertyWidget.html#a1e5d0be57dd76f9532796086fec6f2b3">selectorsChanged</a> ()</td></tr>
+<tr class="separator:a1e5d0be57dd76f9532796086fec6f2b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa0f3ea22051d06ec8c7f2bedc65018ec"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpqDataAssemblyPropertyWidget.html#aa0f3ea22051d06ec8c7f2bedc65018ec">colorsChanged</a> ()</td></tr>
+<tr class="separator:aa0f3ea22051d06ec8c7f2bedc65018ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac2e4a53327ee5ec806a3691276df7ce2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpqDataAssemblyPropertyWidget.html#ac2e4a53327ee5ec806a3691276df7ce2">opacitiesChanged</a> ()</td></tr>
+<tr class="separator:ac2e4a53327ee5ec806a3691276df7ce2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header signals_classpqPropertyWidget"><td colspan="2" onclick="javascript:toggleInherit('signals_classpqPropertyWidget')"><img src="closed.png" alt="-"/>&#160;Signals inherited from <a class="el" href="classpqPropertyWidget.html">pqPropertyWidget</a></td></tr>
 <tr class="memitem:af1433187e4aae9d9294841736610b129 inherit signals_classpqPropertyWidget"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpqPropertyWidget.html#af1433187e4aae9d9294841736610b129">viewChanged</a> (<a class="el" href="classpqView.html">pqView</a> *<a class="el" href="classpqPropertyWidget.html#a851ebfadebd27209b79d9c9f94d1b5fb">view</a>)</td></tr>
 <tr class="memdesc:af1433187e4aae9d9294841736610b129 inherit signals_classpqPropertyWidget"><td class="mdescLeft">&#160;</td><td class="mdescRight">This signal is emitted when the current view changes.  <a href="classpqPropertyWidget.html#af1433187e4aae9d9294841736610b129">More...</a><br /></td></tr>
@@ -91,19 +95,54 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a5f58c2e392e64de00818b41e386765c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9b52885451873f0ed3e8f18bf4b7ea49"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpqDataAssemblyPropertyWidget.html#a9b52885451873f0ed3e8f18bf4b7ea49">~pqDataAssemblyPropertyWidget</a> () override</td></tr>
 <tr class="separator:a9b52885451873f0ed3e8f18bf4b7ea49"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5c016b03a2d4da5c9ba4b9a087ac6c3a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpqDataAssemblyPropertyWidget.html#a5c016b03a2d4da5c9ba4b9a087ac6c3a">updateWidget</a> (bool showing_advanced_properties) override</td></tr>
+<tr class="separator:a5c016b03a2d4da5c9ba4b9a087ac6c3a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr><td colspan="2"><div class="groupHeader"></div></td></tr>
-<tr class="memitem:a718d62375e5469eb22492b656fbe8963"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpqDataAssemblyPropertyWidget.html#a718d62375e5469eb22492b656fbe8963">setChosenPaths</a> (<a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> QStringList &amp;paths)</td></tr>
-<tr class="memdesc:a718d62375e5469eb22492b656fbe8963"><td class="mdescLeft">&#160;</td><td class="mdescRight">API for getting/setting selected/chosen path strings.  <a href="#a718d62375e5469eb22492b656fbe8963">More...</a><br /></td></tr>
-<tr class="separator:a718d62375e5469eb22492b656fbe8963"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a06bd3136cb4563bd77475d37bdf54f0f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> QStringList &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpqDataAssemblyPropertyWidget.html#a06bd3136cb4563bd77475d37bdf54f0f">chosenPaths</a> () <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a></td></tr>
-<tr class="memdesc:a06bd3136cb4563bd77475d37bdf54f0f"><td class="mdescLeft">&#160;</td><td class="mdescRight">API for getting/setting selected/chosen path strings.  <a href="#a06bd3136cb4563bd77475d37bdf54f0f">More...</a><br /></td></tr>
-<tr class="separator:a06bd3136cb4563bd77475d37bdf54f0f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9193b3a8fad78a65c7a283acb3d42336"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpqDataAssemblyPropertyWidget.html#a9193b3a8fad78a65c7a283acb3d42336">setChosenPaths</a> (<a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> QList&lt; QVariant &gt; &amp;paths)</td></tr>
-<tr class="memdesc:a9193b3a8fad78a65c7a283acb3d42336"><td class="mdescLeft">&#160;</td><td class="mdescRight">API for getting/setting selected/chosen path strings.  <a href="#a9193b3a8fad78a65c7a283acb3d42336">More...</a><br /></td></tr>
-<tr class="separator:a9193b3a8fad78a65c7a283acb3d42336"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5e87a5e1760db5c014c9a89e5b941e56"><td class="memItemLeft" align="right" valign="top">QList&lt; QVariant &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpqDataAssemblyPropertyWidget.html#a5e87a5e1760db5c014c9a89e5b941e56">chosenPathsAsVariantList</a> () <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a></td></tr>
-<tr class="memdesc:a5e87a5e1760db5c014c9a89e5b941e56"><td class="mdescLeft">&#160;</td><td class="mdescRight">API for getting/setting selected/chosen path strings.  <a href="#a5e87a5e1760db5c014c9a89e5b941e56">More...</a><br /></td></tr>
-<tr class="separator:a5e87a5e1760db5c014c9a89e5b941e56"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad66bd367ba0b0978647657727b6f815f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpqDataAssemblyPropertyWidget.html#ad66bd367ba0b0978647657727b6f815f">setSelectors</a> (<a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> QStringList &amp;paths)</td></tr>
+<tr class="memdesc:ad66bd367ba0b0978647657727b6f815f"><td class="mdescLeft">&#160;</td><td class="mdescRight">API for getting/setting selected/chosen path strings.  <a href="#ad66bd367ba0b0978647657727b6f815f">More...</a><br /></td></tr>
+<tr class="separator:ad66bd367ba0b0978647657727b6f815f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab1c101fd52e3fd077f0ddc5a7a75536c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> QStringList &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpqDataAssemblyPropertyWidget.html#ab1c101fd52e3fd077f0ddc5a7a75536c">selectors</a> () <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a></td></tr>
+<tr class="memdesc:ab1c101fd52e3fd077f0ddc5a7a75536c"><td class="mdescLeft">&#160;</td><td class="mdescRight">API for getting/setting selected/chosen path strings.  <a href="#ab1c101fd52e3fd077f0ddc5a7a75536c">More...</a><br /></td></tr>
+<tr class="separator:ab1c101fd52e3fd077f0ddc5a7a75536c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a923cc6a0b8c3d1831e4280c01ea17990"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpqDataAssemblyPropertyWidget.html#a923cc6a0b8c3d1831e4280c01ea17990">setSelectors</a> (<a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> QList&lt; QVariant &gt; &amp;paths)</td></tr>
+<tr class="memdesc:a923cc6a0b8c3d1831e4280c01ea17990"><td class="mdescLeft">&#160;</td><td class="mdescRight">API for getting/setting selected/chosen path strings.  <a href="#a923cc6a0b8c3d1831e4280c01ea17990">More...</a><br /></td></tr>
+<tr class="separator:a923cc6a0b8c3d1831e4280c01ea17990"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2223af00e06ec8a199a854d7cbe94229"><td class="memItemLeft" align="right" valign="top">QList&lt; QVariant &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpqDataAssemblyPropertyWidget.html#a2223af00e06ec8a199a854d7cbe94229">selectorsAsVariantList</a> () <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a></td></tr>
+<tr class="memdesc:a2223af00e06ec8a199a854d7cbe94229"><td class="mdescLeft">&#160;</td><td class="mdescRight">API for getting/setting selected/chosen path strings.  <a href="#a2223af00e06ec8a199a854d7cbe94229">More...</a><br /></td></tr>
+<tr class="separator:a2223af00e06ec8a199a854d7cbe94229"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr><td colspan="2"><div class="groupHeader"></div></td></tr>
+<tr class="memitem:aa5993233ebb544d45a634fa4bc98a462"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpqDataAssemblyPropertyWidget.html#aa5993233ebb544d45a634fa4bc98a462">setCompositeIndices</a> (<a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> QList&lt; QVariant &gt; &amp;values)</td></tr>
+<tr class="memdesc:aa5993233ebb544d45a634fa4bc98a462"><td class="mdescLeft">&#160;</td><td class="mdescRight">API for getting/settings composite indices.  <a href="#aa5993233ebb544d45a634fa4bc98a462">More...</a><br /></td></tr>
+<tr class="separator:aa5993233ebb544d45a634fa4bc98a462"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a131554577457f0b9322dc925ddb0bb4e"><td class="memItemLeft" align="right" valign="top">QList&lt; QVariant &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpqDataAssemblyPropertyWidget.html#a131554577457f0b9322dc925ddb0bb4e">compositeIndicesAsVariantList</a> () <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a></td></tr>
+<tr class="memdesc:a131554577457f0b9322dc925ddb0bb4e"><td class="mdescLeft">&#160;</td><td class="mdescRight">API for getting/settings composite indices.  <a href="#a131554577457f0b9322dc925ddb0bb4e">More...</a><br /></td></tr>
+<tr class="separator:a131554577457f0b9322dc925ddb0bb4e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr><td colspan="2"><div class="groupHeader"></div></td></tr>
+<tr class="memitem:a5c62857af03568872ac4943c33df8042"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpqDataAssemblyPropertyWidget.html#a5c62857af03568872ac4943c33df8042">setCompositeIndexColors</a> (<a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> QList&lt; QVariant &gt; &amp;values)</td></tr>
+<tr class="memdesc:a5c62857af03568872ac4943c33df8042"><td class="mdescLeft">&#160;</td><td class="mdescRight">API to get/set colors.  <a href="#a5c62857af03568872ac4943c33df8042">More...</a><br /></td></tr>
+<tr class="separator:a5c62857af03568872ac4943c33df8042"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af32a7c3974effed2ed4e6fb1a9489a0d"><td class="memItemLeft" align="right" valign="top">QList&lt; QVariant &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpqDataAssemblyPropertyWidget.html#af32a7c3974effed2ed4e6fb1a9489a0d">compositeIndexColorsAsVariantList</a> () <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a></td></tr>
+<tr class="memdesc:af32a7c3974effed2ed4e6fb1a9489a0d"><td class="mdescLeft">&#160;</td><td class="mdescRight">API to get/set colors.  <a href="#af32a7c3974effed2ed4e6fb1a9489a0d">More...</a><br /></td></tr>
+<tr class="separator:af32a7c3974effed2ed4e6fb1a9489a0d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa8cb02ed9feb16b6e08044849631e740"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpqDataAssemblyPropertyWidget.html#aa8cb02ed9feb16b6e08044849631e740">setSelectorColors</a> (<a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> QList&lt; QVariant &gt; &amp;values)</td></tr>
+<tr class="memdesc:aa8cb02ed9feb16b6e08044849631e740"><td class="mdescLeft">&#160;</td><td class="mdescRight">API to get/set colors.  <a href="#aa8cb02ed9feb16b6e08044849631e740">More...</a><br /></td></tr>
+<tr class="separator:aa8cb02ed9feb16b6e08044849631e740"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0b77a51f30149c2128cbc21a5e5a3e88"><td class="memItemLeft" align="right" valign="top">QList&lt; QVariant &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpqDataAssemblyPropertyWidget.html#a0b77a51f30149c2128cbc21a5e5a3e88">selectorColorsAsVariantList</a> () <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a></td></tr>
+<tr class="memdesc:a0b77a51f30149c2128cbc21a5e5a3e88"><td class="mdescLeft">&#160;</td><td class="mdescRight">API to get/set colors.  <a href="#a0b77a51f30149c2128cbc21a5e5a3e88">More...</a><br /></td></tr>
+<tr class="separator:a0b77a51f30149c2128cbc21a5e5a3e88"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr><td colspan="2"><div class="groupHeader"></div></td></tr>
+<tr class="memitem:aced9b2afac119f999246db5a539b1efd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpqDataAssemblyPropertyWidget.html#aced9b2afac119f999246db5a539b1efd">setCompositeIndexOpacities</a> (<a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> QList&lt; QVariant &gt; &amp;values)</td></tr>
+<tr class="memdesc:aced9b2afac119f999246db5a539b1efd"><td class="mdescLeft">&#160;</td><td class="mdescRight">API to get/set opacities.  <a href="#aced9b2afac119f999246db5a539b1efd">More...</a><br /></td></tr>
+<tr class="separator:aced9b2afac119f999246db5a539b1efd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1b7033f8396f82c5cd9e0f537574ad98"><td class="memItemLeft" align="right" valign="top">QList&lt; QVariant &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpqDataAssemblyPropertyWidget.html#a1b7033f8396f82c5cd9e0f537574ad98">compositeIndexOpacitiesAsVariantList</a> () <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a></td></tr>
+<tr class="memdesc:a1b7033f8396f82c5cd9e0f537574ad98"><td class="mdescLeft">&#160;</td><td class="mdescRight">API to get/set opacities.  <a href="#a1b7033f8396f82c5cd9e0f537574ad98">More...</a><br /></td></tr>
+<tr class="separator:a1b7033f8396f82c5cd9e0f537574ad98"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2720509a9d8f6b633afdd0a23df20443"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpqDataAssemblyPropertyWidget.html#a2720509a9d8f6b633afdd0a23df20443">setSelectorOpacities</a> (<a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> QList&lt; QVariant &gt; &amp;values)</td></tr>
+<tr class="memdesc:a2720509a9d8f6b633afdd0a23df20443"><td class="mdescLeft">&#160;</td><td class="mdescRight">API to get/set opacities.  <a href="#a2720509a9d8f6b633afdd0a23df20443">More...</a><br /></td></tr>
+<tr class="separator:a2720509a9d8f6b633afdd0a23df20443"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7d16dc1a48e68839e316f0cccf0f2020"><td class="memItemLeft" align="right" valign="top">QList&lt; QVariant &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpqDataAssemblyPropertyWidget.html#a7d16dc1a48e68839e316f0cccf0f2020">selectorOpacitiesAsVariantList</a> () <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a></td></tr>
+<tr class="memdesc:a7d16dc1a48e68839e316f0cccf0f2020"><td class="mdescLeft">&#160;</td><td class="mdescRight">API to get/set opacities.  <a href="#a7d16dc1a48e68839e316f0cccf0f2020">More...</a><br /></td></tr>
+<tr class="separator:a7d16dc1a48e68839e316f0cccf0f2020"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classpqPropertyWidget"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classpqPropertyWidget')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classpqPropertyWidget.html">pqPropertyWidget</a></td></tr>
 <tr class="memitem:a97ab1e98f8afac5f242be68874822352 inherit pub_methods_classpqPropertyWidget"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpqPropertyWidget.html#a97ab1e98f8afac5f242be68874822352">pqPropertyWidget</a> (<a class="el" href="classvtkSMProxy.html">vtkSMProxy</a> *<a class="el" href="classpqPropertyWidget.html#a8f9466cf9966b0f33b227b1d4ba4bbae">proxy</a>, QWidget *parent=0)</td></tr>
 <tr class="separator:a97ab1e98f8afac5f242be68874822352 inherit pub_methods_classpqPropertyWidget"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -120,8 +159,6 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:af1b0e983a0c3536256426135abfb50dc inherit pub_methods_classpqPropertyWidget"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a37c9f702d3812bc3f9d697a04b32c56e inherit pub_methods_classpqPropertyWidget"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpqPropertyWidget.html#a37c9f702d3812bc3f9d697a04b32c56e">isSelected</a> () <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a></td></tr>
 <tr class="separator:a37c9f702d3812bc3f9d697a04b32c56e inherit pub_methods_classpqPropertyWidget"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae626dfe5752b1c0e8c422a99e5a3d932 inherit pub_methods_classpqPropertyWidget"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpqPropertyWidget.html#ae626dfe5752b1c0e8c422a99e5a3d932">updateWidget</a> (bool showing_advanced_properties)</td></tr>
-<tr class="separator:ae626dfe5752b1c0e8c422a99e5a3d932 inherit pub_methods_classpqPropertyWidget"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a851ebfadebd27209b79d9c9f94d1b5fb inherit pub_methods_classpqPropertyWidget"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classpqView.html">pqView</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpqPropertyWidget.html#a851ebfadebd27209b79d9c9f94d1b5fb">view</a> () <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a></td></tr>
 <tr class="separator:a851ebfadebd27209b79d9c9f94d1b5fb inherit pub_methods_classpqPropertyWidget"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8f9466cf9966b0f33b227b1d4ba4bbae inherit pub_methods_classpqPropertyWidget"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classvtkSMProxy.html">vtkSMProxy</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpqPropertyWidget.html#a8f9466cf9966b0f33b227b1d4ba4bbae">proxy</a> () <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a></td></tr>
@@ -146,8 +183,25 @@ Public Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="properties"></a>
 Properties</h2></td></tr>
-<tr class="memitem:a1d5afb719afaaa89207ad55c4a9126d4"><td class="memItemLeft" align="right" valign="top">QList&lt; QVariant &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpqDataAssemblyPropertyWidget.html#a1d5afb719afaaa89207ad55c4a9126d4">chosenPaths</a></td></tr>
-<tr class="separator:a1d5afb719afaaa89207ad55c4a9126d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1011378ce0d7feff0dd9bebae3f54bbf"><td class="memItemLeft" align="right" valign="top">QList&lt; QVariant &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpqDataAssemblyPropertyWidget.html#a1011378ce0d7feff0dd9bebae3f54bbf">selectors</a></td></tr>
+<tr class="memdesc:a1011378ce0d7feff0dd9bebae3f54bbf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Property with selectors for checked nodes in the hierarchy.  <a href="#a1011378ce0d7feff0dd9bebae3f54bbf">More...</a><br /></td></tr>
+<tr class="separator:a1011378ce0d7feff0dd9bebae3f54bbf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2c1b54131ecfe55f63c4fb95b36ce1a7"><td class="memItemLeft" align="right" valign="top">QList&lt; QVariant &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpqDataAssemblyPropertyWidget.html#a2c1b54131ecfe55f63c4fb95b36ce1a7">selectorColors</a></td></tr>
+<tr class="memdesc:a2c1b54131ecfe55f63c4fb95b36ce1a7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Property with selectors and associated colors (as RGB).  <a href="#a2c1b54131ecfe55f63c4fb95b36ce1a7">More...</a><br /></td></tr>
+<tr class="separator:a2c1b54131ecfe55f63c4fb95b36ce1a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad477964fe40fb94e17ccaa8de8515625"><td class="memItemLeft" align="right" valign="top">QList&lt; QVariant &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpqDataAssemblyPropertyWidget.html#ad477964fe40fb94e17ccaa8de8515625">selectorOpacities</a></td></tr>
+<tr class="memdesc:ad477964fe40fb94e17ccaa8de8515625"><td class="mdescLeft">&#160;</td><td class="mdescRight">Property with selectors and associated opacities.  <a href="#ad477964fe40fb94e17ccaa8de8515625">More...</a><br /></td></tr>
+<tr class="separator:ad477964fe40fb94e17ccaa8de8515625"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr><td colspan="2"><div class="groupHeader"></div></td></tr>
+<tr class="memitem:a6c8d121bf88b8d7351c3f2d691466d81"><td class="memItemLeft" align="right" valign="top">QList&lt; QVariant &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpqDataAssemblyPropertyWidget.html#a6c8d121bf88b8d7351c3f2d691466d81">compositeIndices</a></td></tr>
+<tr class="memdesc:a6c8d121bf88b8d7351c3f2d691466d81"><td class="mdescLeft">&#160;</td><td class="mdescRight">These are similar to the selector-based variants, except, instead of a selector, the composite index is used.  <a href="#a6c8d121bf88b8d7351c3f2d691466d81">More...</a><br /></td></tr>
+<tr class="separator:a6c8d121bf88b8d7351c3f2d691466d81"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ace80892984fd61514e0ce15be88311b0"><td class="memItemLeft" align="right" valign="top">QList&lt; QVariant &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpqDataAssemblyPropertyWidget.html#ace80892984fd61514e0ce15be88311b0">compositeIndexOpacities</a></td></tr>
+<tr class="memdesc:ace80892984fd61514e0ce15be88311b0"><td class="mdescLeft">&#160;</td><td class="mdescRight">These are similar to the selector-based variants, except, instead of a selector, the composite index is used.  <a href="#ace80892984fd61514e0ce15be88311b0">More...</a><br /></td></tr>
+<tr class="separator:ace80892984fd61514e0ce15be88311b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a27139bbeea1ddaa48b1a6194e314956f"><td class="memItemLeft" align="right" valign="top">QList&lt; QVariant &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpqDataAssemblyPropertyWidget.html#a27139bbeea1ddaa48b1a6194e314956f">compositeIndexColors</a></td></tr>
+<tr class="memdesc:a27139bbeea1ddaa48b1a6194e314956f"><td class="mdescLeft">&#160;</td><td class="mdescRight">These are similar to the selector-based variants, except, instead of a selector, the composite index is used.  <a href="#a27139bbeea1ddaa48b1a6194e314956f">More...</a><br /></td></tr>
+<tr class="separator:a27139bbeea1ddaa48b1a6194e314956f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
@@ -192,9 +246,19 @@ Additional Inherited Members</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p><a class="el" href="classpqPropertyWidget.html" title="pqPropertyWidget represents a widget created for each property of a proxy on the pqPropertiesPanel (f...">pqPropertyWidget</a> for properties with vtkDataAssembly </p>
-<p><a class="el" href="classpqDataAssemblyPropertyWidget.html" title="pqPropertyWidget for properties with vtkDataAssembly ">pqDataAssemblyPropertyWidget</a> is intended for properties that rely on a vtkDataAssembly i.e. use a <a class="el" href="classvtkSMDataAssemblyDomain.html" title="a domain that uses vtkDataAssembly ">vtkSMDataAssemblyDomain</a>. Currently, this only support getting/setting the list of chosen paths based on the vtkDataAssembly. In the future, we will add support for additional properties such as color, opacity etc. </p>
+<p><a class="el" href="classpqDataAssemblyPropertyWidget.html" title="pqPropertyWidget for properties with vtkDataAssembly ">pqDataAssemblyPropertyWidget</a> is intended for properties that rely on a vtkDataAssembly i.e. use a <a class="el" href="classvtkSMDataAssemblyDomain.html" title="a domain that uses vtkDataAssembly ">vtkSMDataAssemblyDomain</a>. This supports getting/setting the list of selectors for checked nodes based on the chosen vtkDataAssembly. Further more, it supports editing color and opacity, if requested.</p>
+<p><a class="el" href="classpqDataAssemblyPropertyWidget.html" title="pqPropertyWidget for properties with vtkDataAssembly ">pqDataAssemblyPropertyWidget</a> can be used on a single property with a <a class="el" href="classvtkSMDataAssemblyDomain.html" title="a domain that uses vtkDataAssembly ">vtkSMDataAssemblyDomain</a> or for a group of properties. For a single property, it allows for editing on selectors for checked nodes. For a group, it can support opacity and color editing as well.</p>
+<p>Here's an example proxy XML for a single property.</p>
+<div class="fragment"><div class="line">&lt;<span class="keywordtype">Proxy</span> ...&gt;</div><div class="line">  &lt;<span class="keywordtype">StringVectorProperty</span> <span class="keyword">name</span>=<span class="stringliteral">&quot;Selectors&quot;</span></div><div class="line">                        <span class="keyword">repeat_command</span>=<span class="stringliteral">&quot;1&quot;</span></div><div class="line">                        <span class="keyword">number_of_elements_per_command</span>=<span class="stringliteral">&quot;1&quot;</span></div><div class="line">                        <span class="keyword">default_values</span>=<span class="stringliteral">&quot;/&quot;</span> &gt;</div><div class="line">    &lt;<span class="keywordtype">DataAssemblyDomain</span> <span class="keyword">name</span>=<span class="stringliteral">&quot;data_assembly&quot;</span>&gt;</div><div class="line">      &lt;<span class="keywordtype">RequiredProperties</span>&gt;</div><div class="line">        &lt;<span class="keywordtype">Property</span> <span class="keyword">function</span>=<span class="stringliteral">&quot;Input&quot;</span> <span class="keyword">name</span>=<span class="stringliteral">&quot;Input&quot;</span> /&gt;</div><div class="line">      &lt;/<span class="keywordtype">RequiredProperties</span>&gt;</div><div class="line">    &lt;/<span class="keywordtype">DataAssemblyDomain</span>&gt;</div><div class="line">  &lt;/<span class="keywordtype">StringVectorProperty</span>&gt;</div><div class="line">  ...</div><div class="line">&lt;/<span class="keywordtype">Proxy</span>&gt;</div></div><!-- fragment --><p>The widget will use the assembly provided by <code><a class="el" href="classvtkSMDataAssemblyDomain.html#afe6051781b370ac96b7c49546a29245f" title="Provides access to the data assembly. ">vtkSMDataAssemblyDomain::GetDataAssembly</a></code> to render a tree in UI.</p>
+<p>A property-group for editing color and opacity, along with choosing which named-assembly to use is as follows. All properties in the group are optional and one may specify on subset that is relevant for their use-case. It is assumed, however, that all properties in the group use the same data assembly. If that's not the case, one should use separate property groups, hence separate widgets, for each.</p>
+<div class="fragment"><div class="line">&lt;<span class="keywordtype">Proxy</span> ...&gt;</div><div class="line">  &lt;<span class="keywordtype">StringVectorProperty</span> <span class="keyword">name</span>=<span class="stringliteral">&quot;Assembly&quot;</span></div><div class="line">                        <span class="keyword">command</span>=<span class="stringliteral">&quot;SetAssemblyName&quot;</span></div><div class="line">                        <span class="keyword">number_of_elements</span>=<span class="stringliteral">&quot;1&quot;</span></div><div class="line">                        <span class="keyword">default_values</span>=<span class="stringliteral">&quot;Hierarchy&quot;</span>&gt;</div><div class="line">    &lt;<span class="keywordtype">DataAssemblyListDomain</span> <span class="keyword">name</span>=<span class="stringliteral">&quot;data_assembly_list&quot;</span>&gt;</div><div class="line">      &lt;<span class="keywordtype">RequiredProperties</span>&gt;</div><div class="line">        &lt;<span class="keywordtype">Property</span> <span class="keyword">function</span>=<span class="stringliteral">&quot;Input&quot;</span> <span class="keyword">name</span>=<span class="stringliteral">&quot;Input&quot;</span> /&gt;</div><div class="line">      &lt;/<span class="keywordtype">RequiredProperties</span>&gt;</div><div class="line">    &lt;/<span class="keywordtype">DataAssemblyListDomain</span>&gt;</div><div class="line">    &lt;<span class="keywordtype">Documentation</span>&gt;</div><div class="line">      <span class="keyword">Select</span> <span class="keyword">which</span> <span class="keyword">assembly</span> <span class="keyword">is</span> <span class="keyword">used</span> <span class="keyword">when</span> <span class="keyword">specify</span> <span class="keyword">selectors</span></div><div class="line">      <span class="keyword">to</span> <span class="keyword">choose</span> <span class="keyword">blocks</span> <span class="keyword">to</span> <span class="keyword">show</span> <span class="keyword">for</span> <span class="keyword">composite</span> <span class="keyword">datasets.</span></div><div class="line">    &lt;/<span class="keywordtype">Documentation</span>&gt;</div><div class="line">  &lt;/<span class="keywordtype">StringVectorProperty</span>&gt;</div><div class="line"></div><div class="line">  &lt;<span class="keywordtype">StringVectorProperty</span> <span class="keyword">name</span>=<span class="stringliteral">&quot;Selectors&quot;</span></div><div class="line">                        <span class="keyword">command</span>=<span class="stringliteral">&quot;AddSelector&quot;</span></div><div class="line">                        <span class="keyword">clean_command</span>=<span class="stringliteral">&quot;ClearSelectors&quot;</span></div><div class="line">                        <span class="keyword">repeat_command</span>=<span class="stringliteral">&quot;1&quot;</span></div><div class="line">                        <span class="keyword">number_of_elements_per_command</span>=<span class="stringliteral">&quot;1&quot;</span>&gt;</div><div class="line">    &lt;<span class="keywordtype">DataAssemblyDomain</span> <span class="keyword">name</span>=<span class="stringliteral">&quot;data_assembly&quot;</span>&gt;</div><div class="line">      &lt;<span class="keywordtype">RequiredProperties</span>&gt;</div><div class="line">        &lt;<span class="keywordtype">Property</span> <span class="keyword">function</span>=<span class="stringliteral">&quot;Input&quot;</span> <span class="keyword">name</span>=<span class="stringliteral">&quot;Input&quot;</span> /&gt;</div><div class="line">        &lt;<span class="keywordtype">Property</span> <span class="keyword">function</span>=<span class="stringliteral">&quot;ActiveAssembly&quot;</span> <span class="keyword">name</span>=<span class="stringliteral">&quot;Assembly&quot;</span> /&gt;</div><div class="line">      &lt;/<span class="keywordtype">RequiredProperties</span>&gt;</div><div class="line">    &lt;/<span class="keywordtype">DataAssemblyDomain</span>&gt;</div><div class="line">    &lt;<span class="keywordtype">Documentation</span>&gt;</div><div class="line">      <span class="keyword">For</span> <span class="keyword">composite</span> <span class="keyword">datasets</span>, <span class="keyword">specify</span> <span class="keyword">selectors</span> <span class="keyword">to</span> <span class="keyword">limit</span> <span class="keyword">the</span> <span class="keyword">view</span></div><div class="line">      <span class="keyword">to</span> <span class="keyword">a</span> <span class="keyword">chosen</span> <span class="keyword">subset</span> <span class="keyword">of</span> <span class="keyword">blocks.</span></div><div class="line">    &lt;/<span class="keywordtype">Documentation</span>&gt;</div><div class="line">  &lt;/<span class="keywordtype">StringVectorProperty</span>&gt;</div><div class="line"></div><div class="line">  &lt;<span class="keywordtype">StringVectorProperty</span> <span class="keyword">name</span>=<span class="stringliteral">&quot;BlockColor&quot;</span></div><div class="line">                        <span class="keyword">element_types</span>=<span class="stringliteral">&quot;2 1 1 1&quot;</span></div><div class="line">                        <span class="keyword">number_of_elements_per_command</span>=<span class="stringliteral">&quot;4&quot;</span></div><div class="line">                        <span class="keyword">repeat_command</span>=<span class="stringliteral">&quot;1&quot;</span>&gt;</div><div class="line">     &lt;<span class="keywordtype">DataAssemblyDomain</span> <span class="keyword">name</span>=<span class="stringliteral">&quot;data_assembly&quot;</span>&gt;</div><div class="line">      &lt;<span class="keywordtype">RequiredProperties</span>&gt;</div><div class="line">        &lt;<span class="keywordtype">Property</span> <span class="keyword">function</span>=<span class="stringliteral">&quot;Input&quot;</span> <span class="keyword">name</span>=<span class="stringliteral">&quot;Input&quot;</span> /&gt;</div><div class="line">        &lt;<span class="keywordtype">Property</span> <span class="keyword">function</span>=<span class="stringliteral">&quot;ActiveAssembly&quot;</span> <span class="keyword">name</span>=<span class="stringliteral">&quot;Assembly&quot;</span> /&gt;</div><div class="line">      &lt;/<span class="keywordtype">RequiredProperties</span>&gt;</div><div class="line">    &lt;/<span class="keywordtype">DataAssemblyDomain</span>&gt;</div><div class="line">  &lt;/<span class="keywordtype">StringVectorProperty</span>&gt;</div><div class="line"></div><div class="line">  &lt;<span class="keywordtype">StringVectorProperty</span> <span class="keyword">name</span>=<span class="stringliteral">&quot;BlockOpacity&quot;</span></div><div class="line">                        <span class="keyword">element_types</span>=<span class="stringliteral">&quot;2 1&quot;</span></div><div class="line">                        <span class="keyword">number_of_elements_per_command</span>=<span class="stringliteral">&quot;2&quot;</span></div><div class="line">                        <span class="keyword">repeat_command</span>=<span class="stringliteral">&quot;1&quot;</span>&gt;</div><div class="line">     &lt;<span class="keywordtype">DataAssemblyDomain</span> <span class="keyword">name</span>=<span class="stringliteral">&quot;data_assembly&quot;</span>&gt;</div><div class="line">      &lt;<span class="keywordtype">RequiredProperties</span>&gt;</div><div class="line">        &lt;<span class="keywordtype">Property</span> <span class="keyword">function</span>=<span class="stringliteral">&quot;Input&quot;</span> <span class="keyword">name</span>=<span class="stringliteral">&quot;Input&quot;</span> /&gt;</div><div class="line">        &lt;<span class="keywordtype">Property</span> <span class="keyword">function</span>=<span class="stringliteral">&quot;ActiveAssembly&quot;</span> <span class="keyword">name</span>=<span class="stringliteral">&quot;Assembly&quot;</span> /&gt;</div><div class="line">      &lt;/<span class="keywordtype">RequiredProperties</span>&gt;</div><div class="line">    &lt;/<span class="keywordtype">DataAssemblyDomain</span>&gt;</div><div class="line">  &lt;/<span class="keywordtype">StringVectorProperty</span>&gt;</div><div class="line"></div><div class="line">  &lt;<span class="keywordtype">PropertyGroup</span> <span class="keyword">label</span>=<span class="stringliteral">&quot;Blocks&quot;</span> <span class="keyword">panel_widget</span>=<span class="stringliteral">&quot;DataAssemblyEditor&quot;</span>&gt;</div><div class="line">    &lt;<span class="keywordtype">Property</span> <span class="keyword">name</span>=<span class="stringliteral">&quot;Assembly&quot;</span>  <span class="keyword">function</span>=<span class="stringliteral">&quot;ActiveAssembly&quot;</span> /&gt;</div><div class="line">    &lt;<span class="keywordtype">Property</span> <span class="keyword">name</span>=<span class="stringliteral">&quot;Selectors&quot;</span> <span class="keyword">function</span>=<span class="stringliteral">&quot;Selectors&quot;</span> /&gt;</div><div class="line">    &lt;<span class="keywordtype">Property</span> <span class="keyword">name</span>=<span class="stringliteral">&quot;BlockColor&quot;</span> <span class="keyword">function</span>=<span class="stringliteral">&quot;Colors&quot;</span> /&gt;</div><div class="line">    &lt;<span class="keywordtype">Property</span> <span class="keyword">name</span>=<span class="stringliteral">&quot;BlockOpacity&quot;</span> <span class="keyword">function</span>=<span class="stringliteral">&quot;Opacities&quot;</span> /&gt;</div><div class="line">  &lt;/<span class="keywordtype">PropertyGroup</span>&gt;</div><div class="line">&lt;/<span class="keywordtype">Proxy</span>&gt;</div></div><!-- fragment --><p>This widget is primarily intended for <a class="el" href="classvtkSMDataAssemblyDomain.html" title="a domain that uses vtkDataAssembly ">vtkSMDataAssemblyDomain</a>. However, to support legacy code that uses <a class="el" href="classvtkSMCompositeTreeDomain.html" title="domain used to restrict an vtkSMIntVectorProperty values to valid flat-index for a vtkCompositeDataSe...">vtkSMCompositeTreeDomain</a> instead, we add support for <a class="el" href="classvtkSMCompositeTreeDomain.html" title="domain used to restrict an vtkSMIntVectorProperty values to valid flat-index for a vtkCompositeDataSe...">vtkSMCompositeTreeDomain</a> as well. It is required, however, that all properties in the group to consistently use <a class="el" href="classvtkSMDataAssemblyDomain.html" title="a domain that uses vtkDataAssembly ">vtkSMDataAssemblyDomain</a> or <a class="el" href="classvtkSMCompositeTreeDomain.html" title="domain used to restrict an vtkSMIntVectorProperty values to valid flat-index for a vtkCompositeDataSe...">vtkSMCompositeTreeDomain</a> and mixing is not allowed.</p>
+<h1><a class="anchor" id="Hints"></a>
+Hints</h1>
+<p>This widget supports hints that can be added to the group (or property). For example:</p>
+<div class="fragment"><div class="line">&lt;<span class="keywordtype">PropertyGroup</span> <span class="keyword">label</span>=<span class="stringliteral">&quot;AssemblyOnly&quot;</span> <span class="keyword">panel_widget</span>=<span class="stringliteral">&quot;DataAssemblyEditor&quot;</span>&gt;</div><div class="line">   &lt;<span class="keywordtype">Property</span> <span class="keyword">name</span>=<span class="stringliteral">&quot;Assembly&quot;</span>  <span class="keyword">function</span>=<span class="stringliteral">&quot;ActiveAssembly&quot;</span> /&gt;</div><div class="line">   &lt;<span class="keywordtype">Property</span> <span class="keyword">name</span>=<span class="stringliteral">&quot;Selectors&quot;</span> <span class="keyword">function</span>=<span class="stringliteral">&quot;Selectors&quot;</span> /&gt;</div><div class="line">   &lt;<span class="keywordtype">Hints</span>&gt;</div><div class="line">     &lt;<span class="keywordtype">DataAssemblyPropertyWidget</span></div><div class="line">       <span class="keyword">is_checkable</span>=<span class="stringliteral">&quot;0&quot;</span></div><div class="line">       <span class="keyword">use_inputname_as_header</span>=<span class="stringliteral">&quot;1&quot;</span> /&gt;</div><div class="line">   &lt;/<span class="keywordtype">Hints</span>&gt;</div><div class="line"> &lt;/<span class="keywordtype">PropertyGroup</span>&gt;</div></div><!-- fragment --><p><code>is_checkable</code> can be set to <code>0</code> to avoid showing checkboxes for items in the tree.</p>
+<p><code>use_inputname_as_header</code>, when set to <code>1</code> causes the widget to use the input's registration name as the header for the tree widget rather than the XML label for the group (or property) attached to the widget. </p>
 
-<p class="definition">Definition at line <a class="el" href="pqDataAssemblyPropertyWidget_8h_source.html#l00051">51</a> of file <a class="el" href="pqDataAssemblyPropertyWidget_8h_source.html">pqDataAssemblyPropertyWidget.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="pqDataAssemblyPropertyWidget_8h_source.html#l00182">182</a> of file <a class="el" href="pqDataAssemblyPropertyWidget_8h_source.html">pqDataAssemblyPropertyWidget.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a856bcdde88f445cc6a07dd333bf430ed"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a856bcdde88f445cc6a07dd333bf430ed">&#9670;&nbsp;</a></span>pqDataAssemblyPropertyWidget() <span class="overload">[1/2]</span></h2>
@@ -290,14 +354,14 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a718d62375e5469eb22492b656fbe8963"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a718d62375e5469eb22492b656fbe8963">&#9670;&nbsp;</a></span>setChosenPaths() <span class="overload">[1/2]</span></h2>
+<a id="ad66bd367ba0b0978647657727b6f815f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad66bd367ba0b0978647657727b6f815f">&#9670;&nbsp;</a></span>setSelectors() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void pqDataAssemblyPropertyWidget::setChosenPaths </td>
+          <td class="memname">void pqDataAssemblyPropertyWidget::setSelectors </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> QStringList &amp;&#160;</td>
           <td class="paramname"><em>paths</em></td><td>)</td>
@@ -310,14 +374,14 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="a06bd3136cb4563bd77475d37bdf54f0f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a06bd3136cb4563bd77475d37bdf54f0f">&#9670;&nbsp;</a></span>chosenPaths()</h2>
+<a id="ab1c101fd52e3fd077f0ddc5a7a75536c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab1c101fd52e3fd077f0ddc5a7a75536c">&#9670;&nbsp;</a></span>selectors()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> QStringList&amp; pqDataAssemblyPropertyWidget::chosenPaths </td>
+          <td class="memname"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> QStringList&amp; pqDataAssemblyPropertyWidget::selectors </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -329,14 +393,14 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="a9193b3a8fad78a65c7a283acb3d42336"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9193b3a8fad78a65c7a283acb3d42336">&#9670;&nbsp;</a></span>setChosenPaths() <span class="overload">[2/2]</span></h2>
+<a id="a923cc6a0b8c3d1831e4280c01ea17990"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a923cc6a0b8c3d1831e4280c01ea17990">&#9670;&nbsp;</a></span>setSelectors() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void pqDataAssemblyPropertyWidget::setChosenPaths </td>
+          <td class="memname">void pqDataAssemblyPropertyWidget::setSelectors </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> QList&lt; QVariant &gt; &amp;&#160;</td>
           <td class="paramname"><em>paths</em></td><td>)</td>
@@ -349,14 +413,14 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="a5e87a5e1760db5c014c9a89e5b941e56"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5e87a5e1760db5c014c9a89e5b941e56">&#9670;&nbsp;</a></span>chosenPathsAsVariantList()</h2>
+<a id="a2223af00e06ec8a199a854d7cbe94229"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2223af00e06ec8a199a854d7cbe94229">&#9670;&nbsp;</a></span>selectorsAsVariantList()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">QList&lt;QVariant&gt; pqDataAssemblyPropertyWidget::chosenPathsAsVariantList </td>
+          <td class="memname">QList&lt;QVariant&gt; pqDataAssemblyPropertyWidget::selectorsAsVariantList </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -368,8 +432,211 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="a514f8768e4bd7e7c4123716fe8681018"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a514f8768e4bd7e7c4123716fe8681018">&#9670;&nbsp;</a></span>chosenPathsChanged</h2>
+<a id="aa5993233ebb544d45a634fa4bc98a462"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa5993233ebb544d45a634fa4bc98a462">&#9670;&nbsp;</a></span>setCompositeIndices()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void pqDataAssemblyPropertyWidget::setCompositeIndices </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> QList&lt; QVariant &gt; &amp;&#160;</td>
+          <td class="paramname"><em>values</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>API for getting/settings composite indices. </p>
+
+</div>
+</div>
+<a id="a131554577457f0b9322dc925ddb0bb4e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a131554577457f0b9322dc925ddb0bb4e">&#9670;&nbsp;</a></span>compositeIndicesAsVariantList()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QList&lt;QVariant&gt; pqDataAssemblyPropertyWidget::compositeIndicesAsVariantList </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>API for getting/settings composite indices. </p>
+
+</div>
+</div>
+<a id="a5c62857af03568872ac4943c33df8042"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5c62857af03568872ac4943c33df8042">&#9670;&nbsp;</a></span>setCompositeIndexColors()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void pqDataAssemblyPropertyWidget::setCompositeIndexColors </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> QList&lt; QVariant &gt; &amp;&#160;</td>
+          <td class="paramname"><em>values</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>API to get/set colors. </p>
+<p>Colors are specified either as a list of selectors followed by corresponding RGB color or list of composite indices followed by the color. </p>
+
+</div>
+</div>
+<a id="af32a7c3974effed2ed4e6fb1a9489a0d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af32a7c3974effed2ed4e6fb1a9489a0d">&#9670;&nbsp;</a></span>compositeIndexColorsAsVariantList()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QList&lt;QVariant&gt; pqDataAssemblyPropertyWidget::compositeIndexColorsAsVariantList </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>API to get/set colors. </p>
+<p>Colors are specified either as a list of selectors followed by corresponding RGB color or list of composite indices followed by the color. </p>
+
+</div>
+</div>
+<a id="aa8cb02ed9feb16b6e08044849631e740"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa8cb02ed9feb16b6e08044849631e740">&#9670;&nbsp;</a></span>setSelectorColors()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void pqDataAssemblyPropertyWidget::setSelectorColors </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> QList&lt; QVariant &gt; &amp;&#160;</td>
+          <td class="paramname"><em>values</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>API to get/set colors. </p>
+<p>Colors are specified either as a list of selectors followed by corresponding RGB color or list of composite indices followed by the color. </p>
+
+</div>
+</div>
+<a id="a0b77a51f30149c2128cbc21a5e5a3e88"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0b77a51f30149c2128cbc21a5e5a3e88">&#9670;&nbsp;</a></span>selectorColorsAsVariantList()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QList&lt;QVariant&gt; pqDataAssemblyPropertyWidget::selectorColorsAsVariantList </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>API to get/set colors. </p>
+<p>Colors are specified either as a list of selectors followed by corresponding RGB color or list of composite indices followed by the color. </p>
+
+</div>
+</div>
+<a id="aced9b2afac119f999246db5a539b1efd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aced9b2afac119f999246db5a539b1efd">&#9670;&nbsp;</a></span>setCompositeIndexOpacities()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void pqDataAssemblyPropertyWidget::setCompositeIndexOpacities </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> QList&lt; QVariant &gt; &amp;&#160;</td>
+          <td class="paramname"><em>values</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>API to get/set opacities. </p>
+<p>Opacities are specified either as a list of selectors followed by corresponding opacity or list of composite indices followed by the opacity. </p>
+
+</div>
+</div>
+<a id="a1b7033f8396f82c5cd9e0f537574ad98"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1b7033f8396f82c5cd9e0f537574ad98">&#9670;&nbsp;</a></span>compositeIndexOpacitiesAsVariantList()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QList&lt;QVariant&gt; pqDataAssemblyPropertyWidget::compositeIndexOpacitiesAsVariantList </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>API to get/set opacities. </p>
+<p>Opacities are specified either as a list of selectors followed by corresponding opacity or list of composite indices followed by the opacity. </p>
+
+</div>
+</div>
+<a id="a2720509a9d8f6b633afdd0a23df20443"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2720509a9d8f6b633afdd0a23df20443">&#9670;&nbsp;</a></span>setSelectorOpacities()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void pqDataAssemblyPropertyWidget::setSelectorOpacities </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> QList&lt; QVariant &gt; &amp;&#160;</td>
+          <td class="paramname"><em>values</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>API to get/set opacities. </p>
+<p>Opacities are specified either as a list of selectors followed by corresponding opacity or list of composite indices followed by the opacity. </p>
+
+</div>
+</div>
+<a id="a7d16dc1a48e68839e316f0cccf0f2020"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7d16dc1a48e68839e316f0cccf0f2020">&#9670;&nbsp;</a></span>selectorOpacitiesAsVariantList()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QList&lt;QVariant&gt; pqDataAssemblyPropertyWidget::selectorOpacitiesAsVariantList </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>API to get/set opacities. </p>
+<p>Opacities are specified either as a list of selectors followed by corresponding opacity or list of composite indices followed by the opacity. </p>
+
+</div>
+</div>
+<a id="a5c016b03a2d4da5c9ba4b9a087ac6c3a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5c016b03a2d4da5c9ba4b9a087ac6c3a">&#9670;&nbsp;</a></span>updateWidget()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -378,7 +645,85 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void pqDataAssemblyPropertyWidget::chosenPathsChanged </td>
+          <td class="memname">void pqDataAssemblyPropertyWidget::updateWidget </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>showing_advanced_properties</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Reimplemented from <a class="el" href="classpqPropertyWidget.html#ae626dfe5752b1c0e8c422a99e5a3d932">pqPropertyWidget</a>.</p>
+
+</div>
+</div>
+<a id="a1e5d0be57dd76f9532796086fec6f2b3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1e5d0be57dd76f9532796086fec6f2b3">&#9670;&nbsp;</a></span>selectorsChanged</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void pqDataAssemblyPropertyWidget::selectorsChanged </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aa0f3ea22051d06ec8c7f2bedc65018ec"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa0f3ea22051d06ec8c7f2bedc65018ec">&#9670;&nbsp;</a></span>colorsChanged</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void pqDataAssemblyPropertyWidget::colorsChanged </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ac2e4a53327ee5ec806a3691276df7ce2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac2e4a53327ee5ec806a3691276df7ce2">&#9670;&nbsp;</a></span>opacitiesChanged</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void pqDataAssemblyPropertyWidget::opacitiesChanged </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -394,8 +739,8 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Property Documentation</h2>
-<a id="a1d5afb719afaaa89207ad55c4a9126d4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1d5afb719afaaa89207ad55c4a9126d4">&#9670;&nbsp;</a></span>chosenPaths</h2>
+<a id="a1011378ce0d7feff0dd9bebae3f54bbf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1011378ce0d7feff0dd9bebae3f54bbf">&#9670;&nbsp;</a></span>selectors</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -404,7 +749,7 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">QList&lt;QVariant&gt; pqDataAssemblyPropertyWidget::chosenPaths</td>
+          <td class="memname">QList&lt;QVariant&gt; pqDataAssemblyPropertyWidget::selectors</td>
         </tr>
       </table>
   </td>
@@ -414,7 +759,142 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="pqDataAssemblyPropertyWidget_8h_source.html#l00056">56</a> of file <a class="el" href="pqDataAssemblyPropertyWidget_8h_source.html">pqDataAssemblyPropertyWidget.h</a>.</p>
+<p>Property with selectors for checked nodes in the hierarchy. </p>
+
+<p class="definition">Definition at line <a class="el" href="pqDataAssemblyPropertyWidget_8h_source.html#l00191">191</a> of file <a class="el" href="pqDataAssemblyPropertyWidget_8h_source.html">pqDataAssemblyPropertyWidget.h</a>.</p>
+
+</div>
+</div>
+<a id="a2c1b54131ecfe55f63c4fb95b36ce1a7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2c1b54131ecfe55f63c4fb95b36ce1a7">&#9670;&nbsp;</a></span>selectorColors</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QList&lt;QVariant&gt; pqDataAssemblyPropertyWidget::selectorColors</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">read</span><span class="mlabel">write</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Property with selectors and associated colors (as RGB). </p>
+
+<p class="definition">Definition at line <a class="el" href="pqDataAssemblyPropertyWidget_8h_source.html#l00191">191</a> of file <a class="el" href="pqDataAssemblyPropertyWidget_8h_source.html">pqDataAssemblyPropertyWidget.h</a>.</p>
+
+</div>
+</div>
+<a id="ad477964fe40fb94e17ccaa8de8515625"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad477964fe40fb94e17ccaa8de8515625">&#9670;&nbsp;</a></span>selectorOpacities</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QList&lt;QVariant&gt; pqDataAssemblyPropertyWidget::selectorOpacities</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">read</span><span class="mlabel">write</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Property with selectors and associated opacities. </p>
+
+<p class="definition">Definition at line <a class="el" href="pqDataAssemblyPropertyWidget_8h_source.html#l00197">197</a> of file <a class="el" href="pqDataAssemblyPropertyWidget_8h_source.html">pqDataAssemblyPropertyWidget.h</a>.</p>
+
+</div>
+</div>
+<a id="a6c8d121bf88b8d7351c3f2d691466d81"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6c8d121bf88b8d7351c3f2d691466d81">&#9670;&nbsp;</a></span>compositeIndices</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QList&lt;QVariant&gt; pqDataAssemblyPropertyWidget::compositeIndices</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">read</span><span class="mlabel">write</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>These are similar to the selector-based variants, except, instead of a selector, the composite index is used. </p>
+<p>This is used when supported vtkSMCompositeTreeDomain-based properties. </p>
+
+<p class="definition">Definition at line <a class="el" href="pqDataAssemblyPropertyWidget_8h_source.html#l00203">203</a> of file <a class="el" href="pqDataAssemblyPropertyWidget_8h_source.html">pqDataAssemblyPropertyWidget.h</a>.</p>
+
+</div>
+</div>
+<a id="ace80892984fd61514e0ce15be88311b0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ace80892984fd61514e0ce15be88311b0">&#9670;&nbsp;</a></span>compositeIndexOpacities</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QList&lt;QVariant&gt; pqDataAssemblyPropertyWidget::compositeIndexOpacities</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">read</span><span class="mlabel">write</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>These are similar to the selector-based variants, except, instead of a selector, the composite index is used. </p>
+<p>This is used when supported vtkSMCompositeTreeDomain-based properties. </p>
+
+<p class="definition">Definition at line <a class="el" href="pqDataAssemblyPropertyWidget_8h_source.html#l00212">212</a> of file <a class="el" href="pqDataAssemblyPropertyWidget_8h_source.html">pqDataAssemblyPropertyWidget.h</a>.</p>
+
+</div>
+</div>
+<a id="a27139bbeea1ddaa48b1a6194e314956f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a27139bbeea1ddaa48b1a6194e314956f">&#9670;&nbsp;</a></span>compositeIndexColors</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QList&lt;QVariant&gt; pqDataAssemblyPropertyWidget::compositeIndexColors</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">read</span><span class="mlabel">write</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>These are similar to the selector-based variants, except, instead of a selector, the composite index is used. </p>
+<p>This is used when supported vtkSMCompositeTreeDomain-based properties. </p>
+
+<p class="definition">Definition at line <a class="el" href="pqDataAssemblyPropertyWidget_8h_source.html#l00214">214</a> of file <a class="el" href="pqDataAssemblyPropertyWidget_8h_source.html">pqDataAssemblyPropertyWidget.h</a>.</p>
 
 </div>
 </div>
@@ -427,7 +907,7 @@ Additional Inherited Members</h2></td></tr>
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.13 on Tue Jan 26 2021
+</a> 1.8.13 on Sat May 15 2021
 </small></address>
 <!-- KW:BEGIN -->
 <!-- this adds the version selection header -->

@@ -125,10 +125,10 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a1d3df9d89b1f6393a290a01c5b293c4b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr><td colspan="2"><div class="groupHeader"></div></td></tr>
 <tr class="memitem:a091587906e61b9fbf616975d7a0dcd9e"><td class="memItemLeft" align="right" valign="top">virtual <a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/classvtkMultiProcessController.html">vtkMultiProcessController</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkIceTCompositePass.html#a091587906e61b9fbf616975d7a0dcd9e">GetController</a> ()</td></tr>
-<tr class="memdesc:a091587906e61b9fbf616975d7a0dcd9e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Controller If it is NULL, nothing will be rendered and a warning will be emitted.  <a href="#a091587906e61b9fbf616975d7a0dcd9e">More...</a><br /></td></tr>
+<tr class="memdesc:a091587906e61b9fbf616975d7a0dcd9e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Controller If it is nullptr, nothing will be rendered and a warning will be emitted.  <a href="#a091587906e61b9fbf616975d7a0dcd9e">More...</a><br /></td></tr>
 <tr class="separator:a091587906e61b9fbf616975d7a0dcd9e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa13de3165470a47a12b349ccb7e3cc05"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkIceTCompositePass.html#aa13de3165470a47a12b349ccb7e3cc05">SetController</a> (<a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/classvtkMultiProcessController.html">vtkMultiProcessController</a> *controller)</td></tr>
-<tr class="memdesc:aa13de3165470a47a12b349ccb7e3cc05"><td class="mdescLeft">&#160;</td><td class="mdescRight">Controller If it is NULL, nothing will be rendered and a warning will be emitted.  <a href="#aa13de3165470a47a12b349ccb7e3cc05">More...</a><br /></td></tr>
+<tr class="memdesc:aa13de3165470a47a12b349ccb7e3cc05"><td class="mdescLeft">&#160;</td><td class="mdescRight">Controller If it is nullptr, nothing will be rendered and a warning will be emitted.  <a href="#aa13de3165470a47a12b349ccb7e3cc05">More...</a><br /></td></tr>
 <tr class="separator:aa13de3165470a47a12b349ccb7e3cc05"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr><td colspan="2"><div class="groupHeader"></div></td></tr>
 <tr class="memitem:af5a0e3c649a76a817e994c5e51a1e9cb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkIceTCompositePass.html#af5a0e3c649a76a817e994c5e51a1e9cb">SetRenderPass</a> (<a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/classvtkRenderPass.html">vtkRenderPass</a> *)</td></tr>
@@ -868,8 +868,8 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Controller If it is NULL, nothing will be rendered and a warning will be emitted. </p>
-<p>Initial value is a NULL pointer. </p>
+<p>Controller If it is nullptr, nothing will be rendered and a warning will be emitted. </p>
+<p>Initial value is a nullptr pointer. </p>
 
 </div>
 </div>
@@ -897,8 +897,8 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Controller If it is NULL, nothing will be rendered and a warning will be emitted. </p>
-<p>Initial value is a NULL pointer. </p>
+<p>Controller If it is nullptr, nothing will be rendered and a warning will be emitted. </p>
+<p>Initial value is a nullptr pointer. </p>
 
 </div>
 </div>
@@ -919,7 +919,7 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Get/Set the render pass used to do the actual rendering. </p>
-<p>The result of this delete pass is what gets composited using IceT. Initial value is a NULL pointer. </p>
+<p>The result of this delete pass is what gets composited using IceT. Initial value is a nullptr pointer. </p>
 
 </div>
 </div>
@@ -947,7 +947,7 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Get/Set the render pass used to do the actual rendering. </p>
-<p>The result of this delete pass is what gets composited using IceT. Initial value is a NULL pointer. </p>
+<p>The result of this delete pass is what gets composited using IceT. Initial value is a nullptr pointer. </p>
 
 </div>
 </div>
@@ -1467,7 +1467,7 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>partition ordering that gives processes ordering. </p>
-<p>Initial value is a NULL pointer. This is used only when UseOrderedCompositing is true. </p>
+<p>Initial value is a nullptr pointer. This is used only when UseOrderedCompositing is true. </p>
 
 </div>
 </div>
@@ -1496,7 +1496,7 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>partition ordering that gives processes ordering. </p>
-<p>Initial value is a NULL pointer. This is used only when UseOrderedCompositing is true. </p>
+<p>Initial value is a nullptr pointer. This is used only when UseOrderedCompositing is true. </p>
 
 </div>
 </div>
@@ -1763,7 +1763,7 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Provides access to the last rendered depth-buffer, if any. </p>
-<p>May return NULL if depth buffer was not composited and available on the current rank. </p>
+<p>May return nullptr if depth buffer was not composited and available on the current rank. </p>
 
 </div>
 </div>
@@ -1811,7 +1811,7 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Provides access to the last rendered float image in <a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/classvtkValuePass.html">vtkValuePass</a>, if any. </p>
-<p>May return NULL if a float image was not composited and is not available on the current rank. </p>
+<p>May return nullptr if a float image was not composited and is not available on the current rank. </p>
 
 </div>
 </div>
@@ -2625,7 +2625,7 @@ Protected Attributes</h2></td></tr>
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.13 on Tue Jan 26 2021
+</a> 1.8.13 on Sat May 15 2021
 </small></address>
 <!-- KW:BEGIN -->
 <!-- this adds the version selection header -->

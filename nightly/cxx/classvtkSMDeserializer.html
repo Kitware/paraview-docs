@@ -265,9 +265,9 @@ Protected Member Functions</h2></td></tr>
 <tr class="memitem:a18933fa498a9c107d3e15e8fae7b881e"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classvtkSMProxy.html">vtkSMProxy</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkSMDeserializer.html#a18933fa498a9c107d3e15e8fae7b881e">NewProxy</a> (vtkTypeUInt32 id, <a class="el" href="classvtkSMProxyLocator.html">vtkSMProxyLocator</a> *locator)=0</td></tr>
 <tr class="memdesc:a18933fa498a9c107d3e15e8fae7b881e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a new proxy with the id if possible.  <a href="#a18933fa498a9c107d3e15e8fae7b881e">More...</a><br /></td></tr>
 <tr class="separator:a18933fa498a9c107d3e15e8fae7b881e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa55c8c6e9a576eb07ec3bbfaca0058a4"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classvtkSMProxy.html">vtkSMProxy</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkSMDeserializer.html#aa55c8c6e9a576eb07ec3bbfaca0058a4">CreateProxy</a> (<a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *xmlgroup, <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *xmlname, <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *subProxyName=NULL)</td></tr>
-<tr class="memdesc:aa55c8c6e9a576eb07ec3bbfaca0058a4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a new proxy of the given group and name.  <a href="#aa55c8c6e9a576eb07ec3bbfaca0058a4">More...</a><br /></td></tr>
-<tr class="separator:aa55c8c6e9a576eb07ec3bbfaca0058a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa9c04c048ceba401ff64cf7c1d50ebe3"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classvtkSMProxy.html">vtkSMProxy</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkSMDeserializer.html#aa9c04c048ceba401ff64cf7c1d50ebe3">CreateProxy</a> (<a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *xmlgroup, <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *xmlname, <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *subProxyName=nullptr)</td></tr>
+<tr class="memdesc:aa9c04c048ceba401ff64cf7c1d50ebe3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a new proxy of the given group and name.  <a href="#aa9c04c048ceba401ff64cf7c1d50ebe3">More...</a><br /></td></tr>
+<tr class="separator:aa9c04c048ceba401ff64cf7c1d50ebe3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_methods_classvtkObject"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_classvtkObject')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="http://www.vtk.org/doc/nightly/html/classvtkObject.html">vtkObject</a></td></tr>
 <tr class="memitem:ad3b6657d8e95fc2baf05fca466601397 inherit pro_methods_classvtkObject"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/classvtkObject.html#ad3b6657d8e95fc2baf05fca466601397">vtkObject</a> ()</td></tr>
 <tr class="separator:ad3b6657d8e95fc2baf05fca466601397 inherit pro_methods_classvtkObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -620,7 +620,7 @@ Friends</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Provides access to the session. </p>
-<p>This is same as calling this-&gt;<a class="el" href="classvtkSMDeserializer.html#aa62d317dc4dcb0e60b2389fc1f091a50" title="Get/Set the proxy manager on which this deserializer is expected to operate. ">GetSessionProxyManager()</a>-&gt;<a class="el" href="classvtkSMDeserializer.html#a14f1d54d1bf1ecfce064a3d279d86e3d" title="Provides access to the session. ">GetSession()</a> (with NULL checks). </p>
+<p>This is same as calling this-&gt;<a class="el" href="classvtkSMDeserializer.html#aa62d317dc4dcb0e60b2389fc1f091a50" title="Get/Set the proxy manager on which this deserializer is expected to operate. ">GetSessionProxyManager()</a>-&gt;<a class="el" href="classvtkSMDeserializer.html#a14f1d54d1bf1ecfce064a3d279d86e3d" title="Provides access to the session. ">GetSession()</a> (with nullptr checks). </p>
 
 </div>
 </div>
@@ -664,8 +664,8 @@ Friends</h2></td></tr>
 
 </div>
 </div>
-<a id="aa55c8c6e9a576eb07ec3bbfaca0058a4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa55c8c6e9a576eb07ec3bbfaca0058a4">&#9670;&nbsp;</a></span>CreateProxy()</h2>
+<a id="aa9c04c048ceba401ff64cf7c1d50ebe3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa9c04c048ceba401ff64cf7c1d50ebe3">&#9670;&nbsp;</a></span>CreateProxy()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -689,7 +689,7 @@ Friends</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *&#160;</td>
-          <td class="paramname"><em>subProxyName</em> = <code>NULL</code>&#160;</td>
+          <td class="paramname"><em>subProxyName</em> = <code>nullptr</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -707,7 +707,7 @@ Friends</h2></td></tr>
 <p>Create a new proxy of the given group and name. </p>
 <p>Default implementation simply asks the proxy manager to create a new proxy of the requested type. </p>
 
-<p>Reimplemented in <a class="el" href="classvtkSMStateLoader.html#ac85c45dcadd108920e9b11faa7dface4">vtkSMStateLoader</a>, and <a class="el" href="classvtkSMDeserializerXML.html#adf1c7eb266aabc62888794980ba1bbdb">vtkSMDeserializerXML</a>.</p>
+<p>Reimplemented in <a class="el" href="classvtkSMStateLoader.html#a1045ff9571f2d5b2620fb42444348cd5">vtkSMStateLoader</a>, and <a class="el" href="classvtkSMDeserializerXML.html#a556096a6fb8a16ace0e9f210f9b756b5">vtkSMDeserializerXML</a>.</p>
 
 </div>
 </div>
@@ -770,7 +770,7 @@ Friends</h2></td></tr>
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.13 on Tue Jan 26 2021
+</a> 1.8.13 on Sat May 15 2021
 </small></address>
 <!-- KW:BEGIN -->
 <!-- this adds the version selection header -->

@@ -35,8 +35,10 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
+<a href="#pub-types">Public Types</a> &#124;
 <a href="#signals">Signals</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pub-static-methods">Static Public Member Functions</a> &#124;
 <a href="classpqDataAssemblyTreeModel-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">pqDataAssemblyTreeModel Class Reference</div>  </div>
@@ -50,6 +52,15 @@ $(function() {
 
 <p>Inherits QAbstractItemModel.</p>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
+Public Types</h2></td></tr>
+<tr class="memitem:a2524f9378ec172cb64becc165a5be2ee"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpqDataAssemblyTreeModel.html#a2524f9378ec172cb64becc165a5be2ee">RoleProperties</a> { <a class="el" href="classpqDataAssemblyTreeModel.html#a2524f9378ec172cb64becc165a5be2eeaba6e2c598698a6db991d2226e3031d31">Standard</a>, 
+<a class="el" href="classpqDataAssemblyTreeModel.html#a2524f9378ec172cb64becc165a5be2eea64e4ecd8688dd3dd4247e3b894939551">Inherited</a>, 
+<a class="el" href="classpqDataAssemblyTreeModel.html#a2524f9378ec172cb64becc165a5be2eea82e80ed031b70b8ff85dd6e967b2b566">InheritedUntilOverridden</a>
+ }<tr class="memdesc:a2524f9378ec172cb64becc165a5be2ee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Supported role properties.  <a href="classpqDataAssemblyTreeModel.html#a2524f9378ec172cb64becc165a5be2ee">More...</a><br /></td></tr>
+</td></tr>
+<tr class="separator:a2524f9378ec172cb64becc165a5be2ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="signals"></a>
 Signals</h2></td></tr>
 <tr class="memitem:a554a65c3949fcfc8f68045118025f314"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpqDataAssemblyTreeModel.html#a554a65c3949fcfc8f68045118025f314">modelDataChanged</a> (<a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkShaderProgram2_8h.html#a61569f2965b7a369eb10b6d75d410d11">int</a> role)</td></tr>
@@ -75,12 +86,33 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a327e953af7b417cd13cc73092e3bf06d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get whether the model is user-checkable.  <a href="#a327e953af7b417cd13cc73092e3bf06d">More...</a><br /></td></tr>
 <tr class="separator:a327e953af7b417cd13cc73092e3bf06d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr><td colspan="2"><div class="groupHeader"></div></td></tr>
+<tr class="memitem:ab8cbe984ab6f3ae1e6b3abce441adfba"><td class="memItemLeft" align="right" valign="top"><a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkShaderProgram2_8h.html#a61569f2965b7a369eb10b6d75d410d11">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpqDataAssemblyTreeModel.html#ab8cbe984ab6f3ae1e6b3abce441adfba">nodeId</a> (<a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> QModelIndex &amp;idx) <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a></td></tr>
+<tr class="memdesc:ab8cbe984ab6f3ae1e6b3abce441adfba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Given a QModelIndex, returns the vtkDataAssembly node id, if any.  <a href="#ab8cbe984ab6f3ae1e6b3abce441adfba">More...</a><br /></td></tr>
+<tr class="separator:ab8cbe984ab6f3ae1e6b3abce441adfba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5dfb41673aff05555a9636be1566b3c8"><td class="memItemLeft" align="right" valign="top">QList&lt; <a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkShaderProgram2_8h.html#a61569f2965b7a369eb10b6d75d410d11">int</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpqDataAssemblyTreeModel.html#a5dfb41673aff05555a9636be1566b3c8">nodeId</a> (<a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> QModelIndexList &amp;idxes) <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a></td></tr>
+<tr class="memdesc:a5dfb41673aff05555a9636be1566b3c8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Given a QModelIndex, returns the vtkDataAssembly node id, if any.  <a href="#a5dfb41673aff05555a9636be1566b3c8">More...</a><br /></td></tr>
+<tr class="separator:a5dfb41673aff05555a9636be1566b3c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr><td colspan="2"><div class="groupHeader"></div></td></tr>
 <tr class="memitem:ae6013d3286ec7b02d7180867ff5e2e84"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpqDataAssemblyTreeModel.html#ae6013d3286ec7b02d7180867ff5e2e84">setCheckedNodes</a> (<a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> QStringList &amp;paths)</td></tr>
 <tr class="memdesc:ae6013d3286ec7b02d7180867ff5e2e84"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get/Set the check state for Qt::Checked for nodes selected using the path names specified.  <a href="#ae6013d3286ec7b02d7180867ff5e2e84">More...</a><br /></td></tr>
 <tr class="separator:ae6013d3286ec7b02d7180867ff5e2e84"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a927a4e8403e73dc97f22850fb4786783"><td class="memItemLeft" align="right" valign="top">QStringList&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpqDataAssemblyTreeModel.html#a927a4e8403e73dc97f22850fb4786783">checkedNodes</a> () <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a></td></tr>
 <tr class="memdesc:a927a4e8403e73dc97f22850fb4786783"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get/Set the check state for Qt::Checked for nodes selected using the path names specified.  <a href="#a927a4e8403e73dc97f22850fb4786783">More...</a><br /></td></tr>
 <tr class="separator:a927a4e8403e73dc97f22850fb4786783"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr><td colspan="2"><div class="groupHeader"></div></td></tr>
+<tr class="memitem:ad0c52bf139a19b2bd7f1e3c726161b4f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpqDataAssemblyTreeModel.html#ad0c52bf139a19b2bd7f1e3c726161b4f">setRoleProperty</a> (<a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkShaderProgram2_8h.html#a61569f2965b7a369eb10b6d75d410d11">int</a> role, <a class="el" href="classpqDataAssemblyTreeModel.html#a2524f9378ec172cb64becc165a5be2ee">RoleProperties</a> property)</td></tr>
+<tr class="memdesc:ad0c52bf139a19b2bd7f1e3c726161b4f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set properties for custom roles.  <a href="#ad0c52bf139a19b2bd7f1e3c726161b4f">More...</a><br /></td></tr>
+<tr class="separator:ad0c52bf139a19b2bd7f1e3c726161b4f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4e67de0e2273e8cb455568bbe830a0ce"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classpqDataAssemblyTreeModel.html#a2524f9378ec172cb64becc165a5be2ee">RoleProperties</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpqDataAssemblyTreeModel.html#a4e67de0e2273e8cb455568bbe830a0ce">roleProperty</a> (<a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkShaderProgram2_8h.html#a61569f2965b7a369eb10b6d75d410d11">int</a> role) <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a></td></tr>
+<tr class="memdesc:a4e67de0e2273e8cb455568bbe830a0ce"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set properties for custom roles.  <a href="#a4e67de0e2273e8cb455568bbe830a0ce">More...</a><br /></td></tr>
+<tr class="separator:a4e67de0e2273e8cb455568bbe830a0ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr><td colspan="2"><div class="groupHeader"></div></td></tr>
+<tr class="memitem:afdba2bed14a956e5c2b8986f8e473f65"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpqDataAssemblyTreeModel.html#afdba2bed14a956e5c2b8986f8e473f65">setData</a> (<a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> QList&lt; QPair&lt; QString, QVariant &gt; &gt; &amp;values, <a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkShaderProgram2_8h.html#a61569f2965b7a369eb10b6d75d410d11">int</a> role)</td></tr>
+<tr class="memdesc:afdba2bed14a956e5c2b8986f8e473f65"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get/Set the values for a specific role using selectors.  <a href="#afdba2bed14a956e5c2b8986f8e473f65">More...</a><br /></td></tr>
+<tr class="separator:afdba2bed14a956e5c2b8986f8e473f65"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a36f85560d76e08d5a6943ead7a9df60d"><td class="memItemLeft" align="right" valign="top">QList&lt; QPair&lt; QString, QVariant &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpqDataAssemblyTreeModel.html#a36f85560d76e08d5a6943ead7a9df60d">data</a> (<a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkShaderProgram2_8h.html#a61569f2965b7a369eb10b6d75d410d11">int</a> role) <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a></td></tr>
+<tr class="memdesc:a36f85560d76e08d5a6943ead7a9df60d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get/Set the values for a specific role using selectors.  <a href="#a36f85560d76e08d5a6943ead7a9df60d">More...</a><br /></td></tr>
+<tr class="separator:a36f85560d76e08d5a6943ead7a9df60d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr><td colspan="2"><div class="groupHeader"></div></td></tr>
 <tr class="memitem:a7ee4185e095c8011c0b472deff740b81"><td class="memItemLeft" align="right" valign="top"><a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkShaderProgram2_8h.html#a61569f2965b7a369eb10b6d75d410d11">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpqDataAssemblyTreeModel.html#a7ee4185e095c8011c0b472deff740b81">columnCount</a> (<a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> QModelIndex &amp;<a class="el" href="classpqDataAssemblyTreeModel.html#a31688cc479b6c51bd4be55595b858738">parent</a>=QModelIndex()) <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> override</td></tr>
 <tr class="memdesc:a7ee4185e095c8011c0b472deff740b81"><td class="mdescLeft">&#160;</td><td class="mdescRight">QAbstractItemModel interface implementation.  <a href="#a7ee4185e095c8011c0b472deff740b81">More...</a><br /></td></tr>
@@ -103,13 +135,45 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ae3f5b683a64a176f84f5e21cf053b86b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpqDataAssemblyTreeModel.html#ae3f5b683a64a176f84f5e21cf053b86b">setData</a> (<a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> QModelIndex &amp;<a class="el" href="classpqDataAssemblyTreeModel.html#a7c502c7f18151ac046cb1ef16fc146be">index</a>, <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> QVariant &amp;<a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/namespacevtkX3D.html#ac6551f7bf833e8254b2b3ecdaea0d210a6bf5e5151797630e91167caab3f22b9a">value</a>, <a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkShaderProgram2_8h.html#a61569f2965b7a369eb10b6d75d410d11">int</a> role) override</td></tr>
 <tr class="memdesc:ae3f5b683a64a176f84f5e21cf053b86b"><td class="mdescLeft">&#160;</td><td class="mdescRight">QAbstractItemModel interface implementation.  <a href="#ae3f5b683a64a176f84f5e21cf053b86b">More...</a><br /></td></tr>
 <tr class="separator:ae3f5b683a64a176f84f5e21cf053b86b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
+Static Public Member Functions</h2></td></tr>
+<tr class="memitem:a00a269e979b9f09f6bd55003dc8816c5"><td class="memItemLeft" align="right" valign="top">static <a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkShaderProgram2_8h.html#a61569f2965b7a369eb10b6d75d410d11">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpqDataAssemblyTreeModel.html#a00a269e979b9f09f6bd55003dc8816c5">GetIsDerivedRole</a> (<a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkShaderProgram2_8h.html#a61569f2965b7a369eb10b6d75d410d11">int</a> role)</td></tr>
+<tr class="memdesc:a00a269e979b9f09f6bd55003dc8816c5"><td class="mdescLeft">&#160;</td><td class="mdescRight">For custom roles, use this function to convert that role into a role that can be used in <code><a class="el" href="classpqDataAssemblyTreeModel.html#a36f85560d76e08d5a6943ead7a9df60d" title="Get/Set the values for a specific role using selectors. ">data()</a></code> to get a boolean indicating if the value is derived or explicitly set.  <a href="#a00a269e979b9f09f6bd55003dc8816c5">More...</a><br /></td></tr>
+<tr class="separator:a00a269e979b9f09f6bd55003dc8816c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>QAbstractItemModel implementation for vtkDataAssembly. </p>
-<p><a class="el" href="classpqDataAssemblyTreeModel.html" title="QAbstractItemModel implementation for vtkDataAssembly. ">pqDataAssemblyTreeModel</a> builds a tree-model from a vtkDataAssembly. The vtkDataAssembly to shown is set using <code>setDataAssembly</code>. To allow user-settable check-states, use <code>setUserCheckable(true)</code>. The model doesn't support any additional custom properties. One is expected to use a proxy model to store additional meta-data associated with nodes. </p>
+<p><a class="el" href="classpqDataAssemblyTreeModel.html" title="QAbstractItemModel implementation for vtkDataAssembly. ">pqDataAssemblyTreeModel</a> builds a tree-model from a vtkDataAssembly. The vtkDataAssembly to shown is set using <code>setDataAssembly</code>. To allow user-settable check-states, use <code>setUserCheckable(true)</code>.</p>
+<p>One can store additional data associated with nodes using custom roles (<code>Qt::UserRole</code>). For custom roles, one can define how a value for that specific role get inherited by child nodes or overridden when set on a parent node. This is done using <code>setRoleProperty</code>. </p>
 
-<p class="definition">Definition at line <a class="el" href="pqDataAssemblyTreeModel_8h_source.html#l00051">51</a> of file <a class="el" href="pqDataAssemblyTreeModel_8h_source.html">pqDataAssemblyTreeModel.h</a>.</p>
-</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<p class="definition">Definition at line <a class="el" href="pqDataAssemblyTreeModel_8h_source.html#l00056">56</a> of file <a class="el" href="pqDataAssemblyTreeModel_8h_source.html">pqDataAssemblyTreeModel.h</a>.</p>
+</div><h2 class="groupheader">Member Enumeration Documentation</h2>
+<a id="a2524f9378ec172cb64becc165a5be2ee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2524f9378ec172cb64becc165a5be2ee">&#9670;&nbsp;</a></span>RoleProperties</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="classpqDataAssemblyTreeModel.html#a2524f9378ec172cb64becc165a5be2ee">pqDataAssemblyTreeModel::RoleProperties</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Supported role properties. </p>
+<p><code>Standard</code> implies no special handling i.e. the role does not affect the value of the value for child nodes in the hierarchy. <code>Inherited</code> means for any node, if a value for this role is not explicitly specified, then it is inherited from its parent node. Likewise, if one sets a explicitly on a node (using <code>setData</code>), the it overrides values for this role on all children recursively. <code>InheritedUntilOverridden</code> is similar to <code>Inherited</code> except that the recursion down the subtree stops when a child node with an explicitly set value is encountered. </p>
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a2524f9378ec172cb64becc165a5be2eeaba6e2c598698a6db991d2226e3031d31"></a>Standard&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a2524f9378ec172cb64becc165a5be2eea64e4ecd8688dd3dd4247e3b894939551"></a>Inherited&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a2524f9378ec172cb64becc165a5be2eea82e80ed031b70b8ff85dd6e967b2b566"></a>InheritedUntilOverridden&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+<p class="definition">Definition at line <a class="el" href="pqDataAssemblyTreeModel_8h_source.html#l00127">127</a> of file <a class="el" href="pqDataAssemblyTreeModel_8h_source.html">pqDataAssemblyTreeModel.h</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a5123193cb1b77405bf688a5a16a2b78b"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a5123193cb1b77405bf688a5a16a2b78b">&#9670;&nbsp;</a></span>pqDataAssemblyTreeModel()</h2>
 
@@ -236,7 +300,49 @@ Public Member Functions</h2></td></tr>
 
 <p>Get whether the model is user-checkable. </p>
 
-<p class="definition">Definition at line <a class="el" href="pqDataAssemblyTreeModel_8h_source.html#l00071">71</a> of file <a class="el" href="pqDataAssemblyTreeModel_8h_source.html">pqDataAssemblyTreeModel.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="pqDataAssemblyTreeModel_8h_source.html#l00076">76</a> of file <a class="el" href="pqDataAssemblyTreeModel_8h_source.html">pqDataAssemblyTreeModel.h</a>.</p>
+
+</div>
+</div>
+<a id="ab8cbe984ab6f3ae1e6b3abce441adfba"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab8cbe984ab6f3ae1e6b3abce441adfba">&#9670;&nbsp;</a></span>nodeId() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkShaderProgram2_8h.html#a61569f2965b7a369eb10b6d75d410d11">int</a> pqDataAssemblyTreeModel::nodeId </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> QModelIndex &amp;&#160;</td>
+          <td class="paramname"><em>idx</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Given a QModelIndex, returns the vtkDataAssembly node id, if any. </p>
+<p>-1 is returned for invalid index. </p>
+
+</div>
+</div>
+<a id="a5dfb41673aff05555a9636be1566b3c8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5dfb41673aff05555a9636be1566b3c8">&#9670;&nbsp;</a></span>nodeId() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QList&lt;<a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkShaderProgram2_8h.html#a61569f2965b7a369eb10b6d75d410d11">int</a>&gt; pqDataAssemblyTreeModel::nodeId </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> QModelIndexList &amp;&#160;</td>
+          <td class="paramname"><em>idxes</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Given a QModelIndex, returns the vtkDataAssembly node id, if any. </p>
+<p>-1 is returned for invalid index. </p>
 
 </div>
 </div>
@@ -257,6 +363,7 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Get/Set the check state for Qt::Checked for nodes selected using the path names specified. </p>
+<p><code>setCheckedNodes</code> has effect as <code>setData(.., Qt::CheckStateRole)</code>, only differing in how the values are specified. For <code>setCheckedNodes</code>, one only lists the selectors for checked nodes, while <code>setData</code> accept pairs where the first value is the selector while the second value is the check state.</p>
 <dl class="section note"><dt>Note</dt><dd>checking a node causes all it child nodes to be checked as well. </dd>
 <dd>
 <code><a class="el" href="classpqDataAssemblyTreeModel.html#a927a4e8403e73dc97f22850fb4786783" title="Get/Set the check state for Qt::Checked for nodes selected using the path names specified. ">checkedNodes()</a></code> may not returns exactly the same paths passed to <code>setCheckedNodes</code> even if the check-states were not changed in between the two calls.</dd></dl>
@@ -280,9 +387,148 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Get/Set the check state for Qt::Checked for nodes selected using the path names specified. </p>
+<p><code>setCheckedNodes</code> has effect as <code>setData(.., Qt::CheckStateRole)</code>, only differing in how the values are specified. For <code>setCheckedNodes</code>, one only lists the selectors for checked nodes, while <code>setData</code> accept pairs where the first value is the selector while the second value is the check state.</p>
 <dl class="section note"><dt>Note</dt><dd>checking a node causes all it child nodes to be checked as well. </dd>
 <dd>
 <code><a class="el" href="classpqDataAssemblyTreeModel.html#a927a4e8403e73dc97f22850fb4786783" title="Get/Set the check state for Qt::Checked for nodes selected using the path names specified. ">checkedNodes()</a></code> may not returns exactly the same paths passed to <code>setCheckedNodes</code> even if the check-states were not changed in between the two calls.</dd></dl>
+<dl class="section see"><dt>See also</dt><dd>vtkDataAssembly::SelectNodes </dd></dl>
+
+</div>
+</div>
+<a id="a00a269e979b9f09f6bd55003dc8816c5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a00a269e979b9f09f6bd55003dc8816c5">&#9670;&nbsp;</a></span>GetIsDerivedRole()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkShaderProgram2_8h.html#a61569f2965b7a369eb10b6d75d410d11">int</a> pqDataAssemblyTreeModel::GetIsDerivedRole </td>
+          <td>(</td>
+          <td class="paramtype"><a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkShaderProgram2_8h.html#a61569f2965b7a369eb10b6d75d410d11">int</a>&#160;</td>
+          <td class="paramname"><em>role</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>For custom roles, use this function to convert that role into a role that can be used in <code><a class="el" href="classpqDataAssemblyTreeModel.html#a36f85560d76e08d5a6943ead7a9df60d" title="Get/Set the values for a specific role using selectors. ">data()</a></code> to get a boolean indicating if the value is derived or explicitly set. </p>
+
+<p class="definition">Definition at line <a class="el" href="pqDataAssemblyTreeModel_8h_source.html#l00114">114</a> of file <a class="el" href="pqDataAssemblyTreeModel_8h_source.html">pqDataAssemblyTreeModel.h</a>.</p>
+
+</div>
+</div>
+<a id="ad0c52bf139a19b2bd7f1e3c726161b4f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad0c52bf139a19b2bd7f1e3c726161b4f">&#9670;&nbsp;</a></span>setRoleProperty()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void pqDataAssemblyTreeModel::setRoleProperty </td>
+          <td>(</td>
+          <td class="paramtype"><a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkShaderProgram2_8h.html#a61569f2965b7a369eb10b6d75d410d11">int</a>&#160;</td>
+          <td class="paramname"><em>role</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classpqDataAssemblyTreeModel.html#a2524f9378ec172cb64becc165a5be2ee">RoleProperties</a>&#160;</td>
+          <td class="paramname"><em>property</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set properties for custom roles. </p>
+<p>If none specified, Standard is assumed. For <code>Qt::CheckStateRole</code>, it is initialized to <code>Inherited</code>. </p>
+
+</div>
+</div>
+<a id="a4e67de0e2273e8cb455568bbe830a0ce"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4e67de0e2273e8cb455568bbe830a0ce">&#9670;&nbsp;</a></span>roleProperty()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classpqDataAssemblyTreeModel.html#a2524f9378ec172cb64becc165a5be2ee">RoleProperties</a> pqDataAssemblyTreeModel::roleProperty </td>
+          <td>(</td>
+          <td class="paramtype"><a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkShaderProgram2_8h.html#a61569f2965b7a369eb10b6d75d410d11">int</a>&#160;</td>
+          <td class="paramname"><em>role</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set properties for custom roles. </p>
+<p>If none specified, Standard is assumed. For <code>Qt::CheckStateRole</code>, it is initialized to <code>Inherited</code>. </p>
+
+</div>
+</div>
+<a id="afdba2bed14a956e5c2b8986f8e473f65"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afdba2bed14a956e5c2b8986f8e473f65">&#9670;&nbsp;</a></span>setData() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool pqDataAssemblyTreeModel::setData </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> QList&lt; QPair&lt; QString, QVariant &gt; &gt; &amp;&#160;</td>
+          <td class="paramname"><em>values</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkShaderProgram2_8h.html#a61569f2965b7a369eb10b6d75d410d11">int</a>&#160;</td>
+          <td class="paramname"><em>role</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get/Set the values for a specific role using selectors. </p>
+<p>The values are specified as a list of pairs which pair comprising of a selector and the associated value for that selector. This model is not capable of generating advanced selectors, so <code><a class="el" href="classpqDataAssemblyTreeModel.html#a36f85560d76e08d5a6943ead7a9df60d" title="Get/Set the values for a specific role using selectors. ">data()</a></code> will simply return paths as selectors. <code>setData</code> can use any for for selector specification supported by the underlying <code>vtkDataAssembly</code>.</p>
+<p>This model does not cache set values. When <code>setData</code> is called, nodes matching the selectors are immediately located and updated. Hence, if this method is called before any assembly is set, the values will be lost. In this case, <code>setData</code> will return false.</p>
+<dl class="section see"><dt>See also</dt><dd>vtkDataAssembly::SelectNodes </dd></dl>
+
+</div>
+</div>
+<a id="a36f85560d76e08d5a6943ead7a9df60d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a36f85560d76e08d5a6943ead7a9df60d">&#9670;&nbsp;</a></span>data() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QList&lt;QPair&lt;QString, QVariant&gt; &gt; pqDataAssemblyTreeModel::data </td>
+          <td>(</td>
+          <td class="paramtype"><a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkShaderProgram2_8h.html#a61569f2965b7a369eb10b6d75d410d11">int</a>&#160;</td>
+          <td class="paramname"><em>role</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get/Set the values for a specific role using selectors. </p>
+<p>The values are specified as a list of pairs which pair comprising of a selector and the associated value for that selector. This model is not capable of generating advanced selectors, so <code><a class="el" href="classpqDataAssemblyTreeModel.html#a36f85560d76e08d5a6943ead7a9df60d" title="Get/Set the values for a specific role using selectors. ">data()</a></code> will simply return paths as selectors. <code>setData</code> can use any for for selector specification supported by the underlying <code>vtkDataAssembly</code>.</p>
+<p>This model does not cache set values. When <code>setData</code> is called, nodes matching the selectors are immediately located and updated. Hence, if this method is called before any assembly is set, the values will be lost. In this case, <code>setData</code> will return false.</p>
 <dl class="section see"><dt>See also</dt><dd>vtkDataAssembly::SelectNodes </dd></dl>
 
 </div>
@@ -416,7 +662,7 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <a id="a57c86c798df0b79037aadf61dfba8637"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a57c86c798df0b79037aadf61dfba8637">&#9670;&nbsp;</a></span>data()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a57c86c798df0b79037aadf61dfba8637">&#9670;&nbsp;</a></span>data() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -482,7 +728,7 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <a id="ae3f5b683a64a176f84f5e21cf053b86b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae3f5b683a64a176f84f5e21cf053b86b">&#9670;&nbsp;</a></span>setData()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ae3f5b683a64a176f84f5e21cf053b86b">&#9670;&nbsp;</a></span>setData() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -563,7 +809,7 @@ Public Member Functions</h2></td></tr>
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.13 on Tue Jan 26 2021
+</a> 1.8.13 on Sat May 15 2021
 </small></address>
 <!-- KW:BEGIN -->
 <!-- this adds the version selection header -->

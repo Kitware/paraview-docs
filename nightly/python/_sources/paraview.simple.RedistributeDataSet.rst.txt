@@ -29,6 +29,11 @@ Data Descriptors
    
    Input
    
+   LoadBalanceAcrossAllBlocks
+       When checked, for datasets with multiple blocks,
+       the filter will try to load balance across all blocks otherwise each block is separately
+       load balanced.
+   
    NumberOfPartitions
        Specify the number of partitions to split the dataset into.
          Set to 0 to indicate that the partitions should match the number of ranks.

@@ -22,6 +22,7 @@ Proxies generated for server side objects under :doc:`paraview.simple`
     paraview.simple.AddFieldArrays
     paraview.simple.AggregateDataset
     paraview.simple.AngularPeriodicFilter
+    paraview.simple.AnimateModes
     paraview.simple.AnimationCueBase
     paraview.simple.AnimationScene
     paraview.simple.AnnotateAttributeData
@@ -80,6 +81,7 @@ Proxies generated for server side objects under :doc:`paraview.simple`
     paraview.simple.ConvertIntoMolecule
     paraview.simple.ConvertPolyhedralCells
     paraview.simple.ConvertSelection
+    paraview.simple.ConvertToPointCloud
     paraview.simple.CountCellFaces
     paraview.simple.CountCellVertices
     paraview.simple.Crop
@@ -118,13 +120,14 @@ Proxies generated for server side objects under :doc:`paraview.simple`
     paraview.simple.ExtractAMRBlocks
     paraview.simple.ExtractAttributes
     paraview.simple.ExtractBlock
+    paraview.simple.ExtractBlockLegacy
     paraview.simple.ExtractCTHParts
     paraview.simple.ExtractCellsByRegion
     paraview.simple.ExtractComponent
     paraview.simple.ExtractEdges
     paraview.simple.ExtractEnclosedPoints
     paraview.simple.ExtractGenericDatasetSurface
-    paraview.simple.ExtractLevel
+    paraview.simple.ExtractLevelLegacy
     paraview.simple.ExtractLocation
     paraview.simple.ExtractRegionSurface
     paraview.simple.ExtractSelection
@@ -160,10 +163,10 @@ Proxies generated for server side objects under :doc:`paraview.simple`
     paraview.simple.Gradient
     paraview.simple.GradientMagnitude
     paraview.simple.GradientOfUnstructuredDataSet
-    paraview.simple.GridConnectivity
     paraview.simple.GroupDatasets
     paraview.simple.GroupTimeSteps
     paraview.simple.H5PartReader
+    paraview.simple.HDF5RageReader
     paraview.simple.HDRReader
     paraview.simple.HierarchicalDataIDSelectionSource
     paraview.simple.HierarchicalFractal
@@ -191,6 +194,7 @@ Proxies generated for server side objects under :doc:`paraview.simple`
     paraview.simple.IntegrateVariables
     paraview.simple.InterpolatetoQuadraturePoints
     paraview.simple.IntersectFragments
+    paraview.simple.IossReader
     paraview.simple.IsoVolume
     paraview.simple.JPEGSeriesReader
     paraview.simple.JPEGWriter
@@ -232,12 +236,13 @@ Proxies generated for server side objects under :doc:`paraview.simple`
     paraview.simple.NrrdReader
     paraview.simple.OMETIFFChannelCalculator
     paraview.simple.OMETIFFReader
+    paraview.simple.OMFReader
     paraview.simple.OpenFOAMReader
-    paraview.simple.Outline
     paraview.simple.Outline
     paraview.simple.OutlineCorners
     paraview.simple.OutlineCurvilinearDataSet
     paraview.simple.OutlineGenericDataSet
+    paraview.simple.OutlineSource
     paraview.simple.OverlappingCellsDetector
     paraview.simple.PDBReader
     paraview.simple.PDataSetWriterPolyData
@@ -259,10 +264,12 @@ Proxies generated for server side objects under :doc:`paraview.simple`
     paraview.simple.ParticlePath
     paraview.simple.ParticleTracer
     paraview.simple.ParticlesReader
+    paraview.simple.PartitionedDataSetCollectionSource
     paraview.simple.PartitionedLegacyVTKReader
     paraview.simple.PassArrays
     paraview.simple.PassThrough
     paraview.simple.PedigreeIDSelectionSource
+    paraview.simple.PerlinNoise
     paraview.simple.PhastaReader
     paraview.simple.Plane
     paraview.simple.PlotData
@@ -383,6 +390,7 @@ Proxies generated for server side objects under :doc:`paraview.simple`
     paraview.simple.Triangulate
     paraview.simple.TrivialProducer
     paraview.simple.Tube
+    paraview.simple.UniversalGhostCellsGenerator
     paraview.simple.UnstructuredCellTypes
     paraview.simple.UnstructuredNetCDFPOPreader
     paraview.simple.VASPAnimationReader
@@ -465,6 +473,7 @@ Proxies generated for server side objects under :doc:`paraview.simple`
     AddFieldArrays
     AggregateDataset
     AngularPeriodicFilter
+    AnimateModes
     AnimationCueBase
     AnimationScene
     AnnotateAttributeData
@@ -523,6 +532,7 @@ Proxies generated for server side objects under :doc:`paraview.simple`
     ConvertIntoMolecule
     ConvertPolyhedralCells
     ConvertSelection
+    ConvertToPointCloud
     CountCellFaces
     CountCellVertices
     Crop
@@ -561,13 +571,14 @@ Proxies generated for server side objects under :doc:`paraview.simple`
     ExtractAMRBlocks
     ExtractAttributes
     ExtractBlock
+    ExtractBlockLegacy
     ExtractCTHParts
     ExtractCellsByRegion
     ExtractComponent
     ExtractEdges
     ExtractEnclosedPoints
     ExtractGenericDatasetSurface
-    ExtractLevel
+    ExtractLevelLegacy
     ExtractLocation
     ExtractRegionSurface
     ExtractSelection
@@ -603,10 +614,10 @@ Proxies generated for server side objects under :doc:`paraview.simple`
     Gradient
     GradientMagnitude
     GradientOfUnstructuredDataSet
-    GridConnectivity
     GroupDatasets
     GroupTimeSteps
     H5PartReader
+    HDF5RageReader
     HDRReader
     HierarchicalDataIDSelectionSource
     HierarchicalFractal
@@ -634,6 +645,7 @@ Proxies generated for server side objects under :doc:`paraview.simple`
     IntegrateVariables
     InterpolatetoQuadraturePoints
     IntersectFragments
+    IossReader
     IsoVolume
     JPEGSeriesReader
     JPEGWriter
@@ -675,12 +687,13 @@ Proxies generated for server side objects under :doc:`paraview.simple`
     NrrdReader
     OMETIFFChannelCalculator
     OMETIFFReader
+    OMFReader
     OpenFOAMReader
-    Outline
     Outline
     OutlineCorners
     OutlineCurvilinearDataSet
     OutlineGenericDataSet
+    OutlineSource
     OverlappingCellsDetector
     PDBReader
     PDataSetWriterPolyData
@@ -702,10 +715,12 @@ Proxies generated for server side objects under :doc:`paraview.simple`
     ParticlePath
     ParticleTracer
     ParticlesReader
+    PartitionedDataSetCollectionSource
     PartitionedLegacyVTKReader
     PassArrays
     PassThrough
     PedigreeIDSelectionSource
+    PerlinNoise
     PhastaReader
     Plane
     PlotData
@@ -826,6 +841,7 @@ Proxies generated for server side objects under :doc:`paraview.simple`
     Triangulate
     TrivialProducer
     Tube
+    UniversalGhostCellsGenerator
     UnstructuredCellTypes
     UnstructuredNetCDFPOPreader
     VASPAnimationReader

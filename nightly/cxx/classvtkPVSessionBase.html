@@ -165,7 +165,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:af39037b17e0462c082392a25e19a3506"><td class="mdescLeft">&#160;</td><td class="mdescRight">Register server side object.  <a href="#af39037b17e0462c082392a25e19a3506">More...</a><br /></td></tr>
 <tr class="separator:af39037b17e0462c082392a25e19a3506"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a390b07fdb65fb9ae477ed9d4888f63a2"><td class="memItemLeft" align="right" valign="top"><a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/classvtkObject.html">vtkObject</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkPVSessionBase.html#a390b07fdb65fb9ae477ed9d4888f63a2">GetRemoteObject</a> (vtkTypeUInt32 globalid)</td></tr>
-<tr class="memdesc:a390b07fdb65fb9ae477ed9d4888f63a2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return a <a class="el" href="classvtkSMRemoteObject.html" title="baseclass for all proxy-objects that have counter parts on server as well as client processes...">vtkSMRemoteObject</a> given its global id if any otherwise return NULL;.  <a href="#a390b07fdb65fb9ae477ed9d4888f63a2">More...</a><br /></td></tr>
+<tr class="memdesc:a390b07fdb65fb9ae477ed9d4888f63a2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return a <a class="el" href="classvtkSMRemoteObject.html" title="baseclass for all proxy-objects that have counter parts on server as well as client processes...">vtkSMRemoteObject</a> given its global id if any otherwise return nullptr;.  <a href="#a390b07fdb65fb9ae477ed9d4888f63a2">More...</a><br /></td></tr>
 <tr class="separator:a390b07fdb65fb9ae477ed9d4888f63a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad988d2cf954920441e0d919f657811f1"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkPVSessionBase.html#ad988d2cf954920441e0d919f657811f1">GetAllRemoteObjects</a> (<a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/classvtkCollection.html">vtkCollection</a> *collection)</td></tr>
 <tr class="memdesc:ad988d2cf954920441e0d919f657811f1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allow the user to fill its <a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/classvtkCollection.html">vtkCollection</a> with all RemoteObject This could be useful when you want to hold a reference to them to prevent any deletion across several method call.  <a href="#ad988d2cf954920441e0d919f657811f1">More...</a><br /></td></tr>
@@ -491,9 +491,9 @@ Friends</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
 <tr class="inherit_header pro_types_classvtkPVSession"><td colspan="2" onclick="javascript:toggleInherit('pro_types_classvtkPVSession')"><img src="closed.png" alt="-"/>&#160;Protected Types inherited from <a class="el" href="classvtkPVSession.html">vtkPVSession</a></td></tr>
-<tr class="memitem:a6a215efaf701ed0e54d361b093f9e835 inherit pro_types_classvtkPVSession"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom">{ <a class="el" href="classvtkPVSession.html#a6a215efaf701ed0e54d361b093f9e835a45600dc02c0a3697b1a3491063957f3b">EXCEPTION_EVENT_TAG</a> = 31416
+<tr class="memitem:a970fdf58eb2accc00a19483e73632408 inherit pro_types_classvtkPVSession"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom">{ <a class="el" href="classvtkPVSession.html#a970fdf58eb2accc00a19483e73632408a45600dc02c0a3697b1a3491063957f3b">EXCEPTION_EVENT_TAG</a> = 31416
  }</td></tr>
-<tr class="separator:a6a215efaf701ed0e54d361b093f9e835 inherit pro_types_classvtkPVSession"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="separator:a970fdf58eb2accc00a19483e73632408 inherit pro_types_classvtkPVSession"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Abstract class used to provide the main implementation of the ParaView session methods for the following classes: <a class="el" href="classvtkSMSession.html" title="vtkSMSession is the default ParaView session. ">vtkSMSession</a>, <a class="el" href="classvtkSMSessionClient.html" title="vtkSMSessionClient is a remote-session that connects to a remote server. ">vtkSMSessionClient</a>, vtkSMSessionServer. </p>
@@ -1251,7 +1251,7 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Return a <a class="el" href="classvtkSMRemoteObject.html" title="baseclass for all proxy-objects that have counter parts on server as well as client processes...">vtkSMRemoteObject</a> given its global id if any otherwise return NULL;. </p>
+<p>Return a <a class="el" href="classvtkSMRemoteObject.html" title="baseclass for all proxy-objects that have counter parts on server as well as client processes...">vtkSMRemoteObject</a> given its global id if any otherwise return nullptr;. </p>
 
 </div>
 </div>
@@ -1789,7 +1789,7 @@ Additional Inherited Members</h2></td></tr>
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.13 on Tue Jan 26 2021
+</a> 1.8.13 on Sat May 15 2021
 </small></address>
 <!-- KW:BEGIN -->
 <!-- this adds the version selection header -->

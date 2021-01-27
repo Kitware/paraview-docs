@@ -146,9 +146,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a800aa5920cedbe52bf27daf5d36be617"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the active session.  <a href="#a800aa5920cedbe52bf27daf5d36be617">More...</a><br /></td></tr>
 <tr class="separator:a800aa5920cedbe52bf27daf5d36be617"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr><td colspan="2"><div class="groupHeader"></div></td></tr>
-<tr class="memitem:a734322026b49e9e41af5a496890b59a8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classvtkSMProxy.html">vtkSMProxy</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkSMProxyManager.html#a734322026b49e9e41af5a496890b59a8">NewProxy</a> (<a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *groupName, <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *proxyName, <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *subProxyName=NULL)</td></tr>
-<tr class="memdesc:a734322026b49e9e41af5a496890b59a8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls forwarded to the active <a class="el" href="classvtkSMSessionProxyManager.html" title="The vtkSMSessionProxyManager is esponsible for creating and managing proxies for a given session...">vtkSMSessionProxyManager</a>, if any.  <a href="#a734322026b49e9e41af5a496890b59a8">More...</a><br /></td></tr>
-<tr class="separator:a734322026b49e9e41af5a496890b59a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7404559b0f0675b41a1c37fc151058ec"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classvtkSMProxy.html">vtkSMProxy</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkSMProxyManager.html#a7404559b0f0675b41a1c37fc151058ec">NewProxy</a> (<a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *groupName, <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *proxyName, <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *subProxyName=nullptr)</td></tr>
+<tr class="memdesc:a7404559b0f0675b41a1c37fc151058ec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls forwarded to the active <a class="el" href="classvtkSMSessionProxyManager.html" title="The vtkSMSessionProxyManager is esponsible for creating and managing proxies for a given session...">vtkSMSessionProxyManager</a>, if any.  <a href="#a7404559b0f0675b41a1c37fc151058ec">More...</a><br /></td></tr>
+<tr class="separator:a7404559b0f0675b41a1c37fc151058ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aac56d504393cb88a7dfa95bfd8fa1df2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkSMProxyManager.html#aac56d504393cb88a7dfa95bfd8fa1df2">RegisterProxy</a> (<a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *groupname, <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *<a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/namespacevtkX3D.html#ac6551f7bf833e8254b2b3ecdaea0d210ac713735f1d46c2694d66e85217207be2">name</a>, <a class="el" href="classvtkSMProxy.html">vtkSMProxy</a> *proxy)</td></tr>
 <tr class="memdesc:aac56d504393cb88a7dfa95bfd8fa1df2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls forwarded to the active <a class="el" href="classvtkSMSessionProxyManager.html" title="The vtkSMSessionProxyManager is esponsible for creating and managing proxies for a given session...">vtkSMSessionProxyManager</a>, if any.  <a href="#aac56d504393cb88a7dfa95bfd8fa1df2">More...</a><br /></td></tr>
 <tr class="separator:aac56d504393cb88a7dfa95bfd8fa1df2"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -909,7 +909,7 @@ Friends</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Set the active session. </p>
-<p>It's acceptable to set the active session as NULL (or 0 in case of sessionId), however <a class="el" href="classvtkSMProxyManager.html#aade64b9bd12c58866b4a3c4e71f8a5d8" title="Returns the current active session. ">GetActiveSession()</a> may automatically pick an active session if none is provided. </p>
+<p>It's acceptable to set the active session as nullptr (or 0 in case of sessionId), however <a class="el" href="classvtkSMProxyManager.html#aade64b9bd12c58866b4a3c4e71f8a5d8" title="Returns the current active session. ">GetActiveSession()</a> may automatically pick an active session if none is provided. </p>
 
 </div>
 </div>
@@ -930,7 +930,7 @@ Friends</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Set the active session. </p>
-<p>It's acceptable to set the active session as NULL (or 0 in case of sessionId), however <a class="el" href="classvtkSMProxyManager.html#aade64b9bd12c58866b4a3c4e71f8a5d8" title="Returns the current active session. ">GetActiveSession()</a> may automatically pick an active session if none is provided. </p>
+<p>It's acceptable to set the active session as nullptr (or 0 in case of sessionId), however <a class="el" href="classvtkSMProxyManager.html#aade64b9bd12c58866b4a3c4e71f8a5d8" title="Returns the current active session. ">GetActiveSession()</a> may automatically pick an active session if none is provided. </p>
 
 </div>
 </div>
@@ -974,8 +974,8 @@ Friends</h2></td></tr>
 
 </div>
 </div>
-<a id="a734322026b49e9e41af5a496890b59a8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a734322026b49e9e41af5a496890b59a8">&#9670;&nbsp;</a></span>NewProxy()</h2>
+<a id="a7404559b0f0675b41a1c37fc151058ec"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7404559b0f0675b41a1c37fc151058ec">&#9670;&nbsp;</a></span>NewProxy()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -996,7 +996,7 @@ Friends</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *&#160;</td>
-          <td class="paramname"><em>subProxyName</em> = <code>NULL</code>&#160;</td>
+          <td class="paramname"><em>subProxyName</em> = <code>nullptr</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -1689,7 +1689,7 @@ Friends</h2></td></tr>
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.13 on Tue Jan 26 2021
+</a> 1.8.13 on Sat May 15 2021
 </small></address>
 <!-- KW:BEGIN -->
 <!-- this adds the version selection header -->

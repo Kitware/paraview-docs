@@ -10,6 +10,10 @@ Data Descriptors
 
 
    
+   CellArrayStatus
+       This property lists which cell-centered arrays to
+       read.
+   
    DefaultNumberOfLevels
        This reader supports demand-driven heavy data reading i.e. downstream
        pipeline can request specific blocks from the AMR using
@@ -25,6 +29,10 @@ Data Descriptors
        extension is .vtp. If more than one file is specified, the reader will
        switch to file series mode in which it will pretend that it can support
        time and provide one file per time step.
+   
+   PointArrayStatus
+       This property lists which point-centered arrays to
+       read.
    
    TimeArray
        This property sets which field data to use as time arrays to

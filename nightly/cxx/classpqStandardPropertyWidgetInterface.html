@@ -176,7 +176,7 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Given a proxy and its property, create a widget for the same, if possible. </p>
-<p>For unsupported/unknown proxies/properties, implementations should simply return NULL without raising any errors (or messages). Supported types are: </p><ul>
+<p>For unsupported/unknown proxies/properties, implementations should simply return nullptr without raising any errors (or messages). Supported types are: </p><ul>
 <li><code>calculator</code> : <a class="el" href="classpqCalculatorWidget.html" title="pqCalculatorWidget is a property-widget that can shows a calculator-like UI for the property...">pqCalculatorWidget</a> </li>
 <li><code>camera_manipulator</code> : <a class="el" href="classpqCameraManipulatorWidget.html" title="pqCameraManipulatorWidget used on &quot;Camera2DManipulators&quot; and &quot;Camera3DManipulators&quot; property on a Ren...">pqCameraManipulatorWidget</a> </li>
 <li><code>color_palette_selector</code> : <a class="el" href="classpqColorPaletteSelectorWidget.html" title="widget to choose a color palette to load/select. ">pqColorPaletteSelectorWidget</a> </li>
@@ -189,7 +189,7 @@ Public Member Functions</h2></td></tr>
 <li><code>glyph_scale_factor:</code> <a class="el" href="classpqGlyphScaleFactorPropertyWidget.html" title="pqGlyphScaleFactorPropertyWidget is used for the &quot;Scale Factor&quot; property on the Glyph filter...">pqGlyphScaleFactorPropertyWidget</a> </li>
 <li><code>image_compressor_config</code> : <a class="el" href="classpqImageCompressorWidget.html" title="pqImageCompressorWidget is a pqPropertyWidget designed to be used for &quot;CompressorConfig&quot; property on ...">pqImageCompressorWidget</a> </li>
 <li><code>index_selection</code> : <a class="el" href="classpqIndexSelectionWidget.html" title="pqIndexSelectionWidget displays a list of labels and slider widgets, intended to be used for selectin...">pqIndexSelectionWidget</a> </li>
-<li><code>input_selector</code> : <a class="el" href="classpqInputSelectorWidget.html" title="Property widget that can be used to set an existing pipeline connection as a proxy property...">pqInputSelectorWidget</a> </li>
+<li><code>input_selector</code> : <a class="el" href="classpqInputSelectorWidget.html" title="widget for input property to choose a pipeline input. ">pqInputSelectorWidget</a> </li>
 <li><code>int_mask:</code> <a class="el" href="classpqIntMaskPropertyWidget.html" title="pqIntMaskPropertyWidget is designed to be used for an IntVectorProperty that can have a value that is...">pqIntMaskPropertyWidget</a> </li>
 <li><code>list</code> : <a class="el" href="classpqListPropertyWidget.html" title="pqListPropertyWidget is a pqPropertyWidget that is used to show an editable list of elements...">pqListPropertyWidget</a> </li>
 <li><code>proxy_editor:</code> <a class="el" href="classpqProxyEditorPropertyWidget.html" title="Property widget that can be used to edit a proxy set as the value of a ProxyProperty in a pop-up dial...">pqProxyEditorPropertyWidget</a> </li>
@@ -198,7 +198,8 @@ Public Member Functions</h2></td></tr>
 <li><code>viewtype_selector:</code> <a class="el" href="classpqViewTypePropertyWidget.html" title="pqViewTypePropertyWidget is a property widget that shows a combo-box with values equal to the current...">pqViewTypePropertyWidget</a> </li>
 <li><code>view_resolution:</code> <a class="el" href="classpqViewResolutionPropertyWidget.html" title="widget for view resolution. ">pqViewResolutionPropertyWidget</a> </li>
 <li><code>pause_livesource:</code> <a class="el" href="classpqPauseLiveSourcePropertyWidget.html" title="widget to pause all live sources ">pqPauseLiveSourcePropertyWidget</a> </li>
-<li><code>data_assembly:</code> <a class="el" href="classpqDataAssemblyPropertyWidget.html" title="pqPropertyWidget for properties with vtkDataAssembly ">pqDataAssemblyPropertyWidget</a> </li>
+<li><code>data_assembly_editor:</code> <a class="el" href="classpqDataAssemblyPropertyWidget.html" title="pqPropertyWidget for properties with vtkDataAssembly ">pqDataAssemblyPropertyWidget</a> </li>
+<li><code>selection_query</code> : <a class="el" href="classpqSelectionQueryPropertyWidget.html" title="property-widget for creating selection queries. ">pqSelectionQueryPropertyWidget</a> </li>
 </ul>
 
 <p>Reimplemented from <a class="el" href="classpqPropertyWidgetInterface.html#a7cdd3c1e07bf7c8f03dcee18d45db90d">pqPropertyWidgetInterface</a>.</p>
@@ -246,7 +247,7 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Given a proxy and its property group, create a widget for the same, of possible. </p>
-<p>For unsupported/unknown proxies/property-groups, implementations should simply return NULL without raising any errors (or messages). Supported types are: </p><ul>
+<p>For unsupported/unknown proxies/property-groups, implementations should simply return nullptr without raising any errors (or messages). Supported types are: </p><ul>
 <li><code>AnnotationsEditor</code> : <a class="el" href="classpqColorAnnotationsPropertyWidget.html" title="pqColorAnnotationsPropertyWidget is used to edit the Annotations property on the &quot;PVLookupTable&quot; prox...">pqColorAnnotationsPropertyWidget</a> </li>
 <li><code>ArrayStatus</code> : <a class="el" href="classpqArrayStatusPropertyWidget.html">pqArrayStatusPropertyWidget</a> </li>
 <li><code>BackgroundEditor</code> : pqBackgroundPropertyWidget </li>
@@ -314,7 +315,7 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Given the type of the decorator and the <a class="el" href="classpqPropertyWidget.html" title="pqPropertyWidget represents a widget created for each property of a proxy on the pqPropertiesPanel (f...">pqPropertyWidget</a> that needs to be decorated, create the <a class="el" href="classpqPropertyWidgetDecorator.html" title="pqPropertyWidgetDecorator provides a mechanism to decorate pqPropertyWidget instances to add logic to...">pqPropertyWidgetDecorator</a> instance, if possible. </p>
-<p>For unsupported/unknown, implementations should simply return NULL without raising any errors (or messages). Supported types are: </p><ul>
+<p>For unsupported/unknown, implementations should simply return nullptr without raising any errors (or messages). Supported types are: </p><ul>
 <li><code>CTHArraySelectionDecorator</code> : <a class="el" href="classpqCTHArraySelectionDecorator.html" title="pqCTHArraySelectionDecorator is used by ExtractCTH filter (and similar filters) to ensure only 1 of t...">pqCTHArraySelectionDecorator</a> </li>
 <li><code>EnableWidgetDecorator</code> : <a class="el" href="classpqEnableWidgetDecorator.html" title="pqEnableWidgetDecorator can be used to enable/disable a widget based on the status of another propert...">pqEnableWidgetDecorator</a> </li>
 <li><code>ShowWidgetDecorator</code> : <a class="el" href="classpqShowWidgetDecorator.html" title="pqShowWidgetDecorator can be used to show/hide a widget based on the status of another property not d...">pqShowWidgetDecorator</a> </li>
@@ -323,6 +324,7 @@ Public Member Functions</h2></td></tr>
 <li><code>OSPRayHidingDecorator:</code> <a class="el" href="classpqOSPRayHidingDecorator.html" title="pqOSPRayHidingDecorator&#39;s purpose is to prevent the GUI from showing any of the RayTracing specific r...">pqOSPRayHidingDecorator</a> </li>
 <li><code>MultiComponentsDecorator:</code> <a class="el" href="classpqMultiComponentsDecorator.html" title="pqMultiComponentsDecorator&#39;s purpose is to prevent the GUI from showing Multi Components Mapping chec...">pqMultiComponentsDecorator</a> </li>
 <li><code>CompositeDecorator:</code> <a class="el" href="classpqCompositePropertyWidgetDecorator.html" title="pqPropertyWidgetDecorator subclass that can combine multiple decorators using boolean operations...">pqCompositePropertyWidgetDecorator</a> </li>
+<li><code>SessionTypeDecorator:</code> <a class="el" href="classpqSessionTypeDecorator.html" title="decorator to show/hide or enable/disable property widget based on the session. ">pqSessionTypeDecorator</a> </li>
 </ul>
 
 <p>Reimplemented from <a class="el" href="classpqPropertyWidgetInterface.html#aef7f4d5c13c4b34fbf8eddaa36891741">pqPropertyWidgetInterface</a>.</p>
@@ -371,7 +373,7 @@ Public Member Functions</h2></td></tr>
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.13 on Tue Jan 26 2021
+</a> 1.8.13 on Sat May 15 2021
 </small></address>
 <!-- KW:BEGIN -->
 <!-- this adds the version selection header -->

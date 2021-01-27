@@ -79,10 +79,10 @@ Public Types</h2></td></tr>
 <tr class="memitem:a2295cdae97e1fafd2b76a075386d965f"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="classvtkPVCueManipulator.html">vtkPVCueManipulator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkPVKeyFrameCueManipulator.html#a2295cdae97e1fafd2b76a075386d965f">Superclass</a></td></tr>
 <tr class="separator:a2295cdae97e1fafd2b76a075386d965f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_types_classvtkPVCueManipulator"><td colspan="2" onclick="javascript:toggleInherit('pub_types_classvtkPVCueManipulator')"><img src="closed.png" alt="-"/>&#160;Public Types inherited from <a class="el" href="classvtkPVCueManipulator.html">vtkPVCueManipulator</a></td></tr>
-<tr class="memitem:ab92dc883650e7b3fc2e8b29d6ab001d4 inherit pub_types_classvtkPVCueManipulator"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom">{ <a class="el" href="classvtkPVCueManipulator.html#ab92dc883650e7b3fc2e8b29d6ab001d4a390d336cfab68cd77918835bd35d6c4d">StateModifiedEvent</a> = 2000
- }<tr class="memdesc:ab92dc883650e7b3fc2e8b29d6ab001d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">StateModifiedEvent - This event is fired when the manipulator modifies the animated proxy.  <a href="classvtkPVCueManipulator.html#ab92dc883650e7b3fc2e8b29d6ab001d4">More...</a><br /></td></tr>
+<tr class="memitem:a9d2e0237376d4fae4d7d6a07c81c0d23 inherit pub_types_classvtkPVCueManipulator"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom">{ <a class="el" href="classvtkPVCueManipulator.html#a9d2e0237376d4fae4d7d6a07c81c0d23a390d336cfab68cd77918835bd35d6c4d">StateModifiedEvent</a> = 2000
+ }<tr class="memdesc:a9d2e0237376d4fae4d7d6a07c81c0d23"><td class="mdescLeft">&#160;</td><td class="mdescRight">StateModifiedEvent - This event is fired when the manipulator modifies the animated proxy.  <a href="classvtkPVCueManipulator.html#a9d2e0237376d4fae4d7d6a07c81c0d23">More...</a><br /></td></tr>
 </td></tr>
-<tr class="separator:ab92dc883650e7b3fc2e8b29d6ab001d4 inherit pub_types_classvtkPVCueManipulator"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="separator:a9d2e0237376d4fae4d7d6a07c81c0d23 inherit pub_types_classvtkPVCueManipulator"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9df22103e59b8df434ddf7fe2c98014b inherit pub_types_classvtkPVCueManipulator"><td class="memItemLeft" align="right" valign="top">typedef <a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/classvtkObject.html">vtkObject</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkPVCueManipulator.html#a9df22103e59b8df434ddf7fe2c98014b">Superclass</a></td></tr>
 <tr class="separator:a9df22103e59b8df434ddf7fe2c98014b inherit pub_types_classvtkPVCueManipulator"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -378,7 +378,7 @@ Friends</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>animation manipulator that uses keyframes to generate the animation. </p>
 <p>This is a Manipulator that support key framing. Key frames are stored in a vector ordered by their keyframe time. Ordering of keyframes with same key time is arbitrary. This class ensures that the keyframes are always maintained in the correct order. How the values for the animated property are interpolated between successive keyframes depends on the type of the preceding keyframe. Thus this class doesn't perform the interpolation instead delegates it to the keyframe object affecting the property at the current time value. </p><ul>
-<li><code><a class="el" href="classvtkPVCueManipulator.html#ab92dc883650e7b3fc2e8b29d6ab001d4a390d336cfab68cd77918835bd35d6c4d">vtkPVCueManipulator::StateModifiedEvent</a></code> - This event is fired when the manipulator modifies the animated proxy. </li>
+<li><code><a class="el" href="classvtkPVCueManipulator.html#a9d2e0237376d4fae4d7d6a07c81c0d23a390d336cfab68cd77918835bd35d6c4d">vtkPVCueManipulator::StateModifiedEvent</a></code> - This event is fired when the manipulator modifies the animated proxy. </li>
 <li><code>vtkCommand::ModifiedEvent</code> - is fired when the keyframes are changed i.e. added/removed/modified.</li>
 </ul>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="classvtkPVAnimationCue.html" title="proxy for vtkAnimationCue. ">vtkPVAnimationCue</a> <a class="el" href="classvtkPVCueManipulator.html" title="abstract proxy for manipulators used in animation. ">vtkPVCueManipulator</a> </dd></dl>
@@ -738,7 +738,7 @@ Friends</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Returns a pointer to the key frame at the given time. </p>
-<p>If no key frame exists at the given time, it returns NULL. </p>
+<p>If no key frame exists at the given time, it returns nullptr. </p>
 
 </div>
 </div>
@@ -801,7 +801,7 @@ Friends</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Get the next/previous key frame relative to argument key frame. </p>
-<p>Returns NULL when no next/previous frame exists. </p>
+<p>Returns nullptr when no next/previous frame exists. </p>
 
 </div>
 </div>
@@ -822,7 +822,7 @@ Friends</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Get the next/previous key frame relative to argument key frame. </p>
-<p>Returns NULL when no next/previous frame exists. </p>
+<p>Returns nullptr when no next/previous frame exists. </p>
 
 </div>
 </div>
@@ -1194,7 +1194,7 @@ Friends</h2></td></tr>
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.13 on Tue Jan 26 2021
+</a> 1.8.13 on Sat May 15 2021
 </small></address>
 <!-- KW:BEGIN -->
 <!-- this adds the version selection header -->
