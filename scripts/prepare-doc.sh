@@ -57,6 +57,29 @@ cd "${WORK_DIR}/paraview-docs/"
 ls -d */ | cut -d "/"  -f 1 > versions
 
 # -----------------------------------------------------------------------------
+# update available `versions.json` file.
+# -----------------------------------------------------------------------------
+GENERATED_TAGS="$(find . -maxdepth 1 -type d  -name 'v*' -printf "%f\n" | sort -r |
+  sed '
+     # Every line
+     {
+       s/v\(.*\)/{ "value": "v\1",  "label": "\1"}/
+     }
+     # Every line but the last one
+     $! {
+       s/$/,/
+     }'
+     )"
+
+cat << EOF > versions.json
+[
+{ "value": "nightly", "label": "nightly (development)" },
+{ "value": "latest",  "label": "latest release (5.9.*)" },
+$GENERATED_TAGS
+]
+EOF
+
+# -----------------------------------------------------------------------------
 # Commit to server
 # -----------------------------------------------------------------------------
 
