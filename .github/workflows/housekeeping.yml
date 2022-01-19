@@ -1,0 +1,20 @@
+name: Housekeeping tasks
+on:
+  schedule:
+  - cron: '0 3 * * *'
+
+jobs:
+  squash_branch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Set credentials
+        run: |
+          git config --global user.name 'Vicente Adolfo Bolea Sanchez'
+          git config --global user.email 'vicente.bolea@kitware.com'
+
+      - name: Run squash-branch script
+        run: ./scripts/squash-branch

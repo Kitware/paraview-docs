@@ -1,0 +1,65 @@
+#!/bin/bash -e
+
+# Defaults
+TARGET_BRANCH="gh-pages"
+NUM_COMMITS="5"
+REMOTE="origin"
+
+function die()
+{
+  echo "ERROR: $*"
+  exit 1
+}
+
+function usage()
+{
+  echo "Usage: $0 [-t <TARGET_BRANCH>] [-n <NUMBER_COMMITS>]"
+  echo "    -t <TARGET_BRANCH>  Branch to be squashed, defaults to gh-pages."
+  echo "    -n <NUMBER_COMMITS> Number of commits to keep, defaults to 10"
+  exit 0
+}
+
+while getopts "t:n:" o
+do
+  case "${o}" in
+    t)
+      TARGET_BRANCH="${OPTARG}"
+      ;;
+
+    n)
+      NUM_COMMITS="${OPTARG}"
+      ;;
+    *)
+      usage
+      ;;
+  esac
+done
+
+set -x
+
+# Preconditions
+test -f .git/config || die "Not a git workdir"
+
+OLD_TARGET_BRANCH="old-${TARGET_BRANCH}"
+INITIAL_REV="${OLD_TARGET_BRANCH}~${NUM_COMMITS}"
+
+# Starting point
+git fetch ${REMOTE}
+git reset --hard
+git clean -fdx
+git checkout -f master
+git branch -D "${OLD_TARGET_BRANCH}" || true
+
+# Copy gh-pages -> old-gh-pages
+git branch "${OLD_TARGET_BRANCH}" "${REMOTE}/${TARGET_BRANCH}"
+
+# Create new branch
+git branch -D "${TARGET_BRANCH}" || true
+git checkout --force --orphan "${TARGET_BRANCH}" "${INITIAL_REV}"
+git commit --quiet -C "${INITIAL_REV}"
+
+# Apply the N most recent commits
+git cherry-pick --quit
+git cherry-pick "${INITIAL_REV}..${OLD_TARGET_BRANCH}"
+
+git push -f "${REMOTE}" "${TARGET_BRANCH}"
