@@ -6,6 +6,7 @@ set -e
 PV_SRC=$1
 PV_BUILD=$2
 WORK_DIR=$3
+UPDATE_LATEST="false"
 
 if [ -z "$PV_SRC" ] || [ -z "$PV_BUILD" ] || [ -z "$WORK_DIR" ]
 then
@@ -21,6 +22,7 @@ fi
 if [ -n "$4" ]
 then
     VERSION="$4"
+    UPDATE_LATEST="true"
 else
     VERSION=`git -C $PV_SRC describe`
 fi
@@ -85,6 +87,11 @@ EOF
 
 if [ "$PARAVIEW_DOC_UPLOAD" = "true" ]; then
     cd "${WORK_DIR}/paraview-docs/"
+
+    if [ "$UPDATE_LATEST" = "true" ]; then
+      cp -r "$VERSION/*" latest/
+    fi
+
     git add "$VERSION"
     # we simply amend the last commit and force-push
     git commit -a -m "Update documentation for version $VERSION"
