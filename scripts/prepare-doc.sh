@@ -87,6 +87,6 @@ if [ "$PARAVIEW_DOC_UPLOAD" = "true" ]; then
     cd "${WORK_DIR}/paraview-docs/"
     git add "$VERSION"
     # we simply amend the last commit and force-push
-    git commit -a --amend -m "Update documentation for version $VERSION"
+    git commit -a -m "Update documentation for version $VERSION"
     git push origin gh-pages -f
 fi
