@@ -2,7 +2,7 @@
 
 # Defaults
 TARGET_BRANCH="gh-pages"
-NUM_COMMITS="5"
+declare -i NUM_COMMITS=5
 REMOTE="origin"
 
 function die()
@@ -39,9 +39,10 @@ set -x
 
 # Preconditions
 test -f .git/config || die "Not a git workdir"
+test "${NUM_COMMITS}" -gt "0" || die "Not enough commits"
 
 OLD_TARGET_BRANCH="old-${TARGET_BRANCH}"
-INITIAL_REV="${OLD_TARGET_BRANCH}~${NUM_COMMITS}"
+INITIAL_REV="${OLD_TARGET_BRANCH}~$((NUM_COMMITS-1))"
 
 # Starting point
 git fetch ${REMOTE}
