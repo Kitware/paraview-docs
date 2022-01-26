@@ -24,17 +24,17 @@ then
     VERSION="$4"
     UPDATE_LATEST="true"
 else
-    VERSION=`git -C $PV_SRC describe`
+    VERSION=$(git -C "$PV_SRC" describe)
 fi
 
-echo $VERSION
+echo "$VERSION"
 
 # -----------------------------------------------------------------------------
 # Grab Web Content
 # -----------------------------------------------------------------------------
 
-mkdir -p $WORK_DIR
-cd $WORK_DIR
+mkdir -p "$WORK_DIR"
+cd "$WORK_DIR"
 if [ ! -d "./paraview-docs" ]; then
     git clone https://github.com/Kitware/paraview-docs.git
 fi
@@ -56,7 +56,7 @@ rm -rf "${WORK_DIR}/paraview-docs/${VERSION}/python/.doctrees"
 # update available `versions` file.
 # -----------------------------------------------------------------------------
 cd "${WORK_DIR}/paraview-docs/"
-ls -d */ | cut -d "/"  -f 1 > versions
+find . -maxdepth 1 -type d -not -iname '.*' -printf "%f\n" | sort -u > versions
 
 # -----------------------------------------------------------------------------
 # update available `versions.json` file.
