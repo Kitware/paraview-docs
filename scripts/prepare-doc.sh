@@ -6,6 +6,7 @@ set -e
 PV_SRC=$1
 PV_BUILD=$2
 WORK_DIR=$3
+UPDATE_LATEST="false"
 
 if [ -z "$PV_SRC" ] || [ -z "$PV_BUILD" ] || [ -z "$WORK_DIR" ]
 then
@@ -21,18 +22,19 @@ fi
 if [ -n "$4" ]
 then
     VERSION="$4"
+    UPDATE_LATEST="true"
 else
-    VERSION=`git -C $PV_SRC describe`
+    VERSION=$(git -C "$PV_SRC" describe)
 fi
 
-echo $VERSION
+echo "$VERSION"
 
 # -----------------------------------------------------------------------------
 # Grab Web Content
 # -----------------------------------------------------------------------------
 
-mkdir -p $WORK_DIR
-cd $WORK_DIR
+mkdir -p "$WORK_DIR"
+cd "$WORK_DIR"
 if [ ! -d "./paraview-docs" ]; then
     git clone https://github.com/Kitware/paraview-docs.git
 fi
@@ -54,7 +56,7 @@ rm -rf "${WORK_DIR}/paraview-docs/${VERSION}/python/.doctrees"
 # update available `versions` file.
 # -----------------------------------------------------------------------------
 cd "${WORK_DIR}/paraview-docs/"
-ls -d */ | cut -d "/"  -f 1 > versions
+find . -maxdepth 1 -type d -not -iname '.*' -printf "%f\n" | sort -u > versions
 
 # -----------------------------------------------------------------------------
 # update available `versions.json` file.
@@ -85,8 +87,13 @@ EOF
 
 if [ "$PARAVIEW_DOC_UPLOAD" = "true" ]; then
     cd "${WORK_DIR}/paraview-docs/"
+
+    if [ "$UPDATE_LATEST" = "true" ]; then
+      cp -r "$VERSION/*" latest/
+    fi
+
     git add "$VERSION"
     # we simply amend the last commit and force-push
-    git commit -a --amend -m "Update documentation for version $VERSION"
+    git commit -a -m "Update documentation for version $VERSION"
     git push origin gh-pages -f
 fi
