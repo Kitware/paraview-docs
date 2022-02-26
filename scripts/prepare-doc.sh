@@ -87,11 +87,9 @@ EOF
 
 if [ "$PARAVIEW_DOC_UPLOAD" = "true" ]; then
     cd "${WORK_DIR}/paraview-docs/"
-    ls
 
     if [ "$UPDATE_LATEST" = "true" ]; then
-      ls "$VERSION/"
-      cp -r "$VERSION/*" latest/
+      cp -r "$VERSION/"* latest/
     fi
 
     git add "$VERSION"
