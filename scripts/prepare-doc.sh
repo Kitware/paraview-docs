@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # error out if anything fails.
-set -e
+set -xe
 
 PV_SRC=$1
 PV_BUILD=$2
