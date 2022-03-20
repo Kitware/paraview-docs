@@ -1,0 +1,173 @@
+paraview.simple.XDMFReader
+==========================
+
+.. currentmodule:: paraview.simple
+
+.. autofunction:: XDMFReader
+
+Data Descriptors
+----------------
+
+
+   
+   CellArrayStatus
+       This property lists which cell-centered arrays to
+       read.
+   
+   FileNames
+       The list of files to be read by the
+       reader.
+   
+   GridStatus
+       Controls which particular data sets to read from a file
+       that contains many data sets inside a composite data set
+       collection.
+   
+   PointArrayStatus
+       This property lists which point-centered arrays to
+       read.
+   
+   SetStatus
+       Select the sets to be loaded from the dataset, if
+       any.
+   
+   Stride
+       If loading structured data, this property indicate the
+       number of indices per dimension (X, Y, or Z) to skip between each point
+       included in this output.
+   
+   TimestepValues
+       Available timestep values.
+   
+   
+
+Data Descriptors inherited from SourceProxy
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+   
+   CellData
+       Returns cell data information
+   
+   FieldData
+       Returns field data information
+   
+   PointData
+       Returns point data information
+   
+   
+
+Data Descriptors inherited from Proxy
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+   
+   __dict__
+       dictionary for instance variables (if defined)
+   
+   __weakref__
+       list of weak references to the object (if defined)
+   
+
+Methods
+-------
+
+
+   
+   Initialize = aInitialize(self, connection=None, update=True)
+   
+   
+
+Methods inherited from SourceProxy
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+   
+   FileNameChanged(self)
+       Called when the filename of a source proxy is changed.
+   
+   GetCellDataInformation(self)
+       Returns the associated cell data information.
+   
+   GetDataInformation(self, idx=None)
+       This method returns a DataInformation wrapper around a
+       vtkPVDataInformation
+   
+   GetFieldDataInformation(self)
+       Returns the associated cell data information.
+   
+   GetPointDataInformation(self)
+       Returns the associated point data information.
+   
+   UpdatePipeline(self, time=None)
+       This method updates the server-side VTK pipeline and the associated
+       data information. Make sure to update a source to validate the output
+       meta-data.
+   
+   UpdatePipelineInformation(self)
+       This method updates the meta-data of the server-side VTK pipeline and
+       the associated information properties
+   
+   __getitem__(self, idx)
+       Given a slice, int or string, returns the corresponding
+       output port
+   
+   
+
+Methods inherited from Proxy
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+   
+   GetProperty(self, name)
+       Given a property name, returns the property object.
+   
+   GetPropertyValue(self, name)
+       Returns a scalar for properties with 1 elements, the property
+       itself for vectors.
+   
+   InitializeFromProxy(self, aProxy, update=True)
+       Constructor. Assigns proxy to self.SMProxy, updates the server
+       object as well as register the proxy in _pyproxies dictionary.
+   
+   ListProperties(self)
+       Returns a list of all property names on this proxy.
+   
+   SetPropertyWithName(self, pname, arg)
+       Generic method for setting the value of a property.
+   
+   __del__(self)
+       Destructor. Cleans up all observers as well as remove
+       the proxy from the _pyproxies dictionary
+   
+   __eq__(self, other)
+       Returns true if the underlying SMProxies are the same.
+   
+   __getattr__(self, name)
+       With the exception of a few overloaded methods,
+       returns the SMProxy method
+   
+   __hash__(self)
+   
+   __init__(self, \*\*args)
+       Default constructor. It can be used to initialize properties
+       by passing keyword arguments where the key is the name of the
+       property. In addition registrationGroup and registrationName (optional)
+       can be specified (as keyword arguments) to automatically register
+       the proxy with the proxy manager.
+   
+   __iter__(self)
+       Creates an iterator for the properties.
+   
+   __ne__(self, other)
+       Returns false if the underlying SMProxies are the same.
+   
+   __setattr__(self, name, value)
+   
+   add_attribute(self, name, value)
+   
+   
+
+
+
+For the full list of servermanager proxies, please refer to :doc:`Available readers, sources, writers, filters and animation cues <paraview.servermanager_proxies>`
