@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>simple Module &mdash; ParaView/Python 5.10.1-804-gae924745e8 documentation</title>
+  <title>simple Module &mdash; ParaView/Python 5.10.1-812-g6777e1303f documentation</title>
   
 
   
@@ -22,7 +22,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:'./',
-        VERSION:'5.10.1-804-gae924745e8',
+        VERSION:'5.10.1-812-g6777e1303f',
         COLLAPSE_INDEX:false,
         FILE_SUFFIX:'.html',
         HAS_SOURCE:  true
@@ -51,7 +51,7 @@
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="ParaView/Python 5.10.1-804-gae924745e8 documentation" href="index.html"/>
+    <link rel="top" title="ParaView/Python 5.10.1-812-g6777e1303f documentation" href="index.html"/>
         <link rel="up" title="paraview Package" href="paraview.html"/>
         <link rel="next" title="Available readers, sources, writers, filters and animation cues" href="paraview.servermanager_proxies.html"/>
         <link rel="prev" title="servermanager Module" href="paraview.servermanager.html"/> 
@@ -71,7 +71,7 @@
           <li> <a href="index.html">
             <img src="_static/paraview-logo-small.png"
             alt="ParaView/Python"></img></a> </li>
-          <li class="version"> version 5.10.1-804-gae924745e8</li>
+          <li class="version"> version 5.10.1-812-g6777e1303f</li>
         </ul>
         <form id ="rtd-search-form" class="wy-form" action="search.html" method="get">
   <input type="text" name="q" placeholder="Search docs" />
@@ -215,6 +215,7 @@
 <li class="toctree-l2"><a class="reference internal" href="paraview.simple.EnsembleDataReader.html">paraview.simple.EnsembleDataReader</a></li>
 <li class="toctree-l2"><a class="reference internal" href="paraview.simple.EnvironmentAnnotation.html">paraview.simple.EnvironmentAnnotation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="paraview.simple.EnzoReader.html">paraview.simple.EnzoReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.simple.EqualizerFilter.html">paraview.simple.EqualizerFilter</a></li>
 <li class="toctree-l2"><a class="reference internal" href="paraview.simple.EvenlySpacedStreamlines2D.html">paraview.simple.EvenlySpacedStreamlines2D</a></li>
 <li class="toctree-l2"><a class="reference internal" href="paraview.simple.ExodusIIReader.html">paraview.simple.ExodusIIReader</a></li>
 <li class="toctree-l2"><a class="reference internal" href="paraview.simple.ExodusIIWriter.html">paraview.simple.ExodusIIWriter</a></li>
@@ -1342,7 +1343,9 @@ If pipeline object and/or view are not specified, active objects are used.</p>
 <dt class="sig sig-object py" id="paraview.simple.Hide3DWidgets">
 <span class="sig-prename descclassname"><span class="pre">paraview.simple.</span></span><span class="sig-name descname"><span class="pre">Hide3DWidgets</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">proxy</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#Hide3DWidgets"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#paraview.simple.Hide3DWidgets" title="Permalink to this definition">¶</a></dt>
 <dd><p>If possible in the current environment, this method will
-request the application to hide the 3D widget(s) for proxy</p>
+request the application to show the 3D widget(s) for proxy</p>
+<p>::deprecated:: 5.11
+Use <a class="reference internal" href="#paraview.simple.HideInteractiveWidgets" title="paraview.simple.HideInteractiveWidgets"><code class="xref py py-func docutils literal notranslate"><span class="pre">HideInteractiveWidgets()</span></code></a> instead.</p>
 </dd></dl>
 
 <dl class="py function">
@@ -1350,6 +1353,13 @@ request the application to hide the 3D widget(s) for proxy</p>
 <span class="sig-prename descclassname"><span class="pre">paraview.simple.</span></span><span class="sig-name descname"><span class="pre">HideAll</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">view</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#HideAll"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#paraview.simple.HideAll" title="Permalink to this definition">¶</a></dt>
 <dd><p>Hide all pipeline sources in the given view.
 If view is not specified, active view is used.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="paraview.simple.HideInteractiveWidgets">
+<span class="sig-prename descclassname"><span class="pre">paraview.simple.</span></span><span class="sig-name descname"><span class="pre">HideInteractiveWidgets</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">proxy</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#HideInteractiveWidgets"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#paraview.simple.HideInteractiveWidgets" title="Permalink to this definition">¶</a></dt>
+<dd><p>If possible in the current environment, this method will
+request the application to hide the interactive widget(s) for proxy</p>
 </dd></dl>
 
 <dl class="py function">
@@ -1960,6 +1970,8 @@ If pipeline object and/or view are not specified, active objects are used.</p>
 <span class="sig-prename descclassname"><span class="pre">paraview.simple.</span></span><span class="sig-name descname"><span class="pre">Show3DWidgets</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">proxy</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#Show3DWidgets"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#paraview.simple.Show3DWidgets" title="Permalink to this definition">¶</a></dt>
 <dd><p>If possible in the current environment, this method will
 request the application to show the 3D widget(s) for proxy</p>
+<p>::deprecated:: 5.11
+Use <a class="reference internal" href="#paraview.simple.ShowInteractiveWidgets" title="paraview.simple.ShowInteractiveWidgets"><code class="xref py py-func docutils literal notranslate"><span class="pre">ShowInteractiveWidgets()</span></code></a> instead.</p>
 </dd></dl>
 
 <dl class="py function">
@@ -1967,6 +1979,13 @@ request the application to show the 3D widget(s) for proxy</p>
 <span class="sig-prename descclassname"><span class="pre">paraview.simple.</span></span><span class="sig-name descname"><span class="pre">ShowAll</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">view</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#ShowAll"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#paraview.simple.ShowAll" title="Permalink to this definition">¶</a></dt>
 <dd><p>Show all pipeline sources in the given view.
 If view is not specified, active view is used.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="paraview.simple.ShowInteractiveWidgets">
+<span class="sig-prename descclassname"><span class="pre">paraview.simple.</span></span><span class="sig-name descname"><span class="pre">ShowInteractiveWidgets</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">proxy</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#ShowInteractiveWidgets"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#paraview.simple.ShowInteractiveWidgets" title="Permalink to this definition">¶</a></dt>
+<dd><p>If possible in the current environment, this method will
+request the application to show the interactive widget(s) for proxy</p>
 </dd></dl>
 
 <dl class="py function">

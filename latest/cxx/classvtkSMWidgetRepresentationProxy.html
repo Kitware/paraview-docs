@@ -56,11 +56,12 @@ Inheritance diagram for vtkSMWidgetRepresentationProxy:</div>
 <div class="center"><img src="classvtkSMWidgetRepresentationProxy__inherit__graph.png" border="0" usemap="#vtkSMWidgetRepresentationProxy_inherit__map" alt="Inheritance graph"/></div>
 <map name="vtkSMWidgetRepresentationProxy_inherit__map" id="vtkSMWidgetRepresentationProxy_inherit__map">
 <area shape="rect" id="node5" href="classvtkSMBoxRepresentationProxy.html" title="proxy for vtkBoxRepresentation " alt="" coords="827,5,1051,32"/>
-<area shape="rect" id="node6" href="classvtkSMDisplaySizedImplicitPlaneRepresentationProxy.html" title="proxy for a display sized implicit plane representation " alt="" coords="841,57,1037,98"/>
-<area shape="rect" id="node7" href="classvtkSMImplicitPlaneRepresentationProxy.html" title="proxy for a implicit plane representation " alt="" coords="816,122,1063,163"/>
-<area shape="rect" id="node2" href="classvtkSMProxy.html" title="proxy for a VTK object(s) on a server " alt="" coords="412,64,512,91"/>
-<area shape="rect" id="node3" href="classvtkSMRemoteObject.html" title="baseclass for all proxy&#45;objects that have counter parts on server as well as client processes..." alt="" coords="208,64,364,91"/>
-<area shape="rect" id="node4" href="classvtkSMSessionObject.html" title="superclass for any server manager classes that are related to a session " alt="" coords="5,64,160,91"/>
+<area shape="rect" id="node6" href="classvtkSMContextItemWidgetProxy.html" title="proxy for a widget representation " alt="" coords="826,56,1053,83"/>
+<area shape="rect" id="node7" href="classvtkSMDisplaySizedImplicitPlaneRepresentationProxy.html" title="proxy for a display sized implicit plane representation " alt="" coords="841,107,1037,149"/>
+<area shape="rect" id="node8" href="classvtkSMImplicitPlaneRepresentationProxy.html" title="proxy for a implicit plane representation " alt="" coords="816,173,1063,214"/>
+<area shape="rect" id="node2" href="classvtkSMProxy.html" title="proxy for a VTK object(s) on a server " alt="" coords="412,85,512,112"/>
+<area shape="rect" id="node3" href="classvtkSMRemoteObject.html" title="baseclass for all proxy&#45;objects that have counter parts on server as well as client processes..." alt="" coords="208,85,364,112"/>
+<area shape="rect" id="node4" href="classvtkSMSessionObject.html" title="superclass for any server manager classes that are related to a session " alt="" coords="5,85,160,112"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <div class="dynheader">
@@ -953,7 +954,7 @@ Protected Attributes</h2></td></tr>
 
 <p>Reimplemented from <a class="el" href="classvtkSMProxy.html#a8ee756c0d310473dfdb5960e6c789a95">vtkSMProxy</a>.</p>
 
-<p>Reimplemented in <a class="el" href="classvtkSMBoxRepresentationProxy.html#acb5b3803cb49c5fe6aee1df5c937e278">vtkSMBoxRepresentationProxy</a>, <a class="el" href="classvtkSMDisplaySizedImplicitPlaneRepresentationProxy.html#ac8bd0b9a6358dbc3d6338bba0ac5181f">vtkSMDisplaySizedImplicitPlaneRepresentationProxy</a>, and <a class="el" href="classvtkSMImplicitPlaneRepresentationProxy.html#a59ca362e4bbdb54b87d78a10f7194756">vtkSMImplicitPlaneRepresentationProxy</a>.</p>
+<p>Reimplemented in <a class="el" href="classvtkSMBoxRepresentationProxy.html#acb5b3803cb49c5fe6aee1df5c937e278">vtkSMBoxRepresentationProxy</a>, <a class="el" href="classvtkSMContextItemWidgetProxy.html#a130cc380f526e6310c1e680b7fa724a8">vtkSMContextItemWidgetProxy</a>, <a class="el" href="classvtkSMDisplaySizedImplicitPlaneRepresentationProxy.html#ac8bd0b9a6358dbc3d6338bba0ac5181f">vtkSMDisplaySizedImplicitPlaneRepresentationProxy</a>, and <a class="el" href="classvtkSMImplicitPlaneRepresentationProxy.html#a59ca362e4bbdb54b87d78a10f7194756">vtkSMImplicitPlaneRepresentationProxy</a>.</p>
 
 </div>
 </div>
@@ -1009,7 +1010,7 @@ Protected Attributes</h2></td></tr>
 
 <p>Reimplemented from <a class="el" href="classvtkSMProxy.html#a31623e285e40424c34b817bdd90a8001">vtkSMProxy</a>.</p>
 
-<p>Reimplemented in <a class="el" href="classvtkSMBoxRepresentationProxy.html#adc6be464511dba6d9c007238c86113d7">vtkSMBoxRepresentationProxy</a>, <a class="el" href="classvtkSMDisplaySizedImplicitPlaneRepresentationProxy.html#ac3951fd8732a7669c281ae7ef546138a">vtkSMDisplaySizedImplicitPlaneRepresentationProxy</a>, and <a class="el" href="classvtkSMImplicitPlaneRepresentationProxy.html#acf4cfa8efc00df3c6d1c210b3712a833">vtkSMImplicitPlaneRepresentationProxy</a>.</p>
+<p>Reimplemented in <a class="el" href="classvtkSMBoxRepresentationProxy.html#adc6be464511dba6d9c007238c86113d7">vtkSMBoxRepresentationProxy</a>, <a class="el" href="classvtkSMContextItemWidgetProxy.html#a6be44ddca52d00ab85afc1914561c5b3">vtkSMContextItemWidgetProxy</a>, <a class="el" href="classvtkSMDisplaySizedImplicitPlaneRepresentationProxy.html#ac3951fd8732a7669c281ae7ef546138a">vtkSMDisplaySizedImplicitPlaneRepresentationProxy</a>, and <a class="el" href="classvtkSMImplicitPlaneRepresentationProxy.html#acf4cfa8efc00df3c6d1c210b3712a833">vtkSMImplicitPlaneRepresentationProxy</a>.</p>
 
 </div>
 </div>
@@ -1102,6 +1103,8 @@ Protected Attributes</h2></td></tr>
 
 <p>These method forward the representation state of the client side widget representation to the server. </p>
 
+<p>Reimplemented in <a class="el" href="classvtkSMContextItemWidgetProxy.html#a255b93e8f1b98cec7f3b2a8d4124310c">vtkSMContextItemWidgetProxy</a>.</p>
+
 </div>
 </div>
 <a id="a0f4fc36389734f2afe15cbed47d8d3aa"></a>
@@ -1181,7 +1184,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Reimplemented in <a class="el" href="classvtkSMDisplaySizedImplicitPlaneRepresentationProxy.html#a975f888902615111b2623791c54740c0">vtkSMDisplaySizedImplicitPlaneRepresentationProxy</a>, and <a class="el" href="classvtkSMImplicitPlaneRepresentationProxy.html#a963c5afe6ef85c52f7f51926ab9e50cb">vtkSMImplicitPlaneRepresentationProxy</a>.</p>
+<p>Reimplemented in <a class="el" href="classvtkSMContextItemWidgetProxy.html#a47930ae507f3d705a727f6e384a9fa23">vtkSMContextItemWidgetProxy</a>, <a class="el" href="classvtkSMDisplaySizedImplicitPlaneRepresentationProxy.html#a975f888902615111b2623791c54740c0">vtkSMDisplaySizedImplicitPlaneRepresentationProxy</a>, and <a class="el" href="classvtkSMImplicitPlaneRepresentationProxy.html#a963c5afe6ef85c52f7f51926ab9e50cb">vtkSMImplicitPlaneRepresentationProxy</a>.</p>
 
 </div>
 </div>
@@ -1219,7 +1222,7 @@ Protected Attributes</h2></td></tr>
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.13 on Wed Mar 23 2022
+</a> 1.8.13 on Thu Mar 24 2022
 </small></address>
 <!-- KW:BEGIN -->
 <!-- this adds the version selection header -->

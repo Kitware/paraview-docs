@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>paraview.simple &mdash; ParaView/Python 5.10.1-804-gae924745e8 documentation</title>
+  <title>paraview.simple &mdash; ParaView/Python 5.10.1-812-g6777e1303f documentation</title>
   
 
   
@@ -22,7 +22,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:'../../',
-        VERSION:'5.10.1-804-gae924745e8',
+        VERSION:'5.10.1-812-g6777e1303f',
         COLLAPSE_INDEX:false,
         FILE_SUFFIX:'.html',
         HAS_SOURCE:  true
@@ -51,7 +51,7 @@
         <link rel="index" title="Index"
               href="../../genindex.html"/>
         <link rel="search" title="Search" href="../../search.html"/>
-    <link rel="top" title="ParaView/Python 5.10.1-804-gae924745e8 documentation" href="../../index.html"/>
+    <link rel="top" title="ParaView/Python 5.10.1-812-g6777e1303f documentation" href="../../index.html"/>
         <link rel="up" title="Module code" href="../index.html"/> 
 
   <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
@@ -69,7 +69,7 @@
           <li> <a href="../../index.html">
             <img src="../../_static/paraview-logo-small.png"
             alt="ParaView/Python"></img></a> </li>
-          <li class="version"> version 5.10.1-804-gae924745e8</li>
+          <li class="version"> version 5.10.1-812-g6777e1303f</li>
         </ul>
         <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
   <input type="text" name="q" placeholder="Search docs" />
@@ -213,6 +213,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.EnsembleDataReader.html">paraview.simple.EnsembleDataReader</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.EnvironmentAnnotation.html">paraview.simple.EnvironmentAnnotation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.EnzoReader.html">paraview.simple.EnzoReader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.EqualizerFilter.html">paraview.simple.EqualizerFilter</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.EvenlySpacedStreamlines2D.html">paraview.simple.EvenlySpacedStreamlines2D</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.ExodusIIReader.html">paraview.simple.ExodusIIReader</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../paraview.simple.ExodusIIWriter.html">paraview.simple.ExodusIIWriter</a></li>
@@ -3094,34 +3095,60 @@
 <span class="c1">#==============================================================================</span>
 <span class="c1"># Miscellaneous functions.</span>
 <span class="c1">#==============================================================================</span>
-<div class="viewcode-block" id="Show3DWidgets"><a class="viewcode-back" href="../../paraview.simple.html#paraview.simple.Show3DWidgets">[docs]</a><span class="k">def</span> <span class="nf">Show3DWidgets</span><span class="p">(</span><span class="n">proxy</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class="viewcode-block" id="ShowInteractiveWidgets"><a class="viewcode-back" href="../../paraview.simple.html#paraview.simple.ShowInteractiveWidgets">[docs]</a><span class="k">def</span> <span class="nf">ShowInteractiveWidgets</span><span class="p">(</span><span class="n">proxy</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;If possible in the current environment, this method will</span>
-<span class="sd">    request the application to show the 3D widget(s) for proxy&quot;&quot;&quot;</span>
+<span class="sd">    request the application to show the interactive widget(s) for proxy&quot;&quot;&quot;</span>
     <span class="n">proxy</span> <span class="o">=</span> <span class="n">proxy</span> <span class="k">if</span> <span class="n">proxy</span> <span class="k">else</span> <span class="n">GetActiveSource</span><span class="p">()</span>
     <span class="k">if</span> <span class="ow">not</span> <span class="n">proxy</span><span class="p">:</span>
         <span class="k">raise</span> <span class="ne">ValueError</span> <span class="p">(</span><span class="s2">&quot;No &#39;proxy&#39; was provided and no active source was found.&quot;</span><span class="p">)</span>
-    <span class="n">_Invoke3DWidgetUserEvent</span><span class="p">(</span><span class="n">proxy</span><span class="p">,</span> <span class="s2">&quot;ShowWidget&quot;</span><span class="p">)</span></div>
+    <span class="n">_InvokeWidgetUserEvent</span><span class="p">(</span><span class="n">proxy</span><span class="p">,</span> <span class="s2">&quot;ShowWidget&quot;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="HideInteractiveWidgets"><a class="viewcode-back" href="../../paraview.simple.html#paraview.simple.HideInteractiveWidgets">[docs]</a><span class="k">def</span> <span class="nf">HideInteractiveWidgets</span><span class="p">(</span><span class="n">proxy</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;If possible in the current environment, this method will</span>
+<span class="sd">    request the application to hide the interactive widget(s) for proxy&quot;&quot;&quot;</span>
+    <span class="n">proxy</span> <span class="o">=</span> <span class="n">proxy</span> <span class="k">if</span> <span class="n">proxy</span> <span class="k">else</span> <span class="n">GetActiveSource</span><span class="p">()</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">proxy</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span> <span class="p">(</span><span class="s2">&quot;No &#39;proxy&#39; was provided and no active source was found.&quot;</span><span class="p">)</span>
+    <span class="n">_InvokeWidgetUserEvent</span><span class="p">(</span><span class="n">proxy</span><span class="p">,</span> <span class="s2">&quot;HideWidget&quot;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Show3DWidgets"><a class="viewcode-back" href="../../paraview.simple.html#paraview.simple.Show3DWidgets">[docs]</a><span class="k">def</span> <span class="nf">Show3DWidgets</span><span class="p">(</span><span class="n">proxy</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    If possible in the current environment, this method will</span>
+<span class="sd">    request the application to show the 3D widget(s) for proxy</span>
+
+<span class="sd">    ::deprecated:: 5.11</span>
+<span class="sd">    Use :func:`ShowInteractiveWidgets` instead.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="kn">import</span> <span class="nn">warnings</span>
+    <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="s2">&quot;`Show3DWidgets` is deprecated in ParaView 5.11. Use `ShowInteractiveWidgets` instead&quot;</span><span class="p">,</span>
+        <span class="ne">DeprecationWarning</span><span class="p">)</span>
+    <span class="n">ShowInteractiveWidgets</span><span class="p">(</span><span class="n">proxy</span><span class="p">)</span></div>
 
 <div class="viewcode-block" id="Hide3DWidgets"><a class="viewcode-back" href="../../paraview.simple.html#paraview.simple.Hide3DWidgets">[docs]</a><span class="k">def</span> <span class="nf">Hide3DWidgets</span><span class="p">(</span><span class="n">proxy</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;If possible in the current environment, this method will</span>
-<span class="sd">    request the application to hide the 3D widget(s) for proxy&quot;&quot;&quot;</span>
-    <span class="n">proxy</span> <span class="o">=</span> <span class="n">proxy</span> <span class="k">if</span> <span class="n">proxy</span> <span class="k">else</span> <span class="n">GetActiveSource</span><span class="p">()</span>
-    <span class="k">if</span> <span class="ow">not</span> <span class="n">proxy</span><span class="p">:</span>
-        <span class="k">raise</span> <span class="ne">ValueError</span> <span class="p">(</span><span class="s2">&quot;No &#39;proxy&#39; was provided and no active source was found.&quot;</span><span class="p">)</span>
-    <span class="n">_Invoke3DWidgetUserEvent</span><span class="p">(</span><span class="n">proxy</span><span class="p">,</span> <span class="s2">&quot;HideWidget&quot;</span><span class="p">)</span></div>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    If possible in the current environment, this method will</span>
+<span class="sd">    request the application to show the 3D widget(s) for proxy</span>
 
-<span class="k">def</span> <span class="nf">_Invoke3DWidgetUserEvent</span><span class="p">(</span><span class="n">proxy</span><span class="p">,</span> <span class="n">event</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Internal method used by Show3DWidgets/Hide3DWidgets&quot;&quot;&quot;</span>
+<span class="sd">    ::deprecated:: 5.11</span>
+<span class="sd">    Use :func:`HideInteractiveWidgets` instead.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="kn">import</span> <span class="nn">warnings</span>
+    <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="s2">&quot;`Hide3DWidgets` is deprecated in ParaView 5.11. Use `HideInteractiveWidgets` instead&quot;</span><span class="p">,</span>
+        <span class="ne">DeprecationWarning</span><span class="p">)</span>
+    <span class="n">HideInteractiveWidgets</span><span class="p">(</span><span class="n">proxy</span><span class="p">)</span></div>
+
+<span class="k">def</span> <span class="nf">_InvokeWidgetUserEvent</span><span class="p">(</span><span class="n">proxy</span><span class="p">,</span> <span class="n">event</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Internal method used by ShowInteractiveWidgets/HideInteractiveWidgets&quot;&quot;&quot;</span>
     <span class="k">if</span> <span class="n">proxy</span><span class="p">:</span>
         <span class="n">proxy</span><span class="o">.</span><span class="n">InvokeEvent</span><span class="p">(</span><span class="s1">&#39;UserEvent&#39;</span><span class="p">,</span> <span class="n">event</span><span class="p">)</span>
-        <span class="c1"># Since in 5.0 and earlier, Show3DWidgets/Hide3DWidgets was called with the</span>
-        <span class="c1"># proxy being the filter proxy (eg. Clip) and not the proxy that has the</span>
-        <span class="c1"># widget i.e. (Clip.ClipType), we explicitly handle it by iterating of</span>
-        <span class="c1"># proxy list properties and then invoking the event on their value proxies</span>
-        <span class="c1"># too.</span>
+        <span class="c1"># Since in 5.0 and earlier, ShowInteractiveWidgets/HideInteractiveWidgets</span>
+        <span class="c1"># was called with the proxy being the filter proxy (eg. Clip) and not the</span>
+        <span class="c1"># proxy that has the widget i.e. (Clip.ClipType), we explicitly handle it</span>
+        <span class="c1"># by iterating of proxy list properties and then invoking the event on</span>
+        <span class="c1"># their value proxies too.</span>
         <span class="k">for</span> <span class="n">smproperty</span> <span class="ow">in</span> <span class="n">proxy</span><span class="p">:</span>
             <span class="k">if</span> <span class="n">smproperty</span><span class="o">.</span><span class="n">FindDomain</span><span class="p">(</span><span class="s2">&quot;vtkSMProxyListDomain&quot;</span><span class="p">):</span>
-                <span class="n">_Invoke3DWidgetUserEvent</span><span class="p">(</span><span class="n">smproperty</span><span class="o">.</span><span class="n">GetData</span><span class="p">(),</span> <span class="n">event</span><span class="p">)</span>
+                <span class="n">_InvokeWidgetUserEvent</span><span class="p">(</span><span class="n">smproperty</span><span class="o">.</span><span class="n">GetData</span><span class="p">(),</span> <span class="n">event</span><span class="p">)</span>
 
 <div class="viewcode-block" id="ExportView"><a class="viewcode-back" href="../../paraview.simple.html#paraview.simple.ExportView">[docs]</a><span class="k">def</span> <span class="nf">ExportView</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">view</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">params</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Export a view to the specified output file.&quot;&quot;&quot;</span>

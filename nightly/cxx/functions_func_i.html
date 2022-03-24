@@ -486,7 +486,7 @@ $(function() {
 : <a class="el" href="classvtkAMRFragmentsFilter.html#a39afef03f4a5523281b7ccfcb09b9ade">vtkAMRFragmentsFilter</a>
 </li>
 <li>interaction()
-: <a class="el" href="classpqInteractivePropertyWidget.html#a8fe3ed743b24a5423e08a13bdad1f7b2">pqInteractivePropertyWidget</a>
+: <a class="el" href="classpqInteractivePropertyWidgetAbstract.html#ad51ca870936aaab1e845a0bf3e2dde26">pqInteractivePropertyWidgetAbstract</a>
 </li>
 <li>interactive()
 : <a class="el" href="classpqAnimationModel.html#a59d4ee6aebf9b96f1cccbb7dcc9c18d3">pqAnimationModel</a>
@@ -548,6 +548,11 @@ $(function() {
 </li>
 <li>InternalUndoRedo()
 : <a class="el" href="classpqProxyModifiedStateUndoElement.html#a3eff83f250a22ea50db6be3d9dbf7a1d">pqProxyModifiedStateUndoElement</a>
+</li>
+<li>internalWidgetProxy()
+: <a class="el" href="classpqInteractiveProperty2DWidget.html#a1d95b100495b3836fb93530536d70c46">pqInteractiveProperty2DWidget</a>
+, <a class="el" href="classpqInteractivePropertyWidget.html#a6a09c5288ed64eeb71680fca7cbe0e70">pqInteractivePropertyWidget</a>
+, <a class="el" href="classpqInteractivePropertyWidgetAbstract.html#a877389999eeaf6b5e7e67f69f6d3cadd">pqInteractivePropertyWidgetAbstract</a>
 </li>
 <li>InterpolateAtLocation()
 : <a class="el" href="classvtkHybridProbeFilter.html#ae5c4fc20a0c8f2eeffb28699c89d7a6c">vtkHybridProbeFilter</a>
@@ -626,6 +631,7 @@ $(function() {
 : <a class="el" href="classpqOptions.html#a0fccdd28281d3bcf25555144a37e6239">pqOptions</a>
 , <a class="el" href="classpqProxyModifiedStateUndoElement.html#a2e03b88b846f152db66d87f6454bdc75">pqProxyModifiedStateUndoElement</a>
 , <a class="el" href="classpqUndoStackBuilder.html#a1359fe26d8356f8b006d63283d53b4db">pqUndoStackBuilder</a>
+, <a class="el" href="classvtk2DWidgetRepresentation.html#a369b8fc1442624ed2041b53201603c3f">vtk2DWidgetRepresentation</a>
 , <a class="el" href="classvtk3DWidgetRepresentation.html#aac88ff68c220fec8bf01cd088e159c82">vtk3DWidgetRepresentation</a>
 , <a class="el" href="classvtkACosmoReader.html#aff828e37f65b21430e129ecf61d219d6">vtkACosmoReader</a>
 , <a class="el" href="classvtkAdditionalFieldReader.html#ad1e409ef023888bdb12d7c04cbf746a4">vtkAdditionalFieldReader</a>
@@ -1108,6 +1114,7 @@ $(function() {
 , <a class="el" href="classvtkSMCompoundProxyDefinitionLoader.html#adbb589c54edcf75b23a0639e4ef54f7f">vtkSMCompoundProxyDefinitionLoader</a>
 , <a class="el" href="classvtkSMCompoundSourceProxy.html#a71d468110b9dfc3558c9cf3e7217c937">vtkSMCompoundSourceProxy</a>
 , <a class="el" href="classvtkSMCompoundSourceProxyDefinitionBuilder.html#abfa6a6f3877adc845ed1826ca148dd11">vtkSMCompoundSourceProxyDefinitionBuilder</a>
+, <a class="el" href="classvtkSMContextItemWidgetProxy.html#a6be44ddca52d00ab85afc1914561c5b3">vtkSMContextItemWidgetProxy</a>
 , <a class="el" href="classvtkSMContextViewProxy.html#aa963fc598c7c313957bc158fd9c8ba85">vtkSMContextViewProxy</a>
 , <a class="el" href="classvtkSMCoreUtilities.html#ab50a2aa3aa1d20d8703f278946c07b1e">vtkSMCoreUtilities</a>
 , <a class="el" href="classvtkSMCSVExporterProxy.html#a2eecdbca5864fc5475a80f2176ddd959">vtkSMCSVExporterProxy</a>
@@ -1170,7 +1177,9 @@ $(function() {
 , <a class="el" href="classvtkSMMultiServerSourceProxy.html#a2486d70fa456e48c8d6fb6c40f03e9fa">vtkSMMultiServerSourceProxy</a>
 , <a class="el" href="classvtkSMMultiSliceViewProxy.html#afbabc2137905b97c2152e9455a3a2615">vtkSMMultiSliceViewProxy</a>
 , <a class="el" href="classvtkSMNamedPropertyIterator.html#a153639e49399921af1a232b5b58518a3">vtkSMNamedPropertyIterator</a>
+, <a class="el" href="classvtkSMNew2DWidgetRepresentationProxy.html#acf34a307a06a930d5113c609ff09fa9a">vtkSMNew2DWidgetRepresentationProxy</a>
 , <a class="el" href="classvtkSMNewWidgetRepresentationProxy.html#a544f991f94632af61798890fe30ab9cd">vtkSMNewWidgetRepresentationProxy</a>
+, <a class="el" href="classvtkSMNewWidgetRepresentationProxyAbstract.html#a58734cd8d55accabfbfb255d6cb5b9f1">vtkSMNewWidgetRepresentationProxyAbstract</a>
 , <a class="el" href="classvtkSMNullProxy.html#adef810e706a796c404d6a53cdec12f22">vtkSMNullProxy</a>
 , <a class="el" href="classvtkSMNumberOfComponentsDomain.html#aa5133c81a9c6e3c2597bb1a8ef3c12ef">vtkSMNumberOfComponentsDomain</a>
 , <a class="el" href="classvtkSMObject.html#abd9a56a768d6f441f353eb41b34953b3">vtkSMObject</a>
@@ -1401,7 +1410,7 @@ $(function() {
 : <a class="el" href="classvtkSpreadSheetView.html#a1f7349f5cccc0d9720415aaa4c688495">vtkSpreadSheetView</a>
 </li>
 <li>IsColumnInternal()
-: <a class="el" href="classvtkSpreadSheetView.html#a53bbbf0d115b65658382ea26fd1224f2">vtkSpreadSheetView</a>
+: <a class="el" href="classvtkSpreadSheetView.html#a1f6b4f413eae6908afae1d650e3617d7">vtkSpreadSheetView</a>
 </li>
 <li>isColumnSizeManaged()
 : <a class="el" href="classpqFlatTreeView.html#ace3f7a6d0e5e11d146bf6fb7d86a7df7">pqFlatTreeView</a>
@@ -1535,7 +1544,7 @@ $(function() {
 , <a class="el" href="classvtkSMDiscreteDoubleDomain.html#a4b388983d672557f3732ea3f62b5563e">vtkSMDiscreteDoubleDomain</a>
 , <a class="el" href="classvtkSMDomain.html#aecbd0b9b6491de0182722e78cb71b960">vtkSMDomain</a>
 , <a class="el" href="classvtkSMEnumerationDomain.html#ac55c315710c3bcf4b7e009911d97156f">vtkSMEnumerationDomain</a>
-, <a class="el" href="classvtkSMFixedTypeDomain.html#aa4f4c40b6f11e2b2d5f50c84cf47e174">vtkSMFixedTypeDomain</a>
+, <a class="el" href="classvtkSMFixedTypeDomain.html#a0aff24c37374c62164214e09e86626ba">vtkSMFixedTypeDomain</a>
 , <a class="el" href="classvtkSMIndexSelectionDomain.html#a07b1066328cc10d1d117419342ffe8b9">vtkSMIndexSelectionDomain</a>
 , <a class="el" href="classvtkSMInputArrayDomain.html#afd6f5f5961d2ffcba35c13db095a9c15">vtkSMInputArrayDomain</a>
 , <a class="el" href="classvtkSMMultiplexerInputDomain.html#acc2025abb141e2ae0b46b7c4e55edbcf">vtkSMMultiplexerInputDomain</a>
@@ -1704,8 +1713,8 @@ $(function() {
 : <a class="el" href="classvtkSMPVRepresentationProxy.html#a5a85d86e8e955ed94cb0e014b6c448b8">vtkSMPVRepresentationProxy</a>
 </li>
 <li>IsScalarBarVisible()
-: <a class="el" href="classvtkSMPVRepresentationProxy.html#a452422d5d4ce13cb2d395c65efbb7998">vtkSMPVRepresentationProxy</a>
-, <a class="el" href="classvtkSMTransferFunctionProxy.html#a9db6dbe60d4a18c143def60f25aefcf8">vtkSMTransferFunctionProxy</a>
+: <a class="el" href="classvtkSMPVRepresentationProxy.html#a959b4fac76b4015e153f3bd401db3a85">vtkSMPVRepresentationProxy</a>
+, <a class="el" href="classvtkSMTransferFunctionProxy.html#a572fb1fa7b51ccfef7a97a32d84fd6f2">vtkSMTransferFunctionProxy</a>
 </li>
 <li>isSelectable()
 : <a class="el" href="classpqPipelineModel.html#a22c0ad57127d7a42d024859b4b53bf34">pqPipelineModel</a>
@@ -1776,6 +1785,7 @@ $(function() {
 : <a class="el" href="classpqOptions.html#a76758023b6ae62e794ea95264e296a6b">pqOptions</a>
 , <a class="el" href="classpqProxyModifiedStateUndoElement.html#a760ff09b57fe010044a375aa6fc7d017">pqProxyModifiedStateUndoElement</a>
 , <a class="el" href="classpqUndoStackBuilder.html#aafcd9eda31c2238e6d936f05c3f82048">pqUndoStackBuilder</a>
+, <a class="el" href="classvtk2DWidgetRepresentation.html#a48434fa52f50d527aa996a05bec68400">vtk2DWidgetRepresentation</a>
 , <a class="el" href="classvtk3DWidgetRepresentation.html#a7577e5571fdae44b9341025a1a55d077">vtk3DWidgetRepresentation</a>
 , <a class="el" href="classvtkACosmoReader.html#ad83e46da2d2a3a862e19d2d757726dce">vtkACosmoReader</a>
 , <a class="el" href="classvtkAdditionalFieldReader.html#a00691f4af47b2df78393cfe311cef5a8">vtkAdditionalFieldReader</a>
@@ -2258,6 +2268,7 @@ $(function() {
 , <a class="el" href="classvtkSMCompoundProxyDefinitionLoader.html#add2f8893d69101a13f7faaf5ae087503">vtkSMCompoundProxyDefinitionLoader</a>
 , <a class="el" href="classvtkSMCompoundSourceProxy.html#a159a41c86cf3e2764282f11e7888d075">vtkSMCompoundSourceProxy</a>
 , <a class="el" href="classvtkSMCompoundSourceProxyDefinitionBuilder.html#a5e1b15848f3ba04cdd5d1e947c04c06e">vtkSMCompoundSourceProxyDefinitionBuilder</a>
+, <a class="el" href="classvtkSMContextItemWidgetProxy.html#a64ea419a7b83ab5806e12f3e57778a48">vtkSMContextItemWidgetProxy</a>
 , <a class="el" href="classvtkSMContextViewProxy.html#a9926c7c4f14e39a84f6b3e02f957ea49">vtkSMContextViewProxy</a>
 , <a class="el" href="classvtkSMCoreUtilities.html#ab218cde0364bedc6a6f84b3c230d8a35">vtkSMCoreUtilities</a>
 , <a class="el" href="classvtkSMCSVExporterProxy.html#a3661d8d60b2fd435213c45ea57e5d6fb">vtkSMCSVExporterProxy</a>
@@ -2320,7 +2331,9 @@ $(function() {
 , <a class="el" href="classvtkSMMultiServerSourceProxy.html#a20dabffceb927726e30cad4c327dce1e">vtkSMMultiServerSourceProxy</a>
 , <a class="el" href="classvtkSMMultiSliceViewProxy.html#a98e3579543eec05998f22dfbdb82e888">vtkSMMultiSliceViewProxy</a>
 , <a class="el" href="classvtkSMNamedPropertyIterator.html#abcc13d0c2dec541fc9a3cc458a131d3d">vtkSMNamedPropertyIterator</a>
+, <a class="el" href="classvtkSMNew2DWidgetRepresentationProxy.html#aada52be63695996f6bacc98299a7217f">vtkSMNew2DWidgetRepresentationProxy</a>
 , <a class="el" href="classvtkSMNewWidgetRepresentationProxy.html#a60329bb750afdf3368e3257143e37e6a">vtkSMNewWidgetRepresentationProxy</a>
+, <a class="el" href="classvtkSMNewWidgetRepresentationProxyAbstract.html#a1bbb0fa6771e07eb8bb28b4eeae85008">vtkSMNewWidgetRepresentationProxyAbstract</a>
 , <a class="el" href="classvtkSMNullProxy.html#a4ac62e25af96e583c46365efa1f23bb1">vtkSMNullProxy</a>
 , <a class="el" href="classvtkSMNumberOfComponentsDomain.html#ad28bfac4983a1d56bb653b8f0e74caf2">vtkSMNumberOfComponentsDomain</a>
 , <a class="el" href="classvtkSMObject.html#ad1d22b5a813945e8599ba19cd165d41b">vtkSMObject</a>
@@ -2500,16 +2513,16 @@ $(function() {
 : <a class="el" href="classvtkRectilinearGridConnectivity.html#a31121e02cda57fa0b8d024d00061d9e1">vtkRectilinearGridConnectivity</a>
 </li>
 <li>isWidgetVisible()
-: <a class="el" href="classpqInteractivePropertyWidget.html#a14c7719685689f46c45e85dfab16d0d0">pqInteractivePropertyWidget</a>
+: <a class="el" href="classpqInteractivePropertyWidgetAbstract.html#a7cbd332e32fcb0682c212e9f66e48976">pqInteractivePropertyWidgetAbstract</a>
 </li>
 <li>isWriterParametersProxy()
 : <a class="el" href="classpqLiveInsituManager.html#a6247f79d309fb92171aa7e88dd75a0a1">pqLiveInsituManager</a>
 </li>
 <li>item()
-: <a class="el" href="classparaview__protobuf_1_1PROTOBUF__FINAL.html#ae4f282321d3cda9351a96e1da8b70ca8">paraview_protobuf::PROTOBUF_FINAL</a>
+: <a class="el" href="classparaview__protobuf_1_1PROTOBUF__FINAL.html#a8069c07457e18447e3d0b533c0eba2bd">paraview_protobuf::PROTOBUF_FINAL</a>
 </li>
 <li>Item()
-: <a class="el" href="classpqHierarchicalGridLayout_1_1Item.html#a8b92e12bfa7eecf139155dca741cdcc6">pqHierarchicalGridLayout::Item</a>
+: <a class="el" href="classpqHierarchicalGridLayout_1_1Item.html#a1e14376fe2abd2c76e64738de86fdd83">pqHierarchicalGridLayout::Item</a>
 </li>
 <li>item_size()
 : <a class="el" href="classparaview__protobuf_1_1PROTOBUF__FINAL.html#a896a4615313c72fa391dc65c4ca85066">paraview_protobuf::PROTOBUF_FINAL</a>
@@ -2553,8 +2566,14 @@ $(function() {
 <li>pqIntegrationModelSurfaceHelperWidgetPWIImplementation()
 : <a class="el" href="classpqIntegrationModelSurfaceHelperWidgetPWIImplementation.html#a5b63b775c07a1057cf968c8ca5161654">pqIntegrationModelSurfaceHelperWidgetPWIImplementation</a>
 </li>
+<li>pqInteractiveProperty2DWidget()
+: <a class="el" href="classpqInteractiveProperty2DWidget.html#ac714520c699c284ee310dbbd6b002ad6">pqInteractiveProperty2DWidget</a>
+</li>
 <li>pqInteractivePropertyWidget()
 : <a class="el" href="classpqInteractivePropertyWidget.html#a5d7be594f229fd6b9c0fab63f4366cb5">pqInteractivePropertyWidget</a>
+</li>
+<li>pqInteractivePropertyWidgetAbstract()
+: <a class="el" href="classpqInteractivePropertyWidgetAbstract.html#a471e29cd297bf233e559f09a37e03ad4">pqInteractivePropertyWidgetAbstract</a>
 </li>
 <li>pqInteractiveViewLink()
 : <a class="el" href="classpqInteractiveViewLink.html#a13f13af8d74ba19360b3083fef049068">pqInteractiveViewLink</a>
@@ -2662,13 +2681,13 @@ $(function() {
 : <a class="el" href="classvtkPVImplicitPlaneRepresentation.html#ab53e97e174e5d5864b601bec7d7728ae">vtkPVImplicitPlaneRepresentation</a>
 </li>
 <li>vtkPVInformation()
-: <a class="el" href="classvtkPVInformation.html#a4e15a9c705b23781c5e23090fe50e92e">vtkPVInformation</a>
+: <a class="el" href="classvtkPVInformation.html#ac818d7c870b556a33d3f5e9b1d1548a2">vtkPVInformation</a>
 </li>
 <li>vtkPVInteractiveViewLinkRepresentation()
 : <a class="el" href="classvtkPVInteractiveViewLinkRepresentation.html#a21c9b28b3d6653a67792f71b68a78196">vtkPVInteractiveViewLinkRepresentation</a>
 </li>
 <li>vtkPVInteractorStyle()
-: <a class="el" href="classvtkPVInteractorStyle.html#a07330d1e2603162b34e335d099865bda">vtkPVInteractorStyle</a>
+: <a class="el" href="classvtkPVInteractorStyle.html#aede6cf37ae4d99f7de7b4b2e44e003f5">vtkPVInteractorStyle</a>
 </li>
 <li>vtkSMIdTypeVectorProperty()
 : <a class="el" href="classvtkSMIdTypeVectorProperty.html#a98ab4d548e325bbe52612562dbe0be54">vtkSMIdTypeVectorProperty</a>
@@ -2713,7 +2732,7 @@ $(function() {
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.13 on Wed Mar 23 2022
+</a> 1.8.13 on Thu Mar 24 2022
 </small></address>
 <!-- KW:BEGIN -->
 <!-- this adds the version selection header -->
