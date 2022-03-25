@@ -89,7 +89,7 @@ if [ "$PARAVIEW_DOC_UPLOAD" = "true" ]; then
     cd "${WORK_DIR}/paraview-docs/"
 
     if [ "$UPDATE_LATEST" = "true" ]; then
-      cp -rf "$VERSION" latest
+      rsync -a --delete "$VERSION"/ latest/
     fi
 
     git add "$VERSION"
