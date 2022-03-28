@@ -61,6 +61,6 @@ git commit --quiet -C "${INITIAL_REV}"
 
 # Apply the N most recent commits
 git cherry-pick --quit
-git cherry-pick "${INITIAL_REV}..${OLD_TARGET_BRANCH}"
+git cherry-pick -m1 "${INITIAL_REV}..${OLD_TARGET_BRANCH}"
 
 git push -f "${REMOTE}" "${TARGET_BRANCH}"
