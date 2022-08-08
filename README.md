@@ -32,7 +32,7 @@ on a Linux system.
 
 * Checkout ParaView source for appropriate version.
 * Build ParaView with `PARAVIEW_BUILD_DEVELOPER_DOCUMENTATION` CMake flag turned ON. You may also
-  want to enable all approprate features e.g. Python support, MPI support. With
+  want to enable all appropriate features e.g. Python support, MPI support. With
   Python, make sure the `sphinx-build:FILEPATH` points to the sphix-build script
   for correct version of Python.
 * Build ParaView normally. This is necessary to ensure everything is built
@@ -47,7 +47,7 @@ on a Linux system.
 * When adding a new version, you should edit the `versions.json` file in the
   `gh-pages` branch to ensure it all the versions listed and labelled correctly.
   When adding new commits to gh-pages branch, ensure that last commit is the nightly
-  doc update commit since the automatic builders ammend the last commit.
+  doc update commit since the automatic builders amend the last commit.
 
 ## How to update the generated script
 
