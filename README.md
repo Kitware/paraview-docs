@@ -1,6 +1,14 @@
 # Paraview-doc
 
-Automated publication of ParaView documentation via github pages.
+Automated publication of ParaView documentation via GitHub pages.
+
+Given Paraview source and build trees, tt provides the infrastructure for
+* generating the associated ParaView C++ and Python API documentation
+* automatically updating the site available at https://kitware.github.io/paraview-docs/ after changes are pushed onto the `gh-pages` branch
+
+The updates to the `gh-pages` branch are pushed every night by the official "dashboard" build & testing ParaView and maintained by [@Kitware](https://github.com/Kitware).
+
+Note that the project hosting the user's guide, reference manual and tutorials published at https://docs.paraview.org is hosted at https://gitlab.kitware.com/paraview/paraview-docs.
 
 ## selector.js
 
