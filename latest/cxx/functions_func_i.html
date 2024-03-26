@@ -489,6 +489,9 @@ $(function() {
 <li>InstantiateGroupPrototypes()
 : <a class="el" href="classvtkSMSessionProxyManager.html#a1a75c32863843170ba40aa7a22737e6f">vtkSMSessionProxyManager</a>
 </li>
+<li>instantiateLiveSourceManager()
+: <a class="el" href="classpqPVApplicationCore.html#ac5b6de23aaddd969fb4047a4f0cc6438">pqPVApplicationCore</a>
+</li>
 <li>InstantiatePrototypes()
 : <a class="el" href="classvtkSMSessionProxyManager.html#a427a8f3f07c52e310ef7cd27e0655276">vtkSMSessionProxyManager</a>
 </li>
@@ -762,6 +765,7 @@ $(function() {
 , <a class="el" href="classvtkDisplayConfiguration.html#acac50be947cf3476f8f6ebe66229cd28">vtkDisplayConfiguration</a>
 , <a class="el" href="classvtkDistributedTrivialProducer.html#a799e0a4da11220a99db9de202c21757f">vtkDistributedTrivialProducer</a>
 , <a class="el" href="classvtkDomainsChemistryOpenGL2ObjectFactory.html#a81029fc275be03c93423eaa027acd559">vtkDomainsChemistryOpenGL2ObjectFactory</a>
+, <a class="el" href="classvtkEmulatedTimeAlgorithm.html#a6963e3631077c2534594e6ce07228614">vtkEmulatedTimeAlgorithm</a>
 , <a class="el" href="classvtkEnsembleDataReader.html#a6958143bef5e6163e9515d0d468cb40a">vtkEnsembleDataReader</a>
 , <a class="el" href="classvtkEnvironmentAnnotationFilter.html#aec1bab6ceae7ab83a24f3c0d17e258de">vtkEnvironmentAnnotationFilter</a>
 , <a class="el" href="classvtkEquivalenceSet.html#a35ef46725488cdd76402645246f7745d">vtkEquivalenceSet</a>
@@ -1432,7 +1436,7 @@ $(function() {
 : <a class="el" href="classpqTimelinePainter.html#a42caf10212d70e08a5cf84ae8893ff4d">pqTimelinePainter</a>
 </li>
 <li>IsAnyTriggerActivated()
-: <a class="el" href="classvtkSMExtractsController.html#acf0f83605c580d7f5670ebdf729c78fe">vtkSMExtractsController</a>
+: <a class="el" href="classvtkSMExtractsController.html#ad4240a264e13c4f68f07da07115bef07">vtkSMExtractsController</a>
 </li>
 <li>IsArrayAcceptable()
 : <a class="el" href="classvtkSMInputArrayDomain.html#a5d9c40d0530f4592e31a8569f0b31a51">vtkSMInputArrayDomain</a>
@@ -1452,7 +1456,7 @@ $(function() {
 , <a class="el" href="classvtkSMProxyIterator.html#a87b54ea90914f09887dc22cd91774b29">vtkSMProxyIterator</a>
 </li>
 <li>IsAttributeTypeAcceptable()
-: <a class="el" href="classvtkSMInputArrayDomain.html#a483d9a594f0db01a53b7c2652d329d6d">vtkSMInputArrayDomain</a>
+: <a class="el" href="classvtkSMInputArrayDomain.html#a9fe2b73f2bd8144022182a2a311da0ce">vtkSMInputArrayDomain</a>
 </li>
 <li>IsAttributeValid()
 : <a class="el" href="classvtkPVDataInformation.html#a0234f0841bee36663e2de00ff814be7d">vtkPVDataInformation</a>
@@ -1573,6 +1577,12 @@ $(function() {
 , <a class="el" href="classvtkSMPropertyGroup.html#add2c2ad746fc9007e6c7730bc9068bfc">vtkSMPropertyGroup</a>
 , <a class="el" href="classvtkVRQueue.html#ab5455edd718fbe3a5454385281727f5e">vtkVRQueue</a>
 </li>
+<li>isEmulatedTimeAlgorithm()
+: <a class="el" href="classpqLiveSourceItem.html#aa8cd110c5ed64f97b081311b038817fe">pqLiveSourceItem</a>
+</li>
+<li>isEmulatedTimePaused()
+: <a class="el" href="classpqLiveSourceManager.html#a053c0f14dec8f83302baf744438e472a">pqLiveSourceManager</a>
+</li>
 <li>isEnabled()
 : <a class="el" href="classpqAnimationCue.html#a6d90b0db8caac7cb14003e30cd2df96c">pqAnimationCue</a>
 , <a class="el" href="classpqExtractor.html#a1b9e239828807aa0b3b04dbb09e5e666">pqExtractor</a>
@@ -1645,11 +1655,11 @@ $(function() {
 <li>IsInDomain()
 : <a class="el" href="classvtkSMBooleanDomain.html#abc64a4e6c86dead44220ceed27317848">vtkSMBooleanDomain</a>
 , <a class="el" href="classvtkSMCompositeTreeDomain.html#af11a6ed6d3c09bc23320e951af4a7543">vtkSMCompositeTreeDomain</a>
-, <a class="el" href="classvtkSMDataTypeDomain.html#acd229ac1416dcc0274db7b8c359a0642">vtkSMDataTypeDomain</a>
+, <a class="el" href="classvtkSMDataTypeDomain.html#a8f0ebd41da1b40590922dc724cc09e6d">vtkSMDataTypeDomain</a>
 , <a class="el" href="classvtkSMDataTypeQueryDomain.html#aa0344cdbe147179f56399159e1695cc6">vtkSMDataTypeQueryDomain</a>
 , <a class="el" href="classvtkSMDiscreteDoubleDomain.html#a4b388983d672557f3732ea3f62b5563e">vtkSMDiscreteDoubleDomain</a>
 , <a class="el" href="classvtkSMDomain.html#aecbd0b9b6491de0182722e78cb71b960">vtkSMDomain</a>
-, <a class="el" href="classvtkSMEnumerationDomain.html#a4eb9934b93fe450437d3cbe4848bc05a">vtkSMEnumerationDomain</a>
+, <a class="el" href="classvtkSMEnumerationDomain.html#ac55c315710c3bcf4b7e009911d97156f">vtkSMEnumerationDomain</a>
 , <a class="el" href="classvtkSMFixedTypeDomain.html#aa4f4c40b6f11e2b2d5f50c84cf47e174">vtkSMFixedTypeDomain</a>
 , <a class="el" href="classvtkSMIndexSelectionDomain.html#a07b1066328cc10d1d117419342ffe8b9">vtkSMIndexSelectionDomain</a>
 , <a class="el" href="classvtkSMInputArrayDomain.html#afd6f5f5961d2ffcba35c13db095a9c15">vtkSMInputArrayDomain</a>
@@ -1657,11 +1667,11 @@ $(function() {
 , <a class="el" href="classvtkSMMultiplexerSourceProxy.html#a3ad01a9b29adeb9428750cf288d086e4">vtkSMMultiplexerSourceProxy</a>
 , <a class="el" href="classvtkSMProxyGroupDomain.html#a67edbdaffb4a53600ce7c826a967f778">vtkSMProxyGroupDomain</a>
 , <a class="el" href="classvtkSMProxyListDomain.html#a347e2432c4fce3b7864d2e3cb0ff2237">vtkSMProxyListDomain</a>
-, <a class="el" href="classvtkSMRangeDomainTemplate.html#a7183ce4abab89b011945a00eb45c6eaa">vtkSMRangeDomainTemplate&lt; T &gt;</a>
+, <a class="el" href="classvtkSMRangeDomainTemplate.html#adfb8025018fa2eb23d28845896146128">vtkSMRangeDomainTemplate&lt; T &gt;</a>
 , <a class="el" href="classvtkSMStringListDomain.html#ab1c13efb31055aefa850fe63917daf80">vtkSMStringListDomain</a>
 </li>
 <li>IsInDomains()
-: <a class="el" href="classvtkSMProperty.html#a7e7fa473b63320decd99aaf13d516e11">vtkSMProperty</a>
+: <a class="el" href="classvtkSMProperty.html#a2c177713815ffdfb300fa34edd8634ba">vtkSMProperty</a>
 </li>
 <li>IsInitialized()
 : <a class="el" href="classparaview__protobuf_1_1PROTOBUF__FINAL.html#ab0ba0be0cc737cec63647694ad28c671">paraview_protobuf::PROTOBUF_FINAL</a>
@@ -1758,6 +1768,8 @@ $(function() {
 </li>
 <li>isPaused()
 : <a class="el" href="classpqLiveSourceBehavior.html#aa89ce2f82df0b5d899570320896fa608">pqLiveSourceBehavior</a>
+, <a class="el" href="classpqLiveSourceItem.html#ad18c1e9f5fbc38974918a29c3801fa85">pqLiveSourceItem</a>
+, <a class="el" href="classpqLiveSourceManager.html#aaef932e6d31ae6e522490c0ec0fc7c78">pqLiveSourceManager</a>
 </li>
 <li>IsPointVisible()
 : <a class="el" href="classvtkPVGlyphFilter.html#a5741dfdf4520391b2cdbed694420bce1">vtkPVGlyphFilter</a>
@@ -1828,7 +1840,7 @@ $(function() {
 </li>
 <li>IsScalarBarVisible()
 : <a class="el" href="classvtkSMColorMapEditorHelper.html#aac0900ad87fc1464c8bad20b501bed9b">vtkSMColorMapEditorHelper</a>
-, <a class="el" href="classvtkSMPVRepresentationProxy.html#a959b4fac76b4015e153f3bd401db3a85">vtkSMPVRepresentationProxy</a>
+, <a class="el" href="classvtkSMPVRepresentationProxy.html#a452422d5d4ce13cb2d395c65efbb7998">vtkSMPVRepresentationProxy</a>
 , <a class="el" href="classvtkSMTransferFunctionProxy.html#a9db6dbe60d4a18c143def60f25aefcf8">vtkSMTransferFunctionProxy</a>
 </li>
 <li>isSelectable()
@@ -1998,6 +2010,7 @@ $(function() {
 , <a class="el" href="classvtkDisplayConfiguration.html#a4122c5de8af6f81b9412da107bb93f2f">vtkDisplayConfiguration</a>
 , <a class="el" href="classvtkDistributedTrivialProducer.html#a7b83cebf3a19216026a330bc91293d9a">vtkDistributedTrivialProducer</a>
 , <a class="el" href="classvtkDomainsChemistryOpenGL2ObjectFactory.html#a9e60b9d4b54e0cd3e0c4e549a1618a06">vtkDomainsChemistryOpenGL2ObjectFactory</a>
+, <a class="el" href="classvtkEmulatedTimeAlgorithm.html#a84df13cf0ecb754572b7b0fffe4dad3c">vtkEmulatedTimeAlgorithm</a>
 , <a class="el" href="classvtkEnsembleDataReader.html#ad3199cae620017291e6e984a3e98b892">vtkEnsembleDataReader</a>
 , <a class="el" href="classvtkEnvironmentAnnotationFilter.html#a98762fac639b8f7761aa037fa2113477">vtkEnvironmentAnnotationFilter</a>
 , <a class="el" href="classvtkEquivalenceSet.html#ab17b3545bdd82fc3bb75a8f36fde4de2">vtkEquivalenceSet</a>
@@ -2683,7 +2696,7 @@ $(function() {
 : <a class="el" href="classpqLiveInsituManager.html#a6247f79d309fb92171aa7e88dd75a0a1">pqLiveInsituManager</a>
 </li>
 <li>item()
-: <a class="el" href="classparaview__protobuf_1_1PROTOBUF__FINAL.html#a8069c07457e18447e3d0b533c0eba2bd">paraview_protobuf::PROTOBUF_FINAL</a>
+: <a class="el" href="classparaview__protobuf_1_1PROTOBUF__FINAL.html#ae4f282321d3cda9351a96e1da8b70ca8">paraview_protobuf::PROTOBUF_FINAL</a>
 </li>
 <li>Item()
 : <a class="el" href="classpqHierarchicalGridLayout_1_1Item.html#a1e14376fe2abd2c76e64738de86fdd83">pqHierarchicalGridLayout::Item</a>
@@ -2863,7 +2876,7 @@ $(function() {
 : <a class="el" href="classvtkPVIncubator.html#ae03b5e576082a0f07a87c4569e6b724d">vtkPVIncubator</a>
 </li>
 <li>vtkPVInformation()
-: <a class="el" href="classvtkPVInformation.html#ac818d7c870b556a33d3f5e9b1d1548a2">vtkPVInformation</a>
+: <a class="el" href="classvtkPVInformation.html#a4e15a9c705b23781c5e23090fe50e92e">vtkPVInformation</a>
 </li>
 <li>vtkPVInteractiveViewLinkRepresentation()
 : <a class="el" href="classvtkPVInteractiveViewLinkRepresentation.html#a21c9b28b3d6653a67792f71b68a78196">vtkPVInteractiveViewLinkRepresentation</a>
@@ -2917,7 +2930,7 @@ $(function() {
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.13 on Mon Mar 25 2024
+</a> 1.8.13 on Tue Mar 26 2024
 </small></address>
 <!-- KW:BEGIN -->
 <!-- this adds the version selection header -->
