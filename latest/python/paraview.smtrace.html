@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>smtrace Module &mdash; ParaView/Python 5.12.0-739-gf19b7fd522 documentation</title>
+  <title>smtrace Module &mdash; ParaView/Python 5.12.0-764-gb22787606e documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -31,7 +31,7 @@
             <li> <a href="index.html">
               <img src="_static/paraview-logo-small.png"
               alt="ParaView/Python"></img></a> </li>
-            <li class="version"> version 5.12.0-739-gf19b7fd522</li>
+            <li class="version"> version 5.12.0-764-gb22787606e</li>
           </ul>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
@@ -366,6 +366,12 @@ finalized.</p>
 </dd></dl>
 
 <dl class="py class">
+<dt class="sig sig-object py" id="paraview.smtrace.ImportView">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">paraview.smtrace.</span></span><span class="sig-name descname"><span class="pre">ImportView</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">view</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">importer</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filename</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/smtrace.html#ImportView"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#paraview.smtrace.ImportView" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#paraview.smtrace.RenderingMixin" title="paraview.smtrace.RenderingMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">paraview.smtrace.RenderingMixin</span></code></a>, <a class="reference internal" href="#paraview.smtrace.TraceItem" title="paraview.smtrace.TraceItem"><code class="xref py py-class docutils literal notranslate"><span class="pre">paraview.smtrace.TraceItem</span></code></a></p>
+</dd></dl>
+
+<dl class="py class">
 <dt class="sig sig-object py" id="paraview.smtrace.LoadPlugin">
 <em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">paraview.smtrace.</span></span><span class="sig-name descname"><span class="pre">LoadPlugin</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">remote</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/smtrace.html#LoadPlugin"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#paraview.smtrace.LoadPlugin" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#paraview.smtrace.TraceItem" title="paraview.smtrace.TraceItem"><code class="xref py py-class docutils literal notranslate"><span class="pre">paraview.smtrace.TraceItem</span></code></a></p>
@@ -639,6 +645,18 @@ This is used only when saving state for now.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="paraview.smtrace.RegisterSelectionProxy.finalize">
 <span class="sig-name descname"><span class="pre">finalize</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/smtrace.html#RegisterSelectionProxy.finalize"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#paraview.smtrace.RegisterSelectionProxy.finalize" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="paraview.smtrace.RegisterTextureProxy">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">paraview.smtrace.</span></span><span class="sig-name descname"><span class="pre">RegisterTextureProxy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">proxy</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filename</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">trivial_producer_key</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">proxyname</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/smtrace.html#RegisterTextureProxy"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#paraview.smtrace.RegisterTextureProxy" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#paraview.smtrace.RenderingMixin" title="paraview.smtrace.RenderingMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">paraview.smtrace.RenderingMixin</span></code></a>, <a class="reference internal" href="#paraview.smtrace.TraceItem" title="paraview.smtrace.TraceItem"><code class="xref py py-class docutils literal notranslate"><span class="pre">paraview.smtrace.TraceItem</span></code></a></p>
+<p>Traces creation of a new texture (vtkSMParaViewPipelineController::RegisterTextureProxy)</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="paraview.smtrace.RegisterTextureProxy.finalize">
+<span class="sig-name descname"><span class="pre">finalize</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/smtrace.html#RegisterTextureProxy.finalize"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#paraview.smtrace.RegisterTextureProxy.finalize" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>

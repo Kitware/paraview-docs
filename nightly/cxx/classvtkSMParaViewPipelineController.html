@@ -151,6 +151,8 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ad477cff7a5c553c2f98c694394319ca2"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkSMParaViewPipelineController.html#ad477cff7a5c553c2f98c694394319ca2">RegisterTextureProxy</a> (<a class="el" href="classvtkSMProxy.html">vtkSMProxy</a> *proxy, <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *filename)</td></tr>
 <tr class="memdesc:ad477cff7a5c553c2f98c694394319ca2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Use this method after <a class="el" href="classvtkSMParaViewPipelineController.html#a8590d8ab0c40bf7336bf143a3aebc189" title="Pre-initializes a proxy i.e. ">PreInitializeProxy()</a> and <a class="el" href="classvtkSMParaViewPipelineController.html#a95fcaeeb37ff7d6d27dcffd8d7a4ae20" title="Final step in proxy initialization. ">PostInitializeProxy()</a> to register a texture proxy with the proxy manager.  <a href="#ad477cff7a5c553c2f98c694394319ca2">More...</a><br /></td></tr>
 <tr class="separator:ad477cff7a5c553c2f98c694394319ca2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a24d7e85c125d97f108bd84dc334852ad"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkSMParaViewPipelineController.html#a24d7e85c125d97f108bd84dc334852ad">RegisterTextureProxy</a> (<a class="el" href="classvtkSMProxy.html">vtkSMProxy</a> *proxy, <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *trivialProducerKeyName, <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *proxyname)</td></tr>
+<tr class="separator:a24d7e85c125d97f108bd84dc334852ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2549b8e41fed8c7e5ef0dbea9c71a69e"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkSMParaViewPipelineController.html#a2549b8e41fed8c7e5ef0dbea9c71a69e">RegisterExtractorProxy</a> (<a class="el" href="classvtkSMProxy.html">vtkSMProxy</a> *proxy, <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *proxyname)</td></tr>
 <tr class="memdesc:a2549b8e41fed8c7e5ef0dbea9c71a69e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Registers an extractor.  <a href="#a2549b8e41fed8c7e5ef0dbea9c71a69e">More...</a><br /></td></tr>
 <tr class="separator:a2549b8e41fed8c7e5ef0dbea9c71a69e"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -1483,7 +1485,7 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <a id="ad477cff7a5c553c2f98c694394319ca2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad477cff7a5c553c2f98c694394319ca2">&#9670;&nbsp;</a></span>RegisterTextureProxy()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ad477cff7a5c553c2f98c694394319ca2">&#9670;&nbsp;</a></span>RegisterTextureProxy() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1518,6 +1520,48 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Use this method after <a class="el" href="classvtkSMParaViewPipelineController.html#a8590d8ab0c40bf7336bf143a3aebc189" title="Pre-initializes a proxy i.e. ">PreInitializeProxy()</a> and <a class="el" href="classvtkSMParaViewPipelineController.html#a95fcaeeb37ff7d6d27dcffd8d7a4ae20" title="Final step in proxy initialization. ">PostInitializeProxy()</a> to register a texture proxy with the proxy manager. </p>
 <p>This will also perform needed python tracing. </p>
+
+</div>
+</div>
+<a id="a24d7e85c125d97f108bd84dc334852ad"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a24d7e85c125d97f108bd84dc334852ad">&#9670;&nbsp;</a></span>RegisterTextureProxy() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual bool vtkSMParaViewPipelineController::RegisterTextureProxy </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classvtkSMProxy.html">vtkSMProxy</a> *&#160;</td>
+          <td class="paramname"><em>proxy</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *&#160;</td>
+          <td class="paramname"><em>trivialProducerKeyName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *&#160;</td>
+          <td class="paramname"><em>proxyname</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
 
 </div>
 </div>
@@ -1583,7 +1627,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="vtkSMParaViewPipelineController_8h_source.html#l00235">235</a> of file <a class="el" href="vtkSMParaViewPipelineController_8h_source.html">vtkSMParaViewPipelineController.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vtkSMParaViewPipelineController_8h_source.html#l00237">237</a> of file <a class="el" href="vtkSMParaViewPipelineController_8h_source.html">vtkSMParaViewPipelineController.h</a>.</p>
 
 </div>
 </div>
@@ -2173,7 +2217,7 @@ Additional Inherited Members</h2></td></tr>
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.13 on Tue Mar 26 2024
+</a> 1.8.13 on Wed Mar 27 2024
 </small></address>
 <!-- KW:BEGIN -->
 <!-- this adds the version selection header -->

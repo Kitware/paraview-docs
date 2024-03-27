@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>paraview.smtrace &mdash; ParaView/Python 5.12.0-739-gf19b7fd522 documentation</title>
+  <title>paraview.smtrace &mdash; ParaView/Python 5.12.0-764-gb22787606e documentation</title>
       <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -29,7 +29,7 @@
             <li> <a href="../../index.html">
               <img src="../../_static/paraview-logo-small.png"
               alt="ParaView/Python"></img></a> </li>
-            <li class="version"> version 5.12.0-739-gf19b7fd522</li>
+            <li class="version"> version 5.12.0-764-gb22787606e</li>
           </ul>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
@@ -422,11 +422,18 @@
             <span class="n">pname</span> <span class="o">=</span> <span class="n">obj</span><span class="o">.</span><span class="n">SMProxy</span><span class="o">.</span><span class="n">GetSessionProxyManager</span><span class="p">()</span><span class="o">.</span><span class="n">GetProxyName</span><span class="p">(</span><span class="s2">&quot;textures&quot;</span><span class="p">,</span> <span class="n">obj</span><span class="o">.</span><span class="n">SMProxy</span><span class="p">)</span>
             <span class="k">if</span> <span class="n">pname</span><span class="p">:</span>
                 <span class="n">accessor</span> <span class="o">=</span> <span class="n">ProxyAccessor</span><span class="p">(</span><span class="bp">cls</span><span class="o">.</span><span class="n">get_varname</span><span class="p">(</span><span class="n">pname</span><span class="p">),</span> <span class="n">obj</span><span class="p">)</span>
-                <span class="n">filename</span> <span class="o">=</span> <span class="n">obj</span><span class="o">.</span><span class="n">FileName</span>
-                <span class="c1"># repr() will escape the path correctly, especially backslash on Windows.</span>
-                <span class="bp">cls</span><span class="o">.</span><span class="n">Output</span><span class="o">.</span><span class="n">append_separated</span><span class="p">([</span> \
-                    <span class="s2">&quot;# a texture&quot;</span><span class="p">,</span>
-                    <span class="s2">&quot;</span><span class="si">%s</span><span class="s2"> = CreateTexture(</span><span class="si">%s</span><span class="s2">)&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">accessor</span><span class="p">,</span> <span class="nb">repr</span><span class="p">(</span><span class="n">filename</span><span class="p">))])</span>
+                <span class="n">mode</span> <span class="o">=</span> <span class="n">obj</span><span class="o">.</span><span class="n">Mode</span>
+                <span class="k">if</span> <span class="n">mode</span> <span class="o">==</span> <span class="s1">&#39;ReadFromFile&#39;</span><span class="p">:</span>
+                    <span class="n">filename</span> <span class="o">=</span> <span class="n">obj</span><span class="o">.</span><span class="n">FileName</span>
+                    <span class="c1"># repr() will escape the path correctly, especially backslash on Windows.</span>
+                    <span class="bp">cls</span><span class="o">.</span><span class="n">Output</span><span class="o">.</span><span class="n">append_separated</span><span class="p">([</span> \
+                            <span class="s2">&quot;# a texture&quot;</span><span class="p">,</span>
+                            <span class="s2">&quot;</span><span class="si">%s</span><span class="s2"> = FindTextureOrCreate(registrationName=</span><span class="si">%s</span><span class="s2">, filename=</span><span class="si">%s</span><span class="s2">)&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">accessor</span><span class="p">,</span> <span class="nb">repr</span><span class="p">(</span><span class="n">pname</span><span class="p">),</span> <span class="nb">repr</span><span class="p">(</span><span class="n">filename</span><span class="p">))])</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">tp_key</span> <span class="o">=</span> <span class="n">obj</span><span class="o">.</span><span class="n">TrivialProducerKey</span>
+                    <span class="bp">cls</span><span class="o">.</span><span class="n">Output</span><span class="o">.</span><span class="n">append_separated</span><span class="p">([</span> \
+                            <span class="s2">&quot;# a texture&quot;</span><span class="p">,</span>
+                            <span class="s2">&quot;</span><span class="si">%s</span><span class="s2"> = FindTextureOrCreate(registrationName=</span><span class="si">%s</span><span class="s2">, filename=None, trivial_producer_key=</span><span class="si">%s</span><span class="s2">)&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">accessor</span><span class="p">,</span> <span class="nb">repr</span><span class="p">(</span><span class="n">pname</span><span class="p">),</span> <span class="nb">repr</span><span class="p">(</span><span class="n">tp_key</span><span class="p">))])</span>
             <span class="k">return</span> <span class="kc">True</span>
         <span class="k">if</span> <span class="bp">cls</span><span class="o">.</span><span class="n">get_registered_name</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="s2">&quot;extractors&quot;</span><span class="p">):</span>
             <span class="n">regName</span> <span class="o">=</span> <span class="bp">cls</span><span class="o">.</span><span class="n">get_registered_name</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="s2">&quot;extractors&quot;</span><span class="p">)</span>
@@ -1534,6 +1541,34 @@
         <span class="n">TraceItem</span><span class="o">.</span><span class="n">finalize</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span></div></div>
 
 
+<div class="viewcode-block" id="RegisterTextureProxy"><a class="viewcode-back" href="../../paraview.smtrace.html#paraview.smtrace.RegisterTextureProxy">[docs]</a><span class="k">class</span> <span class="nc">RegisterTextureProxy</span><span class="p">(</span><span class="n">RenderingMixin</span><span class="p">,</span> <span class="n">TraceItem</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Traces creation of a new texture (vtkSMParaViewPipelineController::RegisterTextureProxy)&quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">proxy</span><span class="p">,</span> <span class="n">filename</span><span class="p">,</span> <span class="n">trivial_producer_key</span><span class="p">,</span> <span class="n">proxyname</span><span class="p">):</span>
+        <span class="n">TraceItem</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Proxy</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">_getPyProxy</span><span class="p">(</span><span class="n">proxy</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">filename</span> <span class="o">=</span> <span class="n">filename</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">trivial_producer_key</span> <span class="o">=</span> <span class="n">trivial_producer_key</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">proxyname</span> <span class="o">=</span> <span class="n">proxyname</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">read_from_file</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span> <span class="ow">and</span> <span class="ow">not</span> <span class="nb">len</span><span class="p">(</span><span class="n">trivial_producer_key</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">read_from_memory</span> <span class="o">=</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">read_from_file</span>
+        <span class="k">assert</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">Proxy</span> <span class="ow">is</span> <span class="kc">None</span>
+
+<div class="viewcode-block" id="RegisterTextureProxy.finalize"><a class="viewcode-back" href="../../paraview.smtrace.html#paraview.smtrace.RegisterTextureProxy.finalize">[docs]</a>    <span class="k">def</span> <span class="nf">finalize</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">pname</span> <span class="o">=</span> <span class="n">Trace</span><span class="o">.</span><span class="n">get_registered_name</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">Proxy</span><span class="p">,</span> <span class="s2">&quot;textures&quot;</span><span class="p">)</span>
+        <span class="n">varname</span> <span class="o">=</span> <span class="n">Trace</span><span class="o">.</span><span class="n">get_varname</span><span class="p">(</span><span class="n">pname</span><span class="p">)</span>
+        <span class="n">accessor</span> <span class="o">=</span> <span class="n">ProxyAccessor</span><span class="p">(</span><span class="n">varname</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">Proxy</span><span class="p">)</span>
+        <span class="n">trace</span> <span class="o">=</span> <span class="n">TraceOutput</span><span class="p">()</span>
+        <span class="n">trace</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;# Create a new &#39;</span><span class="si">%s</span><span class="s2">&#39;&quot;</span> <span class="o">%</span> <span class="bp">self</span><span class="o">.</span><span class="n">Proxy</span><span class="o">.</span><span class="n">GetXMLLabel</span><span class="p">())</span>
+        <span class="nb">filter</span> <span class="o">=</span> <span class="n">ProxyFilter</span><span class="p">()</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">read_from_file</span><span class="p">:</span>
+            <span class="n">trace</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">accessor</span><span class="o">.</span><span class="n">trace_ctor</span><span class="p">(</span><span class="s2">&quot;CreateTexture&quot;</span><span class="p">,</span> <span class="nb">filter</span><span class="p">,</span> <span class="n">ctor_args</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;filename=</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">filename</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">))</span>
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">read_from_memory</span><span class="p">:</span>
+            <span class="n">ctor_str</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;filename=None, trivial_producer_key=</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">trivial_producer_key</span><span class="si">}</span><span class="s2">, proxyname=</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">proxyname</span><span class="si">}</span><span class="s2">&quot;</span>
+            <span class="n">trace</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">accessor</span><span class="o">.</span><span class="n">trace_ctor</span><span class="p">(</span><span class="s2">&quot;CreateTexture&quot;</span><span class="p">,</span> <span class="nb">filter</span><span class="p">,</span> <span class="n">ctor_args</span><span class="o">=</span><span class="n">ctor_str</span><span class="p">))</span>
+        <span class="n">Trace</span><span class="o">.</span><span class="n">Output</span><span class="o">.</span><span class="n">append_separated</span><span class="p">(</span><span class="n">trace</span><span class="o">.</span><span class="n">raw_data</span><span class="p">())</span>
+        <span class="n">TraceItem</span><span class="o">.</span><span class="n">finalize</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span></div></div>
+
+
 <div class="viewcode-block" id="TraceAnimationProxy"><a class="viewcode-back" href="../../paraview.smtrace.html#paraview.smtrace.TraceAnimationProxy">[docs]</a><span class="k">class</span> <span class="nc">TraceAnimationProxy</span><span class="p">(</span><span class="n">RenderingMixin</span><span class="p">,</span> <span class="n">TraceItem</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Traces all changes in an animation proxy.&quot;&quot;&quot;</span>
 
@@ -1601,6 +1636,27 @@
                                         <span class="n">skip_assignment</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span>
         <span class="n">exporterAccessor</span><span class="o">.</span><span class="n">finalize</span><span class="p">()</span>  <span class="c1"># so that it will get deleted</span>
         <span class="k">del</span> <span class="n">exporterAccessor</span>
+        <span class="n">Trace</span><span class="o">.</span><span class="n">Output</span><span class="o">.</span><span class="n">append_separated</span><span class="p">(</span><span class="n">trace</span><span class="o">.</span><span class="n">raw_data</span><span class="p">())</span></div>
+
+
+<div class="viewcode-block" id="ImportView"><a class="viewcode-back" href="../../paraview.smtrace.html#paraview.smtrace.ImportView">[docs]</a><span class="k">class</span> <span class="nc">ImportView</span><span class="p">(</span><span class="n">RenderingMixin</span><span class="p">,</span> <span class="n">TraceItem</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">view</span><span class="p">,</span> <span class="n">importer</span><span class="p">,</span> <span class="n">filename</span><span class="p">):</span>
+        <span class="n">TraceItem</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+
+        <span class="n">view</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">_getPyProxy</span><span class="p">(</span><span class="n">view</span><span class="p">)</span>
+        <span class="n">importer</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">_getPyProxy</span><span class="p">(</span><span class="n">importer</span><span class="p">)</span>
+
+        <span class="n">viewAccessor</span> <span class="o">=</span> <span class="n">Trace</span><span class="o">.</span><span class="n">get_accessor</span><span class="p">(</span><span class="n">view</span><span class="p">)</span>
+        <span class="n">importerAccessor</span> <span class="o">=</span> <span class="n">ProxyAccessor</span><span class="p">(</span><span class="s2">&quot;temporaryImporter&quot;</span><span class="p">,</span> <span class="n">importer</span><span class="p">)</span>
+
+        <span class="n">trace</span> <span class="o">=</span> <span class="n">TraceOutput</span><span class="p">()</span>
+        <span class="n">trace</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;# import file&quot;</span><span class="p">)</span>
+        <span class="n">trace</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>\
+            <span class="n">importerAccessor</span><span class="o">.</span><span class="n">trace_ctor</span><span class="p">(</span><span class="s2">&quot;ImportView&quot;</span><span class="p">,</span> <span class="n">ExporterProxyFilter</span><span class="p">(),</span>
+              <span class="n">ctor_args</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">%s</span><span class="s2">, view=</span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="nb">repr</span><span class="p">(</span><span class="n">filename</span><span class="p">),</span> <span class="n">viewAccessor</span><span class="p">),</span>
+              <span class="n">skip_assignment</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span>
+        <span class="n">importerAccessor</span><span class="o">.</span><span class="n">finalize</span><span class="p">()</span> <span class="c1"># so that it will get deleted</span>
+        <span class="k">del</span> <span class="n">importerAccessor</span>
         <span class="n">Trace</span><span class="o">.</span><span class="n">Output</span><span class="o">.</span><span class="n">append_separated</span><span class="p">(</span><span class="n">trace</span><span class="o">.</span><span class="n">raw_data</span><span class="p">())</span></div>
 
 

@@ -84,6 +84,10 @@ Collaboration diagram for vtkNetworkImageSource:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
 Public Types</h2></td></tr>
+<tr class="memitem:a87a3ad3c1117bd848e3f15d2baed1ddc"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkNetworkImageSource.html#a87a3ad3c1117bd848e3f15d2baed1ddc">ModeType</a> : int { <a class="el" href="classvtkNetworkImageSource.html#a87a3ad3c1117bd848e3f15d2baed1ddcabe9348ae77ec17acd67aa1ff39a18d83">ModeType::ReadFromFile</a>, 
+<a class="el" href="classvtkNetworkImageSource.html#a87a3ad3c1117bd848e3f15d2baed1ddca59cac33e5de6e6464f27c50f6b5dddd9">ModeType::ReadFromMemory</a>
+ }</td></tr>
+<tr class="separator:a87a3ad3c1117bd848e3f15d2baed1ddc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7f1eb680530f3ef7a00bc9b2728f07a1"><td class="memItemLeft" align="right" valign="top">typedef <a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/classvtkImageAlgorithm.html">vtkImageAlgorithm</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkNetworkImageSource.html#a7f1eb680530f3ef7a00bc9b2728f07a1">Superclass</a></td></tr>
 <tr class="separator:a7f1eb680530f3ef7a00bc9b2728f07a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_types_classvtkImageAlgorithm"><td colspan="2" onclick="javascript:toggleInherit('pub_types_classvtkImageAlgorithm')"><img src="closed.png" alt="-"/>&#160;Public Types inherited from <a class="el" href="http://www.vtk.org/doc/nightly/html/classvtkImageAlgorithm.html">vtkImageAlgorithm</a></td></tr>
@@ -115,6 +119,20 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ac1be4d641abcdc4192dbd98ba9207854"><td class="memItemLeft" align="right" valign="top">virtual char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkNetworkImageSource.html#ac1be4d641abcdc4192dbd98ba9207854">GetFileName</a> ()</td></tr>
 <tr class="memdesc:ac1be4d641abcdc4192dbd98ba9207854"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get/Set the filename.  <a href="#ac1be4d641abcdc4192dbd98ba9207854">More...</a><br /></td></tr>
 <tr class="separator:ac1be4d641abcdc4192dbd98ba9207854"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr><td colspan="2"><div class="groupHeader"></div></td></tr>
+<tr class="memitem:a2f38709b0f98883758f83cfcb1b53e22"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkNetworkImageSource.html#a2f38709b0f98883758f83cfcb1b53e22">SetTrivialProducerKey</a> (<a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *)</td></tr>
+<tr class="memdesc:a2f38709b0f98883758f83cfcb1b53e22"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get/Set the key used to access image from <a class="el" href="classvtkDistributedTrivialProducer.html" title="Extend vtkPVTrivialProducer to allow distributed code to easily populate a trivial producer with loca...">vtkDistributedTrivialProducer</a>.  <a href="#a2f38709b0f98883758f83cfcb1b53e22">More...</a><br /></td></tr>
+<tr class="separator:a2f38709b0f98883758f83cfcb1b53e22"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aed8bf95ebc39890e3d6cdb55ba124a10"><td class="memItemLeft" align="right" valign="top">virtual char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkNetworkImageSource.html#aed8bf95ebc39890e3d6cdb55ba124a10">GetTrivialProducerKey</a> ()</td></tr>
+<tr class="memdesc:aed8bf95ebc39890e3d6cdb55ba124a10"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get/Set the key used to access image from <a class="el" href="classvtkDistributedTrivialProducer.html" title="Extend vtkPVTrivialProducer to allow distributed code to easily populate a trivial producer with loca...">vtkDistributedTrivialProducer</a>.  <a href="#aed8bf95ebc39890e3d6cdb55ba124a10">More...</a><br /></td></tr>
+<tr class="separator:aed8bf95ebc39890e3d6cdb55ba124a10"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr><td colspan="2"><div class="groupHeader"></div></td></tr>
+<tr class="memitem:a11a819c6f95def96bd226e1bc2e267b8"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkNetworkImageSource.html#a11a819c6f95def96bd226e1bc2e267b8">vtkSetEnumMacro</a> (<a class="el" href="classvtkNetworkImageSource.html#a743dd2986924adbbc0fdfd1668735e5d">Mode</a>, <a class="el" href="classvtkNetworkImageSource.html#a87a3ad3c1117bd848e3f15d2baed1ddc">ModeType</a>)</td></tr>
+<tr class="memdesc:a11a819c6f95def96bd226e1bc2e267b8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the mode in which image data is read.  <a href="#a11a819c6f95def96bd226e1bc2e267b8">More...</a><br /></td></tr>
+<tr class="separator:a11a819c6f95def96bd226e1bc2e267b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad69fff3917173152a9810c6b2eb2cd87"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkNetworkImageSource.html#ad69fff3917173152a9810c6b2eb2cd87">SetMode</a> (<a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkShaderProgram2_8h.html#a61569f2965b7a369eb10b6d75d410d11">int</a> <a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/namespacevtkX3D.html#ac6551f7bf833e8254b2b3ecdaea0d210a608db9ad4c08b9eb2e8e8353b79225da">mode</a>)</td></tr>
+<tr class="memdesc:ad69fff3917173152a9810c6b2eb2cd87"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the mode in which image data is read.  <a href="#ad69fff3917173152a9810c6b2eb2cd87">More...</a><br /></td></tr>
+<tr class="separator:ad69fff3917173152a9810c6b2eb2cd87"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classvtkImageAlgorithm"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classvtkImageAlgorithm')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="http://www.vtk.org/doc/nightly/html/classvtkImageAlgorithm.html">vtkImageAlgorithm</a></td></tr>
 <tr class="memitem:ab9e46c54d3dc93394d6bccd1866ccc10 inherit pub_methods_classvtkImageAlgorithm"><td class="memItemLeft" align="right" valign="top"><a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/classvtkImageAlgorithm.html">vtkImageAlgorithm</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/classvtkImageAlgorithm.html#ab9e46c54d3dc93394d6bccd1866ccc10">NewInstance</a> () <a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a></td></tr>
 <tr class="separator:ab9e46c54d3dc93394d6bccd1866ccc10 inherit pub_methods_classvtkImageAlgorithm"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -659,6 +677,8 @@ Protected Member Functions</h2></td></tr>
 <tr class="separator:a047059663155e2f410fb3ba6c0e40ac9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0d6ba8fd0e95736f79920e57bcd924a5"><td class="memItemLeft" align="right" valign="top"><a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkShaderProgram2_8h.html#a61569f2965b7a369eb10b6d75d410d11">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkNetworkImageSource.html#a0d6ba8fd0e95736f79920e57bcd924a5">ReadImageFromFile</a> (<a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *filename)</td></tr>
 <tr class="separator:a0d6ba8fd0e95736f79920e57bcd924a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a31b1d4e40603f25661d346a5c5e98adb"><td class="memItemLeft" align="right" valign="top"><a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkShaderProgram2_8h.html#a61569f2965b7a369eb10b6d75d410d11">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkNetworkImageSource.html#a31b1d4e40603f25661d346a5c5e98adb">ReadImageFromMemory</a> (<a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *trivialProducerKey)</td></tr>
+<tr class="separator:a31b1d4e40603f25661d346a5c5e98adb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aaa7ddb864e7bf3876dc44ff0aa89f284"><td class="memItemLeft" align="right" valign="top"><a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkShaderProgram2_8h.html#a61569f2965b7a369eb10b6d75d410d11">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkNetworkImageSource.html#aaa7ddb864e7bf3876dc44ff0aa89f284">RequestData</a> (<a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/classvtkInformation.html">vtkInformation</a> *request, <a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/classvtkInformationVector.html">vtkInformationVector</a> **inputVector, <a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/classvtkInformationVector.html">vtkInformationVector</a> *outputVector) override</td></tr>
 <tr class="separator:aaa7ddb864e7bf3876dc44ff0aa89f284"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4e95463c95b0d0da53bb913c7e93e319"><td class="memItemLeft" align="right" valign="top"><a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkShaderProgram2_8h.html#a61569f2965b7a369eb10b6d75d410d11">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkNetworkImageSource.html#a4e95463c95b0d0da53bb913c7e93e319">RequestInformation</a> (<a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/classvtkInformation.html">vtkInformation</a> *request, <a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/classvtkInformationVector.html">vtkInformationVector</a> **inputVector, <a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/classvtkInformationVector.html">vtkInformationVector</a> *outputVector) override</td></tr>
@@ -840,6 +860,10 @@ Protected Attributes</h2></td></tr>
 <tr class="separator:ad3307ea58ea7881898206f41899900c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a053014ba7e7a7f2e83de3c12f9370d50"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkNetworkImageSource.html#a053014ba7e7a7f2e83de3c12f9370d50">FileName</a></td></tr>
 <tr class="separator:a053014ba7e7a7f2e83de3c12f9370d50"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac6dd5bd3676eb37f7a85804ec980f8f5"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkNetworkImageSource.html#ac6dd5bd3676eb37f7a85804ec980f8f5">TrivialProducerKey</a></td></tr>
+<tr class="separator:ac6dd5bd3676eb37f7a85804ec980f8f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a743dd2986924adbbc0fdfd1668735e5d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classvtkNetworkImageSource.html#a87a3ad3c1117bd848e3f15d2baed1ddc">ModeType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkNetworkImageSource.html#a743dd2986924adbbc0fdfd1668735e5d">Mode</a></td></tr>
+<tr class="separator:a743dd2986924adbbc0fdfd1668735e5d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a75f00a54889b29b6a260df18748d6076"><td class="memItemLeft" align="right" valign="top"><a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/classvtkImageData.html">vtkImageData</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkNetworkImageSource.html#a75f00a54889b29b6a260df18748d6076">Buffer</a></td></tr>
 <tr class="separator:a75f00a54889b29b6a260df18748d6076"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_attribs_classvtkAlgorithm"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_classvtkAlgorithm')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="http://www.vtk.org/doc/nightly/html/classvtkAlgorithm.html">vtkAlgorithm</a></td></tr>
@@ -903,6 +927,35 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="vtkNetworkImageSource_8h_source.html#l00026">26</a> of file <a class="el" href="vtkNetworkImageSource_8h_source.html">vtkNetworkImageSource.h</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Enumeration Documentation</h2>
+<a id="a87a3ad3c1117bd848e3f15d2baed1ddc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a87a3ad3c1117bd848e3f15d2baed1ddc">&#9670;&nbsp;</a></span>ModeType</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="classvtkNetworkImageSource.html#a87a3ad3c1117bd848e3f15d2baed1ddc">vtkNetworkImageSource::ModeType</a> : <a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkShaderProgram2_8h.html#a61569f2965b7a369eb10b6d75d410d11">int</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a87a3ad3c1117bd848e3f15d2baed1ddcabe9348ae77ec17acd67aa1ff39a18d83"></a>ReadFromFile&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a87a3ad3c1117bd848e3f15d2baed1ddca59cac33e5de6e6464f27c50f6b5dddd9"></a>ReadFromMemory&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+<p class="definition">Definition at line <a class="el" href="vtkNetworkImageSource_8h_source.html#l00029">29</a> of file <a class="el" href="vtkNetworkImageSource_8h_source.html">vtkNetworkImageSource.h</a>.</p>
 
 </div>
 </div>
@@ -1181,6 +1234,111 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
+<a id="a2f38709b0f98883758f83cfcb1b53e22"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2f38709b0f98883758f83cfcb1b53e22">&#9670;&nbsp;</a></span>SetTrivialProducerKey()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void vtkNetworkImageSource::SetTrivialProducerKey </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get/Set the key used to access image from <a class="el" href="classvtkDistributedTrivialProducer.html" title="Extend vtkPVTrivialProducer to allow distributed code to easily populate a trivial producer with loca...">vtkDistributedTrivialProducer</a>. </p>
+
+</div>
+</div>
+<a id="aed8bf95ebc39890e3d6cdb55ba124a10"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aed8bf95ebc39890e3d6cdb55ba124a10">&#9670;&nbsp;</a></span>GetTrivialProducerKey()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual char* vtkNetworkImageSource::GetTrivialProducerKey </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get/Set the key used to access image from <a class="el" href="classvtkDistributedTrivialProducer.html" title="Extend vtkPVTrivialProducer to allow distributed code to easily populate a trivial producer with loca...">vtkDistributedTrivialProducer</a>. </p>
+
+</div>
+</div>
+<a id="a11a819c6f95def96bd226e1bc2e267b8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a11a819c6f95def96bd226e1bc2e267b8">&#9670;&nbsp;</a></span>vtkSetEnumMacro()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">vtkNetworkImageSource::vtkSetEnumMacro </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classvtkNetworkImageSource.html#a743dd2986924adbbc0fdfd1668735e5d">Mode</a>&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classvtkNetworkImageSource.html#a87a3ad3c1117bd848e3f15d2baed1ddc">ModeType</a>&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set the mode in which image data is read. </p>
+
+</div>
+</div>
+<a id="ad69fff3917173152a9810c6b2eb2cd87"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad69fff3917173152a9810c6b2eb2cd87">&#9670;&nbsp;</a></span>SetMode()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void vtkNetworkImageSource::SetMode </td>
+          <td>(</td>
+          <td class="paramtype"><a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkShaderProgram2_8h.html#a61569f2965b7a369eb10b6d75d410d11">int</a>&#160;</td>
+          <td class="paramname"><em>mode</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set the mode in which image data is read. </p>
+
+</div>
+</div>
 <a id="ab770fae5b21bc966b5d7c413a56b17bd"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ab770fae5b21bc966b5d7c413a56b17bd">&#9670;&nbsp;</a></span>UpdateImage()</h2>
 
@@ -1214,6 +1372,32 @@ Additional Inherited Members</h2></td></tr>
           <td>(</td>
           <td class="paramtype"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *&#160;</td>
           <td class="paramname"><em>filename</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a31b1d4e40603f25661d346a5c5e98adb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a31b1d4e40603f25661d346a5c5e98adb">&#9670;&nbsp;</a></span>ReadImageFromMemory()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkShaderProgram2_8h.html#a61569f2965b7a369eb10b6d75d410d11">int</a> vtkNetworkImageSource::ReadImageFromMemory </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="zconf_8h.html#a2c212835823e3c54a8ab6d95c652660e">const</a> char *&#160;</td>
+          <td class="paramname"><em>trivialProducerKey</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -1335,7 +1519,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="vtkNetworkImageSource_8h_source.html#l00046">46</a> of file <a class="el" href="vtkNetworkImageSource_8h_source.html">vtkNetworkImageSource.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vtkNetworkImageSource_8h_source.html#l00068">68</a> of file <a class="el" href="vtkNetworkImageSource_8h_source.html">vtkNetworkImageSource.h</a>.</p>
 
 </div>
 </div>
@@ -1359,7 +1543,55 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="vtkNetworkImageSource_8h_source.html#l00048">48</a> of file <a class="el" href="vtkNetworkImageSource_8h_source.html">vtkNetworkImageSource.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vtkNetworkImageSource_8h_source.html#l00070">70</a> of file <a class="el" href="vtkNetworkImageSource_8h_source.html">vtkNetworkImageSource.h</a>.</p>
+
+</div>
+</div>
+<a id="ac6dd5bd3676eb37f7a85804ec980f8f5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac6dd5bd3676eb37f7a85804ec980f8f5">&#9670;&nbsp;</a></span>TrivialProducerKey</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">char* vtkNetworkImageSource::TrivialProducerKey</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="vtkNetworkImageSource_8h_source.html#l00071">71</a> of file <a class="el" href="vtkNetworkImageSource_8h_source.html">vtkNetworkImageSource.h</a>.</p>
+
+</div>
+</div>
+<a id="a743dd2986924adbbc0fdfd1668735e5d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a743dd2986924adbbc0fdfd1668735e5d">&#9670;&nbsp;</a></span>Mode</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classvtkNetworkImageSource.html#a87a3ad3c1117bd848e3f15d2baed1ddc">ModeType</a> vtkNetworkImageSource::Mode</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="vtkNetworkImageSource_8h_source.html#l00072">72</a> of file <a class="el" href="vtkNetworkImageSource_8h_source.html">vtkNetworkImageSource.h</a>.</p>
 
 </div>
 </div>
@@ -1383,7 +1615,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="vtkNetworkImageSource_8h_source.html#l00050">50</a> of file <a class="el" href="vtkNetworkImageSource_8h_source.html">vtkNetworkImageSource.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vtkNetworkImageSource_8h_source.html#l00074">74</a> of file <a class="el" href="vtkNetworkImageSource_8h_source.html">vtkNetworkImageSource.h</a>.</p>
 
 </div>
 </div>
@@ -1396,7 +1628,7 @@ Additional Inherited Members</h2></td></tr>
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.13 on Tue Mar 26 2024
+</a> 1.8.13 on Wed Mar 27 2024
 </small></address>
 <!-- KW:BEGIN -->
 <!-- this adds the version selection header -->

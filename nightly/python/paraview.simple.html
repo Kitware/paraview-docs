@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>simple Module &mdash; ParaView/Python 5.12.0-739-gf19b7fd522 documentation</title>
+  <title>simple Module &mdash; ParaView/Python 5.12.0-764-gb22787606e documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -31,7 +31,7 @@
             <li> <a href="index.html">
               <img src="_static/paraview-logo-small.png"
               alt="ParaView/Python"></img></a> </li>
-            <li class="version"> version 5.12.0-739-gf19b7fd522</li>
+            <li class="version"> version 5.12.0-764-gb22787606e</li>
           </ul>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
@@ -374,7 +374,7 @@ See CreateView for arguments documentation</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="paraview.simple.CreateTexture">
-<span class="sig-prename descclassname"><span class="pre">paraview.simple.</span></span><span class="sig-name descname"><span class="pre">CreateTexture</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#CreateTexture"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#paraview.simple.CreateTexture" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">paraview.simple.</span></span><span class="sig-name descname"><span class="pre">CreateTexture</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">trivial_producer_key</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">proxyname</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#CreateTexture"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#paraview.simple.CreateTexture" title="Permalink to this definition">¶</a></dt>
 <dd><p>Creates and returns a new vtkTexture.
 The texture is not attached to anything by default but it can be applied
 to things, for example the view, like so.
@@ -510,6 +510,12 @@ Example usage:</p>
 <span class="n">myCone</span> <span class="o">=</span> <span class="n">FindSource</span><span class="p">(</span><span class="s1">&#39;MySuperCone&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="paraview.simple.FindTextureOrCreate">
+<span class="sig-prename descclassname"><span class="pre">paraview.simple.</span></span><span class="sig-name descname"><span class="pre">FindTextureOrCreate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">registrationName</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">trivial_producer_key</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#FindTextureOrCreate"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#paraview.simple.FindTextureOrCreate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Finds or creates a new vtkTexture</p>
 </dd></dl>
 
 <dl class="py function">
@@ -920,6 +926,12 @@ shown by the scalar bar.</p>
 <span class="sig-prename descclassname"><span class="pre">paraview.simple.</span></span><span class="sig-name descname"><span class="pre">ImportPresets</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">location</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">16</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#ImportPresets"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#paraview.simple.ImportPresets" title="Permalink to this definition">¶</a></dt>
 <dd><p>Import presets from a file. The file can be in the legacy color map xml
 format or in the new JSON format. Returns True on success.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="paraview.simple.ImportView">
+<span class="sig-prename descclassname"><span class="pre">paraview.simple.</span></span><span class="sig-name descname"><span class="pre">ImportView</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">view</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">params</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/simple.html#ImportView"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#paraview.simple.ImportView" title="Permalink to this definition">¶</a></dt>
+<dd><p>Import a view from the specified input file.</p>
 </dd></dl>
 
 <dl class="py function">

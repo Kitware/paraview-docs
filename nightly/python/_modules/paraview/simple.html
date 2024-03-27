@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>paraview.simple &mdash; ParaView/Python 5.12.0-739-gf19b7fd522 documentation</title>
+  <title>paraview.simple &mdash; ParaView/Python 5.12.0-764-gb22787606e documentation</title>
       <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -29,7 +29,7 @@
             <li> <a href="../../index.html">
               <img src="../../_static/paraview-logo-small.png"
               alt="ParaView/Python"></img></a> </li>
-            <li class="version"> version 5.12.0-739-gf19b7fd522</li>
+            <li class="version"> version 5.12.0-764-gb22787606e</li>
           </ul>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
@@ -2756,7 +2756,7 @@
 <span class="c1"># ==============================================================================</span>
 <span class="c1"># Textures.</span>
 <span class="c1"># ==============================================================================</span>
-<div class="viewcode-block" id="CreateTexture"><a class="viewcode-back" href="../../paraview.simple.html#paraview.simple.CreateTexture">[docs]</a><span class="k">def</span> <span class="nf">CreateTexture</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class="viewcode-block" id="CreateTexture"><a class="viewcode-back" href="../../paraview.simple.html#paraview.simple.CreateTexture">[docs]</a><span class="k">def</span> <span class="nf">CreateTexture</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">trivial_producer_key</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">proxyname</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Creates and returns a new vtkTexture.</span>
 <span class="sd">    The texture is not attached to anything by default but it can be applied</span>
 <span class="sd">    to things, for example the view, like so.</span>
@@ -2766,8 +2766,23 @@
     <span class="n">pxm</span> <span class="o">=</span> <span class="n">servermanager</span><span class="o">.</span><span class="n">ProxyManager</span><span class="p">()</span>
     <span class="n">textureproxy</span> <span class="o">=</span> <span class="n">pxm</span><span class="o">.</span><span class="n">NewProxy</span><span class="p">(</span><span class="s2">&quot;textures&quot;</span><span class="p">,</span> <span class="s2">&quot;ImageTexture&quot;</span><span class="p">)</span>
     <span class="n">controller</span> <span class="o">=</span> <span class="n">servermanager</span><span class="o">.</span><span class="n">ParaViewPipelineController</span><span class="p">()</span>
-    <span class="n">controller</span><span class="o">.</span><span class="n">SMController</span><span class="o">.</span><span class="n">RegisterTextureProxy</span><span class="p">(</span><span class="n">textureproxy</span><span class="p">,</span> <span class="n">filename</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">filename</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">textureproxy</span><span class="o">.</span><span class="n">Mode</span> <span class="o">=</span> <span class="s2">&quot;ReadFromFile&quot;</span>
+        <span class="n">controller</span><span class="o">.</span><span class="n">SMController</span><span class="o">.</span><span class="n">RegisterTextureProxy</span><span class="p">(</span><span class="n">textureproxy</span><span class="p">,</span> <span class="n">filename</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">trivial_producer_key</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">textureproxy</span><span class="o">.</span><span class="n">Mode</span> <span class="o">=</span> <span class="s2">&quot;ReadFromMemory&quot;</span>
+        <span class="n">controller</span><span class="o">.</span><span class="n">SMController</span><span class="o">.</span><span class="n">RegisterTextureProxy</span><span class="p">(</span><span class="n">textureproxy</span><span class="p">,</span> <span class="n">trivial_producer_key</span><span class="p">,</span> <span class="n">proxyname</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">servermanager</span><span class="o">.</span><span class="n">_getPyProxy</span><span class="p">(</span><span class="n">textureproxy</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="FindTextureOrCreate"><a class="viewcode-back" href="../../paraview.simple.html#paraview.simple.FindTextureOrCreate">[docs]</a><span class="k">def</span> <span class="nf">FindTextureOrCreate</span><span class="p">(</span><span class="n">registrationName</span><span class="p">,</span> <span class="n">filename</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">trivial_producer_key</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Finds or creates a new vtkTexture&quot;&quot;&quot;</span>
+    <span class="n">pxm</span> <span class="o">=</span> <span class="n">servermanager</span><span class="o">.</span><span class="n">ProxyManager</span><span class="p">()</span>
+    <span class="n">textureproxy</span> <span class="o">=</span> <span class="n">pxm</span><span class="o">.</span><span class="n">GetProxy</span><span class="p">(</span><span class="s2">&quot;textures&quot;</span><span class="p">,</span> <span class="n">registrationName</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">textureproxy</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">CreateTexture</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">trivial_producer_key</span><span class="p">,</span> <span class="n">registrationName</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">textureproxy</span></div>
 
 
 <span class="c1"># ==============================================================================</span>
@@ -2825,6 +2840,26 @@
     <span class="n">proxy</span><span class="o">.</span><span class="n">Write</span><span class="p">()</span>
     <span class="k">del</span> <span class="n">proxy</span>
     <span class="k">del</span> <span class="n">helper</span></div>
+
+
+<div class="viewcode-block" id="ImportView"><a class="viewcode-back" href="../../paraview.simple.html#paraview.simple.ImportView">[docs]</a><span class="k">def</span> <span class="nf">ImportView</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">view</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">params</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Import a view from the specified input file.&quot;&quot;&quot;</span>
+    <span class="n">view</span> <span class="o">=</span> <span class="n">view</span> <span class="k">if</span> <span class="n">view</span> <span class="k">else</span> <span class="n">GetActiveView</span><span class="p">()</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">view</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span> <span class="p">(</span><span class="s2">&quot;No &#39;view&#39; was provided and no active view was found.&quot;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">filename</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span> <span class="p">(</span><span class="s2">&quot;No filename specified&quot;</span><span class="p">)</span>
+    <span class="n">session</span> <span class="o">=</span> <span class="n">servermanager</span><span class="o">.</span><span class="n">ActiveConnection</span><span class="o">.</span><span class="n">Session</span>
+    <span class="n">proxy</span> <span class="o">=</span> <span class="n">servermanager</span><span class="o">.</span><span class="n">vtkSMImporterFactory</span><span class="o">.</span><span class="n">CreateImporter</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">session</span><span class="p">)</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">proxy</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">RuntimeError</span> <span class="p">(</span><span class="s2">&quot;Failed to create importer for &quot;</span><span class="p">,</span> <span class="n">filename</span><span class="p">)</span>
+    <span class="n">proxy</span><span class="o">.</span><span class="n">UnRegister</span><span class="p">(</span><span class="kc">None</span><span class="p">)</span>
+    <span class="n">proxy</span> <span class="o">=</span> <span class="n">servermanager</span><span class="o">.</span><span class="n">_getPyProxy</span><span class="p">(</span><span class="n">proxy</span><span class="p">)</span>
+    <span class="n">SetProperties</span><span class="p">(</span><span class="n">proxy</span><span class="p">,</span> <span class="o">**</span><span class="n">params</span><span class="p">)</span>
+    <span class="n">proxy</span><span class="o">.</span><span class="n">UpdatePipelineInformation</span><span class="p">()</span>
+    <span class="n">proxy</span><span class="o">.</span><span class="n">Import</span><span class="p">(</span><span class="n">view</span><span class="p">)</span>
+    <span class="n">view</span><span class="o">.</span><span class="n">StillRender</span><span class="p">()</span>
+    <span class="k">del</span> <span class="n">proxy</span></div>
 
 
 <div class="viewcode-block" id="ResetProperty"><a class="viewcode-back" href="../../paraview.simple.html#paraview.simple.ResetProperty">[docs]</a><span class="k">def</span> <span class="nf">ResetProperty</span><span class="p">(</span><span class="n">propertyName</span><span class="p">,</span> <span class="n">proxy</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">restoreFromSettings</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
