@@ -22,7 +22,6 @@ fi
 if [ -n "$4" ]
 then
     VERSION="$4"
-    UPDATE_LATEST="true"
 else
     VERSION=$(git -C "$PV_SRC" describe)
 fi
@@ -88,12 +87,12 @@ EOF
 if [ "$PARAVIEW_DOC_UPLOAD" = "true" ]; then
     cd "${WORK_DIR}/paraview-docs/"
 
-    if [ "$UPDATE_LATEST" = "true" ]; then
-        if [ -d latest ]; then
-            rm -rf latest
-        fi
-        cp -av "$VERSION"/ latest/
+    # Always update latest to the most recent numbered version
+    LATEST_VERSION="$(find . -maxdepth 1 -type d  -name 'v*' -printf '%f\n' | sort --version-sort | tail -1)"
+    if [ -d latest ]; then
+        rm -rf latest
     fi
+    cp -av "$LATEST_VERSION"/ latest/
 
     git add "$VERSION"
     # we simply amend the last commit and force-push
