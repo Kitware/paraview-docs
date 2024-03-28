@@ -76,7 +76,7 @@ GENERATED_TAGS="$(find . -maxdepth 1 -type d  -name 'v*' -printf "%f\n" | sort -
 cat << EOF > versions.json
 [
 { "value": "nightly", "label": "nightly (development)" },
-{ "value": "latest",  "label": "latest release (5.10.*)" },
+{ "value": "latest",  "label": "latest release (5.12.*)" },
 $GENERATED_TAGS
 ]
 EOF
