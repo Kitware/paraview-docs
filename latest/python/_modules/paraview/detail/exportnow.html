@@ -1,19 +1,18 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html4" lang="en" >
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>paraview.detail.exportnow &mdash; ParaView/Python 5.12.0-776-gfc5a2391cc documentation</title>
-      <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <title>paraview.detail.exportnow &mdash; ParaView/Python 5.12.0 documentation</title><link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" /><link rel="shortcut icon" href="../../../_static/pvIcon.ico"/>
   <!--[if lt IE 9]>
     <script src="../../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
-  
-        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
-        <script src="../../../_static/jquery.js"></script>
-        <script src="../../../_static/underscore.js"></script>
-        <script src="../../../_static/doctools.js"></script>
+  <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../../_static/language_data.js"></script>
     <script src="../../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" /> 
@@ -29,7 +28,7 @@
             <li> <a href="../../../index.html">
               <img src="../../../_static/paraview-logo-small.png"
               alt="ParaView/Python"></img></a> </li>
-            <li class="version"> version 5.12.0-776-gfc5a2391cc</li>
+            <li class="version"> version 5.12.0</li>
           </ul>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
@@ -83,20 +82,17 @@
 <span></span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;This module is used to export catalyst defined data products directly</span>
 <span class="sd">within the ParaView GUI.&quot;&quot;&quot;</span>
 
-<span class="kn">from</span> <span class="nn">paraview.simple</span> <span class="kn">import</span> <span class="o">*</span>
-
+<span class="kn">from</span> <span class="nn">paraview.simple</span> <span class="k">import</span> <span class="o">*</span>
 <span class="n">haveCinemaC</span> <span class="o">=</span> <span class="kc">True</span>
 <span class="k">try</span><span class="p">:</span>
-    <span class="kn">import</span> <span class="nn">paraview.tpl.cinema_python.adaptors.paraview.pv_introspect</span> <span class="k">as</span> <span class="nn">pvi</span>
+  <span class="kn">import</span> <span class="nn">paraview.tpl.cinema_python.adaptors.paraview.pv_introspect</span> <span class="k">as</span> <span class="nn">pvi</span>
 <span class="k">except</span><span class="p">:</span>
-    <span class="n">haveCinemaC</span> <span class="o">=</span> <span class="kc">False</span>
+  <span class="n">haveCinemaC</span> <span class="o">=</span> <span class="kc">False</span>
 <span class="kn">import</span> <span class="nn">os</span>
-
 
 <div class="viewcode-block" id="CinemaDHelper"><a class="viewcode-back" href="../../../paraview.detail.exportnow.html#paraview.detail.exportnow.CinemaDHelper">[docs]</a><span class="k">class</span> <span class="nc">CinemaDHelper</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot; A helper that we funnel file save commands through so that we can build up a CinemaD table for them. &quot;&quot;&quot;</span>
-
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mcd</span><span class="p">,</span> <span class="n">rd</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mcd</span><span class="p">,</span> <span class="n">rd</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">__EnableCinemaDTable</span> <span class="o">=</span> <span class="n">mcd</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">__RootDirectory</span> <span class="o">=</span> <span class="n">rd</span>
         <span class="k">if</span> <span class="n">rd</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">rd</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">&quot;/&quot;</span><span class="p">):</span>
@@ -128,7 +124,7 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">Keys</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s2">&quot;timestep&quot;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">Keys</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s2">&quot;producer&quot;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">Keys</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s2">&quot;FILE&quot;</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">Contents</span><span class="o">.</span><span class="n">append</span><span class="p">({</span><span class="s1">&#39;timestep&#39;</span><span class="p">:</span> <span class="n">time</span><span class="p">,</span> <span class="s1">&#39;producer&#39;</span><span class="p">:</span> <span class="n">producer</span><span class="p">,</span> <span class="s1">&#39;FILE&#39;</span><span class="p">:</span> <span class="n">datafilename</span><span class="p">})</span></div>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Contents</span><span class="o">.</span><span class="n">append</span><span class="p">({</span><span class="s1">&#39;timestep&#39;</span><span class="p">:</span><span class="n">time</span><span class="p">,</span><span class="s1">&#39;producer&#39;</span><span class="p">:</span><span class="n">producer</span><span class="p">,</span><span class="s1">&#39;FILE&#39;</span><span class="p">:</span><span class="n">datafilename</span><span class="p">})</span></div>
 
 <div class="viewcode-block" id="CinemaDHelper.AppendCViewToCinemaDTable"><a class="viewcode-back" href="../../../paraview.detail.exportnow.html#paraview.detail.exportnow.CinemaDHelper.AppendCViewToCinemaDTable">[docs]</a>    <span class="k">def</span> <span class="nf">AppendCViewToCinemaDTable</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">time</span><span class="p">,</span> <span class="n">producer</span><span class="p">,</span> <span class="n">filelist</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot; keep a record of every new file that cinema image writes along with the keys that produced them so that we can list them all later &quot;&quot;&quot;</span>
@@ -137,20 +133,20 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">Keys</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s2">&quot;timestep&quot;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">Keys</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s2">&quot;producer&quot;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">Keys</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s2">&quot;FILE&quot;</span><span class="p">)</span>
-        <span class="c1"># unroll the contents into key lists and filenames</span>
+        <span class="c1">#unroll the contents into key lists and filenames</span>
         <span class="k">for</span> <span class="n">viewname</span> <span class="ow">in</span> <span class="n">filelist</span><span class="p">:</span>
-            <span class="k">for</span> <span class="n">entry</span> <span class="ow">in</span> <span class="n">filelist</span><span class="p">[</span><span class="n">viewname</span><span class="p">]:</span>
-                <span class="n">keylist</span> <span class="o">=</span> <span class="n">entry</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-                <span class="c1"># avoid redundancy from name change</span>
-                <span class="k">if</span> <span class="s1">&#39;time&#39;</span> <span class="ow">in</span> <span class="n">keylist</span><span class="p">:</span>
-                    <span class="n">time</span> <span class="o">=</span> <span class="n">keylist</span><span class="p">[</span><span class="s1">&#39;time&#39;</span><span class="p">]</span>
-                    <span class="k">del</span> <span class="n">keylist</span><span class="p">[</span><span class="s1">&#39;time&#39;</span><span class="p">]</span>
-                <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">keylist</span><span class="p">:</span>
-                    <span class="bp">self</span><span class="o">.</span><span class="n">Keys</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">k</span><span class="p">)</span>
-                <span class="n">keylist</span><span class="p">[</span><span class="s1">&#39;timestep&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">time</span>
-                <span class="n">keylist</span><span class="p">[</span><span class="s1">&#39;producer&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">producer</span>
-                <span class="n">keylist</span><span class="p">[</span><span class="s1">&#39;FILE&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__StripRootDir</span><span class="p">(</span><span class="n">entry</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
-                <span class="bp">self</span><span class="o">.</span><span class="n">Contents</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">keylist</span><span class="p">)</span></div>
+           <span class="k">for</span> <span class="n">entry</span> <span class="ow">in</span> <span class="n">filelist</span><span class="p">[</span><span class="n">viewname</span><span class="p">]:</span>
+               <span class="n">keylist</span> <span class="o">=</span> <span class="n">entry</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+               <span class="c1"># avoid redundancy from name change</span>
+               <span class="k">if</span> <span class="s1">&#39;time&#39;</span> <span class="ow">in</span> <span class="n">keylist</span><span class="p">:</span>
+                   <span class="n">time</span> <span class="o">=</span> <span class="n">keylist</span><span class="p">[</span><span class="s1">&#39;time&#39;</span><span class="p">]</span>
+                   <span class="k">del</span> <span class="n">keylist</span><span class="p">[</span><span class="s1">&#39;time&#39;</span><span class="p">]</span>
+               <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">keylist</span><span class="p">:</span>
+                   <span class="bp">self</span><span class="o">.</span><span class="n">Keys</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">k</span><span class="p">)</span>
+               <span class="n">keylist</span><span class="p">[</span><span class="s1">&#39;timestep&#39;</span><span class="p">]</span><span class="o">=</span><span class="n">time</span>
+               <span class="n">keylist</span><span class="p">[</span><span class="s1">&#39;producer&#39;</span><span class="p">]</span><span class="o">=</span><span class="n">producer</span>
+               <span class="n">keylist</span><span class="p">[</span><span class="s1">&#39;FILE&#39;</span><span class="p">]</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">__StripRootDir</span><span class="p">(</span><span class="n">entry</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+               <span class="bp">self</span><span class="o">.</span><span class="n">Contents</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">keylist</span><span class="p">)</span></div>
 
 <div class="viewcode-block" id="CinemaDHelper.Finalize"><a class="viewcode-back" href="../../../paraview.detail.exportnow.html#paraview.detail.exportnow.CinemaDHelper.Finalize">[docs]</a>    <span class="k">def</span> <span class="nf">Finalize</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot; Finish off the table and write it to a file &quot;&quot;&quot;</span>
@@ -166,19 +162,19 @@
         <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;producer,&quot;</span><span class="p">)</span>
         <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">Keys</span><span class="p">:</span>
             <span class="k">if</span> <span class="n">k</span> <span class="o">!=</span> <span class="s1">&#39;timestep&#39;</span> <span class="ow">and</span> <span class="n">k</span> <span class="o">!=</span> <span class="s1">&#39;producer&#39;</span> <span class="ow">and</span> <span class="n">k</span> <span class="o">!=</span> <span class="s1">&#39;FILE&#39;</span><span class="p">:</span>
-                <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%s</span><span class="s2">,&quot;</span> <span class="o">%</span> <span class="n">k</span><span class="p">)</span>
+                <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%s</span><span class="s2">,&quot;</span><span class="o">%</span><span class="n">k</span><span class="p">)</span>
         <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;FILE</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
         <span class="c1"># write all of the contents</span>
         <span class="k">for</span> <span class="n">l</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">Contents</span><span class="p">:</span>
-            <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%s</span><span class="s2">,&quot;</span> <span class="o">%</span> <span class="n">l</span><span class="p">[</span><span class="s1">&#39;timestep&#39;</span><span class="p">])</span>
-            <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%s</span><span class="s2">,&quot;</span> <span class="o">%</span> <span class="n">l</span><span class="p">[</span><span class="s1">&#39;producer&#39;</span><span class="p">])</span>
+            <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%s</span><span class="s2">,&quot;</span><span class="o">%</span><span class="n">l</span><span class="p">[</span><span class="s1">&#39;timestep&#39;</span><span class="p">])</span>
+            <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%s</span><span class="s2">,&quot;</span><span class="o">%</span><span class="n">l</span><span class="p">[</span><span class="s1">&#39;producer&#39;</span><span class="p">])</span>
             <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">Keys</span><span class="p">:</span>
                 <span class="k">if</span> <span class="n">k</span> <span class="o">!=</span> <span class="s1">&#39;timestep&#39;</span> <span class="ow">and</span> <span class="n">k</span> <span class="o">!=</span> <span class="s1">&#39;producer&#39;</span> <span class="ow">and</span> <span class="n">k</span> <span class="o">!=</span> <span class="s1">&#39;FILE&#39;</span><span class="p">:</span>
                     <span class="n">v</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
                     <span class="k">if</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">l</span><span class="p">:</span>
                         <span class="n">v</span> <span class="o">=</span> <span class="n">l</span><span class="p">[</span><span class="n">k</span><span class="p">]</span>
-                    <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%s</span><span class="s2">,&quot;</span> <span class="o">%</span> <span class="n">v</span><span class="p">)</span>
-            <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%s</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="bp">self</span><span class="o">.</span><span class="n">__StripRootDir</span><span class="p">(</span><span class="n">l</span><span class="p">[</span><span class="s1">&#39;FILE&#39;</span><span class="p">]))</span>
+                    <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%s</span><span class="s2">,&quot;</span><span class="o">%</span><span class="n">v</span><span class="p">)</span>
+            <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%s</span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">%</span><span class="bp">self</span><span class="o">.</span><span class="n">__StripRootDir</span><span class="p">(</span><span class="n">l</span><span class="p">[</span><span class="s1">&#39;FILE&#39;</span><span class="p">]))</span>
         <span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span></div>
 
 <div class="viewcode-block" id="CinemaDHelper.WriteNow"><a class="viewcode-back" href="../../../paraview.detail.exportnow.html#paraview.detail.exportnow.CinemaDHelper.WriteNow">[docs]</a>    <span class="k">def</span> <span class="nf">WriteNow</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
@@ -191,41 +187,41 @@
             <span class="c1"># phew nothing new, we can just append a record</span>
             <span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">indexfilename</span><span class="p">,</span> <span class="s2">&quot;a+&quot;</span><span class="p">)</span>
             <span class="k">for</span> <span class="n">l</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">Contents</span><span class="p">:</span>
-                <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%s</span><span class="s2">,&quot;</span> <span class="o">%</span> <span class="n">l</span><span class="p">[</span><span class="s1">&#39;timestep&#39;</span><span class="p">])</span>
-                <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%s</span><span class="s2">,&quot;</span> <span class="o">%</span> <span class="n">l</span><span class="p">[</span><span class="s1">&#39;producer&#39;</span><span class="p">])</span>
+                <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%s</span><span class="s2">,&quot;</span><span class="o">%</span><span class="n">l</span><span class="p">[</span><span class="s1">&#39;timestep&#39;</span><span class="p">])</span>
+                <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%s</span><span class="s2">,&quot;</span><span class="o">%</span><span class="n">l</span><span class="p">[</span><span class="s1">&#39;producer&#39;</span><span class="p">])</span>
                 <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">Keys</span><span class="p">:</span>
                     <span class="k">if</span> <span class="n">k</span> <span class="o">!=</span> <span class="s1">&#39;timestep&#39;</span> <span class="ow">and</span> <span class="n">k</span> <span class="o">!=</span> <span class="s1">&#39;producer&#39;</span> <span class="ow">and</span> <span class="n">k</span> <span class="o">!=</span> <span class="s1">&#39;FILE&#39;</span><span class="p">:</span>
                         <span class="n">v</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
                         <span class="k">if</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">l</span><span class="p">:</span>
                             <span class="n">v</span> <span class="o">=</span> <span class="n">l</span><span class="p">[</span><span class="n">k</span><span class="p">]</span>
-                        <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%s</span><span class="s2">,&quot;</span> <span class="o">%</span> <span class="n">v</span><span class="p">)</span>
-                <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%s</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="bp">self</span><span class="o">.</span><span class="n">__StripRootDir</span><span class="p">(</span><span class="n">l</span><span class="p">[</span><span class="s1">&#39;FILE&#39;</span><span class="p">]))</span>
+                        <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%s</span><span class="s2">,&quot;</span><span class="o">%</span><span class="n">v</span><span class="p">)</span>
+                <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%s</span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">%</span><span class="bp">self</span><span class="o">.</span><span class="n">__StripRootDir</span><span class="p">(</span><span class="n">l</span><span class="p">[</span><span class="s1">&#39;FILE&#39;</span><span class="p">]))</span>
             <span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">Contents</span> <span class="o">=</span> <span class="p">[]</span>
             <span class="k">return</span>
-        <span class="c1"># dang, whatever we wrote recently had a new variable</span>
-        <span class="c1"># we may have to extend and rewrite the old output file</span>
+        <span class="c1">#dang, whatever we wrote recently had a new variable</span>
+        <span class="c1">#we may have to extend and rewrite the old output file</span>
         <span class="n">readKeys</span> <span class="o">=</span> <span class="kc">None</span>
         <span class="n">readContents</span> <span class="o">=</span> <span class="p">[]</span>
         <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">indexfilename</span><span class="p">):</span>
-            <span class="c1"># yep we have to do it</span>
-            <span class="c1"># parse the old file</span>
+            <span class="c1">#yep we have to do it</span>
+            <span class="c1">#parse the old file</span>
             <span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">indexfilename</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span>
             <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">f</span><span class="p">:</span>
-                <span class="n">read</span> <span class="o">=</span> <span class="n">line</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;,&quot;</span><span class="p">)</span>  <span class="c1"># -1 to skip trailing\n</span>
+                <span class="n">read</span> <span class="o">=</span> <span class="n">line</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;,&quot;</span><span class="p">)</span> <span class="c1">#-1 to skip trailing\n</span>
                 <span class="k">if</span> <span class="n">readKeys</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
                     <span class="n">readKeys</span> <span class="o">=</span> <span class="n">read</span>
                 <span class="k">else</span><span class="p">:</span>
                     <span class="n">entry</span> <span class="o">=</span> <span class="p">{}</span>
-                    <span class="k">for</span> <span class="n">idx</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">read</span><span class="p">)):</span>
-                        <span class="n">entry</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="n">readKeys</span><span class="p">[</span><span class="n">idx</span><span class="p">]:</span> <span class="n">read</span><span class="p">[</span><span class="n">idx</span><span class="p">]})</span>
+                    <span class="k">for</span> <span class="n">idx</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">read</span><span class="p">)):</span>
+                        <span class="n">entry</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="n">readKeys</span><span class="p">[</span><span class="n">idx</span><span class="p">]:</span><span class="n">read</span><span class="p">[</span><span class="n">idx</span><span class="p">]})</span>
                     <span class="n">readContents</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">entry</span><span class="p">)</span>
-        <span class="c1"># combine contents</span>
+        <span class="c1">#combine contents</span>
         <span class="k">if</span> <span class="n">readKeys</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">Keys</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">Keys</span><span class="o">.</span><span class="n">union</span><span class="p">(</span><span class="n">readKeys</span><span class="p">)</span>
-            <span class="n">readContents</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">Contents</span><span class="p">)</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">Contents</span> <span class="o">=</span> <span class="n">readContents</span>
-        <span class="c1"># finally, write</span>
+           <span class="bp">self</span><span class="o">.</span><span class="n">Keys</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">Keys</span><span class="o">.</span><span class="n">union</span><span class="p">(</span><span class="n">readKeys</span><span class="p">)</span>
+           <span class="n">readContents</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">Contents</span><span class="p">)</span>
+           <span class="bp">self</span><span class="o">.</span><span class="n">Contents</span> <span class="o">=</span> <span class="n">readContents</span>
+        <span class="c1">#finally, write</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">Finalize</span><span class="p">()</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">KeysWritten</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">Keys</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">Contents</span> <span class="o">=</span> <span class="p">[]</span></div></div>
@@ -233,8 +229,7 @@
 
 <span class="k">class</span> <span class="nc">__CinemaACHelper</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot; Another helper that connects up to cinema_python&#39;s export function. &quot;&quot;&quot;</span>
-
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">rd</span><span class="p">,</span> <span class="n">vsel</span><span class="p">,</span> <span class="n">tsel</span><span class="p">,</span> <span class="n">asel</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">rd</span><span class="p">,</span> <span class="n">vsel</span><span class="p">,</span> <span class="n">tsel</span><span class="p">,</span> <span class="n">asel</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">__RootDirectory</span> <span class="o">=</span> <span class="n">rd</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">__ViewSelection</span> <span class="o">=</span> <span class="n">vsel</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">__TrackSelection</span> <span class="o">=</span> <span class="n">tsel</span>
@@ -242,17 +237,16 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">NewFiles</span> <span class="o">=</span> <span class="kc">None</span>
 
     <span class="k">if</span> <span class="n">haveCinemaC</span><span class="p">:</span>
-        <span class="k">def</span> <span class="nf">ExportNow</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">time</span><span class="p">):</span>
-            <span class="n">r</span> <span class="o">=</span> <span class="n">pvi</span><span class="o">.</span><span class="n">export_scene</span><span class="p">(</span><span class="n">baseDirName</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">__RootDirectory</span><span class="p">,</span>
-                                 <span class="n">viewSelection</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">__ViewSelection</span><span class="p">),</span>
-                                 <span class="n">trackSelection</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">__TrackSelection</span><span class="p">),</span>
-                                 <span class="n">arraySelection</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">__ArraySelection</span><span class="p">),</span>
-                                 <span class="n">forcetime</span><span class="o">=</span><span class="n">time</span><span class="p">)</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">NewFiles</span> <span class="o">=</span> <span class="n">r</span>
+      <span class="k">def</span> <span class="nf">ExportNow</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">time</span><span class="p">):</span>
+          <span class="n">r</span> <span class="o">=</span> <span class="n">pvi</span><span class="o">.</span><span class="n">export_scene</span><span class="p">(</span><span class="n">baseDirName</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">__RootDirectory</span><span class="p">,</span>
+                           <span class="n">viewSelection</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">__ViewSelection</span><span class="p">),</span>
+                           <span class="n">trackSelection</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">__TrackSelection</span><span class="p">),</span>
+                           <span class="n">arraySelection</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">__ArraySelection</span><span class="p">),</span>
+                           <span class="n">forcetime</span><span class="o">=</span><span class="n">time</span><span class="p">)</span>
+          <span class="bp">self</span><span class="o">.</span><span class="n">NewFiles</span> <span class="o">=</span> <span class="n">r</span>
     <span class="k">else</span><span class="p">:</span>
-        <span class="k">def</span> <span class="nf">ExportNow</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">time</span><span class="p">):</span>
-            <span class="k">pass</span>
-
+      <span class="k">def</span> <span class="nf">ExportNow</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">time</span><span class="p">):</span>
+          <span class="k">pass</span>
 
 <span class="k">def</span> <span class="nf">_fixup_and_makedir_if_needed</span><span class="p">(</span><span class="n">rootdir</span><span class="p">):</span>
     <span class="k">if</span> <span class="n">rootdir</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">rootdir</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">&quot;/&quot;</span><span class="p">):</span>
@@ -260,7 +254,6 @@
     <span class="k">if</span> <span class="n">rootdir</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">rootdir</span><span class="p">):</span>
         <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">rootdir</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">rootdir</span>
-
 
 <div class="viewcode-block" id="ExportNow"><a class="viewcode-back" href="../../../paraview.detail.exportnow.html#paraview.detail.exportnow.ExportNow">[docs]</a><span class="k">def</span> <span class="nf">ExportNow</span><span class="p">(</span><span class="n">image_root_directory</span><span class="p">,</span>
               <span class="n">data_root_directory</span><span class="p">,</span>
@@ -303,8 +296,8 @@
         <span class="n">writercnt</span> <span class="o">=</span> <span class="mi">0</span>
         <span class="k">while</span> <span class="n">wp</span><span class="p">:</span>
             <span class="n">freq</span> <span class="o">=</span> <span class="n">wp</span><span class="o">.</span><span class="n">GetProperty</span><span class="p">(</span><span class="s2">&quot;WriteFrequency&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">GetElement</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
-            <span class="k">if</span> <span class="p">((</span><span class="n">tstep</span> <span class="o">%</span> <span class="n">freq</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="ow">and</span>
-                    <span class="p">(</span><span class="ow">not</span> <span class="p">(</span><span class="n">wp</span><span class="o">.</span><span class="n">GetXMLName</span><span class="p">()</span> <span class="o">==</span> <span class="s2">&quot;Cinema image options&quot;</span><span class="p">))):</span>
+            <span class="k">if</span> <span class="p">((</span><span class="n">tstep</span> <span class="o">%</span> <span class="n">freq</span><span class="o">==</span><span class="mi">0</span><span class="p">)</span> <span class="ow">and</span>
+                <span class="p">(</span><span class="ow">not</span> <span class="p">(</span><span class="n">wp</span><span class="o">.</span><span class="n">GetXMLName</span><span class="p">()</span> <span class="o">==</span> <span class="s2">&quot;Cinema image options&quot;</span><span class="p">))):</span>
                 <span class="c1"># this isn&#39;t pretty. I couldn&#39;t find a way to write</span>
                 <span class="c1"># directly with the writer proxy. So what I do here</span>
                 <span class="c1"># is find the input and filename and make a new writer</span>
@@ -327,14 +320,14 @@
                         <span class="n">cell_arrays</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39; &#39;</span><span class="p">]</span>
                     <span class="c1"># create a temporary array culling filter</span>
                     <span class="n">pass_arrays</span> <span class="o">=</span> <span class="n">PassArrays</span><span class="p">(</span><span class="n">Input</span><span class="o">=</span><span class="n">inputproxy</span><span class="p">,</span> \
-                                             <span class="n">PointDataArrays</span><span class="o">=</span><span class="n">point_arrays</span><span class="p">,</span> <span class="n">CellDataArrays</span><span class="o">=</span><span class="n">cell_arrays</span><span class="p">)</span>
+                        <span class="n">PointDataArrays</span><span class="o">=</span><span class="n">point_arrays</span><span class="p">,</span> <span class="n">CellDataArrays</span><span class="o">=</span><span class="n">cell_arrays</span><span class="p">)</span>
                     <span class="n">inputproxy</span> <span class="o">=</span> <span class="n">pass_arrays</span>
                     <span class="n">helpers</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">inputproxy</span><span class="p">)</span>
                 <span class="n">fname</span> <span class="o">=</span> <span class="n">wp</span><span class="o">.</span><span class="n">GetProperty</span><span class="p">(</span><span class="s2">&quot;CatalystFilePattern&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">GetElement</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
                 <span class="k">if</span> <span class="n">wp</span><span class="o">.</span><span class="n">GetXMLName</span><span class="p">()</span> <span class="o">==</span> <span class="s2">&quot;ExodusIIWriter&quot;</span><span class="p">:</span>
-                    <span class="n">fnamefilled</span> <span class="o">=</span> <span class="n">data_root_directory</span> <span class="o">+</span> <span class="n">fname</span> <span class="o">+</span> <span class="n">padded_tstep</span>
+                    <span class="n">fnamefilled</span> <span class="o">=</span> <span class="n">data_root_directory</span><span class="o">+</span><span class="n">fname</span><span class="o">+</span><span class="n">padded_tstep</span>
                 <span class="k">else</span><span class="p">:</span>
-                    <span class="n">fnamefilled</span> <span class="o">=</span> <span class="n">data_root_directory</span> <span class="o">+</span> <span class="n">fname</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;%t&quot;</span><span class="p">,</span> <span class="n">padded_tstep</span><span class="p">)</span>
+                    <span class="n">fnamefilled</span> <span class="o">=</span> <span class="n">data_root_directory</span><span class="o">+</span><span class="n">fname</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;%t&quot;</span><span class="p">,</span> <span class="n">padded_tstep</span><span class="p">)</span>
 
                 <span class="n">kwargs</span> <span class="o">=</span> <span class="p">{}</span>
                 <span class="n">DataMode</span> <span class="o">=</span> <span class="n">wp</span><span class="o">.</span><span class="n">GetProperty</span><span class="p">(</span><span class="s2">&quot;DataMode&quot;</span><span class="p">)</span>
@@ -366,26 +359,26 @@
         <span class="n">viewcnt</span> <span class="o">=</span> <span class="mi">0</span>
         <span class="k">while</span> <span class="n">ssp</span><span class="p">:</span>
             <span class="k">if</span> <span class="ow">not</span> <span class="n">ssp</span><span class="o">.</span><span class="n">HasAnnotation</span><span class="p">(</span><span class="s2">&quot;enabled&quot;</span><span class="p">)</span> <span class="ow">or</span> <span class="ow">not</span> <span class="p">(</span><span class="n">ssp</span><span class="o">.</span><span class="n">GetAnnotation</span><span class="p">(</span><span class="s2">&quot;enabled&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="s1">&#39;1&#39;</span><span class="p">):</span>
-                <span class="n">ssp</span> <span class="o">=</span> <span class="n">ed</span><span class="o">.</span><span class="n">GetNextScreenshotProxy</span><span class="p">()</span>
+                <span class="n">ssp</span><span class="o">=</span> <span class="n">ed</span><span class="o">.</span><span class="n">GetNextScreenshotProxy</span><span class="p">()</span>
                 <span class="k">continue</span>
             <span class="n">freq</span> <span class="o">=</span> <span class="n">ssp</span><span class="o">.</span><span class="n">GetProperty</span><span class="p">(</span><span class="s2">&quot;WriteFrequency&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">GetElement</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
-            <span class="k">if</span> <span class="n">tstep</span> <span class="o">%</span> <span class="n">freq</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">tstep</span> <span class="o">%</span> <span class="n">freq</span><span class="o">==</span><span class="mi">0</span><span class="p">:</span>
                 <span class="n">fname</span> <span class="o">=</span> <span class="n">ssp</span><span class="o">.</span><span class="n">GetProperty</span><span class="p">(</span><span class="s2">&quot;CatalystFilePattern&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">GetElement</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
                 <span class="k">if</span> <span class="n">fname</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">&quot;cdb&quot;</span><span class="p">):</span>
                     <span class="n">CINAC</span> <span class="o">=</span> <span class="n">__CinemaACHelper</span><span class="p">(</span><span class="n">image_root_directory</span><span class="p">,</span>
-                                             <span class="n">rendering_info</span><span class="p">,</span>
-                                             <span class="n">cinema_tracks</span><span class="p">,</span>
-                                             <span class="n">cinema_arrays</span><span class="p">)</span>
+                              <span class="n">rendering_info</span><span class="p">,</span>
+                              <span class="n">cinema_tracks</span><span class="p">,</span>
+                              <span class="n">cinema_arrays</span><span class="p">)</span>
                     <span class="c1"># special treatment for cinema image data bases</span>
                     <span class="n">CINAC</span><span class="o">.</span><span class="n">ExportNow</span><span class="p">(</span><span class="n">tnow</span><span class="p">)</span>
                     <span class="c1"># don&#39;t forget to tell cinema D about it</span>
-                    <span class="n">CIND</span><span class="o">.</span><span class="n">AppendCViewToCinemaDTable</span><span class="p">(</span><span class="n">tnow</span><span class="p">,</span> <span class="s2">&quot;cview_</span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">viewcnt</span><span class="p">,</span> <span class="n">CINAC</span><span class="o">.</span><span class="n">NewFiles</span><span class="p">)</span>
+                    <span class="n">CIND</span><span class="o">.</span><span class="n">AppendCViewToCinemaDTable</span><span class="p">(</span><span class="n">tnow</span><span class="p">,</span> <span class="s2">&quot;cview_</span><span class="si">%s</span><span class="s2">&quot;</span><span class="o">%</span><span class="n">viewcnt</span><span class="p">,</span> <span class="n">CINAC</span><span class="o">.</span><span class="n">NewFiles</span><span class="p">)</span>
                 <span class="k">else</span><span class="p">:</span>
-                    <span class="n">fnamefilled</span> <span class="o">=</span> <span class="n">image_root_directory</span> <span class="o">+</span> <span class="n">fname</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;%t&quot;</span><span class="p">,</span> <span class="n">padded_tstep</span><span class="p">)</span>
+                    <span class="n">fnamefilled</span> <span class="o">=</span> <span class="n">image_root_directory</span><span class="o">+</span><span class="n">fname</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;%t&quot;</span><span class="p">,</span> <span class="n">padded_tstep</span><span class="p">)</span>
                     <span class="c1"># save the screenshot</span>
                     <span class="n">ssp</span><span class="o">.</span><span class="n">WriteImage</span><span class="p">(</span><span class="n">fnamefilled</span><span class="p">)</span>
                     <span class="c1"># don&#39;t forget to tell cinema D about it</span>
-                    <span class="n">CIND</span><span class="o">.</span><span class="n">AppendToCinemaDTable</span><span class="p">(</span><span class="n">tnow</span><span class="p">,</span> <span class="s2">&quot;view_</span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">viewcnt</span><span class="p">,</span> <span class="n">fnamefilled</span><span class="p">)</span>
+                    <span class="n">CIND</span><span class="o">.</span><span class="n">AppendToCinemaDTable</span><span class="p">(</span><span class="n">tnow</span><span class="p">,</span> <span class="s2">&quot;view_</span><span class="si">%s</span><span class="s2">&quot;</span><span class="o">%</span><span class="n">viewcnt</span><span class="p">,</span> <span class="n">fnamefilled</span><span class="p">)</span>
             <span class="n">ssp</span> <span class="o">=</span> <span class="n">ed</span><span class="o">.</span><span class="n">GetNextScreenshotProxy</span><span class="p">()</span>
             <span class="n">viewcnt</span> <span class="o">=</span> <span class="n">viewcnt</span> <span class="o">+</span> <span class="mi">1</span>
         <span class="n">tstep</span> <span class="o">=</span> <span class="n">tstep</span> <span class="o">+</span> <span class="mi">1</span>
@@ -394,7 +387,7 @@
 
         <span class="c1"># destroy array culling filters</span>
         <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">helpers</span><span class="p">:</span>
-            <span class="n">Delete</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+          <span class="n">Delete</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 
     <span class="c1"># defer actual cinema D output until the end because we only know now what the full set of cinema D columns actually are</span>
     <span class="n">CIND</span><span class="o">.</span><span class="n">Finalize</span><span class="p">()</span></div>

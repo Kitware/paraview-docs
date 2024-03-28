@@ -1,19 +1,18 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html4" lang="en" >
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>util Package &mdash; ParaView/Python 5.12.0-776-gfc5a2391cc documentation</title>
-      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <title>util Package &mdash; ParaView/Python 5.12.0 documentation</title><link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" /><link rel="shortcut icon" href="_static/pvIcon.ico"/>
   <!--[if lt IE 9]>
     <script src="_static/js/html5shiv.min.js"></script>
   <![endif]-->
-  
-        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-        <script src="_static/jquery.js"></script>
-        <script src="_static/underscore.js"></script>
-        <script src="_static/doctools.js"></script>
+  <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -31,7 +30,7 @@
             <li> <a href="index.html">
               <img src="_static/paraview-logo-small.png"
               alt="ParaView/Python"></img></a> </li>
-            <li class="version"> version 5.12.0-776-gfc5a2391cc</li>
+            <li class="version"> version 5.12.0</li>
           </ul>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
@@ -44,7 +43,7 @@
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="quick-start.html">Quick-Start :  A Tutorial</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="paraview.html">The ParaView Python Package</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="paraview.html#id1"><code class="xref py py-mod docutils literal notranslate"><span class="pre">paraview</span></code> Package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.html#id1"><code class="docutils literal notranslate"><span class="pre">paraview</span></code> Package</a></li>
 <li class="toctree-l2"><a class="reference internal" href="paraview.html#modules">Modules</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="paraview.html#subpackages">Subpackages</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="paraview.algorithms.html">algorithms Package</a></li>
@@ -57,7 +56,7 @@
 <li class="toctree-l3"><a class="reference internal" href="paraview.tests.html">tests Package</a></li>
 <li class="toctree-l3"><a class="reference internal" href="paraview.tpl.html">tpl Package</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">util Package</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#id1"><code class="xref py py-mod docutils literal notranslate"><span class="pre">util</span></code> Package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id1"><code class="docutils literal notranslate"><span class="pre">util</span></code> Package</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#modules">Modules</a></li>
 </ul>
 </li>
@@ -106,9 +105,9 @@
 <h1>util Package<a class="headerlink" href="#util-package" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="id1">
 <h2><code class="xref py py-mod docutils literal notranslate"><span class="pre">util</span></code> Package<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
-<span class="target" id="module-paraview.util"></span><dl class="py function">
-<dt class="sig sig-object py" id="paraview.util.Glob">
-<span class="sig-prename descclassname"><span class="pre">paraview.util.</span></span><span class="sig-name descname"><span class="pre">Glob</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rootDir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/util.html#Glob"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#paraview.util.Glob" title="Permalink to this definition">¶</a></dt>
+<span class="target" id="module-paraview.util"></span><dl class="function">
+<dt id="paraview.util.Glob">
+<code class="descclassname">paraview.util.</code><code class="descname">Glob</code><span class="sig-paren">(</span><em>path</em>, <em>rootDir=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/util.html#Glob"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.util.Glob" title="Permalink to this definition">¶</a></dt>
 <dd><p>Given a path, this function performs globbing on the file names inside the input
 directory. rootDir is an optional parameter that can set a relative root directory from which
 path is defined. This function returns the list of files matching the globbing pattern (the
@@ -118,9 +117,9 @@ the file name at the end of path.
 fnmatch package is used as the backend for processing the input pattern.</p>
 </dd></dl>
 
-<dl class="py function">
-<dt class="sig sig-object py" id="paraview.util.IntegrateCell">
-<span class="sig-prename descclassname"><span class="pre">paraview.util.</span></span><span class="sig-name descname"><span class="pre">IntegrateCell</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dataset</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cellId</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/util.html#IntegrateCell"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#paraview.util.IntegrateCell" title="Permalink to this definition">¶</a></dt>
+<dl class="function">
+<dt id="paraview.util.IntegrateCell">
+<code class="descclassname">paraview.util.</code><code class="descname">IntegrateCell</code><span class="sig-paren">(</span><em>dataset</em>, <em>cellId</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/util.html#IntegrateCell"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.util.IntegrateCell" title="Permalink to this definition">¶</a></dt>
 <dd><p>This functions uses vtkCellIntegrator’s Integrate method that calculates
 the length/area/volume of a 1D/2D/3D cell. The calculation is exact for
 lines, polylines, triangles, triangle strips, pixels, voxels, convex
@@ -128,17 +127,17 @@ polygons, quads and tetrahedra. All other 3D cells are triangulated
 during volume calculation. In such cases, the result may not be exact.</p>
 </dd></dl>
 
-<dl class="py function">
-<dt class="sig sig-object py" id="paraview.util.ReplaceDollarVariablesWithEnvironment">
-<span class="sig-prename descclassname"><span class="pre">paraview.util.</span></span><span class="sig-name descname"><span class="pre">ReplaceDollarVariablesWithEnvironment</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">text</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/util.html#ReplaceDollarVariablesWithEnvironment"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#paraview.util.ReplaceDollarVariablesWithEnvironment" title="Permalink to this definition">¶</a></dt>
+<dl class="function">
+<dt id="paraview.util.ReplaceDollarVariablesWithEnvironment">
+<code class="descclassname">paraview.util.</code><code class="descname">ReplaceDollarVariablesWithEnvironment</code><span class="sig-paren">(</span><em>text</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/util.html#ReplaceDollarVariablesWithEnvironment"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.util.ReplaceDollarVariablesWithEnvironment" title="Permalink to this definition">¶</a></dt>
 <dd><p>Replaces all substrings of the type <cite>${FOO}</cite> with <cite>FOO</cite> obtained
 from the <cite>os.environ</cite>. If the key is not defined in the environment, this
 raises a <cite>KeyError</cite>.</p>
 </dd></dl>
 
-<dl class="py function">
-<dt class="sig sig-object py" id="paraview.util.SetOutputWholeExtent">
-<span class="sig-prename descclassname"><span class="pre">paraview.util.</span></span><span class="sig-name descname"><span class="pre">SetOutputWholeExtent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">algorithm</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">extent</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/util.html#SetOutputWholeExtent"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#paraview.util.SetOutputWholeExtent" title="Permalink to this definition">¶</a></dt>
+<dl class="function">
+<dt id="paraview.util.SetOutputWholeExtent">
+<code class="descclassname">paraview.util.</code><code class="descname">SetOutputWholeExtent</code><span class="sig-paren">(</span><em>algorithm</em>, <em>extent</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/util.html#SetOutputWholeExtent"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.util.SetOutputWholeExtent" title="Permalink to this definition">¶</a></dt>
 <dd><p>Convenience method to help set the WHOLE_EXTENT() in RequestInformation.
 Commonly used by programmable filters. The arguments are the algorithm
 and a tuple/list with 6 elements (xmin, xmax, ymin, ymax, zmin, zmax).</p>

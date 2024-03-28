@@ -1,19 +1,18 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html4" lang="en" >
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>lookuptable Module &mdash; ParaView/Python 5.12.0-776-gfc5a2391cc documentation</title>
-      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <title>lookuptable Module &mdash; ParaView/Python 5.12.0 documentation</title><link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" /><link rel="shortcut icon" href="_static/pvIcon.ico"/>
   <!--[if lt IE 9]>
     <script src="_static/js/html5shiv.min.js"></script>
   <![endif]-->
-  
-        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-        <script src="_static/jquery.js"></script>
-        <script src="_static/underscore.js"></script>
-        <script src="_static/doctools.js"></script>
+  <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -31,7 +30,7 @@
             <li> <a href="index.html">
               <img src="_static/paraview-logo-small.png"
               alt="ParaView/Python"></img></a> </li>
-            <li class="version"> version 5.12.0-776-gfc5a2391cc</li>
+            <li class="version"> version 5.12.0</li>
           </ul>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
@@ -44,7 +43,7 @@
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="quick-start.html">Quick-Start :  A Tutorial</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="paraview.html">The ParaView Python Package</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="paraview.html#id1"><code class="xref py py-mod docutils literal notranslate"><span class="pre">paraview</span></code> Package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.html#id1"><code class="docutils literal notranslate"><span class="pre">paraview</span></code> Package</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="paraview.html#modules">Modules</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="paraview._backwardscompatibilityhelper.html">_backwardscompatibilityhelper Module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="paraview._colorMaps.html">_colorMaps Module</a></li>
@@ -114,9 +113,9 @@
 <p>Utility module for easy manipultions of lookup tables.
 This module is intended for use with by simple.py.</p>
 <p>PARAVIEW_DEPRECATED_IN_5_12_0: will be removed in future releases of ParaView.</p>
-<dl class="py class">
-<dt class="sig sig-object py" id="paraview.lookuptable.vtkPVLUTReader">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">paraview.lookuptable.</span></span><span class="sig-name descname"><span class="pre">vtkPVLUTReader</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ns</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/lookuptable.html#vtkPVLUTReader"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#paraview.lookuptable.vtkPVLUTReader" title="Permalink to this definition">¶</a></dt>
+<dl class="class">
+<dt id="paraview.lookuptable.vtkPVLUTReader">
+<em class="property">class </em><code class="descclassname">paraview.lookuptable.</code><code class="descname">vtkPVLUTReader</code><span class="sig-paren">(</span><em>ns=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/lookuptable.html#vtkPVLUTReader"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.lookuptable.vtkPVLUTReader" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Reader and container for ParaView’s XML based lookup tables.
 Once lookup tables are loaded you access them by name. When
@@ -167,36 +166,36 @@ number of ParaView’s “ColorMap” elements define LUT entries.</p>
 <span class="o">&lt;/</span><span class="n">ColorMaps</span><span class="o">&gt;</span>
 </pre></div>
 </div>
-<dl class="py method">
-<dt class="sig sig-object py" id="paraview.lookuptable.vtkPVLUTReader.Clear">
-<span class="sig-name descname"><span class="pre">Clear</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/lookuptable.html#vtkPVLUTReader.Clear"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#paraview.lookuptable.vtkPVLUTReader.Clear" title="Permalink to this definition">¶</a></dt>
+<dl class="method">
+<dt id="paraview.lookuptable.vtkPVLUTReader.Clear">
+<code class="descname">Clear</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/lookuptable.html#vtkPVLUTReader.Clear"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.lookuptable.vtkPVLUTReader.Clear" title="Permalink to this definition">¶</a></dt>
 <dd><p>Clear internal data structures.</p>
 </dd></dl>
 
-<dl class="py method">
-<dt class="sig sig-object py" id="paraview.lookuptable.vtkPVLUTReader.GetLUT">
-<span class="sig-name descname"><span class="pre">GetLUT</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">aArray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">aLutName</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">aRangeOveride</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/lookuptable.html#vtkPVLUTReader.GetLUT"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#paraview.lookuptable.vtkPVLUTReader.GetLUT" title="Permalink to this definition">¶</a></dt>
+<dl class="method">
+<dt id="paraview.lookuptable.vtkPVLUTReader.GetLUT">
+<code class="descname">GetLUT</code><span class="sig-paren">(</span><em>aArray</em>, <em>aLutName</em>, <em>aRangeOveride=[]</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/lookuptable.html#vtkPVLUTReader.GetLUT"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.lookuptable.vtkPVLUTReader.GetLUT" title="Permalink to this definition">¶</a></dt>
 <dd><p>Given an array and lookup table name assign the LUT
 to the given array and return the LUT. If aRangeOveride
 is specified then LUT will be mapped through that
 range rather than the array’s actual range.</p>
 </dd></dl>
 
-<dl class="py method">
-<dt class="sig sig-object py" id="paraview.lookuptable.vtkPVLUTReader.GetLUTNames">
-<span class="sig-name descname"><span class="pre">GetLUTNames</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/lookuptable.html#vtkPVLUTReader.GetLUTNames"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#paraview.lookuptable.vtkPVLUTReader.GetLUTNames" title="Permalink to this definition">¶</a></dt>
+<dl class="method">
+<dt id="paraview.lookuptable.vtkPVLUTReader.GetLUTNames">
+<code class="descname">GetLUTNames</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/lookuptable.html#vtkPVLUTReader.GetLUTNames"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.lookuptable.vtkPVLUTReader.GetLUTNames" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return a list of the currently available LUT’s names.</p>
 </dd></dl>
 
-<dl class="py method">
-<dt class="sig sig-object py" id="paraview.lookuptable.vtkPVLUTReader.Print">
-<span class="sig-name descname"><span class="pre">Print</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/lookuptable.html#vtkPVLUTReader.Print"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#paraview.lookuptable.vtkPVLUTReader.Print" title="Permalink to this definition">¶</a></dt>
+<dl class="method">
+<dt id="paraview.lookuptable.vtkPVLUTReader.Print">
+<code class="descname">Print</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/lookuptable.html#vtkPVLUTReader.Print"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.lookuptable.vtkPVLUTReader.Print" title="Permalink to this definition">¶</a></dt>
 <dd><p>Print the available list of LUT’s.</p>
 </dd></dl>
 
-<dl class="py method">
-<dt class="sig sig-object py" id="paraview.lookuptable.vtkPVLUTReader.Read">
-<span class="sig-name descname"><span class="pre">Read</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">aFileName</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/lookuptable.html#vtkPVLUTReader.Read"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#paraview.lookuptable.vtkPVLUTReader.Read" title="Permalink to this definition">¶</a></dt>
+<dl class="method">
+<dt id="paraview.lookuptable.vtkPVLUTReader.Read">
+<code class="descname">Read</code><span class="sig-paren">(</span><em>aFileName</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/lookuptable.html#vtkPVLUTReader.Read"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.lookuptable.vtkPVLUTReader.Read" title="Permalink to this definition">¶</a></dt>
 <dd><p>Read in the LUT’s defined in the named file. Each
 call to read extends the internal list of LUTs.</p>
 </dd></dl>

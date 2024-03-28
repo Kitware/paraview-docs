@@ -1,19 +1,18 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html4" lang="en" >
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>paraview.algorithms.savgreader &mdash; ParaView/Python 5.12.0-776-gfc5a2391cc documentation</title>
-      <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <title>paraview.algorithms.savgreader &mdash; ParaView/Python 5.12.0 documentation</title><link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" /><link rel="shortcut icon" href="../../../_static/pvIcon.ico"/>
   <!--[if lt IE 9]>
     <script src="../../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
-  
-        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
-        <script src="../../../_static/jquery.js"></script>
-        <script src="../../../_static/underscore.js"></script>
-        <script src="../../../_static/doctools.js"></script>
+  <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../../_static/language_data.js"></script>
     <script src="../../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" /> 
@@ -29,7 +28,7 @@
             <li> <a href="../../../index.html">
               <img src="../../../_static/paraview-logo-small.png"
               alt="ParaView/Python"></img></a> </li>
-            <li class="version"> version 5.12.0-776-gfc5a2391cc</li>
+            <li class="version"> version 5.12.0</li>
           </ul>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
@@ -87,9 +86,9 @@
 
 <span class="sd">&quot;&quot;&quot;</span>
 
-<span class="kn">from</span> <span class="nn">paraview.util.vtkAlgorithm</span> <span class="kn">import</span> <span class="n">VTKPythonAlgorithmBase</span>
+<span class="kn">from</span> <span class="nn">paraview.util.vtkAlgorithm</span> <span class="k">import</span> <span class="n">VTKPythonAlgorithmBase</span>
 
-<span class="kn">from</span> <span class="nn">..</span> <span class="kn">import</span> <span class="n">print_error</span>
+<span class="kn">from</span> <span class="nn">..</span> <span class="k">import</span> <span class="n">print_error</span>
 
 
 <div class="viewcode-block" id="get_coords_from_line"><a class="viewcode-back" href="../../../paraview.algorithms.savgreader.html#paraview.algorithms.savgreader.get_coords_from_line">[docs]</a><span class="k">def</span> <span class="nf">get_coords_from_line</span><span class="p">(</span><span class="n">line</span><span class="p">):</span>
@@ -113,9 +112,9 @@
     <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">values</span><span class="p">)</span> <span class="o">==</span> <span class="mi">6</span><span class="p">:</span>
         <span class="n">pt_n</span> <span class="o">=</span> <span class="p">[</span><span class="nb">float</span><span class="p">(</span><span class="n">values</span><span class="p">[</span><span class="mi">3</span><span class="p">]),</span> <span class="nb">float</span><span class="p">(</span><span class="n">values</span><span class="p">[</span><span class="mi">4</span><span class="p">]),</span> <span class="nb">float</span><span class="p">(</span><span class="n">values</span><span class="p">[</span><span class="mi">5</span><span class="p">])]</span>
     <span class="k">else</span><span class="p">:</span>
-        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">values</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="mi">7</span><span class="p">:</span>  <span class="c1"># Otherwise the next 4 are colors</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">values</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="mi">7</span><span class="p">:</span>    <span class="c1"># Otherwise the next 4 are colors</span>
             <span class="n">pt_col</span> <span class="o">=</span> <span class="p">[</span><span class="nb">float</span><span class="p">(</span><span class="n">values</span><span class="p">[</span><span class="mi">3</span><span class="p">]),</span> <span class="nb">float</span><span class="p">(</span><span class="n">values</span><span class="p">[</span><span class="mi">4</span><span class="p">]),</span> <span class="nb">float</span><span class="p">(</span><span class="n">values</span><span class="p">[</span><span class="mi">5</span><span class="p">]),</span> <span class="nb">float</span><span class="p">(</span><span class="n">values</span><span class="p">[</span><span class="mi">6</span><span class="p">])]</span>
-        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">values</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="mi">10</span><span class="p">:</span>  <span class="c1"># And if there are more, those are the normals</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">values</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="mi">10</span><span class="p">:</span>   <span class="c1"># And if there are more, those are the normals</span>
             <span class="n">pt_n</span> <span class="o">=</span> <span class="p">[</span><span class="nb">float</span><span class="p">(</span><span class="n">values</span><span class="p">[</span><span class="mi">7</span><span class="p">]),</span> <span class="nb">float</span><span class="p">(</span><span class="n">values</span><span class="p">[</span><span class="mi">8</span><span class="p">]),</span> <span class="nb">float</span><span class="p">(</span><span class="n">values</span><span class="p">[</span><span class="mi">9</span><span class="p">])]</span>
 
     <span class="k">return</span> <span class="n">pt</span><span class="p">,</span> <span class="n">pt_col</span><span class="p">,</span> <span class="n">pt_n</span></div>
@@ -123,19 +122,18 @@
 
 <div class="viewcode-block" id="not_supported"><a class="viewcode-back" href="../../../paraview.algorithms.savgreader.html#paraview.algorithms.savgreader.not_supported">[docs]</a><span class="k">def</span> <span class="nf">not_supported</span><span class="p">(</span><span class="n">line</span><span class="p">):</span>
     <span class="k">return</span> <span class="p">(</span>
-            <span class="n">line</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;tri&#39;</span><span class="p">)</span> <span class="ow">or</span>
-            <span class="n">line</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;pixel&#39;</span><span class="p">)</span> <span class="ow">or</span>
-            <span class="n">line</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;text&#39;</span><span class="p">)</span> <span class="ow">or</span>
-            <span class="n">line</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;program&#39;</span><span class="p">)</span> <span class="ow">or</span>
-            <span class="n">line</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;attribute&#39;</span><span class="p">)</span> <span class="ow">or</span>
-            <span class="n">line</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;nooptimizations&#39;</span><span class="p">)</span>
+        <span class="n">line</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;tri&#39;</span><span class="p">)</span> <span class="ow">or</span>
+        <span class="n">line</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;pixel&#39;</span><span class="p">)</span> <span class="ow">or</span>
+        <span class="n">line</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;text&#39;</span><span class="p">)</span> <span class="ow">or</span>
+        <span class="n">line</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;program&#39;</span><span class="p">)</span> <span class="ow">or</span>
+        <span class="n">line</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;attribute&#39;</span><span class="p">)</span> <span class="ow">or</span>
+        <span class="n">line</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;nooptimizations&#39;</span><span class="p">)</span>
     <span class="p">)</span></div>
 
 
 <div class="viewcode-block" id="SAVGReader"><a class="viewcode-back" href="../../../paraview.algorithms.savgreader.html#paraview.algorithms.savgreader.SAVGReader">[docs]</a><span class="k">class</span> <span class="nc">SAVGReader</span><span class="p">(</span><span class="n">VTKPythonAlgorithmBase</span><span class="p">):</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="n">VTKPythonAlgorithmBase</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nInputPorts</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">nOutputPorts</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
-                                        <span class="n">outputType</span><span class="o">=</span><span class="s2">&quot;vtkPartitionedDataSetCollection&quot;</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">VTKPythonAlgorithmBase</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nInputPorts</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">nOutputPorts</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">outputType</span><span class="o">=</span><span class="s2">&quot;vtkPartitionedDataSetCollection&quot;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_filename</span> <span class="o">=</span> <span class="kc">None</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_ndata</span> <span class="o">=</span> <span class="kc">None</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_timesteps</span> <span class="o">=</span> <span class="kc">None</span>
@@ -148,8 +146,8 @@
                 <span class="bp">self</span><span class="o">.</span><span class="n">Modified</span><span class="p">()</span></div>
 
 <div class="viewcode-block" id="SAVGReader.RequestData"><a class="viewcode-back" href="../../../paraview.algorithms.savgreader.html#paraview.algorithms.savgreader.SAVGReader.RequestData">[docs]</a>    <span class="k">def</span> <span class="nf">RequestData</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">request</span><span class="p">,</span> <span class="n">inInfoVec</span><span class="p">,</span> <span class="n">outInfoVec</span><span class="p">):</span>
-        <span class="kn">from</span> <span class="nn">vtkmodules.vtkCommonCore</span> <span class="kn">import</span> <span class="n">vtkFloatArray</span><span class="p">,</span> <span class="n">vtkPoints</span>
-        <span class="kn">from</span> <span class="nn">vtkmodules.vtkCommonDataModel</span> <span class="kn">import</span> <span class="p">(</span>
+        <span class="kn">from</span> <span class="nn">vtkmodules.vtkCommonCore</span> <span class="k">import</span> <span class="n">vtkFloatArray</span><span class="p">,</span> <span class="n">vtkPoints</span>
+        <span class="kn">from</span> <span class="nn">vtkmodules.vtkCommonDataModel</span> <span class="k">import</span> <span class="p">(</span>
             <span class="n">vtkCellArray</span><span class="p">,</span>
             <span class="n">vtkCompositeDataSet</span><span class="p">,</span>
             <span class="n">vtkPartitionedDataSet</span><span class="p">,</span>

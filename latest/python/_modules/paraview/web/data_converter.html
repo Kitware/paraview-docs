@@ -1,19 +1,18 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html4" lang="en" >
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>paraview.web.data_converter &mdash; ParaView/Python 5.12.0-776-gfc5a2391cc documentation</title>
-      <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <title>paraview.web.data_converter &mdash; ParaView/Python 5.12.0 documentation</title><link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" /><link rel="shortcut icon" href="../../../_static/pvIcon.ico"/>
   <!--[if lt IE 9]>
     <script src="../../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
-  
-        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
-        <script src="../../../_static/jquery.js"></script>
-        <script src="../../../_static/underscore.js"></script>
-        <script src="../../../_static/doctools.js"></script>
+  <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../../_static/language_data.js"></script>
     <script src="../../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" /> 
@@ -29,7 +28,7 @@
             <li> <a href="../../../index.html">
               <img src="../../../_static/paraview-logo-small.png"
               alt="ParaView/Python"></img></a> </li>
-            <li class="version"> version 5.12.0-776-gfc5a2391cc</li>
+            <li class="version"> version 5.12.0</li>
           </ul>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
@@ -79,13 +78,13 @@
            <div itemprop="articleBody">
              
   <h1>Source code for paraview.web.data_converter</h1><div class="highlight"><pre>
-<span></span><span class="kn">from</span> <span class="nn">vtkmodules.vtkIOImage</span> <span class="kn">import</span> <span class="n">vtkPNGReader</span>
-<span class="kn">from</span> <span class="nn">vtkmodules.vtkCommonCore</span> <span class="kn">import</span> <span class="n">vtkFloatArray</span><span class="p">,</span> <span class="n">vtkUnsignedCharArray</span>
-<span class="kn">from</span> <span class="nn">vtkmodules.vtkCommonDataModel</span> <span class="kn">import</span> <span class="n">vtkImageData</span>
-<span class="kn">from</span> <span class="nn">vtkmodules.vtkIOLegacy</span> <span class="kn">import</span> <span class="n">vtkDataSetWriter</span>
+<span></span><span class="kn">from</span> <span class="nn">vtkmodules.vtkIOImage</span> <span class="k">import</span> <span class="n">vtkPNGReader</span>
+<span class="kn">from</span> <span class="nn">vtkmodules.vtkCommonCore</span> <span class="k">import</span> <span class="n">vtkFloatArray</span><span class="p">,</span> <span class="n">vtkUnsignedCharArray</span>
+<span class="kn">from</span> <span class="nn">vtkmodules.vtkCommonDataModel</span> <span class="k">import</span> <span class="n">vtkImageData</span>
+<span class="kn">from</span> <span class="nn">vtkmodules.vtkIOLegacy</span> <span class="k">import</span> <span class="n">vtkDataSetWriter</span>
 
-<span class="kn">from</span> <span class="nn">vtkmodules.web.camera</span> <span class="kn">import</span> <span class="n">normalize</span><span class="p">,</span> <span class="n">vectProduct</span><span class="p">,</span> <span class="n">dotProduct</span>
-<span class="kn">from</span> <span class="nn">vtkmodules.web</span> <span class="kn">import</span> <span class="n">iteritems</span>
+<span class="kn">from</span> <span class="nn">vtkmodules.web.camera</span> <span class="k">import</span> <span class="n">normalize</span><span class="p">,</span> <span class="n">vectProduct</span><span class="p">,</span> <span class="n">dotProduct</span>
+<span class="kn">from</span> <span class="nn">vtkmodules.web</span> <span class="k">import</span> <span class="n">iteritems</span>
 
 <span class="kn">import</span> <span class="nn">json</span><span class="o">,</span> <span class="nn">os</span><span class="o">,</span> <span class="nn">math</span><span class="o">,</span> <span class="nn">array</span>
 
@@ -149,7 +148,7 @@
 <span class="c1"># Composite.json To order.array</span>
 <span class="c1"># -----------------------------------------------------------------------------</span>
 <div class="viewcode-block" id="CompositeJSON"><a class="viewcode-back" href="../../../paraview.web.data_converter.html#paraview.web.data_converter.CompositeJSON">[docs]</a><span class="k">class</span> <span class="nc">CompositeJSON</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">numberOfLayers</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">numberOfLayers</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">nbLayers</span> <span class="o">=</span> <span class="n">numberOfLayers</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">encoding</span> <span class="o">=</span> <span class="s2">&quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;</span>
 
@@ -215,7 +214,7 @@
 
 
 <div class="viewcode-block" id="ConvertCompositeSpriteToSortedStack"><a class="viewcode-back" href="../../../paraview.web.data_converter.html#paraview.web.data_converter.ConvertCompositeSpriteToSortedStack">[docs]</a><span class="k">class</span> <span class="nc">ConvertCompositeSpriteToSortedStack</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">directory</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">directory</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">basePath</span> <span class="o">=</span> <span class="n">directory</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">layers</span> <span class="o">=</span> <span class="p">[]</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="p">[]</span>
@@ -471,7 +470,7 @@
 
 
 <div class="viewcode-block" id="ConvertCompositeDataToSortedStack"><a class="viewcode-back" href="../../../paraview.web.data_converter.html#paraview.web.data_converter.ConvertCompositeDataToSortedStack">[docs]</a><span class="k">class</span> <span class="nc">ConvertCompositeDataToSortedStack</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">directory</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">directory</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">basePath</span> <span class="o">=</span> <span class="n">directory</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">layers</span> <span class="o">=</span> <span class="p">[]</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="p">[]</span>

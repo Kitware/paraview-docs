@@ -1,19 +1,18 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html4" lang="en" >
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>detail.exportnow Module &mdash; ParaView/Python 5.12.0-776-gfc5a2391cc documentation</title>
-      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <title>detail.exportnow Module &mdash; ParaView/Python 5.12.0 documentation</title><link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" /><link rel="shortcut icon" href="_static/pvIcon.ico"/>
   <!--[if lt IE 9]>
     <script src="_static/js/html5shiv.min.js"></script>
   <![endif]-->
-  
-        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-        <script src="_static/jquery.js"></script>
-        <script src="_static/underscore.js"></script>
-        <script src="_static/doctools.js"></script>
+  <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -31,7 +30,7 @@
             <li> <a href="index.html">
               <img src="_static/paraview-logo-small.png"
               alt="ParaView/Python"></img></a> </li>
-            <li class="version"> version 5.12.0-776-gfc5a2391cc</li>
+            <li class="version"> version 5.12.0</li>
           </ul>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
@@ -44,7 +43,7 @@
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="quick-start.html">Quick-Start :  A Tutorial</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="paraview.html">The ParaView Python Package</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="paraview.html#id1"><code class="xref py py-mod docutils literal notranslate"><span class="pre">paraview</span></code> Package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.html#id1"><code class="docutils literal notranslate"><span class="pre">paraview</span></code> Package</a></li>
 <li class="toctree-l2"><a class="reference internal" href="paraview.html#modules">Modules</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="paraview.html#subpackages">Subpackages</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="paraview.algorithms.html">algorithms Package</a></li>
@@ -53,7 +52,7 @@
 <li class="toctree-l3"><a class="reference internal" href="paraview.catalyst.html">catalyst Package</a></li>
 <li class="toctree-l3"><a class="reference internal" href="paraview.demos.html">demos Package</a></li>
 <li class="toctree-l3 current"><a class="reference internal" href="paraview.detail.html">detail Package</a><ul class="current">
-<li class="toctree-l4"><a class="reference internal" href="paraview.detail.html#id1"><code class="xref py py-mod docutils literal notranslate"><span class="pre">detail</span></code> Package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="paraview.detail.html#id1"><code class="docutils literal notranslate"><span class="pre">detail</span></code> Package</a></li>
 <li class="toctree-l4 current"><a class="reference internal" href="paraview.detail.html#modules">Modules</a></li>
 </ul>
 </li>
@@ -107,40 +106,40 @@
 <span id="detail-exportnow-module"></span><h1>detail.exportnow Module<a class="headerlink" href="#module-paraview.detail.exportnow" title="Permalink to this headline">¶</a></h1>
 <p>This module is used to export catalyst defined data products directly
 within the ParaView GUI.</p>
-<dl class="py class">
-<dt class="sig sig-object py" id="paraview.detail.exportnow.CinemaDHelper">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">paraview.detail.exportnow.</span></span><span class="sig-name descname"><span class="pre">CinemaDHelper</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mcd</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rd</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/detail/exportnow.html#CinemaDHelper"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#paraview.detail.exportnow.CinemaDHelper" title="Permalink to this definition">¶</a></dt>
+<dl class="class">
+<dt id="paraview.detail.exportnow.CinemaDHelper">
+<em class="property">class </em><code class="descclassname">paraview.detail.exportnow.</code><code class="descname">CinemaDHelper</code><span class="sig-paren">(</span><em>mcd</em>, <em>rd</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/detail/exportnow.html#CinemaDHelper"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.detail.exportnow.CinemaDHelper" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>A helper that we funnel file save commands through so that we can build up a CinemaD table for them.</p>
-<dl class="py method">
-<dt class="sig sig-object py" id="paraview.detail.exportnow.CinemaDHelper.AppendCViewToCinemaDTable">
-<span class="sig-name descname"><span class="pre">AppendCViewToCinemaDTable</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">producer</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filelist</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/detail/exportnow.html#CinemaDHelper.AppendCViewToCinemaDTable"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#paraview.detail.exportnow.CinemaDHelper.AppendCViewToCinemaDTable" title="Permalink to this definition">¶</a></dt>
+<dl class="method">
+<dt id="paraview.detail.exportnow.CinemaDHelper.AppendCViewToCinemaDTable">
+<code class="descname">AppendCViewToCinemaDTable</code><span class="sig-paren">(</span><em>time</em>, <em>producer</em>, <em>filelist</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/detail/exportnow.html#CinemaDHelper.AppendCViewToCinemaDTable"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.detail.exportnow.CinemaDHelper.AppendCViewToCinemaDTable" title="Permalink to this definition">¶</a></dt>
 <dd><p>keep a record of every new file that cinema image writes along with the keys that produced them so that we can list them all later</p>
 </dd></dl>
 
-<dl class="py method">
-<dt class="sig sig-object py" id="paraview.detail.exportnow.CinemaDHelper.AppendToCinemaDTable">
-<span class="sig-name descname"><span class="pre">AppendToCinemaDTable</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">producer</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filename</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/detail/exportnow.html#CinemaDHelper.AppendToCinemaDTable"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#paraview.detail.exportnow.CinemaDHelper.AppendToCinemaDTable" title="Permalink to this definition">¶</a></dt>
+<dl class="method">
+<dt id="paraview.detail.exportnow.CinemaDHelper.AppendToCinemaDTable">
+<code class="descname">AppendToCinemaDTable</code><span class="sig-paren">(</span><em>time</em>, <em>producer</em>, <em>filename</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/detail/exportnow.html#CinemaDHelper.AppendToCinemaDTable"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.detail.exportnow.CinemaDHelper.AppendToCinemaDTable" title="Permalink to this definition">¶</a></dt>
 <dd><p>keep a record of every standard file written out so that we can list it later</p>
 </dd></dl>
 
-<dl class="py method">
-<dt class="sig sig-object py" id="paraview.detail.exportnow.CinemaDHelper.Finalize">
-<span class="sig-name descname"><span class="pre">Finalize</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/detail/exportnow.html#CinemaDHelper.Finalize"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#paraview.detail.exportnow.CinemaDHelper.Finalize" title="Permalink to this definition">¶</a></dt>
+<dl class="method">
+<dt id="paraview.detail.exportnow.CinemaDHelper.Finalize">
+<code class="descname">Finalize</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/detail/exportnow.html#CinemaDHelper.Finalize"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.detail.exportnow.CinemaDHelper.Finalize" title="Permalink to this definition">¶</a></dt>
 <dd><p>Finish off the table and write it to a file</p>
 </dd></dl>
 
-<dl class="py method">
-<dt class="sig sig-object py" id="paraview.detail.exportnow.CinemaDHelper.WriteNow">
-<span class="sig-name descname"><span class="pre">WriteNow</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/detail/exportnow.html#CinemaDHelper.WriteNow"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#paraview.detail.exportnow.CinemaDHelper.WriteNow" title="Permalink to this definition">¶</a></dt>
+<dl class="method">
+<dt id="paraview.detail.exportnow.CinemaDHelper.WriteNow">
+<code class="descname">WriteNow</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/detail/exportnow.html#CinemaDHelper.WriteNow"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.detail.exportnow.CinemaDHelper.WriteNow" title="Permalink to this definition">¶</a></dt>
 <dd><p>For Catalyst, we don’t generally have a Final state, so we call this every CoProcess call and fixup the table if we have to.</p>
 </dd></dl>
 
 </dd></dl>
 
-<dl class="py function">
-<dt class="sig sig-object py" id="paraview.detail.exportnow.ExportNow">
-<span class="sig-prename descclassname"><span class="pre">paraview.detail.exportnow.</span></span><span class="sig-name descname"><span class="pre">ExportNow</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">image_root_directory</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data_root_directory</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">file_name_padding</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">make_cinema_table</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cinema_tracks</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cinema_arrays</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rendering_info</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/detail/exportnow.html#ExportNow"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#paraview.detail.exportnow.ExportNow" title="Permalink to this definition">¶</a></dt>
+<dl class="function">
+<dt id="paraview.detail.exportnow.ExportNow">
+<code class="descclassname">paraview.detail.exportnow.</code><code class="descname">ExportNow</code><span class="sig-paren">(</span><em>image_root_directory</em>, <em>data_root_directory</em>, <em>file_name_padding</em>, <em>make_cinema_table</em>, <em>cinema_tracks</em>, <em>cinema_arrays</em>, <em>rendering_info</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/detail/exportnow.html#ExportNow"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.detail.exportnow.ExportNow" title="Permalink to this definition">¶</a></dt>
 <dd><p>The user facing entry point. Here we get a hold of ParaView’s animation controls, step through the animation, and export the things we’ve been asked to be the caller.</p>
 </dd></dl>
 

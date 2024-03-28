@@ -1,19 +1,18 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html4" lang="en" >
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>live Module &mdash; ParaView/Python 5.12.0-776-gfc5a2391cc documentation</title>
-      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <title>live Module &mdash; ParaView/Python 5.12.0 documentation</title><link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" /><link rel="shortcut icon" href="_static/pvIcon.ico"/>
   <!--[if lt IE 9]>
     <script src="_static/js/html5shiv.min.js"></script>
   <![endif]-->
-  
-        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-        <script src="_static/jquery.js"></script>
-        <script src="_static/underscore.js"></script>
-        <script src="_static/doctools.js"></script>
+  <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -31,7 +30,7 @@
             <li> <a href="index.html">
               <img src="_static/paraview-logo-small.png"
               alt="ParaView/Python"></img></a> </li>
-            <li class="version"> version 5.12.0-776-gfc5a2391cc</li>
+            <li class="version"> version 5.12.0</li>
           </ul>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
@@ -44,7 +43,7 @@
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="quick-start.html">Quick-Start :  A Tutorial</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="paraview.html">The ParaView Python Package</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="paraview.html#id1"><code class="xref py py-mod docutils literal notranslate"><span class="pre">paraview</span></code> Package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.html#id1"><code class="docutils literal notranslate"><span class="pre">paraview</span></code> Package</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="paraview.html#modules">Modules</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="paraview._backwardscompatibilityhelper.html">_backwardscompatibilityhelper Module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="paraview._colorMaps.html">_colorMaps Module</a></li>
@@ -112,31 +111,31 @@
   <div class="section" id="module-paraview.live">
 <span id="live-module"></span><h1>live Module<a class="headerlink" href="#module-paraview.live" title="Permalink to this headline">¶</a></h1>
 <p>This is a module to perform live visualization in the context of Catalyst.</p>
-<dl class="py function">
-<dt class="sig sig-object py" id="paraview.live.ConnectToCatalyst">
-<span class="sig-prename descclassname"><span class="pre">paraview.live.</span></span><span class="sig-name descname"><span class="pre">ConnectToCatalyst</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ds_host</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'localhost'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ds_port</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">22222</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/live.html#ConnectToCatalyst"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#paraview.live.ConnectToCatalyst" title="Permalink to this definition">¶</a></dt>
+<dl class="function">
+<dt id="paraview.live.ConnectToCatalyst">
+<code class="descclassname">paraview.live.</code><code class="descname">ConnectToCatalyst</code><span class="sig-paren">(</span><em>ds_host='localhost'</em>, <em>ds_port=22222</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/live.html#ConnectToCatalyst"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.live.ConnectToCatalyst" title="Permalink to this definition">¶</a></dt>
 <dd><p>Creates a connection to a catalyst simulation. Example usage:</p>
 <p>&gt; Connect(“amber”) # Connect to a single server at default port
 &gt; Connect(“amber”, 12345) # Connect to a single server at port 12345</p>
 <p>return a LiveInsituLink object.</p>
 </dd></dl>
 
-<dl class="py function">
-<dt class="sig sig-object py" id="paraview.live.ExtractCatalystData">
-<span class="sig-prename descclassname"><span class="pre">paraview.live.</span></span><span class="sig-name descname"><span class="pre">ExtractCatalystData</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">link</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/live.html#ExtractCatalystData"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#paraview.live.ExtractCatalystData" title="Permalink to this definition">¶</a></dt>
+<dl class="function">
+<dt id="paraview.live.ExtractCatalystData">
+<code class="descclassname">paraview.live.</code><code class="descname">ExtractCatalystData</code><span class="sig-paren">(</span><em>link</em>, <em>name</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/live.html#ExtractCatalystData"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.live.ExtractCatalystData" title="Permalink to this definition">¶</a></dt>
 <dd><p>Extract data called “name” from simulation managed by the LiveInsituLink link.
 Register it in displaySession</p>
 </dd></dl>
 
-<dl class="py function">
-<dt class="sig sig-object py" id="paraview.live.PauseCatalyst">
-<span class="sig-prename descclassname"><span class="pre">paraview.live.</span></span><span class="sig-name descname"><span class="pre">PauseCatalyst</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">link</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pause</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/live.html#PauseCatalyst"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#paraview.live.PauseCatalyst" title="Permalink to this definition">¶</a></dt>
+<dl class="function">
+<dt id="paraview.live.PauseCatalyst">
+<code class="descclassname">paraview.live.</code><code class="descname">PauseCatalyst</code><span class="sig-paren">(</span><em>link</em>, <em>pause=True</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/live.html#PauseCatalyst"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.live.PauseCatalyst" title="Permalink to this definition">¶</a></dt>
 <dd><p>Pause / Unpause the Catalyst simulation managed by the LiveInsituLink link.</p>
 </dd></dl>
 
-<dl class="py function">
-<dt class="sig sig-object py" id="paraview.live.ProcessServerNotifications">
-<span class="sig-prename descclassname"><span class="pre">paraview.live.</span></span><span class="sig-name descname"><span class="pre">ProcessServerNotifications</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/live.html#ProcessServerNotifications"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#paraview.live.ProcessServerNotifications" title="Permalink to this definition">¶</a></dt>
+<dl class="function">
+<dt id="paraview.live.ProcessServerNotifications">
+<code class="descclassname">paraview.live.</code><code class="descname">ProcessServerNotifications</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/live.html#ProcessServerNotifications"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.live.ProcessServerNotifications" title="Permalink to this definition">¶</a></dt>
 <dd><p>Processes pending events from server.</p>
 </dd></dl>
 

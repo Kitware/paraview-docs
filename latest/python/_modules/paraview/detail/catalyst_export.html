@@ -1,19 +1,18 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html4" lang="en" >
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>paraview.detail.catalyst_export &mdash; ParaView/Python 5.12.0-776-gfc5a2391cc documentation</title>
-      <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <title>paraview.detail.catalyst_export &mdash; ParaView/Python 5.12.0 documentation</title><link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" /><link rel="shortcut icon" href="../../../_static/pvIcon.ico"/>
   <!--[if lt IE 9]>
     <script src="../../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
-  
-        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
-        <script src="../../../_static/jquery.js"></script>
-        <script src="../../../_static/underscore.js"></script>
-        <script src="../../../_static/doctools.js"></script>
+  <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../../_static/language_data.js"></script>
     <script src="../../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" /> 
@@ -29,7 +28,7 @@
             <li> <a href="../../../index.html">
               <img src="../../../_static/paraview-logo-small.png"
               alt="ParaView/Python"></img></a> </li>
-            <li class="version"> version 5.12.0-776-gfc5a2391cc</li>
+            <li class="version"> version 5.12.0</li>
           </ul>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
@@ -81,17 +80,16 @@
              
   <h1>Source code for paraview.detail.catalyst_export</h1><div class="highlight"><pre>
 <span></span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;Module used to generate Catalyst export scripts&quot;&quot;&quot;</span>
-<span class="kn">from</span> <span class="nn">..</span> <span class="kn">import</span> <span class="n">simple</span><span class="p">,</span> <span class="n">smstate</span><span class="p">,</span> <span class="n">smtrace</span><span class="p">,</span> <span class="n">servermanager</span>
+<span class="kn">from</span> <span class="nn">..</span> <span class="k">import</span> <span class="n">simple</span><span class="p">,</span> <span class="n">smstate</span><span class="p">,</span> <span class="n">smtrace</span><span class="p">,</span> <span class="n">servermanager</span>
 
-<span class="kn">from</span> <span class="nn">paraview.modules.vtkRemotingCore</span> <span class="kn">import</span> <span class="n">vtkPVSession</span>
-
+<span class="kn">from</span> <span class="nn">paraview.modules.vtkRemotingCore</span> <span class="k">import</span> <span class="n">vtkPVSession</span>
 
 <span class="k">def</span> <span class="nf">_get_catalyst_state</span><span class="p">(</span><span class="n">options</span><span class="p">):</span>
     <span class="c1"># build a `source_set` comprising of the extractor proxies.</span>
     <span class="c1"># if not extracts have been configured, then there&#39;s nothing to generate.</span>
     <span class="n">extractors</span> <span class="o">=</span> <span class="n">simple</span><span class="o">.</span><span class="n">GetExtractors</span><span class="p">()</span>
     <span class="k">if</span> <span class="ow">not</span> <span class="n">extractors</span><span class="p">:</span>
-        <span class="kn">from</span> <span class="nn">..</span> <span class="kn">import</span> <span class="n">print_warning</span>
+        <span class="kn">from</span> <span class="nn">..</span> <span class="k">import</span> <span class="n">print_warning</span>
         <span class="n">print_warning</span><span class="p">(</span><span class="s1">&#39;No extractors defined. This script will do nothing until LiveVisualisation is on.&#39;</span><span class="p">)</span>
 
     <span class="c1"># convert catalyst options to PythonStateOptions.</span>
@@ -102,9 +100,8 @@
     <span class="n">soptions</span><span class="o">.</span><span class="n">SkipRenderingComponents</span> <span class="o">=</span> <span class="kc">False</span>
     <span class="n">soptions</span><span class="o">.</span><span class="n">ExtractsOutputDirectory</span> <span class="o">=</span> <span class="n">options</span><span class="o">.</span><span class="n">ExtractsOutputDirectory</span>
     <span class="k">return</span> <span class="n">smstate</span><span class="o">.</span><span class="n">get_state</span><span class="p">(</span><span class="n">options</span><span class="o">=</span><span class="n">soptions</span><span class="p">,</span> <span class="n">source_set</span><span class="o">=</span><span class="n">extractors</span><span class="p">,</span>
-                             <span class="n">preamble</span><span class="o">=</span><span class="n">_get_catalyst_preamble</span><span class="p">(</span><span class="n">options</span><span class="p">),</span>
-                             <span class="n">postamble</span><span class="o">=</span><span class="n">_get_catalyst_postamble</span><span class="p">(</span><span class="n">options</span><span class="p">))</span>
-
+            <span class="n">preamble</span><span class="o">=</span><span class="n">_get_catalyst_preamble</span><span class="p">(</span><span class="n">options</span><span class="p">),</span>
+            <span class="n">postamble</span><span class="o">=</span><span class="n">_get_catalyst_postamble</span><span class="p">(</span><span class="n">options</span><span class="p">))</span>
 
 <span class="k">def</span> <span class="nf">_get_catalyst_preamble</span><span class="p">(</span><span class="n">options</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;returns the preamble text&quot;&quot;&quot;</span>
@@ -113,7 +110,6 @@
             <span class="s2">&quot;import paraview&quot;</span><span class="p">,</span>
             <span class="s2">&quot;paraview.compatibility.major = </span><span class="si">%d</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">servermanager</span><span class="o">.</span><span class="n">vtkSMProxyManager</span><span class="o">.</span><span class="n">GetVersionMajor</span><span class="p">(),</span>
             <span class="s2">&quot;paraview.compatibility.minor = </span><span class="si">%d</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">servermanager</span><span class="o">.</span><span class="n">vtkSMProxyManager</span><span class="o">.</span><span class="n">GetVersionMinor</span><span class="p">()]</span>
-
 
 <span class="k">def</span> <span class="nf">_get_catalyst_postamble</span><span class="p">(</span><span class="n">options</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;returns the postamble text&quot;&quot;&quot;</span>
@@ -124,18 +120,18 @@
     <span class="n">smtrace</span><span class="o">.</span><span class="n">get_current_trace_output_and_reset</span><span class="p">()</span>
 
     <span class="n">trace</span> <span class="o">=</span> <span class="n">smtrace</span><span class="o">.</span><span class="n">TraceOutput</span><span class="p">()</span>
-    <span class="n">trace</span><span class="o">.</span><span class="n">append_separated</span><span class="p">([</span> \
-        <span class="s2">&quot;# &quot;</span> <span class="o">+</span> <span class="s2">&quot;-&quot;</span> <span class="o">*</span> <span class="mi">78</span><span class="p">,</span>
+    <span class="n">trace</span><span class="o">.</span><span class="n">append_separated</span><span class="p">([</span>\
+        <span class="s2">&quot;# &quot;</span> <span class="o">+</span> <span class="s2">&quot;-&quot;</span><span class="o">*</span><span class="mi">78</span><span class="p">,</span>
         <span class="s1">&#39;# Catalyst options&#39;</span><span class="p">,</span>
         <span class="s2">&quot;from paraview import catalyst&quot;</span><span class="p">])</span>
     <span class="n">accessor</span> <span class="o">=</span> <span class="n">smtrace</span><span class="o">.</span><span class="n">ProxyAccessor</span><span class="p">(</span><span class="s2">&quot;options&quot;</span><span class="p">,</span> <span class="n">options</span><span class="p">)</span>
     <span class="n">trace</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">accessor</span><span class="o">.</span><span class="n">trace_ctor</span><span class="p">(</span><span class="s2">&quot;catalyst.Options&quot;</span><span class="p">,</span>
-                                     <span class="n">smtrace</span><span class="o">.</span><span class="n">ProxyFilter</span><span class="p">()))</span>
+        <span class="n">smtrace</span><span class="o">.</span><span class="n">ProxyFilter</span><span class="p">()))</span>
     <span class="k">del</span> <span class="n">accessor</span>
     <span class="n">smtrace</span><span class="o">.</span><span class="n">stop_trace</span><span class="p">()</span>
     <span class="k">del</span> <span class="n">trace_config</span>
-    <span class="n">trace</span><span class="o">.</span><span class="n">append_separated</span><span class="p">([</span> \
-        <span class="s2">&quot;# &quot;</span> <span class="o">+</span> <span class="s2">&quot;-&quot;</span> <span class="o">*</span> <span class="mi">78</span><span class="p">,</span>
+    <span class="n">trace</span><span class="o">.</span><span class="n">append_separated</span><span class="p">([</span>\
+        <span class="s2">&quot;# &quot;</span> <span class="o">+</span> <span class="s2">&quot;-&quot;</span><span class="o">*</span><span class="mi">78</span><span class="p">,</span>
         <span class="s2">&quot;if __name__ == &#39;__main__&#39;:&quot;</span><span class="p">,</span>
         <span class="s2">&quot;    from paraview.simple import SaveExtractsUsingCatalystOptions&quot;</span><span class="p">,</span>
         <span class="s2">&quot;    # Code for non in-situ environments; if executing in post-processing&quot;</span><span class="p">,</span>
@@ -143,12 +139,11 @@
         <span class="s2">&quot;    SaveExtractsUsingCatalystOptions(options)&quot;</span><span class="p">])</span>
     <span class="k">return</span> <span class="nb">str</span><span class="p">(</span><span class="n">trace</span><span class="p">)</span>
 
-
 <div class="viewcode-block" id="save_catalyst_state"><a class="viewcode-back" href="../../../paraview.detail.catalyst_export.html#paraview.detail.catalyst_export.save_catalyst_state">[docs]</a><span class="k">def</span> <span class="nf">save_catalyst_state</span><span class="p">(</span><span class="n">fname</span><span class="p">,</span> <span class="n">options</span><span class="p">,</span> <span class="n">location</span><span class="o">=</span><span class="n">vtkPVSession</span><span class="o">.</span><span class="n">CLIENT</span><span class="p">):</span>
     <span class="n">options</span> <span class="o">=</span> <span class="n">servermanager</span><span class="o">.</span><span class="n">_getPyProxy</span><span class="p">(</span><span class="n">options</span><span class="p">)</span>
     <span class="n">state</span> <span class="o">=</span> <span class="n">_get_catalyst_state</span><span class="p">(</span><span class="n">options</span><span class="p">)</span>
     <span class="k">if</span> <span class="ow">not</span> <span class="n">state</span><span class="p">:</span>
-        <span class="kn">from</span> <span class="nn">..</span> <span class="kn">import</span> <span class="n">print_error</span>
+        <span class="kn">from</span> <span class="nn">..</span> <span class="k">import</span> <span class="n">print_error</span>
         <span class="n">print_error</span><span class="p">(</span><span class="s1">&#39;No state generated&#39;</span><span class="p">)</span>
         <span class="k">return</span>
 

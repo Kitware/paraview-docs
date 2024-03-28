@@ -37,9 +37,6 @@ Data Descriptors
    PassPointArrays
        When set the input's point data arrays are shallow copied to the output.
    
-   ReduceOutputMemoryUsage
-       \*\*IMPORTANT:\*\* this option only concerns Hyper Tree Grids sources (including composite source containing HTGs). If checked, the filter will optimize the space allocated to store the output probed values. This option will lower the memory consumption, especially if the probed source contains a lot of data arrays, at the cost of an increased computation time.
-   
    SnapToCellWithClosestPoint
        Set whether to snap to the cell with the closest point, if no cell has been found while FindCell is executed. Note: This is useful only when the source is a vtkPointSet.
    

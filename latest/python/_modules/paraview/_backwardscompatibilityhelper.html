@@ -1,19 +1,18 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html4" lang="en" >
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>paraview._backwardscompatibilityhelper &mdash; ParaView/Python 5.12.0-776-gfc5a2391cc documentation</title>
-      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <title>paraview._backwardscompatibilityhelper &mdash; ParaView/Python 5.12.0 documentation</title><link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" /><link rel="shortcut icon" href="../../_static/pvIcon.ico"/>
   <!--[if lt IE 9]>
     <script src="../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
-  
-        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-        <script src="../../_static/jquery.js"></script>
-        <script src="../../_static/underscore.js"></script>
-        <script src="../../_static/doctools.js"></script>
+  <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" /> 
@@ -29,7 +28,7 @@
             <li> <a href="../../index.html">
               <img src="../../_static/paraview-logo-small.png"
               alt="ParaView/Python"></img></a> </li>
-            <li class="version"> version 5.12.0-776-gfc5a2391cc</li>
+            <li class="version"> version 5.12.0</li>
           </ul>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
@@ -80,39 +79,19 @@
              
   <h1>Source code for paraview._backwardscompatibilityhelper</h1><div class="highlight"><pre>
 <span></span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">Internal module used by paraview.servermanager to help warn about</span>
-<span class="sd">proxies/properties changed or removed. To help</span>
-<span class="sd">with backward compatibility, the _backwardscompatibilityhelper module</span>
-<span class="sd">should be updated to handle deprecated proxies and properties.</span>
+<span class="sd">Internal module used by paraview.servermanager to help warn about properties</span>
+<span class="sd">changed or removed.</span>
 
-<span class="sd">Each proxy is associated to a kind of python class. When a proxy is removed,</span>
-<span class="sd">this class is no more generated and older scripts will raise `NameError`</span>
-<span class="sd">exception. To avoid this, deprecated proxies should be added in `get_deprecated_proxies`</span>
-<span class="sd">returned map, so a fallback proxy can be used.</span>
-<span class="sd">See also `GetProxy`.</span>
-
-<span class="sd">Properties are defined as attribute of the python object. When a property</span>
-<span class="sd">is removed, old scripts using it will fail with `AttributeError`.</span>
-<span class="sd">When everything else fails, `NotSupportedException` is thrown.</span>
-<span class="sd">See `setattr` and `getattr` methods.</span>
-
-<span class="sd">Each compatibility code is called depending on the current version</span>
-<span class="sd">and on the compatibility version asked by the script.</span>
-<span class="sd">Compatibility version should be specified before importing `simple` module.</span>
-<span class="sd">For instance:</span>
-<span class="sd">```</span>
-<span class="sd">import paraview</span>
-<span class="sd">paraview.compatibility.major=5</span>
-<span class="sd">paraview.compatibility.minor=11</span>
-<span class="sd">from paraview.simple import *</span>
-<span class="sd">```</span>
-<span class="sd">Will create fallback proxies and properties for deprecation done since 5.11</span>
-<span class="sd">and will fail for object deprecated before 5.11.</span>
+<span class="sd">If the compatibility version is less than the version where a particular</span>
+<span class="sd">property was removed, `check_attr` should ideally continue to work as before</span>
+<span class="sd">or return a value of appropriate form so old code doesn&#39;t fail. Otherwise</span>
+<span class="sd">`check_attr` should throw the NotSupportedException with appropriate debug</span>
+<span class="sd">message.</span>
 <span class="sd">&quot;&quot;&quot;</span>
 
 <span class="kn">import</span> <span class="nn">paraview</span>
 <span class="kn">import</span> <span class="nn">builtins</span>
-<span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">servermanager</span> <span class="k">as</span> <span class="n">sm</span>
+<span class="kn">from</span> <span class="nn">.</span> <span class="k">import</span> <span class="n">servermanager</span> <span class="k">as</span> <span class="n">sm</span>
 
 <span class="n">NotSupportedException</span> <span class="o">=</span> <span class="n">paraview</span><span class="o">.</span><span class="n">NotSupportedException</span>
 
@@ -152,7 +131,7 @@
 
 
 <span class="k">class</span> <span class="nc">_CubeAxesHelper</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">CubeAxesVisibility</span> <span class="o">=</span> <span class="mi">0</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">CubeAxesColor</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">CubeAxesCornerOffset</span> <span class="o">=</span> <span class="mf">0.0</span>
@@ -269,7 +248,7 @@
 
     <span class="k">if</span> <span class="n">pname</span> <span class="o">==</span> <span class="s2">&quot;LockScalarRange&quot;</span> <span class="ow">and</span> <span class="n">proxy</span><span class="o">.</span><span class="n">SMProxy</span><span class="o">.</span><span class="n">GetProperty</span><span class="p">(</span><span class="s2">&quot;AutomaticRescaleRangeMode&quot;</span><span class="p">):</span>
         <span class="k">if</span> <span class="n">compatibility_version</span> <span class="o">&lt;=</span> <span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">):</span>
-            <span class="kn">from</span> <span class="nn">paraview.modules.vtkRemotingViews</span> <span class="kn">import</span> <span class="n">vtkSMTransferFunctionManager</span>
+            <span class="kn">from</span> <span class="nn">paraview.modules.vtkRemotingViews</span> <span class="k">import</span> <span class="n">vtkSMTransferFunctionManager</span>
             <span class="k">if</span> <span class="n">value</span><span class="p">:</span>
                 <span class="n">proxy</span><span class="o">.</span><span class="n">GetProperty</span><span class="p">(</span><span class="s2">&quot;AutomaticRescaleRangeMode&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">SetData</span><span class="p">(</span><span class="n">vtkSMTransferFunctionManager</span><span class="o">.</span><span class="n">NEVER</span><span class="p">)</span>
             <span class="k">else</span><span class="p">:</span>
@@ -579,26 +558,6 @@
             <span class="k">else</span><span class="p">:</span>
                 <span class="k">raise</span> <span class="n">NotSupportedException</span><span class="p">(</span><span class="s2">&quot;&#39;MergePoints&#39; is obsolete.  Use &#39;Locator&#39; property instead.&quot;</span><span class="p">)</span>
 
-    <span class="c1"># 5.12 -&gt; 5.13</span>
-    <span class="c1"># breaking change on Representation properties</span>
-    <span class="c1"># Renamed Position into Translation</span>
-    <span class="k">if</span> <span class="n">proxy</span><span class="o">.</span><span class="n">SMProxy</span> <span class="ow">and</span> <span class="n">proxy</span><span class="o">.</span><span class="n">SMProxy</span><span class="o">.</span><span class="n">GetXMLName</span><span class="p">()</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">&quot;Representation&quot;</span><span class="p">):</span>
-        <span class="k">if</span> <span class="n">pname</span> <span class="o">==</span> <span class="s2">&quot;Position&quot;</span><span class="p">:</span>
-            <span class="k">if</span> <span class="n">compatibility_version</span> <span class="o">&lt;</span> <span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">13</span><span class="p">):</span>
-                <span class="n">proxy</span><span class="o">.</span><span class="n">GetProperty</span><span class="p">(</span><span class="s2">&quot;Translation&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">SetData</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
-                <span class="k">raise</span> <span class="n">Continue</span><span class="p">()</span>
-            <span class="k">else</span><span class="p">:</span>
-                <span class="k">raise</span> <span class="n">NotSupportedException</span><span class="p">(</span><span class="s2">&quot;&#39;Position&#39; is obsolete.  Use &#39;Translation&#39; property instead.&quot;</span><span class="p">)</span>
-    <span class="c1"># FlipTextures has been deprecated in favor of TextureTransform</span>
-    <span class="k">if</span> <span class="n">pname</span> <span class="o">==</span> <span class="s2">&quot;FlipTextures&quot;</span> <span class="ow">and</span> <span class="n">proxy</span><span class="o">.</span><span class="n">SMProxy</span><span class="o">.</span><span class="n">IsA</span><span class="p">(</span><span class="s2">&quot;vtkSMRepresentationProxy&quot;</span><span class="p">):</span>
-        <span class="k">if</span> <span class="n">compatibility_version</span> <span class="o">&lt;</span> <span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">13</span><span class="p">):</span>
-            <span class="n">scale</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span> <span class="k">if</span> <span class="n">value</span> <span class="k">else</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
-            <span class="n">proxy</span><span class="o">.</span><span class="n">GetProperty</span><span class="p">(</span><span class="s2">&quot;TextureTransform&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">GetProxy</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">GetProperty</span><span class="p">(</span><span class="s2">&quot;Scale&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">SetElements</span><span class="p">(</span><span class="n">scale</span><span class="p">)</span>
-            <span class="k">raise</span> <span class="n">Continue</span><span class="p">()</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="k">raise</span> <span class="n">NotSupportedException</span><span class="p">(</span>
-                <span class="s2">&quot;&#39;FlipTextures&#39; is obsolete.  Use &#39;TextureTransform&#39; property of representation instead.&quot;</span><span class="p">)</span>
-
     <span class="k">if</span> <span class="ow">not</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">proxy</span><span class="p">,</span> <span class="n">pname</span><span class="p">):</span>
         <span class="k">raise</span> <span class="ne">AttributeError</span><span class="p">()</span>
     <span class="n">proxy</span><span class="o">.</span><span class="vm">__dict__</span><span class="p">[</span><span class="n">pname</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span>
@@ -762,7 +721,7 @@
     <span class="c1"># replaced it with the enumeration AutomaticRescaleRangeMode.</span>
     <span class="k">if</span> <span class="n">pname</span> <span class="o">==</span> <span class="s2">&quot;LockScalarRange&quot;</span> <span class="ow">and</span> <span class="n">proxy</span><span class="o">.</span><span class="n">SMProxy</span><span class="o">.</span><span class="n">GetProperty</span><span class="p">(</span><span class="s2">&quot;AutomaticRescaleRangeMode&quot;</span><span class="p">):</span>
         <span class="k">if</span> <span class="n">compatibility_version</span> <span class="o">&lt;=</span> <span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">):</span>
-            <span class="kn">from</span> <span class="nn">paraview.modules.vtkRemotingViews</span> <span class="kn">import</span> <span class="n">vtkSMTransferFunctionManager</span>
+            <span class="kn">from</span> <span class="nn">paraview.modules.vtkRemotingViews</span> <span class="k">import</span> <span class="n">vtkSMTransferFunctionManager</span>
             <span class="k">if</span> <span class="n">proxy</span><span class="o">.</span><span class="n">GetProperty</span><span class="p">(</span><span class="s2">&quot;AutomaticRescaleRangeMode&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">GetData</span><span class="p">()</span> <span class="o">==</span> <span class="s2">&quot;Never&quot;</span><span class="p">:</span>
                 <span class="k">return</span> <span class="mi">1</span>
             <span class="k">else</span><span class="p">:</span>
@@ -1102,24 +1061,6 @@
         <span class="k">if</span> <span class="n">pname</span> <span class="o">==</span> <span class="s2">&quot;PlayMode&quot;</span> <span class="ow">and</span> <span class="n">proxy</span><span class="o">.</span><span class="n">GetProperty</span><span class="p">(</span><span class="n">pname</span><span class="p">)</span><span class="o">.</span><span class="n">GetData</span><span class="p">()</span> <span class="o">==</span> <span class="s2">&quot;Real Time&quot;</span><span class="p">:</span>
             <span class="k">raise</span> <span class="n">NotSupportedException</span><span class="p">(</span><span class="s2">&quot;&#39;Real Time&#39; is an obsolete value for &#39;PlayMode&#39;. Use &#39;Sequence&#39; instead.&quot;</span><span class="p">)</span>
 
-    <span class="c1"># 5.12 -&gt; 5.13 breaking change on vtkOpenFoamReader</span>
-    <span class="c1"># DecomposePolyhedra property has been removed</span>
-    <span class="k">if</span> <span class="n">proxy</span><span class="o">.</span><span class="n">SMProxy</span> <span class="ow">and</span> <span class="n">proxy</span><span class="o">.</span><span class="n">SMProxy</span><span class="o">.</span><span class="n">GetXMLName</span><span class="p">()</span> <span class="o">==</span> <span class="s2">&quot;OpenFOAMReader&quot;</span><span class="p">:</span>
-        <span class="k">if</span> <span class="n">pname</span> <span class="o">==</span> <span class="s2">&quot;DecomposePolyhedra&quot;</span><span class="p">:</span>
-            <span class="k">if</span> <span class="n">compatibility_version</span> <span class="o">&lt;</span> <span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">13</span><span class="p">):</span>
-                <span class="n">paraview</span><span class="o">.</span><span class="n">print_warning</span><span class="p">(</span><span class="s2">&quot;&#39;</span><span class="si">%s</span><span class="s2">&#39; is no longer supported and will have no effect. &quot;</span> <span class="o">%</span> <span class="n">pname</span><span class="p">)</span>
-                <span class="k">raise</span> <span class="n">Continue</span><span class="p">()</span>
-            <span class="k">else</span><span class="p">:</span>
-                <span class="k">raise</span> <span class="n">NotSupportedException</span><span class="p">(</span><span class="s2">&quot;&#39;DecomposePolyhedra&#39; property has been removed in ParaView 5.13&quot;</span><span class="p">)</span>
-
-    <span class="c1"># 5.12 -&gt; 5.13 breaking change on Representation properties</span>
-    <span class="c1"># Renamed Position into Translation</span>
-    <span class="k">if</span> <span class="n">proxy</span><span class="o">.</span><span class="n">SMProxy</span> <span class="ow">and</span> <span class="n">proxy</span><span class="o">.</span><span class="n">SMProxy</span><span class="o">.</span><span class="n">GetXMLName</span><span class="p">()</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">&quot;Representation&quot;</span><span class="p">):</span>
-        <span class="k">if</span> <span class="n">pname</span> <span class="o">==</span> <span class="s2">&quot;Position&quot;</span><span class="p">:</span>
-            <span class="k">if</span> <span class="n">compatibility_version</span> <span class="o">&lt;</span> <span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">13</span><span class="p">):</span>
-                <span class="k">return</span> <span class="n">proxy</span><span class="o">.</span><span class="n">GetProperty</span><span class="p">(</span><span class="s2">&quot;Translation&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">GetData</span><span class="p">()</span>
-            <span class="k">else</span><span class="p">:</span>
-                <span class="k">raise</span> <span class="n">NotSupportedException</span><span class="p">(</span><span class="s2">&quot;&#39;Position&#39; property has been removed in ParaView 5.13&quot;</span><span class="p">)</span>
     <span class="k">raise</span> <span class="n">Continue</span><span class="p">()</span></div>
 
 
@@ -1182,28 +1123,7 @@
                     <span class="n">assemblyDomain</span><span class="o">.</span><span class="n">SetBackwardCompatibilityMode</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
                     <span class="k">return</span> <span class="n">proxy</span>
 
-    <span class="c1"># deprecation case</span>
-    <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">key</span><span class="p">)</span> <span class="o">==</span> <span class="nb">tuple</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">key</span><span class="p">)</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
-        <span class="n">proxy</span> <span class="o">=</span> <span class="n">builtins</span><span class="o">.</span><span class="n">getattr</span><span class="p">(</span><span class="n">module</span><span class="p">,</span> <span class="n">key</span><span class="p">[</span><span class="mi">1</span><span class="p">])(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-
-        <span class="k">return</span> <span class="n">proxy</span>
-
     <span class="k">return</span> <span class="n">builtins</span><span class="o">.</span><span class="n">getattr</span><span class="p">(</span><span class="n">module</span><span class="p">,</span> <span class="n">key</span><span class="p">)(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></div>
-
-
-<div class="viewcode-block" id="get_deprecated_proxies"><a class="viewcode-back" href="../../paraview._backwardscompatibilityhelper.html#paraview._backwardscompatibilityhelper.get_deprecated_proxies">[docs]</a><span class="k">def</span> <span class="nf">get_deprecated_proxies</span><span class="p">(</span><span class="n">proxiesNS</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Provide a map between deprecated proxies and their fallback proxy</span>
-<span class="sd">    &quot;&quot;&quot;</span>
-    <span class="n">compatibility_version</span> <span class="o">=</span> <span class="n">get_paraview_compatibility_version</span><span class="p">()</span>
-    <span class="n">proxies</span> <span class="o">=</span> <span class="p">{}</span>
-    <span class="n">proxies</span><span class="p">[</span><span class="n">proxiesNS</span><span class="o">.</span><span class="n">sources</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="n">proxies</span><span class="p">[</span><span class="n">proxiesNS</span><span class="o">.</span><span class="n">filters</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
-
-    <span class="k">if</span> <span class="n">compatibility_version</span> <span class="o">&lt;=</span> <span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">13</span><span class="p">):</span>
-        <span class="n">proxies</span><span class="p">[</span><span class="n">proxiesNS</span><span class="o">.</span><span class="n">filters</span><span class="p">]</span> <span class="o">+=</span> <span class="p">[(</span><span class="s2">&quot;GhostCellsGenerator&quot;</span><span class="p">,</span> <span class="s2">&quot;GhostCells&quot;</span><span class="p">)]</span>
-
-    <span class="k">return</span> <span class="n">proxies</span></div>
 
 
 <div class="viewcode-block" id="lookupTableUpdate"><a class="viewcode-back" href="../../paraview._backwardscompatibilityhelper.html#paraview._backwardscompatibilityhelper.lookupTableUpdate">[docs]</a><span class="k">def</span> <span class="nf">lookupTableUpdate</span><span class="p">(</span><span class="n">lutName</span><span class="p">):</span>

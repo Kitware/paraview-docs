@@ -1,19 +1,18 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html4" lang="en" >
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>paraview.catalyst.detail &mdash; ParaView/Python 5.12.0-776-gfc5a2391cc documentation</title>
-      <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <title>paraview.catalyst.detail &mdash; ParaView/Python 5.12.0 documentation</title><link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" /><link rel="shortcut icon" href="../../../_static/pvIcon.ico"/>
   <!--[if lt IE 9]>
     <script src="../../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
-  
-        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
-        <script src="../../../_static/jquery.js"></script>
-        <script src="../../../_static/underscore.js"></script>
-        <script src="../../../_static/doctools.js"></script>
+  <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../../_static/language_data.js"></script>
     <script src="../../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" /> 
@@ -29,7 +28,7 @@
             <li> <a href="../../../index.html">
               <img src="../../../_static/paraview-logo-small.png"
               alt="ParaView/Python"></img></a> </li>
-            <li class="version"> version 5.12.0-776-gfc5a2391cc</li>
+            <li class="version"> version 5.12.0</li>
           </ul>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
@@ -84,11 +83,11 @@
 <span class="sd">Internal functions not intended for use by users. This may change without</span>
 <span class="sd">notice.</span>
 <span class="sd">&quot;&quot;&quot;</span>
-<span class="kn">from</span> <span class="nn">..</span> <span class="kn">import</span> <span class="n">logger</span>
+<span class="kn">from</span> <span class="nn">..</span> <span class="k">import</span> <span class="n">logger</span>
 
-<span class="kn">from</span> <span class="nn">..modules.vtkPVInSitu</span> <span class="kn">import</span> <span class="n">vtkInSituPipelinePython</span>
+<span class="kn">from</span> <span class="nn">..modules.vtkPVInSitu</span> <span class="k">import</span> <span class="n">vtkInSituPipelinePython</span>
 
-<span class="kn">from</span> <span class="nn">..modules.vtkPVPythonCatalyst</span> <span class="kn">import</span> <span class="n">vtkCPPythonScriptV2Helper</span>
+<span class="kn">from</span> <span class="nn">..modules.vtkPVPythonCatalyst</span> <span class="k">import</span> <span class="n">vtkCPPythonScriptV2Helper</span>
 
 
 <span class="k">def</span> <span class="nf">_get_active_helper</span><span class="p">():</span>
@@ -101,9 +100,8 @@
     <span class="n">helper</span> <span class="o">=</span> <span class="n">_get_active_helper</span><span class="p">()</span>
     <span class="k">return</span> <span class="n">helper</span><span class="o">.</span><span class="n">GetDataDescription</span><span class="p">()</span>
 
-
 <span class="k">def</span> <span class="nf">_transform_registration_name</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
-    <span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">get_args</span>
+    <span class="kn">from</span> <span class="nn">.</span> <span class="k">import</span> <span class="n">get_args</span>
     <span class="kn">import</span> <span class="nn">re</span><span class="o">,</span> <span class="nn">argparse</span>
 
     <span class="n">regex</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;^\${args\.([\w.-]+)}$&quot;</span><span class="p">)</span>
@@ -119,7 +117,6 @@
     <span class="n">val</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="n">argname</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">val</span> <span class="k">if</span> <span class="n">val</span> <span class="k">else</span> <span class="n">name</span>
 
-
 <div class="viewcode-block" id="IsInsitu"><a class="viewcode-back" href="../../../paraview.catalyst.detail.html#paraview.catalyst.detail.IsInsitu">[docs]</a><span class="k">def</span> <span class="nf">IsInsitu</span><span class="p">():</span>
     <span class="sd">&quot;&quot;&quot;Returns True if executing in an insitu environment, else false&quot;&quot;&quot;</span>
     <span class="n">helper</span> <span class="o">=</span> <span class="n">_get_active_helper</span><span class="p">()</span>
@@ -132,16 +129,13 @@
 <span class="sd">    instead of the Conduit-based in situ API&quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="n">_get_active_data_description</span><span class="p">()</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span></div>
 
-
 <span class="k">if</span> <span class="n">IsInsitu</span><span class="p">()</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">IsLegacyCatalystAdaptor</span><span class="p">():</span>
-    <span class="kn">from</span> <span class="nn">..modules.vtkPVInSitu</span> <span class="kn">import</span> <span class="n">vtkInSituInitializationHelper</span>
-
+    <span class="kn">from</span> <span class="nn">..modules.vtkPVInSitu</span> <span class="k">import</span> <span class="n">vtkInSituInitializationHelper</span>
 
 <div class="viewcode-block" id="IsCatalystInSituAPI"><a class="viewcode-back" href="../../../paraview.catalyst.detail.html#paraview.catalyst.detail.IsCatalystInSituAPI">[docs]</a><span class="k">def</span> <span class="nf">IsCatalystInSituAPI</span><span class="p">():</span>
     <span class="sd">&quot;&quot;&quot;Returns True if the active execution environment is from within</span>
 <span class="sd">    an implementation of the Conduit-based Catalyst In Situ API.&quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="n">IsInsitu</span><span class="p">()</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">IsLegacyCatalystAdaptor</span><span class="p">()</span> <span class="ow">and</span> <span class="n">vtkInSituInitializationHelper</span><span class="o">.</span><span class="n">IsInitialized</span><span class="p">()</span></div>
-
 
 <div class="viewcode-block" id="IsInsituInput"><a class="viewcode-back" href="../../../paraview.catalyst.detail.html#paraview.catalyst.detail.IsInsituInput">[docs]</a><span class="k">def</span> <span class="nf">IsInsituInput</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
     <span class="k">if</span> <span class="ow">not</span> <span class="n">name</span> <span class="ow">or</span> <span class="ow">not</span> <span class="n">IsInsitu</span><span class="p">():</span>
@@ -183,16 +177,16 @@
 
 <div class="viewcode-block" id="CreateProducer"><a class="viewcode-back" href="../../../paraview.catalyst.detail.html#paraview.catalyst.detail.CreateProducer">[docs]</a><span class="k">def</span> <span class="nf">CreateProducer</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
     <span class="k">assert</span> <span class="n">IsInsituInput</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
-    <span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">log_level</span>
-    <span class="kn">from</span> <span class="nn">..</span> <span class="kn">import</span> <span class="n">log</span>
+    <span class="kn">from</span> <span class="nn">.</span> <span class="k">import</span> <span class="n">log_level</span>
+    <span class="kn">from</span> <span class="nn">..</span> <span class="k">import</span> <span class="n">log</span>
 
     <span class="n">originalname</span> <span class="o">=</span> <span class="n">name</span>
     <span class="n">name</span> <span class="o">=</span> <span class="n">_transform_registration_name</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
     <span class="n">log</span><span class="p">(</span><span class="n">log_level</span><span class="p">(),</span> <span class="s2">&quot;creating producer for simulation input named &#39;</span><span class="si">%s</span><span class="s2">&#39; (original-name=</span><span class="si">%s</span><span class="s2">)&quot;</span> \
-        <span class="o">%</span> <span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">originalname</span><span class="p">))</span>
+            <span class="o">%</span> <span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">originalname</span><span class="p">))</span>
     <span class="k">if</span> <span class="n">IsCatalystInSituAPI</span><span class="p">():</span>
         <span class="c1"># Catalyst 2.0</span>
-        <span class="kn">from</span> <span class="nn">paraview</span> <span class="kn">import</span> <span class="n">servermanager</span>
+        <span class="kn">from</span> <span class="nn">paraview</span> <span class="k">import</span> <span class="n">servermanager</span>
         <span class="n">producer</span> <span class="o">=</span> <span class="n">servermanager</span><span class="o">.</span><span class="n">_getPyProxy</span><span class="p">(</span><span class="n">vtkInSituInitializationHelper</span><span class="o">.</span><span class="n">GetProducer</span><span class="p">(</span><span class="n">name</span><span class="p">))</span>
 
         <span class="c1"># since state file may have arbitrary properties being specified</span>
@@ -201,7 +195,7 @@
         <span class="k">return</span> <span class="n">producer</span>
 
     <span class="c1"># Legacy Catalyst</span>
-    <span class="kn">from</span> <span class="nn">paraview</span> <span class="kn">import</span> <span class="n">servermanager</span>
+    <span class="kn">from</span> <span class="nn">paraview</span> <span class="k">import</span> <span class="n">servermanager</span>
     <span class="n">helper</span> <span class="o">=</span> <span class="n">_get_active_helper</span><span class="p">()</span>
     <span class="n">producer</span> <span class="o">=</span> <span class="n">helper</span><span class="o">.</span><span class="n">GetTrivialProducer</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
     <span class="n">producer</span> <span class="o">=</span> <span class="n">servermanager</span><span class="o">.</span><span class="n">_getPyProxy</span><span class="p">(</span><span class="n">producer</span><span class="p">)</span>
@@ -217,8 +211,8 @@
 <span class="sd">    This is called in vtkCPPythonPipeline to initialize the Python</span>
 <span class="sd">    environment to be more suitable for Catalyst in situ execution.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">log_level</span>
-    <span class="kn">from</span> <span class="nn">..</span> <span class="kn">import</span> <span class="n">log</span>
+    <span class="kn">from</span> <span class="nn">.</span> <span class="k">import</span> <span class="n">log_level</span>
+    <span class="kn">from</span> <span class="nn">..</span> <span class="k">import</span> <span class="n">log</span>
 
     <span class="n">log</span><span class="p">(</span><span class="n">log_level</span><span class="p">(),</span> <span class="s2">&quot;initializing Python environment for in situ&quot;</span><span class="p">)</span>
 
@@ -230,45 +224,42 @@
 
     <span class="c1"># ensure we can import ParaView servermanager and necessary modules</span>
     <span class="n">log</span><span class="p">(</span><span class="n">log_level</span><span class="p">(),</span> <span class="s2">&quot;import paraview.servermanager&quot;</span><span class="p">)</span>
-    <span class="kn">from</span> <span class="nn">paraview</span> <span class="kn">import</span> <span class="n">servermanager</span>
+    <span class="kn">from</span> <span class="nn">paraview</span> <span class="k">import</span> <span class="n">servermanager</span>
 
     <span class="c1"># import Python wrapping for vtkPVCatalyst module</span>
     <span class="n">log</span><span class="p">(</span><span class="n">log_level</span><span class="p">(),</span> <span class="s2">&quot;import paraview.modules.vtkPVCatalyst&quot;</span><span class="p">)</span>
-    <span class="kn">from</span> <span class="nn">paraview.modules</span> <span class="kn">import</span> <span class="n">vtkPVCatalyst</span></div>
-
+    <span class="kn">from</span> <span class="nn">paraview.modules</span> <span class="k">import</span> <span class="n">vtkPVCatalyst</span></div>
 
 <div class="viewcode-block" id="RegisterPackageFromZip"><a class="viewcode-back" href="../../../paraview.catalyst.detail.html#paraview.catalyst.detail.RegisterPackageFromZip">[docs]</a><span class="k">def</span> <span class="nf">RegisterPackageFromZip</span><span class="p">(</span><span class="n">zipfilename</span><span class="p">,</span> <span class="n">packagename</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-    <span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">importers</span>
+    <span class="kn">from</span> <span class="nn">.</span> <span class="k">import</span> <span class="n">importers</span>
     <span class="n">zipfilename</span> <span class="o">=</span> <span class="n">_mpi_exchange_if_needed</span><span class="p">(</span><span class="n">zipfilename</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">importers</span><span class="o">.</span><span class="n">add_file</span><span class="p">(</span><span class="n">zipfilename</span><span class="p">,</span> <span class="n">packagename</span><span class="p">)</span></div>
 
 
 <div class="viewcode-block" id="RegisterPackageFromDir"><a class="viewcode-back" href="../../../paraview.catalyst.detail.html#paraview.catalyst.detail.RegisterPackageFromDir">[docs]</a><span class="k">def</span> <span class="nf">RegisterPackageFromDir</span><span class="p">(</span><span class="n">path</span><span class="p">):</span>
     <span class="kn">import</span> <span class="nn">os.path</span>
-    <span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">importers</span>
+    <span class="kn">from</span> <span class="nn">.</span> <span class="k">import</span> <span class="n">importers</span>
     <span class="n">packagename</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
     <span class="n">init_py</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="s2">&quot;__init__.py&quot;</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">importers</span><span class="o">.</span><span class="n">add_file</span><span class="p">(</span><span class="n">init_py</span><span class="p">,</span> <span class="n">packagename</span><span class="p">)</span></div>
 
 
 <div class="viewcode-block" id="RegisterModuleFromFile"><a class="viewcode-back" href="../../../paraview.catalyst.detail.html#paraview.catalyst.detail.RegisterModuleFromFile">[docs]</a><span class="k">def</span> <span class="nf">RegisterModuleFromFile</span><span class="p">(</span><span class="n">filename</span><span class="p">):</span>
-    <span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">importers</span>
+    <span class="kn">from</span> <span class="nn">.</span> <span class="k">import</span> <span class="n">importers</span>
     <span class="k">return</span> <span class="n">importers</span><span class="o">.</span><span class="n">add_file</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span></div>
 
 
 <span class="n">_temp_directory</span> <span class="o">=</span> <span class="kc">None</span>
-
-
 <span class="k">def</span> <span class="nf">_mpi_exchange_if_needed</span><span class="p">(</span><span class="n">filename</span><span class="p">):</span>
     <span class="k">global</span> <span class="n">_temp_directory</span>
 
-    <span class="kn">from</span> <span class="nn">..modules.vtkRemotingCore</span> <span class="kn">import</span> <span class="n">vtkProcessModule</span>
+    <span class="kn">from</span> <span class="nn">..modules.vtkRemotingCore</span> <span class="k">import</span> <span class="n">vtkProcessModule</span>
     <span class="n">pm</span> <span class="o">=</span> <span class="n">vtkProcessModule</span><span class="o">.</span><span class="n">GetProcessModule</span><span class="p">()</span>
     <span class="k">if</span> <span class="n">pm</span><span class="o">.</span><span class="n">GetNumberOfLocalPartitions</span><span class="p">()</span> <span class="o">&lt;=</span> <span class="mi">1</span><span class="p">:</span>
         <span class="k">return</span> <span class="n">filename</span>
 
-    <span class="kn">from</span> <span class="nn">mpi4py</span> <span class="kn">import</span> <span class="n">MPI</span>
-    <span class="kn">from</span> <span class="nn">vtkmodules.vtkParallelMPI4Py</span> <span class="kn">import</span> <span class="n">vtkMPI4PyCommunicator</span>
+    <span class="kn">from</span> <span class="nn">mpi4py</span> <span class="k">import</span> <span class="n">MPI</span>
+    <span class="kn">from</span> <span class="nn">vtkmodules.vtkParallelMPI4Py</span> <span class="k">import</span> <span class="n">vtkMPI4PyCommunicator</span>
     <span class="n">comm</span> <span class="o">=</span> <span class="n">vtkMPI4PyCommunicator</span><span class="o">.</span><span class="n">ConvertToPython</span><span class="p">(</span><span class="n">pm</span><span class="o">.</span><span class="n">GetGlobalController</span><span class="p">()</span><span class="o">.</span><span class="n">GetCommunicator</span><span class="p">())</span>
     <span class="k">if</span> <span class="n">comm</span><span class="o">.</span><span class="n">Get_rank</span><span class="p">()</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
         <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="s1">&#39;rb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>

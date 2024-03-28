@@ -1,19 +1,18 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html4" lang="en" >
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>paraview.detail.cdbwriter &mdash; ParaView/Python 5.12.0-776-gfc5a2391cc documentation</title>
-      <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <title>paraview.detail.cdbwriter &mdash; ParaView/Python 5.12.0 documentation</title><link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" /><link rel="shortcut icon" href="../../../_static/pvIcon.ico"/>
   <!--[if lt IE 9]>
     <script src="../../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
-  
-        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
-        <script src="../../../_static/jquery.js"></script>
-        <script src="../../../_static/underscore.js"></script>
-        <script src="../../../_static/doctools.js"></script>
+  <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../../_static/language_data.js"></script>
     <script src="../../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" /> 
@@ -29,7 +28,7 @@
             <li> <a href="../../../index.html">
               <img src="../../../_static/paraview-logo-small.png"
               alt="ParaView/Python"></img></a> </li>
-            <li class="version"> version 5.12.0-776-gfc5a2391cc</li>
+            <li class="version"> version 5.12.0</li>
           </ul>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
@@ -81,11 +80,10 @@
              
   <h1>Source code for paraview.detail.cdbwriter</h1><div class="highlight"><pre>
 <span></span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;Module used by vtkCDBWriter&quot;&quot;&quot;</span>
-<span class="kn">from</span> <span class="nn">..tpl</span> <span class="kn">import</span> <span class="n">cinemasci</span>
-
+<span class="kn">from</span> <span class="nn">..tpl</span> <span class="k">import</span> <span class="n">cinemasci</span>
 
 <div class="viewcode-block" id="write"><a class="viewcode-back" href="../../../paraview.detail.cdbwriter.html#paraview.detail.cdbwriter.write">[docs]</a><span class="k">def</span> <span class="nf">write</span><span class="p">(</span><span class="n">fname</span><span class="p">,</span> <span class="n">vtktable</span><span class="p">):</span>
-    <span class="n">cdb</span> <span class="o">=</span> <span class="n">cinemasci</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="s2">&quot;cdb&quot;</span><span class="p">,</span> <span class="p">{</span><span class="s2">&quot;path&quot;</span><span class="p">:</span> <span class="n">fname</span><span class="p">})</span>
+    <span class="n">cdb</span> <span class="o">=</span> <span class="n">cinemasci</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="s2">&quot;cdb&quot;</span><span class="p">,</span> <span class="p">{</span> <span class="s2">&quot;path&quot;</span> <span class="p">:</span> <span class="n">fname</span><span class="p">})</span>
     <span class="k">if</span> <span class="ow">not</span> <span class="n">cdb</span><span class="o">.</span><span class="n">initialize</span><span class="p">(</span><span class="n">dirExistCheck</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
         <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="s2">&quot;Failed to initialize dbase&quot;</span><span class="p">)</span>
     <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">vtktable</span><span class="o">.</span><span class="n">GetNumberOfRows</span><span class="p">()):</span>

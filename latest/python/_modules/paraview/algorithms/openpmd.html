@@ -1,19 +1,18 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html4" lang="en" >
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>paraview.algorithms.openpmd &mdash; ParaView/Python 5.12.0-776-gfc5a2391cc documentation</title>
-      <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <title>paraview.algorithms.openpmd &mdash; ParaView/Python 5.12.0 documentation</title><link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" /><link rel="shortcut icon" href="../../../_static/pvIcon.ico"/>
   <!--[if lt IE 9]>
     <script src="../../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
-  
-        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
-        <script src="../../../_static/jquery.js"></script>
-        <script src="../../../_static/underscore.js"></script>
-        <script src="../../../_static/doctools.js"></script>
+  <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../../_static/language_data.js"></script>
     <script src="../../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" /> 
@@ -29,7 +28,7 @@
             <li> <a href="../../../index.html">
               <img src="../../../_static/paraview-logo-small.png"
               alt="ParaView/Python"></img></a> </li>
-            <li class="version"> version 5.12.0-776-gfc5a2391cc</li>
+            <li class="version"> version 5.12.0</li>
           </ul>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
@@ -82,9 +81,9 @@
 <span></span><span class="c1"># Authors: Berk Geveci, Axel Huebl, Utkarsh Ayachit</span>
 <span class="c1">#</span>
 
-<span class="kn">from</span> <span class="nn">vtkmodules.util.vtkAlgorithm</span> <span class="kn">import</span> <span class="n">VTKPythonAlgorithmBase</span>
+<span class="kn">from</span> <span class="nn">vtkmodules.util.vtkAlgorithm</span> <span class="k">import</span> <span class="n">VTKPythonAlgorithmBase</span>
 
-<span class="kn">from</span> <span class="nn">..</span> <span class="kn">import</span> <span class="n">print_error</span>
+<span class="kn">from</span> <span class="nn">..</span> <span class="k">import</span> <span class="n">print_error</span>
 
 <span class="k">try</span><span class="p">:</span>
     <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -130,7 +129,7 @@
 <span class="sd">    - https://github.com/openPMD/openPMD-api</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;In the constructor, we initialize internal variables&quot;&quot;&quot;</span>
         <span class="n">VTKPythonAlgorithmBase</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span>
             <span class="bp">self</span><span class="p">,</span> <span class="n">nInputPorts</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">nOutputPorts</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">outputType</span><span class="o">=</span><span class="s2">&quot;vtkPartitionedDataSet&quot;</span>
@@ -149,7 +148,7 @@
         <span class="c1"># this registers observers and callbacks</span>
         <span class="c1"># in the UI: users can (un)select some groups in the data:</span>
         <span class="c1"># fields, particle species or individual particle properties</span>
-        <span class="kn">from</span> <span class="nn">vtkmodules.vtkCommonCore</span> <span class="kn">import</span> <span class="n">vtkDataArraySelection</span>
+        <span class="kn">from</span> <span class="nn">vtkmodules.vtkCommonCore</span> <span class="k">import</span> <span class="n">vtkDataArraySelection</span>
 
         <span class="c1"># 1D, 2D or 3D arrays in openPMD &quot;meshes&quot; aka &quot;fields&quot;</span>
         <span class="c1"># openPMD fields are regular grids</span>
@@ -193,7 +192,7 @@
 <span class="sd">          The time (float) of the first time step available</span>
 <span class="sd">          that is less than the requested time.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="kn">from</span> <span class="nn">vtkmodules.vtkCommonExecutionModel</span> <span class="kn">import</span> <span class="n">vtkStreamingDemandDrivenPipeline</span>
+        <span class="kn">from</span> <span class="nn">vtkmodules.vtkCommonExecutionModel</span> <span class="k">import</span> <span class="n">vtkStreamingDemandDrivenPipeline</span>
 
         <span class="n">executive</span> <span class="o">=</span> <span class="p">(</span>
             <span class="n">vtkStreamingDemandDrivenPipeline</span>  <span class="c1"># UPDATE_TIME_STEP request is defined here</span>
@@ -299,7 +298,7 @@
 <span class="sd">        info: vtkInformation</span>
 <span class="sd">          Gets updated to set two output types (DATA_TYPE_NAME).</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="kn">from</span> <span class="nn">vtkmodules.vtkCommonDataModel</span> <span class="kn">import</span> <span class="n">vtkDataObject</span>
+        <span class="kn">from</span> <span class="nn">vtkmodules.vtkCommonDataModel</span> <span class="k">import</span> <span class="n">vtkDataObject</span>
 
         <span class="k">if</span> <span class="n">port</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
             <span class="n">info</span><span class="o">.</span><span class="n">Set</span><span class="p">(</span><span class="n">vtkDataObject</span><span class="o">.</span><span class="n">DATA_TYPE_NAME</span><span class="p">(),</span> <span class="s2">&quot;vtkPartitionedDataSet&quot;</span><span class="p">)</span>
@@ -333,7 +332,7 @@
             <span class="n">print_error</span><span class="p">(</span><span class="s2">&quot;Required Python module &#39;openpmd_api&#39; missing!&quot;</span><span class="p">)</span>
             <span class="k">return</span> <span class="mi">0</span>
 
-        <span class="kn">from</span> <span class="nn">vtkmodules.vtkCommonExecutionModel</span> <span class="kn">import</span> <span class="p">(</span>
+        <span class="kn">from</span> <span class="nn">vtkmodules.vtkCommonExecutionModel</span> <span class="k">import</span> <span class="p">(</span>
             <span class="n">vtkStreamingDemandDrivenPipeline</span><span class="p">,</span>
             <span class="n">vtkAlgorithm</span><span class="p">,</span>
         <span class="p">)</span>
@@ -557,7 +556,7 @@
             <span class="n">ugrid</span><span class="o">.</span><span class="n">PointData</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
                 <span class="bp">self</span><span class="o">.</span><span class="n">_load_particle_array</span><span class="p">(</span><span class="n">itr</span><span class="p">,</span> <span class="n">array</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">array</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">),</span> <span class="n">array</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
             <span class="p">)</span>
-        <span class="kn">from</span> <span class="nn">vtkmodules.vtkCommonDataModel</span> <span class="kn">import</span> <span class="n">vtkCellArray</span>
+        <span class="kn">from</span> <span class="nn">vtkmodules.vtkCommonDataModel</span> <span class="k">import</span> <span class="n">vtkCellArray</span>
 
         <span class="n">ca</span> <span class="o">=</span> <span class="n">vtkCellArray</span><span class="p">()</span>
         <span class="k">if</span> <span class="n">npts</span> <span class="o">&lt;</span> <span class="n">np</span><span class="o">.</span><span class="n">iinfo</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">int32</span><span class="p">)</span><span class="o">.</span><span class="n">max</span><span class="p">:</span>
@@ -566,7 +565,7 @@
             <span class="n">dtype</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">int64</span>
         <span class="n">offsets</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">npts</span><span class="p">,</span> <span class="n">npts</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">dtype</span><span class="p">)</span>
         <span class="n">cells</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">npts</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">npts</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">dtype</span><span class="p">)</span>
-        <span class="kn">from</span> <span class="nn">vtkmodules.numpy_interface</span> <span class="kn">import</span> <span class="n">dataset_adapter</span>
+        <span class="kn">from</span> <span class="nn">vtkmodules.numpy_interface</span> <span class="k">import</span> <span class="n">dataset_adapter</span>
 
         <span class="n">offsets</span> <span class="o">=</span> <span class="n">dataset_adapter</span><span class="o">.</span><span class="n">numpyTovtkDataArray</span><span class="p">(</span><span class="n">offsets</span><span class="p">)</span>
         <span class="n">offsets2</span> <span class="o">=</span> <span class="n">offsets</span><span class="o">.</span><span class="n">NewInstance</span><span class="p">()</span>
@@ -575,14 +574,14 @@
         <span class="n">cells2</span> <span class="o">=</span> <span class="n">cells</span><span class="o">.</span><span class="n">NewInstance</span><span class="p">()</span>
         <span class="n">cells2</span><span class="o">.</span><span class="n">DeepCopy</span><span class="p">(</span><span class="n">cells</span><span class="p">)</span>
         <span class="n">ca</span><span class="o">.</span><span class="n">SetData</span><span class="p">(</span><span class="n">offsets2</span><span class="p">,</span> <span class="n">cells2</span><span class="p">)</span>
-        <span class="kn">from</span> <span class="nn">vtkmodules.util</span> <span class="kn">import</span> <span class="n">vtkConstants</span>
+        <span class="kn">from</span> <span class="nn">vtkmodules.util</span> <span class="k">import</span> <span class="n">vtkConstants</span>
 
         <span class="n">ugrid</span><span class="o">.</span><span class="n">VTKObject</span><span class="o">.</span><span class="n">SetCells</span><span class="p">(</span><span class="n">vtkConstants</span><span class="o">.</span><span class="n">VTK_VERTEX</span><span class="p">,</span> <span class="n">ca</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">_RequestFieldData</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">executive</span><span class="p">,</span> <span class="n">output</span><span class="p">,</span> <span class="n">outInfo</span><span class="p">,</span> <span class="n">timeInfo</span><span class="p">):</span>
-        <span class="kn">from</span> <span class="nn">vtkmodules.numpy_interface</span> <span class="kn">import</span> <span class="n">dataset_adapter</span> <span class="k">as</span> <span class="n">dsa</span>
-        <span class="kn">from</span> <span class="nn">vtkmodules.vtkCommonDataModel</span> <span class="kn">import</span> <span class="n">vtkImageData</span>
-        <span class="kn">from</span> <span class="nn">vtkmodules.vtkCommonExecutionModel</span> <span class="kn">import</span> <span class="n">vtkExtentTranslator</span>
+        <span class="kn">from</span> <span class="nn">vtkmodules.numpy_interface</span> <span class="k">import</span> <span class="n">dataset_adapter</span> <span class="k">as</span> <span class="n">dsa</span>
+        <span class="kn">from</span> <span class="nn">vtkmodules.vtkCommonDataModel</span> <span class="k">import</span> <span class="n">vtkImageData</span>
+        <span class="kn">from</span> <span class="nn">vtkmodules.vtkCommonExecutionModel</span> <span class="k">import</span> <span class="n">vtkExtentTranslator</span>
 
         <span class="n">piece</span> <span class="o">=</span> <span class="n">outInfo</span><span class="o">.</span><span class="n">Get</span><span class="p">(</span><span class="n">executive</span><span class="o">.</span><span class="n">UPDATE_PIECE_NUMBER</span><span class="p">())</span>
         <span class="n">npieces</span> <span class="o">=</span> <span class="n">outInfo</span><span class="o">.</span><span class="n">Get</span><span class="p">(</span><span class="n">executive</span><span class="o">.</span><span class="n">UPDATE_NUMBER_OF_PIECES</span><span class="p">())</span>
@@ -734,8 +733,8 @@
             <span class="p">]</span>
 
             <span class="c1"># 1D and 2D data: remove extra dimensions for load</span>
-            <span class="k">del</span> <span class="n">chunk_offset</span><span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">shp</span><span class="p">):]</span>
-            <span class="k">del</span> <span class="n">chunk_extent</span><span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">shp</span><span class="p">):]</span>
+            <span class="k">del</span> <span class="n">chunk_offset</span><span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">shp</span><span class="p">)</span> <span class="p">:]</span>
+            <span class="k">del</span> <span class="n">chunk_extent</span><span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">shp</span><span class="p">)</span> <span class="p">:]</span>
 
             <span class="n">data</span> <span class="o">=</span> <span class="p">[]</span>
             <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">var</span> <span class="ow">in</span> <span class="n">arrays</span><span class="p">:</span>
@@ -765,9 +764,10 @@
             <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">array</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
                 <span class="n">imgw</span><span class="o">.</span><span class="n">PointData</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">array</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
 
+
     <span class="k">def</span> <span class="nf">_RequestParticleData</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">executive</span><span class="p">,</span> <span class="n">poutput</span><span class="p">,</span> <span class="n">outInfo</span><span class="p">,</span> <span class="n">timeInfo</span><span class="p">):</span>
-        <span class="kn">from</span> <span class="nn">vtkmodules.numpy_interface</span> <span class="kn">import</span> <span class="n">dataset_adapter</span> <span class="k">as</span> <span class="n">dsa</span>
-        <span class="kn">from</span> <span class="nn">vtkmodules.vtkCommonDataModel</span> <span class="kn">import</span> <span class="p">(</span>
+        <span class="kn">from</span> <span class="nn">vtkmodules.numpy_interface</span> <span class="k">import</span> <span class="n">dataset_adapter</span> <span class="k">as</span> <span class="n">dsa</span>
+        <span class="kn">from</span> <span class="nn">vtkmodules.vtkCommonDataModel</span> <span class="k">import</span> <span class="p">(</span>
             <span class="n">vtkUnstructuredGrid</span><span class="p">,</span>
             <span class="n">vtkPartitionedDataSet</span><span class="p">,</span>
         <span class="p">)</span>
@@ -806,11 +806,11 @@
             <span class="n">print_error</span><span class="p">(</span><span class="s2">&quot;Required Python module &#39;openpmd_api&#39; missing!&quot;</span><span class="p">)</span>
             <span class="k">return</span> <span class="mi">0</span>
 
-        <span class="kn">from</span> <span class="nn">vtkmodules.vtkCommonDataModel</span> <span class="kn">import</span> <span class="p">(</span>
+        <span class="kn">from</span> <span class="nn">vtkmodules.vtkCommonDataModel</span> <span class="k">import</span> <span class="p">(</span>
             <span class="n">vtkPartitionedDataSet</span><span class="p">,</span>
             <span class="n">vtkPartitionedDataSetCollection</span><span class="p">,</span>
         <span class="p">)</span>
-        <span class="kn">from</span> <span class="nn">vtkmodules.vtkCommonExecutionModel</span> <span class="kn">import</span> <span class="n">vtkStreamingDemandDrivenPipeline</span>
+        <span class="kn">from</span> <span class="nn">vtkmodules.vtkCommonExecutionModel</span> <span class="k">import</span> <span class="n">vtkStreamingDemandDrivenPipeline</span>
 
         <span class="c1"># Which port got an update request: fields (0) or particles (1)</span>
         <span class="n">executive</span> <span class="o">=</span> <span class="n">vtkStreamingDemandDrivenPipeline</span>

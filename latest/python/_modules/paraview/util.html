@@ -1,19 +1,18 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html4" lang="en" >
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>paraview.util &mdash; ParaView/Python 5.12.0-776-gfc5a2391cc documentation</title>
-      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <title>paraview.util &mdash; ParaView/Python 5.12.0 documentation</title><link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" /><link rel="shortcut icon" href="../../_static/pvIcon.ico"/>
   <!--[if lt IE 9]>
     <script src="../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
-  
-        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-        <script src="../../_static/jquery.js"></script>
-        <script src="../../_static/underscore.js"></script>
-        <script src="../../_static/doctools.js"></script>
+  <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" /> 
@@ -29,7 +28,7 @@
             <li> <a href="../../index.html">
               <img src="../../_static/paraview-logo-small.png"
               alt="ParaView/Python"></img></a> </li>
-            <li class="version"> version 5.12.0-776-gfc5a2391cc</li>
+            <li class="version"> version 5.12.0</li>
           </ul>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
@@ -79,7 +78,8 @@
            <div itemprop="articleBody">
              
   <h1>Source code for paraview.util</h1><div class="highlight"><pre>
-<span></span><span class="c1"># These functions were present in a util.py module.</span>
+<span></span>
+<span class="c1"># These functions were present in a util.py module.</span>
 <span class="c1"># Keeping them around for backwards compatibility</span>
 <div class="viewcode-block" id="SetOutputWholeExtent"><a class="viewcode-back" href="../../paraview.util.html#paraview.util.SetOutputWholeExtent">[docs]</a><span class="k">def</span> <span class="nf">SetOutputWholeExtent</span><span class="p">(</span><span class="n">algorithm</span><span class="p">,</span> <span class="n">extent</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
@@ -95,10 +95,8 @@
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">extent</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">6</span><span class="p">:</span>
         <span class="k">raise</span> <span class="s2">&quot;Expected a sequence of length 6&quot;</span>
-    <span class="kn">from</span> <span class="nn">vtkmodules.vtkCommonExecutionModel</span> <span class="kn">import</span> <span class="n">vtkStreamingDemandDrivenPipeline</span>
-    <span class="n">algorithm</span><span class="o">.</span><span class="n">GetExecutive</span><span class="p">()</span><span class="o">.</span><span class="n">GetOutputInformation</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">Set</span><span class="p">(</span><span class="n">vtkStreamingDemandDrivenPipeline</span><span class="o">.</span><span class="n">WHOLE_EXTENT</span><span class="p">(),</span> <span class="n">extent</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
-                                                         <span class="n">extent</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">extent</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">extent</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">extent</span><span class="p">[</span><span class="mi">4</span><span class="p">],</span> <span class="n">extent</span><span class="p">[</span><span class="mi">5</span><span class="p">])</span></div>
-
+    <span class="kn">from</span> <span class="nn">vtkmodules.vtkCommonExecutionModel</span> <span class="k">import</span> <span class="n">vtkStreamingDemandDrivenPipeline</span>
+    <span class="n">algorithm</span><span class="o">.</span><span class="n">GetExecutive</span><span class="p">()</span><span class="o">.</span><span class="n">GetOutputInformation</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">Set</span><span class="p">(</span><span class="n">vtkStreamingDemandDrivenPipeline</span><span class="o">.</span><span class="n">WHOLE_EXTENT</span><span class="p">(),</span> <span class="n">extent</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">extent</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">extent</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span><span class="n">extent</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">extent</span><span class="p">[</span><span class="mi">4</span><span class="p">],</span> <span class="n">extent</span><span class="p">[</span><span class="mi">5</span><span class="p">])</span></div>
 
 <div class="viewcode-block" id="IntegrateCell"><a class="viewcode-back" href="../../paraview.util.html#paraview.util.IntegrateCell">[docs]</a><span class="k">def</span> <span class="nf">IntegrateCell</span><span class="p">(</span><span class="n">dataset</span><span class="p">,</span> <span class="n">cellId</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
@@ -108,7 +106,7 @@
 <span class="sd">    polygons, quads and tetrahedra. All other 3D cells are triangulated</span>
 <span class="sd">    during volume calculation. In such cases, the result may not be exact.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="kn">from</span> <span class="nn">paraview.modules.vtkPVVTKExtensionsFiltersGeneral</span> <span class="kn">import</span> <span class="n">vtkCellIntegrator</span>
+    <span class="kn">from</span> <span class="nn">paraview.modules.vtkPVVTKExtensionsFiltersGeneral</span> <span class="k">import</span> <span class="n">vtkCellIntegrator</span>
     <span class="k">return</span> <span class="n">vtkCellIntegrator</span><span class="o">.</span><span class="n">Integrate</span><span class="p">(</span><span class="n">dataset</span><span class="p">,</span> <span class="n">cellId</span><span class="p">)</span></div>
 
 
@@ -119,16 +117,13 @@
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="kn">import</span> <span class="nn">os</span><span class="o">,</span> <span class="nn">re</span>
     <span class="n">r</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;\$ENV\{([^}]+)\}&quot;</span><span class="p">)</span>
-
     <span class="k">def</span> <span class="nf">repl</span><span class="p">(</span><span class="n">m</span><span class="p">):</span>
         <span class="k">if</span> <span class="n">m</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">:</span>
             <span class="k">return</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="n">m</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">1</span><span class="p">)]</span>
         <span class="k">raise</span> <span class="ne">KeyError</span><span class="p">(</span><span class="s2">&quot;&#39;</span><span class="si">%s</span><span class="s2">&#39; is not defined in the process environment&quot;</span> <span class="o">%</span> <span class="n">m</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span>
-
     <span class="k">return</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">repl</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span></div>
 
-
-<div class="viewcode-block" id="Glob"><a class="viewcode-back" href="../../paraview.util.html#paraview.util.Glob">[docs]</a><span class="k">def</span> <span class="nf">Glob</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">rootDir</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class="viewcode-block" id="Glob"><a class="viewcode-back" href="../../paraview.util.html#paraview.util.Glob">[docs]</a><span class="k">def</span> <span class="nf">Glob</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">rootDir</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Given a path, this function performs globbing on the file names inside the input</span>
 <span class="sd">    directory. rootDir is an optional parameter that can set a relative root directory from which</span>
 <span class="sd">    path is defined. This function returns the list of files matching the globbing pattern (the</span>

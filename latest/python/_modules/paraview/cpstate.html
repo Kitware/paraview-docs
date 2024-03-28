@@ -1,19 +1,18 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html4" lang="en" >
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>paraview.cpstate &mdash; ParaView/Python 5.12.0-776-gfc5a2391cc documentation</title>
-      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <title>paraview.cpstate &mdash; ParaView/Python 5.12.0 documentation</title><link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" /><link rel="shortcut icon" href="../../_static/pvIcon.ico"/>
   <!--[if lt IE 9]>
     <script src="../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
-  
-        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-        <script src="../../_static/jquery.js"></script>
-        <script src="../../_static/underscore.js"></script>
-        <script src="../../_static/doctools.js"></script>
+  <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" /> 
@@ -29,7 +28,7 @@
             <li> <a href="../../index.html">
               <img src="../../_static/paraview-logo-small.png"
               alt="ParaView/Python"></img></a> </li>
-            <li class="version"> version 5.12.0-776-gfc5a2391cc</li>
+            <li class="version"> version 5.12.0</li>
           </ul>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
@@ -88,22 +87,19 @@
 <span class="sd">functions can be considered internal.</span>
 <span class="sd">&quot;&quot;&quot;</span>
 
-<span class="kn">from</span> <span class="nn">paraview</span> <span class="kn">import</span> <span class="n">smtrace</span><span class="p">,</span> <span class="n">smstate</span><span class="p">,</span> <span class="n">servermanager</span>
+<span class="kn">from</span> <span class="nn">paraview</span> <span class="k">import</span> <span class="n">smtrace</span><span class="p">,</span> <span class="n">smstate</span><span class="p">,</span> <span class="n">servermanager</span>
 <span class="kn">import</span> <span class="nn">numbers</span>
 
 <span class="n">_cpstate_globals</span> <span class="o">=</span> <span class="kc">None</span>
-
 
 <div class="viewcode-block" id="reset_globals"><a class="viewcode-back" href="../../paraview.cpstate.html#paraview.cpstate.reset_globals">[docs]</a><span class="k">def</span> <span class="nf">reset_globals</span><span class="p">():</span>
     <span class="k">global</span> <span class="n">_cpstate_globals</span>
     <span class="n">_cpstate_globals</span> <span class="o">=</span> <span class="kc">None</span></div>
 
-
 <div class="viewcode-block" id="initialize_globals"><a class="viewcode-back" href="../../paraview.cpstate.html#paraview.cpstate.initialize_globals">[docs]</a><span class="k">def</span> <span class="nf">initialize_globals</span><span class="p">():</span>
     <span class="k">global</span> <span class="n">_cpstate_globals</span>
-
     <span class="k">class</span> <span class="nc">_state</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
-        <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">write_frequencies</span> <span class="o">=</span> <span class="p">{}</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">simulation_input_map</span> <span class="o">=</span> <span class="p">{}</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">view_proxies</span> <span class="o">=</span> <span class="p">[]</span>
@@ -115,10 +111,8 @@
             <span class="bp">self</span><span class="o">.</span><span class="n">enable_live_viz</span> <span class="o">=</span> <span class="kc">False</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">live_viz_frequency</span> <span class="o">=</span> <span class="mi">0</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">variable_to_name_map</span> <span class="o">=</span> <span class="p">{}</span>
-
     <span class="n">_cpstate_globals</span> <span class="o">=</span> <span class="n">_state</span><span class="p">()</span>
     <span class="k">return</span> <span class="n">_cpstate_globals</span></div>
-
 
 <div class="viewcode-block" id="get_globals"><a class="viewcode-back" href="../../paraview.cpstate.html#paraview.cpstate.get_globals">[docs]</a><span class="k">def</span> <span class="nf">get_globals</span><span class="p">():</span>
     <span class="k">global</span> <span class="n">_cpstate_globals</span>
@@ -126,13 +120,12 @@
         <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="s2">&quot;get_globals called before initialize_globals!&quot;</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">_cpstate_globals</span></div>
 
-
 <span class="c1"># -----------------------------------------------------------------------------</span>
 <div class="viewcode-block" id="locate_simulation_inputs"><a class="viewcode-back" href="../../paraview.cpstate.html#paraview.cpstate.locate_simulation_inputs">[docs]</a><span class="k">def</span> <span class="nf">locate_simulation_inputs</span><span class="p">(</span><span class="n">proxy</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Given any sink/filter proxy, returns a list of upstream proxies that have</span>
 <span class="sd">       been flagged as &#39;simulation input&#39; in the state exporting wizard.&quot;&quot;&quot;</span>
     <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">proxy</span><span class="p">,</span> <span class="s2">&quot;cpSimulationInput&quot;</span><span class="p">):</span>
-        <span class="k">return</span> <span class="p">[</span><span class="n">proxy</span><span class="o">.</span><span class="n">cpSimulationInput</span><span class="p">]</span>
+        <span class="k">return</span> <span class="p">[</span> <span class="n">proxy</span><span class="o">.</span><span class="n">cpSimulationInput</span> <span class="p">]</span>
 
     <span class="n">input_proxies</span> <span class="o">=</span> <span class="p">[]</span>
     <span class="k">for</span> <span class="nb">property</span> <span class="ow">in</span> <span class="n">servermanager</span><span class="o">.</span><span class="n">PropertyIterator</span><span class="p">(</span><span class="n">proxy</span><span class="p">):</span>
@@ -149,7 +142,6 @@
                     <span class="n">simulation_inputs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">cur</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">simulation_inputs</span></div>
 
-
 <span class="c1"># -----------------------------------------------------------------------------</span>
 <div class="viewcode-block" id="locate_simulation_inputs_for_view"><a class="viewcode-back" href="../../paraview.cpstate.html#paraview.cpstate.locate_simulation_inputs_for_view">[docs]</a><span class="k">def</span> <span class="nf">locate_simulation_inputs_for_view</span><span class="p">(</span><span class="n">view_proxy</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Given a view proxy, returns a list of source proxies that have been</span>
@@ -162,7 +154,6 @@
         <span class="n">all_sim_inputs</span> <span class="o">=</span> <span class="n">all_sim_inputs</span> <span class="o">+</span> <span class="n">sim_inputs</span>
     <span class="k">return</span> <span class="n">all_sim_inputs</span></div>
 
-
 <span class="c1"># -----------------------------------------------------------------------------</span>
 <div class="viewcode-block" id="ProducerAccessor"><a class="viewcode-back" href="../../paraview.cpstate.html#paraview.cpstate.ProducerAccessor">[docs]</a><span class="k">class</span> <span class="nc">ProducerAccessor</span><span class="p">(</span><span class="n">smtrace</span><span class="o">.</span><span class="n">RealProxyAccessor</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;This accessor is created instead of the standard one for proxies that</span>
@@ -170,8 +161,7 @@
 <span class="sd">    trace_ctor() method to trace the constructor as the CreateProducer() call,</span>
 <span class="sd">    since the proxy is a dummy, in this case.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">varname</span><span class="p">,</span> <span class="n">proxy</span><span class="p">,</span> <span class="n">simname</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">varname</span><span class="p">,</span> <span class="n">proxy</span><span class="p">,</span> <span class="n">simname</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">SimulationInputName</span> <span class="o">=</span> <span class="n">simname</span>
         <span class="n">smtrace</span><span class="o">.</span><span class="n">RealProxyAccessor</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">varname</span><span class="p">,</span> <span class="n">proxy</span><span class="p">)</span>
         <span class="c1"># this cpSimulationInput attribute is used to locate the proxy later on.</span>
@@ -182,7 +172,7 @@
         <span class="n">trace</span> <span class="o">=</span> <span class="n">smtrace</span><span class="o">.</span><span class="n">TraceOutput</span><span class="p">()</span>
         <span class="n">trace</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;# create a producer from a simulation input&quot;</span><span class="p">)</span>
         <span class="n">trace</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%s</span><span class="s2"> = coprocessor.CreateProducer(datadescription, &#39;</span><span class="si">%s</span><span class="s2">&#39;)&quot;</span> <span class="o">%</span> \
-                     <span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">SimulationInputName</span><span class="p">))</span>
+            <span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">SimulationInputName</span><span class="p">))</span>
 
         <span class="c1"># self.varname has .&#39;s and *&#39;s stripped. Knowing this, the key in cpstate_globals.cinema_arrays</span>
         <span class="c1"># should also be stripped of .&#39;s and *&#39;s. Refers to /Qt/ApplicationComponents/pqExportCatalystScript.cxx</span>
@@ -194,20 +184,18 @@
             <span class="n">trace</span><span class="o">.</span><span class="n">append_separator</span><span class="p">()</span>
         <span class="k">return</span> <span class="n">trace</span><span class="o">.</span><span class="n">raw_data</span><span class="p">()</span></div></div>
 
-
 <span class="c1"># -----------------------------------------------------------------------------</span>
 <div class="viewcode-block" id="SliceAccessor"><a class="viewcode-back" href="../../paraview.cpstate.html#paraview.cpstate.SliceAccessor">[docs]</a><span class="k">class</span> <span class="nc">SliceAccessor</span><span class="p">(</span><span class="n">smtrace</span><span class="o">.</span><span class="n">RealProxyAccessor</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    augments traces of slice filters with information to explore the</span>
 <span class="sd">    parameter space for cinema playback (if enabled)</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">varname</span><span class="p">,</span> <span class="n">proxy</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">varname</span><span class="p">,</span> <span class="n">proxy</span><span class="p">):</span>
         <span class="n">smtrace</span><span class="o">.</span><span class="n">RealProxyAccessor</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">varname</span><span class="p">,</span> <span class="n">proxy</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">varname</span> <span class="o">=</span> <span class="n">varname</span>
 
 <div class="viewcode-block" id="SliceAccessor.trace_ctor"><a class="viewcode-back" href="../../paraview.cpstate.html#paraview.cpstate.SliceAccessor.trace_ctor">[docs]</a>    <span class="k">def</span> <span class="nf">trace_ctor</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ctor</span><span class="p">,</span> <span class="nb">filter</span><span class="p">,</span> <span class="n">ctor_args</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">skip_assignment</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
-        <span class="n">original_trace</span> <span class="o">=</span> <span class="n">smtrace</span><span class="o">.</span><span class="n">RealProxyAccessor</span><span class="o">.</span><span class="n">trace_ctor</span><span class="p">(</span> \
+        <span class="n">original_trace</span> <span class="o">=</span> <span class="n">smtrace</span><span class="o">.</span><span class="n">RealProxyAccessor</span><span class="o">.</span><span class="n">trace_ctor</span><span class="p">(</span>\
             <span class="bp">self</span><span class="p">,</span> <span class="n">ctor</span><span class="p">,</span> <span class="nb">filter</span><span class="p">,</span> <span class="n">ctor_args</span><span class="p">,</span> <span class="n">skip_assignment</span><span class="p">)</span>
         <span class="n">trace</span> <span class="o">=</span> <span class="n">smtrace</span><span class="o">.</span><span class="n">TraceOutput</span><span class="p">(</span><span class="n">original_trace</span><span class="p">)</span>
         <span class="n">cpstate_globals</span> <span class="o">=</span> <span class="n">get_globals</span><span class="p">()</span>
@@ -223,20 +211,18 @@
             <span class="n">trace</span><span class="o">.</span><span class="n">append_separator</span><span class="p">()</span>
         <span class="k">return</span> <span class="n">trace</span><span class="o">.</span><span class="n">raw_data</span><span class="p">()</span></div></div>
 
-
 <span class="c1"># -----------------------------------------------------------------------------</span>
 <div class="viewcode-block" id="ContourAccessor"><a class="viewcode-back" href="../../paraview.cpstate.html#paraview.cpstate.ContourAccessor">[docs]</a><span class="k">class</span> <span class="nc">ContourAccessor</span><span class="p">(</span><span class="n">smtrace</span><span class="o">.</span><span class="n">RealProxyAccessor</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    augments traces of contour filters with information to explore the</span>
 <span class="sd">    parameter space for cinema playback (if enabled)</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">varname</span><span class="p">,</span> <span class="n">proxy</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">varname</span><span class="p">,</span> <span class="n">proxy</span><span class="p">):</span>
         <span class="n">smtrace</span><span class="o">.</span><span class="n">RealProxyAccessor</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">varname</span><span class="p">,</span> <span class="n">proxy</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">varname</span> <span class="o">=</span> <span class="n">varname</span>
 
 <div class="viewcode-block" id="ContourAccessor.trace_ctor"><a class="viewcode-back" href="../../paraview.cpstate.html#paraview.cpstate.ContourAccessor.trace_ctor">[docs]</a>    <span class="k">def</span> <span class="nf">trace_ctor</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ctor</span><span class="p">,</span> <span class="nb">filter</span><span class="p">,</span> <span class="n">ctor_args</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">skip_assignment</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
-        <span class="n">original_trace</span> <span class="o">=</span> <span class="n">smtrace</span><span class="o">.</span><span class="n">RealProxyAccessor</span><span class="o">.</span><span class="n">trace_ctor</span><span class="p">(</span> \
+        <span class="n">original_trace</span> <span class="o">=</span> <span class="n">smtrace</span><span class="o">.</span><span class="n">RealProxyAccessor</span><span class="o">.</span><span class="n">trace_ctor</span><span class="p">(</span>\
             <span class="bp">self</span><span class="p">,</span> <span class="n">ctor</span><span class="p">,</span> <span class="nb">filter</span><span class="p">,</span> <span class="n">ctor_args</span><span class="p">,</span> <span class="n">skip_assignment</span><span class="p">)</span>
         <span class="n">trace</span> <span class="o">=</span> <span class="n">smtrace</span><span class="o">.</span><span class="n">TraceOutput</span><span class="p">(</span><span class="n">original_trace</span><span class="p">)</span>
         <span class="k">if</span> <span class="n">cpstate_globals</span><span class="o">.</span><span class="n">cinema_tracks</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">varname</span> <span class="ow">in</span> <span class="n">cpstate_globals</span><span class="o">.</span><span class="n">cinema_tracks</span><span class="p">:</span>
@@ -251,24 +237,22 @@
             <span class="n">trace</span><span class="o">.</span><span class="n">append_separator</span><span class="p">()</span>
         <span class="k">return</span> <span class="n">trace</span><span class="o">.</span><span class="n">raw_data</span><span class="p">()</span></div></div>
 
-
 <span class="c1"># -----------------------------------------------------------------------------</span>
 <div class="viewcode-block" id="ClipAccessor"><a class="viewcode-back" href="../../paraview.cpstate.html#paraview.cpstate.ClipAccessor">[docs]</a><span class="k">class</span> <span class="nc">ClipAccessor</span><span class="p">(</span><span class="n">smtrace</span><span class="o">.</span><span class="n">RealProxyAccessor</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    augments traces of clip filters with information to explore the</span>
 <span class="sd">    parameter space for cinema playback (if enabled)</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">varname</span><span class="p">,</span> <span class="n">proxy</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">varname</span><span class="p">,</span> <span class="n">proxy</span><span class="p">):</span>
         <span class="n">smtrace</span><span class="o">.</span><span class="n">RealProxyAccessor</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">varname</span><span class="p">,</span> <span class="n">proxy</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">varname</span> <span class="o">=</span> <span class="n">varname</span>
 
-<div class="viewcode-block" id="ClipAccessor.trace_ctor"><a class="viewcode-back" href="../../paraview.cpstate.html#paraview.cpstate.ClipAccessor.trace_ctor">[docs]</a>    <span class="k">def</span> <span class="nf">trace_ctor</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ctor</span><span class="p">,</span> <span class="nb">filter</span><span class="p">,</span> <span class="n">ctor_args</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">skip_assignment</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+<div class="viewcode-block" id="ClipAccessor.trace_ctor"><a class="viewcode-back" href="../../paraview.cpstate.html#paraview.cpstate.ClipAccessor.trace_ctor">[docs]</a>    <span class="k">def</span> <span class="nf">trace_ctor</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ctor</span><span class="p">,</span> <span class="nb">filter</span><span class="p">,</span> <span class="n">ctor_args</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">skip_assignment</span> <span class="o">=</span> <span class="kc">False</span><span class="p">):</span>
         <span class="n">original_trace</span> <span class="o">=</span> <span class="n">smtrace</span><span class="o">.</span><span class="n">RealProxyAccessor</span><span class="o">.</span><span class="n">trace_ctor</span><span class="p">(</span> \
             <span class="bp">self</span><span class="p">,</span> <span class="n">ctor</span><span class="p">,</span> <span class="nb">filter</span><span class="p">,</span> <span class="n">ctor_args</span><span class="p">,</span> <span class="n">skip_assignment</span><span class="p">)</span>
         <span class="n">trace</span> <span class="o">=</span> <span class="n">smtrace</span><span class="o">.</span><span class="n">TraceOutput</span><span class="p">(</span><span class="n">original_trace</span><span class="p">)</span>
         <span class="n">cpstate_globals</span> <span class="o">=</span> <span class="n">get_globals</span><span class="p">()</span>
-        <span class="k">if</span> <span class="n">cpstate_globals</span><span class="o">.</span><span class="n">cinema_tracks</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">varname</span> <span class="ow">in</span> <span class="n">cpstate_globals</span><span class="o">.</span><span class="n">cinema_tracks</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">cpstate_globals</span><span class="o">.</span><span class="n">cinema_tracks</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">varname</span>  <span class="ow">in</span> <span class="n">cpstate_globals</span><span class="o">.</span><span class="n">cinema_tracks</span><span class="p">:</span>
             <span class="n">valrange</span> <span class="o">=</span> <span class="n">cpstate_globals</span><span class="o">.</span><span class="n">cinema_tracks</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">varname</span><span class="p">]</span>
             <span class="n">trace</span><span class="o">.</span><span class="n">append_separated</span><span class="p">([</span><span class="s2">&quot;# register the filter with the coprocessor&#39;s cinema generator&quot;</span><span class="p">])</span>
             <span class="n">trace</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="s2">&quot;coprocessor.RegisterCinemaTrack(&#39;clip&#39;, </span><span class="si">%s</span><span class="s2">, &#39;OffsetValues&#39;, </span><span class="si">%s</span><span class="s2">)&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">valrange</span><span class="p">)])</span>
@@ -280,18 +264,16 @@
             <span class="n">trace</span><span class="o">.</span><span class="n">append_separator</span><span class="p">()</span>
         <span class="k">return</span> <span class="n">trace</span><span class="o">.</span><span class="n">raw_data</span><span class="p">()</span></div></div>
 
-
 <span class="c1"># TODO: Make Slice, Contour &amp; Clip Accessors to share an interface to reduce code</span>
 <span class="c1"># duplication. ArrayAccessor could be used as this interface.</span>
 <span class="c1"># -----------------------------------------------------------------------------</span>
 <div class="viewcode-block" id="ArrayAccessor"><a class="viewcode-back" href="../../paraview.cpstate.html#paraview.cpstate.ArrayAccessor">[docs]</a><span class="k">class</span> <span class="nc">ArrayAccessor</span><span class="p">(</span><span class="n">smtrace</span><span class="o">.</span><span class="n">RealProxyAccessor</span><span class="p">):</span>
     <span class="sd">&#39;&#39;&#39; Augments traces of filters by defining names of arrays to be explored.&#39;&#39;&#39;</span>
-
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">varname</span><span class="p">,</span> <span class="n">proxy</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">varname</span><span class="p">,</span> <span class="n">proxy</span><span class="p">):</span>
         <span class="n">smtrace</span><span class="o">.</span><span class="n">RealProxyAccessor</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">varname</span><span class="p">,</span> <span class="n">proxy</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">varname</span> <span class="o">=</span> <span class="n">varname</span>
 
-<div class="viewcode-block" id="ArrayAccessor.trace_ctor"><a class="viewcode-back" href="../../paraview.cpstate.html#paraview.cpstate.ArrayAccessor.trace_ctor">[docs]</a>    <span class="k">def</span> <span class="nf">trace_ctor</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ctor</span><span class="p">,</span> <span class="nb">filter</span><span class="p">,</span> <span class="n">ctor_args</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">skip_assignment</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+<div class="viewcode-block" id="ArrayAccessor.trace_ctor"><a class="viewcode-back" href="../../paraview.cpstate.html#paraview.cpstate.ArrayAccessor.trace_ctor">[docs]</a>    <span class="k">def</span> <span class="nf">trace_ctor</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ctor</span><span class="p">,</span> <span class="nb">filter</span><span class="p">,</span> <span class="n">ctor_args</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">skip_assignment</span> <span class="o">=</span> <span class="kc">False</span><span class="p">):</span>
         <span class="n">original_trace</span> <span class="o">=</span> <span class="n">smtrace</span><span class="o">.</span><span class="n">RealProxyAccessor</span><span class="o">.</span><span class="n">trace_ctor</span><span class="p">(</span> \
             <span class="bp">self</span><span class="p">,</span> <span class="n">ctor</span><span class="p">,</span> <span class="nb">filter</span><span class="p">,</span> <span class="n">ctor_args</span><span class="p">,</span> <span class="n">skip_assignment</span><span class="p">)</span>
 
@@ -304,37 +286,34 @@
             <span class="n">trace</span><span class="o">.</span><span class="n">append_separator</span><span class="p">()</span>
         <span class="k">return</span> <span class="n">trace</span><span class="o">.</span><span class="n">raw_data</span><span class="p">()</span></div></div>
 
-
 <span class="c1"># -----------------------------------------------------------------------------</span>
 <div class="viewcode-block" id="ViewAccessor"><a class="viewcode-back" href="../../paraview.cpstate.html#paraview.cpstate.ViewAccessor">[docs]</a><span class="k">class</span> <span class="nc">ViewAccessor</span><span class="p">(</span><span class="n">smtrace</span><span class="o">.</span><span class="n">RealProxyAccessor</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Accessor for views. Overrides trace_ctor() to trace registering of the</span>
 <span class="sd">    view with the coprocessor. (I wonder if this registering should be moved to</span>
 <span class="sd">    the end of the state for better readability of the generated state files.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">varname</span><span class="p">,</span> <span class="n">proxy</span><span class="p">,</span> <span class="n">proxyname</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">varname</span><span class="p">,</span> <span class="n">proxy</span><span class="p">,</span> <span class="n">proxyname</span><span class="p">):</span>
         <span class="n">smtrace</span><span class="o">.</span><span class="n">RealProxyAccessor</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">varname</span><span class="p">,</span> <span class="n">proxy</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">ProxyName</span> <span class="o">=</span> <span class="n">proxyname</span>
 
 <div class="viewcode-block" id="ViewAccessor.trace_ctor"><a class="viewcode-back" href="../../paraview.cpstate.html#paraview.cpstate.ViewAccessor.trace_ctor">[docs]</a>    <span class="k">def</span> <span class="nf">trace_ctor</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ctor</span><span class="p">,</span> <span class="nb">filter</span><span class="p">,</span> <span class="n">ctor_args</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">skip_assignment</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
-        <span class="n">original_trace</span> <span class="o">=</span> <span class="n">smtrace</span><span class="o">.</span><span class="n">RealProxyAccessor</span><span class="o">.</span><span class="n">trace_ctor</span><span class="p">(</span> \
+        <span class="n">original_trace</span> <span class="o">=</span> <span class="n">smtrace</span><span class="o">.</span><span class="n">RealProxyAccessor</span><span class="o">.</span><span class="n">trace_ctor</span><span class="p">(</span>\
             <span class="bp">self</span><span class="p">,</span> <span class="n">ctor</span><span class="p">,</span> <span class="nb">filter</span><span class="p">,</span> <span class="n">ctor_args</span><span class="p">,</span> <span class="n">skip_assignment</span><span class="p">)</span>
         <span class="n">trace</span> <span class="o">=</span> <span class="n">smtrace</span><span class="o">.</span><span class="n">TraceOutput</span><span class="p">(</span><span class="n">original_trace</span><span class="p">)</span>
         <span class="n">cpstate_globals</span> <span class="o">=</span> <span class="n">get_globals</span><span class="p">()</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">ProxyName</span> <span class="ow">in</span> <span class="n">cpstate_globals</span><span class="o">.</span><span class="n">screenshot_info</span><span class="p">:</span>
-            <span class="n">trace</span><span class="o">.</span><span class="n">append_separated</span><span class="p">([</span><span class="s2">&quot;# register the view with coprocessor&quot;</span><span class="p">,</span>
-                                    <span class="s2">&quot;# and provide it with information such as the filename to use,&quot;</span><span class="p">,</span>
-                                    <span class="s2">&quot;# how frequently to write the images, etc.&quot;</span><span class="p">])</span>
-            <span class="n">params</span> <span class="o">=</span> <span class="n">cpstate_globals</span><span class="o">.</span><span class="n">screenshot_info</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">ProxyName</span><span class="p">]</span>
-            <span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">params</span><span class="p">)</span> <span class="o">==</span> <span class="mi">8</span>
-            <span class="n">trace</span><span class="o">.</span><span class="n">append</span><span class="p">([</span>
-                <span class="s2">&quot;coprocessor.RegisterView(</span><span class="si">%s</span><span class="s2">,&quot;</span> <span class="o">%</span> <span class="bp">self</span><span class="p">,</span>
-                <span class="s2">&quot;    filename=&#39;</span><span class="si">%s</span><span class="s2">&#39;, freq=</span><span class="si">%s</span><span class="s2">, fittoscreen=</span><span class="si">%s</span><span class="s2">, magnification=</span><span class="si">%s</span><span class="s2">, width=</span><span class="si">%s</span><span class="s2">, height=</span><span class="si">%s</span><span class="s2">, cinema=</span><span class="si">%s</span><span class="s2">, compression=</span><span class="si">%s</span><span class="s2">)&quot;</span> <span class="o">%</span> \
-                <span class="p">(</span><span class="n">params</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">params</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">params</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">params</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">params</span><span class="p">[</span><span class="mi">4</span><span class="p">],</span> <span class="n">params</span><span class="p">[</span><span class="mi">5</span><span class="p">],</span> <span class="n">params</span><span class="p">[</span><span class="mi">6</span><span class="p">],</span> <span class="n">params</span><span class="p">[</span><span class="mi">7</span><span class="p">]),</span>
-                <span class="s2">&quot;</span><span class="si">%s</span><span class="s2">.ViewTime = datadescription.GetTime()&quot;</span> <span class="o">%</span> <span class="bp">self</span><span class="p">])</span>
-            <span class="n">trace</span><span class="o">.</span><span class="n">append_separator</span><span class="p">()</span>
+           <span class="n">trace</span><span class="o">.</span><span class="n">append_separated</span><span class="p">([</span><span class="s2">&quot;# register the view with coprocessor&quot;</span><span class="p">,</span>
+          <span class="s2">&quot;# and provide it with information such as the filename to use,&quot;</span><span class="p">,</span>
+          <span class="s2">&quot;# how frequently to write the images, etc.&quot;</span><span class="p">])</span>
+           <span class="n">params</span> <span class="o">=</span> <span class="n">cpstate_globals</span><span class="o">.</span><span class="n">screenshot_info</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">ProxyName</span><span class="p">]</span>
+           <span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">params</span><span class="p">)</span> <span class="o">==</span> <span class="mi">8</span>
+           <span class="n">trace</span><span class="o">.</span><span class="n">append</span><span class="p">([</span>
+              <span class="s2">&quot;coprocessor.RegisterView(</span><span class="si">%s</span><span class="s2">,&quot;</span> <span class="o">%</span> <span class="bp">self</span><span class="p">,</span>
+               <span class="s2">&quot;    filename=&#39;</span><span class="si">%s</span><span class="s2">&#39;, freq=</span><span class="si">%s</span><span class="s2">, fittoscreen=</span><span class="si">%s</span><span class="s2">, magnification=</span><span class="si">%s</span><span class="s2">, width=</span><span class="si">%s</span><span class="s2">, height=</span><span class="si">%s</span><span class="s2">, cinema=</span><span class="si">%s</span><span class="s2">, compression=</span><span class="si">%s</span><span class="s2">)&quot;</span> <span class="o">%</span>\
+                  <span class="p">(</span><span class="n">params</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">params</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">params</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">params</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">params</span><span class="p">[</span><span class="mi">4</span><span class="p">],</span> <span class="n">params</span><span class="p">[</span><span class="mi">5</span><span class="p">],</span> <span class="n">params</span><span class="p">[</span><span class="mi">6</span><span class="p">],</span> <span class="n">params</span><span class="p">[</span><span class="mi">7</span><span class="p">]),</span>
+              <span class="s2">&quot;</span><span class="si">%s</span><span class="s2">.ViewTime = datadescription.GetTime()&quot;</span> <span class="o">%</span> <span class="bp">self</span><span class="p">])</span>
+           <span class="n">trace</span><span class="o">.</span><span class="n">append_separator</span><span class="p">()</span>
         <span class="k">return</span> <span class="n">trace</span><span class="o">.</span><span class="n">raw_data</span><span class="p">()</span></div></div>
-
 
 <span class="c1"># -----------------------------------------------------------------------------</span>
 <div class="viewcode-block" id="WriterFilter"><a class="viewcode-back" href="../../paraview.cpstate.html#paraview.cpstate.WriterFilter">[docs]</a><span class="k">class</span> <span class="nc">WriterFilter</span><span class="p">(</span><span class="n">smtrace</span><span class="o">.</span><span class="n">PipelineProxyFilter</span><span class="p">):</span>
@@ -345,7 +324,6 @@
             <span class="k">return</span> <span class="kc">True</span>
         <span class="k">return</span> <span class="nb">super</span><span class="p">(</span><span class="n">WriterFilter</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">should_never_trace</span><span class="p">(</span><span class="n">prop</span><span class="p">)</span></div></div>
 
-
 <span class="c1"># -----------------------------------------------------------------------------</span>
 <div class="viewcode-block" id="WriterAccessor"><a class="viewcode-back" href="../../paraview.cpstate.html#paraview.cpstate.WriterAccessor">[docs]</a><span class="k">class</span> <span class="nc">WriterAccessor</span><span class="p">(</span><span class="n">smtrace</span><span class="o">.</span><span class="n">RealProxyAccessor</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Accessor for writers. Overrides trace_ctor() to use the actual writer</span>
@@ -353,8 +331,7 @@
 <span class="sd">    write_frequencies maintained in cpstate_globals with the write frequencies</span>
 <span class="sd">    for the writer.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">varname</span><span class="p">,</span> <span class="n">proxy</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">varname</span><span class="p">,</span> <span class="n">proxy</span><span class="p">):</span>
         <span class="n">smtrace</span><span class="o">.</span><span class="n">RealProxyAccessor</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">varname</span><span class="p">,</span> <span class="n">proxy</span><span class="p">)</span>
         <span class="n">write_frequency</span> <span class="o">=</span> <span class="n">proxy</span><span class="o">.</span><span class="n">GetProperty</span><span class="p">(</span><span class="s2">&quot;WriteFrequency&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">GetElement</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
 
@@ -378,9 +355,9 @@
             <span class="c1"># writer that&#39;s not available in this build but is available</span>
             <span class="c1"># with the build used by the simulation code (probably through a plugin)</span>
             <span class="c1"># this stub must have the proper name in the coprocessing hints</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;WARNING: Could not find&quot;</span><span class="p">,</span> <span class="n">xmlname</span><span class="p">,</span> <span class="s2">&quot;writer in&quot;</span><span class="p">,</span> <span class="n">xmlgroup</span><span class="p">,</span> \
-                  <span class="s2">&quot;XML group. This is not a problem as long as the writer is available with &quot;</span> \
-                  <span class="s2">&quot;the ParaView build used by the simulation code.&quot;</span><span class="p">)</span>
+            <span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;WARNING: Could not find&quot;</span><span class="p">,</span> <span class="n">xmlname</span><span class="p">,</span> <span class="s2">&quot;writer in&quot;</span><span class="p">,</span> <span class="n">xmlgroup</span><span class="p">,</span> \
+                   <span class="s2">&quot;XML group. This is not a problem as long as the writer is available with &quot;</span> \
+                   <span class="s2">&quot;the ParaView build used by the simulation code.&quot;</span><span class="p">)</span>
             <span class="n">ctor</span> <span class="o">=</span> <span class="n">servermanager</span><span class="o">.</span><span class="n">_make_name_valid</span><span class="p">(</span><span class="n">xmlname</span><span class="p">)</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="n">ctor</span> <span class="o">=</span> <span class="n">servermanager</span><span class="o">.</span><span class="n">_make_name_valid</span><span class="p">(</span><span class="n">prototype</span><span class="o">.</span><span class="n">GetXMLLabel</span><span class="p">())</span>
@@ -397,19 +374,18 @@
         <span class="n">filename</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_object</span><span class="p">()</span><span class="o">.</span><span class="n">GetProperty</span><span class="p">(</span><span class="s2">&quot;FileName&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">GetElement</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
         <span class="n">padding_amount</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_object</span><span class="p">()</span><span class="o">.</span><span class="n">GetProperty</span><span class="p">(</span><span class="s2">&quot;PaddingAmount&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">GetElement</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
         <span class="n">ctor</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_proxy_label</span><span class="p">(</span><span class="n">xmlgroup</span><span class="p">,</span> <span class="n">xmlname</span><span class="p">)</span>
-        <span class="n">original_trace</span> <span class="o">=</span> <span class="n">smtrace</span><span class="o">.</span><span class="n">RealProxyAccessor</span><span class="o">.</span><span class="n">trace_ctor</span><span class="p">(</span> \
+        <span class="n">original_trace</span> <span class="o">=</span> <span class="n">smtrace</span><span class="o">.</span><span class="n">RealProxyAccessor</span><span class="o">.</span><span class="n">trace_ctor</span><span class="p">(</span>\
             <span class="bp">self</span><span class="p">,</span> <span class="n">ctor</span><span class="p">,</span> <span class="n">WriterFilter</span><span class="p">(),</span> <span class="n">ctor_args</span><span class="p">,</span> <span class="n">skip_assignment</span><span class="p">)</span>
 
         <span class="n">trace</span> <span class="o">=</span> <span class="n">smtrace</span><span class="o">.</span><span class="n">TraceOutput</span><span class="p">(</span><span class="n">original_trace</span><span class="p">)</span>
         <span class="n">trace</span><span class="o">.</span><span class="n">append_separated</span><span class="p">([</span><span class="s2">&quot;# register the writer with coprocessor&quot;</span><span class="p">,</span>
-                                <span class="s2">&quot;# and provide it with information such as the filename to use,&quot;</span><span class="p">,</span>
-                                <span class="s2">&quot;# how frequently to write the data, etc.&quot;</span><span class="p">])</span>
+          <span class="s2">&quot;# and provide it with information such as the filename to use,&quot;</span><span class="p">,</span>
+          <span class="s2">&quot;# how frequently to write the data, etc.&quot;</span><span class="p">])</span>
         <span class="n">trace</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;coprocessor.RegisterWriter(</span><span class="si">%s</span><span class="s2">, filename=&#39;</span><span class="si">%s</span><span class="s2">&#39;, freq=</span><span class="si">%s</span><span class="s2">, paddingamount=</span><span class="si">%s</span><span class="s2">)&quot;</span> <span class="o">%</span> \
                      <span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">filename</span><span class="p">,</span> <span class="n">write_frequency</span><span class="p">,</span> <span class="n">padding_amount</span><span class="p">))</span>
 
         <span class="n">trace</span><span class="o">.</span><span class="n">append_separator</span><span class="p">()</span>
         <span class="k">return</span> <span class="n">trace</span><span class="o">.</span><span class="n">raw_data</span><span class="p">()</span></div></div>
-
 
 <span class="c1"># -----------------------------------------------------------------------------</span>
 <div class="viewcode-block" id="cp_hook"><a class="viewcode-back" href="../../paraview.cpstate.html#paraview.cpstate.cp_hook">[docs]</a><span class="k">def</span> <span class="nf">cp_hook</span><span class="p">(</span><span class="n">varname</span><span class="p">,</span> <span class="n">proxy</span><span class="p">):</span>
@@ -423,10 +399,10 @@
         <span class="k">elif</span> <span class="n">proxy</span><span class="o">.</span><span class="n">GetHints</span><span class="p">()</span> <span class="ow">and</span> <span class="n">proxy</span><span class="o">.</span><span class="n">GetHints</span><span class="p">()</span><span class="o">.</span><span class="n">FindNestedElementByName</span><span class="p">(</span><span class="s2">&quot;WriterProxy&quot;</span><span class="p">):</span>
             <span class="k">return</span> <span class="n">WriterAccessor</span><span class="p">(</span><span class="n">varname</span><span class="p">,</span> <span class="n">proxy</span><span class="p">)</span>
         <span class="k">elif</span> <span class="p">(</span><span class="s2">&quot;servermanager.Slice&quot;</span> <span class="ow">in</span> <span class="n">proxy</span><span class="o">.</span><span class="vm">__class__</span><span class="p">()</span><span class="o">.</span><span class="fm">__str__</span><span class="p">()</span> <span class="ow">and</span>
-              <span class="s2">&quot;Plane object&quot;</span> <span class="ow">in</span> <span class="n">proxy</span><span class="o">.</span><span class="fm">__getattribute__</span><span class="p">(</span><span class="s2">&quot;SliceType&quot;</span><span class="p">)</span><span class="o">.</span><span class="fm">__str__</span><span class="p">()):</span>
+            <span class="s2">&quot;Plane object&quot;</span> <span class="ow">in</span> <span class="n">proxy</span><span class="o">.</span><span class="fm">__getattribute__</span><span class="p">(</span><span class="s2">&quot;SliceType&quot;</span><span class="p">)</span><span class="o">.</span><span class="fm">__str__</span><span class="p">()):</span>
             <span class="k">return</span> <span class="n">SliceAccessor</span><span class="p">(</span><span class="n">varname</span><span class="p">,</span> <span class="n">proxy</span><span class="p">)</span>
         <span class="k">elif</span> <span class="p">(</span><span class="s2">&quot;servermanager.Clip&quot;</span> <span class="ow">in</span> <span class="n">proxy</span><span class="o">.</span><span class="vm">__class__</span><span class="p">()</span><span class="o">.</span><span class="fm">__str__</span><span class="p">()</span> <span class="ow">and</span>
-              <span class="s2">&quot;Plane object&quot;</span> <span class="ow">in</span> <span class="n">proxy</span><span class="o">.</span><span class="fm">__getattribute__</span><span class="p">(</span><span class="s2">&quot;ClipType&quot;</span><span class="p">)</span><span class="o">.</span><span class="fm">__str__</span><span class="p">()):</span>
+            <span class="s2">&quot;Plane object&quot;</span> <span class="ow">in</span> <span class="n">proxy</span><span class="o">.</span><span class="fm">__getattribute__</span><span class="p">(</span><span class="s2">&quot;ClipType&quot;</span><span class="p">)</span><span class="o">.</span><span class="fm">__str__</span><span class="p">()):</span>
             <span class="k">return</span> <span class="n">ClipAccessor</span><span class="p">(</span><span class="n">varname</span><span class="p">,</span> <span class="n">proxy</span><span class="p">)</span>
         <span class="k">elif</span> <span class="s2">&quot;servermanager.Contour&quot;</span> <span class="ow">in</span> <span class="n">proxy</span><span class="o">.</span><span class="vm">__class__</span><span class="p">()</span><span class="o">.</span><span class="fm">__str__</span><span class="p">():</span>
             <span class="k">return</span> <span class="n">ContourAccessor</span><span class="p">(</span><span class="n">varname</span><span class="p">,</span> <span class="n">proxy</span><span class="p">)</span>
@@ -434,26 +410,23 @@
             <span class="k">return</span> <span class="n">ArrayAccessor</span><span class="p">(</span><span class="n">varname</span><span class="p">,</span> <span class="n">proxy</span><span class="p">)</span>
     <span class="k">raise</span> <span class="ne">NotImplementedError</span></div>
 
-
 <span class="c1"># -----------------------------------------------------------------------------</span>
 <div class="viewcode-block" id="cpstate_filter_proxies_to_serialize"><a class="viewcode-back" href="../../paraview.cpstate.html#paraview.cpstate.cpstate_filter_proxies_to_serialize">[docs]</a><span class="k">class</span> <span class="nc">cpstate_filter_proxies_to_serialize</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;filter used to skip views and representations a when export_rendering is</span>
 <span class="sd">    disabled.&quot;&quot;&quot;</span>
-
-    <span class="k">def</span> <span class="fm">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">proxy</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">proxy</span><span class="p">):</span>
         <span class="n">cpstate_globals</span> <span class="o">=</span> <span class="n">get_globals</span><span class="p">()</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="n">smstate</span><span class="o">.</span><span class="n">visible_representations</span><span class="p">()(</span><span class="n">proxy</span><span class="p">):</span> <span class="k">return</span> <span class="kc">False</span>
         <span class="k">if</span> <span class="p">(</span><span class="ow">not</span> <span class="n">cpstate_globals</span><span class="o">.</span><span class="n">export_rendering</span><span class="p">)</span> <span class="ow">and</span> \
-                <span class="p">(</span><span class="n">proxy</span><span class="o">.</span><span class="n">GetXMLGroup</span><span class="p">()</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;views&quot;</span><span class="p">,</span> <span class="s2">&quot;representations&quot;</span><span class="p">]):</span> <span class="k">return</span> <span class="kc">False</span>
+            <span class="p">(</span><span class="n">proxy</span><span class="o">.</span><span class="n">GetXMLGroup</span><span class="p">()</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;views&quot;</span><span class="p">,</span> <span class="s2">&quot;representations&quot;</span><span class="p">]):</span> <span class="k">return</span> <span class="kc">False</span>
         <span class="k">return</span> <span class="kc">True</span></div>
-
 
 <span class="c1"># -----------------------------------------------------------------------------</span>
 <div class="viewcode-block" id="NewStyleWriters"><a class="viewcode-back" href="../../paraview.cpstate.html#paraview.cpstate.NewStyleWriters">[docs]</a><span class="k">class</span> <span class="nc">NewStyleWriters</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Helper to dump configured writer proxies, which are not in the pipeline,</span>
 <span class="sd">    into the script.&quot;&quot;&quot;</span>
 
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">make_temporal_script</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">make_temporal_script</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">__cnt</span> <span class="o">=</span> <span class="mi">1</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">__make_temporal_script</span> <span class="o">=</span> <span class="n">make_temporal_script</span>
 
@@ -463,7 +436,7 @@
 <span class="sd">        This may not be necessary because we register everything we make immediately</span>
 <span class="sd">        so var names can probably conflict.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="n">ret</span> <span class="o">=</span> <span class="n">smtrace</span><span class="o">.</span><span class="n">Trace</span><span class="o">.</span><span class="n">get_varname</span><span class="p">(</span><span class="n">name</span><span class="p">)</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">__cnt</span><span class="p">)</span>
+        <span class="n">ret</span> <span class="o">=</span> <span class="n">smtrace</span><span class="o">.</span><span class="n">Trace</span><span class="o">.</span><span class="n">get_varname</span><span class="p">(</span><span class="n">name</span><span class="p">)</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">__cnt</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">__cnt</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__cnt</span> <span class="o">+</span> <span class="mi">1</span>
         <span class="k">return</span> <span class="n">ret</span>
 
@@ -476,7 +449,7 @@
         <span class="n">res</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;# Now any catalyst writers&quot;</span><span class="p">)</span>
         <span class="n">pxm</span> <span class="o">=</span> <span class="n">servermanager</span><span class="o">.</span><span class="n">ProxyManager</span><span class="p">()</span>
         <span class="n">globalepxy</span> <span class="o">=</span> <span class="n">pxm</span><span class="o">.</span><span class="n">GetProxy</span><span class="p">(</span><span class="s2">&quot;export_global&quot;</span><span class="p">,</span> <span class="s2">&quot;catalyst&quot;</span><span class="p">)</span>
-        <span class="n">exports</span> <span class="o">=</span> <span class="n">pxm</span><span class="o">.</span><span class="n">GetProxiesInGroup</span><span class="p">(</span><span class="s2">&quot;export_writers&quot;</span><span class="p">)</span>  <span class="c1"># todo should use ExportDepot</span>
+        <span class="n">exports</span> <span class="o">=</span> <span class="n">pxm</span><span class="o">.</span><span class="n">GetProxiesInGroup</span><span class="p">(</span><span class="s2">&quot;export_writers&quot;</span><span class="p">)</span> <span class="c1">#todo should use ExportDepot</span>
         <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">exports</span><span class="p">:</span>
             <span class="n">xs</span> <span class="o">=</span> <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
             <span class="n">pxy</span> <span class="o">=</span> <span class="n">pxm</span><span class="o">.</span><span class="n">GetProxy</span><span class="p">(</span><span class="s1">&#39;export_writers&#39;</span><span class="p">,</span> <span class="n">xs</span><span class="p">)</span>
@@ -542,7 +515,7 @@
             <span class="c1"># point, cell and field arrays should already be set</span>
             <span class="n">notNeededProperties</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;CatalystFilePattern&#39;</span><span class="p">,</span> <span class="s1">&#39;CellDataArrays&#39;</span><span class="p">,</span> <span class="s1">&#39;ChooseArraysToWrite&#39;</span><span class="p">,</span> <span class="s1">&#39;EdgeDataArrays&#39;</span><span class="p">,</span>
                                    <span class="s1">&#39;FieldDataArrays&#39;</span><span class="p">,</span> <span class="s1">&#39;FileName&#39;</span><span class="p">,</span> <span class="s1">&#39;FileNameSuffix&#39;</span><span class="p">,</span> <span class="s1">&#39;Filenamesuffix&#39;</span><span class="p">,</span> <span class="s1">&#39;Input&#39;</span><span class="p">,</span>
-                                   <span class="s1">&#39;PointDataArrays&#39;</span><span class="p">,</span> <span class="s1">&#39;WriteFrequency&#39;</span><span class="p">,</span> <span class="p">]</span>
+                                   <span class="s1">&#39;PointDataArrays&#39;</span><span class="p">,</span> <span class="s1">&#39;WriteFrequency&#39;</span><span class="p">,]</span>
             <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">pxy</span><span class="o">.</span><span class="n">ListProperties</span><span class="p">():</span>
                 <span class="k">if</span> <span class="n">p</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">notNeededProperties</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">pxy</span><span class="o">.</span><span class="n">GetProperty</span><span class="p">(</span><span class="n">p</span><span class="p">)):</span>
                     <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">pxy</span><span class="o">.</span><span class="n">GetProperty</span><span class="p">(</span><span class="n">p</span><span class="p">)</span><span class="o">.</span><span class="n">GetData</span><span class="p">(),</span> <span class="n">servermanager</span><span class="o">.</span><span class="n">Proxy</span><span class="p">):</span>
@@ -555,7 +528,7 @@
                         <span class="n">value</span> <span class="o">=</span> <span class="n">pxy</span><span class="o">.</span><span class="n">GetProperty</span><span class="p">(</span><span class="n">p</span><span class="p">)</span><span class="o">.</span><span class="n">GetElement</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
                         <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">numbers</span><span class="o">.</span><span class="n">Number</span><span class="p">):</span>
                             <span class="n">f</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">%s</span><span class="s2">.</span><span class="si">%s</span><span class="s2"> = </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">varname</span><span class="p">,</span> <span class="n">p</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
-                        <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+                        <span class="k">elif</span>  <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
                             <span class="n">f</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">%s</span><span class="s2">.</span><span class="si">%s</span><span class="s2"> = &#39;</span><span class="si">%s</span><span class="s2">&#39;&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">varname</span><span class="p">,</span> <span class="n">p</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
                         <span class="k">else</span><span class="p">:</span>
                             <span class="n">f</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">%s</span><span class="s2">.</span><span class="si">%s</span><span class="s2"> = </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">varname</span><span class="p">,</span> <span class="n">p</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">value</span><span class="p">))</span>
@@ -570,9 +543,8 @@
             <span class="n">res</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
             <span class="n">res</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
         <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">res</span><span class="p">)</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
-            <span class="k">return</span> <span class="p">[]</span>  <span class="c1"># don&#39;t clutter output if there are no writers</span>
+            <span class="k">return</span> <span class="p">[]</span> <span class="c1"># don&#39;t clutter output if there are no writers</span>
         <span class="k">return</span> <span class="n">res</span></div></div>
-
 
 <span class="c1"># -----------------------------------------------------------------------------</span>
 <div class="viewcode-block" id="DumpPipeline"><a class="viewcode-back" href="../../paraview.cpstate.html#paraview.cpstate.DumpPipeline">[docs]</a><span class="k">def</span> <span class="nf">DumpPipeline</span><span class="p">(</span><span class="n">export_rendering</span><span class="p">,</span> <span class="n">simulation_input_map</span><span class="p">,</span> <span class="n">screenshot_info</span><span class="p">,</span>
@@ -693,7 +665,7 @@
     <span class="k">for</span> <span class="n">original_line</span> <span class="ow">in</span> <span class="n">state</span><span class="p">:</span>
         <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">original_line</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">):</span>
             <span class="k">if</span> <span class="n">line</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;import *&quot;</span><span class="p">)</span> <span class="o">!=</span> <span class="o">-</span><span class="mi">1</span> <span class="ow">or</span> \
-                    <span class="n">line</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;#### import the simple&quot;</span><span class="p">)</span> <span class="o">!=</span> <span class="o">-</span><span class="mi">1</span><span class="p">:</span>
+                <span class="n">line</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;#### import the simple&quot;</span><span class="p">)</span> <span class="o">!=</span> <span class="o">-</span><span class="mi">1</span><span class="p">:</span>
                 <span class="k">continue</span>
             <span class="k">if</span> <span class="n">line</span><span class="p">:</span>
                 <span class="n">pipelineClassDef</span> <span class="o">+=</span> <span class="s2">&quot;      &quot;</span> <span class="o">+</span> <span class="n">line</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span>
@@ -730,13 +702,12 @@
     <span class="n">reset_globals</span><span class="p">()</span>
     <span class="k">return</span> <span class="n">pipelineClassDef</span></div>
 
-
-<span class="c1"># ------------------------------------------------------------------------------</span>
+<span class="c1">#------------------------------------------------------------------------------</span>
 <div class="viewcode-block" id="run"><a class="viewcode-back" href="../../paraview.cpstate.html#paraview.cpstate.run">[docs]</a><span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Create a dummy pipeline and save the coprocessing state in the filename</span>
 <span class="sd">        specified, if any, else dumps it out on stdout.&quot;&quot;&quot;</span>
 
-    <span class="kn">from</span> <span class="nn">paraview</span> <span class="kn">import</span> <span class="n">simple</span><span class="p">,</span> <span class="n">servermanager</span>
+    <span class="kn">from</span> <span class="nn">paraview</span> <span class="k">import</span> <span class="n">simple</span><span class="p">,</span> <span class="n">servermanager</span>
     <span class="n">wavelet</span> <span class="o">=</span> <span class="n">simple</span><span class="o">.</span><span class="n">Wavelet</span><span class="p">(</span><span class="n">registrationName</span><span class="o">=</span><span class="s2">&quot;Wavelet1&quot;</span><span class="p">)</span>
     <span class="n">contour</span> <span class="o">=</span> <span class="n">simple</span><span class="o">.</span><span class="n">Contour</span><span class="p">()</span>
     <span class="n">display</span> <span class="o">=</span> <span class="n">simple</span><span class="o">.</span><span class="n">Show</span><span class="p">()</span>
@@ -746,19 +717,18 @@
 
     <span class="n">viewname</span> <span class="o">=</span> <span class="n">servermanager</span><span class="o">.</span><span class="n">ProxyManager</span><span class="p">()</span><span class="o">.</span><span class="n">GetProxyName</span><span class="p">(</span><span class="s2">&quot;views&quot;</span><span class="p">,</span> <span class="n">view</span><span class="o">.</span><span class="n">SMProxy</span><span class="p">)</span>
     <span class="n">script</span> <span class="o">=</span> <span class="n">DumpPipeline</span><span class="p">(</span><span class="n">export_rendering</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-                          <span class="n">simulation_input_map</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;Wavelet1&quot;</span><span class="p">:</span> <span class="s2">&quot;input&quot;</span><span class="p">},</span>
-                          <span class="n">screenshot_info</span><span class="o">=</span><span class="p">{</span><span class="n">viewname</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;image.png&#39;</span><span class="p">,</span> <span class="s1">&#39;1&#39;</span><span class="p">,</span> <span class="s1">&#39;1&#39;</span><span class="p">,</span> <span class="s1">&#39;2&#39;</span><span class="p">,</span> <span class="s1">&#39;400&#39;</span><span class="p">,</span> <span class="s1">&#39;400&#39;</span><span class="p">]},</span>
-                          <span class="n">cinema_tracks</span><span class="o">=</span><span class="p">{},</span>
-                          <span class="n">cinema_arrays</span><span class="o">=</span><span class="p">{})</span>
+        <span class="n">simulation_input_map</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;Wavelet1&quot;</span> <span class="p">:</span> <span class="s2">&quot;input&quot;</span><span class="p">},</span>
+        <span class="n">screenshot_info</span><span class="o">=</span><span class="p">{</span><span class="n">viewname</span> <span class="p">:</span> <span class="p">[</span> <span class="s1">&#39;image.png&#39;</span><span class="p">,</span> <span class="s1">&#39;1&#39;</span><span class="p">,</span> <span class="s1">&#39;1&#39;</span><span class="p">,</span> <span class="s1">&#39;2&#39;</span><span class="p">,</span> <span class="s1">&#39;400&#39;</span><span class="p">,</span> <span class="s1">&#39;400&#39;</span><span class="p">]},</span>
+        <span class="n">cinema_tracks</span> <span class="o">=</span> <span class="p">{},</span>
+        <span class="n">cinema_arrays</span> <span class="o">=</span> <span class="p">{})</span>
     <span class="k">if</span> <span class="n">filename</span><span class="p">:</span>
         <span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span>
         <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">script</span><span class="p">)</span>
         <span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
     <span class="k">else</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;# *** Generated Script Begin ***&quot;</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="n">script</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;# *** Generated Script End ***&quot;</span><span class="p">)</span></div>
-
+        <span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;# *** Generated Script Begin ***&quot;</span><span class="p">)</span>
+        <span class="nb">print</span> <span class="p">(</span><span class="n">script</span><span class="p">)</span>
+        <span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;# *** Generated Script End ***&quot;</span><span class="p">)</span></div>
 
 <span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
     <span class="n">run</span><span class="p">()</span>

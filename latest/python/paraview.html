@@ -1,19 +1,18 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html4" lang="en" >
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>paraview Package &mdash; ParaView/Python 5.12.0-776-gfc5a2391cc documentation</title>
-      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <title>paraview Package &mdash; ParaView/Python 5.12.0 documentation</title><link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" /><link rel="shortcut icon" href="_static/pvIcon.ico"/>
   <!--[if lt IE 9]>
     <script src="_static/js/html5shiv.min.js"></script>
   <![endif]-->
-  
-        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-        <script src="_static/jquery.js"></script>
-        <script src="_static/underscore.js"></script>
-        <script src="_static/doctools.js"></script>
+  <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -31,7 +30,7 @@
             <li> <a href="index.html">
               <img src="_static/paraview-logo-small.png"
               alt="ParaView/Python"></img></a> </li>
-            <li class="version"> version 5.12.0-776-gfc5a2391cc</li>
+            <li class="version"> version 5.12.0</li>
           </ul>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
@@ -44,7 +43,7 @@
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="quick-start.html">Quick-Start :  A Tutorial</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">The ParaView Python Package</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#id1"><code class="xref py py-mod docutils literal notranslate"><span class="pre">paraview</span></code> Package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id1"><code class="docutils literal notranslate"><span class="pre">paraview</span></code> Package</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#modules">Modules</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="paraview._backwardscompatibilityhelper.html">_backwardscompatibilityhelper Module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="paraview._colorMaps.html">_colorMaps Module</a></li>
@@ -127,7 +126,7 @@
 <h2><code class="xref py py-mod docutils literal notranslate"><span class="pre">paraview</span></code> Package<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
 <span class="target" id="module-paraview.__init__"></span><p>The paraview package provides modules used to script ParaView. Generally, users
 should import the modules of interest directly e.g.:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">paraview.simple</span> <span class="kn">import</span> <span class="o">*</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">paraview.simple</span> <span class="k">import</span> <span class="o">*</span>
 </pre></div>
 </div>
 <p>However, one may want to import paraview package before importing any of the
@@ -139,76 +138,76 @@ ParaView modules to force backwards compatibility to an older version:</p>
 <span class="n">paraview</span><span class="o">.</span><span class="n">compatibility</span><span class="o">.</span><span class="n">minor</span> <span class="o">=</span> <span class="mi">0</span>
 
 <span class="c1"># Now, import the modules of interest.</span>
-<span class="kn">from</span> <span class="nn">paraview.simple</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">paraview.simple</span> <span class="k">import</span> <span class="o">*</span>
 </pre></div>
 </div>
-<dl class="py exception">
-<dt class="sig sig-object py" id="paraview.__init__.NotSupportedException">
-<em class="property"><span class="pre">exception</span> </em><span class="sig-prename descclassname"><span class="pre">paraview.__init__.</span></span><span class="sig-name descname"><span class="pre">NotSupportedException</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">msg</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/__init__.html#NotSupportedException"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#paraview.__init__.NotSupportedException" title="Permalink to this definition">¶</a></dt>
+<dl class="exception">
+<dt id="paraview.__init__.NotSupportedException">
+<em class="property">exception </em><code class="descclassname">paraview.__init__.</code><code class="descname">NotSupportedException</code><span class="sig-paren">(</span><em>msg</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/__init__.html#NotSupportedException"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.__init__.NotSupportedException" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></p>
 <p>Exception that is fired when obsolete API is used in a script.</p>
 </dd></dl>
 
-<dl class="py class">
-<dt class="sig sig-object py" id="paraview.__init__.compatibility">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">paraview.__init__.</span></span><span class="sig-name descname"><span class="pre">compatibility</span></span><a class="reference internal" href="_modules/paraview/__init__.html#compatibility"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#paraview.__init__.compatibility" title="Permalink to this definition">¶</a></dt>
+<dl class="class">
+<dt id="paraview.__init__.compatibility">
+<em class="property">class </em><code class="descclassname">paraview.__init__.</code><code class="descname">compatibility</code><a class="reference internal" href="_modules/paraview/__init__.html#compatibility"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.__init__.compatibility" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Class used to check version number and compatibility. Users should only
 set the compatibility explicitly to force backwards compatibility to and
 older versions.</p>
-<dl class="py method">
-<dt class="sig sig-object py" id="paraview.__init__.compatibility.GetVersion">
-<em class="property"><span class="pre">classmethod</span> </em><span class="sig-name descname"><span class="pre">GetVersion</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/__init__.html#compatibility.GetVersion"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#paraview.__init__.compatibility.GetVersion" title="Permalink to this definition">¶</a></dt>
+<dl class="classmethod">
+<dt id="paraview.__init__.compatibility.GetVersion">
+<em class="property">classmethod </em><code class="descname">GetVersion</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/__init__.html#compatibility.GetVersion"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.__init__.compatibility.GetVersion" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="py attribute">
-<dt class="sig sig-object py" id="paraview.__init__.compatibility.major">
-<span class="sig-name descname"><span class="pre">major</span></span><em class="property"> <span class="pre">=</span> <span class="pre">None</span></em><a class="headerlink" href="#paraview.__init__.compatibility.major" title="Permalink to this definition">¶</a></dt>
+<dl class="attribute">
+<dt id="paraview.__init__.compatibility.major">
+<code class="descname">major</code><em class="property"> = None</em><a class="headerlink" href="#paraview.__init__.compatibility.major" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="py attribute">
-<dt class="sig sig-object py" id="paraview.__init__.compatibility.minor">
-<span class="sig-name descname"><span class="pre">minor</span></span><em class="property"> <span class="pre">=</span> <span class="pre">None</span></em><a class="headerlink" href="#paraview.__init__.compatibility.minor" title="Permalink to this definition">¶</a></dt>
+<dl class="attribute">
+<dt id="paraview.__init__.compatibility.minor">
+<code class="descname">minor</code><em class="property"> = None</em><a class="headerlink" href="#paraview.__init__.compatibility.minor" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
-<dl class="py function">
-<dt class="sig sig-object py" id="paraview.__init__.make_name_valid">
-<span class="sig-prename descclassname"><span class="pre">paraview.__init__.</span></span><span class="sig-name descname"><span class="pre">make_name_valid</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/__init__.html#make_name_valid"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#paraview.__init__.make_name_valid" title="Permalink to this definition">¶</a></dt>
+<dl class="function">
+<dt id="paraview.__init__.make_name_valid">
+<code class="descclassname">paraview.__init__.</code><code class="descname">make_name_valid</code><span class="sig-paren">(</span><em>name</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/__init__.html#make_name_valid"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.__init__.make_name_valid" title="Permalink to this definition">¶</a></dt>
 <dd><p>Make a string into a valid Python variable name.</p>
 </dd></dl>
 
-<dl class="py class">
-<dt class="sig sig-object py" id="paraview.__init__.options">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">paraview.__init__.</span></span><span class="sig-name descname"><span class="pre">options</span></span><a class="reference internal" href="_modules/paraview/__init__.html#options"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#paraview.__init__.options" title="Permalink to this definition">¶</a></dt>
+<dl class="class">
+<dt id="paraview.__init__.options">
+<em class="property">class </em><code class="descclassname">paraview.__init__.</code><code class="descname">options</code><a class="reference internal" href="_modules/paraview/__init__.html#options"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.__init__.options" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Values set here have any effect, only when importing the paraview module
 in python interpretor directly i.e. not through pvpython or pvbatch. In
 that case, one should use command line arguments for the two
 executables</p>
-<dl class="py attribute">
-<dt class="sig sig-object py" id="paraview.__init__.options.batch">
-<span class="sig-name descname"><span class="pre">batch</span></span><em class="property"> <span class="pre">=</span> <span class="pre">False</span></em><a class="headerlink" href="#paraview.__init__.options.batch" title="Permalink to this definition">¶</a></dt>
+<dl class="attribute">
+<dt id="paraview.__init__.options.batch">
+<code class="descname">batch</code><em class="property"> = False</em><a class="headerlink" href="#paraview.__init__.options.batch" title="Permalink to this definition">¶</a></dt>
 <dd><p>When True, acts like pvbatch –symmetric. Requires that batch is set to
 True to have any effect.</p>
 </dd></dl>
 
-<dl class="py attribute">
-<dt class="sig sig-object py" id="paraview.__init__.options.print_debug_messages">
-<span class="sig-name descname"><span class="pre">print_debug_messages</span></span><em class="property"> <span class="pre">=</span> <span class="pre">False</span></em><a class="headerlink" href="#paraview.__init__.options.print_debug_messages" title="Permalink to this definition">¶</a></dt>
+<dl class="attribute">
+<dt id="paraview.__init__.options.print_debug_messages">
+<code class="descname">print_debug_messages</code><em class="property"> = False</em><a class="headerlink" href="#paraview.__init__.options.print_debug_messages" title="Permalink to this definition">¶</a></dt>
 <dd><p>When True, This mean the current process is a satellite and should not try to
 connect or do anything else.</p>
 </dd></dl>
 
-<dl class="py attribute">
-<dt class="sig sig-object py" id="paraview.__init__.options.satelite">
-<span class="sig-name descname"><span class="pre">satelite</span></span><em class="property"> <span class="pre">=</span> <span class="pre">False</span></em><a class="headerlink" href="#paraview.__init__.options.satelite" title="Permalink to this definition">¶</a></dt>
+<dl class="attribute">
+<dt id="paraview.__init__.options.satelite">
+<code class="descname">satelite</code><em class="property"> = False</em><a class="headerlink" href="#paraview.__init__.options.satelite" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="py attribute">
-<dt class="sig sig-object py" id="paraview.__init__.options.symmetric">
-<span class="sig-name descname"><span class="pre">symmetric</span></span><em class="property"> <span class="pre">=</span> <span class="pre">False</span></em><a class="headerlink" href="#paraview.__init__.options.symmetric" title="Permalink to this definition">¶</a></dt>
+<dl class="attribute">
+<dt id="paraview.__init__.options.symmetric">
+<code class="descname">symmetric</code><em class="property"> = False</em><a class="headerlink" href="#paraview.__init__.options.symmetric" title="Permalink to this definition">¶</a></dt>
 <dd><p>When True, <cite>paraview.print_debug_info()</cite> will result in printing the
 debug messages to stdout. Default is False, hence all debug messages will be
 suppressed.</p>
@@ -255,7 +254,7 @@ suppressed.</p>
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="paraview.algorithms.html">algorithms Package</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="paraview.algorithms.html#id1"><code class="xref py py-mod docutils literal notranslate"><span class="pre">algorithms</span></code> Package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.algorithms.html#id1"><code class="docutils literal notranslate"><span class="pre">algorithms</span></code> Package</a></li>
 <li class="toctree-l2"><a class="reference internal" href="paraview.algorithms.html#modules">Modules</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="paraview.algorithms.openpmd.html">algorithms.openpmd Module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="paraview.algorithms.savgreader.html">algorithms.savgreader Module</a></li>
@@ -264,7 +263,7 @@ suppressed.</p>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="paraview.apps.html">apps Package</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="paraview.apps.html#id1"><code class="xref py py-mod docutils literal notranslate"><span class="pre">apps</span></code> Package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.apps.html#id1"><code class="docutils literal notranslate"><span class="pre">apps</span></code> Package</a></li>
 <li class="toctree-l2"><a class="reference internal" href="paraview.apps.html#modules">Modules</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="paraview.apps.__main__.html">apps.__main__ Module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="paraview.apps._internals.html">apps._internals Module</a></li>
@@ -279,7 +278,7 @@ suppressed.</p>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="paraview.benchmark.html">benchmark Package</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="paraview.benchmark.html#id1"><code class="xref py py-mod docutils literal notranslate"><span class="pre">benchmark</span></code> Package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.benchmark.html#id1"><code class="docutils literal notranslate"><span class="pre">benchmark</span></code> Package</a></li>
 <li class="toctree-l2"><a class="reference internal" href="paraview.benchmark.html#modules">Modules</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="paraview.benchmark.basic.html">benchmark.basic Module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="paraview.benchmark.logbase.html">benchmark.logbase Module</a></li>
@@ -292,7 +291,7 @@ suppressed.</p>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="paraview.catalyst.html">catalyst Package</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="paraview.catalyst.html#id1"><code class="xref py py-mod docutils literal notranslate"><span class="pre">catalyst</span></code> Package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.catalyst.html#id1"><code class="docutils literal notranslate"><span class="pre">catalyst</span></code> Package</a></li>
 <li class="toctree-l2"><a class="reference internal" href="paraview.catalyst.html#modules">Modules</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="paraview.catalyst.bridge.html">catalyst.bridge Module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="paraview.catalyst.detail.html">catalyst.detail Module</a></li>
@@ -314,7 +313,7 @@ suppressed.</p>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="paraview.detail.html">detail Package</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="paraview.detail.html#id1"><code class="xref py py-mod docutils literal notranslate"><span class="pre">detail</span></code> Package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.detail.html#id1"><code class="docutils literal notranslate"><span class="pre">detail</span></code> Package</a></li>
 <li class="toctree-l2"><a class="reference internal" href="paraview.detail.html#modules">Modules</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="paraview.detail.annotation.html">detail.annotation Module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="paraview.detail.calculator.html">detail.calculator Module</a></li>
@@ -330,7 +329,7 @@ suppressed.</p>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="paraview.incubator.html">incubator Package</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="paraview.incubator.html#id1"><code class="xref py py-mod docutils literal notranslate"><span class="pre">incubator</span></code> Package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.incubator.html#id1"><code class="docutils literal notranslate"><span class="pre">incubator</span></code> Package</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="paraview.tests.html">tests Package</a><ul>
@@ -338,7 +337,6 @@ suppressed.</p>
 <li class="toctree-l3"><a class="reference internal" href="paraview.tests.__main__.html">tests.__main__ Module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="paraview.tests.basic_rendering.html">tests.basic_rendering Module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="paraview.tests.internals.html">tests.internals Module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="paraview.tests.proxy_deprecation.html">tests.proxy_deprecation Module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="paraview.tests.validate_extracts.html">tests.validate_extracts Module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="paraview.tests.verify_eyedomelighting.html">tests.verify_eyedomelighting Module</a></li>
 </ul>
@@ -382,7 +380,7 @@ suppressed.</p>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="paraview.util.html">util Package</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="paraview.util.html#id1"><code class="xref py py-mod docutils literal notranslate"><span class="pre">util</span></code> Package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.util.html#id1"><code class="docutils literal notranslate"><span class="pre">util</span></code> Package</a></li>
 <li class="toctree-l2"><a class="reference internal" href="paraview.util.html#modules">Modules</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="paraview.util.vtkAlgorithm.html">util.vtkAlgorithm Module</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="paraview.util.vtkAlgorithm.html#introduction">Introduction</a></li>
