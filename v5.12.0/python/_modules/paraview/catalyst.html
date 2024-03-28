@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html class="writer-html4" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>paraview.catalyst &mdash; ParaView/Python 5.12.0 documentation</title><link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" /><link rel="shortcut icon" href="../../_static/pvIcon.ico"/>
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          <ul>
+            <li> <a href="../../index.html">
+              <img src="../../_static/paraview-logo-small.png"
+              alt="ParaView/Python"></img></a> </li>
+            <li class="version"> version 5.12.0</li>
+          </ul>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../quick-start.html">Quick-Start :  A Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../paraview.html">The ParaView Python Package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../paraview.simple.html">simple</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../paraview.servermanager.html">servermanager</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../paraview.catalyst.html">catalyst</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../paraview.coprocessing.html">coprocessing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../paraview.benchmark.html">benchmark</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../paraview.servermanager_proxies.html">Available readers, sources, writers, filters and animation cues</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../api-changes.html">API Changes between ParaView versions</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">ParaView/Python</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+      <a href="../../genindex.html" class="float-right">Index</a> 
+          <li><a href="../index.html">Module code</a> &raquo;</li>
+      <li>paraview.catalyst</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <h1>Source code for paraview.catalyst</h1><div class="highlight"><pre>
+<span></span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Module intended to provide functions used in Catalyst scripts. This is public</span>
+<span class="sd">API and must preserve backwards compatibility so that older versions of Catalyst</span>
+<span class="sd">scripts continue to work as ParaView code keeps evolving. Hence, we limit the</span>
+<span class="sd">API exposed here to bare minimum.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="Options"><a class="viewcode-back" href="../../paraview.catalyst.html#paraview.catalyst.Options">[docs]</a><span class="k">def</span> <span class="nf">Options</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot;Creates and returns an options object which is used to configure Catalyst</span>
+<span class="sd">    specific options such as output directories, live support, etc.&quot;&quot;&quot;</span>
+    <span class="c1"># we import simple to ensure that the active connection is created</span>
+    <span class="kn">from</span> <span class="nn">paraview</span> <span class="k">import</span> <span class="n">servermanager</span><span class="p">,</span> <span class="n">simple</span>
+    <span class="n">pxm</span> <span class="o">=</span> <span class="n">servermanager</span><span class="o">.</span><span class="n">ProxyManager</span><span class="p">()</span>
+    <span class="n">proxy</span> <span class="o">=</span> <span class="n">pxm</span><span class="o">.</span><span class="n">NewProxy</span><span class="p">(</span><span class="s2">&quot;coprocessing&quot;</span><span class="p">,</span> <span class="s2">&quot;CatalystOptions&quot;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">servermanager</span><span class="o">.</span><span class="n">_getPyProxy</span><span class="p">(</span><span class="n">proxy</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="log_level"><a class="viewcode-back" href="../../paraview.catalyst.html#paraview.catalyst.log_level">[docs]</a><span class="k">def</span> <span class="nf">log_level</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot;Returns the Python logging level to use to log informative messages</span>
+<span class="sd">    from this package&quot;&quot;&quot;</span>
+    <span class="kn">from</span> <span class="nn">paraview.modules.vtkPVVTKExtensionsCore</span> <span class="k">import</span> <span class="n">vtkPVLogger</span>
+    <span class="kn">from</span> <span class="nn">paraview.detail.loghandler</span> <span class="k">import</span> <span class="n">get_level</span>
+    <span class="k">return</span> <span class="n">get_level</span><span class="p">(</span><span class="n">vtkPVLogger</span><span class="o">.</span><span class="n">GetCatalystVerbosity</span><span class="p">())</span></div>
+
+
+<div class="viewcode-block" id="get_args"><a class="viewcode-back" href="../../paraview.catalyst.html#paraview.catalyst.get_args">[docs]</a><span class="k">def</span> <span class="nf">get_args</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot;For the active pipeline script, returns &quot;args&quot;, if any, specified</span>
+<span class="sd">    when the script initialized in the Catalyst adaptor.</span>
+
+<span class="sd">    This is currently only supported for adaptors that use Catalyst 2.0 Adaptor</span>
+<span class="sd">    API. For legacy adaptors, this will simply return an empty list.</span>
+
+<span class="sd">    Return value is a list of strings.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="kn">from</span> <span class="nn">.</span> <span class="k">import</span> <span class="n">v2_internals</span>
+    <span class="k">return</span> <span class="n">v2_internals</span><span class="o">.</span><span class="n">_get_active_arguments</span><span class="p">()</span></div>
+
+<div class="viewcode-block" id="get_execute_params"><a class="viewcode-back" href="../../paraview.catalyst.html#paraview.catalyst.get_execute_params">[docs]</a><span class="k">def</span> <span class="nf">get_execute_params</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot;For the active pipeline script, returns &quot;parameters&quot;, if any, specified</span>
+<span class="sd">    during the execute phase in the Catalyst adaptor.</span>
+
+<span class="sd">    This is currently only supported for adaptors that use Catalyst 2.0 Adaptor</span>
+<span class="sd">    API. For legacy adaptors, this will simply return an empty list.</span>
+
+<span class="sd">    Return value is a list of strings.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="kn">from</span> <span class="nn">.</span> <span class="k">import</span> <span class="n">v2_internals</span>
+    <span class="k">return</span> <span class="n">v2_internals</span><span class="o">.</span><span class="n">_get_execute_parameters</span><span class="p">()</span></div>
+
+<div class="viewcode-block" id="get_script_filename"><a class="viewcode-back" href="../../paraview.catalyst.html#paraview.catalyst.get_script_filename">[docs]</a><span class="k">def</span> <span class="nf">get_script_filename</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot;For the active pipeline script, returns its filename. This is provided in</span>
+<span class="sd">    the same form as it was passed to</span>
+<span class="sd">    `vtkCPPythonScriptV2Helper::PrepareFromScript`.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="kn">from</span> <span class="nn">.</span> <span class="k">import</span> <span class="n">v2_internals</span>
+    <span class="k">return</span> <span class="n">v2_internals</span><span class="o">.</span><span class="n">_get_script_filename</span><span class="p">()</span></div>
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2013, Kitware, Inc..</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+  <!-- KW:BEGIN -->
+  <script type="text/javascript" src="/paraview-docs/paraview-version.js"></script>
+  <!-- KW:END -->
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
