@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html class="writer-html4" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>benchmark.waveletvolume Module &mdash; ParaView/Python 5.12.0 documentation</title><link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" /><link rel="shortcut icon" href="_static/pvIcon.ico"/>
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="catalyst Package" href="paraview.catalyst.html" />
+    <link rel="prev" title="benchmark.waveletcontour Module" href="paraview.benchmark.waveletcontour.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          <ul>
+            <li> <a href="index.html">
+              <img src="_static/paraview-logo-small.png"
+              alt="ParaView/Python"></img></a> </li>
+            <li class="version"> version 5.12.0</li>
+          </ul>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="quick-start.html">Quick-Start :  A Tutorial</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="paraview.html">The ParaView Python Package</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="paraview.html#id1"><code class="docutils literal notranslate"><span class="pre">paraview</span></code> Package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.html#modules">Modules</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="paraview.html#subpackages">Subpackages</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="paraview.algorithms.html">algorithms Package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="paraview.apps.html">apps Package</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="paraview.benchmark.html">benchmark Package</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="paraview.benchmark.html#id1"><code class="docutils literal notranslate"><span class="pre">benchmark</span></code> Package</a></li>
+<li class="toctree-l4 current"><a class="reference internal" href="paraview.benchmark.html#modules">Modules</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="paraview.catalyst.html">catalyst Package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="paraview.demos.html">demos Package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="paraview.detail.html">detail Package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="paraview.incubator.html">incubator Package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="paraview.tests.html">tests Package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="paraview.tpl.html">tpl Package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="paraview.util.html">util Package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="paraview.web.html">web Package</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="paraview.simple.html">simple</a></li>
+<li class="toctree-l1"><a class="reference internal" href="paraview.servermanager.html">servermanager</a></li>
+<li class="toctree-l1"><a class="reference internal" href="paraview.catalyst.html">catalyst</a></li>
+<li class="toctree-l1"><a class="reference internal" href="paraview.coprocessing.html">coprocessing</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="paraview.benchmark.html">benchmark</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="paraview.benchmark.html#id1"><code class="docutils literal notranslate"><span class="pre">benchmark</span></code> Package</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="paraview.benchmark.html#modules">Modules</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="paraview.benchmark.basic.html">benchmark.basic Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="paraview.benchmark.logbase.html">benchmark.logbase Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="paraview.benchmark.logparser.html">benchmark.logparser Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="paraview.benchmark.manyspheres.html">benchmark.manyspheres Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="paraview.benchmark.waveletcontour.html">benchmark.waveletcontour Module</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">benchmark.waveletvolume Module</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="paraview.servermanager_proxies.html">Available readers, sources, writers, filters and animation cues</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="api-changes.html">API Changes between ParaView versions</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">ParaView/Python</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+      <a href="genindex.html" class="float-right">Index</a> 
+          <li><a href="paraview.html">paraview Package</a> &raquo;</li>
+          <li><a href="paraview.benchmark.html">benchmark Package</a> &raquo;</li>
+      <li>benchmark.waveletvolume Module</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="section" id="module-paraview.benchmark.waveletvolume">
+<span id="benchmark-waveletvolume-module"></span><h1>benchmark.waveletvolume Module<a class="headerlink" href="#module-paraview.benchmark.waveletvolume" title="Permalink to this headline">¶</a></h1>
+<dl class="function">
+<dt id="paraview.benchmark.waveletvolume.flush_render_buffer">
+<code class="descclassname">paraview.benchmark.waveletvolume.</code><code class="descname">flush_render_buffer</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/benchmark/waveletvolume.html#flush_render_buffer"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.benchmark.waveletvolume.flush_render_buffer" title="Permalink to this definition">¶</a></dt>
+<dd><p>When running as a single process use the WindowToImage filter to
+force a framebuffer read.  This bypasses driver optimizations that
+perform lazy rendering and allows you to get actual frame rates for
+a single process with a GPU.  Multi-process doesn’t need this since
+compositing forces the frame buffer read.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="paraview.benchmark.waveletvolume.get_render_view">
+<code class="descclassname">paraview.benchmark.waveletvolume.</code><code class="descname">get_render_view</code><span class="sig-paren">(</span><em>size</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/benchmark/waveletvolume.html#get_render_view"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.benchmark.waveletvolume.get_render_view" title="Permalink to this definition">¶</a></dt>
+<dd><p>Similar to GetRenderView except if a new view is created, it’s
+created with the specified size instead of having t resize afterwards</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="paraview.benchmark.waveletvolume.main">
+<code class="descclassname">paraview.benchmark.waveletvolume.</code><code class="descname">main</code><span class="sig-paren">(</span><em>argv</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/benchmark/waveletvolume.html#main"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.benchmark.waveletvolume.main" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="paraview.benchmark.waveletvolume.memtime_stamp">
+<code class="descclassname">paraview.benchmark.waveletvolume.</code><code class="descname">memtime_stamp</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/benchmark/waveletvolume.html#memtime_stamp"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.benchmark.waveletvolume.memtime_stamp" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="paraview.benchmark.waveletvolume.run">
+<code class="descclassname">paraview.benchmark.waveletvolume.</code><code class="descname">run</code><span class="sig-paren">(</span><em>output_basename='log'</em>, <em>dimension=100</em>, <em>view_size=(1920</em>, <em>1080)</em>, <em>num_frames=10</em>, <em>save_logs=True</em>, <em>ospray=False</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/benchmark/waveletvolume.html#run"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.benchmark.waveletvolume.run" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="paraview.benchmark.waveletvolume.save_render_buffer">
+<code class="descclassname">paraview.benchmark.waveletvolume.</code><code class="descname">save_render_buffer</code><span class="sig-paren">(</span><em>fname</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/benchmark/waveletvolume.html#save_render_buffer"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.benchmark.waveletvolume.save_render_buffer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Similar to SaveScreenshot except a re-render will not be triggered</p>
+</dd></dl>
+
+</div>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="paraview.benchmark.waveletcontour.html" class="btn btn-neutral float-left" title="benchmark.waveletcontour Module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="paraview.catalyst.html" class="btn btn-neutral float-right" title="catalyst Package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2013, Kitware, Inc..</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+  <!-- KW:BEGIN -->
+  <script type="text/javascript" src="/paraview-docs/paraview-version.js"></script>
+  <!-- KW:END -->
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
