@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>paraview._backwardscompatibilityhelper &mdash; ParaView/Python 5.12.1-1222-g523b3d4161 documentation</title>
+  <title>paraview._backwardscompatibilityhelper &mdash; ParaView/Python 5.12.1-1261-ga73004c7df documentation</title>
       <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -29,7 +29,7 @@
             <li> <a href="../../index.html">
               <img src="../../_static/paraview-logo-small.png"
               alt="ParaView/Python"></img></a> </li>
-            <li class="version"> version 5.12.1-1222-g523b3d4161</li>
+            <li class="version"> version 5.12.1-1261-ga73004c7df</li>
           </ul>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
@@ -1121,6 +1121,60 @@
                 <span class="k">return</span> <span class="n">proxy</span><span class="o">.</span><span class="n">GetProperty</span><span class="p">(</span><span class="s2">&quot;Translation&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">GetData</span><span class="p">()</span>
             <span class="k">else</span><span class="p">:</span>
                 <span class="k">raise</span> <span class="n">NotSupportedException</span><span class="p">(</span><span class="s2">&quot;&#39;Position&#39; property has been removed in ParaView 5.13&quot;</span><span class="p">)</span>
+
+
+    <span class="c1"># 5.13 -&gt; 5.14 breaking change in PolarAxes representation</span>
+    <span class="c1"># Properties Renaming</span>
+    <span class="k">if</span> <span class="n">proxy</span><span class="o">.</span><span class="n">SMProxy</span> <span class="ow">and</span> <span class="n">proxy</span><span class="o">.</span><span class="n">SMProxy</span><span class="o">.</span><span class="n">GetXMLName</span><span class="p">()</span> <span class="o">==</span> <span class="s2">&quot;PolarAxesRepresentation&quot;</span><span class="p">:</span>
+        <span class="c1"># &quot;NumberOfPolarAxes&quot; -&gt; &quot;NumberOfArcs&quot;</span>
+        <span class="k">if</span> <span class="n">pname</span> <span class="o">==</span> <span class="s2">&quot;NumberOfPolarAxes&quot;</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">compatibility_version</span> <span class="o">&lt;</span> <span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">14</span><span class="p">):</span>
+                <span class="k">return</span> <span class="n">proxy</span><span class="o">.</span><span class="n">GetProperty</span><span class="p">(</span><span class="s2">&quot;NumberOfArcs&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">GetData</span><span class="p">()</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="n">NotSupportedException</span><span class="p">(</span><span class="s2">&quot;&#39;NumberOfPolarAxes&#39; was renamed in &#39;NumberOfArcs&#39; since ParaView 5.14&quot;</span><span class="p">)</span>
+
+        <span class="c1"># &quot;DeltaRangePolarAxes&quot; -&gt; &quot;DeltaRangeArcs&quot;</span>
+        <span class="k">if</span> <span class="n">pname</span> <span class="o">==</span> <span class="s2">&quot;DeltaRangePolarAxes&quot;</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">compatibility_version</span> <span class="o">&lt;</span> <span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">14</span><span class="p">):</span>
+                <span class="k">return</span> <span class="n">proxy</span><span class="o">.</span><span class="n">GetProperty</span><span class="p">(</span><span class="s2">&quot;DeltaRangeArcs&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">GetData</span><span class="p">()</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="n">NotSupportedException</span><span class="p">(</span><span class="s2">&quot;&#39;DeltaRangePolarAxes&#39; was renamed in &#39;DeltaRangeArcs&#39; since ParaView 5.14&quot;</span><span class="p">)</span>
+
+        <span class="c1"># &quot;RadialTitleVisibility&quot; -&gt; &quot;RadialLabelVisibility&quot;</span>
+        <span class="k">if</span> <span class="n">pname</span> <span class="o">==</span> <span class="s2">&quot;RadialTitleVisibility&quot;</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">compatibility_version</span> <span class="o">&lt;</span> <span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">14</span><span class="p">):</span>
+                <span class="k">return</span> <span class="n">proxy</span><span class="o">.</span><span class="n">GetProperty</span><span class="p">(</span><span class="s2">&quot;RadialLabelVisibility&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">GetData</span><span class="p">()</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="n">NotSupportedException</span><span class="p">(</span><span class="s2">&quot;&#39;RadialTitleVisibility&#39; was renamed in &#39;RadialLabelVisibility&#39; since ParaView 5.14&quot;</span><span class="p">)</span>
+
+        <span class="c1"># &quot;RadialTitleFormat&quot; -&gt; &quot;RadialLabelFormat&quot;</span>
+        <span class="k">if</span> <span class="n">pname</span> <span class="o">==</span> <span class="s2">&quot;RadialTitleFormat&quot;</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">compatibility_version</span> <span class="o">&lt;</span> <span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">14</span><span class="p">):</span>
+                <span class="k">return</span> <span class="n">proxy</span><span class="o">.</span><span class="n">GetProperty</span><span class="p">(</span><span class="s2">&quot;RadialLabelFormat&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">GetData</span><span class="p">()</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="n">NotSupportedException</span><span class="p">(</span><span class="s2">&quot;&#39;RadialTitleFormat&#39; was renamed in &#39;RadialLabelFormat&#39; since ParaView 5.14&quot;</span><span class="p">)</span>
+
+        <span class="c1"># &quot;RadialTitleLocation&quot; -&gt; &quot;RadialLabelLocation&quot;</span>
+        <span class="k">if</span> <span class="n">pname</span> <span class="o">==</span> <span class="s2">&quot;RadialTitleLocation&quot;</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">compatibility_version</span> <span class="o">&lt;</span> <span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">14</span><span class="p">):</span>
+                <span class="k">return</span> <span class="n">proxy</span><span class="o">.</span><span class="n">GetProperty</span><span class="p">(</span><span class="s2">&quot;RadialLabelLocation&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">GetData</span><span class="p">()</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="n">NotSupportedException</span><span class="p">(</span><span class="s2">&quot;&#39;RadialTitleLocation&#39; was renamed in &#39;RadialLabelLocation&#39; since ParaView 5.14&quot;</span><span class="p">)</span>
+
+        <span class="c1"># &quot;RadialTitleOffset&quot; -&gt; &quot;RadialLabelOffset&quot;</span>
+        <span class="k">if</span> <span class="n">pname</span> <span class="o">==</span> <span class="s2">&quot;RadialTitleOffset&quot;</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">compatibility_version</span> <span class="o">&lt;</span> <span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">14</span><span class="p">):</span>
+                <span class="k">return</span> <span class="n">proxy</span><span class="o">.</span><span class="n">GetProperty</span><span class="p">(</span><span class="s2">&quot;RadialLabelOffset&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">GetData</span><span class="p">()</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="n">NotSupportedException</span><span class="p">(</span><span class="s2">&quot;&#39;RadialTitleOffset&#39; was renamed in &#39;RadialLabelOffset&#39; since ParaView 5.14&quot;</span><span class="p">)</span>
+
+        <span class="c1"># &quot;PolarTicksVisibility&quot; -&gt; &quot;AllTicksVisibility&quot;</span>
+        <span class="k">if</span> <span class="n">pname</span> <span class="o">==</span> <span class="s2">&quot;PolarTicksVisibility&quot;</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">compatibility_version</span> <span class="o">&lt;</span> <span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">14</span><span class="p">):</span>
+                <span class="k">return</span> <span class="n">proxy</span><span class="o">.</span><span class="n">GetProperty</span><span class="p">(</span><span class="s2">&quot;AllTicksVisibility&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">GetData</span><span class="p">()</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="n">NotSupportedException</span><span class="p">(</span><span class="s2">&quot;&#39;PolarTicksVisibility&#39; was renamed in &#39;AllTicksVisibility&#39; since ParaView 5.14&quot;</span><span class="p">)</span>
+
     <span class="k">raise</span> <span class="n">Continue</span><span class="p">()</span></div>
 
 

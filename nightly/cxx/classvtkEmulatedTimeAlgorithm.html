@@ -96,9 +96,12 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a6963e3631077c2534594e6ce07228614"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5396b3396e7a5a27672b7f15ba88f6f4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkEmulatedTimeAlgorithm.html#a5396b3396e7a5a27672b7f15ba88f6f4">PrintSelf</a> (ostream &amp;os, <a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/classvtkIndent.html">vtkIndent</a> indent) override</td></tr>
 <tr class="separator:a5396b3396e7a5a27672b7f15ba88f6f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a391925a715ec7d4798142cc78ab788cb"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkEmulatedTimeAlgorithm.html#a391925a715ec7d4798142cc78ab788cb">GetNeedsUpdate</a> (<a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkVectorOperators_8h.html#a45c855d65dd0e2b57b08024500ff9159">double</a> <a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/namespacevtkX3D.html#ac6551f7bf833e8254b2b3ecdaea0d210a7b83992a2109ab18b82ba0228887498e">time</a>)</td></tr>
-<tr class="memdesc:a391925a715ec7d4798142cc78ab788cb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check whether the provided time falls within the algorithm TimeRange, if it does return true to update the source with the new time.  <a href="#a391925a715ec7d4798142cc78ab788cb">More...</a><br /></td></tr>
-<tr class="separator:a391925a715ec7d4798142cc78ab788cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a88f16da4f6d162a0befc2e4f44b23eba"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkEmulatedTimeAlgorithm.html#a88f16da4f6d162a0befc2e4f44b23eba">GetNeedsUpdate</a> (<a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkVectorOperators_8h.html#a45c855d65dd0e2b57b08024500ff9159">double</a> <a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/namespacevtkX3D.html#ac6551f7bf833e8254b2b3ecdaea0d210a7b83992a2109ab18b82ba0228887498e">time</a>)</td></tr>
+<tr class="memdesc:a88f16da4f6d162a0befc2e4f44b23eba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check whether the provided time falls within the algorithm TimeRange, if it does return true to update the source with the new time.  <a href="#a88f16da4f6d162a0befc2e4f44b23eba">More...</a><br /></td></tr>
+<tr class="separator:a88f16da4f6d162a0befc2e4f44b23eba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae8c08b0ef68f87e35259c98e86acb0f4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkEmulatedTimeAlgorithm.html#ae8c08b0ef68f87e35259c98e86acb0f4">Modified</a> () override</td></tr>
+<tr class="memdesc:ae8c08b0ef68f87e35259c98e86acb0f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">LiveSources algorithm requires calling this-&gt;<a class="el" href="classvtkEmulatedTimeAlgorithm.html#ae8c08b0ef68f87e35259c98e86acb0f4" title="LiveSources algorithm requires calling this-&gt;Modified() to update the data. ">Modified()</a> to update the data.  <a href="#ae8c08b0ef68f87e35259c98e86acb0f4">More...</a><br /></td></tr>
+<tr class="separator:ae8c08b0ef68f87e35259c98e86acb0f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af0bdda1e6482a73d60dea0ec0c3df731"><td class="memItemLeft" align="right" valign="top">virtual <a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkVectorOperators_8h.html#a45c855d65dd0e2b57b08024500ff9159">double</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvtkEmulatedTimeAlgorithm.html#af0bdda1e6482a73d60dea0ec0c3df731">GetTimeRange</a> ()</td></tr>
 <tr class="memdesc:af0bdda1e6482a73d60dea0ec0c3df731"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the first and last time steps of the implemented algorithm.  <a href="#af0bdda1e6482a73d60dea0ec0c3df731">More...</a><br /></td></tr>
 <tr class="separator:af0bdda1e6482a73d60dea0ec0c3df731"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -429,8 +432,6 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:acf28cbe4a25208060fef976b1df34874 inherit pub_methods_classvtkObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aba131db4bca383bc510a1fb28503c45f inherit pub_methods_classvtkObject"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/classvtkObject.html#aba131db4bca383bc510a1fb28503c45f">SetDebug</a> (bool debugFlag)</td></tr>
 <tr class="separator:aba131db4bca383bc510a1fb28503c45f inherit pub_methods_classvtkObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8586479b9d204cf0a45fb693d4281354 inherit pub_methods_classvtkObject"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/classvtkObject.html#a8586479b9d204cf0a45fb693d4281354">Modified</a> ()</td></tr>
-<tr class="separator:a8586479b9d204cf0a45fb693d4281354 inherit pub_methods_classvtkObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acfb4b4759346270f2458425f0ff532d9 inherit pub_methods_classvtkObject"><td class="memItemLeft" align="right" valign="top">virtual <a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkType_8h.html#a2479cc15d130f98f4c13f84463d88031">vtkMTimeType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/classvtkObject.html#acfb4b4759346270f2458425f0ff532d9">GetMTime</a> ()</td></tr>
 <tr class="separator:acfb4b4759346270f2458425f0ff532d9 inherit pub_methods_classvtkObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ade6268acf6c894d58b6f4c2578705ce7 inherit pub_methods_classvtkObject"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/classvtkObject.html#ade6268acf6c894d58b6f4c2578705ce7">RemoveObserver</a> (unsigned long tag)</td></tr>
@@ -997,25 +998,63 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="a391925a715ec7d4798142cc78ab788cb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a391925a715ec7d4798142cc78ab788cb">&#9670;&nbsp;</a></span>GetNeedsUpdate()</h2>
+<a id="a88f16da4f6d162a0befc2e4f44b23eba"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a88f16da4f6d162a0befc2e4f44b23eba">&#9670;&nbsp;</a></span>GetNeedsUpdate()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool vtkEmulatedTimeAlgorithm::GetNeedsUpdate </td>
+          <td class="memname">virtual bool vtkEmulatedTimeAlgorithm::GetNeedsUpdate </td>
           <td>(</td>
           <td class="paramtype"><a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/vtkVectorOperators_8h.html#a45c855d65dd0e2b57b08024500ff9159">double</a>&#160;</td>
           <td class="paramname"><em>time</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>Check whether the provided time falls within the algorithm TimeRange, if it does return true to update the source with the new time. </p>
 <p>Also save the current time steps asked by the LiveSource behavior, enabling it to invoke RequestData for the specified time through the RequestUpdateExtent method.</p>
 <p>Required for LiveSource behavior. </p>
+
+</div>
+</div>
+<a id="ae8c08b0ef68f87e35259c98e86acb0f4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae8c08b0ef68f87e35259c98e86acb0f4">&#9670;&nbsp;</a></span>Modified()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void vtkEmulatedTimeAlgorithm::Modified </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>LiveSources algorithm requires calling this-&gt;<a class="el" href="classvtkEmulatedTimeAlgorithm.html#ae8c08b0ef68f87e35259c98e86acb0f4" title="LiveSources algorithm requires calling this-&gt;Modified() to update the data. ">Modified()</a> to update the data. </p>
+<p>However, doing so triggers an unwanted call to RequestInformation. To address this, we override the standard Modified method to ensure that RequestInformation is only invoked when the parameters are actually modified. </p>
+
+<p>Reimplemented from <a class="elRef" doxygen="/builds/gitlab-kitware-sciviz-ci/build/Utilities/Doxygen/vtkNightlyDoc.tag:http://www.vtk.org/doc/nightly/html/" href="http://www.vtk.org/doc/nightly/html/classvtkObject.html#a8586479b9d204cf0a45fb693d4281354">vtkObject</a>.</p>
 
 </div>
 </div>
@@ -1303,7 +1342,7 @@ Additional Inherited Members</h2></td></tr>
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.13 on Sun Jun 23 2024
+</a> 1.8.13 on Thu Jun 27 2024
 </small></address>
 <!-- KW:BEGIN -->
 <!-- this adds the version selection header -->
