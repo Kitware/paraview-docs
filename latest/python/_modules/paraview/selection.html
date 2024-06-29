@@ -3,9 +3,10 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>paraview.selection &mdash; ParaView/Python 5.12.1-1261-ga73004c7df documentation</title>
+  <title>paraview.selection &mdash; ParaView/Python 5.12.1-1285-gfa1ab22661 documentation</title>
       <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+    <link rel="shortcut icon" href="../../_static/pvIcon.ico"/>
   <!--[if lt IE 9]>
     <script src="../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
@@ -29,7 +30,7 @@
             <li> <a href="../../index.html">
               <img src="../../_static/paraview-logo-small.png"
               alt="ParaView/Python"></img></a> </li>
-            <li class="version"> version 5.12.1-1261-ga73004c7df</li>
+            <li class="version"> version 5.12.1-1285-gfa1ab22661</li>
           </ul>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
@@ -556,12 +557,20 @@
 
 
 <div class="viewcode-block" id="QuerySelect"><a class="viewcode-back" href="../../paraview.selection.html#paraview.selection.QuerySelect">[docs]</a><span class="k">def</span> <span class="nf">QuerySelect</span><span class="p">(</span><span class="n">QueryString</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">FieldType</span><span class="o">=</span><span class="s1">&#39;POINT&#39;</span><span class="p">,</span> <span class="n">Source</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">InsideOut</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Selection by query expression.</span>
-<span class="sd">    - QueryString - string with NumPy-like boolean expression defining which attributes are selected</span>
-<span class="sd">    - FieldType - atttribute to select, e.g., &#39;POINT&#39; or &#39;CELL&#39;</span>
-<span class="sd">    - Source - if not set, then the selection will be on the active source</span>
-<span class="sd">    - InsideOut - Invert the selection so that attributes that do not satisfy the expression are</span>
-<span class="sd">      selected instead of elements that do</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Selection by query expression.</span>
+
+<span class="sd">    :param QueryString: string with NumPy-like boolean expression defining which attributes are selected</span>
+<span class="sd">    :type QueryString: str</span>
+<span class="sd">    :param FieldType: attribute to select, e.g., &#39;POINT&#39; or &#39;CELL&#39;</span>
+<span class="sd">    :type FieldType: str</span>
+<span class="sd">    :param Source: if not set, then the selection will be on the active source</span>
+<span class="sd">    :type Source: paraview.servermanager.source.Proxy</span>
+<span class="sd">    :param InsideOut: Invert the selection so that attributes that do not satisfy the</span>
+<span class="sd">        expression are selected instead of elements that do.</span>
+<span class="sd">    :type InsideOut: bool</span>
+<span class="sd">    :return: None</span>
+
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">if</span> <span class="ow">not</span> <span class="n">Source</span><span class="p">:</span>
         <span class="n">Source</span> <span class="o">=</span> <span class="n">paraview</span><span class="o">.</span><span class="n">simple</span><span class="o">.</span><span class="n">GetActiveSource</span><span class="p">()</span>

@@ -3,9 +3,10 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>selection Module &mdash; ParaView/Python 5.12.1-1261-ga73004c7df documentation</title>
+  <title>selection Module &mdash; ParaView/Python 5.12.1-1285-gfa1ab22661 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+    <link rel="shortcut icon" href="_static/pvIcon.ico"/>
   <!--[if lt IE 9]>
     <script src="_static/js/html5shiv.min.js"></script>
   <![endif]-->
@@ -31,7 +32,7 @@
             <li> <a href="index.html">
               <img src="_static/paraview-logo-small.png"
               alt="ParaView/Python"></img></a> </li>
-            <li class="version"> version 5.12.1-1261-ga73004c7df</li>
+            <li class="version"> version 5.12.1-1285-gfa1ab22661</li>
           </ul>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
@@ -155,14 +156,21 @@ Use this so that selection don’t show up in the pipeline.</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="paraview.selection.QuerySelect">
 <span class="sig-prename descclassname"><span class="pre">paraview.selection.</span></span><span class="sig-name descname"><span class="pre">QuerySelect</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">QueryString</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">FieldType</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'POINT'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Source</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">InsideOut</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/selection.html#QuerySelect"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#paraview.selection.QuerySelect" title="Permalink to this definition">¶</a></dt>
-<dd><p>Selection by query expression.
-- QueryString - string with NumPy-like boolean expression defining which attributes are selected
-- FieldType - atttribute to select, e.g., ‘POINT’ or ‘CELL’
-- Source - if not set, then the selection will be on the active source
-- InsideOut - Invert the selection so that attributes that do not satisfy the expression are</p>
-<blockquote>
-<div><p>selected instead of elements that do</p>
-</div></blockquote>
+<dd><p>Selection by query expression.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>QueryString</strong> (<em>str</em>) – string with NumPy-like boolean expression defining which attributes are selected</p></li>
+<li><p><strong>FieldType</strong> (<em>str</em>) – attribute to select, e.g., ‘POINT’ or ‘CELL’</p></li>
+<li><p><strong>Source</strong> (<em>paraview.servermanager.source.Proxy</em>) – if not set, then the selection will be on the active source</p></li>
+<li><p><strong>InsideOut</strong> (<em>bool</em>) – Invert the selection so that attributes that do not satisfy the
+expression are selected instead of elements that do.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py function">

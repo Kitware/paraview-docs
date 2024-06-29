@@ -3,9 +3,10 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>coprocessing Module &mdash; ParaView/Python 5.12.1-1261-ga73004c7df documentation</title>
+  <title>coprocessing Module &mdash; ParaView/Python 5.12.1-1285-gfa1ab22661 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+    <link rel="shortcut icon" href="_static/pvIcon.ico"/>
   <!--[if lt IE 9]>
     <script src="_static/js/html5shiv.min.js"></script>
   <![endif]-->
@@ -31,7 +32,7 @@
             <li> <a href="index.html">
               <img src="_static/paraview-logo-small.png"
               alt="ParaView/Python"></img></a> </li>
-            <li class="version"> version 5.12.1-1261-ga73004c7df</li>
+            <li class="version"> version 5.12.1-1285-gfa1ab22661</li>
           </ul>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
@@ -217,9 +218,13 @@ communication happens (default is every second).</p>
 <span class="sig-name descname"><span class="pre">IsInModulo</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">datadescription</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">frequencies</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/coprocessing.html#CoProcessor.IsInModulo"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#paraview.coprocessing.CoProcessor.IsInModulo" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return True if the given timestep in datadescription is in one of the provided frequencies
 or output is forced. This can be interpreted as follow:</p>
-<p>isFM = IsInModulo(timestep-timeStepToStartOutputAt, [2,3,7])</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">isFM</span> <span class="o">=</span> <span class="n">IsInModulo</span><span class="p">(</span><span class="n">timestep</span><span class="o">-</span><span class="n">timeStepToStartOutputAt</span><span class="p">,</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">7</span><span class="p">])</span>
+</pre></div>
+</div>
 <p>is similar to:</p>
-<p>isFM = (timestep-timeStepToStartOutputAt % 2 == 0) or (timestep-timeStepToStartOutputAt % 3 == 0) or (timestep-timeStepToStartOutputAt % 7 == 0)</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">isFM</span> <span class="o">=</span> <span class="p">(</span><span class="n">timestep</span><span class="o">-</span><span class="n">timeStepToStartOutputAt</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="n">timestep</span><span class="o">-</span><span class="n">timeStepToStartOutputAt</span> <span class="o">%</span> <span class="mi">3</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="n">timestep</span><span class="o">-</span><span class="n">timeStepToStartOutputAt</span> <span class="o">%</span> <span class="mi">7</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>
+</pre></div>
+</div>
 <p>The timeStepToStartOutputAt is the first timestep that will potentially be output.</p>
 </dd></dl>
 

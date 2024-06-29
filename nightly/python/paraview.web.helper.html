@@ -3,9 +3,10 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>web.helper Module &mdash; ParaView/Python 5.12.1-1261-ga73004c7df documentation</title>
+  <title>web.helper Module &mdash; ParaView/Python 5.12.1-1285-gfa1ab22661 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+    <link rel="shortcut icon" href="_static/pvIcon.ico"/>
   <!--[if lt IE 9]>
     <script src="_static/js/html5shiv.min.js"></script>
   <![endif]-->
@@ -31,7 +32,7 @@
             <li> <a href="index.html">
               <img src="_static/paraview-logo-small.png"
               alt="ParaView/Python"></img></a> </li>
-            <li class="version"> version 5.12.1-1261-ga73004c7df</li>
+            <li class="version"> version 5.12.1-1285-gfa1ab22661</li>
           </ul>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
@@ -177,22 +178,18 @@ browser.</p>
 <dt class="sig sig-object py" id="paraview.web.helper.getProxyAsState">
 <span class="sig-prename descclassname"><span class="pre">paraview.web.helper.</span></span><span class="sig-name descname"><span class="pre">getProxyAsState</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/helper.html#getProxyAsState"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#paraview.web.helper.getProxyAsState" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return a json representation of the given proxy state.</p>
-<dl>
-<dt>Example of the state of the Clip filter</dt><dd><dl>
-<dt>{</dt><dd><p>proxy_id: 234,
-ClipType: {</p>
-<blockquote>
-<div><p>proxy_id: 235,
-Normal: [0,0,1],
-Origin: [0,0,0],
-InsideOut: 0</p>
-</div></blockquote>
-<p>}</p>
-</dd>
-</dl>
-<p>}</p>
-</dd>
-</dl>
+<p>Example of the state of the Clip filter:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="nt">&quot;proxy_id&quot;</span><span class="p">:</span> <span class="mi">234</span><span class="p">,</span>
+    <span class="nt">&quot;ClipType&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;proxy_id&quot;</span><span class="p">:</span> <span class="mi">235</span><span class="p">,</span>
+        <span class="nt">&quot;Normal&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
+        <span class="nt">&quot;Origin&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+        <span class="nt">&quot;InsideOut&quot;</span><span class="p">:</span> <span class="mi">0</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="py function">
@@ -210,19 +207,17 @@ InsideOut: 0</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="paraview.web.helper.listFiles">
 <span class="sig-prename descclassname"><span class="pre">paraview.web.helper.</span></span><span class="sig-name descname"><span class="pre">listFiles</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pathToList</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/helper.html#listFiles"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#paraview.web.helper.listFiles" title="Permalink to this definition">¶</a></dt>
-<dd><p>Create a tree structure of the given directory that will be understand by
+<dd><p>Create a tree structure of the given directory that will be understood by
 the pipelineBrowser widget.
 The provided path should not have a trailing ‘/’.</p>
-<dl>
-<dt>return {</dt><dd><dl class="simple">
-<dt>children: [</dt><dd><p>{ name: ‘fileName.vtk’, path: ‘/full_path/to_file/fileName.vtk’ },
-{ name: ‘directoryName’, path: ‘/full_path/to_file/directoryName’, children: [] }</p>
-</dd>
-</dl>
-<p>]</p>
-</dd>
-</dl>
-<p>}</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span> {
+    children: [
+        { name: &#39;fileName.vtk&#39;, path: &#39;/full_path/to_file/fileName.vtk&#39; },
+        { name: &#39;directoryName&#39;, path: &#39;/full_path/to_file/directoryName&#39;, children: [] }
+    ]
+}
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="py function">

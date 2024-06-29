@@ -3,9 +3,10 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>web.protocols Module &mdash; ParaView/Python 5.12.1-1261-ga73004c7df documentation</title>
+  <title>web.protocols Module &mdash; ParaView/Python 5.12.1-1285-gfa1ab22661 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+    <link rel="shortcut icon" href="_static/pvIcon.ico"/>
   <!--[if lt IE 9]>
     <script src="_static/js/html5shiv.min.js"></script>
   <![endif]-->
@@ -31,7 +32,7 @@
             <li> <a href="index.html">
               <img src="_static/paraview-logo-small.png"
               alt="ParaView/Python"></img></a> </li>
-            <li class="version"> version 5.12.1-1261-ga73004c7df</li>
+            <li class="version"> version 5.12.1-1285-gfa1ab22661</li>
           </ul>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
@@ -461,18 +462,17 @@ deleted, False otherwise.</p>
 <dt class="sig sig-object py" id="paraview.web.protocols.ParaViewWebProxyManager.getColorInformation">
 <span class="sig-name descname"><span class="pre">getColorInformation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">proxy</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebProxyManager.getColorInformation"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebProxyManager.getColorInformation" title="Permalink to this definition">¶</a></dt>
 <dd><p>Generates a block of color information, given a representation proxy.</p>
-<blockquote>
-<div><dl class="simple">
-<dt>colorBy: {</dt><dd><p>‘representation’: ‘652’,
-‘scalarBar’: 0,
-‘mode’: ‘color’    # ‘array’
-‘color’: [ 0.5, 1.0, 1.0 ],
-‘array’: [ ‘POINTS’, ‘RTData’, -1 ],
-‘colorMap’: ‘Blue to Red’</p>
-</dd>
-</dl>
-<p>}</p>
-</div></blockquote>
+<p>Example output format:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>&quot;colorBy&quot;: {
+    &quot;representation&quot;: &quot;652&quot;,
+    &quot;scalarBar&quot;: 0,
+    &quot;mode&quot;: &quot;color&quot;,   # &#39;array&#39;
+    &quot;color&quot;: [0.5, 1.0, 1.0],
+    &quot;array&quot;: [&quot;POINTS&quot;, &quot;RTData&quot;, -1],
+    &quot;colorMap&quot;: &quot;Blue to Red&quot;
+}
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="py method">
@@ -499,26 +499,33 @@ deleted, False otherwise.</p>
 <dt class="sig sig-object py" id="paraview.web.protocols.ParaViewWebProxyManager.getUiProperties">
 <span class="sig-name descname"><span class="pre">getUiProperties</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">proxyId</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">proxyProperties</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebProxyManager.getUiProperties"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebProxyManager.getUiProperties" title="Permalink to this definition">¶</a></dt>
 <dd><p>Generates an array of objects, parallel to the properties, containing
-the information needed to render ui for each property.  Not all of the
+the information needed to render UI for each property. Not all of the
 following attributes will always be present.</p>
-<dl>
-<dt>ui<span class="classifier">[ {</span></dt><dd><blockquote>
-<div><blockquote>
-<div><p>‘name’: ‘Clip Type’,
-‘advanced’: 1,                 # 0
-‘doc’: ‘Documentation string for the property’,
-‘dependency’: ‘498:ClipFunction:Sphere:1’,
-‘values’: { ‘Plane’: ‘456’, ‘Box’: ‘457’, ‘Scalar’: ‘458’, ‘Sphere’: ‘459’ },
-‘type’: ‘int’,                    # ‘float’, ‘int’, ‘str’, ‘proxy’, ‘input’, …
-‘widget’: ‘textfield’,            # ‘checkbox’, ‘textarea’, ‘list-1’, ‘list-n’
-‘size’: -1,                       # -1, 0, 2, 3, 6
-‘range’: [ { ‘min’: 0, ‘max’: 1 }, { ‘min’: 4, ‘max’: 7 }, … ]</p>
-</div></blockquote>
-<p>}, …</p>
-</div></blockquote>
-<p>]</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>proxyId</strong> (<em>str</em>) – The ID of the proxy.</p></li>
+<li><p><strong>proxyProperties</strong> (<em>list</em>) – The properties of the proxy.</p></li>
+</ul>
 </dd>
 </dl>
+<p>Example output format:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>&quot;ui&quot;: [
+    {
+        &quot;name&quot;: &quot;Clip Type&quot;,
+        &quot;advanced&quot;: 1,                  # 0
+        &quot;doc&quot;: &quot;Documentation string for the property&quot;,
+        &quot;dependency&quot;: &quot;498:ClipFunction:Sphere:1&quot;,
+        &quot;values&quot;: { &quot;Plane&quot;: &quot;456&quot;, &quot;Box&quot;: &quot;457&quot;, &quot;Scalar&quot;: &quot;458&quot;, &quot;Sphere&quot;: &quot;459&quot; },
+        &quot;type&quot;: &quot;int&quot;,                  # &#39;float&#39;, &#39;int&#39;, &#39;str&#39;, &#39;proxy&#39;, &#39;input&#39;, ...
+        &quot;widget&quot;: &quot;textfield&quot;,          # &#39;checkbox&#39;, &#39;textarea&#39;, &#39;list-1&#39;, &#39;list-n&#39;
+        &quot;size&quot;: -1,                     # -1, 0, 2, 3, 6
+        &quot;range&quot;: [ { &quot;min&quot;: 0, &quot;max&quot;: 1 }, { &quot;min&quot;: 4, &quot;max&quot;: 7 } ]
+    }
+    # More objects...
+]
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="py method">
@@ -734,20 +741,27 @@ an incoming connection from the server.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="paraview.web.protocols.ParaViewWebSaveData.saveData">
 <span class="sig-name descname"><span class="pre">saveData</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filePath</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">options</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/web/protocols.html#ParaViewWebSaveData.saveData"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#paraview.web.protocols.ParaViewWebSaveData.saveData" title="Permalink to this definition">¶</a></dt>
-<dd><p>Save some data on the server side.  Can save data from a proxy, a
-screenshot, or else the current state.  Options may be different
-depending on the type of data to be save.  Saving a screenshot
+<dd><p>Save some data on the server side. Can save data from a proxy, a
+screenshot, or else the current state. Options may be different
+depending on the type of data to be saved. Saving a screenshot
 can take an optional size array indicating the desired width and
-height of the saved image.  Saving data can take an optional proxy
+height of the saved image. Saving data can take an optional proxy
 id specifying which filter or source to save output from.</p>
-<blockquote>
-<div><dl class="simple">
-<dt>options = {</dt><dd><p>‘proxyId’: ‘426’,
-‘size’: [ &lt;imgWidth&gt;, &lt;imgHeight&gt; ]</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>filePath</strong> (<em>str</em>) – The path where the data will be saved.</p></li>
+<li><p><strong>options</strong> (<em>dict</em>) – Optional parameters to customize the save operation.</p></li>
+</ul>
 </dd>
 </dl>
-<p>}</p>
-</div></blockquote>
+<p>Example usage of <cite>options</cite>:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="nt">&quot;proxyId&quot;</span><span class="p">:</span> <span class="s2">&quot;426&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;size&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">800</span><span class="p">,</span> <span class="mi">600</span><span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
 </dd></dl>
 
 </dd></dl>

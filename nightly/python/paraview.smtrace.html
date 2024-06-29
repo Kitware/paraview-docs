@@ -3,9 +3,10 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>smtrace Module &mdash; ParaView/Python 5.12.1-1261-ga73004c7df documentation</title>
+  <title>smtrace Module &mdash; ParaView/Python 5.12.1-1285-gfa1ab22661 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+    <link rel="shortcut icon" href="_static/pvIcon.ico"/>
   <!--[if lt IE 9]>
     <script src="_static/js/html5shiv.min.js"></script>
   <![endif]-->
@@ -31,7 +32,7 @@
             <li> <a href="index.html">
               <img src="_static/paraview-logo-small.png"
               alt="ParaView/Python"></img></a> </li>
-            <li class="version"> version 5.12.1-1261-ga73004c7df</li>
+            <li class="version"> version 5.12.1-1285-gfa1ab22661</li>
           </ul>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
@@ -157,7 +158,7 @@ new <code class="xref py py-class docutils literal notranslate"><span class="pre
 <a class="reference internal" href="#paraview.smtrace.PropertiesModified" title="paraview.smtrace.PropertiesModified"><code class="xref py py-class docutils literal notranslate"><span class="pre">PropertiesModified</span></code></a> trace item rely on accessors already created.
 <a class="reference internal" href="#paraview.smtrace.Trace" title="paraview.smtrace.Trace"><code class="xref py py-class docutils literal notranslate"><span class="pre">Trace</span></code></a> can provide access to already created accessor as well as create
 new accessor for proxies create before the tracing began
-(<a href="#id1"><span class="problematic" id="id2">:method:`.Trace.get_accessor`</span></a>).</p>
+(<a class="reference internal" href="#paraview.smtrace.Trace.get_accessor" title="paraview.smtrace.Trace.get_accessor"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Trace.get_accessor()</span></code></a>).</p>
 <p>Additionally, there are filters such as <a class="reference internal" href="#paraview.smtrace.ProxyFilter" title="paraview.smtrace.ProxyFilter"><code class="xref py py-class docutils literal notranslate"><span class="pre">ProxyFilter</span></code></a>,
 <a class="reference internal" href="#paraview.smtrace.PipelineProxyFilter" title="paraview.smtrace.PipelineProxyFilter"><code class="xref py py-class docutils literal notranslate"><span class="pre">PipelineProxyFilter</span></code></a>, etc. which are used to filter properties that get
 traced and where they get traced i.e. in constructor call or right after it.</p>
@@ -1090,9 +1091,11 @@ to try to consolidate the state changes.</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="paraview.smtrace.get_current_trace_output_and_reset">
 <span class="sig-prename descclassname"><span class="pre">paraview.smtrace.</span></span><span class="sig-name descname"><span class="pre">get_current_trace_output_and_reset</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">raw</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/smtrace.html#get_current_trace_output_and_reset"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#paraview.smtrace.get_current_trace_output_and_reset" title="Permalink to this definition">¶</a></dt>
-<dd><p>Equivalent to calling:</p>
-<p>get_current_trace_output(raw)
+<dd><p>Equivalent to calling the following code:</p>
+<blockquote>
+<div><p>get_current_trace_output(raw)
 reset_trace_output()</p>
+</div></blockquote>
 </dd></dl>
 
 <dl class="py function">

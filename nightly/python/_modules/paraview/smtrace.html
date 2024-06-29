@@ -3,9 +3,10 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>paraview.smtrace &mdash; ParaView/Python 5.12.1-1261-ga73004c7df documentation</title>
+  <title>paraview.smtrace &mdash; ParaView/Python 5.12.1-1285-gfa1ab22661 documentation</title>
       <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+    <link rel="shortcut icon" href="../../_static/pvIcon.ico"/>
   <!--[if lt IE 9]>
     <script src="../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
@@ -29,7 +30,7 @@
             <li> <a href="../../index.html">
               <img src="../../_static/paraview-logo-small.png"
               alt="ParaView/Python"></img></a> </li>
-            <li class="version"> version 5.12.1-1261-ga73004c7df</li>
+            <li class="version"> version 5.12.1-1285-gfa1ab22661</li>
           </ul>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
@@ -128,7 +129,7 @@
 <span class="sd">:class:`.PropertiesModified` trace item rely on accessors already created.</span>
 <span class="sd">:class:`.Trace` can provide access to already created accessor as well as create</span>
 <span class="sd">new accessor for proxies create before the tracing began</span>
-<span class="sd">(:method:`.Trace.get_accessor`).</span>
+<span class="sd">(:meth:`.Trace.get_accessor`).</span>
 
 <span class="sd">Additionally, there are filters such as :class:`.ProxyFilter`,</span>
 <span class="sd">:class:`.PipelineProxyFilter`, etc. which are used to filter properties that get</span>
@@ -2312,10 +2313,12 @@
 
 
 <div class="viewcode-block" id="get_current_trace_output_and_reset"><a class="viewcode-back" href="../../paraview.smtrace.html#paraview.smtrace.get_current_trace_output_and_reset">[docs]</a><span class="k">def</span> <span class="nf">get_current_trace_output_and_reset</span><span class="p">(</span><span class="n">raw</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Equivalent to calling::</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Equivalent to calling the following code:</span>
 
 <span class="sd">        get_current_trace_output(raw)</span>
 <span class="sd">        reset_trace_output()</span>
+
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="n">output</span> <span class="o">=</span> <span class="n">get_current_trace_output</span><span class="p">(</span><span class="n">raw</span><span class="p">)</span>

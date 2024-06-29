@@ -3,9 +3,10 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>paraview.web.protocols &mdash; ParaView/Python 5.12.1-1261-ga73004c7df documentation</title>
+  <title>paraview.web.protocols &mdash; ParaView/Python 5.12.1-1285-gfa1ab22661 documentation</title>
       <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+    <link rel="shortcut icon" href="../../../_static/pvIcon.ico"/>
   <!--[if lt IE 9]>
     <script src="../../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
@@ -29,7 +30,7 @@
             <li> <a href="../../../index.html">
               <img src="../../../_static/paraview-logo-small.png"
               alt="ParaView/Python"></img></a> </li>
-            <li class="version"> version 5.12.1-1261-ga73004c7df</li>
+            <li class="version"> version 5.12.1-1285-gfa1ab22661</li>
           </ul>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
@@ -2933,14 +2934,19 @@
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Generates a block of color information, given a representation proxy.</span>
 
-<span class="sd">            colorBy: {</span>
-<span class="sd">                &#39;representation&#39;: &#39;652&#39;,</span>
-<span class="sd">                &#39;scalarBar&#39;: 0,</span>
-<span class="sd">                &#39;mode&#39;: &#39;color&#39;    # &#39;array&#39;</span>
-<span class="sd">                &#39;color&#39;: [ 0.5, 1.0, 1.0 ],</span>
-<span class="sd">                &#39;array&#39;: [ &#39;POINTS&#39;, &#39;RTData&#39;, -1 ],</span>
-<span class="sd">                &#39;colorMap&#39;: &#39;Blue to Red&#39;</span>
+<span class="sd">        Example output format:</span>
+
+<span class="sd">        .. code-block:: json</span>
+
+<span class="sd">            &quot;colorBy&quot;: {</span>
+<span class="sd">                &quot;representation&quot;: &quot;652&quot;,</span>
+<span class="sd">                &quot;scalarBar&quot;: 0,</span>
+<span class="sd">                &quot;mode&quot;: &quot;color&quot;,   # &#39;array&#39;</span>
+<span class="sd">                &quot;color&quot;: [0.5, 1.0, 1.0],</span>
+<span class="sd">                &quot;array&quot;: [&quot;POINTS&quot;, &quot;RTData&quot;, -1],</span>
+<span class="sd">                &quot;colorMap&quot;: &quot;Blue to Red&quot;</span>
 <span class="sd">            }</span>
+
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">colorInfo</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;representation&quot;</span><span class="p">:</span> <span class="n">proxy</span><span class="o">.</span><span class="n">GetGlobalIDAsString</span><span class="p">()}</span>
         <span class="k">if</span> <span class="n">proxy</span><span class="o">.</span><span class="n">GetProperty</span><span class="p">(</span><span class="s2">&quot;DiffuseColor&quot;</span><span class="p">):</span>
@@ -2979,21 +2985,33 @@
 <div class="viewcode-block" id="ParaViewWebProxyManager.getUiProperties"><a class="viewcode-back" href="../../../paraview.web.protocols.html#paraview.web.protocols.ParaViewWebProxyManager.getUiProperties">[docs]</a>    <span class="k">def</span> <span class="nf">getUiProperties</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">proxyId</span><span class="p">,</span> <span class="n">proxyProperties</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Generates an array of objects, parallel to the properties, containing</span>
-<span class="sd">        the information needed to render ui for each property.  Not all of the</span>
+<span class="sd">        the information needed to render UI for each property. Not all of the</span>
 <span class="sd">        following attributes will always be present.</span>
 
-<span class="sd">        ui : [ {</span>
-<span class="sd">                 &#39;name&#39;: &#39;Clip Type&#39;,</span>
-<span class="sd">                 &#39;advanced&#39;: 1,                 # 0</span>
-<span class="sd">                 &#39;doc&#39;: &#39;Documentation string for the property&#39;,</span>
-<span class="sd">                 &#39;dependency&#39;: &#39;498:ClipFunction:Sphere:1&#39;,</span>
-<span class="sd">                 &#39;values&#39;: { &#39;Plane&#39;: &#39;456&#39;, &#39;Box&#39;: &#39;457&#39;, &#39;Scalar&#39;: &#39;458&#39;, &#39;Sphere&#39;: &#39;459&#39; },</span>
-<span class="sd">                 &#39;type&#39;: &#39;int&#39;,                    # &#39;float&#39;, &#39;int&#39;, &#39;str&#39;, &#39;proxy&#39;, &#39;input&#39;, ...</span>
-<span class="sd">                 &#39;widget&#39;: &#39;textfield&#39;,            # &#39;checkbox&#39;, &#39;textarea&#39;, &#39;list-1&#39;, &#39;list-n&#39;</span>
-<span class="sd">                 &#39;size&#39;: -1,                       # -1, 0, 2, 3, 6</span>
-<span class="sd">                 &#39;range&#39;: [ { &#39;min&#39;: 0, &#39;max&#39;: 1 }, { &#39;min&#39;: 4, &#39;max&#39;: 7 }, ... ]</span>
-<span class="sd">               }, ...</span>
-<span class="sd">             ]</span>
+<span class="sd">        :param proxyId: The ID of the proxy.</span>
+<span class="sd">        :type proxyId: str</span>
+<span class="sd">        :param proxyProperties: The properties of the proxy.</span>
+<span class="sd">        :type proxyProperties: list</span>
+
+<span class="sd">        Example output format:</span>
+
+<span class="sd">        .. code-block:: json</span>
+
+<span class="sd">            &quot;ui&quot;: [</span>
+<span class="sd">                {</span>
+<span class="sd">                    &quot;name&quot;: &quot;Clip Type&quot;,</span>
+<span class="sd">                    &quot;advanced&quot;: 1,                  # 0</span>
+<span class="sd">                    &quot;doc&quot;: &quot;Documentation string for the property&quot;,</span>
+<span class="sd">                    &quot;dependency&quot;: &quot;498:ClipFunction:Sphere:1&quot;,</span>
+<span class="sd">                    &quot;values&quot;: { &quot;Plane&quot;: &quot;456&quot;, &quot;Box&quot;: &quot;457&quot;, &quot;Scalar&quot;: &quot;458&quot;, &quot;Sphere&quot;: &quot;459&quot; },</span>
+<span class="sd">                    &quot;type&quot;: &quot;int&quot;,                  # &#39;float&#39;, &#39;int&#39;, &#39;str&#39;, &#39;proxy&#39;, &#39;input&#39;, ...</span>
+<span class="sd">                    &quot;widget&quot;: &quot;textfield&quot;,          # &#39;checkbox&#39;, &#39;textarea&#39;, &#39;list-1&#39;, &#39;list-n&#39;</span>
+<span class="sd">                    &quot;size&quot;: -1,                     # -1, 0, 2, 3, 6</span>
+<span class="sd">                    &quot;range&quot;: [ { &quot;min&quot;: 0, &quot;max&quot;: 1 }, { &quot;min&quot;: 4, &quot;max&quot;: 7 } ]</span>
+<span class="sd">                }</span>
+<span class="sd">                # More objects...</span>
+<span class="sd">            ]</span>
+
 <span class="sd">        &quot;&quot;&quot;</span>
 
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">proxyIsRepresentation</span><span class="p">:</span>
@@ -3571,18 +3589,26 @@
 <div class="viewcode-block" id="ParaViewWebSaveData.saveData"><a class="viewcode-back" href="../../../paraview.web.protocols.html#paraview.web.protocols.ParaViewWebSaveData.saveData">[docs]</a>    <span class="nd">@exportRpc</span><span class="p">(</span><span class="s2">&quot;pv.data.save&quot;</span><span class="p">)</span>
     <span class="k">def</span> <span class="nf">saveData</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">filePath</span><span class="p">,</span> <span class="n">options</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        Save some data on the server side.  Can save data from a proxy, a</span>
-<span class="sd">        screenshot, or else the current state.  Options may be different</span>
-<span class="sd">        depending on the type of data to be save.  Saving a screenshot</span>
+<span class="sd">        Save some data on the server side. Can save data from a proxy, a</span>
+<span class="sd">        screenshot, or else the current state. Options may be different</span>
+<span class="sd">        depending on the type of data to be saved. Saving a screenshot</span>
 <span class="sd">        can take an optional size array indicating the desired width and</span>
-<span class="sd">        height of the saved image.  Saving data can take an optional proxy</span>
+<span class="sd">        height of the saved image. Saving data can take an optional proxy</span>
 <span class="sd">        id specifying which filter or source to save output from.</span>
 
-<span class="sd">            options = {</span>
-<span class="sd">                &#39;proxyId&#39;: &#39;426&#39;,</span>
-<span class="sd">                &#39;size&#39;: [ &lt;imgWidth&gt;, &lt;imgHeight&gt; ]</span>
-<span class="sd">            }</span>
+<span class="sd">        :param filePath: The path where the data will be saved.</span>
+<span class="sd">        :type filePath: str</span>
+<span class="sd">        :param options: Optional parameters to customize the save operation.</span>
+<span class="sd">        :type options: dict</span>
 
+<span class="sd">        Example usage of `options`:</span>
+
+<span class="sd">        .. code-block:: json</span>
+
+<span class="sd">            {</span>
+<span class="sd">                &quot;proxyId&quot;: &quot;426&quot;,</span>
+<span class="sd">                &quot;size&quot;: [800, 600]</span>
+<span class="sd">            }</span>
 <span class="sd">        &quot;&quot;&quot;</span>
 
         <span class="c1"># make sure file path exists</span>

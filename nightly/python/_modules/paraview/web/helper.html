@@ -3,9 +3,10 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>paraview.web.helper &mdash; ParaView/Python 5.12.1-1261-ga73004c7df documentation</title>
+  <title>paraview.web.helper &mdash; ParaView/Python 5.12.1-1285-gfa1ab22661 documentation</title>
       <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+    <link rel="shortcut icon" href="../../../_static/pvIcon.ico"/>
   <!--[if lt IE 9]>
     <script src="../../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
@@ -29,7 +30,7 @@
             <li> <a href="../../../index.html">
               <img src="../../../_static/paraview-logo-small.png"
               alt="ParaView/Python"></img></a> </li>
-            <li class="version"> version 5.12.1-1261-ga73004c7df</li>
+            <li class="version"> version 5.12.1-1285-gfa1ab22661</li>
           </ul>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
@@ -326,16 +327,20 @@
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Return a json representation of the given proxy state.</span>
 
-<span class="sd">    Example of the state of the Clip filter</span>
-<span class="sd">      {</span>
-<span class="sd">         proxy_id: 234,</span>
-<span class="sd">         ClipType: {</span>
-<span class="sd">            proxy_id: 235,</span>
-<span class="sd">            Normal: [0,0,1],</span>
-<span class="sd">            Origin: [0,0,0],</span>
-<span class="sd">            InsideOut: 0</span>
-<span class="sd">         }</span>
-<span class="sd">      }</span>
+<span class="sd">    Example of the state of the Clip filter:</span>
+
+<span class="sd">    .. code-block:: json</span>
+
+<span class="sd">        {</span>
+<span class="sd">            &quot;proxy_id&quot;: 234,</span>
+<span class="sd">            &quot;ClipType&quot;: {</span>
+<span class="sd">                &quot;proxy_id&quot;: 235,</span>
+<span class="sd">                &quot;Normal&quot;: [0, 0, 1],</span>
+<span class="sd">                &quot;Origin&quot;: [0, 0, 0],</span>
+<span class="sd">                &quot;InsideOut&quot;: 0</span>
+<span class="sd">            }</span>
+<span class="sd">        }</span>
+
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">proxy_id</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">id</span><span class="p">)</span>
     <span class="n">proxy</span> <span class="o">=</span> <span class="n">idToProxy</span><span class="p">(</span><span class="n">proxy_id</span><span class="p">)</span>
@@ -564,16 +569,19 @@
 
 <div class="viewcode-block" id="listFiles"><a class="viewcode-back" href="../../../paraview.web.helper.html#paraview.web.helper.listFiles">[docs]</a><span class="k">def</span> <span class="nf">listFiles</span><span class="p">(</span><span class="n">pathToList</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Create a tree structure of the given directory that will be understand by</span>
+<span class="sd">    Create a tree structure of the given directory that will be understood by</span>
 <span class="sd">    the pipelineBrowser widget.</span>
 <span class="sd">    The provided path should not have a trailing &#39;/&#39;.</span>
 
-<span class="sd">    return {</span>
-<span class="sd">       children: [</span>
-<span class="sd">           { name: &#39;fileName.vtk&#39;, path: &#39;/full_path/to_file/fileName.vtk&#39; },</span>
-<span class="sd">           { name: &#39;directoryName&#39;, path: &#39;/full_path/to_file/directoryName&#39;, children: [] }</span>
-<span class="sd">       ]</span>
-<span class="sd">    }</span>
+<span class="sd">    .. code-block:: json</span>
+
+<span class="sd">         {</span>
+<span class="sd">            children: [</span>
+<span class="sd">                { name: &#39;fileName.vtk&#39;, path: &#39;/full_path/to_file/fileName.vtk&#39; },</span>
+<span class="sd">                { name: &#39;directoryName&#39;, path: &#39;/full_path/to_file/directoryName&#39;, children: [] }</span>
+<span class="sd">            ]</span>
+<span class="sd">        }</span>
+
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">global</span> <span class="n">fileList</span>
     <span class="k">if</span> <span class="n">pathToList</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;/&quot;</span><span class="p">:</span>
