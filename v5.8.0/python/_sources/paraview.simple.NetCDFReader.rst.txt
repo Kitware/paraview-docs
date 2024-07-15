@@ -1,0 +1,200 @@
+paraview.simple.NetCDFReader
+============================
+
+.. currentmodule:: paraview.simple
+
+.. autofunction:: NetCDFReader
+
+Data Descriptors
+----------------
+
+
+   
+   Dimensions
+       Load the grid with the given dimensions. Any arrays that
+       conform to these dimensions will be loaded.
+   
+   FileName
+       The name of the files to load.
+   
+   OutputType
+       Specifies the type of data that the reader creates. If
+       Automatic, the reader will use the most appropriate grid type for the
+       data read. Note that not all grid types support all data. A warning is
+       issued if a mismatch occurs.
+   
+   ReplaceFillValueWithNan
+       If on, any float or double variable read that has a
+       _FillValue attribute will have that fill value replaced with a
+       not-a-number (NaN) value. The advantage of setting these to NaN values
+       is that, if implemented properly by the system and careful math
+       operations are used, they can implicitly be ignored by calculations
+       like finding the range of the values. That said, this option should be
+       used with caution as VTK does not fully support NaN values and
+       therefore odd calculations may occur.
+   
+   SphericalCoordinates
+       If on, then data with latitude/longitude dimensions will
+       be read in as curvilinear data shaped like spherical coordinates. If
+       false, then the data will always be read in Cartesian
+       coordinates.
+   
+   TimestepValues
+       This magic property sends time information to the
+       animation panel. ParaView will then automatically set up the animation
+       to visit the time steps defined in the file.
+   
+   VerticalBias
+       The bias of the vertical component of spherical
+       coordinates. It is common to write the vertical component with respect
+       to something other than the center of the sphere (for example, the
+       surface). In this case, it might be necessary to scale and/or bias the
+       vertical height. The height will become height\*scale + bias. Keep in
+       mind that if the positive attribute of the vertical dimension is down,
+       then the height is negated. The scaling will be adjusted if it results
+       in invalid (negative) vertical values.
+   
+   VerticalScale
+       The scale of the vertical component of spherical
+       coordinates. It is common to write the vertical component with respect
+       to something other than the center of the sphere (for example, the
+       surface). In this case, it might be necessary to scale and/or bias the
+       vertical height. The height will become height\*scale + bias. Keep in
+       mind that if the positive attribute of the vertical dimension is down,
+       then the height is negated. The scaling will be adjusted if it results
+       in invalid (negative) vertical values.
+   
+   
+
+Data Descriptors inherited from SourceProxy
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+   
+   CellData
+       Returns cell data information
+   
+   FieldData
+       Returns field data information
+   
+   PointData
+       Returns point data information
+   
+   
+
+Data Descriptors inherited from Proxy
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+   
+   __dict__
+       dictionary for instance variables (if defined)
+   
+   __weakref__
+       list of weak references to the object (if defined)
+   
+
+Methods
+-------
+
+
+   
+   Initialize = aInitialize(self, connection=None, update=True)
+   
+   
+
+Methods inherited from SourceProxy
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+   
+   FileNameChanged(self)
+       Called when the filename of a source proxy is changed.
+   
+   GetCellDataInformation(self)
+       Returns the associated cell data information.
+   
+   GetDataInformation(self, idx=None)
+       This method returns a DataInformation wrapper around a
+       vtkPVDataInformation
+   
+   GetFieldDataInformation(self)
+       Returns the associated cell data information.
+   
+   GetPointDataInformation(self)
+       Returns the associated point data information.
+   
+   UpdatePipeline(self, time=None)
+       This method updates the server-side VTK pipeline and the associated
+       data information. Make sure to update a source to validate the output
+       meta-data.
+   
+   UpdatePipelineInformation(self)
+       This method updates the meta-data of the server-side VTK pipeline and
+       the associated information properties
+   
+   __getitem__(self, idx)
+       Given a slice, int or string, returns the corresponding
+       output port
+   
+   
+
+Methods inherited from Proxy
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+   
+   GetProperty(self, name)
+       Given a property name, returns the property object.
+   
+   GetPropertyValue(self, name)
+       Returns a scalar for properties with 1 elements, the property
+       itself for vectors.
+   
+   InitializeFromProxy(self, aProxy, update=True)
+       Constructor. Assigns proxy to self.SMProxy, updates the server
+       object as well as register the proxy in _pyproxies dictionary.
+   
+   ListProperties(self)
+       Returns a list of all property names on this proxy.
+   
+   SetPropertyWithName(self, pname, arg)
+       Generic method for setting the value of a property.
+   
+   __del__(self)
+       Destructor. Cleans up all observers as well as remove
+       the proxy from the _pyproxies dictionary
+   
+   __eq__(self, other)
+       Returns true if the underlying SMProxies are the same.
+   
+   __getattr__(self, name)
+       With the exception of a few overloaded methods,
+       returns the SMProxy method
+   
+   __hash__(self)
+       Return hash(self).
+   
+   __init__(self, \*\*args)
+       Default constructor. It can be used to initialize properties
+       by passing keyword arguments where the key is the name of the
+       property. In addition registrationGroup and registrationName (optional)
+       can be specified (as keyword arguments) to automatically register
+       the proxy with the proxy manager.
+   
+   __iter__(self)
+       Creates an iterator for the properties.
+   
+   __ne__(self, other)
+       Returns false if the underlying SMProxies are the same.
+   
+   __setattr__(self, name, value)
+       Implement setattr(self, name, value).
+   
+   add_attribute(self, name, value)
+   
+   
+
+
+
+For the full list of servermanager proxies, please refer to :doc:`Available readers, sources, writers, filters and animation cues <paraview.servermanager_proxies>`
