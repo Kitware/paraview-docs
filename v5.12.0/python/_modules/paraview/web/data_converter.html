@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+<html class="writer-html4" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>paraview.web.data_converter &mdash; ParaView/Python 5.12.0 documentation</title><link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" /><link rel="shortcut icon" href="../../../_static/pvIcon.ico"/>
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../../_static/language_data.js"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          <ul>
+            <li> <a href="../../../index.html">
+              <img src="../../../_static/paraview-logo-small.png"
+              alt="ParaView/Python"></img></a> </li>
+            <li class="version"> version 5.12.0</li>
+          </ul>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../quick-start.html">Quick-Start :  A Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../paraview.html">The ParaView Python Package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../paraview.simple.html">simple</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../paraview.servermanager.html">servermanager</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../paraview.catalyst.html">catalyst</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../paraview.coprocessing.html">coprocessing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../paraview.benchmark.html">benchmark</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../paraview.servermanager_proxies.html">Available readers, sources, writers, filters and animation cues</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../api-changes.html">API Changes between ParaView versions</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">ParaView/Python</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+      <a href="../../../genindex.html" class="float-right">Index</a> 
+          <li><a href="../../index.html">Module code</a> &raquo;</li>
+      <li>paraview.web.data_converter</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <h1>Source code for paraview.web.data_converter</h1><div class="highlight"><pre>
+<span></span><span class="kn">from</span> <span class="nn">vtkmodules.vtkIOImage</span> <span class="k">import</span> <span class="n">vtkPNGReader</span>
+<span class="kn">from</span> <span class="nn">vtkmodules.vtkCommonCore</span> <span class="k">import</span> <span class="n">vtkFloatArray</span><span class="p">,</span> <span class="n">vtkUnsignedCharArray</span>
+<span class="kn">from</span> <span class="nn">vtkmodules.vtkCommonDataModel</span> <span class="k">import</span> <span class="n">vtkImageData</span>
+<span class="kn">from</span> <span class="nn">vtkmodules.vtkIOLegacy</span> <span class="k">import</span> <span class="n">vtkDataSetWriter</span>
+
+<span class="kn">from</span> <span class="nn">vtkmodules.web.camera</span> <span class="k">import</span> <span class="n">normalize</span><span class="p">,</span> <span class="n">vectProduct</span><span class="p">,</span> <span class="n">dotProduct</span>
+<span class="kn">from</span> <span class="nn">vtkmodules.web</span> <span class="k">import</span> <span class="n">iteritems</span>
+
+<span class="kn">import</span> <span class="nn">json</span><span class="o">,</span> <span class="nn">os</span><span class="o">,</span> <span class="nn">math</span><span class="o">,</span> <span class="nn">array</span>
+
+<span class="c1"># -----------------------------------------------------------------------------</span>
+<span class="c1"># Helper function</span>
+<span class="c1"># -----------------------------------------------------------------------------</span>
+
+
+<div class="viewcode-block" id="getScalarFromRGB"><a class="viewcode-back" href="../../../paraview.web.data_converter.html#paraview.web.data_converter.getScalarFromRGB">[docs]</a><span class="k">def</span> <span class="nf">getScalarFromRGB</span><span class="p">(</span><span class="n">rgb</span><span class="p">,</span> <span class="n">scalarRange</span><span class="o">=</span><span class="p">[</span><span class="o">-</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">]):</span>
+    <span class="n">delta</span> <span class="o">=</span> <span class="p">(</span><span class="n">scalarRange</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">scalarRange</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="o">/</span> <span class="mf">16777215.0</span>  <span class="c1"># 2^24 - 1 =&gt; 16,777,215</span>
+    <span class="k">if</span> <span class="n">rgb</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">!=</span> <span class="mi">0</span> <span class="ow">or</span> <span class="n">rgb</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">!=</span> <span class="mi">0</span> <span class="ow">or</span> <span class="n">rgb</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="c1"># Decode encoded value</span>
+        <span class="k">return</span> <span class="n">scalarRange</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">delta</span> <span class="o">*</span> <span class="nb">float</span><span class="p">(</span>
+            <span class="n">rgb</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="mi">65536</span> <span class="o">+</span> <span class="n">rgb</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="mi">256</span> <span class="o">+</span> <span class="n">rgb</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">-</span> <span class="mi">1</span>
+        <span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="c1"># No value</span>
+        <span class="k">return</span> <span class="nb">float</span><span class="p">(</span><span class="s2">&quot;NaN&quot;</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="convertImageToFloat"><a class="viewcode-back" href="../../../paraview.web.data_converter.html#paraview.web.data_converter.convertImageToFloat">[docs]</a><span class="k">def</span> <span class="nf">convertImageToFloat</span><span class="p">(</span><span class="n">srcPngImage</span><span class="p">,</span> <span class="n">destFile</span><span class="p">,</span> <span class="n">scalarRange</span><span class="o">=</span><span class="p">[</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">]):</span>
+    <span class="n">reader</span> <span class="o">=</span> <span class="n">vtkPNGReader</span><span class="p">()</span>
+    <span class="n">reader</span><span class="o">.</span><span class="n">SetFileName</span><span class="p">(</span><span class="n">srcPngImage</span><span class="p">)</span>
+    <span class="n">reader</span><span class="o">.</span><span class="n">Update</span><span class="p">()</span>
+    <span class="n">rgbArray</span> <span class="o">=</span> <span class="n">reader</span><span class="o">.</span><span class="n">GetOutput</span><span class="p">()</span><span class="o">.</span><span class="n">GetPointData</span><span class="p">()</span><span class="o">.</span><span class="n">GetArray</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+    <span class="n">stackSize</span> <span class="o">=</span> <span class="n">rgbArray</span><span class="o">.</span><span class="n">GetNumberOfTuples</span><span class="p">()</span>
+    <span class="n">size</span> <span class="o">=</span> <span class="n">reader</span><span class="o">.</span><span class="n">GetOutput</span><span class="p">()</span><span class="o">.</span><span class="n">GetDimensions</span><span class="p">()</span>
+
+    <span class="n">outputArray</span> <span class="o">=</span> <span class="n">vtkFloatArray</span><span class="p">()</span>
+    <span class="n">outputArray</span><span class="o">.</span><span class="n">SetNumberOfComponents</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">outputArray</span><span class="o">.</span><span class="n">SetNumberOfTuples</span><span class="p">(</span><span class="n">stackSize</span><span class="p">)</span>
+
+    <span class="k">for</span> <span class="n">idx</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">stackSize</span><span class="p">):</span>
+        <span class="n">outputArray</span><span class="o">.</span><span class="n">SetTuple1</span><span class="p">(</span>
+            <span class="n">idx</span><span class="p">,</span> <span class="n">getScalarFromRGB</span><span class="p">(</span><span class="n">rgbArray</span><span class="o">.</span><span class="n">GetTuple</span><span class="p">(</span><span class="n">idx</span><span class="p">),</span> <span class="n">scalarRange</span><span class="p">)</span>
+        <span class="p">)</span>
+
+    <span class="c1"># Write float file</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">destFile</span><span class="p">,</span> <span class="s2">&quot;wb&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+        <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="nb">memoryview</span><span class="p">(</span><span class="n">outputArray</span><span class="p">))</span>
+
+    <span class="k">return</span> <span class="n">size</span></div>
+
+
+<div class="viewcode-block" id="convertRGBArrayToFloatArray"><a class="viewcode-back" href="../../../paraview.web.data_converter.html#paraview.web.data_converter.convertRGBArrayToFloatArray">[docs]</a><span class="k">def</span> <span class="nf">convertRGBArrayToFloatArray</span><span class="p">(</span><span class="n">rgbArray</span><span class="p">,</span> <span class="n">scalarRange</span><span class="o">=</span><span class="p">[</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">]):</span>
+    <span class="n">linearSize</span> <span class="o">=</span> <span class="n">rgbArray</span><span class="o">.</span><span class="n">GetNumberOfTuples</span><span class="p">()</span>
+
+    <span class="n">outputArray</span> <span class="o">=</span> <span class="n">vtkFloatArray</span><span class="p">()</span>
+    <span class="n">outputArray</span><span class="o">.</span><span class="n">SetNumberOfComponents</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">outputArray</span><span class="o">.</span><span class="n">SetNumberOfTuples</span><span class="p">(</span><span class="n">linearSize</span><span class="p">)</span>
+
+    <span class="k">for</span> <span class="n">idx</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">linearSize</span><span class="p">):</span>
+        <span class="n">outputArray</span><span class="o">.</span><span class="n">SetTuple1</span><span class="p">(</span>
+            <span class="n">idx</span><span class="p">,</span> <span class="n">getScalarFromRGB</span><span class="p">(</span><span class="n">rgbArray</span><span class="o">.</span><span class="n">GetTuple</span><span class="p">(</span><span class="n">idx</span><span class="p">),</span> <span class="n">scalarRange</span><span class="p">)</span>
+        <span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">outputArray</span></div>
+
+
+<span class="c1"># -----------------------------------------------------------------------------</span>
+<span class="c1"># Composite.json To order.array</span>
+<span class="c1"># -----------------------------------------------------------------------------</span>
+<div class="viewcode-block" id="CompositeJSON"><a class="viewcode-back" href="../../../paraview.web.data_converter.html#paraview.web.data_converter.CompositeJSON">[docs]</a><span class="k">class</span> <span class="nc">CompositeJSON</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">numberOfLayers</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">nbLayers</span> <span class="o">=</span> <span class="n">numberOfLayers</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">encoding</span> <span class="o">=</span> <span class="s2">&quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;</span>
+
+<div class="viewcode-block" id="CompositeJSON.load"><a class="viewcode-back" href="../../../paraview.web.data_converter.html#paraview.web.data_converter.CompositeJSON.load">[docs]</a>    <span class="k">def</span> <span class="nf">load</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">file</span><span class="p">):</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+            <span class="n">composite</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">width</span> <span class="o">=</span> <span class="n">composite</span><span class="p">[</span><span class="s2">&quot;dimensions&quot;</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">height</span> <span class="o">=</span> <span class="n">composite</span><span class="p">[</span><span class="s2">&quot;dimensions&quot;</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">pixels</span> <span class="o">=</span> <span class="n">composite</span><span class="p">[</span><span class="s2">&quot;pixel-order&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;+&quot;</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">imageSize</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">width</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">height</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">stackSize</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">imageSize</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">nbLayers</span></div>
+
+<div class="viewcode-block" id="CompositeJSON.getImageSize"><a class="viewcode-back" href="../../../paraview.web.data_converter.html#paraview.web.data_converter.CompositeJSON.getImageSize">[docs]</a>    <span class="k">def</span> <span class="nf">getImageSize</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">imageSize</span></div>
+
+<div class="viewcode-block" id="CompositeJSON.getStackSize"><a class="viewcode-back" href="../../../paraview.web.data_converter.html#paraview.web.data_converter.CompositeJSON.getStackSize">[docs]</a>    <span class="k">def</span> <span class="nf">getStackSize</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">stackSize</span></div>
+
+<div class="viewcode-block" id="CompositeJSON.writeOrderSprite"><a class="viewcode-back" href="../../../paraview.web.data_converter.html#paraview.web.data_converter.CompositeJSON.writeOrderSprite">[docs]</a>    <span class="k">def</span> <span class="nf">writeOrderSprite</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="p">):</span>
+        <span class="n">ds</span> <span class="o">=</span> <span class="n">vtkImageData</span><span class="p">()</span>
+        <span class="n">ds</span><span class="o">.</span><span class="n">SetDimensions</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">width</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">height</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">nbLayers</span><span class="p">)</span>
+        <span class="n">ds</span><span class="o">.</span><span class="n">GetPointData</span><span class="p">()</span><span class="o">.</span><span class="n">AddArray</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">getSortedOrderArray</span><span class="p">())</span>
+
+        <span class="n">writer</span> <span class="o">=</span> <span class="n">vtkDataSetWriter</span><span class="p">()</span>
+        <span class="n">writer</span><span class="o">.</span><span class="n">SetInputData</span><span class="p">(</span><span class="n">ds</span><span class="p">)</span>
+        <span class="n">writer</span><span class="o">.</span><span class="n">SetFileName</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
+        <span class="n">writer</span><span class="o">.</span><span class="n">Update</span><span class="p">()</span></div>
+
+<div class="viewcode-block" id="CompositeJSON.getSortedOrderArray"><a class="viewcode-back" href="../../../paraview.web.data_converter.html#paraview.web.data_converter.CompositeJSON.getSortedOrderArray">[docs]</a>    <span class="k">def</span> <span class="nf">getSortedOrderArray</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">sortedOrder</span> <span class="o">=</span> <span class="n">vtkUnsignedCharArray</span><span class="p">()</span>
+        <span class="n">sortedOrder</span><span class="o">.</span><span class="n">SetName</span><span class="p">(</span><span class="s2">&quot;layerIdx&quot;</span><span class="p">)</span>
+        <span class="n">sortedOrder</span><span class="o">.</span><span class="n">SetNumberOfTuples</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">stackSize</span><span class="p">)</span>
+
+        <span class="c1"># Reset content</span>
+        <span class="k">for</span> <span class="n">idx</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">stackSize</span><span class="p">):</span>
+            <span class="n">sortedOrder</span><span class="o">.</span><span class="n">SetValue</span><span class="p">(</span><span class="n">idx</span><span class="p">,</span> <span class="mi">255</span><span class="p">)</span>
+
+        <span class="n">idx</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">for</span> <span class="n">pixel</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">pixels</span><span class="p">:</span>
+            <span class="n">x</span> <span class="o">=</span> <span class="n">idx</span> <span class="o">%</span> <span class="bp">self</span><span class="o">.</span><span class="n">width</span>
+            <span class="n">y</span> <span class="o">=</span> <span class="n">idx</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">width</span>
+            <span class="n">flipYIdx</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">width</span> <span class="o">*</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">height</span> <span class="o">-</span> <span class="n">y</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="n">x</span>
+            <span class="k">if</span> <span class="s2">&quot;@&quot;</span> <span class="ow">in</span> <span class="n">pixel</span><span class="p">:</span>
+                <span class="n">idx</span> <span class="o">+=</span> <span class="nb">int</span><span class="p">(</span><span class="n">pixel</span><span class="p">[</span><span class="mi">1</span><span class="p">:])</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="c1"># Need to decode the order</span>
+                <span class="n">layerIdx</span> <span class="o">=</span> <span class="mi">0</span>
+                <span class="k">for</span> <span class="n">layer</span> <span class="ow">in</span> <span class="n">pixel</span><span class="p">:</span>
+                    <span class="n">sortedOrder</span><span class="o">.</span><span class="n">SetValue</span><span class="p">(</span>
+                        <span class="n">flipYIdx</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">imageSize</span> <span class="o">*</span> <span class="n">layerIdx</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">encoding</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">layer</span><span class="p">)</span>
+                    <span class="p">)</span>
+                    <span class="n">layerIdx</span> <span class="o">+=</span> <span class="mi">1</span>
+
+                <span class="c1"># Move to next pixel</span>
+                <span class="n">idx</span> <span class="o">+=</span> <span class="mi">1</span>
+
+        <span class="k">return</span> <span class="n">sortedOrder</span></div></div>
+
+
+<span class="c1"># -----------------------------------------------------------------------------</span>
+<span class="c1"># Composite Sprite to Sorted Composite Dataset Builder</span>
+<span class="c1"># -----------------------------------------------------------------------------</span>
+
+
+<div class="viewcode-block" id="ConvertCompositeSpriteToSortedStack"><a class="viewcode-back" href="../../../paraview.web.data_converter.html#paraview.web.data_converter.ConvertCompositeSpriteToSortedStack">[docs]</a><span class="k">class</span> <span class="nc">ConvertCompositeSpriteToSortedStack</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">directory</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">basePath</span> <span class="o">=</span> <span class="n">directory</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">layers</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">imageReader</span> <span class="o">=</span> <span class="n">vtkPNGReader</span><span class="p">()</span>
+
+        <span class="c1"># Load JSON metadata</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">directory</span><span class="p">,</span> <span class="s2">&quot;config.json&quot;</span><span class="p">),</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">config</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">nbLayers</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="s2">&quot;scene&quot;</span><span class="p">])</span>
+            <span class="k">while</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">layers</span><span class="p">)</span> <span class="o">&lt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">nbLayers</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">append</span><span class="p">({})</span>
+
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">directory</span><span class="p">,</span> <span class="s2">&quot;index.json&quot;</span><span class="p">),</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">info</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">directory</span><span class="p">,</span> <span class="s2">&quot;offset.json&quot;</span><span class="p">),</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+            <span class="n">offsets</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+            <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">iteritems</span><span class="p">(</span><span class="n">offsets</span><span class="p">):</span>
+                <span class="n">meta</span> <span class="o">=</span> <span class="n">key</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;|&quot;</span><span class="p">)</span>
+                <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">meta</span><span class="p">)</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">layers</span><span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="n">meta</span><span class="p">[</span><span class="mi">0</span><span class="p">])][</span><span class="n">meta</span><span class="p">[</span><span class="mi">1</span><span class="p">]]</span> <span class="o">=</span> <span class="n">value</span>
+                <span class="k">elif</span> <span class="n">meta</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">layers</span><span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="n">meta</span><span class="p">[</span><span class="mi">0</span><span class="p">])]:</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">layers</span><span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="n">meta</span><span class="p">[</span><span class="mi">0</span><span class="p">])][</span><span class="n">meta</span><span class="p">[</span><span class="mi">1</span><span class="p">]][</span><span class="nb">int</span><span class="p">(</span><span class="n">meta</span><span class="p">[</span><span class="mi">2</span><span class="p">])]</span> <span class="o">=</span> <span class="n">value</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">layers</span><span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="n">meta</span><span class="p">[</span><span class="mi">0</span><span class="p">])][</span><span class="n">meta</span><span class="p">[</span><span class="mi">1</span><span class="p">]]</span> <span class="o">=</span> <span class="p">[</span><span class="n">value</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">value</span><span class="p">]</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">composite</span> <span class="o">=</span> <span class="n">CompositeJSON</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">layers</span><span class="p">))</span>
+
+<div class="viewcode-block" id="ConvertCompositeSpriteToSortedStack.listData"><a class="viewcode-back" href="../../../paraview.web.data_converter.html#paraview.web.data_converter.ConvertCompositeSpriteToSortedStack.listData">[docs]</a>    <span class="k">def</span> <span class="nf">listData</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span></div>
+
+<div class="viewcode-block" id="ConvertCompositeSpriteToSortedStack.convert"><a class="viewcode-back" href="../../../paraview.web.data_converter.html#paraview.web.data_converter.ConvertCompositeSpriteToSortedStack.convert">[docs]</a>    <span class="k">def</span> <span class="nf">convert</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">root</span><span class="p">,</span> <span class="n">dirs</span><span class="p">,</span> <span class="n">files</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">walk</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">basePath</span><span class="p">):</span>
+            <span class="k">if</span> <span class="s2">&quot;rgb.png&quot;</span> <span class="ow">in</span> <span class="n">files</span><span class="p">:</span>
+                <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Process&quot;</span><span class="p">,</span> <span class="n">root</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">processDirectory</span><span class="p">(</span><span class="n">root</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="ConvertCompositeSpriteToSortedStack.processDirectory"><a class="viewcode-back" href="../../../paraview.web.data_converter.html#paraview.web.data_converter.ConvertCompositeSpriteToSortedStack.processDirectory">[docs]</a>    <span class="k">def</span> <span class="nf">processDirectory</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">directory</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">imageReader</span><span class="o">.</span><span class="n">SetFileName</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">directory</span><span class="p">,</span> <span class="s2">&quot;rgb.png&quot;</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">imageReader</span><span class="o">.</span><span class="n">Update</span><span class="p">()</span>
+        <span class="n">rgbArray</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">imageReader</span><span class="o">.</span><span class="n">GetOutput</span><span class="p">()</span><span class="o">.</span><span class="n">GetPointData</span><span class="p">()</span><span class="o">.</span><span class="n">GetArray</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">composite</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">directory</span><span class="p">,</span> <span class="s2">&quot;composite.json&quot;</span><span class="p">))</span>
+        <span class="n">orderArray</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">composite</span><span class="o">.</span><span class="n">getSortedOrderArray</span><span class="p">()</span>
+
+        <span class="n">imageSize</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">composite</span><span class="o">.</span><span class="n">getImageSize</span><span class="p">()</span>
+        <span class="n">stackSize</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">composite</span><span class="o">.</span><span class="n">getStackSize</span><span class="p">()</span>
+
+        <span class="c1"># Write order (sorted order way)</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">directory</span><span class="p">,</span> <span class="s2">&quot;order.uint8&quot;</span><span class="p">),</span> <span class="s2">&quot;wb&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+            <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="nb">memoryview</span><span class="p">(</span><span class="n">orderArray</span><span class="p">))</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+                <span class="p">{</span><span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;order&quot;</span><span class="p">,</span> <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;array&quot;</span><span class="p">,</span> <span class="s2">&quot;fileName&quot;</span><span class="p">:</span> <span class="s2">&quot;/order.uint8&quot;</span><span class="p">}</span>
+            <span class="p">)</span>
+
+        <span class="c1"># Encode Normals (sorted order way)</span>
+        <span class="k">if</span> <span class="s2">&quot;normal&quot;</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">layers</span><span class="p">[</span><span class="mi">0</span><span class="p">]:</span>
+            <span class="n">sortedNormal</span> <span class="o">=</span> <span class="n">vtkUnsignedCharArray</span><span class="p">()</span>
+            <span class="n">sortedNormal</span><span class="o">.</span><span class="n">SetNumberOfComponents</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>  <span class="c1"># x,y,z</span>
+            <span class="n">sortedNormal</span><span class="o">.</span><span class="n">SetNumberOfTuples</span><span class="p">(</span><span class="n">stackSize</span><span class="p">)</span>
+
+            <span class="c1"># Get Camera orientation and rotation information</span>
+            <span class="n">camDir</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+            <span class="n">worldUp</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+            <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">directory</span><span class="p">,</span> <span class="s2">&quot;camera.json&quot;</span><span class="p">),</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+                <span class="n">camera</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+                <span class="n">camDir</span> <span class="o">=</span> <span class="n">normalize</span><span class="p">(</span>
+                    <span class="p">[</span><span class="n">camera</span><span class="p">[</span><span class="s2">&quot;position&quot;</span><span class="p">][</span><span class="n">i</span><span class="p">]</span> <span class="o">-</span> <span class="n">camera</span><span class="p">[</span><span class="s2">&quot;focalPoint&quot;</span><span class="p">][</span><span class="n">i</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">)]</span>
+                <span class="p">)</span>
+                <span class="n">worldUp</span> <span class="o">=</span> <span class="n">normalize</span><span class="p">(</span><span class="n">camera</span><span class="p">[</span><span class="s2">&quot;viewUp&quot;</span><span class="p">])</span>
+
+            <span class="c1"># [ camRight, camUp, camDir ] will be our new orthonormal basis for normals</span>
+            <span class="n">camRight</span> <span class="o">=</span> <span class="n">vectProduct</span><span class="p">(</span><span class="n">camDir</span><span class="p">,</span> <span class="n">worldUp</span><span class="p">)</span>
+            <span class="n">camUp</span> <span class="o">=</span> <span class="n">vectProduct</span><span class="p">(</span><span class="n">camRight</span><span class="p">,</span> <span class="n">camDir</span><span class="p">)</span>
+
+            <span class="c1"># Tmp structure to capture (x,y,z) normal</span>
+            <span class="n">normalByLayer</span> <span class="o">=</span> <span class="n">vtkFloatArray</span><span class="p">()</span>
+            <span class="n">normalByLayer</span><span class="o">.</span><span class="n">SetNumberOfComponents</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+            <span class="n">normalByLayer</span><span class="o">.</span><span class="n">SetNumberOfTuples</span><span class="p">(</span><span class="n">stackSize</span><span class="p">)</span>
+
+            <span class="c1"># Capture all layer normals</span>
+            <span class="n">layerIdx</span> <span class="o">=</span> <span class="mi">0</span>
+            <span class="n">zPosCount</span> <span class="o">=</span> <span class="mi">0</span>
+            <span class="n">zNegCount</span> <span class="o">=</span> <span class="mi">0</span>
+            <span class="k">for</span> <span class="n">layer</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">layers</span><span class="p">:</span>
+                <span class="n">normalOffset</span> <span class="o">=</span> <span class="n">layer</span><span class="p">[</span><span class="s2">&quot;normal&quot;</span><span class="p">]</span>
+                <span class="k">for</span> <span class="n">idx</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">imageSize</span><span class="p">):</span>
+                    <span class="n">normalByLayer</span><span class="o">.</span><span class="n">SetTuple3</span><span class="p">(</span>
+                        <span class="n">layerIdx</span> <span class="o">*</span> <span class="n">imageSize</span> <span class="o">+</span> <span class="n">idx</span><span class="p">,</span>
+                        <span class="n">getScalarFromRGB</span><span class="p">(</span>
+                            <span class="n">rgbArray</span><span class="o">.</span><span class="n">GetTuple</span><span class="p">(</span><span class="n">idx</span> <span class="o">+</span> <span class="n">normalOffset</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="n">imageSize</span><span class="p">)</span>
+                        <span class="p">),</span>
+                        <span class="n">getScalarFromRGB</span><span class="p">(</span>
+                            <span class="n">rgbArray</span><span class="o">.</span><span class="n">GetTuple</span><span class="p">(</span><span class="n">idx</span> <span class="o">+</span> <span class="n">normalOffset</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="n">imageSize</span><span class="p">)</span>
+                        <span class="p">),</span>
+                        <span class="n">getScalarFromRGB</span><span class="p">(</span>
+                            <span class="n">rgbArray</span><span class="o">.</span><span class="n">GetTuple</span><span class="p">(</span><span class="n">idx</span> <span class="o">+</span> <span class="n">normalOffset</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">*</span> <span class="n">imageSize</span><span class="p">)</span>
+                        <span class="p">),</span>
+                    <span class="p">)</span>
+
+                    <span class="c1"># Re-orient normal to be view based</span>
+                    <span class="n">vect</span> <span class="o">=</span> <span class="n">normalByLayer</span><span class="o">.</span><span class="n">GetTuple3</span><span class="p">(</span><span class="n">layerIdx</span> <span class="o">*</span> <span class="n">imageSize</span> <span class="o">+</span> <span class="n">idx</span><span class="p">)</span>
+                    <span class="k">if</span> <span class="ow">not</span> <span class="n">math</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">vect</span><span class="p">[</span><span class="mi">0</span><span class="p">]):</span>
+                        <span class="c1"># Express normal in new basis we computed above</span>
+                        <span class="n">rVect</span> <span class="o">=</span> <span class="n">normalize</span><span class="p">(</span>
+                            <span class="p">[</span>
+                                <span class="o">-</span><span class="n">dotProduct</span><span class="p">(</span><span class="n">vect</span><span class="p">,</span> <span class="n">camRight</span><span class="p">),</span>
+                                <span class="n">dotProduct</span><span class="p">(</span><span class="n">vect</span><span class="p">,</span> <span class="n">camUp</span><span class="p">),</span>
+                                <span class="n">dotProduct</span><span class="p">(</span><span class="n">vect</span><span class="p">,</span> <span class="n">camDir</span><span class="p">),</span>
+                            <span class="p">]</span>
+                        <span class="p">)</span>
+
+                        <span class="c1"># Need to reverse vector ?</span>
+                        <span class="k">if</span> <span class="n">rVect</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+                            <span class="n">normalByLayer</span><span class="o">.</span><span class="n">SetTuple3</span><span class="p">(</span>
+                                <span class="n">layerIdx</span> <span class="o">*</span> <span class="n">imageSize</span> <span class="o">+</span> <span class="n">idx</span><span class="p">,</span>
+                                <span class="o">-</span><span class="n">rVect</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
+                                <span class="o">-</span><span class="n">rVect</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span>
+                                <span class="o">-</span><span class="n">rVect</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span>
+                            <span class="p">)</span>
+                        <span class="k">else</span><span class="p">:</span>
+                            <span class="n">normalByLayer</span><span class="o">.</span><span class="n">SetTuple3</span><span class="p">(</span>
+                                <span class="n">layerIdx</span> <span class="o">*</span> <span class="n">imageSize</span> <span class="o">+</span> <span class="n">idx</span><span class="p">,</span> <span class="n">rVect</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">rVect</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">rVect</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+                            <span class="p">)</span>
+
+                <span class="n">layerIdx</span> <span class="o">+=</span> <span class="mi">1</span>
+
+            <span class="c1"># Sort normals and encode them as 3 bytes ( -1 &lt; xy &lt; 1 | 0 &lt; z &lt; 1)</span>
+            <span class="k">for</span> <span class="n">idx</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">stackSize</span><span class="p">):</span>
+                <span class="n">layerIdx</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">orderArray</span><span class="o">.</span><span class="n">GetValue</span><span class="p">(</span><span class="n">idx</span><span class="p">))</span>
+                <span class="k">if</span> <span class="n">layerIdx</span> <span class="o">==</span> <span class="mi">255</span><span class="p">:</span>
+                    <span class="c1"># No normal =&gt; same as view direction</span>
+                    <span class="n">sortedNormal</span><span class="o">.</span><span class="n">SetTuple3</span><span class="p">(</span><span class="n">idx</span><span class="p">,</span> <span class="mi">128</span><span class="p">,</span> <span class="mi">128</span><span class="p">,</span> <span class="mi">255</span><span class="p">)</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">offset</span> <span class="o">=</span> <span class="n">layerIdx</span> <span class="o">*</span> <span class="n">imageSize</span>
+                    <span class="n">imageIdx</span> <span class="o">=</span> <span class="n">idx</span> <span class="o">%</span> <span class="n">imageSize</span>
+                    <span class="n">vect</span> <span class="o">=</span> <span class="n">normalByLayer</span><span class="o">.</span><span class="n">GetTuple3</span><span class="p">(</span><span class="n">imageIdx</span> <span class="o">+</span> <span class="n">offset</span><span class="p">)</span>
+                    <span class="k">if</span> <span class="p">(</span>
+                        <span class="ow">not</span> <span class="n">math</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">vect</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+                        <span class="ow">and</span> <span class="ow">not</span> <span class="n">math</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">vect</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+                        <span class="ow">and</span> <span class="ow">not</span> <span class="n">math</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">vect</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+                    <span class="p">):</span>
+                        <span class="n">sortedNormal</span><span class="o">.</span><span class="n">SetTuple3</span><span class="p">(</span>
+                            <span class="n">idx</span><span class="p">,</span>
+                            <span class="nb">int</span><span class="p">(</span><span class="mf">127.5</span> <span class="o">*</span> <span class="p">(</span><span class="n">vect</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)),</span>
+                            <span class="nb">int</span><span class="p">(</span><span class="mf">127.5</span> <span class="o">*</span> <span class="p">(</span><span class="n">vect</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)),</span>
+                            <span class="nb">int</span><span class="p">(</span><span class="mi">255</span> <span class="o">*</span> <span class="n">vect</span><span class="p">[</span><span class="mi">2</span><span class="p">]),</span>
+                        <span class="p">)</span>
+                    <span class="k">else</span><span class="p">:</span>
+                        <span class="nb">print</span><span class="p">(</span>
+                            <span class="s2">&quot;WARNING: encountered NaN in normal of layer &quot;</span><span class="p">,</span>
+                            <span class="n">layerIdx</span><span class="p">,</span>
+                            <span class="s2">&quot;: [&quot;</span><span class="p">,</span>
+                            <span class="n">vect</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
+                            <span class="s2">&quot;,&quot;</span><span class="p">,</span>
+                            <span class="n">vect</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span>
+                            <span class="s2">&quot;,&quot;</span><span class="p">,</span>
+                            <span class="n">vect</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span>
+                            <span class="s2">&quot;]&quot;</span><span class="p">,</span>
+                        <span class="p">)</span>
+                        <span class="n">sortedNormal</span><span class="o">.</span><span class="n">SetTuple3</span><span class="p">(</span><span class="n">idx</span><span class="p">,</span> <span class="mi">128</span><span class="p">,</span> <span class="mi">128</span><span class="p">,</span> <span class="mi">255</span><span class="p">)</span>
+
+            <span class="c1"># Write the sorted data</span>
+            <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">directory</span><span class="p">,</span> <span class="s2">&quot;normal.uint8&quot;</span><span class="p">),</span> <span class="s2">&quot;wb&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+                <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="nb">memoryview</span><span class="p">(</span><span class="n">sortedNormal</span><span class="p">))</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+                    <span class="p">{</span>
+                        <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;normal&quot;</span><span class="p">,</span>
+                        <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;array&quot;</span><span class="p">,</span>
+                        <span class="s2">&quot;fileName&quot;</span><span class="p">:</span> <span class="s2">&quot;/normal.uint8&quot;</span><span class="p">,</span>
+                        <span class="s2">&quot;categories&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;normal&quot;</span><span class="p">],</span>
+                    <span class="p">}</span>
+                <span class="p">)</span>
+
+        <span class="c1"># Encode Intensity (sorted order way)</span>
+        <span class="k">if</span> <span class="s2">&quot;intensity&quot;</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">layers</span><span class="p">[</span><span class="mi">0</span><span class="p">]:</span>
+            <span class="n">intensityOffsets</span> <span class="o">=</span> <span class="p">[]</span>
+            <span class="n">sortedIntensity</span> <span class="o">=</span> <span class="n">vtkUnsignedCharArray</span><span class="p">()</span>
+            <span class="n">sortedIntensity</span><span class="o">.</span><span class="n">SetNumberOfTuples</span><span class="p">(</span><span class="n">stackSize</span><span class="p">)</span>
+
+            <span class="k">for</span> <span class="n">layer</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">layers</span><span class="p">:</span>
+                <span class="n">intensityOffsets</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">layer</span><span class="p">[</span><span class="s2">&quot;intensity&quot;</span><span class="p">])</span>
+
+            <span class="k">for</span> <span class="n">idx</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">stackSize</span><span class="p">):</span>
+                <span class="n">layerIdx</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">orderArray</span><span class="o">.</span><span class="n">GetValue</span><span class="p">(</span><span class="n">idx</span><span class="p">))</span>
+                <span class="k">if</span> <span class="n">layerIdx</span> <span class="o">==</span> <span class="mi">255</span><span class="p">:</span>
+                    <span class="n">sortedIntensity</span><span class="o">.</span><span class="n">SetValue</span><span class="p">(</span><span class="n">idx</span><span class="p">,</span> <span class="mi">255</span><span class="p">)</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">offset</span> <span class="o">=</span> <span class="mi">3</span> <span class="o">*</span> <span class="n">intensityOffsets</span><span class="p">[</span><span class="n">layerIdx</span><span class="p">]</span> <span class="o">*</span> <span class="n">imageSize</span>
+                    <span class="n">imageIdx</span> <span class="o">=</span> <span class="n">idx</span> <span class="o">%</span> <span class="n">imageSize</span>
+                    <span class="n">sortedIntensity</span><span class="o">.</span><span class="n">SetValue</span><span class="p">(</span>
+                        <span class="n">idx</span><span class="p">,</span> <span class="n">rgbArray</span><span class="o">.</span><span class="n">GetValue</span><span class="p">(</span><span class="n">imageIdx</span> <span class="o">*</span> <span class="mi">3</span> <span class="o">+</span> <span class="n">offset</span><span class="p">)</span>
+                    <span class="p">)</span>
+
+            <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">directory</span><span class="p">,</span> <span class="s2">&quot;intensity.uint8&quot;</span><span class="p">),</span> <span class="s2">&quot;wb&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+                <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="nb">memoryview</span><span class="p">(</span><span class="n">sortedIntensity</span><span class="p">))</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+                    <span class="p">{</span>
+                        <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;intensity&quot;</span><span class="p">,</span>
+                        <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;array&quot;</span><span class="p">,</span>
+                        <span class="s2">&quot;fileName&quot;</span><span class="p">:</span> <span class="s2">&quot;/intensity.uint8&quot;</span><span class="p">,</span>
+                        <span class="s2">&quot;categories&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;intensity&quot;</span><span class="p">],</span>
+                    <span class="p">}</span>
+                <span class="p">)</span>
+
+        <span class="c1"># Encode Each layer Scalar</span>
+        <span class="n">layerIdx</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">for</span> <span class="n">layer</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">layers</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">scalar</span> <span class="ow">in</span> <span class="n">layer</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">scalar</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;intensity&quot;</span><span class="p">,</span> <span class="s2">&quot;normal&quot;</span><span class="p">]:</span>
+                    <span class="n">offset</span> <span class="o">=</span> <span class="n">imageSize</span> <span class="o">*</span> <span class="n">layer</span><span class="p">[</span><span class="n">scalar</span><span class="p">]</span>
+                    <span class="n">scalarRange</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="s2">&quot;scene&quot;</span><span class="p">][</span><span class="n">layerIdx</span><span class="p">][</span><span class="s2">&quot;colors&quot;</span><span class="p">][</span><span class="n">scalar</span><span class="p">][</span>
+                        <span class="s2">&quot;range&quot;</span>
+                    <span class="p">]</span>
+                    <span class="n">delta</span> <span class="o">=</span> <span class="p">(</span>
+                        <span class="n">scalarRange</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">scalarRange</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+                    <span class="p">)</span> <span class="o">/</span> <span class="mf">16777215.0</span>  <span class="c1"># 2^24 - 1 =&gt; 16,777,215</span>
+
+                    <span class="n">scalarArray</span> <span class="o">=</span> <span class="n">vtkFloatArray</span><span class="p">()</span>
+                    <span class="n">scalarArray</span><span class="o">.</span><span class="n">SetNumberOfTuples</span><span class="p">(</span><span class="n">imageSize</span><span class="p">)</span>
+                    <span class="k">for</span> <span class="n">idx</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">imageSize</span><span class="p">):</span>
+                        <span class="n">rgb</span> <span class="o">=</span> <span class="n">rgbArray</span><span class="o">.</span><span class="n">GetTuple</span><span class="p">(</span><span class="n">idx</span> <span class="o">+</span> <span class="n">offset</span><span class="p">)</span>
+                        <span class="k">if</span> <span class="n">rgb</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">!=</span> <span class="mi">0</span> <span class="ow">or</span> <span class="n">rgb</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">!=</span> <span class="mi">0</span> <span class="ow">or</span> <span class="n">rgb</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+                            <span class="c1"># Decode encoded value</span>
+                            <span class="n">value</span> <span class="o">=</span> <span class="n">scalarRange</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">delta</span> <span class="o">*</span> <span class="nb">float</span><span class="p">(</span>
+                                <span class="n">rgb</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="mi">65536</span> <span class="o">+</span> <span class="n">rgb</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="mi">256</span> <span class="o">+</span> <span class="n">rgb</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">-</span> <span class="mi">1</span>
+                            <span class="p">)</span>
+                            <span class="n">scalarArray</span><span class="o">.</span><span class="n">SetValue</span><span class="p">(</span><span class="n">idx</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
+                        <span class="k">else</span><span class="p">:</span>
+                            <span class="c1"># No value</span>
+                            <span class="n">scalarArray</span><span class="o">.</span><span class="n">SetValue</span><span class="p">(</span><span class="n">idx</span><span class="p">,</span> <span class="nb">float</span><span class="p">(</span><span class="s2">&quot;NaN&quot;</span><span class="p">))</span>
+
+                    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span>
+                        <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">directory</span><span class="p">,</span> <span class="s2">&quot;</span><span class="si">%d</span><span class="s2">_</span><span class="si">%s</span><span class="s2">.float32&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">layerIdx</span><span class="p">,</span> <span class="n">scalar</span><span class="p">)),</span>
+                        <span class="s2">&quot;wb&quot;</span><span class="p">,</span>
+                    <span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+                        <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="nb">memoryview</span><span class="p">(</span><span class="n">scalarArray</span><span class="p">))</span>
+                        <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+                            <span class="p">{</span>
+                                <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;</span><span class="si">%d</span><span class="s2">_</span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">layerIdx</span><span class="p">,</span> <span class="n">scalar</span><span class="p">),</span>
+                                <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;array&quot;</span><span class="p">,</span>
+                                <span class="s2">&quot;fileName&quot;</span><span class="p">:</span> <span class="s2">&quot;/</span><span class="si">%d</span><span class="s2">_</span><span class="si">%s</span><span class="s2">.float32&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">layerIdx</span><span class="p">,</span> <span class="n">scalar</span><span class="p">),</span>
+                                <span class="s2">&quot;categories&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;</span><span class="si">%d</span><span class="s2">_</span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">layerIdx</span><span class="p">,</span> <span class="n">scalar</span><span class="p">)],</span>
+                            <span class="p">}</span>
+                        <span class="p">)</span>
+
+            <span class="n">layerIdx</span> <span class="o">+=</span> <span class="mi">1</span></div></div>
+
+
+<span class="c1"># -----------------------------------------------------------------------------</span>
+<span class="c1"># Composite Sprite to Sorted Composite Dataset Builder</span>
+<span class="c1"># -----------------------------------------------------------------------------</span>
+
+
+<div class="viewcode-block" id="ConvertCompositeDataToSortedStack"><a class="viewcode-back" href="../../../paraview.web.data_converter.html#paraview.web.data_converter.ConvertCompositeDataToSortedStack">[docs]</a><span class="k">class</span> <span class="nc">ConvertCompositeDataToSortedStack</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">directory</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">basePath</span> <span class="o">=</span> <span class="n">directory</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">layers</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">imageReader</span> <span class="o">=</span> <span class="n">vtkPNGReader</span><span class="p">()</span>
+
+        <span class="c1"># Load JSON metadata</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">directory</span><span class="p">,</span> <span class="s2">&quot;config.json&quot;</span><span class="p">),</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">config</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">nbLayers</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="s2">&quot;scene&quot;</span><span class="p">])</span>
+            <span class="k">while</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">layers</span><span class="p">)</span> <span class="o">&lt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">nbLayers</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">append</span><span class="p">({})</span>
+
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">directory</span><span class="p">,</span> <span class="s2">&quot;index.json&quot;</span><span class="p">),</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">info</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+
+<div class="viewcode-block" id="ConvertCompositeDataToSortedStack.listData"><a class="viewcode-back" href="../../../paraview.web.data_converter.html#paraview.web.data_converter.ConvertCompositeDataToSortedStack.listData">[docs]</a>    <span class="k">def</span> <span class="nf">listData</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span></div>
+
+<div class="viewcode-block" id="ConvertCompositeDataToSortedStack.convert"><a class="viewcode-back" href="../../../paraview.web.data_converter.html#paraview.web.data_converter.ConvertCompositeDataToSortedStack.convert">[docs]</a>    <span class="k">def</span> <span class="nf">convert</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">root</span><span class="p">,</span> <span class="n">dirs</span><span class="p">,</span> <span class="n">files</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">walk</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">basePath</span><span class="p">):</span>
+            <span class="k">if</span> <span class="s2">&quot;depth_0.float32&quot;</span> <span class="ow">in</span> <span class="n">files</span><span class="p">:</span>
+                <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Process&quot;</span><span class="p">,</span> <span class="n">root</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">processDirectory</span><span class="p">(</span><span class="n">root</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="ConvertCompositeDataToSortedStack.processDirectory"><a class="viewcode-back" href="../../../paraview.web.data_converter.html#paraview.web.data_converter.ConvertCompositeDataToSortedStack.processDirectory">[docs]</a>    <span class="k">def</span> <span class="nf">processDirectory</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">directory</span><span class="p">):</span>
+        <span class="c1"># Load depth</span>
+        <span class="n">depthStack</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">imageSize</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="s2">&quot;size&quot;</span><span class="p">]</span>
+        <span class="n">linearSize</span> <span class="o">=</span> <span class="n">imageSize</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="n">imageSize</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+        <span class="n">nbLayers</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">layers</span><span class="p">)</span>
+        <span class="n">stackSize</span> <span class="o">=</span> <span class="n">nbLayers</span> <span class="o">*</span> <span class="n">linearSize</span>
+        <span class="n">layerList</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="n">nbLayers</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">layerIdx</span> <span class="ow">in</span> <span class="n">layerList</span><span class="p">:</span>
+            <span class="k">with</span> <span class="nb">open</span><span class="p">(</span>
+                <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">directory</span><span class="p">,</span> <span class="s2">&quot;depth_</span><span class="si">%d</span><span class="s2">.float32&quot;</span> <span class="o">%</span> <span class="n">layerIdx</span><span class="p">),</span> <span class="s2">&quot;rb&quot;</span>
+            <span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+                <span class="n">a</span> <span class="o">=</span> <span class="n">array</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="s2">&quot;f&quot;</span><span class="p">)</span>
+                <span class="n">a</span><span class="o">.</span><span class="n">fromfile</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">linearSize</span><span class="p">)</span>
+                <span class="n">depthStack</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+
+        <span class="n">orderArray</span> <span class="o">=</span> <span class="n">vtkUnsignedCharArray</span><span class="p">()</span>
+        <span class="n">orderArray</span><span class="o">.</span><span class="n">SetName</span><span class="p">(</span><span class="s2">&quot;layerIdx&quot;</span><span class="p">)</span>
+        <span class="n">orderArray</span><span class="o">.</span><span class="n">SetNumberOfComponents</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+        <span class="n">orderArray</span><span class="o">.</span><span class="n">SetNumberOfTuples</span><span class="p">(</span><span class="n">stackSize</span><span class="p">)</span>
+
+        <span class="n">pixelSorter</span> <span class="o">=</span> <span class="p">[(</span><span class="n">i</span><span class="p">,</span> <span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">layerList</span><span class="p">]</span>
+
+        <span class="k">for</span> <span class="n">pixelId</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">linearSize</span><span class="p">):</span>
+            <span class="c1"># Fill pixelSorter</span>
+            <span class="k">for</span> <span class="n">layerIdx</span> <span class="ow">in</span> <span class="n">layerList</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">depthStack</span><span class="p">[</span><span class="n">layerIdx</span><span class="p">][</span><span class="n">pixelId</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mf">1.0</span><span class="p">:</span>
+                    <span class="n">pixelSorter</span><span class="p">[</span><span class="n">layerIdx</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">layerIdx</span><span class="p">,</span> <span class="n">depthStack</span><span class="p">[</span><span class="n">layerIdx</span><span class="p">][</span><span class="n">pixelId</span><span class="p">])</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">pixelSorter</span><span class="p">[</span><span class="n">layerIdx</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">)</span>
+
+            <span class="c1"># Sort pixel layers</span>
+            <span class="n">pixelSorter</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">tup</span><span class="p">:</span> <span class="n">tup</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+
+            <span class="c1"># Fill sortedOrder array</span>
+            <span class="k">for</span> <span class="n">layerIdx</span> <span class="ow">in</span> <span class="n">layerList</span><span class="p">:</span>
+                <span class="n">orderArray</span><span class="o">.</span><span class="n">SetValue</span><span class="p">(</span>
+                    <span class="n">layerIdx</span> <span class="o">*</span> <span class="n">linearSize</span> <span class="o">+</span> <span class="n">pixelId</span><span class="p">,</span> <span class="n">pixelSorter</span><span class="p">[</span><span class="n">layerIdx</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+                <span class="p">)</span>
+
+        <span class="c1"># Write order (sorted order way)</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">directory</span><span class="p">,</span> <span class="s2">&quot;order.uint8&quot;</span><span class="p">),</span> <span class="s2">&quot;wb&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+            <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="nb">memoryview</span><span class="p">(</span><span class="n">orderArray</span><span class="p">))</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+                <span class="p">{</span><span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;order&quot;</span><span class="p">,</span> <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;array&quot;</span><span class="p">,</span> <span class="s2">&quot;fileName&quot;</span><span class="p">:</span> <span class="s2">&quot;/order.uint8&quot;</span><span class="p">}</span>
+            <span class="p">)</span>
+
+        <span class="c1"># Remove depth files</span>
+        <span class="k">for</span> <span class="n">layerIdx</span> <span class="ow">in</span> <span class="n">layerList</span><span class="p">:</span>
+            <span class="n">os</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">directory</span><span class="p">,</span> <span class="s2">&quot;depth_</span><span class="si">%d</span><span class="s2">.float32&quot;</span> <span class="o">%</span> <span class="n">layerIdx</span><span class="p">))</span>
+
+        <span class="c1"># Encode Normals (sorted order way)</span>
+        <span class="k">if</span> <span class="s2">&quot;normal&quot;</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="s2">&quot;light&quot;</span><span class="p">]:</span>
+            <span class="n">sortedNormal</span> <span class="o">=</span> <span class="n">vtkUnsignedCharArray</span><span class="p">()</span>
+            <span class="n">sortedNormal</span><span class="o">.</span><span class="n">SetNumberOfComponents</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>  <span class="c1"># x,y,z</span>
+            <span class="n">sortedNormal</span><span class="o">.</span><span class="n">SetNumberOfTuples</span><span class="p">(</span><span class="n">stackSize</span><span class="p">)</span>
+
+            <span class="c1"># Get Camera orientation and rotation information</span>
+            <span class="n">camDir</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+            <span class="n">worldUp</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+            <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">directory</span><span class="p">,</span> <span class="s2">&quot;camera.json&quot;</span><span class="p">),</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+                <span class="n">camera</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+                <span class="n">camDir</span> <span class="o">=</span> <span class="n">normalize</span><span class="p">(</span>
+                    <span class="p">[</span><span class="n">camera</span><span class="p">[</span><span class="s2">&quot;position&quot;</span><span class="p">][</span><span class="n">i</span><span class="p">]</span> <span class="o">-</span> <span class="n">camera</span><span class="p">[</span><span class="s2">&quot;focalPoint&quot;</span><span class="p">][</span><span class="n">i</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">)]</span>
+                <span class="p">)</span>
+                <span class="n">worldUp</span> <span class="o">=</span> <span class="n">normalize</span><span class="p">(</span><span class="n">camera</span><span class="p">[</span><span class="s2">&quot;viewUp&quot;</span><span class="p">])</span>
+
+            <span class="c1"># [ camRight, camUp, camDir ] will be our new orthonormal basis for normals</span>
+            <span class="n">camRight</span> <span class="o">=</span> <span class="n">vectProduct</span><span class="p">(</span><span class="n">camDir</span><span class="p">,</span> <span class="n">worldUp</span><span class="p">)</span>
+            <span class="n">camUp</span> <span class="o">=</span> <span class="n">vectProduct</span><span class="p">(</span><span class="n">camRight</span><span class="p">,</span> <span class="n">camDir</span><span class="p">)</span>
+
+            <span class="c1"># Tmp structure to capture (x,y,z) normal</span>
+            <span class="n">normalByLayer</span> <span class="o">=</span> <span class="n">vtkFloatArray</span><span class="p">()</span>
+            <span class="n">normalByLayer</span><span class="o">.</span><span class="n">SetNumberOfComponents</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+            <span class="n">normalByLayer</span><span class="o">.</span><span class="n">SetNumberOfTuples</span><span class="p">(</span><span class="n">stackSize</span><span class="p">)</span>
+
+            <span class="c1"># Capture all layer normals</span>
+            <span class="n">zPosCount</span> <span class="o">=</span> <span class="mi">0</span>
+            <span class="n">zNegCount</span> <span class="o">=</span> <span class="mi">0</span>
+            <span class="k">for</span> <span class="n">layerIdx</span> <span class="ow">in</span> <span class="n">layerList</span><span class="p">:</span>
+
+                <span class="c1"># Load normal(x,y,z) from current layer</span>
+                <span class="n">normalLayer</span> <span class="o">=</span> <span class="p">[]</span>
+                <span class="k">for</span> <span class="n">comp</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]:</span>
+                    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span>
+                        <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span>
+                            <span class="n">directory</span><span class="p">,</span> <span class="s2">&quot;normal_</span><span class="si">%d</span><span class="s2">_</span><span class="si">%d</span><span class="s2">.float32&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">layerIdx</span><span class="p">,</span> <span class="n">comp</span><span class="p">)</span>
+                        <span class="p">),</span>
+                        <span class="s2">&quot;rb&quot;</span><span class="p">,</span>
+                    <span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+                        <span class="n">a</span> <span class="o">=</span> <span class="n">array</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="s2">&quot;f&quot;</span><span class="p">)</span>
+                        <span class="n">a</span><span class="o">.</span><span class="n">fromfile</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">linearSize</span><span class="p">)</span>
+                        <span class="n">normalLayer</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+
+                <span class="c1"># Store normal inside vtkArray</span>
+                <span class="n">offset</span> <span class="o">=</span> <span class="n">layerIdx</span> <span class="o">*</span> <span class="n">linearSize</span>
+                <span class="k">for</span> <span class="n">idx</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">linearSize</span><span class="p">):</span>
+                    <span class="n">normalByLayer</span><span class="o">.</span><span class="n">SetTuple3</span><span class="p">(</span>
+                        <span class="n">idx</span> <span class="o">+</span> <span class="n">offset</span><span class="p">,</span>
+                        <span class="n">normalLayer</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="n">idx</span><span class="p">],</span>
+                        <span class="n">normalLayer</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="n">idx</span><span class="p">],</span>
+                        <span class="n">normalLayer</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="n">idx</span><span class="p">],</span>
+                    <span class="p">)</span>
+
+                    <span class="c1"># Re-orient normal to be view based</span>
+                    <span class="n">vect</span> <span class="o">=</span> <span class="n">normalByLayer</span><span class="o">.</span><span class="n">GetTuple3</span><span class="p">(</span><span class="n">layerIdx</span> <span class="o">*</span> <span class="n">linearSize</span> <span class="o">+</span> <span class="n">idx</span><span class="p">)</span>
+                    <span class="k">if</span> <span class="ow">not</span> <span class="n">math</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">vect</span><span class="p">[</span><span class="mi">0</span><span class="p">]):</span>
+                        <span class="c1"># Express normal in new basis we computed above</span>
+                        <span class="n">rVect</span> <span class="o">=</span> <span class="n">normalize</span><span class="p">(</span>
+                            <span class="p">[</span>
+                                <span class="o">-</span><span class="n">dotProduct</span><span class="p">(</span><span class="n">vect</span><span class="p">,</span> <span class="n">camRight</span><span class="p">),</span>
+                                <span class="n">dotProduct</span><span class="p">(</span><span class="n">vect</span><span class="p">,</span> <span class="n">camUp</span><span class="p">),</span>
+                                <span class="n">dotProduct</span><span class="p">(</span><span class="n">vect</span><span class="p">,</span> <span class="n">camDir</span><span class="p">),</span>
+                            <span class="p">]</span>
+                        <span class="p">)</span>
+
+                        <span class="c1"># Need to reverse vector ?</span>
+                        <span class="k">if</span> <span class="n">rVect</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+                            <span class="n">normalByLayer</span><span class="o">.</span><span class="n">SetTuple3</span><span class="p">(</span>
+                                <span class="n">layerIdx</span> <span class="o">*</span> <span class="n">linearSize</span> <span class="o">+</span> <span class="n">idx</span><span class="p">,</span>
+                                <span class="o">-</span><span class="n">rVect</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
+                                <span class="o">-</span><span class="n">rVect</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span>
+                                <span class="o">-</span><span class="n">rVect</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span>
+                            <span class="p">)</span>
+                        <span class="k">else</span><span class="p">:</span>
+                            <span class="n">normalByLayer</span><span class="o">.</span><span class="n">SetTuple3</span><span class="p">(</span>
+                                <span class="n">layerIdx</span> <span class="o">*</span> <span class="n">linearSize</span> <span class="o">+</span> <span class="n">idx</span><span class="p">,</span>
+                                <span class="n">rVect</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
+                                <span class="n">rVect</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span>
+                                <span class="n">rVect</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span>
+                            <span class="p">)</span>
+
+            <span class="c1"># Sort normals and encode them as 3 bytes ( -1 &lt; xy &lt; 1 | 0 &lt; z &lt; 1)</span>
+            <span class="k">for</span> <span class="n">idx</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">stackSize</span><span class="p">):</span>
+                <span class="n">layerIdx</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">orderArray</span><span class="o">.</span><span class="n">GetValue</span><span class="p">(</span><span class="n">idx</span><span class="p">))</span>
+                <span class="k">if</span> <span class="n">layerIdx</span> <span class="o">==</span> <span class="mi">255</span><span class="p">:</span>
+                    <span class="c1"># No normal =&gt; same as view direction</span>
+                    <span class="n">sortedNormal</span><span class="o">.</span><span class="n">SetTuple3</span><span class="p">(</span><span class="n">idx</span><span class="p">,</span> <span class="mi">128</span><span class="p">,</span> <span class="mi">128</span><span class="p">,</span> <span class="mi">255</span><span class="p">)</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">offset</span> <span class="o">=</span> <span class="n">layerIdx</span> <span class="o">*</span> <span class="n">linearSize</span>
+                    <span class="n">imageIdx</span> <span class="o">=</span> <span class="n">idx</span> <span class="o">%</span> <span class="n">linearSize</span>
+                    <span class="n">vect</span> <span class="o">=</span> <span class="n">normalByLayer</span><span class="o">.</span><span class="n">GetTuple3</span><span class="p">(</span><span class="n">imageIdx</span> <span class="o">+</span> <span class="n">offset</span><span class="p">)</span>
+                    <span class="k">if</span> <span class="p">(</span>
+                        <span class="ow">not</span> <span class="n">math</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">vect</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+                        <span class="ow">and</span> <span class="ow">not</span> <span class="n">math</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">vect</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+                        <span class="ow">and</span> <span class="ow">not</span> <span class="n">math</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">vect</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+                    <span class="p">):</span>
+                        <span class="n">sortedNormal</span><span class="o">.</span><span class="n">SetTuple3</span><span class="p">(</span>
+                            <span class="n">idx</span><span class="p">,</span>
+                            <span class="nb">int</span><span class="p">(</span><span class="mf">127.5</span> <span class="o">*</span> <span class="p">(</span><span class="n">vect</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)),</span>
+                            <span class="nb">int</span><span class="p">(</span><span class="mf">127.5</span> <span class="o">*</span> <span class="p">(</span><span class="n">vect</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)),</span>
+                            <span class="nb">int</span><span class="p">(</span><span class="mi">255</span> <span class="o">*</span> <span class="n">vect</span><span class="p">[</span><span class="mi">2</span><span class="p">]),</span>
+                        <span class="p">)</span>
+                    <span class="k">else</span><span class="p">:</span>
+                        <span class="nb">print</span><span class="p">(</span>
+                            <span class="s2">&quot;WARNING: encountered NaN in normal of layer &quot;</span><span class="p">,</span>
+                            <span class="n">layerIdx</span><span class="p">,</span>
+                            <span class="s2">&quot;: [&quot;</span><span class="p">,</span>
+                            <span class="n">vect</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
+                            <span class="s2">&quot;,&quot;</span><span class="p">,</span>
+                            <span class="n">vect</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span>
+                            <span class="s2">&quot;,&quot;</span><span class="p">,</span>
+                            <span class="n">vect</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span>
+                            <span class="s2">&quot;]&quot;</span><span class="p">,</span>
+                        <span class="p">)</span>
+                        <span class="n">sortedNormal</span><span class="o">.</span><span class="n">SetTuple3</span><span class="p">(</span><span class="n">idx</span><span class="p">,</span> <span class="mi">128</span><span class="p">,</span> <span class="mi">128</span><span class="p">,</span> <span class="mi">255</span><span class="p">)</span>
+
+            <span class="c1"># Write the sorted data</span>
+            <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">directory</span><span class="p">,</span> <span class="s2">&quot;normal.uint8&quot;</span><span class="p">),</span> <span class="s2">&quot;wb&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+                <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="nb">memoryview</span><span class="p">(</span><span class="n">sortedNormal</span><span class="p">))</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+                    <span class="p">{</span>
+                        <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;normal&quot;</span><span class="p">,</span>
+                        <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;array&quot;</span><span class="p">,</span>
+                        <span class="s2">&quot;fileName&quot;</span><span class="p">:</span> <span class="s2">&quot;/normal.uint8&quot;</span><span class="p">,</span>
+                        <span class="s2">&quot;categories&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;normal&quot;</span><span class="p">],</span>
+                    <span class="p">}</span>
+                <span class="p">)</span>
+
+            <span class="c1"># Remove depth files</span>
+            <span class="k">for</span> <span class="n">layerIdx</span> <span class="ow">in</span> <span class="n">layerList</span><span class="p">:</span>
+                <span class="n">os</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span>
+                    <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">directory</span><span class="p">,</span> <span class="s2">&quot;normal_</span><span class="si">%d</span><span class="s2">_</span><span class="si">%d</span><span class="s2">.float32&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">layerIdx</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+                <span class="p">)</span>
+                <span class="n">os</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span>
+                    <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">directory</span><span class="p">,</span> <span class="s2">&quot;normal_</span><span class="si">%d</span><span class="s2">_</span><span class="si">%d</span><span class="s2">.float32&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">layerIdx</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+                <span class="p">)</span>
+                <span class="n">os</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span>
+                    <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">directory</span><span class="p">,</span> <span class="s2">&quot;normal_</span><span class="si">%d</span><span class="s2">_</span><span class="si">%d</span><span class="s2">.float32&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">layerIdx</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
+                <span class="p">)</span>
+
+        <span class="c1"># Encode Intensity (sorted order way)</span>
+        <span class="k">if</span> <span class="s2">&quot;intensity&quot;</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="s2">&quot;light&quot;</span><span class="p">]:</span>
+            <span class="n">sortedIntensity</span> <span class="o">=</span> <span class="n">vtkUnsignedCharArray</span><span class="p">()</span>
+            <span class="n">sortedIntensity</span><span class="o">.</span><span class="n">SetNumberOfTuples</span><span class="p">(</span><span class="n">stackSize</span><span class="p">)</span>
+
+            <span class="n">intensityLayers</span> <span class="o">=</span> <span class="p">[]</span>
+            <span class="k">for</span> <span class="n">layerIdx</span> <span class="ow">in</span> <span class="n">layerList</span><span class="p">:</span>
+                <span class="k">with</span> <span class="nb">open</span><span class="p">(</span>
+                    <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">directory</span><span class="p">,</span> <span class="s2">&quot;intensity_</span><span class="si">%d</span><span class="s2">.uint8&quot;</span> <span class="o">%</span> <span class="n">layerIdx</span><span class="p">),</span> <span class="s2">&quot;rb&quot;</span>
+                <span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+                    <span class="n">a</span> <span class="o">=</span> <span class="n">array</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="s2">&quot;B&quot;</span><span class="p">)</span>
+                    <span class="n">a</span><span class="o">.</span><span class="n">fromfile</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">linearSize</span><span class="p">)</span>
+                    <span class="n">intensityLayers</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+
+            <span class="k">for</span> <span class="n">idx</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">stackSize</span><span class="p">):</span>
+                <span class="n">layerIdx</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">orderArray</span><span class="o">.</span><span class="n">GetValue</span><span class="p">(</span><span class="n">idx</span><span class="p">))</span>
+                <span class="k">if</span> <span class="n">layerIdx</span> <span class="o">==</span> <span class="mi">255</span><span class="p">:</span>
+                    <span class="n">sortedIntensity</span><span class="o">.</span><span class="n">SetValue</span><span class="p">(</span><span class="n">idx</span><span class="p">,</span> <span class="mi">255</span><span class="p">)</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">imageIdx</span> <span class="o">=</span> <span class="n">idx</span> <span class="o">%</span> <span class="n">linearSize</span>
+                    <span class="n">sortedIntensity</span><span class="o">.</span><span class="n">SetValue</span><span class="p">(</span><span class="n">idx</span><span class="p">,</span> <span class="n">intensityLayers</span><span class="p">[</span><span class="n">layerIdx</span><span class="p">][</span><span class="n">imageIdx</span><span class="p">])</span>
+
+            <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">directory</span><span class="p">,</span> <span class="s2">&quot;intensity.uint8&quot;</span><span class="p">),</span> <span class="s2">&quot;wb&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+                <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="nb">memoryview</span><span class="p">(</span><span class="n">sortedIntensity</span><span class="p">))</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+                    <span class="p">{</span>
+                        <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;intensity&quot;</span><span class="p">,</span>
+                        <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;array&quot;</span><span class="p">,</span>
+                        <span class="s2">&quot;fileName&quot;</span><span class="p">:</span> <span class="s2">&quot;/intensity.uint8&quot;</span><span class="p">,</span>
+                        <span class="s2">&quot;categories&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;intensity&quot;</span><span class="p">],</span>
+                    <span class="p">}</span>
+                <span class="p">)</span>
+
+            <span class="c1"># Remove depth files</span>
+            <span class="k">for</span> <span class="n">layerIdx</span> <span class="ow">in</span> <span class="n">layerList</span><span class="p">:</span>
+                <span class="n">os</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">directory</span><span class="p">,</span> <span class="s2">&quot;intensity_</span><span class="si">%d</span><span class="s2">.uint8&quot;</span> <span class="o">%</span> <span class="n">layerIdx</span><span class="p">))</span></div></div>
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2013, Kitware, Inc..</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+  <!-- KW:BEGIN -->
+  <script type="text/javascript" src="/paraview-docs/paraview-version.js"></script>
+  <!-- KW:END -->
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html class="writer-html4" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>paraview.detail.pythonalgorithm &mdash; ParaView/Python 5.12.0 documentation</title><link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" /><link rel="shortcut icon" href="../../../_static/pvIcon.ico"/>
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../../_static/language_data.js"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          <ul>
+            <li> <a href="../../../index.html">
+              <img src="../../../_static/paraview-logo-small.png"
+              alt="ParaView/Python"></img></a> </li>
+            <li class="version"> version 5.12.0</li>
+          </ul>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../quick-start.html">Quick-Start :  A Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../paraview.html">The ParaView Python Package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../paraview.simple.html">simple</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../paraview.servermanager.html">servermanager</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../paraview.catalyst.html">catalyst</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../paraview.coprocessing.html">coprocessing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../paraview.benchmark.html">benchmark</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../paraview.servermanager_proxies.html">Available readers, sources, writers, filters and animation cues</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../api-changes.html">API Changes between ParaView versions</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">ParaView/Python</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+      <a href="../../../genindex.html" class="float-right">Index</a> 
+          <li><a href="../../index.html">Module code</a> &raquo;</li>
+          <li><a href="../detail.html">paraview.detail</a> &raquo;</li>
+      <li>paraview.detail.pythonalgorithm</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <h1>Source code for paraview.detail.pythonalgorithm</h1><div class="highlight"><pre>
+<span></span><span class="kn">from</span> <span class="nn">__future__</span> <span class="k">import</span> <span class="n">absolute_import</span><span class="p">,</span> <span class="n">print_function</span>
+
+<span class="kn">from</span> <span class="nn">functools</span> <span class="k">import</span> <span class="n">wraps</span>
+<span class="kn">from</span> <span class="nn">xml.dom.minidom</span> <span class="k">import</span> <span class="n">parseString</span>
+<span class="kn">from</span> <span class="nn">xml.parsers.expat</span> <span class="k">import</span> <span class="n">ExpatError</span>
+<span class="kn">from</span> <span class="nn">inspect</span> <span class="k">import</span> <span class="n">signature</span>
+
+<span class="kn">import</span> <span class="nn">sys</span>
+
+<span class="k">def</span> <span class="nf">_count</span><span class="p">(</span><span class="n">values</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;internal: returns the `number-of-elements` for the argument.</span>
+<span class="sd">       if argument is a list or type, it returns its `len`, else returns 0 for None</span>
+<span class="sd">       and 1 for non-None.&quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">values</span><span class="p">)</span> <span class="o">==</span> <span class="nb">list</span> <span class="ow">or</span> <span class="nb">type</span><span class="p">(</span><span class="n">values</span><span class="p">)</span> <span class="o">==</span> <span class="nb">tuple</span><span class="p">:</span>
+        <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="n">values</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">values</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">0</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">1</span>
+
+<span class="k">def</span> <span class="nf">_stringify</span><span class="p">(</span><span class="n">values</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;internal method: used to convert values to a string suitable for an xml attribute&quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">values</span><span class="p">)</span> <span class="o">==</span> <span class="nb">list</span> <span class="ow">or</span> <span class="nb">type</span><span class="p">(</span><span class="n">values</span><span class="p">)</span> <span class="o">==</span> <span class="nb">tuple</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s2">&quot; &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="nb">str</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">values</span><span class="p">])</span>
+    <span class="k">elif</span> <span class="nb">type</span><span class="p">(</span><span class="n">values</span><span class="p">)</span> <span class="o">==</span> <span class="nb">type</span><span class="p">(</span><span class="kc">True</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s2">&quot;1&quot;</span> <span class="k">if</span> <span class="n">values</span> <span class="k">else</span> <span class="s2">&quot;0&quot;</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="nb">str</span><span class="p">(</span><span class="n">values</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">_generate_xml</span><span class="p">(</span><span class="n">attrs</span><span class="p">,</span> <span class="n">nested_xmls</span><span class="o">=</span><span class="p">[]):</span>
+    <span class="sd">&quot;&quot;&quot;internal: used to generate an XML string from the arguments.</span>
+<span class="sd">    `attrs` is a dict with attributes specified using (key, value) for the dict.</span>
+<span class="sd">       `type` key in `attrs` is treated as the XML tag name.</span>
+
+<span class="sd">    `nested_xmls` is a list of strings that get nested in the resulting xmlstring</span>
+<span class="sd">        returned by this function.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">d</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="n">d</span><span class="p">[</span><span class="s2">&quot;type&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">attrs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s2">&quot;type&quot;</span><span class="p">)</span>
+
+    <span class="n">attr_items</span> <span class="o">=</span> <span class="nb">filter</span><span class="p">(</span><span class="k">lambda</span> <span class="n">item</span> <span class="p">:</span> <span class="n">item</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">,</span> <span class="n">attrs</span><span class="o">.</span><span class="n">items</span><span class="p">())</span>
+    <span class="n">d</span><span class="p">[</span><span class="s2">&quot;attrs&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="s2">&quot;</span><span class="si">%s</span><span class="s2">=</span><span class="se">\&quot;</span><span class="si">%s</span><span class="se">\&quot;</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">_stringify</span><span class="p">(</span><span class="n">y</span><span class="p">))</span> <span class="k">for</span> <span class="n">x</span><span class="p">,</span><span class="n">y</span> <span class="ow">in</span> <span class="n">attr_items</span><span class="p">])</span>
+    <span class="n">d</span><span class="p">[</span><span class="s2">&quot;nested_xmls&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">nested_xmls</span><span class="p">)</span>
+    <span class="n">xml</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;&lt;</span><span class="si">{type}</span><span class="s2"> </span><span class="si">{attrs}</span><span class="s2">&gt; </span><span class="si">{nested_xmls}</span><span class="s2"> &lt;/</span><span class="si">{type}</span><span class="s2">&gt;&quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">xml</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="o">**</span><span class="n">d</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">_undecorate</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;internal: Traverses through nested decorated objects to return the original</span>
+<span class="sd">    object. This is not a general mechanism and only supports decorator chains created</span>
+<span class="sd">    via `_create_decorator`.&quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">func</span><span class="p">,</span> <span class="s2">&quot;_pv_original_func&quot;</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">_undecorate</span><span class="p">(</span><span class="n">func</span><span class="o">.</span><span class="n">_pv_original_func</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">func</span>
+
+<span class="k">def</span> <span class="nf">_create_decorator</span><span class="p">(</span><span class="n">kwargs</span><span class="o">=</span><span class="p">{},</span> <span class="n">update_func</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">generate_xml_func</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;internal: used to create decorator for class or function objects.</span>
+
+<span class="sd">    `kwargs`: these are typically the keyword arguments passed to the decorator itself.</span>
+<span class="sd">              must be a `dict`. The decorator will often update the dict to have</span>
+<span class="sd">              defaults or overrides to the parameters passed to the decorator, as appropriate.</span>
+
+<span class="sd">    `update_func`: if non-None, must be a callable that takes 2 arguments `(decoratedobj, kwargs)`.</span>
+<span class="sd">                   The purpose of this callback is to update the kwargs (and return updated version)</span>
+<span class="sd">                   for required-yet-missing attributes that can be deduced by introspecting</span>
+<span class="sd">                   the `decoratedobj`.</span>
+
+<span class="sd">    `generate_xml_func`: must be non-None and must be a callable that takes 2 arguments `(decoratedobj, kwargs)`.</span>
+<span class="sd">                   The kwargs can be expected to have been updated by calling `update_func`, if non-None.</span>
+<span class="sd">                   The callback typically adds an attribute on the decoratedobj for further processing later.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">attrs</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+    <span class="k">def</span> <span class="nf">decorator</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
+        <span class="n">original_func</span> <span class="o">=</span> <span class="n">_undecorate</span><span class="p">(</span><span class="n">func</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">update_func</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">updated_attrs</span> <span class="o">=</span> <span class="n">update_func</span><span class="p">(</span><span class="n">original_func</span><span class="p">,</span> <span class="n">attrs</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">updated_attrs</span> <span class="o">=</span> <span class="n">attrs</span>
+        <span class="n">generate_xml_func</span><span class="p">(</span><span class="n">original_func</span><span class="p">,</span> <span class="n">updated_attrs</span><span class="p">)</span>
+        <span class="nd">@wraps</span><span class="p">(</span><span class="n">func</span><span class="p">)</span>
+        <span class="k">def</span> <span class="nf">wrapper</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+            <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="nb">setattr</span><span class="p">(</span><span class="n">wrapper</span><span class="p">,</span> <span class="s2">&quot;_pv_original_func&quot;</span><span class="p">,</span> <span class="n">original_func</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">wrapper</span>
+    <span class="k">return</span> <span class="n">decorator</span>
+
+
+<div class="viewcode-block" id="smproperty"><a class="viewcode-back" href="../../../paraview.detail.pythonalgorithm.html#paraview.detail.pythonalgorithm.smproperty">[docs]</a><span class="k">class</span> <span class="nc">smproperty</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Provides decorators for class methods that are to be exposed as</span>
+<span class="sd">    server-manager properties in ParaView. Only methods that are decorated</span>
+<span class="sd">    using one of the available decorators will be exposed be accessible to ParaView</span>
+<span class="sd">    UI or client-side Python scripting API.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">_append_xml</span><span class="p">(</span><span class="n">func</span><span class="p">,</span> <span class="n">xml</span><span class="p">):</span>
+        <span class="n">pxmls</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">func</span><span class="p">,</span> <span class="s2">&quot;_pvsm_property_xmls&quot;</span><span class="p">):</span>
+            <span class="n">pxmls</span> <span class="o">=</span> <span class="n">func</span><span class="o">.</span><span class="n">_pvsm_property_xmls</span>
+        <span class="n">pxmls</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">xml</span><span class="p">)</span>
+        <span class="nb">setattr</span><span class="p">(</span><span class="n">func</span><span class="p">,</span> <span class="s2">&quot;_pvsm_property_xmls&quot;</span><span class="p">,</span> <span class="n">pxmls</span><span class="p">)</span>
+
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">_generate_xml</span><span class="p">(</span><span class="n">func</span><span class="p">,</span> <span class="n">attrs</span><span class="p">):</span>
+        <span class="n">nested_xmls</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">func</span><span class="p">,</span> <span class="s2">&quot;_pvsm_domain_xmls&quot;</span><span class="p">):</span>
+            <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">func</span><span class="o">.</span><span class="n">_pvsm_domain_xmls</span><span class="p">:</span>
+                <span class="n">nested_xmls</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+            <span class="nb">delattr</span><span class="p">(</span><span class="n">func</span><span class="p">,</span> <span class="s2">&quot;_pvsm_domain_xmls&quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">func</span><span class="p">,</span> <span class="s2">&quot;_pvsm_hints_xmls&quot;</span><span class="p">):</span>
+            <span class="n">hints</span> <span class="o">=</span> <span class="p">[]</span>
+            <span class="k">for</span> <span class="n">h</span> <span class="ow">in</span> <span class="n">func</span><span class="o">.</span><span class="n">_pvsm_hints_xmls</span><span class="p">:</span>
+                <span class="n">hints</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">h</span><span class="p">)</span>
+            <span class="n">nested_xmls</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">_generate_xml</span><span class="p">({</span><span class="s2">&quot;type&quot;</span><span class="p">:</span><span class="s2">&quot;Hints&quot;</span><span class="p">},</span> <span class="n">hints</span><span class="p">))</span>
+            <span class="nb">delattr</span><span class="p">(</span><span class="n">func</span><span class="p">,</span> <span class="s2">&quot;_pvsm_hints_xmls&quot;</span><span class="p">)</span>
+
+        <span class="n">pxml</span> <span class="o">=</span> <span class="n">_generate_xml</span><span class="p">(</span><span class="n">attrs</span><span class="p">,</span> <span class="n">nested_xmls</span><span class="p">)</span>
+        <span class="n">smproperty</span><span class="o">.</span><span class="n">_append_xml</span><span class="p">(</span><span class="n">func</span><span class="p">,</span> <span class="n">pxml</span><span class="p">)</span>
+
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">_update_property_defaults</span><span class="p">(</span><span class="n">func</span><span class="p">,</span> <span class="n">attrs</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Function used to populate default attribute values for missing attributes</span>
+<span class="sd">           on a for a property&quot;&quot;&quot;</span>
+        <span class="c1"># determine unspecified attributes based on the `func`</span>
+        <span class="k">if</span> <span class="n">attrs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;name&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">attrs</span><span class="p">[</span><span class="s2">&quot;name&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">func</span><span class="o">.</span><span class="vm">__name__</span>
+        <span class="k">if</span> <span class="n">attrs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;command&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">attrs</span><span class="p">[</span><span class="s2">&quot;command&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">func</span><span class="o">.</span><span class="vm">__name__</span>
+        <span class="k">return</span> <span class="n">attrs</span>
+
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">_update_vectorproperty_defaults</span><span class="p">(</span><span class="n">func</span><span class="p">,</span> <span class="n">attrs</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Function used to populate default attribute values for missing attributes</span>
+<span class="sd">           on a vector property&quot;&quot;&quot;</span>
+        <span class="n">attrs</span> <span class="o">=</span> <span class="n">smproperty</span><span class="o">.</span><span class="n">_update_property_defaults</span><span class="p">(</span><span class="n">func</span><span class="p">,</span> <span class="n">attrs</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">attrs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;number_of_elements&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">attrs</span><span class="p">[</span><span class="s2">&quot;number_of_elements&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">signature</span><span class="p">(</span><span class="n">func</span><span class="p">)</span><span class="o">.</span><span class="n">parameters</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span>
+
+        <span class="k">if</span> <span class="n">attrs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;default_values&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">attrs</span><span class="p">[</span><span class="s2">&quot;default_values&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;None&quot;</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="c1"># confirm number_of_elements == len(default_values)</span>
+            <span class="k">assert</span> <span class="nb">int</span><span class="p">(</span><span class="n">attrs</span><span class="p">[</span><span class="s2">&quot;number_of_elements&quot;</span><span class="p">])</span> <span class="o">==</span> <span class="n">_count</span><span class="p">(</span><span class="n">attrs</span><span class="p">[</span><span class="s2">&quot;default_values&quot;</span><span class="p">])</span>
+
+        <span class="c1"># if repeat_command, set number_of_elements_per_command</span>
+        <span class="c1"># if not set.</span>
+        <span class="k">if</span> <span class="n">attrs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;repeat_command&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> \
+                <span class="n">attrs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;number_of_elements_per_command&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                    <span class="n">attrs</span><span class="p">[</span><span class="s2">&quot;number_of_elements_per_command&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">signature</span><span class="p">(</span><span class="n">func</span><span class="p">)</span><span class="o">.</span><span class="n">parameters</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span>
+        <span class="k">return</span> <span class="n">attrs</span>
+
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">_update_proxyproperty_attrs</span><span class="p">(</span><span class="n">func</span><span class="p">,</span> <span class="n">attrs</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">smproperty</span><span class="o">.</span><span class="n">_update_property_defaults</span><span class="p">(</span><span class="n">func</span><span class="p">,</span> <span class="n">attrs</span><span class="p">)</span>
+
+<div class="viewcode-block" id="smproperty.xml"><a class="viewcode-back" href="../../../paraview.detail.pythonalgorithm.html#paraview.detail.pythonalgorithm.smproperty.xml">[docs]</a>    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">xml</span><span class="p">(</span><span class="n">xmlstr</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Decorator that be used to directly add a ServerManager property XML for a method.&quot;&quot;&quot;</span>
+        <span class="k">def</span> <span class="nf">generate</span><span class="p">(</span><span class="n">func</span><span class="p">,</span> <span class="n">attrs</span><span class="p">):</span>
+            <span class="n">smproperty</span><span class="o">.</span><span class="n">_append_xml</span><span class="p">(</span><span class="n">func</span><span class="p">,</span> <span class="n">xmlstr</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">_create_decorator</span><span class="p">(</span><span class="n">generate_xml_func</span><span class="o">=</span><span class="n">generate</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="smproperty.intvector"><a class="viewcode-back" href="../../../paraview.detail.pythonalgorithm.html#paraview.detail.pythonalgorithm.smproperty.intvector">[docs]</a>    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">intvector</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="n">attrs</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;type&quot;</span> <span class="p">:</span> <span class="s2">&quot;IntVectorProperty&quot;</span><span class="p">}</span>
+        <span class="n">attrs</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">_create_decorator</span><span class="p">(</span><span class="n">attrs</span><span class="p">,</span>
+                <span class="n">update_func</span><span class="o">=</span><span class="n">smproperty</span><span class="o">.</span><span class="n">_update_vectorproperty_defaults</span><span class="p">,</span>
+                <span class="n">generate_xml_func</span><span class="o">=</span><span class="n">smproperty</span><span class="o">.</span><span class="n">_generate_xml</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="smproperty.doublevector"><a class="viewcode-back" href="../../../paraview.detail.pythonalgorithm.html#paraview.detail.pythonalgorithm.smproperty.doublevector">[docs]</a>    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">doublevector</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="n">attrs</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;type&quot;</span> <span class="p">:</span> <span class="s2">&quot;DoubleVectorProperty&quot;</span><span class="p">}</span>
+        <span class="n">attrs</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">_create_decorator</span><span class="p">(</span><span class="n">attrs</span><span class="p">,</span>
+                <span class="n">update_func</span><span class="o">=</span><span class="n">smproperty</span><span class="o">.</span><span class="n">_update_vectorproperty_defaults</span><span class="p">,</span>
+                <span class="n">generate_xml_func</span><span class="o">=</span><span class="n">smproperty</span><span class="o">.</span><span class="n">_generate_xml</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="smproperty.idtypevector"><a class="viewcode-back" href="../../../paraview.detail.pythonalgorithm.html#paraview.detail.pythonalgorithm.smproperty.idtypevector">[docs]</a>    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">idtypevector</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="n">attrs</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;type&quot;</span> <span class="p">:</span> <span class="s2">&quot;IdTypeVectorProperty&quot;</span><span class="p">}</span>
+        <span class="n">attrs</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">_create_decorator</span><span class="p">(</span><span class="n">attrs</span><span class="p">,</span>
+                <span class="n">update_func</span><span class="o">=</span><span class="n">smproperty</span><span class="o">.</span><span class="n">_update_vectorproperty_defaults</span><span class="p">,</span>
+                <span class="n">generate_xml_func</span><span class="o">=</span><span class="n">smproperty</span><span class="o">.</span><span class="n">_generate_xml</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="smproperty.stringvector"><a class="viewcode-back" href="../../../paraview.detail.pythonalgorithm.html#paraview.detail.pythonalgorithm.smproperty.stringvector">[docs]</a>    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">stringvector</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="n">attrs</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;type&quot;</span> <span class="p">:</span> <span class="s2">&quot;StringVectorProperty&quot;</span> <span class="p">}</span>
+        <span class="n">attrs</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">_create_decorator</span><span class="p">(</span><span class="n">attrs</span><span class="p">,</span>
+                <span class="n">update_func</span><span class="o">=</span><span class="n">smproperty</span><span class="o">.</span><span class="n">_update_vectorproperty_defaults</span><span class="p">,</span>
+                <span class="n">generate_xml_func</span><span class="o">=</span><span class="n">smproperty</span><span class="o">.</span><span class="n">_generate_xml</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="smproperty.proxy"><a class="viewcode-back" href="../../../paraview.detail.pythonalgorithm.html#paraview.detail.pythonalgorithm.smproperty.proxy">[docs]</a>    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">proxy</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="n">attrs</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;type&quot;</span> <span class="p">:</span> <span class="s2">&quot;ProxyProperty&quot;</span> <span class="p">}</span>
+        <span class="n">attrs</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">_create_decorator</span><span class="p">(</span><span class="n">attrs</span><span class="p">,</span>
+                <span class="n">update_func</span><span class="o">=</span><span class="n">smproperty</span><span class="o">.</span><span class="n">_update_proxyproperty_attrs</span><span class="p">,</span>
+                <span class="n">generate_xml_func</span><span class="o">=</span><span class="n">smproperty</span><span class="o">.</span><span class="n">_generate_xml</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="smproperty.input"><a class="viewcode-back" href="../../../paraview.detail.pythonalgorithm.html#paraview.detail.pythonalgorithm.smproperty.input">[docs]</a>    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">input</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="n">attrs</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;type&quot;</span> <span class="p">:</span> <span class="s2">&quot;InputProperty&quot;</span> <span class="p">}</span>
+        <span class="k">if</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;multiple_input&quot;</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span> <span class="ow">or</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;repeat_command&quot;</span><span class="p">,</span> <span class="kc">False</span><span class="p">):</span>
+            <span class="n">attrs</span><span class="p">[</span><span class="s2">&quot;command&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;AddInputConnection&quot;</span>
+            <span class="c1"># FIXME: input property doesn&#39;t support cleaning port connections alone :(</span>
+            <span class="n">attrs</span><span class="p">[</span><span class="s2">&quot;clean_command&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;RemoveAllInputs&quot;</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">attrs</span><span class="p">[</span><span class="s2">&quot;command&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;SetInputConnection&quot;</span>
+
+        <span class="c1"># todo: handle inputType</span>
+        <span class="n">attrs</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">_create_decorator</span><span class="p">(</span><span class="n">attrs</span><span class="p">,</span>
+                <span class="n">update_func</span><span class="o">=</span><span class="n">smproperty</span><span class="o">.</span><span class="n">_update_property_defaults</span><span class="p">,</span>
+                <span class="n">generate_xml_func</span><span class="o">=</span><span class="n">smproperty</span><span class="o">.</span><span class="n">_generate_xml</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="smproperty.dataarrayselection"><a class="viewcode-back" href="../../../paraview.detail.pythonalgorithm.html#paraview.detail.pythonalgorithm.smproperty.dataarrayselection">[docs]</a>    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">dataarrayselection</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="k">def</span> <span class="nf">generate</span><span class="p">(</span><span class="n">func</span><span class="p">,</span> <span class="n">attrs</span><span class="p">):</span>
+            <span class="n">xml</span><span class="o">=</span><span class="s2">&quot;&quot;&quot;&lt;StringVectorProperty name=&quot;</span><span class="si">{name}</span><span class="s2">Info&quot;</span>
+<span class="s2">                                         command=&quot;</span><span class="si">{command}</span><span class="s2">&quot;</span>
+<span class="s2">                                         number_of_elements_per_command=&quot;2&quot;</span>
+<span class="s2">                                         information_only=&quot;1&quot;</span>
+<span class="s2">                                         si_class=&quot;vtkSIDataArraySelectionProperty&quot; /&gt;</span>
+<span class="s2">                   &lt;StringVectorProperty name=&quot;</span><span class="si">{name}</span><span class="s2">&quot;</span>
+<span class="s2">                                         information_property=&quot;</span><span class="si">{name}</span><span class="s2">Info&quot;</span>
+<span class="s2">                                         command=&quot;</span><span class="si">{command}</span><span class="s2">&quot;</span>
+<span class="s2">                                         number_of_elements_per_command=&quot;2&quot;</span>
+<span class="s2">                                         element_types=&quot;2 0&quot;</span>
+<span class="s2">                                         repeat_command=&quot;1&quot;</span>
+<span class="s2">                                         si_class=&quot;vtkSIDataArraySelectionProperty&quot;&gt;</span>
+<span class="s2">                     &lt;ArraySelectionDomain name=&quot;array_list&quot;&gt;</span>
+<span class="s2">                        &lt;RequiredProperties&gt;</span>
+<span class="s2">                            &lt;Property function=&quot;ArrayList&quot; name=&quot;</span><span class="si">{name}</span><span class="s2">Info&quot; /&gt;</span>
+<span class="s2">                        &lt;/RequiredProperties&gt;</span>
+<span class="s2">                     &lt;/ArraySelectionDomain&gt;</span>
+<span class="s2">                   &lt;/StringVectorProperty&gt;</span>
+<span class="s2">            &quot;&quot;&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="o">**</span><span class="n">attrs</span><span class="p">)</span>
+            <span class="n">smproperty</span><span class="o">.</span><span class="n">_append_xml</span><span class="p">(</span><span class="n">func</span><span class="p">,</span> <span class="n">xml</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">_create_decorator</span><span class="p">({</span><span class="s2">&quot;name&quot;</span> <span class="p">:</span> <span class="n">name</span><span class="p">},</span>
+                <span class="n">update_func</span><span class="o">=</span><span class="n">smproperty</span><span class="o">.</span><span class="n">_update_property_defaults</span><span class="p">,</span>
+                <span class="n">generate_xml_func</span><span class="o">=</span><span class="n">generate</span><span class="p">)</span></div></div>
+
+
+<div class="viewcode-block" id="smdomain"><a class="viewcode-back" href="../../../paraview.detail.pythonalgorithm.html#paraview.detail.pythonalgorithm.smdomain">[docs]</a><span class="k">class</span> <span class="nc">smdomain</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Provides decorators that add domains to properties.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">_append_xml</span><span class="p">(</span><span class="n">func</span><span class="p">,</span> <span class="n">xml</span><span class="p">):</span>
+        <span class="n">domains</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">func</span><span class="p">,</span> <span class="s2">&quot;_pvsm_domain_xmls&quot;</span><span class="p">):</span>
+            <span class="n">domains</span> <span class="o">=</span> <span class="n">func</span><span class="o">.</span><span class="n">_pvsm_domain_xmls</span>
+        <span class="n">domains</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">xml</span><span class="p">)</span>
+        <span class="nb">setattr</span><span class="p">(</span><span class="n">func</span><span class="p">,</span> <span class="s2">&quot;_pvsm_domain_xmls&quot;</span><span class="p">,</span> <span class="n">domains</span><span class="p">)</span>
+
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">_generate_xml</span><span class="p">(</span><span class="n">func</span><span class="p">,</span> <span class="n">attrs</span><span class="p">):</span>
+        <span class="n">smdomain</span><span class="o">.</span><span class="n">_append_xml</span><span class="p">(</span><span class="n">func</span><span class="p">,</span> <span class="n">_generate_xml</span><span class="p">(</span><span class="n">attrs</span><span class="p">,</span> <span class="p">[]))</span>
+
+<div class="viewcode-block" id="smdomain.xml"><a class="viewcode-back" href="../../../paraview.detail.pythonalgorithm.html#paraview.detail.pythonalgorithm.smdomain.xml">[docs]</a>    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">xml</span><span class="p">(</span><span class="n">xmlstr</span><span class="p">):</span>
+        <span class="k">def</span> <span class="nf">generate</span><span class="p">(</span><span class="n">func</span><span class="p">,</span> <span class="n">attrs</span><span class="p">):</span>
+            <span class="n">smdomain</span><span class="o">.</span><span class="n">_append_xml</span><span class="p">(</span><span class="n">func</span><span class="p">,</span> <span class="n">xmlstr</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">_create_decorator</span><span class="p">({},</span>
+                <span class="n">generate_xml_func</span><span class="o">=</span><span class="n">generate</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="smdomain.doublerange"><a class="viewcode-back" href="../../../paraview.detail.pythonalgorithm.html#paraview.detail.pythonalgorithm.smdomain.doublerange">[docs]</a>    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">doublerange</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="n">attrs</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;type&quot;</span> <span class="p">:</span> <span class="s2">&quot;DoubleRangeDomain&quot;</span> <span class="p">,</span> <span class="s2">&quot;name&quot;</span> <span class="p">:</span> <span class="s2">&quot;range&quot;</span> <span class="p">}</span>
+        <span class="n">attrs</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">_create_decorator</span><span class="p">(</span><span class="n">attrs</span><span class="p">,</span>
+                <span class="n">generate_xml_func</span><span class="o">=</span><span class="n">smdomain</span><span class="o">.</span><span class="n">_generate_xml</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="smdomain.intrange"><a class="viewcode-back" href="../../../paraview.detail.pythonalgorithm.html#paraview.detail.pythonalgorithm.smdomain.intrange">[docs]</a>    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">intrange</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="n">attrs</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;type&quot;</span> <span class="p">:</span> <span class="s2">&quot;IntRangeDomain&quot;</span> <span class="p">,</span> <span class="s2">&quot;name&quot;</span> <span class="p">:</span> <span class="s2">&quot;range&quot;</span> <span class="p">}</span>
+        <span class="n">attrs</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">_create_decorator</span><span class="p">(</span><span class="n">attrs</span><span class="p">,</span>
+                <span class="n">generate_xml_func</span><span class="o">=</span><span class="n">smdomain</span><span class="o">.</span><span class="n">_generate_xml</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="smdomain.filelist"><a class="viewcode-back" href="../../../paraview.detail.pythonalgorithm.html#paraview.detail.pythonalgorithm.smdomain.filelist">[docs]</a>    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">filelist</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="n">attrs</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;type&quot;</span> <span class="p">:</span> <span class="s2">&quot;FileListDomain&quot;</span><span class="p">,</span> <span class="s2">&quot;name&quot;</span> <span class="p">:</span> <span class="s2">&quot;files&quot;</span> <span class="p">}</span>
+        <span class="n">attrs</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">_create_decorator</span><span class="p">(</span><span class="n">attrs</span><span class="p">,</span>
+                <span class="n">generate_xml_func</span><span class="o">=</span><span class="n">smdomain</span><span class="o">.</span><span class="n">_generate_xml</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="smdomain.datatype"><a class="viewcode-back" href="../../../paraview.detail.pythonalgorithm.html#paraview.detail.pythonalgorithm.smdomain.datatype">[docs]</a>    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">datatype</span><span class="p">(</span><span class="n">dataTypes</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="n">attrs</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;type&quot;</span> <span class="p">:</span> <span class="s2">&quot;DataTypeDomain&quot;</span><span class="p">,</span> <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;input_type&quot;</span><span class="p">}</span>
+        <span class="n">attrs</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="k">def</span> <span class="nf">generate</span><span class="p">(</span><span class="n">func</span><span class="p">,</span> <span class="n">attrs</span><span class="p">):</span>
+            <span class="n">type_xmls</span> <span class="o">=</span> <span class="p">[]</span>
+            <span class="k">for</span> <span class="n">atype</span> <span class="ow">in</span> <span class="n">dataTypes</span><span class="p">:</span>
+                <span class="n">type_xmls</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">_generate_xml</span><span class="p">({</span><span class="s2">&quot;type&quot;</span> <span class="p">:</span> <span class="s2">&quot;DataType&quot;</span><span class="p">,</span> <span class="s2">&quot;value&quot;</span> <span class="p">:</span> <span class="n">atype</span><span class="p">},</span> <span class="p">[]))</span>
+            <span class="n">smdomain</span><span class="o">.</span><span class="n">_append_xml</span><span class="p">(</span><span class="n">func</span><span class="p">,</span> <span class="n">_generate_xml</span><span class="p">(</span><span class="n">attrs</span><span class="p">,</span> <span class="n">type_xmls</span><span class="p">))</span>
+
+        <span class="k">return</span> <span class="n">_create_decorator</span><span class="p">(</span><span class="n">attrs</span><span class="p">,</span>
+                <span class="n">generate_xml_func</span><span class="o">=</span><span class="n">generate</span><span class="p">)</span></div></div>
+
+
+<div class="viewcode-block" id="smhint"><a class="viewcode-back" href="../../../paraview.detail.pythonalgorithm.html#paraview.detail.pythonalgorithm.smhint">[docs]</a><span class="k">class</span> <span class="nc">smhint</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Provides decorators that add hints to proxies and properties.&quot;&quot;&quot;</span>
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">_generate_xml</span><span class="p">(</span><span class="n">func</span><span class="p">,</span> <span class="n">attrs</span><span class="p">):</span>
+        <span class="n">lhints</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">func</span><span class="p">,</span> <span class="s2">&quot;_pvsm_hints_xmls&quot;</span><span class="p">):</span>
+            <span class="n">lhints</span> <span class="o">=</span> <span class="n">func</span><span class="o">.</span><span class="n">_pvsm_hints_xmls</span>
+        <span class="n">lhints</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">_generate_xml</span><span class="p">(</span><span class="n">attrs</span><span class="p">,</span> <span class="p">[]))</span>
+        <span class="nb">setattr</span><span class="p">(</span><span class="n">func</span><span class="p">,</span> <span class="s2">&quot;_pvsm_hints_xmls&quot;</span><span class="p">,</span> <span class="n">lhints</span><span class="p">)</span>
+
+<div class="viewcode-block" id="smhint.xml"><a class="viewcode-back" href="../../../paraview.detail.pythonalgorithm.html#paraview.detail.pythonalgorithm.smhint.xml">[docs]</a>    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">xml</span><span class="p">(</span><span class="n">xmlstr</span><span class="p">):</span>
+        <span class="k">def</span> <span class="nf">generate</span><span class="p">(</span><span class="n">func</span><span class="p">,</span> <span class="n">attrs</span><span class="p">):</span>
+            <span class="n">lhints</span> <span class="o">=</span> <span class="p">[]</span>
+            <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">func</span><span class="p">,</span> <span class="s2">&quot;_pvsm_hints_xmls&quot;</span><span class="p">):</span>
+                <span class="n">lhints</span> <span class="o">=</span> <span class="n">func</span><span class="o">.</span><span class="n">_pvsm_hints_xmls</span>
+            <span class="n">lhints</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">xmlstr</span><span class="p">)</span>
+            <span class="nb">setattr</span><span class="p">(</span><span class="n">func</span><span class="p">,</span> <span class="s2">&quot;_pvsm_hints_xmls&quot;</span><span class="p">,</span> <span class="n">lhints</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">_create_decorator</span><span class="p">({},</span>
+                <span class="n">generate_xml_func</span><span class="o">=</span><span class="n">generate</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="smhint.filechooser"><a class="viewcode-back" href="../../../paraview.detail.pythonalgorithm.html#paraview.detail.pythonalgorithm.smhint.filechooser">[docs]</a>    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">filechooser</span><span class="p">(</span><span class="n">extensions</span><span class="p">,</span> <span class="n">file_description</span><span class="p">):</span>
+        <span class="n">attrs</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="n">attrs</span><span class="p">[</span><span class="s2">&quot;type&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;FileChooser&quot;</span>
+        <span class="n">attrs</span><span class="p">[</span><span class="s2">&quot;extensions&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">extensions</span>
+        <span class="n">attrs</span><span class="p">[</span><span class="s2">&quot;file_description&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">file_description</span>
+        <span class="k">return</span> <span class="n">_create_decorator</span><span class="p">(</span><span class="n">attrs</span><span class="p">,</span>
+                <span class="n">generate_xml_func</span><span class="o">=</span><span class="n">smhint</span><span class="o">.</span><span class="n">_generate_xml</span><span class="p">)</span></div></div>
+
+<div class="viewcode-block" id="get_qualified_classname"><a class="viewcode-back" href="../../../paraview.detail.pythonalgorithm.html#paraview.detail.pythonalgorithm.get_qualified_classname">[docs]</a><span class="k">def</span> <span class="nf">get_qualified_classname</span><span class="p">(</span><span class="n">classobj</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">classobj</span><span class="o">.</span><span class="vm">__module__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">classobj</span><span class="o">.</span><span class="vm">__name__</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s2">&quot;</span><span class="si">%s</span><span class="s2">.</span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">classobj</span><span class="o">.</span><span class="vm">__module__</span><span class="p">,</span> <span class="n">classobj</span><span class="o">.</span><span class="vm">__name__</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="smproxy"><a class="viewcode-back" href="../../../paraview.detail.pythonalgorithm.html#paraview.detail.pythonalgorithm.smproxy">[docs]</a><span class="k">class</span> <span class="nc">smproxy</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Provides decorators for class objects that should be exposed to</span>
+<span class="sd">    ParaView.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">_update_proxy_defaults</span><span class="p">(</span><span class="n">classobj</span><span class="p">,</span> <span class="n">attrs</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">attrs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;name&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">attrs</span><span class="p">[</span><span class="s2">&quot;name&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">classobj</span><span class="o">.</span><span class="vm">__name__</span>
+        <span class="k">if</span> <span class="n">attrs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;class&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">attrs</span><span class="p">[</span><span class="s2">&quot;class&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">get_qualified_classname</span><span class="p">(</span><span class="n">classobj</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">attrs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;label&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">attrs</span><span class="p">[</span><span class="s2">&quot;label&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">attrs</span><span class="p">[</span><span class="s2">&quot;name&quot;</span><span class="p">]</span>
+        <span class="k">return</span> <span class="n">attrs</span>
+
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">_generate_xml</span><span class="p">(</span><span class="n">classobj</span><span class="p">,</span> <span class="n">attrs</span><span class="p">):</span>
+        <span class="n">nested_xmls</span> <span class="o">=</span> <span class="p">[]</span>
+
+        <span class="n">classobj</span> <span class="o">=</span> <span class="n">_undecorate</span><span class="p">(</span><span class="n">classobj</span><span class="p">)</span>
+        <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">classobj</span><span class="p">,</span> <span class="s2">&quot;_pvsm_property_xmls&quot;</span><span class="p">):</span>
+            <span class="n">val</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">classobj</span><span class="p">,</span> <span class="s2">&quot;_pvsm_property_xmls&quot;</span><span class="p">)</span>
+            <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">val</span><span class="p">)</span> <span class="o">==</span> <span class="nb">type</span><span class="p">([]):</span>
+                <span class="n">nested_xmls</span> <span class="o">+=</span> <span class="n">val</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">nested_xmls</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">val</span><span class="p">)</span>
+
+        <span class="n">prop_xmls_dict</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="k">for</span> <span class="n">pname</span><span class="p">,</span> <span class="n">val</span> <span class="ow">in</span> <span class="n">classobj</span><span class="o">.</span><span class="vm">__dict__</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="n">val</span> <span class="o">=</span> <span class="n">_undecorate</span><span class="p">(</span><span class="n">val</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">callable</span><span class="p">(</span><span class="n">val</span><span class="p">)</span> <span class="ow">and</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">val</span><span class="p">,</span> <span class="s2">&quot;_pvsm_property_xmls&quot;</span><span class="p">):</span>
+                <span class="n">pxmls</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">val</span><span class="p">,</span> <span class="s2">&quot;_pvsm_property_xmls&quot;</span><span class="p">)</span>
+                <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">pxmls</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+                    <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="s2">&quot;Multiple property definitions on the same&quot;</span>\
+                            <span class="s2">&quot;method are not supported.&quot;</span><span class="p">)</span>
+                <span class="n">prop_xmls_dict</span><span class="p">[</span><span class="n">pname</span><span class="p">]</span> <span class="o">=</span> <span class="n">pxmls</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+
+        <span class="c1"># since the order of the properties keeps on changing between invocations,</span>
+        <span class="c1"># let&#39;s sort them by the name for consistency. In future, we may put in</span>
+        <span class="c1"># extra logic to preserve order they were defined in the class</span>
+        <span class="n">nested_xmls</span> <span class="o">+=</span> <span class="p">[</span><span class="n">prop_xmls_dict</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">prop_xmls_dict</span><span class="o">.</span><span class="n">keys</span><span class="p">())]</span>
+
+        <span class="k">if</span> <span class="n">attrs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;support_reload&quot;</span><span class="p">,</span> <span class="kc">True</span><span class="p">):</span>
+            <span class="n">nested_xmls</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">                &lt;Property name=&quot;Reload Python Module&quot; panel_widget=&quot;command_button&quot;&gt;</span>
+<span class="s2">                    &lt;Documentation&gt;Reload the Python module.&lt;/Documentation&gt;</span>
+<span class="s2">                &lt;/Property&gt;&quot;&quot;&quot;</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">classobj</span><span class="p">,</span> <span class="s2">&quot;_pvsm_hints_xmls&quot;</span><span class="p">):</span>
+            <span class="n">hints</span> <span class="o">=</span> <span class="p">[</span><span class="n">h</span>  <span class="k">for</span> <span class="n">h</span> <span class="ow">in</span> <span class="n">classobj</span><span class="o">.</span><span class="n">_pvsm_hints_xmls</span><span class="p">]</span>
+            <span class="n">nested_xmls</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">_generate_xml</span><span class="p">({</span><span class="s2">&quot;type&quot;</span><span class="p">:</span><span class="s2">&quot;Hints&quot;</span><span class="p">},</span> <span class="n">hints</span><span class="p">))</span>
+
+        <span class="n">proxyxml</span> <span class="o">=</span> <span class="n">_generate_xml</span><span class="p">(</span><span class="n">attrs</span><span class="p">,</span> <span class="n">nested_xmls</span><span class="p">)</span>
+        <span class="n">groupxml</span> <span class="o">=</span> <span class="n">_generate_xml</span><span class="p">({</span><span class="s2">&quot;type&quot;</span><span class="p">:</span><span class="s2">&quot;ProxyGroup&quot;</span><span class="p">,</span> <span class="s2">&quot;name&quot;</span><span class="p">:</span><span class="n">attrs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;group&quot;</span><span class="p">)},</span>
+                                <span class="p">[</span><span class="n">proxyxml</span><span class="p">])</span>
+        <span class="n">smconfig</span> <span class="o">=</span> <span class="n">_generate_xml</span><span class="p">({</span><span class="s2">&quot;type&quot;</span><span class="p">:</span><span class="s2">&quot;ServerManagerConfiguration&quot;</span><span class="p">},</span> <span class="p">[</span><span class="n">groupxml</span><span class="p">])</span>
+        <span class="nb">setattr</span><span class="p">(</span><span class="n">classobj</span><span class="p">,</span> <span class="s2">&quot;_pvsm_proxy_xml&quot;</span><span class="p">,</span> <span class="n">smconfig</span><span class="p">)</span>
+
+<div class="viewcode-block" id="smproxy.source"><a class="viewcode-back" href="../../../paraview.detail.pythonalgorithm.html#paraview.detail.pythonalgorithm.smproxy.source">[docs]</a>    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">source</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="n">attrs</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="n">attrs</span><span class="p">[</span><span class="s2">&quot;type&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;SourceProxy&quot;</span>
+        <span class="n">attrs</span><span class="p">[</span><span class="s2">&quot;group&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;sources&quot;</span>
+        <span class="n">attrs</span><span class="p">[</span><span class="s2">&quot;si_class&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;vtkSIPythonSourceProxy&quot;</span>
+        <span class="n">attrs</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">_create_decorator</span><span class="p">(</span><span class="n">attrs</span><span class="p">,</span>
+                <span class="n">update_func</span><span class="o">=</span><span class="n">smproxy</span><span class="o">.</span><span class="n">_update_proxy_defaults</span><span class="p">,</span>
+                <span class="n">generate_xml_func</span><span class="o">=</span><span class="n">smproxy</span><span class="o">.</span><span class="n">_generate_xml</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="smproxy.filter"><a class="viewcode-back" href="../../../paraview.detail.pythonalgorithm.html#paraview.detail.pythonalgorithm.smproxy.filter">[docs]</a>    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">filter</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="n">attrs</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;group&quot;</span> <span class="p">:</span> <span class="s2">&quot;filters&quot;</span> <span class="p">}</span>
+        <span class="n">attrs</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">smproxy</span><span class="o">.</span><span class="n">source</span><span class="p">(</span><span class="o">**</span><span class="n">attrs</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="smproxy.reader"><a class="viewcode-back" href="../../../paraview.detail.pythonalgorithm.html#paraview.detail.pythonalgorithm.smproxy.reader">[docs]</a>    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">reader</span><span class="p">(</span><span class="n">file_description</span><span class="p">,</span> <span class="n">extensions</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">filename_patterns</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">is_directory</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Decorates a reader. Either `filename_patterns` or `extensions` must be</span>
+<span class="sd">        provided.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">extensions</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">filename_patterns</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="s2">&quot;Either `filename_patterns` or `extensions` must be provided for a reader.&quot;</span><span class="p">)</span>
+
+        <span class="n">attrs</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;type&quot;</span> <span class="p">:</span> <span class="s2">&quot;ReaderFactory&quot;</span> <span class="p">}</span>
+        <span class="n">attrs</span><span class="p">[</span><span class="s2">&quot;file_description&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">file_description</span>
+        <span class="n">attrs</span><span class="p">[</span><span class="s2">&quot;extensions&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">extensions</span>
+        <span class="n">attrs</span><span class="p">[</span><span class="s2">&quot;filename_patterns&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">filename_patterns</span>
+        <span class="n">attrs</span><span class="p">[</span><span class="s2">&quot;is_directory&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;1&quot;</span> <span class="k">if</span> <span class="n">is_directory</span> <span class="k">else</span> <span class="kc">None</span>
+        <span class="n">_xml</span> <span class="o">=</span> <span class="n">_generate_xml</span><span class="p">(</span><span class="n">attrs</span><span class="p">,</span> <span class="p">[])</span>
+        <span class="k">def</span> <span class="nf">decorator</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
+            <span class="n">f</span> <span class="o">=</span> <span class="n">smhint</span><span class="o">.</span><span class="n">xml</span><span class="p">(</span><span class="n">_xml</span><span class="p">)(</span><span class="n">func</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">smproxy</span><span class="o">.</span><span class="n">source</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)(</span><span class="n">f</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">decorator</span></div>
+
+<div class="viewcode-block" id="smproxy.writer"><a class="viewcode-back" href="../../../paraview.detail.pythonalgorithm.html#paraview.detail.pythonalgorithm.smproxy.writer">[docs]</a>    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">writer</span><span class="p">(</span><span class="n">file_description</span><span class="p">,</span> <span class="n">extensions</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Decorates a writer.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">assert</span> <span class="n">file_description</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">extensions</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
+
+        <span class="n">attrs</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;type&quot;</span> <span class="p">:</span> <span class="s2">&quot;WriterFactory&quot;</span> <span class="p">}</span>
+        <span class="n">attrs</span><span class="p">[</span><span class="s2">&quot;file_description&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">file_description</span>
+        <span class="n">attrs</span><span class="p">[</span><span class="s2">&quot;extensions&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">extensions</span>
+        <span class="n">_xml</span> <span class="o">=</span> <span class="n">_generate_xml</span><span class="p">(</span><span class="n">attrs</span><span class="p">,</span> <span class="p">[])</span>
+        <span class="k">def</span> <span class="nf">decorator</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
+            <span class="n">f</span> <span class="o">=</span> <span class="n">smhint</span><span class="o">.</span><span class="n">xml</span><span class="p">(</span><span class="n">_xml</span><span class="p">)(</span><span class="n">func</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">smproxy</span><span class="o">.</span><span class="n">source</span><span class="p">(</span><span class="n">group</span><span class="o">=</span><span class="s2">&quot;writers&quot;</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="s2">&quot;WriterProxy&quot;</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)(</span><span class="n">f</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">decorator</span></div></div>
+
+
+<div class="viewcode-block" id="get_plugin_xmls"><a class="viewcode-back" href="../../../paraview.detail.pythonalgorithm.html#paraview.detail.pythonalgorithm.get_plugin_xmls">[docs]</a><span class="k">def</span> <span class="nf">get_plugin_xmls</span><span class="p">(</span><span class="n">module_or_package</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;helper function called by vtkPVPythonAlgorithmPlugin to discover</span>
+<span class="sd">    all &quot;proxy&quot; decorated classes in the module or package. We don&#39;t recurse</span>
+<span class="sd">    into the package, on simply needs to export all classes that form the</span>
+<span class="sd">    ParaView plugin in the __init__.py for the package.&quot;&quot;&quot;</span>
+    <span class="kn">from</span> <span class="nn">inspect</span> <span class="k">import</span> <span class="n">ismodule</span><span class="p">,</span> <span class="n">isclass</span>
+    <span class="n">items</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">if</span> <span class="n">ismodule</span><span class="p">(</span><span class="n">module_or_package</span><span class="p">):</span>
+        <span class="n">items</span> <span class="o">=</span> <span class="n">module_or_package</span><span class="o">.</span><span class="vm">__dict__</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>
+    <span class="k">elif</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">module_or_package</span><span class="p">,</span> <span class="s2">&quot;items&quot;</span><span class="p">):</span>
+        <span class="n">items</span> <span class="o">=</span> <span class="n">module_or_package</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>
+
+    <span class="n">xmls</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="p">(</span><span class="n">k</span><span class="p">,</span><span class="n">v</span><span class="p">)</span> <span class="ow">in</span> <span class="n">items</span><span class="p">:</span>
+        <span class="n">v</span> <span class="o">=</span> <span class="n">_undecorate</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
+        <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="s2">&quot;_pvsm_proxy_xml&quot;</span><span class="p">):</span>
+            <span class="n">xmls</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">getattr</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="s2">&quot;_pvsm_proxy_xml&quot;</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">xmls</span></div>
+
+<div class="viewcode-block" id="get_plugin_name"><a class="viewcode-back" href="../../../paraview.detail.pythonalgorithm.html#paraview.detail.pythonalgorithm.get_plugin_name">[docs]</a><span class="k">def</span> <span class="nf">get_plugin_name</span><span class="p">(</span><span class="n">module_or_package</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;helper function called by vtkPVPythonAlgorithmPlugin to discover</span>
+<span class="sd">    ParaView plugin name, if any.&quot;&quot;&quot;</span>
+    <span class="kn">from</span> <span class="nn">inspect</span> <span class="k">import</span> <span class="n">ismodule</span><span class="p">,</span> <span class="n">isclass</span>
+    <span class="k">if</span> <span class="n">ismodule</span><span class="p">(</span><span class="n">module_or_package</span><span class="p">)</span> <span class="ow">and</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">module_or_package</span><span class="p">,</span> <span class="s2">&quot;paraview_plugin_name&quot;</span><span class="p">):</span>
+        <span class="k">return</span> <span class="nb">str</span><span class="p">(</span><span class="nb">getattr</span><span class="p">(</span><span class="n">module_or_package</span><span class="p">,</span> <span class="s2">&quot;paraview_plugin_name&quot;</span><span class="p">))</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">module_or_package</span><span class="o">.</span><span class="vm">__name__</span></div>
+
+<div class="viewcode-block" id="get_plugin_version"><a class="viewcode-back" href="../../../paraview.detail.pythonalgorithm.html#paraview.detail.pythonalgorithm.get_plugin_version">[docs]</a><span class="k">def</span> <span class="nf">get_plugin_version</span><span class="p">(</span><span class="n">module_or_package</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;helper function called by vtkPVPythonAlgorithmPlugin to discover</span>
+<span class="sd">    ParaView plugin version, if any.&quot;&quot;&quot;</span>
+    <span class="kn">from</span> <span class="nn">inspect</span> <span class="k">import</span> <span class="n">ismodule</span><span class="p">,</span> <span class="n">isclass</span>
+    <span class="k">if</span> <span class="n">ismodule</span><span class="p">(</span><span class="n">module_or_package</span><span class="p">)</span> <span class="ow">and</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">module_or_package</span><span class="p">,</span> <span class="s2">&quot;paraview_plugin_version&quot;</span><span class="p">):</span>
+        <span class="k">return</span> <span class="nb">str</span><span class="p">(</span><span class="nb">getattr</span><span class="p">(</span><span class="n">module_or_package</span><span class="p">,</span> <span class="s2">&quot;paraview_plugin_version&quot;</span><span class="p">))</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s2">&quot;(unknown)&quot;</span></div>
+
+<div class="viewcode-block" id="load_plugin"><a class="viewcode-back" href="../../../paraview.detail.pythonalgorithm.html#paraview.detail.pythonalgorithm.load_plugin">[docs]</a><span class="k">def</span> <span class="nf">load_plugin</span><span class="p">(</span><span class="n">filepath</span><span class="p">,</span> <span class="n">default_modulename</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;helper function called by vtkPVPythonAlgorithmPlugin to load</span>
+<span class="sd">    a python file.&quot;&quot;&quot;</span>
+
+    <span class="c1"># should we scope these under a plugins namespace?</span>
+    <span class="k">if</span> <span class="n">default_modulename</span><span class="p">:</span>
+        <span class="n">modulename</span> <span class="o">=</span> <span class="n">default_modulename</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="kn">import</span> <span class="nn">os.path</span>
+        <span class="n">modulename</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">splitext</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">filepath</span><span class="p">))[</span><span class="mi">0</span><span class="p">]</span>
+
+    <span class="k">try</span><span class="p">:</span>
+        <span class="c1"># for Python 3.5+</span>
+        <span class="kn">from</span> <span class="nn">importlib.util</span> <span class="k">import</span> <span class="n">spec_from_file_location</span><span class="p">,</span> <span class="n">module_from_spec</span>
+        <span class="n">spec</span> <span class="o">=</span> <span class="n">spec_from_file_location</span><span class="p">(</span><span class="n">modulename</span><span class="p">,</span> <span class="n">filepath</span><span class="p">)</span>
+        <span class="n">module</span> <span class="o">=</span> <span class="n">module_from_spec</span><span class="p">(</span><span class="n">spec</span><span class="p">)</span>
+        <span class="n">spec</span><span class="o">.</span><span class="n">loader</span><span class="o">.</span><span class="n">exec_module</span><span class="p">(</span><span class="n">module</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
+        <span class="c1"># for Python 3.3 and 3.4</span>
+        <span class="kn">import</span> <span class="nn">imp</span>
+        <span class="n">module</span> <span class="o">=</span> <span class="n">imp</span><span class="o">.</span><span class="n">load_source</span><span class="p">(</span><span class="n">modulename</span><span class="p">,</span> <span class="n">filepath</span><span class="p">)</span>
+
+    <span class="kn">import</span> <span class="nn">sys</span>
+    <span class="n">sys</span><span class="o">.</span><span class="n">modules</span><span class="p">[</span><span class="n">modulename</span><span class="p">]</span> <span class="o">=</span> <span class="n">module</span>
+    <span class="k">return</span> <span class="n">module</span></div>
+
+<div class="viewcode-block" id="reload_plugin_module"><a class="viewcode-back" href="../../../paraview.detail.pythonalgorithm.html#paraview.detail.pythonalgorithm.reload_plugin_module">[docs]</a><span class="k">def</span> <span class="nf">reload_plugin_module</span><span class="p">(</span><span class="n">module</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;helper function to reload a plugin module previously loaded via</span>
+<span class="sd">    load_plugin&quot;&quot;&quot;</span>
+    <span class="kn">from</span> <span class="nn">inspect</span> <span class="k">import</span> <span class="n">getsourcefile</span><span class="p">,</span> <span class="n">ismodule</span>
+    <span class="k">if</span> <span class="n">ismodule</span><span class="p">(</span><span class="n">module</span><span class="p">)</span> <span class="ow">and</span> <span class="n">getsourcefile</span><span class="p">(</span><span class="n">module</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">load_plugin</span><span class="p">(</span><span class="n">getsourcefile</span><span class="p">(</span><span class="n">module</span><span class="p">),</span> <span class="n">module</span><span class="o">.</span><span class="vm">__name__</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">module</span></div>
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2013, Kitware, Inc..</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+  <!-- KW:BEGIN -->
+  <script type="text/javascript" src="/paraview-docs/paraview-version.js"></script>
+  <!-- KW:END -->
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
