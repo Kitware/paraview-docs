@@ -1,0 +1,218 @@
+paraview.simple.SPHPlaneInterpolator
+====================================
+
+.. currentmodule:: paraview.simple
+
+.. autofunction:: SPHPlaneInterpolator
+
+Data Descriptors
+----------------
+
+
+   
+   ComputeShepardSum
+       Indicate whether to compute the summation of Shepard coefficients. In the
+       interior of a SPH point cloud, the Shephard summation value should be ~1.0.
+       Towards the boundary, the Shepard summation is less than 1.0. If ComputeShepardSum
+       is specified, then the output will contain an array of summed Shepard weights
+       for each output point.
+   
+   CutoffArray
+       Specify the Cutoff array name.  If not specified, then the radius at each point
+       will be computed as cutoff factor \* smoothing length at a each point.
+   
+   DensityArray
+       Specify the density array name.  This is required in computation. If not
+       specified the code will error out.
+   
+   DerivativeArrays
+       Specify the arrays whose derivative is to be taken. If
+       the name of the array is "derivArray" this will produce an output array
+       with the name "derivArray_deriv" (after filter execution).
+   
+   ExcludedArrays
+       Specify arrays which are to be excluded from the interpolation process.
+   
+   Input
+       The data source to be interpolated onto the \*Source\*.
+   
+   Kernel
+   
+   Locator
+       Specify a point locator.
+   
+   MassArray
+       Specify the mass array name.  If not specified, then the mass at each point
+       will be computed from the density and local (spherical) volume at a each
+       point.
+   
+   NullPointsStrategy
+       Specify a strategy to use when encountering a "null" point during the
+       interpolation process. Null points occur when the local neighborhood (of
+       nearby points to interpolate from) is empty. If the strategy is set to
+       MaskPoints, then an output array is created that marks points as being
+       valid (=1) or null (invalid =0) (and the NullValue is set as well). If
+       the strategy is set to NullValue, then the output data value(s) are set
+       to the NullPoint value (specified in the output point data).
+   
+   NullValue
+       Specify the null point value. When a null point is encountered then all
+       components of each null tuple are set to this value. By default the
+       null value is set to zero.
+   
+   PassCellArrays
+       Indicate whether to shallow copy the input cell data arrays to the output.
+   
+   PassFieldArrays
+       Indicate whether to shallow copy the input field data arrays to the output.
+   
+   PassPointArrays
+       Indicate whether to shallow copy the input point data arrays to the output.
+   
+   ShepardSumArrayName
+       If ComputeShepardSum is on, then an array is generated with name
+       ShepardSumArrayName for each input point. This vtkFloatArray is placed
+       into the output of the filter, and NullPoints have value =0.0. The
+       default name is "Shepard Summation".
+   
+   Source
+       The data source that provides the structure to be interpolated on.
+   
+   ValidPointsMaskArrayName
+       If the NullPointsStrategy is "Mask Points", then an array is generated for
+       each input point. This vtkCharArray is placed into the output of the filter,
+       with a non-zero value for a valid point, and zero otherwise. The name of
+       this masking array is specified here.
+   
+   
+
+Data Descriptors inherited from SourceProxy
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+   
+   CellData
+       Returns cell data information
+   
+   FieldData
+       Returns field data information
+   
+   PointData
+       Returns point data information
+   
+   
+
+Data Descriptors inherited from Proxy
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+   
+   __dict__
+       dictionary for instance variables (if defined)
+   
+   __weakref__
+       list of weak references to the object (if defined)
+   
+
+Methods
+-------
+
+
+   
+   Initialize = aInitialize(self, connection=None, update=True)
+   
+   
+
+Methods inherited from SourceProxy
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+   
+   FileNameChanged(self)
+       Called when the filename of a source proxy is changed.
+   
+   GetCellDataInformation(self)
+       Returns the associated cell data information.
+   
+   GetDataInformation(self, idx=None)
+       This method returns a DataInformation wrapper around a
+       vtkPVDataInformation
+   
+   GetFieldDataInformation(self)
+       Returns the associated cell data information.
+   
+   GetPointDataInformation(self)
+       Returns the associated point data information.
+   
+   UpdatePipeline(self, time=None)
+       This method updates the server-side VTK pipeline and the associated
+       data information. Make sure to update a source to validate the output
+       meta-data.
+   
+   UpdatePipelineInformation(self)
+       This method updates the meta-data of the server-side VTK pipeline and
+       the associated information properties
+   
+   __getitem__(self, idx)
+       Given a slice, int or string, returns the corresponding
+       output port
+   
+   
+
+Methods inherited from Proxy
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+   
+   GetProperty(self, name)
+       Given a property name, returns the property object.
+   
+   GetPropertyValue(self, name)
+       Returns a scalar for properties with 1 elements, the property
+       itself for vectors.
+   
+   InitializeFromProxy(self, aProxy, update=True)
+       Constructor. Assigns proxy to self.SMProxy, updates the server
+       object as well as register the proxy in _pyproxies dictionary.
+   
+   ListProperties(self)
+       Returns a list of all property names on this proxy.
+   
+   SetPropertyWithName(self, pname, arg)
+       Generic method for setting the value of a property.
+   
+   __del__(self)
+       Destructor. Cleans up all observers as well as remove
+       the proxy from the _pyproxies dictionary
+   
+   __eq__(self, other)
+       Returns true if the underlying SMProxies are the same.
+   
+   __getattr__(self, name)
+       With the exception of a few overloaded methods,
+       returns the SMProxy method
+   
+   __hash__(self)
+   
+   __init__(self, \*\*args)
+       Default constructor. It can be used to initialize properties
+       by passing keyword arguments where the key is the name of the
+       property. In addition registrationGroup and registrationName (optional)
+       can be specified (as keyword arguments) to automatically register
+       the proxy with the proxy manager.
+   
+   __iter__(self)
+       Creates an iterator for the properties.
+   
+   __ne__(self, other)
+       Returns false if the underlying SMProxies are the same.
+   
+   __setattr__(self, name, value)
+   
+   add_attribute(self, name, value)
+   
+   
+
+
+
+For the full list of servermanager proxies, please refer to :doc:`Available readers, sources, writers, filters and animation cues <paraview.servermanager_proxies>`
