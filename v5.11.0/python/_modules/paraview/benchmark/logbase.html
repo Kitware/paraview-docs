@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>paraview.benchmark.logbase &mdash; ParaView/Python 5.11.0 documentation</title>
+      <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          <ul>
+            <li> <a href="../../../index.html">
+              <img src="../../../_static/paraview-logo-small.png"
+              alt="ParaView/Python"></img></a> </li>
+            <li class="version"> version 5.11.0</li>
+          </ul>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../quick-start.html">Quick-Start :  A Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../paraview.html">The ParaView Python Package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../paraview.simple.html">simple</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../paraview.servermanager.html">servermanager</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../paraview.coprocessing.html">coprocessing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../paraview.benchmark.html">benchmark</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../paraview.servermanager_proxies.html">Available readers, sources, writers, filters and animation cues</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../api-changes.html">API Changes between ParaView versions</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">ParaView/Python</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+      <a href="../../../genindex.html" class="float-right">Index</a> 
+          <li><a href="../../index.html">Module code</a> &raquo;</li>
+      <li>paraview.benchmark.logbase</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <h1>Source code for paraview.benchmark.logbase</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">This module has utilities to benchmark paraview.</span>
+
+<span class="sd">You can set up arbitrary pipelines and this module helps you obtain,</span>
+<span class="sd">interpret and report the information recorded by ParaView&#39;s logs.</span>
+<span class="sd">Do that like so:</span>
+
+<span class="sd">1. Optionally, call maximize logs first</span>
+<span class="sd">2. Setup and run your visualization pipeline (via GUI or script as you prefer)</span>
+<span class="sd">3. Call print_logs() to print out the logs in raw format</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">print_function</span>
+<span class="kn">from</span> <span class="nn">paraview.simple</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">import</span> <span class="nn">paraview</span>
+
+<span class="n">start_frame</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">default_log_threshold</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+
+<div class="viewcode-block" id="component_to_string"><a class="viewcode-back" href="../../../paraview.benchmark.logbase.html#paraview.benchmark.logbase.component_to_string">[docs]</a><span class="k">def</span> <span class="nf">component_to_string</span><span class="p">(</span><span class="n">comp</span><span class="p">):</span>
+    <span class="n">session</span> <span class="o">=</span> <span class="n">servermanager</span><span class="o">.</span><span class="n">ProxyManager</span><span class="p">()</span><span class="o">.</span><span class="n">GetSessionProxyManager</span><span class="p">()</span><span class="o">.</span><span class="n">GetSession</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">comp</span> <span class="o">==</span> <span class="n">session</span><span class="o">.</span><span class="n">NONE</span><span class="p">:</span> <span class="k">return</span> <span class="s1">&#39;None&#39;</span>
+    <span class="k">if</span> <span class="n">comp</span> <span class="o">==</span> <span class="n">session</span><span class="o">.</span><span class="n">DATA_SERVER</span><span class="p">:</span> <span class="k">return</span> <span class="s1">&#39;DataServer&#39;</span>
+    <span class="k">if</span> <span class="n">comp</span> <span class="o">==</span> <span class="n">session</span><span class="o">.</span><span class="n">DATA_SERVER_ROOT</span><span class="p">:</span> <span class="k">return</span> <span class="s1">&#39;DataServerRoot&#39;</span>
+    <span class="k">if</span> <span class="n">comp</span> <span class="o">==</span> <span class="n">session</span><span class="o">.</span><span class="n">RENDER_SERVER</span><span class="p">:</span> <span class="k">return</span> <span class="s1">&#39;RenderServer&#39;</span>
+    <span class="k">if</span> <span class="n">comp</span> <span class="o">==</span> <span class="n">session</span><span class="o">.</span><span class="n">RENDER_SERVER_ROOT</span><span class="p">:</span> <span class="k">return</span> <span class="s1">&#39;RenderServerRoot&#39;</span>
+    <span class="k">if</span> <span class="n">comp</span> <span class="o">==</span> <span class="n">session</span><span class="o">.</span><span class="n">SERVERS</span><span class="p">:</span> <span class="k">return</span> <span class="s1">&#39;Servers&#39;</span>
+    <span class="k">if</span> <span class="n">comp</span> <span class="o">==</span> <span class="n">session</span><span class="o">.</span><span class="n">CLIENT</span><span class="p">:</span> <span class="k">return</span> <span class="s1">&#39;Client&#39;</span>
+    <span class="k">if</span> <span class="n">comp</span> <span class="o">==</span> <span class="n">session</span><span class="o">.</span><span class="n">CLIENT_AND_SERVERS</span><span class="p">:</span> <span class="k">return</span> <span class="s1">&#39;ClientAndServers&#39;</span>
+    <span class="k">return</span> <span class="kc">None</span></div>
+
+<div class="viewcode-block" id="OneLog"><a class="viewcode-back" href="../../../paraview.benchmark.logbase.html#paraview.benchmark.logbase.OneLog">[docs]</a><span class="k">class</span> <span class="nc">OneLog</span> <span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">runmode</span><span class="o">=</span><span class="s1">&#39;batch&#39;</span><span class="p">,</span> <span class="n">servertype</span><span class="o">=</span><span class="s1">&#39;unified&#39;</span><span class="p">,</span> <span class="n">component</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">rank</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">runmode</span> <span class="o">=</span> <span class="n">runmode</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">servertype</span> <span class="o">=</span> <span class="n">servertype</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">component</span> <span class="o">=</span> <span class="n">component_to_string</span><span class="p">(</span><span class="n">component</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">rank</span> <span class="o">=</span> <span class="n">rank</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">lines</span> <span class="o">=</span> <span class="p">[]</span>
+
+<div class="viewcode-block" id="OneLog.print_log"><a class="viewcode-back" href="../../../paraview.benchmark.logbase.html#paraview.benchmark.logbase.OneLog.print_log">[docs]</a>    <span class="k">def</span> <span class="nf">print_log</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">showlines</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+        <span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;#RunMode:&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">runmode</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+        <span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;ServerType:&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">servertype</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+        <span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;Component:&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">component</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+        <span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;processor#:&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">rank</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">showlines</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">lines</span><span class="p">:</span>
+                <span class="nb">print</span> <span class="p">(</span><span class="n">i</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="OneLog.toString"><a class="viewcode-back" href="../../../paraview.benchmark.logbase.html#paraview.benchmark.logbase.OneLog.toString">[docs]</a>    <span class="k">def</span> <span class="nf">toString</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">showlines</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="s2">&quot;#RunMode: &quot;</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">runmode</span> <span class="o">+</span> <span class="s2">&quot; ServerType: &quot;</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">servertype</span> <span class="o">+</span> <span class="s2">&quot; processor#: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">rank</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span>
+        <span class="k">if</span> <span class="n">showlines</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">lines</span><span class="p">:</span>
+                <span class="n">result</span> <span class="o">+=</span> <span class="n">i</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span>
+        <span class="k">return</span> <span class="n">result</span></div></div>
+
+<span class="n">logs</span> <span class="o">=</span> <span class="p">[]</span>
+
+<div class="viewcode-block" id="maximize_logs"><a class="viewcode-back" href="../../../paraview.benchmark.logbase.html#paraview.benchmark.logbase.maximize_logs">[docs]</a><span class="k">def</span> <span class="nf">maximize_logs</span> <span class="p">()</span> <span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Convenience method to ask paraview to produce logs with lots of space and</span>
+<span class="sd">    highest resolution.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">pm</span> <span class="o">=</span> <span class="n">paraview</span><span class="o">.</span><span class="n">servermanager</span><span class="o">.</span><span class="n">vtkProcessModule</span><span class="o">.</span><span class="n">GetProcessModule</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">pm</span> <span class="o">==</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">return</span>
+
+    <span class="n">ss</span> <span class="o">=</span> <span class="n">paraview</span><span class="o">.</span><span class="n">servermanager</span><span class="o">.</span><span class="n">vtkSMSession</span>
+    <span class="k">for</span> <span class="n">ptype</span> <span class="ow">in</span> <span class="p">[</span><span class="n">ss</span><span class="o">.</span><span class="n">CLIENT_AND_SERVERS</span><span class="p">,</span> <span class="n">ss</span><span class="o">.</span><span class="n">CLIENT</span><span class="p">,</span> <span class="n">ss</span><span class="o">.</span><span class="n">SERVERS</span><span class="p">,</span>
+                 <span class="n">ss</span><span class="o">.</span><span class="n">RENDER_SERVER</span><span class="p">,</span> <span class="n">ss</span><span class="o">.</span><span class="n">DATA_SERVER</span><span class="p">]:</span>
+      <span class="n">default_log_threshold</span><span class="p">[</span><span class="nb">str</span><span class="p">(</span><span class="n">ptype</span><span class="p">)]</span> <span class="o">=</span> <span class="mf">0.0</span>
+
+    <span class="n">pxm</span> <span class="o">=</span> <span class="n">paraview</span><span class="o">.</span><span class="n">servermanager</span><span class="o">.</span><span class="n">ProxyManager</span><span class="p">()</span>
+    <span class="n">tl</span> <span class="o">=</span> <span class="n">pxm</span><span class="o">.</span><span class="n">NewProxy</span><span class="p">(</span><span class="s2">&quot;misc&quot;</span><span class="p">,</span> <span class="s2">&quot;TimerLog&quot;</span><span class="p">)</span>
+    <span class="n">prop</span> <span class="o">=</span> <span class="n">tl</span><span class="o">.</span><span class="n">GetProperty</span><span class="p">(</span><span class="s2">&quot;MaxEntries&quot;</span><span class="p">)</span>
+    <span class="n">prop</span><span class="o">.</span><span class="n">SetElements1</span><span class="p">(</span><span class="mi">1000000</span><span class="p">)</span>
+    <span class="n">tl</span><span class="o">.</span><span class="n">UpdateVTKObjects</span><span class="p">()</span></div>
+
+<div class="viewcode-block" id="get_memuse"><a class="viewcode-back" href="../../../paraview.benchmark.logbase.html#paraview.benchmark.logbase.get_memuse">[docs]</a><span class="k">def</span> <span class="nf">get_memuse</span><span class="p">()</span> <span class="p">:</span>
+    <span class="n">pm</span> <span class="o">=</span> <span class="n">paraview</span><span class="o">.</span><span class="n">servermanager</span><span class="o">.</span><span class="n">vtkProcessModule</span><span class="o">.</span><span class="n">GetProcessModule</span><span class="p">()</span>
+    <span class="n">session</span> <span class="o">=</span> <span class="n">servermanager</span><span class="o">.</span><span class="n">ProxyManager</span><span class="p">()</span><span class="o">.</span><span class="n">GetSessionProxyManager</span><span class="p">()</span><span class="o">.</span><span class="n">GetSession</span><span class="p">()</span>
+
+    <span class="n">retval</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">if</span> <span class="n">pm</span><span class="o">.</span><span class="n">GetProcessTypeAsInt</span><span class="p">()</span> <span class="o">==</span> <span class="n">pm</span><span class="o">.</span><span class="n">PROCESS_BATCH</span><span class="p">:</span>
+        <span class="n">components</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;CL_DS_RS&#39;</span><span class="p">:</span> <span class="n">session</span><span class="o">.</span><span class="n">CLIENT_AND_SERVERS</span><span class="p">}</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">session</span><span class="o">.</span><span class="n">GetRenderClientMode</span><span class="p">()</span> <span class="o">==</span> <span class="n">session</span><span class="o">.</span><span class="n">RENDERING_UNIFIED</span><span class="p">:</span>
+            <span class="n">components</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;CL&#39;</span><span class="p">:</span> <span class="n">session</span><span class="o">.</span><span class="n">CLIENT</span><span class="p">,</span> <span class="s1">&#39;DS_RS&#39;</span><span class="p">:</span> <span class="n">session</span><span class="o">.</span><span class="n">SERVERS</span><span class="p">}</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">components</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;CL&#39;</span><span class="p">:</span> <span class="n">session</span><span class="o">.</span><span class="n">CLIENT</span><span class="p">,</span> <span class="s1">&#39;RS&#39;</span><span class="p">:</span> <span class="n">session</span><span class="o">.</span><span class="n">RENDER_SERVER</span><span class="p">,</span> <span class="s1">&#39;DS&#39;</span><span class="p">:</span> <span class="n">session</span><span class="o">.</span><span class="n">DATA_SERVER</span><span class="p">}</span>
+
+    <span class="k">for</span> <span class="n">comp_label</span><span class="p">,</span> <span class="n">comp_type</span> <span class="ow">in</span> <span class="n">components</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="n">infos</span> <span class="o">=</span> <span class="n">servermanager</span><span class="o">.</span><span class="n">vtkPVMemoryUseInformation</span><span class="p">()</span>
+        <span class="n">session</span><span class="o">.</span><span class="n">GatherInformation</span><span class="p">(</span><span class="n">comp_type</span><span class="p">,</span> <span class="n">infos</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">infos</span><span class="o">.</span><span class="n">GetSize</span><span class="p">()):</span>
+            <span class="n">retval</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">%(l)s</span><span class="s1">[</span><span class="si">%(r)d</span><span class="s1">] </span><span class="si">%(pu)d</span><span class="s1"> / </span><span class="si">%(hu)d</span><span class="s1">&#39;</span> <span class="o">%</span>
+                          <span class="p">{</span><span class="s1">&#39;l&#39;</span><span class="p">:</span> <span class="n">comp_label</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">:</span> <span class="n">infos</span><span class="o">.</span><span class="n">GetRank</span><span class="p">(</span><span class="n">i</span><span class="p">),</span>
+                           <span class="s1">&#39;pu&#39;</span><span class="p">:</span> <span class="n">infos</span><span class="o">.</span><span class="n">GetProcMemoryUse</span><span class="p">(</span><span class="n">i</span><span class="p">),</span>
+                           <span class="s1">&#39;hu&#39;</span><span class="p">:</span> <span class="n">infos</span><span class="o">.</span><span class="n">GetHostMemoryUse</span><span class="p">(</span><span class="n">i</span><span class="p">)})</span>
+    <span class="k">return</span> <span class="n">retval</span></div>
+
+<div class="viewcode-block" id="dump_logs"><a class="viewcode-back" href="../../../paraview.benchmark.logbase.html#paraview.benchmark.logbase.dump_logs">[docs]</a><span class="k">def</span> <span class="nf">dump_logs</span><span class="p">(</span> <span class="n">filename</span> <span class="p">)</span> <span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    This saves off the logs we&#39;ve gathered.</span>
+<span class="sd">    Ot allows you to run a benchmark somewhere, save off all of the details in</span>
+<span class="sd">    raw format, then load them somewhere else. You can then do a detailed</span>
+<span class="sd">    analysis and you always have the raw data to go back to.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="kn">import</span> <span class="nn">pickle</span>
+    <span class="k">global</span> <span class="n">logs</span>
+    <span class="k">if</span> <span class="n">sys</span><span class="o">.</span><span class="n">version_info</span> <span class="o">&lt;</span> <span class="p">(</span><span class="mi">3</span><span class="p">,):</span>
+        <span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="s2">&quot;wb&quot;</span><span class="p">)</span>
+    <span class="n">pickle</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">logs</span><span class="p">,</span> <span class="n">f</span><span class="p">)</span>
+    <span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span></div>
+
+<div class="viewcode-block" id="import_logs"><a class="viewcode-back" href="../../../paraview.benchmark.logbase.html#paraview.benchmark.logbase.import_logs">[docs]</a><span class="k">def</span> <span class="nf">import_logs</span><span class="p">(</span> <span class="n">filename</span> <span class="p">)</span> <span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    This is for bringing in a saved log files and parse it after the fact.</span>
+<span class="sd">    TODO: add an option to load in raw paraview logs in text format</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="kn">import</span> <span class="nn">pickle</span>
+    <span class="k">global</span> <span class="n">logs</span>
+    <span class="n">logs</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">if</span> <span class="n">sys</span><span class="o">.</span><span class="n">version_info</span> <span class="o">&lt;</span> <span class="p">(</span><span class="mi">3</span><span class="p">,):</span>
+        <span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="s2">&quot;rb&quot;</span><span class="p">)</span>
+    <span class="n">logs</span> <span class="o">=</span> <span class="n">pickle</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+    <span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span></div>
+
+<div class="viewcode-block" id="get_logs"><a class="viewcode-back" href="../../../paraview.benchmark.logbase.html#paraview.benchmark.logbase.get_logs">[docs]</a><span class="k">def</span> <span class="nf">get_logs</span><span class="p">()</span> <span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    This is for bringing in logs at run time to parse while running.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">global</span> <span class="n">logs</span>
+    <span class="n">logs</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="n">pm</span> <span class="o">=</span> <span class="n">paraview</span><span class="o">.</span><span class="n">servermanager</span><span class="o">.</span><span class="n">vtkProcessModule</span><span class="o">.</span><span class="n">GetProcessModule</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">pm</span> <span class="o">==</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">return</span>
+
+    <span class="n">connectionId</span> <span class="o">=</span> <span class="n">paraview</span><span class="o">.</span><span class="n">servermanager</span><span class="o">.</span><span class="n">ActiveConnection</span><span class="o">.</span><span class="n">ID</span>
+    <span class="n">session</span> <span class="o">=</span> <span class="n">paraview</span><span class="o">.</span><span class="n">servermanager</span><span class="o">.</span><span class="n">ActiveConnection</span><span class="o">.</span><span class="n">Session</span>
+
+    <span class="n">is_symmetric_mode</span> <span class="o">=</span> <span class="kc">False</span>
+    <span class="k">if</span> <span class="n">pm</span><span class="o">.</span><span class="n">GetProcessTypeAsInt</span><span class="p">()</span> <span class="o">==</span> <span class="n">pm</span><span class="o">.</span><span class="n">PROCESS_BATCH</span><span class="p">:</span>
+        <span class="n">runmode</span> <span class="o">=</span> <span class="s1">&#39;batch&#39;</span>
+        <span class="n">is_symmetric_mode</span> <span class="o">=</span> <span class="n">pm</span><span class="o">.</span><span class="n">GetSymmetricMPIMode</span><span class="p">()</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">runmode</span> <span class="o">=</span> <span class="s1">&#39;interactive&#39;</span>
+
+    <span class="k">if</span> <span class="n">session</span><span class="o">.</span><span class="n">GetRenderClientMode</span><span class="p">()</span> <span class="o">==</span> <span class="n">session</span><span class="o">.</span><span class="n">RENDERING_UNIFIED</span><span class="p">:</span>
+        <span class="n">servertype</span> <span class="o">=</span> <span class="s1">&#39;unified&#39;</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">servertype</span> <span class="o">=</span> <span class="s1">&#39;split&#39;</span>
+
+    <span class="k">if</span> <span class="n">runmode</span> <span class="o">==</span> <span class="s1">&#39;batch&#39;</span><span class="p">:</span>
+        <span class="c1"># collect information from all processes in one go.</span>
+        <span class="n">components</span> <span class="o">=</span> <span class="p">[</span><span class="n">session</span><span class="o">.</span><span class="n">CLIENT_AND_SERVERS</span><span class="p">]</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">servertype</span> <span class="o">==</span> <span class="s1">&#39;unified&#39;</span><span class="p">:</span>
+            <span class="c1"># collect information separately for client and servers.</span>
+            <span class="n">components</span> <span class="o">=</span> <span class="p">[</span><span class="n">session</span><span class="o">.</span><span class="n">CLIENT</span><span class="p">,</span> <span class="n">session</span><span class="o">.</span><span class="n">SERVERS</span><span class="p">]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="c1"># collect information separately for all process types.</span>
+            <span class="n">components</span> <span class="o">=</span> <span class="p">[</span><span class="n">session</span><span class="o">.</span><span class="n">CLIENT</span><span class="p">,</span> <span class="n">session</span><span class="o">.</span><span class="n">RENDER_SERVER</span><span class="p">,</span> <span class="n">session</span><span class="o">.</span><span class="n">DATA_SERVER</span><span class="p">]</span>
+
+    <span class="k">for</span> <span class="n">component</span> <span class="ow">in</span> <span class="n">components</span><span class="p">:</span>
+        <span class="n">timerInfo</span> <span class="o">=</span> <span class="n">paraview</span><span class="o">.</span><span class="n">servermanager</span><span class="o">.</span><span class="n">vtkPVTimerInformation</span><span class="p">()</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">default_log_threshold</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+           <span class="n">timerInfo</span><span class="o">.</span><span class="n">SetLogThreshold</span><span class="p">(</span><span class="n">default_log_threshold</span><span class="p">[</span><span class="nb">str</span><span class="p">(</span><span class="n">component</span><span class="p">)])</span>
+        <span class="n">session</span><span class="o">.</span><span class="n">GatherInformation</span><span class="p">(</span><span class="n">component</span><span class="p">,</span> <span class="n">timerInfo</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">timerInfo</span><span class="o">.</span><span class="n">GetNumberOfLogs</span><span class="p">()):</span>
+            <span class="n">alog</span> <span class="o">=</span> <span class="n">OneLog</span><span class="p">(</span><span class="n">runmode</span><span class="p">,</span> <span class="n">servertype</span><span class="p">,</span> <span class="n">component</span><span class="p">,</span> <span class="n">i</span><span class="p">)</span>
+
+            <span class="k">if</span> <span class="n">is_symmetric_mode</span><span class="p">:</span>
+                <span class="c1"># in Symmetric mode, GatherInformation() only collects</span>
+                <span class="c1"># information from the current node. so the</span>
+                <span class="c1"># vtkPVTimerInformation will only have info for local process.</span>
+                <span class="n">alog</span><span class="o">.</span><span class="n">rank</span> <span class="o">=</span> <span class="n">pm</span><span class="o">.</span><span class="n">GetPartitionId</span><span class="p">()</span>
+
+            <span class="n">alog</span><span class="o">.</span><span class="n">lines</span> <span class="o">=</span> <span class="n">timerInfo</span><span class="o">.</span><span class="n">GetLog</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">);</span>
+            <span class="n">logs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">alog</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="print_logs"><a class="viewcode-back" href="../../../paraview.benchmark.logbase.html#paraview.benchmark.logbase.print_logs">[docs]</a><span class="k">def</span> <span class="nf">print_logs</span><span class="p">()</span> <span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Print logs on the root node by gathering logs across all the nodes</span>
+<span class="sd">    regardless if the process was started in symmetric mode or not.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">global</span> <span class="n">logs</span>
+
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">logs</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">get_logs</span><span class="p">()</span>
+
+    <span class="c1"># Handle symmetric mode specifically if need be</span>
+    <span class="n">pm</span> <span class="o">=</span> <span class="n">paraview</span><span class="o">.</span><span class="n">servermanager</span><span class="o">.</span><span class="n">vtkProcessModule</span><span class="o">.</span><span class="n">GetProcessModule</span><span class="p">()</span>
+    <span class="n">is_symmetric_mode</span> <span class="o">=</span> <span class="kc">False</span>
+    <span class="k">if</span> <span class="n">pm</span> <span class="o">!=</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">is_symmetric_mode</span> <span class="o">=</span> <span class="n">pm</span><span class="o">.</span><span class="n">GetSymmetricMPIMode</span><span class="p">()</span>
+
+    <span class="k">if</span> <span class="n">is_symmetric_mode</span><span class="p">:</span>
+        <span class="c1"># Need to provide extra synchronization</span>
+        <span class="n">ctrl</span> <span class="o">=</span> <span class="n">pm</span><span class="o">.</span><span class="n">GetGlobalController</span><span class="p">()</span>
+        <span class="n">proc</span> <span class="o">=</span> <span class="n">pm</span><span class="o">.</span><span class="n">GetPartitionId</span><span class="p">()</span>
+        <span class="n">nbProc</span> <span class="o">=</span> <span class="n">pm</span><span class="o">.</span><span class="n">GetNumberOfLocalPartitions</span><span class="p">()</span>
+        <span class="k">if</span> <span class="n">proc</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="c1"># Start with my logs</span>
+            <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">logs</span><span class="p">:</span>
+                <span class="n">i</span><span class="o">.</span><span class="n">print_log</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+            <span class="c1"># Then Print the log of every other rank</span>
+            <span class="k">for</span> <span class="n">otherProc</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">nbProc</span><span class="p">):</span>
+                <span class="c1"># Max buffer size 999999</span>
+                <span class="n">logSize</span> <span class="o">=</span> <span class="s2">&quot; &quot;</span> <span class="o">*</span> <span class="mi">6</span>
+                <span class="n">ctrl</span><span class="o">.</span><span class="n">Receive</span><span class="p">(</span><span class="n">logSize</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">logSize</span><span class="p">),</span> <span class="n">otherProc</span><span class="p">,</span> <span class="mi">987455</span><span class="p">)</span>
+                <span class="n">logSize</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">logSize</span><span class="p">)</span>
+                <span class="n">logTxt</span> <span class="o">=</span> <span class="s2">&quot; &quot;</span> <span class="o">*</span> <span class="n">logSize</span>
+                <span class="n">ctrl</span><span class="o">.</span><span class="n">Receive</span><span class="p">(</span><span class="n">logTxt</span><span class="p">,</span> <span class="n">logSize</span><span class="p">,</span> <span class="n">otherProc</span><span class="p">,</span> <span class="mi">987456</span><span class="p">)</span>
+                <span class="nb">print</span> <span class="p">(</span><span class="n">logTxt</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="c1"># Extract logs text</span>
+            <span class="n">logTxt</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+            <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">logs</span><span class="p">:</span>
+                <span class="n">logTxt</span> <span class="o">+=</span> <span class="n">i</span><span class="o">.</span><span class="n">toString</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+            <span class="n">logSize</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">logTxt</span><span class="p">))</span>
+
+            <span class="c1"># Push local logs to process 0</span>
+            <span class="n">ctrl</span><span class="o">.</span><span class="n">Send</span><span class="p">(</span><span class="n">logSize</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">logSize</span><span class="p">),</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">987455</span><span class="p">)</span>
+            <span class="n">ctrl</span><span class="o">.</span><span class="n">Send</span><span class="p">(</span><span class="n">logTxt</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">logTxt</span><span class="p">),</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">987456</span><span class="p">)</span>
+
+    <span class="k">else</span><span class="p">:</span>
+        <span class="c1"># Regular local print</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">logs</span><span class="p">:</span>
+            <span class="n">i</span><span class="o">.</span><span class="n">print_log</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="test_module"><a class="viewcode-back" href="../../../paraview.benchmark.logbase.html#paraview.benchmark.logbase.test_module">[docs]</a><span class="k">def</span> <span class="nf">test_module</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot;Simply exercises a few components of the module.&quot;&quot;&quot;</span>
+    <span class="n">maximize_logs</span><span class="p">()</span>
+
+    <span class="n">paraview</span><span class="o">.</span><span class="n">servermanager</span><span class="o">.</span><span class="n">SetProgressPrintingEnabled</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+    <span class="n">ss</span> <span class="o">=</span> <span class="n">Sphere</span><span class="p">(</span><span class="n">ThetaResolution</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span> <span class="n">PhiResolution</span><span class="o">=</span><span class="mi">500</span><span class="p">)</span>
+    <span class="n">rep</span> <span class="o">=</span> <span class="n">Show</span><span class="p">()</span>
+    <span class="n">v</span> <span class="o">=</span> <span class="n">Render</span><span class="p">()</span>
+
+    <span class="n">print_logs</span><span class="p">()</span></div>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="n">test_module</span><span class="p">()</span>
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2013, Kitware, Inc..</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+  <!-- KW:BEGIN -->
+  <script type="text/javascript" src="/paraview-docs/paraview-version.js"></script>
+  <!-- KW:END -->
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

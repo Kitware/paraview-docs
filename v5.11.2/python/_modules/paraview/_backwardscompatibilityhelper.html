@@ -1,0 +1,1054 @@
+<!DOCTYPE html>
+<html class="writer-html4" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>paraview._backwardscompatibilityhelper &mdash; ParaView/Python 5.11.2 documentation</title><link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" /><link rel="shortcut icon" href="../../_static/pvIcon.ico"/>
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          <ul>
+            <li> <a href="../../index.html">
+              <img src="../../_static/paraview-logo-small.png"
+              alt="ParaView/Python"></img></a> </li>
+            <li class="version"> version 5.11.2</li>
+          </ul>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../quick-start.html">Quick-Start :  A Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../paraview.html">The ParaView Python Package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../paraview.simple.html">simple</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../paraview.servermanager.html">servermanager</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../paraview.coprocessing.html">coprocessing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../paraview.benchmark.html">benchmark</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../paraview.servermanager_proxies.html">Available readers, sources, writers, filters and animation cues</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../api-changes.html">API Changes between ParaView versions</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">ParaView/Python</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+      <a href="../../genindex.html" class="float-right">Index</a> 
+          <li><a href="../index.html">Module code</a> &raquo;</li>
+      <li>paraview._backwardscompatibilityhelper</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <h1>Source code for paraview._backwardscompatibilityhelper</h1><div class="highlight"><pre>
+<span></span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Internal module used by paraview.servermanager to help warn about properties</span>
+<span class="sd">changed or removed.</span>
+
+<span class="sd">If the compatibility version is less than the version where a particular</span>
+<span class="sd">property was removed, `check_attr` should ideally continue to work as before</span>
+<span class="sd">or return a value of appropriate form so old code doesn&#39;t fail. Otherwise</span>
+<span class="sd">`check_attr` should throw the NotSupportedException with appropriate debug</span>
+<span class="sd">message.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="kn">import</span> <span class="nn">paraview</span>
+<span class="kn">import</span> <span class="nn">builtins</span>
+
+<span class="n">NotSupportedException</span> <span class="o">=</span> <span class="n">paraview</span><span class="o">.</span><span class="n">NotSupportedException</span>
+
+<div class="viewcode-block" id="Continue"><a class="viewcode-back" href="../../paraview._backwardscompatibilityhelper.html#paraview._backwardscompatibilityhelper.Continue">[docs]</a><span class="k">class</span> <span class="nc">Continue</span><span class="p">(</span><span class="ne">Exception</span><span class="p">):</span>
+    <span class="k">pass</span></div>
+
+<span class="k">class</span> <span class="nc">_CubeAxesHelper</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">CubeAxesVisibility</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">CubeAxesColor</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">CubeAxesCornerOffset</span> <span class="o">=</span> <span class="mf">0.0</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">CubeAxesFlyMode</span> <span class="o">=</span> <span class="mi">1</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">CubeAxesInertia</span> <span class="o">=</span> <span class="mi">1</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">CubeAxesTickLocation</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">CubeAxesXAxisMinorTickVisibility</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">CubeAxesXAxisTickVisibility</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">CubeAxesXAxisVisibility</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">CubeAxesXGridLines</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">CubeAxesXTitle</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">CubeAxesUseDefaultXTitle</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">CubeAxesYAxisMinorTickVisibility</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">CubeAxesYAxisTickVisibility</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">CubeAxesYAxisVisibility</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">CubeAxesYGridLines</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">CubeAxesYTitle</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">CubeAxesUseDefaultYTitle</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">CubeAxesZAxisMinorTickVisibility</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">CubeAxesZAxisTickVisibility</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">CubeAxesZAxisVisibility</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">CubeAxesZGridLines</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">CubeAxesZTitle</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">CubeAxesUseDefaultZTitle</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">CubeAxesGridLineLocation</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">DataBounds</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">CustomBounds</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">CustomBoundsActive</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">OriginalBoundsRangeActive</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">CustomRange</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">CustomRangeActive</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">UseAxesOrigin</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">AxesOrigin</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">CubeAxesXLabelFormat</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">CubeAxesYLabelFormat</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">CubeAxesZLabelFormat</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">StickyAxes</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">CenterStickyAxes</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">_ACubeAxesHelper</span> <span class="o">=</span> <span class="n">_CubeAxesHelper</span><span class="p">()</span>
+
+<div class="viewcode-block" id="setattr"><a class="viewcode-back" href="../../paraview._backwardscompatibilityhelper.html#paraview._backwardscompatibilityhelper.setattr">[docs]</a><span class="k">def</span> <span class="nf">setattr</span><span class="p">(</span><span class="n">proxy</span><span class="p">,</span> <span class="n">pname</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Attempts to emulate setattr() when called using a deprecated name for a</span>
+<span class="sd">    proxy property.</span>
+
+<span class="sd">    For properties that are no longer present on a proxy, the code should do the</span>
+<span class="sd">    following:</span>
+
+<span class="sd">    1. If `paraview.compatibility.GetVersion()` is less than the version in</span>
+<span class="sd">       which the property was removed, attempt to handle the request and raise</span>
+<span class="sd">       `Continue` to indicate that the request has been handled. If it is too</span>
+<span class="sd">       complicated to support the old API, then it is acceptable to raise</span>
+<span class="sd">       a warning message, but don&#39;t raise an exception.</span>
+
+<span class="sd">    2. If compatibility version is &gt;= the version in which the property was</span>
+<span class="sd">       removed, raise `NotSupportedException` with details including suggestions</span>
+<span class="sd">       to update the script.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">version</span> <span class="o">=</span> <span class="n">paraview</span><span class="o">.</span><span class="n">compatibility</span><span class="o">.</span><span class="n">GetVersion</span><span class="p">()</span>
+
+    <span class="k">if</span> <span class="n">pname</span> <span class="o">==</span> <span class="s2">&quot;ColorAttributeType&quot;</span> <span class="ow">and</span> <span class="n">proxy</span><span class="o">.</span><span class="n">SMProxy</span><span class="o">.</span><span class="n">GetProperty</span><span class="p">(</span><span class="s2">&quot;ColorArrayName&quot;</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">paraview</span><span class="o">.</span><span class="n">compatibility</span><span class="o">.</span><span class="n">GetVersion</span><span class="p">()</span> <span class="o">&lt;=</span> <span class="mf">4.1</span><span class="p">:</span>
+            <span class="c1"># set ColorAttributeType on ColorArrayName property instead.</span>
+            <span class="n">caProp</span> <span class="o">=</span> <span class="n">proxy</span><span class="o">.</span><span class="n">GetProperty</span><span class="p">(</span><span class="s2">&quot;ColorArrayName&quot;</span><span class="p">)</span>
+            <span class="n">proxy</span><span class="o">.</span><span class="n">GetProperty</span><span class="p">(</span><span class="s2">&quot;ColorArrayName&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">SetData</span><span class="p">((</span><span class="n">value</span><span class="p">,</span> <span class="n">caProp</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span>
+            <span class="k">raise</span> <span class="n">Continue</span><span class="p">()</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="c1"># if ColorAttributeType is being used, raise NotSupportedException.</span>
+            <span class="k">raise</span> <span class="n">NotSupportedException</span><span class="p">(</span>
+                    <span class="s2">&quot;&#39;ColorAttributeType&#39; is obsolete as of ParaView 4.2. Simply use &#39;ColorArrayName&#39; &quot;</span>\
+                    <span class="s2">&quot;instead. Refer to ParaView Python API changes documentation online.&quot;</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">pname</span> <span class="o">==</span> <span class="s2">&quot;AspectRatio&quot;</span> <span class="ow">and</span> <span class="n">proxy</span><span class="o">.</span><span class="n">SMProxy</span><span class="o">.</span><span class="n">GetProperty</span><span class="p">(</span><span class="s2">&quot;ScalarBarThickness&quot;</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">paraview</span><span class="o">.</span><span class="n">compatibility</span><span class="o">.</span><span class="n">GetVersion</span><span class="p">()</span> <span class="o">&lt;=</span> <span class="mf">5.3</span><span class="p">:</span>
+            <span class="c1"># We can&#39;t do this perfectly, so we set the ScalarBarThickness</span>
+            <span class="c1"># property instead. Assume a reasonable modern screen size of</span>
+            <span class="c1"># 1280x1024 with a Render view size of 1000x600. Even if we had</span>
+            <span class="c1"># access to the View proxy to get the screen size, there is no</span>
+            <span class="c1"># guarantee that the view size will remain the same later on in the</span>
+            <span class="c1"># Python script.</span>
+            <span class="n">span</span> <span class="o">=</span> <span class="mi">600</span> <span class="c1"># vertical</span>
+            <span class="k">if</span> <span class="n">proxy</span><span class="o">.</span><span class="n">GetProperty</span><span class="p">(</span><span class="s2">&quot;Orientation&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">GetData</span><span class="p">()</span> <span class="o">==</span> <span class="s2">&quot;Horizontal&quot;</span><span class="p">:</span>
+                <span class="n">span</span> <span class="o">=</span> <span class="mi">1000</span>
+
+            <span class="c1"># Assume a scalar bar length 40% of the span.</span>
+            <span class="n">thickness</span> <span class="o">=</span> <span class="mf">0.4</span> <span class="o">*</span> <span class="n">span</span> <span class="o">/</span> <span class="n">value</span>
+
+            <span class="n">proxy</span><span class="o">.</span><span class="n">GetProperty</span><span class="p">(</span><span class="s2">&quot;ScalarBarThickness&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">SetData</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">thickness</span><span class="p">))</span>
+            <span class="k">raise</span> <span class="n">Continue</span><span class="p">()</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="c1">#if AspectRatio is being used, raise NotSupportedException</span>
+            <span class="k">raise</span> <span class="n">NotSupportedException</span><span class="p">(</span>\
+                <span class="s2">&quot;&#39;AspectRatio&#39; is obsolete as of ParaView 5.4. Use the &quot;</span>\
+                <span class="s2">&quot;&#39;ScalarBarThickness&#39; property to set the width instead.&quot;</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">pname</span> <span class="o">==</span> <span class="s2">&quot;Position2&quot;</span> <span class="ow">and</span> <span class="n">proxy</span><span class="o">.</span><span class="n">SMProxy</span><span class="o">.</span><span class="n">GetProperty</span><span class="p">(</span><span class="s2">&quot;ScalarBarLength&quot;</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">paraview</span><span class="o">.</span><span class="n">compatibility</span><span class="o">.</span><span class="n">GetVersion</span><span class="p">()</span> <span class="o">&lt;=</span> <span class="mf">5.3</span><span class="p">:</span>
+            <span class="c1"># The scalar bar length corresponds to Position2[0] when the</span>
+            <span class="c1"># orientation is horizontal and Position2[1] when the orientation</span>
+            <span class="c1"># is vertical.</span>
+            <span class="n">length</span> <span class="o">=</span> <span class="n">value</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+            <span class="k">if</span> <span class="n">proxy</span><span class="o">.</span><span class="n">Orientation</span> <span class="o">==</span> <span class="s2">&quot;Vertical&quot;</span><span class="p">:</span>
+                <span class="n">length</span> <span class="o">=</span> <span class="n">value</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+
+            <span class="n">proxy</span><span class="o">.</span><span class="n">GetProperty</span><span class="p">(</span><span class="s2">&quot;ScalarBarLength&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">SetData</span><span class="p">(</span><span class="n">length</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="c1">#if Position2 is being used, raise NotSupportedException</span>
+            <span class="k">raise</span> <span class="n">NotSupportedException</span><span class="p">(</span>\
+                <span class="s2">&quot;&#39;Position2&#39; is obsolete as of ParaView 5.4. Use the &quot;</span>\
+                <span class="s2">&quot;&#39;ScalarBarLength&#39; property to set the length instead.&quot;</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">pname</span> <span class="o">==</span> <span class="s2">&quot;LockScalarRange&quot;</span> <span class="ow">and</span> <span class="n">proxy</span><span class="o">.</span><span class="n">SMProxy</span><span class="o">.</span><span class="n">GetProperty</span><span class="p">(</span><span class="s2">&quot;AutomaticRescaleRangeMode&quot;</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">paraview</span><span class="o">.</span><span class="n">compatibility</span><span class="o">.</span><span class="n">GetVersion</span><span class="p">()</span> <span class="o">&lt;=</span> <span class="mf">5.4</span><span class="p">:</span>
+            <span class="kn">from</span> <span class="nn">paraview.modules.vtkRemotingViews</span> <span class="k">import</span> <span class="n">vtkSMTransferFunctionManager</span>
+            <span class="k">if</span> <span class="n">value</span><span class="p">:</span>
+                <span class="n">proxy</span><span class="o">.</span><span class="n">GetProperty</span><span class="p">(</span><span class="s2">&quot;AutomaticRescaleRangeMode&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">SetData</span><span class="p">(</span><span class="n">vtkSMTransferFunctionManager</span><span class="o">.</span><span class="n">NEVER</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">proxy</span><span class="o">.</span><span class="n">GetProperty</span><span class="p">(</span><span class="s2">&quot;AutomaticRescaleRangeMode&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">SetData</span><span class="p">(</span><span class="n">vtkSMTransferFunctionManager</span><span class="o">.</span><span class="n">GROW_ON_APPLY</span><span class="p">)</span>
+
+            <span class="k">raise</span> <span class="n">Continue</span><span class="p">()</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">NotSupportedException</span><span class="p">(</span>
+                    <span class="s2">&quot;&#39;LockScalarRange&#39; is obsolete as of ParaView 5.5. Use &quot;</span>\
+                    <span class="s2">&quot;&#39;AutomaticRescaleRangeMode&#39; property instead.&quot;</span><span class="p">)</span>
+
+    <span class="c1"># In 5.5, we changed the vtkArrayCalculator to use a different set of constants to control which</span>
+    <span class="c1"># data it operates on.  This change changed the method and property name from AttributeMode to</span>
+    <span class="c1"># AttributeType</span>
+    <span class="k">if</span> <span class="n">pname</span> <span class="o">==</span> <span class="s2">&quot;AttributeMode&quot;</span> <span class="ow">and</span> <span class="n">proxy</span><span class="o">.</span><span class="n">SMProxy</span><span class="o">.</span><span class="n">GetXMLName</span><span class="p">()</span> <span class="o">==</span> <span class="s2">&quot;Calculator&quot;</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">paraview</span><span class="o">.</span><span class="n">compatibility</span><span class="o">.</span><span class="n">GetVersion</span><span class="p">()</span> <span class="o">&lt;=</span> <span class="mf">5.4</span><span class="p">:</span>
+            <span class="c1"># The Attribute type uses enumeration values from vtkDataObject::AttributeTypes</span>
+            <span class="c1"># rather than custom constants for the calculator.  For the values supported by</span>
+            <span class="c1"># ParaView before this change, the conversion works out to subtracting 1 if value</span>
+            <span class="c1"># is an integer. If value is an enumerated string we use that as is since it matches</span>
+            <span class="c1"># the previous enumerated string options.</span>
+            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="nb">int</span><span class="p">):</span>
+                <span class="n">proxy</span><span class="o">.</span><span class="n">GetProperty</span><span class="p">(</span><span class="s2">&quot;AttributeType&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">SetData</span><span class="p">(</span><span class="n">value</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">proxy</span><span class="o">.</span><span class="n">GetProperty</span><span class="p">(</span><span class="s2">&quot;AttributeType&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">SetData</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+            <span class="k">raise</span> <span class="n">Continue</span><span class="p">()</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">NotSupportedException</span><span class="p">(</span>\
+                <span class="s2">&quot;&#39;AttributeMode&#39; is obsolete.  Use &#39;AttributeType&#39; property of Calculator filter instead.&quot;</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">pname</span> <span class="o">==</span> <span class="s2">&quot;UseOffscreenRenderingForScreenshots&quot;</span> <span class="ow">and</span> <span class="n">proxy</span><span class="o">.</span><span class="n">SMProxy</span><span class="o">.</span><span class="n">IsA</span><span class="p">(</span><span class="s2">&quot;vtkSMViewProxy&quot;</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">paraview</span><span class="o">.</span><span class="n">compatibility</span><span class="o">.</span><span class="n">GetVersion</span><span class="p">()</span> <span class="o">&lt;=</span> <span class="mf">5.4</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">Continue</span><span class="p">()</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">NotSupportedException</span><span class="p">(</span>\
+                    <span class="s2">&quot;&#39;UseOffscreenRenderingForScreenshots&#39; is obsolete. Simply remove it from your script.&quot;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">pname</span> <span class="o">==</span> <span class="s2">&quot;UseOffscreenRendering&quot;</span> <span class="ow">and</span> <span class="n">proxy</span><span class="o">.</span><span class="n">SMProxy</span><span class="o">.</span><span class="n">IsA</span><span class="p">(</span><span class="s2">&quot;vtkSMViewProxy&quot;</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">paraview</span><span class="o">.</span><span class="n">compatibility</span><span class="o">.</span><span class="n">GetVersion</span><span class="p">()</span> <span class="o">&lt;=</span> <span class="mf">5.4</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">Continue</span><span class="p">()</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">NotSupportedException</span><span class="p">(</span>\
+                    <span class="s2">&quot;&#39;UseOffscreenRendering&#39; is obsolete. Simply remove it from your script.&quot;</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">proxy</span><span class="o">.</span><span class="n">SMProxy</span> <span class="ow">and</span> <span class="n">proxy</span><span class="o">.</span><span class="n">SMProxy</span><span class="o">.</span><span class="n">GetXMLName</span><span class="p">()</span> <span class="o">==</span> <span class="s2">&quot;CGNSSeriesReader&quot;</span><span class="p">:</span>
+        <span class="c1"># in 5.5, CGNS reader had some changes. &quot;BaseStatus&quot;, &quot;FamilyStatus&quot;,</span>
+        <span class="c1"># &quot;LoadBndPatch&quot;, and &quot;LoadMesh&quot; properties were removed.</span>
+        <span class="k">if</span> <span class="n">pname</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;LoadBndPatch&quot;</span><span class="p">,</span> <span class="s2">&quot;LoadMesh&quot;</span><span class="p">,</span> <span class="s2">&quot;BaseStatus&quot;</span><span class="p">,</span> <span class="s2">&quot;FamilyStatus&quot;</span><span class="p">]:</span>
+            <span class="k">if</span> <span class="n">paraview</span><span class="o">.</span><span class="n">compatibility</span><span class="o">.</span><span class="n">GetVersion</span><span class="p">()</span> <span class="o">&lt;=</span> <span class="mf">5.4</span><span class="p">:</span>
+                <span class="n">paraview</span><span class="o">.</span><span class="n">print_warning</span><span class="p">(</span>\
+                  <span class="s2">&quot;&#39;</span><span class="si">%s</span><span class="s2">&#39; is no longer supported and will have no effect. &quot;</span>\
+                  <span class="s2">&quot;Please use `Blocks` property to specify blocks to load.&quot;</span> <span class="o">%</span> <span class="n">pname</span><span class="p">)</span>
+                <span class="k">raise</span> <span class="n">Continue</span><span class="p">()</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="n">NotSupportedException</span><span class="p">(</span><span class="s2">&quot;&#39;</span><span class="si">%s</span><span class="s2">&#39; is obsolete. Use the `Blocks` &quot;</span>\
+                        <span class="s2">&quot;property to select blocks using SIL instead.&quot;</span> <span class="o">%</span> <span class="n">pname</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">pname</span> <span class="o">==</span> <span class="s2">&quot;DataBoundsInflateFactor&quot;</span> <span class="ow">and</span> <span class="n">proxy</span><span class="o">.</span><span class="n">SMProxy</span><span class="o">.</span><span class="n">GetProperty</span><span class="p">(</span><span class="s2">&quot;DataBoundsScaleFactor&quot;</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">paraview</span><span class="o">.</span><span class="n">compatibility</span><span class="o">.</span><span class="n">GetVersion</span><span class="p">()</span> <span class="o">&lt;=</span> <span class="mf">5.4</span><span class="p">:</span>
+            <span class="c1"># In 5.5, The axes grid data bounds inflate factor have been</span>
+            <span class="c1"># translated by 1 to become the scale factor.</span>
+            <span class="n">proxy</span><span class="o">.</span><span class="n">GetProperty</span><span class="p">(</span><span class="s2">&quot;DataBoundsScaleFactor&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">SetData</span><span class="p">(</span><span class="n">value</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="c1">#if inflat factor is being used, raise NotSupportedException</span>
+            <span class="k">raise</span> <span class="n">NotSupportedException</span><span class="p">(</span>\
+                <span class="s2">&quot;&#39;DataBoundsInflateFactor&#39; is obsolete as of ParaView 5.5. Use the &quot;</span>\
+                <span class="s2">&quot;&#39;DataBoundsScaleFactor&#39; property to modify the axes gris data bounds instead.&quot;</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">proxy</span><span class="o">.</span><span class="n">SMProxy</span> <span class="ow">and</span> <span class="n">proxy</span><span class="o">.</span><span class="n">SMProxy</span><span class="o">.</span><span class="n">GetXMLName</span><span class="p">()</span> <span class="o">==</span> <span class="s2">&quot;AnnotateAttributeData&quot;</span><span class="p">:</span>
+        <span class="c1"># in 5.5, Annotate Attribute Data changed how it sets the array to annotate</span>
+        <span class="k">if</span> <span class="n">pname</span> <span class="o">==</span> <span class="s2">&quot;ArrayAssociation&quot;</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">paraview</span><span class="o">.</span><span class="n">compatibility</span><span class="o">.</span><span class="n">GetVersion</span><span class="p">()</span> <span class="o">&lt;=</span> <span class="mf">5.4</span><span class="p">:</span>
+                <span class="n">paraview</span><span class="o">.</span><span class="n">print_warning</span><span class="p">(</span>\
+                <span class="s2">&quot;&#39;ArrayAssociation&#39; is obsolete.  Use &#39;SelectInputArray&#39; property of AnnotateAttributeData instead.&quot;</span><span class="p">)</span>
+
+                <span class="k">if</span> <span class="n">value</span> <span class="o">==</span> <span class="s2">&quot;Point Data&quot;</span><span class="p">:</span>
+                    <span class="n">value</span> <span class="o">=</span> <span class="s2">&quot;POINTS&quot;</span>
+                <span class="k">elif</span> <span class="n">value</span> <span class="o">==</span> <span class="s2">&quot;Cell Data&quot;</span><span class="p">:</span>
+                    <span class="n">value</span> <span class="o">=</span> <span class="s2">&quot;CELLS&quot;</span>
+                <span class="k">elif</span> <span class="n">value</span> <span class="o">==</span> <span class="s2">&quot;Field Data&quot;</span><span class="p">:</span>
+                    <span class="n">value</span> <span class="o">=</span> <span class="s2">&quot;FIELD&quot;</span>
+                <span class="k">elif</span> <span class="n">value</span> <span class="o">==</span> <span class="s2">&quot;Row Data&quot;</span><span class="p">:</span>
+                    <span class="n">value</span> <span class="o">=</span> <span class="s2">&quot;ROWS&quot;</span>
+
+                <span class="n">arrayProp</span> <span class="o">=</span> <span class="n">proxy</span><span class="o">.</span><span class="n">GetProperty</span><span class="p">(</span><span class="s2">&quot;SelectInputArray&quot;</span><span class="p">)</span>
+                <span class="n">proxy</span><span class="o">.</span><span class="n">GetProperty</span><span class="p">(</span><span class="s2">&quot;SelectInputArray&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">SetData</span><span class="p">((</span><span class="n">value</span><span class="p">,</span> <span class="n">arrayProp</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span>
+                <span class="k">raise</span> <span class="n">Continue</span><span class="p">()</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="n">NotSupportedException</span><span class="p">(</span>\
+                    <span class="s2">&quot;&#39;ArrayAssociation&#39; is obsolete as of ParaView 5.5.  Use &#39;SelectInputArray&#39; instead.&quot;</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">pname</span> <span class="o">==</span> <span class="s2">&quot;ArrayName&quot;</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">paraview</span><span class="o">.</span><span class="n">compatibility</span><span class="o">.</span><span class="n">GetVersion</span><span class="p">()</span> <span class="o">&lt;=</span> <span class="mf">5.4</span><span class="p">:</span>
+                <span class="n">paraview</span><span class="o">.</span><span class="n">print_warning</span><span class="p">(</span>\
+                <span class="s2">&quot;&#39;ArrayName&#39; is obsolete.  Use &#39;SelectInputArray&#39; property of AnnotateAttributeData instead.&quot;</span><span class="p">)</span>
+
+                <span class="n">arrayProp</span> <span class="o">=</span> <span class="n">proxy</span><span class="o">.</span><span class="n">GetProperty</span><span class="p">(</span><span class="s2">&quot;SelectInputArray&quot;</span><span class="p">)</span>
+                <span class="n">proxy</span><span class="o">.</span><span class="n">GetProperty</span><span class="p">(</span><span class="s2">&quot;SelectInputArray&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">SetData</span><span class="p">((</span><span class="n">arrayProp</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">value</span><span class="p">))</span>
+                <span class="k">raise</span> <span class="n">Continue</span><span class="p">()</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="n">NotSupportedException</span><span class="p">(</span>\
+                    <span class="s2">&quot;&#39;ArrayName&#39; is obsolete as of ParaView 5.5.  Use &#39;SelectInputArray&#39; instead.&quot;</span><span class="p">)</span>
+
+    <span class="c1"># In 5.5, we changed the Clip to be inverted from what it was before and changed the InsideOut</span>
+    <span class="c1"># property to be called Invert to be clearer.</span>
+    <span class="k">if</span> <span class="n">pname</span> <span class="o">==</span> <span class="s2">&quot;InsideOut&quot;</span> <span class="ow">and</span> <span class="n">proxy</span><span class="o">.</span><span class="n">SMProxy</span><span class="o">.</span><span class="n">GetXMLName</span><span class="p">()</span> <span class="o">==</span> <span class="s2">&quot;Clip&quot;</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">paraview</span><span class="o">.</span><span class="n">compatibility</span><span class="o">.</span><span class="n">GetVersion</span><span class="p">()</span> <span class="o">&lt;=</span> <span class="mf">5.4</span><span class="p">:</span>
+            <span class="n">proxy</span><span class="o">.</span><span class="n">GetProperty</span><span class="p">(</span><span class="s2">&quot;Invert&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">SetData</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">value</span><span class="p">)</span>
+            <span class="k">raise</span> <span class="n">Continue</span><span class="p">()</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">NotSupportedException</span><span class="p">(</span>\
+                <span class="s2">&quot;&#39;InsideOut&#39; is obsolete.  Use &#39;Invert&#39; property of Clip filter instead.&quot;</span><span class="p">)</span>
+
+    <span class="c1"># In 5.6, we changed the &quot;SpreadSheetRepresentation&quot; proxy to no longer have</span>
+    <span class="c1"># the &quot;FieldAssociation&quot; and &quot;GenerateCellConnectivity&quot; properties. They are</span>
+    <span class="c1"># now moved to the view.</span>
+    <span class="k">if</span> <span class="n">pname</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;FieldAssociation&quot;</span><span class="p">,</span> <span class="s2">&quot;GenerateCellConnectivity&quot;</span><span class="p">]</span> <span class="ow">and</span> <span class="n">proxy</span><span class="o">.</span><span class="n">SMProxy</span><span class="o">.</span><span class="n">GetXMLName</span><span class="p">()</span> <span class="o">==</span> <span class="s2">&quot;SpreadSheetRepresentation&quot;</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">paraview</span><span class="o">.</span><span class="n">compatibility</span><span class="o">.</span><span class="n">GetVersion</span><span class="p">()</span> <span class="o">&lt;=</span> <span class="mf">5.5</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">Continue</span><span class="p">()</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">NotSupportedException</span><span class="p">(</span>
+                  <span class="s2">&quot;&#39;</span><span class="si">%s</span><span class="s2">&#39; is obsolete on SpreadSheetRepresentation as of ParaView 5.6 and has been migrated to the view.&quot;</span> <span class="o">%</span> <span class="n">pname</span><span class="p">)</span>
+
+    <span class="c1"># In 5.7, we changed to the names of the input proxies in ResampleWithDataset to clarify what</span>
+    <span class="c1"># each source does.</span>
+    <span class="k">if</span> <span class="n">pname</span> <span class="o">==</span> <span class="s2">&quot;Input&quot;</span> <span class="ow">and</span> <span class="n">proxy</span><span class="o">.</span><span class="n">SMProxy</span><span class="o">.</span><span class="n">GetXMLName</span><span class="p">()</span> <span class="o">==</span> <span class="s2">&quot;ResampleWithDataset&quot;</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">paraview</span><span class="o">.</span><span class="n">compatibility</span><span class="o">.</span><span class="n">GetVersion</span><span class="p">()</span> <span class="o">&lt;</span> <span class="mf">5.7</span><span class="p">:</span>
+            <span class="n">proxy</span><span class="o">.</span><span class="n">GetProperty</span><span class="p">(</span><span class="s2">&quot;SourceDataArrays&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">SetData</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+            <span class="k">raise</span> <span class="n">Continue</span><span class="p">()</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">NotSupportedException</span><span class="p">(</span>
+                <span class="s1">&#39;The ResampleWithDataset.Input property has been changed in ParaView 5.7. &#39;</span>\
+                <span class="s1">&#39;Please set the SourceDataArrays property instead.&#39;</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">pname</span> <span class="o">==</span> <span class="s2">&quot;Source&quot;</span> <span class="ow">and</span> <span class="n">proxy</span><span class="o">.</span><span class="n">SMProxy</span><span class="o">.</span><span class="n">GetXMLName</span><span class="p">()</span> <span class="o">==</span> <span class="s2">&quot;ResampleWithDataset&quot;</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">paraview</span><span class="o">.</span><span class="n">compatibility</span><span class="o">.</span><span class="n">GetVersion</span><span class="p">()</span> <span class="o">&lt;</span> <span class="mf">5.7</span><span class="p">:</span>
+            <span class="n">proxy</span><span class="o">.</span><span class="n">GetProperty</span><span class="p">(</span><span class="s2">&quot;DestinationMesh&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">SetData</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+            <span class="k">raise</span> <span class="n">Continue</span><span class="p">()</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">NotSupportedException</span><span class="p">(</span>
+                <span class="s1">&#39;The ResampleWithDataset.Source property has been changed in ParaView 5.7. &#39;</span>\
+                <span class="s1">&#39;Please set the DestinationMesh property instead.&#39;</span><span class="p">)</span>
+
+    <span class="c1"># In 5.7, we removed `ArrayName` property on the `GenerateIdScalars` filter</span>
+    <span class="c1"># and replaced it with `CellIdsArrayName` and `PointIdsArrayName`.</span>
+    <span class="k">if</span> <span class="n">pname</span> <span class="o">==</span> <span class="s2">&quot;ArrayName&quot;</span> <span class="ow">and</span> <span class="n">proxy</span><span class="o">.</span><span class="n">SMProxy</span><span class="o">.</span><span class="n">GetXMLName</span><span class="p">()</span> <span class="o">==</span> <span class="s2">&quot;GenerateIdScalars&quot;</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">paraview</span><span class="o">.</span><span class="n">compatibility</span><span class="o">.</span><span class="n">GetVersion</span><span class="p">()</span> <span class="o">&lt;</span> <span class="mf">5.7</span><span class="p">:</span>
+            <span class="n">proxy</span><span class="o">.</span><span class="n">GetProperty</span><span class="p">(</span><span class="s2">&quot;PointIdsArrayName&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">SetData</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+            <span class="n">proxy</span><span class="o">.</span><span class="n">GetProperty</span><span class="p">(</span><span class="s2">&quot;CellIdsArrayName&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">SetData</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+            <span class="k">raise</span> <span class="n">Continue</span><span class="p">()</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">NotSupportedException</span><span class="p">(</span>
+                <span class="s1">&#39;The GenerateIdScalars.ArrayName property has been removed in ParaView 5.7. &#39;</span>\
+                <span class="s1">&#39;Please set `PointIdsArrayName` or `CellIdsArrayName` property instead.&#39;</span><span class="p">)</span>
+
+    <span class="c1"># In 5.7, we renamed the 3D View&#39;s ray tracing interface from OSPRay to RayTracing</span>
+    <span class="k">if</span> <span class="n">pname</span> <span class="o">==</span> <span class="s2">&quot;EnableOSPRay&quot;</span> <span class="ow">and</span> <span class="n">proxy</span><span class="o">.</span><span class="n">SMProxy</span><span class="o">.</span><span class="n">IsA</span><span class="p">(</span><span class="s2">&quot;vtkSMRenderViewProxy&quot;</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">paraview</span><span class="o">.</span><span class="n">compatibility</span><span class="o">.</span><span class="n">GetVersion</span><span class="p">()</span> <span class="o">&lt;</span> <span class="mf">5.7</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">proxy</span><span class="o">.</span><span class="n">GetProperty</span><span class="p">(</span><span class="s2">&quot;EnableRayTracing&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">SetData</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">NotSupportedException</span><span class="p">(</span>
+                <span class="s1">&#39;The `EnableOSPRay` control has been renamed in ParaView 5.7 to `EnableRayTracing`.&#39;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">pname</span> <span class="o">==</span> <span class="s2">&quot;OSPRayRenderer&quot;</span> <span class="ow">and</span> <span class="n">proxy</span><span class="o">.</span><span class="n">SMProxy</span><span class="o">.</span><span class="n">IsA</span><span class="p">(</span><span class="s2">&quot;vtkSMRenderViewProxy&quot;</span><span class="p">):</span>
+        <span class="n">newvalue</span> <span class="o">=</span> <span class="s2">&quot;OSPRay raycaster&quot;</span>
+        <span class="k">if</span> <span class="n">value</span> <span class="o">==</span> <span class="s2">&quot;pathtracer&quot;</span><span class="p">:</span>
+            <span class="n">newvalue</span> <span class="o">=</span> <span class="s2">&quot;OSPRay pathtracer&quot;</span>
+        <span class="k">if</span> <span class="n">paraview</span><span class="o">.</span><span class="n">compatibility</span><span class="o">.</span><span class="n">GetVersion</span><span class="p">()</span> <span class="o">&lt;</span> <span class="mf">5.7</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">proxy</span><span class="o">.</span><span class="n">GetProperty</span><span class="p">(</span><span class="s2">&quot;BackEnd&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">SetData</span><span class="p">(</span><span class="n">newvalue</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">NotSupportedException</span><span class="p">(</span>
+                <span class="s1">&#39;The `OSPRayRenderer` control has been renamed in ParaView 5.7 to `BackEnd` and &#39;</span>\
+                <span class="s1">&#39;the settings `scivis` and `pathtracer` have been renamed to `OSPRay scivis` &#39;</span>\
+                <span class="s1">&#39;and `OSPRay pathtracer` respectively.&#39;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">pname</span> <span class="o">==</span> <span class="s2">&quot;OSPRayTemporalCacheSize&quot;</span> <span class="ow">and</span> <span class="n">proxy</span><span class="o">.</span><span class="n">SMProxy</span><span class="o">.</span><span class="n">IsA</span><span class="p">(</span><span class="s2">&quot;vtkSMRenderViewProxy&quot;</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">paraview</span><span class="o">.</span><span class="n">compatibility</span><span class="o">.</span><span class="n">GetVersion</span><span class="p">()</span> <span class="o">&lt;</span> <span class="mf">5.7</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">proxy</span><span class="o">.</span><span class="n">GetProperty</span><span class="p">(</span><span class="s2">&quot;TemporalCacheSize&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">SetData</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">NotSupportedException</span><span class="p">(</span>
+                <span class="s1">&#39;The `OSPRayTemporalCacheSize` control has been renamed in ParaView 5.7 to `TemporalCacheSize`.&#39;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">pname</span> <span class="o">==</span> <span class="s2">&quot;OSPRayUseScaleArray&quot;</span> <span class="ow">and</span> <span class="n">proxy</span><span class="o">.</span><span class="n">SMProxy</span><span class="o">.</span><span class="n">IsA</span><span class="p">(</span><span class="s2">&quot;vtkSMRepresentationProxy&quot;</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">paraview</span><span class="o">.</span><span class="n">compatibility</span><span class="o">.</span><span class="n">GetVersion</span><span class="p">()</span> <span class="o">&lt;</span> <span class="mf">5.7</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">proxy</span><span class="o">.</span><span class="n">GetProperty</span><span class="p">(</span><span class="s2">&quot;UseScaleArray&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">SetData</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">NotSupportedException</span><span class="p">(</span>
+                <span class="s1">&#39;The `OSPRayUseScaleArray` control has been renamed in ParaView 5.7 to `UseScaleArray`.&#39;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">pname</span> <span class="o">==</span> <span class="s2">&quot;OSPRayScaleFunction&quot;</span> <span class="ow">and</span> <span class="n">proxy</span><span class="o">.</span><span class="n">SMProxy</span><span class="o">.</span><span class="n">IsA</span><span class="p">(</span><span class="s2">&quot;vtkSMRepresentationProxy&quot;</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">paraview</span><span class="o">.</span><span class="n">compatibility</span><span class="o">.</span><span class="n">GetVersion</span><span class="p">()</span> <span class="o">&lt;</span> <span class="mf">5.7</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">proxy</span><span class="o">.</span><span class="n">GetProperty</span><span class="p">(</span><span class="s2">&quot;ScaleFunction&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">SetData</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">NotSupportedException</span><span class="p">(</span>
+                <span class="s1">&#39;The `OSPRayScaleFunction` control has been renamed in ParaView 5.7 to `ScaleFunction`.&#39;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">pname</span> <span class="o">==</span> <span class="s2">&quot;OSPRayMaterial&quot;</span> <span class="ow">and</span> <span class="n">proxy</span><span class="o">.</span><span class="n">SMProxy</span><span class="o">.</span><span class="n">IsA</span><span class="p">(</span><span class="s2">&quot;vtkSMRepresentationProxy&quot;</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">paraview</span><span class="o">.</span><span class="n">compatibility</span><span class="o">.</span><span class="n">GetVersion</span><span class="p">()</span> <span class="o">&lt;</span> <span class="mf">5.7</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">proxy</span><span class="o">.</span><span class="n">GetProperty</span><span class="p">(</span><span class="s2">&quot;Material&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">SetData</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">NotSupportedException</span><span class="p">(</span>
+                <span class="s1">&#39;The `OSPRayMaterial` control has been renamed in ParaView 5.7 to `Material`.&#39;</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">pname</span> <span class="o">==</span> <span class="s2">&quot;CompositeDataSetIndex&quot;</span> <span class="ow">and</span> <span class="n">proxy</span><span class="o">.</span><span class="n">SMProxy</span><span class="o">.</span><span class="n">GetXMLName</span><span class="p">()</span> <span class="o">==</span> <span class="s2">&quot;SpreadSheetRepresentation&quot;</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">paraview</span><span class="o">.</span><span class="n">compatibility</span><span class="o">.</span><span class="n">GetVersion</span><span class="p">()</span> <span class="o">&lt;=</span> <span class="mf">5.9</span><span class="p">:</span>
+            <span class="n">selectors</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;//*[@cid=&#39;</span><span class="si">%s</span><span class="s2">&#39;]&quot;</span> <span class="o">%</span> <span class="n">cid</span> <span class="k">for</span> <span class="n">cid</span> <span class="ow">in</span> <span class="n">value</span><span class="p">]</span>
+            <span class="k">return</span> <span class="n">proxy</span><span class="o">.</span><span class="n">GetProperty</span><span class="p">(</span><span class="s2">&quot;BlockVisibilities&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">SetData</span><span class="p">(</span><span class="n">selectors</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">NotSupportedException</span><span class="p">(</span>
+                <span class="s2">&quot;SpreadSheetRepresentation no longer uses &#39;CompositeDataSetIndex&#39; but instead &quot;</span>
+                <span class="s2">&quot;supports &#39;Selectors&#39; to select blocks.&quot;</span><span class="p">)</span>
+
+
+    <span class="k">if</span> <span class="n">pname</span> <span class="o">==</span> <span class="s2">&quot;BlockIndices&quot;</span> <span class="ow">and</span> <span class="n">proxy</span><span class="o">.</span><span class="n">SMProxy</span><span class="o">.</span><span class="n">GetXMLName</span><span class="p">()</span> <span class="o">==</span> <span class="s2">&quot;ExtractBlock&quot;</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">paraview</span><span class="o">.</span><span class="n">compatibility</span><span class="o">.</span><span class="n">GetVersion</span><span class="p">()</span> <span class="o">&lt;=</span> <span class="mf">5.9</span><span class="p">:</span>
+            <span class="n">selectors</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;//*[@cid=&#39;</span><span class="si">%s</span><span class="s2">&#39;]&quot;</span> <span class="o">%</span> <span class="n">cid</span> <span class="k">for</span> <span class="n">cid</span> <span class="ow">in</span> <span class="n">value</span><span class="p">]</span>
+            <span class="k">return</span> <span class="n">proxy</span><span class="o">.</span><span class="n">GetProperty</span><span class="p">(</span><span class="s2">&quot;Selectors&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">SetData</span><span class="p">(</span><span class="n">selectors</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">NotSupportedException</span><span class="p">(</span>
+                <span class="s2">&quot;ExtractBlock no longer uses &#39;BlockIndices&#39; but instead &quot;</span>
+                <span class="s2">&quot;supports &#39;Selectors&#39; to select blocks.&quot;</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">pname</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;MaintainStructure&quot;</span><span class="p">,</span> <span class="s2">&quot;PruneOutput&quot;</span><span class="p">]</span> <span class="ow">and</span> <span class="n">proxy</span><span class="o">.</span><span class="n">SMProxy</span><span class="o">.</span><span class="n">GetXMLName</span><span class="p">()</span> <span class="o">==</span> <span class="s2">&quot;ExtractBlock&quot;</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">paraview</span><span class="o">.</span><span class="n">compatibility</span><span class="o">.</span><span class="n">GetVersion</span><span class="p">()</span> <span class="o">&lt;=</span> <span class="mf">5.9</span><span class="p">:</span>
+            <span class="k">return</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">NotSupportedException</span><span class="p">(</span>
+                <span class="s2">&quot;ExtractBlock no longer supported &#39;</span><span class="si">%s</span><span class="s2">&#39;. Simply remove it.&quot;</span> <span class="o">%</span> <span class="n">pname</span><span class="p">)</span>
+
+
+    <span class="k">if</span> <span class="n">pname</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;UseGradientBackground&quot;</span><span class="p">,</span> <span class="s2">&quot;UseTexturedBackground&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;UseSkyboxBackground&quot;</span><span class="p">]</span> <span class="ow">and</span> <span class="n">proxy</span><span class="o">.</span><span class="n">SMProxy</span><span class="o">.</span><span class="n">GetXMLGroup</span><span class="p">()</span> <span class="o">==</span> <span class="s2">&quot;views&quot;</span> \
+                    <span class="ow">and</span> <span class="n">proxy</span><span class="o">.</span><span class="n">SMProxy</span><span class="o">.</span><span class="n">GetProperty</span><span class="p">(</span><span class="s2">&quot;BackgroundColorMode&quot;</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">paraview</span><span class="o">.</span><span class="n">compatibility</span><span class="o">.</span><span class="n">GetVersion</span><span class="p">()</span> <span class="o">&lt;=</span> <span class="mf">5.9</span><span class="p">:</span>
+            <span class="n">mode</span> <span class="o">=</span> <span class="n">proxy</span><span class="o">.</span><span class="n">GetProperty</span><span class="p">(</span><span class="s2">&quot;BackgroundColorMode&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">GetData</span><span class="p">()</span>
+            <span class="k">if</span> <span class="n">pname</span> <span class="o">==</span> <span class="s2">&quot;UseGradientBackground&quot;</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">value</span> <span class="o">==</span> <span class="mi">1</span> <span class="ow">and</span> <span class="n">mode</span> <span class="o">!=</span> <span class="s2">&quot;Gradient&quot;</span><span class="p">:</span>
+                    <span class="n">proxy</span><span class="o">.</span><span class="n">BackgroundColorMode</span> <span class="o">=</span> <span class="s2">&quot;Gradient&quot;</span>
+                <span class="k">elif</span> <span class="n">value</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">mode</span> <span class="o">==</span> <span class="s2">&quot;Gradient&quot;</span><span class="p">:</span>
+                    <span class="n">proxy</span><span class="o">.</span><span class="n">BackgroundColorMode</span> <span class="o">=</span> <span class="s2">&quot;Single Color&quot;</span>
+            <span class="k">elif</span> <span class="n">pname</span> <span class="o">==</span> <span class="s2">&quot;UseTexturedBackground&quot;</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">value</span> <span class="o">==</span> <span class="mi">1</span> <span class="ow">and</span> <span class="n">mode</span> <span class="o">!=</span> <span class="s2">&quot;Texture&quot;</span><span class="p">:</span>
+                    <span class="n">proxy</span><span class="o">.</span><span class="n">BackgroundColorMode</span> <span class="o">=</span> <span class="s2">&quot;Texture&quot;</span>
+                <span class="k">elif</span> <span class="n">value</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">mode</span> <span class="o">==</span> <span class="s2">&quot;Texture&quot;</span><span class="p">:</span>
+                    <span class="n">proxy</span><span class="o">.</span><span class="n">BackgroundColorMode</span> <span class="o">=</span> <span class="s2">&quot;Single Color&quot;</span>
+            <span class="k">elif</span> <span class="n">pname</span> <span class="o">==</span> <span class="s2">&quot;UseSkyboxBackground&quot;</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">value</span> <span class="o">==</span> <span class="mi">1</span> <span class="ow">and</span> <span class="n">mode</span> <span class="o">!=</span> <span class="s2">&quot;Skybox&quot;</span><span class="p">:</span>
+                    <span class="n">proxy</span><span class="o">.</span><span class="n">BackgroundColorMode</span> <span class="o">=</span> <span class="s2">&quot;Skybox&quot;</span>
+                <span class="k">elif</span> <span class="n">value</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">mode</span> <span class="o">==</span> <span class="s2">&quot;Skybox&quot;</span><span class="p">:</span>
+                    <span class="n">proxy</span><span class="o">.</span><span class="n">BackgroundColorMode</span> <span class="o">=</span> <span class="s2">&quot;Single Color&quot;</span>
+            <span class="k">raise</span> <span class="n">Continue</span><span class="p">()</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">NotSupportedException</span><span class="p">(</span><span class="s2">&quot;&#39;</span><span class="si">%s</span><span class="s2">&#39; is no longer supported. Use &quot;</span>
+            <span class="s2">&quot;&#39;BackgroundColorMode&#39; instead to choose background color mode.&quot;</span> <span class="o">%</span> <span class="n">pname</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">pname</span> <span class="o">==</span> <span class="s2">&quot;ThresholdRange&quot;</span> <span class="ow">and</span> <span class="n">proxy</span><span class="o">.</span><span class="n">SMProxy</span><span class="o">.</span><span class="n">GetXMLName</span><span class="p">()</span> <span class="o">==</span> <span class="s2">&quot;Threshold&quot;</span><span class="p">:</span>
+        <span class="c1"># From ParaView 5.10, the Threshold filter now offers additional</span>
+        <span class="c1"># thresholding methods besides ThresholdBetween. The lower and upper</span>
+        <span class="c1"># threshold values are also set separately.</span>
+        <span class="k">if</span> <span class="n">paraview</span><span class="o">.</span><span class="n">compatibility</span><span class="o">.</span><span class="n">GetVersion</span><span class="p">()</span> <span class="o">&lt;=</span> <span class="mf">5.9</span><span class="p">:</span>
+            <span class="n">proxy</span><span class="o">.</span><span class="n">GetProperty</span><span class="p">(</span><span class="s2">&quot;ThresholdMethod&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">SetData</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+            <span class="n">proxy</span><span class="o">.</span><span class="n">GetProperty</span><span class="p">(</span><span class="s2">&quot;LowerThreshold&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">SetData</span><span class="p">(</span><span class="n">value</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+            <span class="n">proxy</span><span class="o">.</span><span class="n">GetProperty</span><span class="p">(</span><span class="s2">&quot;UpperThreshold&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">SetData</span><span class="p">(</span><span class="n">value</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+            <span class="k">raise</span> <span class="n">Continue</span><span class="p">()</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">NotSupportedException</span><span class="p">(</span><span class="s2">&quot;The &#39;ThresholdRange&#39; property has been &quot;</span>
+                    <span class="s2">&quot;removed in ParaView 5.10. Please set the lower and upper &quot;</span>
+                    <span class="s2">&quot;thresholds using the &#39;LowerThreshold&#39; and &#39;UpperThreshold&#39; &quot;</span>
+                    <span class="s2">&quot;properties, then set the &#39;ThresholdMethod&#39; property to &quot;</span>
+                    <span class="s2">&quot;&#39;Between&#39; to threshold between the lower and upper thresholds.&quot;</span><span class="p">)</span>
+
+    <span class="c1"># In 5.11, we changed the ParticleTracer/ParticlePath/StreakLine&#39;s the StaticMesh</span>
+    <span class="c1"># property to be called MeshOverTime since more capabilities were added.</span>
+    <span class="k">if</span> <span class="n">pname</span> <span class="o">==</span> <span class="s2">&quot;StaticMesh&quot;</span> <span class="ow">and</span> <span class="n">proxy</span><span class="o">.</span><span class="n">SMProxy</span><span class="o">.</span><span class="n">GetXMLName</span><span class="p">()</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;ParticleTracer, ParticlePath, StreakLine&quot;</span><span class="p">]:</span>
+        <span class="k">if</span> <span class="n">paraview</span><span class="o">.</span><span class="n">compatibility</span><span class="o">.</span><span class="n">GetVersion</span><span class="p">()</span> <span class="o">&lt;=</span> <span class="mf">5.10</span><span class="p">:</span>
+            <span class="n">proxy</span><span class="o">.</span><span class="n">GetProperty</span><span class="p">(</span><span class="s2">&quot;MeshOverTime&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">SetData</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+            <span class="k">raise</span> <span class="n">Continue</span><span class="p">()</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">NotSupportedException</span><span class="p">(</span><span class="s2">&quot;&#39;StaticMesh&#39; is obsolete.  Use &#39;MeshOverTime&#39; property of &quot;</span> <span class="o">+</span>
+                                        <span class="n">proxy</span><span class="o">.</span><span class="n">SMProxy</span><span class="o">.</span><span class="n">GetXMLName</span><span class="p">()</span> <span class="o">+</span> <span class="s2">&quot; filter instead.&quot;</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="ow">not</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">proxy</span><span class="p">,</span> <span class="n">pname</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="ne">AttributeError</span><span class="p">()</span>
+    <span class="n">proxy</span><span class="o">.</span><span class="vm">__dict__</span><span class="p">[</span><span class="n">pname</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span>
+
+    <span class="k">raise</span> <span class="n">Continue</span><span class="p">()</span></div>
+
+<div class="viewcode-block" id="setattr_fix_value"><a class="viewcode-back" href="../../paraview._backwardscompatibilityhelper.html#paraview._backwardscompatibilityhelper.setattr_fix_value">[docs]</a><span class="k">def</span> <span class="nf">setattr_fix_value</span><span class="p">(</span><span class="n">proxy</span><span class="p">,</span> <span class="n">pname</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">setter_func</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">pname</span> <span class="o">==</span> <span class="s2">&quot;ShaderPreset&quot;</span> <span class="ow">and</span> <span class="n">proxy</span><span class="o">.</span><span class="n">SMProxy</span><span class="o">.</span><span class="n">GetXMLName</span><span class="p">()</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">&quot;Representation&quot;</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">value</span> <span class="o">==</span> <span class="s2">&quot;Gaussian Blur (Default)&quot;</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">paraview</span><span class="o">.</span><span class="n">compatibility</span><span class="o">.</span><span class="n">GetVersion</span><span class="p">()</span> <span class="o">&lt;=</span> <span class="mf">5.5</span><span class="p">:</span>
+                <span class="n">paraview</span><span class="o">.</span><span class="n">print_warning</span><span class="p">(</span>\
+                    <span class="s2">&quot;The &#39;Gaussian Blur (Default)&#39; option has been renamed to &#39;Gaussian Blur&#39;.  Please use that instead.&quot;</span><span class="p">)</span>
+                <span class="n">setter_func</span><span class="p">(</span><span class="n">proxy</span><span class="p">,</span> <span class="s2">&quot;Gaussian Blur&quot;</span><span class="p">)</span>
+                <span class="k">raise</span> <span class="n">Continue</span><span class="p">()</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="n">NotSupportedException</span><span class="p">(</span><span class="s2">&quot;&#39;Gaussian Blur (Default)&#39; is an obsolete value for ShaderPreset. &quot;</span>\
+                    <span class="s2">&quot; Use &#39;Gaussian Blur&#39; instead.&quot;</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">pname</span> <span class="o">==</span> <span class="s2">&quot;FieldAssociation&quot;</span> <span class="ow">and</span> <span class="n">proxy</span><span class="o">.</span><span class="n">SMProxy</span><span class="o">.</span><span class="n">GetXMLName</span><span class="p">()</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;DataSetCSVWriter&quot;</span><span class="p">,</span> <span class="s2">&quot;CSVWriter&quot;</span><span class="p">]:</span>
+        <span class="k">if</span> <span class="n">paraview</span><span class="o">.</span><span class="n">compatibility</span><span class="o">.</span><span class="n">GetVersion</span><span class="p">()</span> <span class="o">&lt;</span> <span class="mf">5.8</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">value</span> <span class="o">==</span> <span class="s2">&quot;Points&quot;</span><span class="p">:</span>
+                <span class="n">value</span> <span class="o">=</span> <span class="s2">&quot;Point Data&quot;</span>
+            <span class="k">elif</span> <span class="n">value</span> <span class="o">==</span> <span class="s2">&quot;Cells&quot;</span><span class="p">:</span>
+                <span class="n">value</span> <span class="o">=</span> <span class="s2">&quot;Cell Data&quot;</span>
+            <span class="n">setter_func</span><span class="p">(</span><span class="n">proxy</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
+            <span class="k">raise</span> <span class="n">Continue</span><span class="p">()</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">NotSupportedException</span><span class="p">(</span><span class="s2">&quot;&#39;FieldAssociation&#39; is using an obsolete &quot;</span>\
+                    <span class="s2">&quot;value &#39;</span><span class="si">%s</span><span class="s2">&#39;, use `Point Data` or `Cell Data` instead.&quot;</span> <span class="o">%</span> <span class="n">value</span><span class="p">)</span>
+
+    <span class="c1"># In 5.9, we changed &quot;High Resolution Line Source&quot; to &quot;Line&quot; and &quot;Point Source&quot; to</span>
+    <span class="c1"># &quot;Point Cloud&quot;</span>
+    <span class="n">seed_sources_from</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;High Resolution Line Source&quot;</span><span class="p">,</span> <span class="s2">&quot;Point Source&quot;</span><span class="p">]</span>
+    <span class="n">seed_sources_to</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Line&quot;</span><span class="p">,</span> <span class="s2">&quot;Point Cloud&quot;</span><span class="p">]</span>
+    <span class="n">seed_sources_proxyname</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;HighResLineSource&quot;</span><span class="p">,</span> <span class="s2">&quot;PointSource&quot;</span><span class="p">]</span>
+    <span class="k">if</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">seed_sources_from</span> <span class="ow">and</span> <span class="n">proxy</span><span class="o">.</span><span class="n">GetProperty</span><span class="p">(</span><span class="n">pname</span><span class="p">)</span><span class="o">.</span><span class="n">SMProperty</span><span class="o">.</span><span class="n">IsA</span><span class="p">(</span><span class="s2">&quot;vtkSMInputProperty&quot;</span><span class="p">):</span>
+        <span class="n">domain</span> <span class="o">=</span> <span class="n">proxy</span><span class="o">.</span><span class="n">GetProperty</span><span class="p">(</span><span class="n">pname</span><span class="p">)</span><span class="o">.</span><span class="n">SMProperty</span><span class="o">.</span><span class="n">FindDomain</span><span class="p">(</span><span class="s2">&quot;vtkSMProxyListDomain&quot;</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">seed_sources_to</span><span class="p">)):</span>
+            <span class="k">if</span> <span class="n">value</span> <span class="o">==</span> <span class="n">seed_sources_from</span><span class="p">[</span><span class="n">i</span><span class="p">]:</span>
+                <span class="n">domain_proxy</span> <span class="o">=</span> <span class="n">domain</span><span class="o">.</span><span class="n">FindProxy</span><span class="p">(</span><span class="s2">&quot;extended_sources&quot;</span><span class="p">,</span> <span class="n">seed_sources_proxyname</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+                <span class="k">if</span> <span class="n">domain_proxy</span><span class="p">:</span>
+                    <span class="k">if</span> <span class="n">paraview</span><span class="o">.</span><span class="n">compatibility</span><span class="o">.</span><span class="n">GetVersion</span><span class="p">()</span> <span class="o">&lt;</span> <span class="mf">5.9</span><span class="p">:</span>
+                        <span class="n">value</span> <span class="o">=</span> <span class="n">seed_sources_to</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+                        <span class="n">setter_func</span><span class="p">(</span><span class="n">proxy</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
+                        <span class="k">raise</span> <span class="n">Continue</span><span class="p">()</span>
+                    <span class="k">else</span><span class="p">:</span>
+                        <span class="k">raise</span> <span class="n">NotSupportedException</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%s</span><span class="s2"> is an obsolete value. Use </span><span class="si">%s</span><span class="s2"> instead.&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">seed_sources_from</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">seed_sources_to</span><span class="p">[</span><span class="n">i</span><span class="p">]))</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="n">pname</span> <span class="o">==</span> <span class="s2">&quot;WindowLocation&quot;</span> <span class="ow">and</span> <span class="n">proxy</span><span class="o">.</span><span class="n">SMProxy</span><span class="o">.</span><span class="n">GetXMLName</span><span class="p">()</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;TextSourceRepresentation&quot;</span><span class="p">,</span> <span class="s2">&quot;ScalarBarWidgetRepresentation&quot;</span><span class="p">])</span> <span class="ow">or</span> \
+            <span class="p">(</span><span class="n">pname</span> <span class="o">==</span> <span class="s2">&quot;LabelLocation&quot;</span> <span class="ow">and</span> <span class="n">proxy</span><span class="o">.</span><span class="n">SMProxy</span><span class="o">.</span><span class="n">GetXMLName</span><span class="p">()</span> <span class="o">==</span> <span class="s2">&quot;ChartTextRepresentation&quot;</span><span class="p">):</span>
+        <span class="c1"># In ParaView 5.10, we changed &quot;WindowsLocation/LabelLocation&quot; values to have spaces in between as seen in the following map</span>
+        <span class="n">window_location_map</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;AnyLocation&#39;</span><span class="p">:</span> <span class="s1">&#39;Any Location&#39;</span><span class="p">,</span> <span class="s1">&#39;LowerRightCorner&#39;</span><span class="p">:</span> <span class="s1">&#39;Lower Right Corner&#39;</span><span class="p">,</span>
+                               <span class="s1">&#39;LowerLeftCorner&#39;</span><span class="p">:</span> <span class="s1">&#39;Lower Left Corner&#39;</span><span class="p">,</span> <span class="s1">&#39;LowerCenter&#39;</span><span class="p">:</span> <span class="s1">&#39;Lower Center&#39;</span><span class="p">,</span>
+                               <span class="s1">&#39;UpperLeftCorner&#39;</span><span class="p">:</span> <span class="s1">&#39;Upper Left Corner&#39;</span><span class="p">,</span> <span class="s1">&#39;UpperRightCorner&#39;</span><span class="p">:</span> <span class="s1">&#39;Upper Right Corner&#39;</span><span class="p">,</span>
+                               <span class="s1">&#39;UpperCenter&#39;</span><span class="p">:</span> <span class="s1">&#39;Upper Center&#39;</span><span class="p">}</span>
+        <span class="n">new_value</span> <span class="o">=</span> <span class="n">window_location_map</span><span class="p">[</span><span class="n">value</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">paraview</span><span class="o">.</span><span class="n">compatibility</span><span class="o">.</span><span class="n">GetVersion</span><span class="p">()</span> <span class="o">&lt;=</span> <span class="mf">5.9</span><span class="p">:</span>
+            <span class="n">setter_func</span><span class="p">(</span><span class="n">proxy</span><span class="p">,</span> <span class="n">new_value</span><span class="p">)</span>
+            <span class="k">raise</span> <span class="n">Continue</span><span class="p">()</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">NotSupportedException</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%s</span><span class="s2"> is an obsolete value. Use </span><span class="si">%s</span><span class="s2"> instead.&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">new_value</span><span class="p">))</span>
+
+    <span class="c1"># Always keep this line last</span>
+    <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;&#39;</span><span class="si">%s</span><span class="s2">&#39; is not a valid value for </span><span class="si">%s</span><span class="s2">!&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">pname</span><span class="p">))</span></div>
+
+<div class="viewcode-block" id="getattr"><a class="viewcode-back" href="../../paraview._backwardscompatibilityhelper.html#paraview._backwardscompatibilityhelper.getattr">[docs]</a><span class="k">def</span> <span class="nf">getattr</span><span class="p">(</span><span class="n">proxy</span><span class="p">,</span> <span class="n">pname</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Attempts to emulate getattr() when called using a deprecated property name</span>
+<span class="sd">    for a proxy.</span>
+
+<span class="sd">    Will return a *reasonable* stand-in if the property was</span>
+<span class="sd">    deprecated and the paraview compatibility version was set to a version older</span>
+<span class="sd">    than when the property was deprecated.</span>
+
+<span class="sd">    Will raise ``NotSupportedException`` if the property was deprecated and</span>
+<span class="sd">    paraview compatibility version is newer than that deprecation version.</span>
+
+<span class="sd">    Will raise ``Continue`` to indicate the property name is unaffected by</span>
+<span class="sd">    any API deprecation and the caller should follow normal code execution</span>
+<span class="sd">    paths.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">version</span> <span class="o">=</span> <span class="n">paraview</span><span class="o">.</span><span class="n">compatibility</span><span class="o">.</span><span class="n">GetVersion</span><span class="p">()</span>
+
+    <span class="c1"># In 4.2, we removed ColorAttributeType property. One is expected to use</span>
+    <span class="c1"># ColorArrayName to specify the attribute type as well.</span>
+    <span class="k">if</span> <span class="n">pname</span> <span class="o">==</span> <span class="s2">&quot;ColorAttributeType&quot;</span> <span class="ow">and</span> <span class="n">proxy</span><span class="o">.</span><span class="n">SMProxy</span><span class="o">.</span><span class="n">GetProperty</span><span class="p">(</span><span class="s2">&quot;ColorArrayName&quot;</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">version</span> <span class="o">&lt;=</span> <span class="mf">4.1</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">proxy</span><span class="o">.</span><span class="n">GetProperty</span><span class="p">(</span><span class="s2">&quot;ColorArrayName&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;CELLS&quot;</span><span class="p">:</span>
+                <span class="k">return</span> <span class="s2">&quot;CELL_DATA&quot;</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">return</span> <span class="s2">&quot;POINT_DATA&quot;</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="c1"># if ColorAttributeType is being used, warn.</span>
+            <span class="k">raise</span> <span class="n">NotSupportedException</span><span class="p">(</span>
+                <span class="s2">&quot;&#39;ColorAttributeType&#39; is obsolete. Simply use &#39;ColorArrayName&#39; instead.  Refer to ParaView Python API changes documentation online.&quot;</span><span class="p">)</span>
+
+    <span class="c1"># In 5.1, we removed CameraClippingRange property. It was not of any use</span>
+    <span class="c1"># since we added support to render view to automatically reset clipping</span>
+    <span class="c1"># range for each render.</span>
+    <span class="k">if</span> <span class="n">pname</span> <span class="o">==</span> <span class="s2">&quot;CameraClippingRange&quot;</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">proxy</span><span class="o">.</span><span class="n">SMProxy</span><span class="o">.</span><span class="n">GetProperty</span><span class="p">(</span><span class="s2">&quot;CameraClippingRange&quot;</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">version</span> <span class="o">&lt;=</span> <span class="mf">5.0</span><span class="p">:</span>
+            <span class="k">return</span> <span class="p">[</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">NotSupportedException</span><span class="p">(</span>
+                    <span class="s1">&#39;CameraClippingRange is obsolete. Please remove &#39;</span>\
+                    <span class="s1">&#39;it from your script. You no longer need it.&#39;</span><span class="p">)</span>
+
+    <span class="c1"># In 5.1, we remove support for Cube Axes and related properties.</span>
+    <span class="k">global</span> <span class="n">_ACubeAxesHelper</span>
+    <span class="k">if</span> <span class="n">proxy</span><span class="o">.</span><span class="n">SMProxy</span><span class="o">.</span><span class="n">IsA</span><span class="p">(</span><span class="s2">&quot;vtkSMPVRepresentationProxy&quot;</span><span class="p">)</span> <span class="ow">and</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">_ACubeAxesHelper</span><span class="p">,</span> <span class="n">pname</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">version</span> <span class="o">&lt;=</span> <span class="mf">5.0</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">builtins</span><span class="o">.</span><span class="n">getattr</span><span class="p">(</span><span class="n">_ACubeAxesHelper</span><span class="p">,</span> <span class="n">pname</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">NotSupportedException</span><span class="p">(</span>
+                    <span class="s1">&#39;Cube Axes and related properties are now obsolete. Please &#39;</span>\
+                    <span class="s1">&#39;remove them from your script.&#39;</span><span class="p">)</span>
+
+    <span class="c1"># In 5.4, we removed the AspectRatio property and replaced it with the</span>
+    <span class="c1"># ScalarBarThickness property.</span>
+    <span class="k">if</span> <span class="n">pname</span> <span class="o">==</span> <span class="s2">&quot;AspectRatio&quot;</span> <span class="ow">and</span> <span class="n">proxy</span><span class="o">.</span><span class="n">SMProxy</span><span class="o">.</span><span class="n">GetProperty</span><span class="p">(</span><span class="s2">&quot;ScalarBarThickness&quot;</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">version</span> <span class="o">&lt;=</span> <span class="mf">5.3</span><span class="p">:</span>
+            <span class="k">return</span> <span class="mf">20.0</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">NotSupportedException</span><span class="p">(</span>
+                    <span class="s1">&#39;The AspectRatio property has been removed in ParaView &#39;</span>\
+                    <span class="s1">&#39;5.4. Please use the ScalarBarThickness property instead &#39;</span>\
+                    <span class="s1">&#39;to set the thickness in terms of points.&#39;</span><span class="p">)</span>
+
+    <span class="c1"># In 5.4, we removed the Position2 property and replaced it with the</span>
+    <span class="c1"># ScalarBarLength property.</span>
+    <span class="k">if</span> <span class="n">pname</span> <span class="o">==</span> <span class="s2">&quot;Position2&quot;</span> <span class="ow">and</span> <span class="n">proxy</span><span class="o">.</span><span class="n">SMProxy</span><span class="o">.</span><span class="n">GetProperty</span><span class="p">(</span><span class="s2">&quot;ScalarBarLength&quot;</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">version</span> <span class="o">&lt;=</span> <span class="mf">5.3</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">proxy</span><span class="o">.</span><span class="n">GetProperty</span><span class="p">(</span><span class="s2">&quot;Orientation&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">GetData</span><span class="p">()</span> <span class="o">==</span> <span class="s2">&quot;Horizontal&quot;</span><span class="p">:</span>
+                <span class="k">return</span> <span class="p">[</span><span class="mf">0.05</span><span class="p">,</span> <span class="n">proxy</span><span class="o">.</span><span class="n">GetProperty</span><span class="p">(</span><span class="s2">&quot;ScalarBarLength&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">GetData</span><span class="p">()]</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">return</span> <span class="p">[</span><span class="n">proxy</span><span class="o">.</span><span class="n">GetProperty</span><span class="p">(</span><span class="s2">&quot;ScalarBarLength&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">GetData</span><span class="p">(),</span> <span class="mf">0.05</span><span class="p">]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">NotSupportedException</span><span class="p">(</span>
+                    <span class="s1">&#39;The Position2 property has been removed in ParaView &#39;</span>\
+                    <span class="s1">&#39;5.4. Please set the ScalarBarLength property instead.&#39;</span><span class="p">)</span>
+
+    <span class="c1"># In 5.5, we removed the PVLookupTable.LockScalarRange boolean property and</span>
+    <span class="c1"># replaced it with the enumeration AutomaticRescaleRangeMode.</span>
+    <span class="k">if</span> <span class="n">pname</span> <span class="o">==</span> <span class="s2">&quot;LockScalarRange&quot;</span> <span class="ow">and</span> <span class="n">proxy</span><span class="o">.</span><span class="n">SMProxy</span><span class="o">.</span><span class="n">GetProperty</span><span class="p">(</span><span class="s2">&quot;AutomaticRescaleRangeMode&quot;</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">version</span> <span class="o">&lt;=</span> <span class="mf">5.4</span><span class="p">:</span>
+            <span class="kn">from</span> <span class="nn">paraview.modules.vtkRemotingViews</span> <span class="k">import</span> <span class="n">vtkSMTransferFunctionManager</span>
+            <span class="k">if</span> <span class="n">proxy</span><span class="o">.</span><span class="n">GetProperty</span><span class="p">(</span><span class="s2">&quot;AutomaticRescaleRangeMode&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">GetData</span><span class="p">()</span> <span class="o">==</span> <span class="s2">&quot;Never&quot;</span><span class="p">:</span>
+                <span class="k">return</span> <span class="mi">1</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">return</span> <span class="mi">0</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">NotSupportedException</span><span class="p">(</span>
+                    <span class="s1">&#39;The PVLookupTable.LockScalarRange property has been removed &#39;</span>\
+                    <span class="s1">&#39;in ParaView 5.5. Please set the AutomaticRescaleRangeMode property &#39;</span>\
+                    <span class="s1">&#39;instead.&#39;</span><span class="p">)</span>
+    <span class="c1"># In 5.5, we changed the vtkArrayCalculator to use a different set of constants to control which</span>
+    <span class="c1"># data it operates on.  This change changed the method and property name from AttributeMode to</span>
+    <span class="c1"># AttributeType</span>
+    <span class="k">if</span> <span class="n">pname</span> <span class="o">==</span> <span class="s2">&quot;AttributeMode&quot;</span> <span class="ow">and</span> <span class="n">proxy</span><span class="o">.</span><span class="n">SMProxy</span><span class="o">.</span><span class="n">GetName</span><span class="p">()</span> <span class="o">==</span> <span class="s2">&quot;Calculator&quot;</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">paraview</span><span class="o">.</span><span class="n">compatibility</span><span class="o">.</span><span class="n">GetVersion</span><span class="p">()</span> <span class="o">&lt;=</span> <span class="mf">5.4</span><span class="p">:</span>
+            <span class="c1"># The Attribute type uses enumeration values from vtkDataObject::AttributeTypes</span>
+            <span class="c1"># rather than custom constants for the calculator.  For the values supported by</span>
+            <span class="c1"># ParaView before this change, the conversion works out to adding 1 if it is an</span>
+            <span class="c1"># integer. If the value is an enumerated string we use that as is since it matches</span>
+            <span class="c1"># the previous enumerated string options.</span>
+            <span class="n">value</span> <span class="o">=</span> <span class="n">proxy</span><span class="o">.</span><span class="n">GetProperty</span><span class="p">(</span><span class="s2">&quot;AttributeType&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">GetData</span><span class="p">()</span>
+            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="nb">int</span><span class="p">):</span>
+                <span class="k">return</span> <span class="n">value</span> <span class="o">+</span> <span class="mi">1</span>
+            <span class="k">return</span> <span class="n">value</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">NotSupportedException</span><span class="p">(</span>
+                    <span class="s1">&#39;The Calculator.AttributeMode property has been removed in ParaView 5.5. &#39;</span>\
+                    <span class="s1">&#39;Please set the AttributeType property instead. Note that different &#39;</span>\
+                    <span class="s1">&#39;constants are needed for the two properties.&#39;</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">pname</span> <span class="o">==</span> <span class="s2">&quot;UseOffscreenRenderingForScreenshots&quot;</span> <span class="ow">and</span> <span class="n">proxy</span><span class="o">.</span><span class="n">SMProxy</span><span class="o">.</span><span class="n">IsA</span><span class="p">(</span><span class="s2">&quot;vtkSMViewProxy&quot;</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">version</span> <span class="o">&lt;=</span> <span class="mf">5.4</span><span class="p">:</span>
+            <span class="k">return</span> <span class="mi">0</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">NotSupportedException</span><span class="p">(</span><span class="s1">&#39;`UseOffscreenRenderingForScreenshots` &#39;</span>\
+                    <span class="s1">&#39;is no longer supported. Please remove it.&#39;</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">pname</span> <span class="o">==</span> <span class="s2">&quot;UseOffscreenRendering&quot;</span> <span class="ow">and</span> <span class="n">proxy</span><span class="o">.</span><span class="n">SMProxy</span><span class="o">.</span><span class="n">IsA</span><span class="p">(</span><span class="s2">&quot;vtkSMViewProxy&quot;</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">version</span> <span class="o">&lt;=</span> <span class="mf">5.4</span><span class="p">:</span>
+            <span class="k">return</span> <span class="mi">0</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">NotSupportedException</span><span class="p">(</span>\
+                    <span class="s1">&#39;`UseOffscreenRendering` is no longer supported. Please remove it.&#39;</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">proxy</span><span class="o">.</span><span class="n">SMProxy</span><span class="o">.</span><span class="n">GetXMLName</span><span class="p">()</span> <span class="o">==</span> <span class="s2">&quot;CGNSSeriesReader&quot;</span> <span class="ow">and</span>\
+            <span class="n">pname</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;LoadBndPatch&quot;</span><span class="p">,</span> <span class="s2">&quot;LoadMesh&quot;</span><span class="p">,</span> <span class="s2">&quot;BaseStatus&quot;</span><span class="p">,</span> <span class="s2">&quot;FamilyStatus&quot;</span><span class="p">]:</span>
+        <span class="k">if</span> <span class="n">version</span> <span class="o">&lt;</span> <span class="mf">5.5</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">pname</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;LoadMesh&quot;</span><span class="p">,</span> <span class="s2">&quot;LoadBndPatch&quot;</span><span class="p">]:</span>
+                <span class="k">return</span> <span class="mi">0</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">paraview</span><span class="o">.</span><span class="n">print_warning</span><span class="p">(</span>\
+                  <span class="s2">&quot;&#39;</span><span class="si">%s</span><span class="s2">&#39; is no longer supported and will have no effect. &quot;</span>\
+                  <span class="s2">&quot;Please use `Blocks` property to specify blocks to load.&quot;</span> <span class="o">%</span> <span class="n">pname</span><span class="p">)</span>
+                <span class="k">return</span> <span class="p">[]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">NotSupportedException</span><span class="p">(</span>\
+              <span class="s2">&quot;&#39;</span><span class="si">%s</span><span class="s2">&#39; is obsolete. Use `Blocks` to make block based selection.&quot;</span> <span class="o">%</span> <span class="n">pname</span><span class="p">)</span>
+
+    <span class="c1"># In 5.5, we removed the DataBoundsInflateFactor property and replaced it with the</span>
+    <span class="c1"># DataBoundsScaleFactor property.</span>
+    <span class="k">if</span> <span class="n">pname</span> <span class="o">==</span> <span class="s2">&quot;DataBoundsInflateFactor&quot;</span> <span class="ow">and</span> <span class="n">proxy</span><span class="o">.</span><span class="n">SMProxy</span><span class="o">.</span><span class="n">GetProperty</span><span class="p">(</span><span class="s2">&quot;DataBoundsScaleFactor&quot;</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">version</span> <span class="o">&lt;=</span> <span class="mf">5.4</span><span class="p">:</span>
+            <span class="n">inflateValue</span> <span class="o">=</span> <span class="n">proxy</span><span class="o">.</span><span class="n">GetProperty</span><span class="p">(</span><span class="s2">&quot;DataBoundsScaleFactor&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">GetData</span><span class="p">()</span> <span class="o">-</span> <span class="mi">1</span>
+            <span class="k">if</span> <span class="n">inflateValue</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="k">return</span> <span class="n">inflateValue</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">return</span> <span class="mi">0</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">NotSupportedException</span><span class="p">(</span>
+                    <span class="s1">&#39;The  DataBoundsInflateFactorproperty has been removed in ParaView &#39;</span>\
+                    <span class="s1">&#39;5.4. Please use the DataBoundsScaleFactor property instead.&#39;</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">proxy</span><span class="o">.</span><span class="n">SMProxy</span> <span class="ow">and</span> <span class="n">proxy</span><span class="o">.</span><span class="n">SMProxy</span><span class="o">.</span><span class="n">GetXMLName</span><span class="p">()</span> <span class="o">==</span> <span class="s2">&quot;AnnotateAttributeData&quot;</span><span class="p">:</span>
+        <span class="c1"># in 5.5, Annotate Attribute Data changed how it sets the array to annotate</span>
+        <span class="k">if</span> <span class="n">pname</span> <span class="o">==</span> <span class="s2">&quot;ArrayAssociation&quot;</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">paraview</span><span class="o">.</span><span class="n">compatibility</span><span class="o">.</span><span class="n">GetVersion</span><span class="p">()</span> <span class="o">&lt;=</span> <span class="mf">5.4</span><span class="p">:</span>
+                <span class="n">paraview</span><span class="o">.</span><span class="n">print_warning</span><span class="p">(</span>\
+                <span class="s2">&quot;&#39;ArrayAssociation&#39; is obsolete.  Use &#39;SelectInputArray&#39; property of AnnotateAttributeData instead.&quot;</span><span class="p">)</span>
+
+                <span class="n">value</span> <span class="o">=</span> <span class="n">proxy</span><span class="o">.</span><span class="n">GetProperty</span><span class="p">(</span><span class="s2">&quot;SelectInputArray&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+                <span class="k">if</span> <span class="n">value</span> <span class="o">==</span> <span class="s2">&quot;CELLS&quot;</span><span class="p">:</span>
+                    <span class="k">return</span> <span class="s2">&quot;Cell Data&quot;</span>
+                <span class="k">elif</span> <span class="n">value</span> <span class="o">==</span> <span class="s2">&quot;FIELD&quot;</span><span class="p">:</span>
+                    <span class="k">return</span> <span class="s2">&quot;Field Data&quot;</span>
+                <span class="k">elif</span> <span class="n">value</span> <span class="o">==</span> <span class="s2">&quot;ROWS&quot;</span><span class="p">:</span>
+                    <span class="k">return</span> <span class="s2">&quot;Row Data&quot;</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="k">return</span> <span class="s2">&quot;Point Data&quot;</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="n">NotSupportedException</span><span class="p">(</span>\
+                    <span class="s2">&quot;&#39;ArrayAssociation&#39; is obsolete as of ParaView 5.5.  Use &#39;SelectInputArray&#39; instead.&quot;</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">pname</span> <span class="o">==</span> <span class="s2">&quot;ArrayName&quot;</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">paraview</span><span class="o">.</span><span class="n">compatibility</span><span class="o">.</span><span class="n">GetVersion</span><span class="p">()</span> <span class="o">&lt;=</span> <span class="mf">5.4</span><span class="p">:</span>
+                <span class="n">paraview</span><span class="o">.</span><span class="n">print_warning</span><span class="p">(</span>\
+                <span class="s2">&quot;&#39;ArrayName&#39; is obsolete.  Use &#39;SelectInputArray&#39; property of AnnotateAttributeData instead.&quot;</span><span class="p">)</span>
+                <span class="k">return</span> <span class="n">proxy</span><span class="o">.</span><span class="n">GetProperty</span><span class="p">(</span><span class="s2">&quot;SelectInputArray&quot;</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="n">NotSupportedException</span><span class="p">(</span>\
+                    <span class="s2">&quot;&#39;ArrayName&#39; is obsolete as of ParaView 5.5.  Use &#39;SelectInputArray&#39; instead.&quot;</span><span class="p">)</span>
+
+    <span class="c1"># In 5.5, we changed the Clip to be inverted from what it was before and changed the InsideOut</span>
+    <span class="c1"># property to be called Invert to be clearer.</span>
+    <span class="k">if</span> <span class="n">pname</span> <span class="o">==</span> <span class="s2">&quot;InsideOut&quot;</span> <span class="ow">and</span> <span class="n">proxy</span><span class="o">.</span><span class="n">SMProxy</span><span class="o">.</span><span class="n">GetXMLName</span><span class="p">()</span> <span class="o">==</span> <span class="s2">&quot;Clip&quot;</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">paraview</span><span class="o">.</span><span class="n">compatibility</span><span class="o">.</span><span class="n">GetVersion</span><span class="p">()</span> <span class="o">&lt;=</span> <span class="mf">5.4</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">proxy</span><span class="o">.</span><span class="n">GetProperty</span><span class="p">(</span><span class="s2">&quot;Invert&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">GetData</span><span class="p">()</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">NotSupportedException</span><span class="p">(</span>
+                    <span class="s1">&#39;The Clip.InsideOut property has been changed in ParaView 5.5. &#39;</span>\
+                    <span class="s1">&#39;Please set the Invert property instead.&#39;</span><span class="p">)</span>
+
+    <span class="c1"># In 5.6, we changed the &quot;SpreadSheetRepresentation&quot; proxy to no longer have</span>
+    <span class="c1"># the &quot;FieldAssociation&quot; and &quot;GenerateCellConnectivity&quot; properties. They are</span>
+    <span class="c1"># now moved to the view.</span>
+    <span class="k">if</span> <span class="n">pname</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;FieldAssociation&quot;</span><span class="p">,</span> <span class="s2">&quot;GenerateCellConnectivity&quot;</span><span class="p">]</span> <span class="ow">and</span> <span class="n">proxy</span><span class="o">.</span><span class="n">SMProxy</span><span class="o">.</span><span class="n">GetXMLName</span><span class="p">()</span> <span class="o">==</span> <span class="s2">&quot;SpreadSheetRepresentation&quot;</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">paraview</span><span class="o">.</span><span class="n">compatibility</span><span class="o">.</span><span class="n">GetVersion</span><span class="p">()</span> <span class="o">&lt;=</span> <span class="mf">5.5</span><span class="p">:</span>
+            <span class="k">return</span> <span class="mi">0</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">NotSupportedException</span><span class="p">(</span>
+                  <span class="s2">&quot;&#39;</span><span class="si">%s</span><span class="s2">&#39; is obsolete on SpreadSheetRepresentation as of ParaView 5.6 and has been migrated to the view.&quot;</span> <span class="o">%</span> <span class="n">pname</span><span class="p">)</span>
+
+    <span class="c1"># In 5.7, we changed to the names of the input proxies in ResampleWithDataset to clarify what</span>
+    <span class="c1"># each source does.</span>
+    <span class="k">if</span> <span class="n">pname</span> <span class="o">==</span> <span class="s2">&quot;Input&quot;</span> <span class="ow">and</span> <span class="n">proxy</span><span class="o">.</span><span class="n">SMProxy</span><span class="o">.</span><span class="n">GetXMLName</span><span class="p">()</span> <span class="o">==</span> <span class="s2">&quot;ResampleWithDataset&quot;</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">paraview</span><span class="o">.</span><span class="n">compatibility</span><span class="o">.</span><span class="n">GetVersion</span><span class="p">()</span> <span class="o">&lt;</span> <span class="mf">5.7</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">proxy</span><span class="o">.</span><span class="n">GetProperty</span><span class="p">(</span><span class="s2">&quot;SourceDataArrays&quot;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">NotSupportedException</span><span class="p">(</span>
+                <span class="s1">&#39;The ResampleWithDataset.Input property has been changed in ParaView 5.7. &#39;</span>\
+                <span class="s1">&#39;Please access the SourceDataArrays property instead.&#39;</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">pname</span> <span class="o">==</span> <span class="s2">&quot;Source&quot;</span> <span class="ow">and</span> <span class="n">proxy</span><span class="o">.</span><span class="n">SMProxy</span><span class="o">.</span><span class="n">GetXMLName</span><span class="p">()</span> <span class="o">==</span> <span class="s2">&quot;ResampleWithDataset&quot;</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">paraview</span><span class="o">.</span><span class="n">compatibility</span><span class="o">.</span><span class="n">GetVersion</span><span class="p">()</span> <span class="o">&lt;</span> <span class="mf">5.7</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">proxy</span><span class="o">.</span><span class="n">GetProperty</span><span class="p">(</span><span class="s2">&quot;DestinationMesh&quot;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">NotSupportedException</span><span class="p">(</span>
+                <span class="s1">&#39;The ResampleWithDataset.Source property has been changed in ParaView 5.7. &#39;</span>\
+                <span class="s1">&#39;Please access the DestinationMesh property instead.&#39;</span><span class="p">)</span>
+
+    <span class="c1"># In 5.7, we removed `ArrayName` property on the `GenerateIdScalars` filter</span>
+    <span class="c1"># and replaced it with `CellIdsArrayName` and `PointIdsArrayName`.</span>
+    <span class="k">if</span> <span class="n">pname</span> <span class="o">==</span> <span class="s2">&quot;ArrayName&quot;</span> <span class="ow">and</span> <span class="n">proxy</span><span class="o">.</span><span class="n">SMProxy</span><span class="o">.</span><span class="n">GetXMLName</span><span class="p">()</span> <span class="o">==</span> <span class="s2">&quot;GenerateIdScalars&quot;</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">paraview</span><span class="o">.</span><span class="n">compatibility</span><span class="o">.</span><span class="n">GetVersion</span><span class="p">()</span> <span class="o">&lt;</span> <span class="mf">5.7</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">proxy</span><span class="o">.</span><span class="n">GetProperty</span><span class="p">(</span><span class="s2">&quot;PointIdsArrayName&quot;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">NotSupportedException</span><span class="p">(</span>
+                <span class="s1">&#39;The GenerateIdScalars.ArrayName property has been removed in ParaView 5.7. &#39;</span> \
+                <span class="s1">&#39;Please access `PointIdsArrayName` or `CellIdsArrayName` property instead.&#39;</span><span class="p">)</span>
+
+    <span class="c1"># In 5.7, we renamed the 3D View&#39;s ray tracing interface from OSPRay to RayTracing</span>
+    <span class="k">if</span> <span class="n">pname</span> <span class="o">==</span> <span class="s2">&quot;EnableOSPRay&quot;</span> <span class="ow">and</span> <span class="n">proxy</span><span class="o">.</span><span class="n">SMProxy</span><span class="o">.</span><span class="n">IsA</span><span class="p">(</span><span class="s2">&quot;vtkSMRenderViewProxy&quot;</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">paraview</span><span class="o">.</span><span class="n">compatibility</span><span class="o">.</span><span class="n">GetVersion</span><span class="p">()</span> <span class="o">&lt;</span> <span class="mf">5.7</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">proxy</span><span class="o">.</span><span class="n">GetProperty</span><span class="p">(</span><span class="s2">&quot;EnableRayTracing&quot;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">NotSupportedException</span><span class="p">(</span>
+                <span class="s1">&#39;The `EnableOSPRay` control has been renamed in ParaView 5.7 to `EnableRayTracing`.&#39;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">pname</span> <span class="o">==</span> <span class="s2">&quot;OSPRayRenderer&quot;</span> <span class="ow">and</span> <span class="n">proxy</span><span class="o">.</span><span class="n">SMProxy</span><span class="o">.</span><span class="n">IsA</span><span class="p">(</span><span class="s2">&quot;vtkSMRenderViewProxy&quot;</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">paraview</span><span class="o">.</span><span class="n">compatibility</span><span class="o">.</span><span class="n">GetVersion</span><span class="p">()</span> <span class="o">&lt;</span> <span class="mf">5.7</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">proxy</span><span class="o">.</span><span class="n">GetProperty</span><span class="p">(</span><span class="s2">&quot;BackEnd&quot;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">NotSupportedException</span><span class="p">(</span>
+                <span class="s1">&#39;The `OSPRayRenderer` control has been renamed in ParaView 5.7 to `BackEnd` and &#39;</span>\
+                <span class="s1">&#39;the settings `scivis` and `pathtracer` have been renamed to `OSPRay scivis` &#39;</span>\
+                <span class="s1">&#39;and `OSPRay pathtracer` respectively.&#39;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">pname</span> <span class="o">==</span> <span class="s2">&quot;OSPRayTemporalCacheSize&quot;</span> <span class="ow">and</span> <span class="n">proxy</span><span class="o">.</span><span class="n">SMProxy</span><span class="o">.</span><span class="n">IsA</span><span class="p">(</span><span class="s2">&quot;vtkSMRenderViewProxy&quot;</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">paraview</span><span class="o">.</span><span class="n">compatibility</span><span class="o">.</span><span class="n">GetVersion</span><span class="p">()</span> <span class="o">&lt;</span> <span class="mf">5.7</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">proxy</span><span class="o">.</span><span class="n">GetProperty</span><span class="p">(</span><span class="s2">&quot;TemporalCacheSize&quot;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">NotSupportedException</span><span class="p">(</span>
+                <span class="s1">&#39;The `OSPRayTemporalCacheSize` control has been renamed in ParaView 5.7 to `TemporalCacheSize`.&#39;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">pname</span> <span class="o">==</span> <span class="s2">&quot;OSPRayUseScaleArray&quot;</span> <span class="ow">and</span> <span class="n">proxy</span><span class="o">.</span><span class="n">SMProxy</span><span class="o">.</span><span class="n">IsA</span><span class="p">(</span><span class="s2">&quot;vtkSMRepresentationProxy&quot;</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">paraview</span><span class="o">.</span><span class="n">compatibility</span><span class="o">.</span><span class="n">GetVersion</span><span class="p">()</span> <span class="o">&lt;</span> <span class="mf">5.7</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">proxy</span><span class="o">.</span><span class="n">GetProperty</span><span class="p">(</span><span class="s2">&quot;UseScaleArray&quot;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">NotSupportedException</span><span class="p">(</span>
+                <span class="s1">&#39;The `OSPRayUseScaleArray` control has been renamed in ParaView 5.7 to `UseScaleArray`.&#39;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">pname</span> <span class="o">==</span> <span class="s2">&quot;OSPRayScaleFunction&quot;</span> <span class="ow">and</span> <span class="n">proxy</span><span class="o">.</span><span class="n">SMProxy</span><span class="o">.</span><span class="n">IsA</span><span class="p">(</span><span class="s2">&quot;vtkSMRepresentationProxy&quot;</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">paraview</span><span class="o">.</span><span class="n">compatibility</span><span class="o">.</span><span class="n">GetVersion</span><span class="p">()</span> <span class="o">&lt;</span> <span class="mf">5.7</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">proxy</span><span class="o">.</span><span class="n">GetProperty</span><span class="p">(</span><span class="s2">&quot;ScaleFunction&quot;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">NotSupportedException</span><span class="p">(</span>
+                <span class="s1">&#39;The `OSPRayScaleFunction` control has been renamed in ParaView 5.7 to `ScaleFunction`.&#39;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">pname</span> <span class="o">==</span> <span class="s2">&quot;OSPRayMaterial&quot;</span> <span class="ow">and</span> <span class="n">proxy</span><span class="o">.</span><span class="n">SMProxy</span><span class="o">.</span><span class="n">IsA</span><span class="p">(</span><span class="s2">&quot;vtkSMRepresentationProxy&quot;</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">paraview</span><span class="o">.</span><span class="n">compatibility</span><span class="o">.</span><span class="n">GetVersion</span><span class="p">()</span> <span class="o">&lt;</span> <span class="mf">5.7</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">proxy</span><span class="o">.</span><span class="n">GetProperty</span><span class="p">(</span><span class="s2">&quot;Material&quot;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">NotSupportedException</span><span class="p">(</span>
+                <span class="s1">&#39;The `OSPRayMaterial` control has been renamed in ParaView 5.7 to `Material`.&#39;</span><span class="p">)</span>
+
+    <span class="c1">#  In 5.7, the `Box` implicit function&#39;s Scale property was renamed to</span>
+    <span class="c1">#  Length.</span>
+    <span class="k">if</span> <span class="n">pname</span> <span class="o">==</span> <span class="s2">&quot;Scale&quot;</span> <span class="ow">and</span> <span class="n">proxy</span><span class="o">.</span><span class="n">SMProxy</span><span class="o">.</span><span class="n">GetXMLName</span><span class="p">()</span> <span class="o">==</span> <span class="s2">&quot;Box&quot;</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">paraview</span><span class="o">.</span><span class="n">compatibility</span><span class="o">.</span><span class="n">GetVersion</span><span class="p">()</span> <span class="o">&lt;</span> <span class="mf">5.7</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">proxy</span><span class="o">.</span><span class="n">GetProperty</span><span class="p">(</span><span class="s2">&quot;Length&quot;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">NotSupportedException</span><span class="p">(</span>
+                    <span class="s1">&#39;The `Scale` property has been renamed in ParaView 5.7 to `Length`.&#39;</span><span class="p">)</span>
+
+    <span class="c1"># In 5.9, CGNSSeriesReader no longer supports the &quot;Blocks&quot; property.</span>
+    <span class="k">if</span> <span class="n">pname</span> <span class="o">==</span> <span class="s2">&quot;Blocks&quot;</span> <span class="ow">and</span> <span class="n">proxy</span><span class="o">.</span><span class="n">SMProxy</span><span class="o">.</span><span class="n">GetXMLName</span><span class="p">()</span> <span class="o">==</span> <span class="s2">&quot;CGNSSeriesReader&quot;</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">paraview</span><span class="o">.</span><span class="n">compatibility</span><span class="o">.</span><span class="n">GetVersion</span><span class="p">()</span> <span class="o">&lt;</span> <span class="mf">5.9</span><span class="p">:</span>
+            <span class="k">return</span> <span class="p">[]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">NotSupportedException</span><span class="p">(</span>
+                    <span class="s2">&quot;The &#39;Blocks&#39; property has been removed in ParaView 5.9. Use &quot;</span>
+                    <span class="s2">&quot;&#39;Bases&#39; to choose bases and &#39;Families&#39; to choose families &quot;</span>
+                    <span class="s2">&quot;to load instead. &#39;LoadMesh&#39; and &#39;LoadPatches&#39; may also be &quot;</span>
+                    <span class="s2">&quot;used to enable loading of meshes and BC-patches.&quot;</span><span class="p">)</span>
+
+    <span class="c1"># 5.10 onwards SpreadSheetRepresentation cannot provide a value for</span>
+    <span class="c1"># CompositeDataSetIndex</span>
+    <span class="k">if</span> <span class="n">pname</span> <span class="o">==</span> <span class="s2">&quot;CompositeDataSetIndex&quot;</span> <span class="ow">and</span> <span class="n">proxy</span><span class="o">.</span><span class="n">SMProxy</span><span class="o">.</span><span class="n">GetXMLName</span><span class="p">()</span> <span class="o">==</span> <span class="s2">&quot;SpreadSheetRepresentation&quot;</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">paraview</span><span class="o">.</span><span class="n">compatibility</span><span class="o">.</span><span class="n">GetVersion</span><span class="p">()</span> <span class="o">&lt;=</span> <span class="mf">5.9</span><span class="p">:</span>
+            <span class="k">return</span> <span class="p">[]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">NotSupportedException</span><span class="p">(</span>
+                    <span class="s2">&quot;Since ParaView 5.10, SpreadSheetRepresentation no longer &quot;</span>
+                    <span class="s2">&quot;supports &#39;CompositeDataSetIndex&#39; and it has been replaced by &quot;</span>
+                    <span class="s2">&quot;&#39;BlockVisibilities&#39;.&quot;</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">proxy</span><span class="o">.</span><span class="n">SMProxy</span><span class="o">.</span><span class="n">GetXMLName</span><span class="p">()</span> <span class="o">==</span> <span class="s2">&quot;ExtractBlock&quot;</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">pname</span> <span class="o">==</span> <span class="s2">&quot;BlockIndices&quot;</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">paraview</span><span class="o">.</span><span class="n">compatibility</span><span class="o">.</span><span class="n">GetVersion</span><span class="p">()</span> <span class="o">&lt;=</span> <span class="mf">5.9</span><span class="p">:</span>
+                <span class="k">return</span> <span class="p">[]</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="n">NotSupportedException</span><span class="p">(</span>
+                        <span class="s2">&quot;Since ParaView 5.10, &#39;BlockIndices&#39; on &#39;ExtractBlock&#39; &quot;</span>
+                        <span class="s2">&quot;has been replaced by &#39;Selectors&#39;.&quot;</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">pname</span> <span class="o">==</span> <span class="s2">&quot;PruneOutput&quot;</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">paraview</span><span class="o">.</span><span class="n">compatibility</span><span class="o">.</span><span class="n">GetVersion</span><span class="p">()</span> <span class="o">&lt;=</span> <span class="mf">5.9</span><span class="p">:</span>
+                <span class="k">return</span> <span class="mi">1</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="n">NotSupportedException</span><span class="p">(</span>
+                        <span class="s2">&quot;Since ParaView 5.10, &#39;PruneOutput&#39; on &#39;ExtractBlock&#39; &quot;</span>
+                        <span class="s2">&quot;is no longer supported. Simply remove it.&quot;</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">pname</span> <span class="o">==</span> <span class="s2">&quot;MaintainStructure&quot;</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">paraview</span><span class="o">.</span><span class="n">compatibility</span><span class="o">.</span><span class="n">GetVersion</span><span class="p">()</span> <span class="o">&lt;=</span> <span class="mf">5.9</span><span class="p">:</span>
+                <span class="k">return</span> <span class="mi">1</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="n">NotSupportedException</span><span class="p">(</span>
+                        <span class="s2">&quot;Since ParaView 5.10, &#39;MaintainStructure&#39; on &#39;ExtractBlock&#39; &quot;</span>
+                        <span class="s2">&quot;is no longer supported. Simply remove it.&quot;</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">pname</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;UseGradientBackground&quot;</span><span class="p">,</span> <span class="s2">&quot;UseTexturedBackground&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;UseSkyboxBackground&quot;</span><span class="p">]</span> <span class="ow">and</span> <span class="n">proxy</span><span class="o">.</span><span class="n">SMProxy</span><span class="o">.</span><span class="n">GetXMLGroup</span><span class="p">()</span> <span class="o">==</span> <span class="s2">&quot;views&quot;</span> \
+                    <span class="ow">and</span> <span class="n">proxy</span><span class="o">.</span><span class="n">SMProxy</span><span class="o">.</span><span class="n">GetProperty</span><span class="p">(</span><span class="s2">&quot;BackgroundColorMode&quot;</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">paraview</span><span class="o">.</span><span class="n">compatibility</span><span class="o">.</span><span class="n">GetVersion</span><span class="p">()</span> <span class="o">&lt;=</span> <span class="mf">5.9</span><span class="p">:</span>
+            <span class="n">mode</span> <span class="o">=</span> <span class="n">proxy</span><span class="o">.</span><span class="n">GetProperty</span><span class="p">(</span><span class="s2">&quot;BackgroundColorMode&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">GetData</span><span class="p">()</span>
+            <span class="k">if</span> <span class="n">pname</span> <span class="o">==</span> <span class="s2">&quot;UseGradientBackground&quot;</span><span class="p">:</span>
+                <span class="k">return</span> <span class="mi">1</span> <span class="k">if</span> <span class="n">mode</span> <span class="o">==</span> <span class="s2">&quot;Gradient&quot;</span> <span class="k">else</span> <span class="mi">0</span>
+            <span class="k">if</span> <span class="n">pname</span> <span class="o">==</span> <span class="s2">&quot;UseTexturedBackground&quot;</span><span class="p">:</span>
+                <span class="k">return</span> <span class="mi">1</span> <span class="k">if</span> <span class="n">mode</span> <span class="o">==</span> <span class="s2">&quot;Texture&quot;</span> <span class="k">else</span> <span class="mi">0</span>
+            <span class="k">if</span> <span class="n">pname</span> <span class="o">==</span> <span class="s2">&quot;UseSkyboxBackground&quot;</span><span class="p">:</span>
+                <span class="k">return</span> <span class="mi">1</span> <span class="k">if</span> <span class="n">mode</span> <span class="o">==</span> <span class="s2">&quot;Skybox&quot;</span> <span class="k">else</span> <span class="mi">0</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">NotSupportedException</span><span class="p">(</span>
+                    <span class="s2">&quot;Since ParaView 5.10, &#39;</span><span class="si">%s</span><span class="s2">&#39; is no longer supported. Use &quot;</span>
+                    <span class="s2">&quot;&#39;BackgroundColorMode&#39; instead.&quot;</span> <span class="o">%</span> <span class="n">pname</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">pname</span> <span class="o">==</span> <span class="s2">&quot;ThresholdRange&quot;</span> <span class="ow">and</span> <span class="n">proxy</span><span class="o">.</span><span class="n">SMProxy</span><span class="o">.</span><span class="n">GetXMLName</span><span class="p">()</span> <span class="o">==</span> <span class="s2">&quot;Threshold&quot;</span><span class="p">:</span>
+        <span class="c1"># The Threshold filter now offers additional thresholding methods</span>
+        <span class="c1"># besides ThresholdBetween. The lower and upper threshold values</span>
+        <span class="c1"># are also set separately.</span>
+        <span class="k">if</span> <span class="n">paraview</span><span class="o">.</span><span class="n">compatibility</span><span class="o">.</span><span class="n">GetVersion</span><span class="p">()</span> <span class="o">&lt;=</span> <span class="mf">5.9</span><span class="p">:</span>
+            <span class="k">return</span> <span class="p">[</span><span class="n">proxy</span><span class="o">.</span><span class="n">GetProperty</span><span class="p">(</span><span class="s2">&quot;LowerThreshold&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">GetData</span><span class="p">(),</span>
+                    <span class="n">proxy</span><span class="o">.</span><span class="n">GetProperty</span><span class="p">(</span><span class="s2">&quot;UpperThreshold&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">GetData</span><span class="p">()]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">NotSupportedException</span><span class="p">(</span><span class="s2">&quot;The &#39;ThresholdRange&#39; property has been &quot;</span>
+                    <span class="s2">&quot;removed in ParaView 5.10. Please set the lower and upper &quot;</span>
+                    <span class="s2">&quot;thresholds using the &#39;LowerThreshold&#39; and &#39;UpperThreshold&#39; &quot;</span>
+                    <span class="s2">&quot;properties, then set the &#39;ThresholdMethod&#39; property to &quot;</span>
+                    <span class="s2">&quot;&#39;Between&#39; to threshold between the lower and upper thresholds.&quot;</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">pname</span> <span class="o">==</span> <span class="s2">&quot;ThresholdBetween&quot;</span> <span class="ow">and</span> <span class="n">proxy</span><span class="o">.</span><span class="n">SMProxy</span><span class="o">.</span><span class="n">GetXMLName</span><span class="p">()</span> <span class="o">==</span> <span class="s2">&quot;VTKmThreshold&quot;</span><span class="p">:</span>
+        <span class="c1"># The Threshold filter now offers additional thresholding methods</span>
+        <span class="c1"># besides ThresholdBetween. The lower and upper threshold values</span>
+        <span class="c1"># are also set separately.</span>
+        <span class="k">if</span> <span class="n">paraview</span><span class="o">.</span><span class="n">compatibility</span><span class="o">.</span><span class="n">GetVersion</span><span class="p">()</span> <span class="o">&lt;=</span> <span class="mf">5.10</span><span class="p">:</span>
+            <span class="k">return</span> <span class="p">[</span><span class="n">proxy</span><span class="o">.</span><span class="n">GetProperty</span><span class="p">(</span><span class="s2">&quot;LowerThreshold&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">GetData</span><span class="p">(),</span>
+                    <span class="n">proxy</span><span class="o">.</span><span class="n">GetProperty</span><span class="p">(</span><span class="s2">&quot;UpperThreshold&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">GetData</span><span class="p">()]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">NotSupportedException</span><span class="p">(</span><span class="s2">&quot;The &#39;ThresholdRange&#39; property has been &quot;</span>
+                    <span class="s2">&quot;removed in ParaView 5.11. Please set the lower and upper &quot;</span>
+                    <span class="s2">&quot;thresholds using the &#39;LowerThreshold&#39; and &#39;UpperThreshold&#39; &quot;</span>
+                    <span class="s2">&quot;properties, then set the &#39;ThresholdMethod&#39; property to &quot;</span>
+                    <span class="s2">&quot;&#39;Between&#39; to threshold between the lower and upper thresholds.&quot;</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">pname</span> <span class="o">==</span> <span class="s2">&quot;CutoffArray&quot;</span> <span class="ow">and</span> <span class="n">proxy</span><span class="o">.</span><span class="n">SMProxy</span><span class="o">.</span><span class="n">GetXMLName</span><span class="p">()</span> <span class="o">!=</span> <span class="s2">&quot;SPHDataSetInterpolator&quot;</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="n">NotSupportedException</span><span class="p">(</span><span class="s2">&quot;The &#39;CutoffArray&#39; property has been removed in ParaView 5.11.&quot;</span>
+                    <span class="s2">&quot;If you are wishing to use this property, please use &#39;SPHDataSetInterpolator&#39; &quot;</span>
+                    <span class="s2">&quot;instead. The &#39;CutoffArray&#39; needs to be provided by the data set source.&quot;</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">pname</span> <span class="o">==</span> <span class="s2">&quot;StaticMesh&quot;</span> <span class="ow">and</span> <span class="n">proxy</span><span class="o">.</span><span class="n">SMProxy</span><span class="o">.</span><span class="n">GetXMLName</span><span class="p">()</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;ParticleTracer, ParticlePath, StreakLine&quot;</span><span class="p">]:</span>
+        <span class="k">if</span> <span class="n">paraview</span><span class="o">.</span><span class="n">compatibility</span><span class="o">.</span><span class="n">GetVersion</span><span class="p">()</span> <span class="o">&lt;=</span> <span class="mf">5.10</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">proxy</span><span class="o">.</span><span class="n">GetProperty</span><span class="p">(</span><span class="s2">&quot;MeshOverTime&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">GetData</span><span class="p">()</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">NotSupportedException</span><span class="p">(</span>
+                <span class="s2">&quot;The &quot;</span> <span class="o">+</span> <span class="n">proxy</span><span class="o">.</span><span class="n">SMProxy</span><span class="o">.</span><span class="n">GetXMLName</span><span class="p">()</span> <span class="o">+</span> <span class="s2">&quot;.StaticMesh property has been changed in ParaView 5.11. &quot;</span> \
+                <span class="s2">&quot;Please set the MeshOverTime property instead.&quot;</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">proxy</span><span class="o">.</span><span class="n">SMProxy</span><span class="o">.</span><span class="n">GetXMLName</span><span class="p">()</span> <span class="o">==</span> <span class="s2">&quot;DataSetSurfaceFilter&quot;</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">pname</span> <span class="o">==</span> <span class="s2">&quot;UseGeometryFilter&quot;</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">paraview</span><span class="o">.</span><span class="n">compatibility</span><span class="o">.</span><span class="n">GetVersion</span><span class="p">()</span> <span class="o">&lt;=</span> <span class="mf">5.10</span><span class="p">:</span>
+                <span class="k">return</span> <span class="mi">1</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="n">NotSupportedException</span><span class="p">(</span>
+                    <span class="s2">&quot;Since ParaView 5.11, &#39;UseGeometryFilter&#39; has been removed. &quot;</span><span class="p">)</span>
+
+    <span class="k">raise</span> <span class="n">Continue</span><span class="p">()</span></div>
+
+<span class="c1"># Depending on the compatibility version that has been set, older functionalities</span>
+<span class="c1"># are restored in this function. Note that the &#39;key&#39; variable refers to a proxy</span>
+<span class="c1"># label and not its name.</span>
+<div class="viewcode-block" id="GetProxy"><a class="viewcode-back" href="../../paraview._backwardscompatibilityhelper.html#paraview._backwardscompatibilityhelper.GetProxy">[docs]</a><span class="k">def</span> <span class="nf">GetProxy</span><span class="p">(</span><span class="n">module</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="n">version</span> <span class="o">=</span> <span class="n">paraview</span><span class="o">.</span><span class="n">compatibility</span><span class="o">.</span><span class="n">GetVersion</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">version</span> <span class="o">&lt;</span> <span class="mf">5.5</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">key</span> <span class="o">==</span> <span class="s2">&quot;Clip&quot;</span><span class="p">:</span>
+            <span class="c1"># in PV 5.5 we changed the default for Clip&#39;s InsideOut property to 1 instead of 0</span>
+            <span class="c1"># also InsideOut was changed to Invert in 5.5</span>
+            <span class="n">clip</span> <span class="o">=</span> <span class="n">builtins</span><span class="o">.</span><span class="n">getattr</span><span class="p">(</span><span class="n">module</span><span class="p">,</span> <span class="n">key</span><span class="p">)(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+            <span class="n">clip</span><span class="o">.</span><span class="n">Invert</span> <span class="o">=</span> <span class="mi">0</span>
+            <span class="k">return</span> <span class="n">clip</span>
+    <span class="k">if</span> <span class="n">version</span> <span class="o">&lt;</span> <span class="mf">5.7</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">key</span> <span class="o">==</span> <span class="s2">&quot;ExodusRestartReader&quot;</span> <span class="ow">or</span> <span class="n">key</span> <span class="o">==</span> <span class="s2">&quot;ExodusIIReader&quot;</span><span class="p">:</span>
+            <span class="c1"># in 5.7, we changed the names for blocks, this preserves old</span>
+            <span class="c1"># behavior</span>
+            <span class="n">reader</span> <span class="o">=</span> <span class="n">builtins</span><span class="o">.</span><span class="n">getattr</span><span class="p">(</span><span class="n">module</span><span class="p">,</span> <span class="n">key</span><span class="p">)(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+            <span class="n">reader</span><span class="o">.</span><span class="n">UseLegacyBlockNamesWithElementTypes</span> <span class="o">=</span> <span class="mi">1</span>
+            <span class="k">return</span> <span class="n">reader</span>
+    <span class="k">if</span> <span class="n">version</span> <span class="o">&lt;=</span> <span class="mf">5.9</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">key</span> <span class="o">==</span> <span class="s2">&quot;PlotOverLine&quot;</span><span class="p">:</span>
+            <span class="c1">## in 5.10, we changed the backend of Plot Over Line</span>
+            <span class="c1">## This restores the previous backend.</span>
+            <span class="n">probeLine</span> <span class="o">=</span> <span class="n">builtins</span><span class="o">.</span><span class="n">getattr</span><span class="p">(</span><span class="n">module</span><span class="p">,</span> <span class="s2">&quot;PlotOverLineLegacy&quot;</span><span class="p">)(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">probeLine</span>
+        <span class="k">if</span> <span class="n">key</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;RenderView&quot;</span><span class="p">,</span> <span class="s2">&quot;OrthographicSliceView&quot;</span><span class="p">,</span> <span class="s2">&quot;ComparativeRenderView&quot;</span><span class="p">]:</span>
+            <span class="n">view</span> <span class="o">=</span> <span class="n">builtins</span><span class="o">.</span><span class="n">getattr</span><span class="p">(</span><span class="n">module</span><span class="p">,</span> <span class="n">key</span><span class="p">)(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+            <span class="n">view</span><span class="o">.</span><span class="n">UseColorPaletteForBackground</span> <span class="o">=</span> <span class="mi">0</span>
+            <span class="k">return</span> <span class="n">view</span>
+        <span class="k">if</span> <span class="n">key</span> <span class="o">==</span> <span class="s2">&quot;Calculator&quot;</span><span class="p">:</span>
+            <span class="c1"># In 5.10, we changed the array calculator&#39;s parser.</span>
+            <span class="c1"># This restores the previous calculator expression parser</span>
+            <span class="c1"># to handle syntax it supports.</span>
+            <span class="n">calculator</span> <span class="o">=</span> <span class="n">builtins</span><span class="o">.</span><span class="n">getattr</span><span class="p">(</span><span class="n">module</span><span class="p">,</span> <span class="n">key</span><span class="p">)(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+            <span class="n">calculator</span><span class="o">.</span><span class="n">FunctionParserType</span> <span class="o">=</span> <span class="mi">0</span>
+            <span class="k">return</span> <span class="n">calculator</span>
+        <span class="k">if</span> <span class="n">key</span> <span class="o">==</span> <span class="s2">&quot;Gradient&quot;</span><span class="p">:</span>
+            <span class="c1"># In 5.10, &#39;Gradient&#39; and &#39;GradientOfUnstructuredDataSet&#39; were merged</span>
+            <span class="c1"># into a unique &#39;Gradient&quot; filter.</span>
+            <span class="n">gradient</span> <span class="o">=</span> <span class="n">builtins</span><span class="o">.</span><span class="n">getattr</span><span class="p">(</span><span class="n">module</span><span class="p">,</span> <span class="s2">&quot;GradientLegacy&quot;</span><span class="p">)(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">gradient</span>
+    <span class="k">if</span> <span class="n">version</span> <span class="o">&lt;=</span> <span class="mf">5.10</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">key</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;ParticleTracer, ParticlePath, StreakLine&quot;</span><span class="p">]:</span>
+            <span class="c1"># in 5.11, we changed the StaticMesh flag of ParticleTracer, ParticlePath and StreakLine</span>
+            <span class="c1"># This restores the previous StaticMesh.</span>
+            <span class="n">particleTracerBase</span> <span class="o">=</span> <span class="n">builtins</span><span class="o">.</span><span class="n">getattr</span><span class="p">(</span><span class="n">module</span><span class="p">,</span> <span class="n">key</span><span class="p">)(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+            <span class="n">particleTracerBase</span><span class="o">.</span><span class="n">MeshOverTime</span> <span class="o">=</span> <span class="mi">0</span>
+            <span class="k">return</span> <span class="n">particleTracerBase</span>
+
+    <span class="k">return</span> <span class="n">builtins</span><span class="o">.</span><span class="n">getattr</span><span class="p">(</span><span class="n">module</span><span class="p">,</span> <span class="n">key</span><span class="p">)(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="lookupTableUpdate"><a class="viewcode-back" href="../../paraview._backwardscompatibilityhelper.html#paraview._backwardscompatibilityhelper.lookupTableUpdate">[docs]</a><span class="k">def</span> <span class="nf">lookupTableUpdate</span><span class="p">(</span><span class="n">lutName</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Provide backwards compatibility for color lookup table name changes.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># For backwards compatibility</span>
+    <span class="n">reverseLut</span> <span class="o">=</span> <span class="kc">False</span>
+    <span class="n">version</span> <span class="o">=</span> <span class="n">paraview</span><span class="o">.</span><span class="n">compatibility</span><span class="o">.</span><span class="n">GetVersion</span><span class="p">()</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">version</span> <span class="o">&lt;=</span> <span class="mf">5.8</span><span class="p">):</span>
+        <span class="c1"># In 5.9, some redundant color maps were removed and some had name changes.</span>
+        <span class="c1"># Replace these with a color map that remains. Also handle some color map</span>
+        <span class="c1"># name changes.</span>
+        <span class="n">reverse</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Red to Blue Rainbow&quot;</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">lutName</span> <span class="ow">in</span> <span class="n">reverse</span><span class="p">:</span>
+            <span class="n">reverseLut</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="n">nameChanges</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s2">&quot;jet&quot;</span><span class="p">:</span> <span class="s2">&quot;Jet&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;coolwarm&quot;</span><span class="p">:</span> <span class="s2">&quot;Cool to Warm&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;Asymmtrical Earth Tones (6_21b)&quot;</span><span class="p">:</span> <span class="s2">&quot;Asymmetrical Earth Tones (6_21b)&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;CIELab_blue2red&quot;</span><span class="p">:</span> <span class="s2">&quot;CIELab Blue to Red&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;gray_Matlab&quot;</span><span class="p">:</span> <span class="s2">&quot;Grayscale&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;rainbow&quot;</span><span class="p">:</span> <span class="s2">&quot;Blue to Red Rainbow&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;Red to Blue Rainbow&quot;</span><span class="p">:</span> <span class="s2">&quot;Blue to Red Rainbow&quot;</span>
+        <span class="p">}</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">lutName</span> <span class="o">=</span> <span class="n">nameChanges</span><span class="p">[</span><span class="n">lutName</span><span class="p">]</span>
+        <span class="k">except</span><span class="p">:</span>
+            <span class="k">pass</span>
+
+    <span class="k">return</span> <span class="p">(</span><span class="n">lutName</span><span class="p">,</span> <span class="n">reverseLut</span><span class="p">)</span></div>
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2013, Kitware, Inc..</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+  <!-- KW:BEGIN -->
+  <script type="text/javascript" src="/paraview-docs/paraview-version.js"></script>
+  <!-- KW:END -->
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

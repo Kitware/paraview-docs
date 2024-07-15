@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>paraview.numeric &mdash; ParaView/Python 5.11.0 documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          <ul>
+            <li> <a href="../../index.html">
+              <img src="../../_static/paraview-logo-small.png"
+              alt="ParaView/Python"></img></a> </li>
+            <li class="version"> version 5.11.0</li>
+          </ul>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../quick-start.html">Quick-Start :  A Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../paraview.html">The ParaView Python Package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../paraview.simple.html">simple</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../paraview.servermanager.html">servermanager</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../paraview.coprocessing.html">coprocessing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../paraview.benchmark.html">benchmark</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../paraview.servermanager_proxies.html">Available readers, sources, writers, filters and animation cues</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../api-changes.html">API Changes between ParaView versions</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">ParaView/Python</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+      <a href="../../genindex.html" class="float-right">Index</a> 
+          <li><a href="../index.html">Module code</a> &raquo;</li>
+      <li>paraview.numeric</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <h1>Source code for paraview.numeric</h1><div class="highlight"><pre>
+<span></span><span class="c1">#==============================================================================</span>
+<span class="c1">#</span>
+<span class="c1">#  Program:   ParaView</span>
+<span class="c1">#  Module:    numeric.py</span>
+<span class="c1">#</span>
+<span class="c1">#  Copyright (c) Kitware, Inc.</span>
+<span class="c1">#  All rights reserved.</span>
+<span class="c1">#  See Copyright.txt or http://www.paraview.org/HTML/Copyright.html for details.</span>
+<span class="c1">#</span>
+<span class="c1">#     This software is distributed WITHOUT ANY WARRANTY; without even</span>
+<span class="c1">#     the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR</span>
+<span class="c1">#     PURPOSE.  See the above copyright notice for more information.</span>
+<span class="c1">#</span>
+<span class="c1">#==============================================================================</span>
+<span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">This module provides functions to vtk data arrays to NumPy arrays.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="n">__num_py_available__</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="k">try</span><span class="p">:</span>
+    <span class="kn">import</span> <span class="nn">numpy</span>
+    <span class="n">__num_py_available__</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="k">except</span><span class="p">:</span>
+    <span class="k">raise</span> <span class="s2">&quot;&quot;&quot;NumPy module &quot;numpy&quot; is not accessible. Please make sure</span>
+<span class="s2">           that NumPy is installed correctly.&quot;&quot;&quot;</span>
+
+<span class="c1"># These types are returned by GetDataType to indicate data type.</span>
+<span class="n">VTK_VOID</span>            <span class="o">=</span> <span class="mi">0</span>
+<span class="n">VTK_BIT</span>             <span class="o">=</span> <span class="mi">1</span>
+<span class="n">VTK_CHAR</span>            <span class="o">=</span> <span class="mi">2</span>
+<span class="n">VTK_UNSIGNED_CHAR</span>   <span class="o">=</span> <span class="mi">3</span>
+<span class="n">VTK_SHORT</span>           <span class="o">=</span> <span class="mi">4</span>
+<span class="n">VTK_UNSIGNED_SHORT</span>  <span class="o">=</span> <span class="mi">5</span>
+<span class="n">VTK_INT</span>             <span class="o">=</span> <span class="mi">6</span>
+<span class="n">VTK_UNSIGNED_INT</span>    <span class="o">=</span> <span class="mi">7</span>
+<span class="n">VTK_LONG</span>            <span class="o">=</span> <span class="mi">8</span>
+<span class="n">VTK_UNSIGNED_LONG</span>   <span class="o">=</span> <span class="mi">9</span>
+<span class="n">VTK_FLOAT</span>           <span class="o">=</span><span class="mi">10</span>
+<span class="n">VTK_DOUBLE</span>          <span class="o">=</span><span class="mi">11</span>
+<span class="n">VTK_ID_TYPE</span>         <span class="o">=</span><span class="mi">12</span>
+
+<span class="n">__typeDict</span> <span class="o">=</span> <span class="p">{</span> <span class="n">VTK_CHAR</span><span class="p">:</span><span class="n">numpy</span><span class="o">.</span><span class="n">int8</span><span class="p">,</span>
+               <span class="n">VTK_UNSIGNED_CHAR</span><span class="p">:</span><span class="n">numpy</span><span class="o">.</span><span class="n">uint8</span><span class="p">,</span>
+               <span class="n">VTK_SHORT</span><span class="p">:</span><span class="n">numpy</span><span class="o">.</span><span class="n">int16</span><span class="p">,</span>
+               <span class="n">VTK_UNSIGNED_SHORT</span><span class="p">:</span><span class="n">numpy</span><span class="o">.</span><span class="n">int16</span><span class="p">,</span>
+               <span class="n">VTK_INT</span><span class="p">:</span><span class="n">numpy</span><span class="o">.</span><span class="n">int32</span><span class="p">,</span>
+               <span class="n">VTK_FLOAT</span><span class="p">:</span><span class="n">numpy</span><span class="o">.</span><span class="n">float32</span><span class="p">,</span>
+               <span class="n">VTK_DOUBLE</span><span class="p">:</span><span class="n">numpy</span><span class="o">.</span><span class="n">float64</span> <span class="p">}</span>
+
+<div class="viewcode-block" id="fromvtkarray"><a class="viewcode-back" href="../../paraview.numeric.html#paraview.numeric.fromvtkarray">[docs]</a><span class="k">def</span> <span class="nf">fromvtkarray</span><span class="p">(</span><span class="n">vtkarray</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;This function takes a vtkDataArray of any type and converts it to a</span>
+<span class="sd">     NumPy array of appropriate type and dimensions.&quot;&quot;&quot;</span>
+    <span class="k">global</span> <span class="n">__typeDict__</span>
+    <span class="k">global</span> <span class="n">__num_py_available__</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">__num_py_available__</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="s2">&quot;NumPy module is not available.&quot;</span>
+    <span class="c1">#create a numpy array of the correct type.</span>
+    <span class="n">vtktype</span> <span class="o">=</span> <span class="n">vtkarray</span><span class="o">.</span><span class="n">GetDataType</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">vtktype</span> <span class="ow">not</span> <span class="ow">in</span>  <span class="n">__typeDict</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="s2">&quot;Cannot convert data arrays of the type </span><span class="si">%s</span><span class="s2">&quot;</span> \
+          <span class="o">%</span> <span class="n">vtkarray</span><span class="o">.</span><span class="n">GetDataTypeAsString</span><span class="p">()</span>
+    <span class="c1">#    size = num_comps * num_tuples</span>
+    <span class="c1">#    imArray = numpy.empty((size,), type)</span>
+    <span class="c1">#    vtkarray.ExportToVoidPointer(imArray)</span>
+    <span class="nb">type</span> <span class="o">=</span> <span class="n">__typeDict</span><span class="p">[</span><span class="n">vtktype</span><span class="p">]</span>
+    <span class="n">pyarray</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">frombuffer</span><span class="p">(</span><span class="n">vtkarray</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">type</span><span class="p">)</span>
+    <span class="c1"># re-shape the array to current number of rows and columns.</span>
+    <span class="n">num_tuples</span> <span class="o">=</span> <span class="n">vtkarray</span><span class="o">.</span><span class="n">GetNumberOfTuples</span><span class="p">()</span>
+    <span class="n">num_comps</span> <span class="o">=</span> <span class="n">vtkarray</span><span class="o">.</span><span class="n">GetNumberOfComponents</span><span class="p">()</span>
+    <span class="n">pyarray</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">pyarray</span><span class="p">,</span> <span class="p">(</span><span class="n">num_tuples</span><span class="p">,</span> <span class="n">num_comps</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">pyarray</span></div>
+
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2013, Kitware, Inc..</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+  <!-- KW:BEGIN -->
+  <script type="text/javascript" src="/paraview-docs/paraview-version.js"></script>
+  <!-- KW:END -->
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

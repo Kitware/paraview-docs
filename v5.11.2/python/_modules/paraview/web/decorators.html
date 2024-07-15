@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html class="writer-html4" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>paraview.web.decorators &mdash; ParaView/Python 5.11.2 documentation</title><link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" /><link rel="shortcut icon" href="../../../_static/pvIcon.ico"/>
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../../_static/language_data.js"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          <ul>
+            <li> <a href="../../../index.html">
+              <img src="../../../_static/paraview-logo-small.png"
+              alt="ParaView/Python"></img></a> </li>
+            <li class="version"> version 5.11.2</li>
+          </ul>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../quick-start.html">Quick-Start :  A Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../paraview.html">The ParaView Python Package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../paraview.simple.html">simple</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../paraview.servermanager.html">servermanager</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../paraview.coprocessing.html">coprocessing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../paraview.benchmark.html">benchmark</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../paraview.servermanager_proxies.html">Available readers, sources, writers, filters and animation cues</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../api-changes.html">API Changes between ParaView versions</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">ParaView/Python</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+      <a href="../../../genindex.html" class="float-right">Index</a> 
+          <li><a href="../../index.html">Module code</a> &raquo;</li>
+      <li>paraview.web.decorators</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <h1>Source code for paraview.web.decorators</h1><div class="highlight"><pre>
+<span></span><span class="c1"># --------------------------------------------------------------------------</span>
+<span class="c1"># Handle BooleanDomain</span>
+<span class="c1"># --------------------------------------------------------------------------</span>
+<div class="viewcode-block" id="booleanDomainDecorator"><a class="viewcode-back" href="../../../paraview.web.decorators.html#paraview.web.decorators.booleanDomainDecorator">[docs]</a><span class="k">def</span> <span class="nf">booleanDomainDecorator</span><span class="p">(</span><span class="n">props</span><span class="p">,</span> <span class="n">xmlProps</span><span class="p">,</span> <span class="n">uiProps</span><span class="p">,</span> <span class="n">domain</span><span class="p">):</span>
+    <span class="n">uiProps</span><span class="p">[</span><span class="s2">&quot;widget&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;checkbox&quot;</span>
+    <span class="n">uiProps</span><span class="p">[</span><span class="s2">&quot;type&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;int&quot;</span>
+    <span class="k">return</span> <span class="kc">True</span></div>
+
+
+<span class="c1"># --------------------------------------------------------------------------</span>
+<span class="c1"># Handle EnumerationDomain</span>
+<span class="c1"># --------------------------------------------------------------------------</span>
+<div class="viewcode-block" id="enumerationDomainDecorator"><a class="viewcode-back" href="../../../paraview.web.decorators.html#paraview.web.decorators.enumerationDomainDecorator">[docs]</a><span class="k">def</span> <span class="nf">enumerationDomainDecorator</span><span class="p">(</span><span class="n">props</span><span class="p">,</span> <span class="n">xmlProps</span><span class="p">,</span> <span class="n">uiProps</span><span class="p">,</span> <span class="n">domain</span><span class="p">):</span>
+    <span class="n">uiProps</span><span class="p">[</span><span class="s2">&quot;widget&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;list-1&quot;</span>
+    <span class="n">uiProps</span><span class="p">[</span><span class="s2">&quot;type&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;int&quot;</span>
+
+    <span class="n">valMap</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="k">for</span> <span class="n">entryNum</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">domain</span><span class="o">.</span><span class="n">GetNumberOfEntries</span><span class="p">()):</span>
+        <span class="n">valMap</span><span class="p">[</span><span class="n">domain</span><span class="o">.</span><span class="n">GetEntryText</span><span class="p">(</span><span class="n">entryNum</span><span class="p">)]</span> <span class="o">=</span> <span class="n">domain</span><span class="o">.</span><span class="n">GetEntryValue</span><span class="p">(</span><span class="n">entryNum</span><span class="p">)</span>
+
+    <span class="n">uiProps</span><span class="p">[</span><span class="s2">&quot;values&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">valMap</span>
+
+    <span class="k">return</span> <span class="kc">True</span></div>
+
+
+<span class="c1"># --------------------------------------------------------------------------</span>
+<span class="c1"># Handle StringListDomain</span>
+<span class="c1"># --------------------------------------------------------------------------</span>
+<div class="viewcode-block" id="stringListDomainDecorator"><a class="viewcode-back" href="../../../paraview.web.decorators.html#paraview.web.decorators.stringListDomainDecorator">[docs]</a><span class="k">def</span> <span class="nf">stringListDomainDecorator</span><span class="p">(</span><span class="n">props</span><span class="p">,</span> <span class="n">xmlProps</span><span class="p">,</span> <span class="n">uiProps</span><span class="p">,</span> <span class="n">domain</span><span class="p">):</span>
+    <span class="n">uiProps</span><span class="p">[</span><span class="s2">&quot;widget&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;list-1&quot;</span>
+    <span class="n">uiProps</span><span class="p">[</span><span class="s2">&quot;type&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;str&quot;</span>
+
+    <span class="n">valuesList</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">idx</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">domain</span><span class="o">.</span><span class="n">GetNumberOfStrings</span><span class="p">()):</span>
+        <span class="n">valuesList</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">domain</span><span class="o">.</span><span class="n">GetString</span><span class="p">(</span><span class="n">idx</span><span class="p">))</span>
+
+    <span class="n">uiProps</span><span class="p">[</span><span class="s2">&quot;values&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">valuesList</span>
+
+    <span class="k">return</span> <span class="kc">True</span></div>
+
+
+<span class="c1"># --------------------------------------------------------------------------</span>
+<span class="c1"># Handle TreeDomain</span>
+<span class="c1"># --------------------------------------------------------------------------</span>
+<div class="viewcode-block" id="numpad"><a class="viewcode-back" href="../../../paraview.web.decorators.html#paraview.web.decorators.numpad">[docs]</a><span class="k">def</span> <span class="nf">numpad</span><span class="p">(</span><span class="n">numelts</span><span class="p">):</span>
+    <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">numelts</span><span class="p">)))</span></div>
+
+
+<div class="viewcode-block" id="treeDomainDecorator"><a class="viewcode-back" href="../../../paraview.web.decorators.html#paraview.web.decorators.treeDomainDecorator">[docs]</a><span class="k">def</span> <span class="nf">treeDomainDecorator</span><span class="p">(</span><span class="n">props</span><span class="p">,</span> <span class="n">xmlProps</span><span class="p">,</span> <span class="n">uiProps</span><span class="p">,</span> <span class="n">domain</span><span class="p">):</span>
+    <span class="n">uiProps</span><span class="p">[</span><span class="s2">&quot;type&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;int&quot;</span>
+    <span class="n">uiProps</span><span class="p">[</span><span class="s2">&quot;widget&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;list-n&quot;</span>
+
+    <span class="n">values</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="n">index</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">stack</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">stack</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="n">domain</span><span class="o">.</span><span class="n">GetInformation</span><span class="p">(),</span> <span class="p">[</span><span class="s2">&quot;Multi-block Dataset&quot;</span><span class="p">],</span> <span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+
+    <span class="k">while</span> <span class="nb">len</span><span class="p">(</span><span class="n">stack</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">me</span> <span class="o">=</span> <span class="n">stack</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+
+        <span class="n">dataInformation</span> <span class="o">=</span> <span class="n">me</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="n">accumulatedName</span> <span class="o">=</span> <span class="n">me</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+        <span class="n">parentIndex</span> <span class="o">=</span> <span class="n">me</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+
+        <span class="n">values</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="n">accumulatedName</span><span class="p">,</span> <span class="n">index</span><span class="p">,</span> <span class="n">parentIndex</span><span class="p">])</span>
+
+        <span class="n">infoName</span> <span class="o">=</span> <span class="kc">None</span>
+
+        <span class="k">if</span> <span class="n">dataInformation</span><span class="p">:</span>
+            <span class="n">infoName</span> <span class="o">=</span> <span class="n">dataInformation</span><span class="o">.</span><span class="n">GetCompositeDataClassName</span><span class="p">()</span>
+
+        <span class="k">if</span> <span class="n">infoName</span><span class="p">:</span>
+            <span class="c1"># May have children</span>
+            <span class="n">info</span> <span class="o">=</span> <span class="n">dataInformation</span><span class="o">.</span><span class="n">GetCompositeDataInformation</span><span class="p">()</span>
+            <span class="n">numChildren</span> <span class="o">=</span> <span class="n">info</span><span class="o">.</span><span class="n">GetNumberOfChildren</span><span class="p">()</span>
+            <span class="k">if</span> <span class="n">numChildren</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">numChildren</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+                    <span class="n">child</span> <span class="o">=</span> <span class="n">info</span><span class="o">.</span><span class="n">GetDataInformation</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+                    <span class="n">childName</span> <span class="o">=</span> <span class="n">info</span><span class="o">.</span><span class="n">GetName</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+                    <span class="n">stack</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="n">child</span><span class="p">,</span> <span class="n">accumulatedName</span> <span class="o">+</span> <span class="p">[</span><span class="n">childName</span><span class="p">],</span> <span class="n">index</span><span class="p">])</span>
+
+        <span class="n">index</span> <span class="o">+=</span> <span class="mi">1</span>
+
+    <span class="c1"># valMap = { &#39;Block 1&#39;: 2, &#39;Block 2&#39;: 3 }</span>
+
+    <span class="n">valMap</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="n">blockList</span> <span class="o">=</span> <span class="p">[</span><span class="kc">None</span><span class="p">]</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">values</span><span class="p">)</span>
+    <span class="n">pads</span> <span class="o">=</span> <span class="n">numpad</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">values</span><span class="p">))</span>
+    <span class="k">for</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">values</span><span class="p">:</span>
+        <span class="n">names</span> <span class="o">=</span> <span class="n">value</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="n">blockIdx</span> <span class="o">=</span> <span class="n">value</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+        <span class="n">parentIdx</span> <span class="o">=</span> <span class="n">value</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+        <span class="n">padding</span> <span class="o">=</span> <span class="s2">&quot;-&quot;</span> <span class="o">*</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">names</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="n">valuesEntryName</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">%s</span><span class="s2"> </span><span class="si">%s</span><span class="s2"> </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">blockIdx</span><span class="p">)</span><span class="o">.</span><span class="n">zfill</span><span class="p">(</span><span class="n">pads</span><span class="p">),</span> <span class="n">padding</span><span class="p">,</span> <span class="n">names</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+        <span class="n">valMap</span><span class="p">[</span><span class="n">valuesEntryName</span><span class="p">]</span> <span class="o">=</span> <span class="n">blockIdx</span>
+        <span class="n">blockList</span><span class="p">[</span><span class="n">blockIdx</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;label&quot;</span><span class="p">:</span> <span class="n">names</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="s2">&quot;parent&quot;</span><span class="p">:</span> <span class="n">parentIdx</span><span class="p">,</span> <span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="n">blockIdx</span><span class="p">}</span>
+
+    <span class="n">uiProps</span><span class="p">[</span><span class="s2">&quot;values&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">valMap</span>
+    <span class="n">uiProps</span><span class="p">[</span><span class="s2">&quot;blocks&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">blockList</span>
+    <span class="n">uiProps</span><span class="p">[</span><span class="s2">&quot;sort&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
+
+    <span class="k">return</span> <span class="kc">True</span></div>
+
+
+<span class="c1"># --------------------------------------------------------------------------</span>
+<span class="c1"># Handle ArrayListDomain</span>
+<span class="c1"># --------------------------------------------------------------------------</span>
+<div class="viewcode-block" id="arrayListDomainDecorator"><a class="viewcode-back" href="../../../paraview.web.decorators.html#paraview.web.decorators.arrayListDomainDecorator">[docs]</a><span class="k">def</span> <span class="nf">arrayListDomainDecorator</span><span class="p">(</span><span class="n">props</span><span class="p">,</span> <span class="n">xmlProps</span><span class="p">,</span> <span class="n">uiProps</span><span class="p">,</span> <span class="n">domain</span><span class="p">):</span>
+    <span class="n">uiProps</span><span class="p">[</span><span class="s2">&quot;type&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;str&quot;</span>
+    <span class="n">uiProps</span><span class="p">[</span><span class="s2">&quot;widget&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;list-1&quot;</span>
+
+    <span class="n">fieldMap</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;0&quot;</span><span class="p">:</span> <span class="s2">&quot;POINTS&quot;</span><span class="p">,</span> <span class="s2">&quot;1&quot;</span><span class="p">:</span> <span class="s2">&quot;CELLS&quot;</span><span class="p">}</span>
+    <span class="n">valuesMap</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="n">valuesList</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="k">for</span> <span class="n">arnum</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">domain</span><span class="o">.</span><span class="n">GetNumberOfStrings</span><span class="p">()):</span>
+        <span class="n">stringName</span> <span class="o">=</span> <span class="n">domain</span><span class="o">.</span><span class="n">GetString</span><span class="p">(</span><span class="n">arnum</span><span class="p">)</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">assocVar</span> <span class="o">=</span> <span class="n">domain</span><span class="o">.</span><span class="n">GetFieldAssociation</span><span class="p">(</span><span class="n">arnum</span><span class="p">)</span>
+            <span class="n">valuesMap</span><span class="p">[</span><span class="n">stringName</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">fieldMap</span><span class="p">[</span><span class="nb">str</span><span class="p">(</span><span class="n">assocVar</span><span class="p">)],</span> <span class="n">stringName</span><span class="p">]</span>
+        <span class="k">except</span><span class="p">:</span>
+            <span class="n">valuesList</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">stringName</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">valuesList</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">uiProps</span><span class="p">[</span><span class="s2">&quot;values&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">valuesList</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">uiProps</span><span class="p">[</span><span class="s2">&quot;values&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">valuesMap</span>
+
+    <span class="k">return</span> <span class="kc">True</span></div>
+
+
+<span class="c1"># --------------------------------------------------------------------------</span>
+<span class="c1"># Handle ArraySelectionDomain</span>
+<span class="c1"># --------------------------------------------------------------------------</span>
+<div class="viewcode-block" id="arraySelectionDomainDecorator"><a class="viewcode-back" href="../../../paraview.web.decorators.html#paraview.web.decorators.arraySelectionDomainDecorator">[docs]</a><span class="k">def</span> <span class="nf">arraySelectionDomainDecorator</span><span class="p">(</span><span class="n">props</span><span class="p">,</span> <span class="n">xmlProps</span><span class="p">,</span> <span class="n">uiProps</span><span class="p">,</span> <span class="n">domain</span><span class="p">):</span>
+    <span class="n">uiProps</span><span class="p">[</span><span class="s2">&quot;type&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;str&quot;</span>
+    <span class="n">uiProps</span><span class="p">[</span><span class="s2">&quot;widget&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;list-n&quot;</span>
+
+    <span class="n">valuesList</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="k">for</span> <span class="n">arnum</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">domain</span><span class="o">.</span><span class="n">GetNumberOfStrings</span><span class="p">()):</span>
+        <span class="n">valuesList</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">domain</span><span class="o">.</span><span class="n">GetString</span><span class="p">(</span><span class="n">arnum</span><span class="p">))</span>
+
+    <span class="n">uiProps</span><span class="p">[</span><span class="s2">&quot;values&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">valuesList</span>
+
+    <span class="k">return</span> <span class="kc">True</span></div>
+
+
+<span class="c1"># --------------------------------------------------------------------------</span>
+<span class="c1"># Handle IntRangeDomain, DoubleRangeDomain, and ArrayRangeDomain</span>
+<span class="c1"># --------------------------------------------------------------------------</span>
+<div class="viewcode-block" id="numberRangeDomainDecorator"><a class="viewcode-back" href="../../../paraview.web.decorators.html#paraview.web.decorators.numberRangeDomainDecorator">[docs]</a><span class="k">def</span> <span class="nf">numberRangeDomainDecorator</span><span class="p">(</span><span class="n">props</span><span class="p">,</span> <span class="n">xmlProps</span><span class="p">,</span> <span class="n">uiProps</span><span class="p">,</span> <span class="n">domain</span><span class="p">):</span>
+    <span class="n">uiProps</span><span class="p">[</span><span class="s2">&quot;widget&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;textfield&quot;</span>
+
+    <span class="n">domainClass</span> <span class="o">=</span> <span class="n">domain</span><span class="o">.</span><span class="n">GetClassName</span><span class="p">()</span>
+
+    <span class="k">if</span> <span class="n">domainClass</span><span class="o">.</span><span class="n">rfind</span><span class="p">(</span><span class="s2">&quot;Int&quot;</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">uiProps</span><span class="p">[</span><span class="s2">&quot;type&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;int&quot;</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">uiProps</span><span class="p">[</span><span class="s2">&quot;type&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;float&quot;</span>
+
+    <span class="n">ranges</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="n">idx</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">while</span> <span class="n">domain</span><span class="o">.</span><span class="n">GetMinimumExists</span><span class="p">(</span><span class="n">idx</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span> <span class="ow">and</span> <span class="n">domain</span><span class="o">.</span><span class="n">GetMaximumExists</span><span class="p">(</span><span class="n">idx</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="n">ranges</span><span class="o">.</span><span class="n">append</span><span class="p">({</span><span class="s2">&quot;min&quot;</span><span class="p">:</span> <span class="n">domain</span><span class="o">.</span><span class="n">GetMinimum</span><span class="p">(</span><span class="n">idx</span><span class="p">),</span> <span class="s2">&quot;max&quot;</span><span class="p">:</span> <span class="n">domain</span><span class="o">.</span><span class="n">GetMaximum</span><span class="p">(</span><span class="n">idx</span><span class="p">)})</span>
+        <span class="n">idx</span> <span class="o">+=</span> <span class="mi">1</span>
+
+    <span class="n">uiProps</span><span class="p">[</span><span class="s2">&quot;range&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">ranges</span>
+
+    <span class="k">if</span> <span class="n">idx</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">False</span>
+    <span class="k">return</span> <span class="kc">True</span></div>
+
+
+<span class="c1"># --------------------------------------------------------------------------</span>
+<span class="c1"># Handle ProxyListDomain</span>
+<span class="c1"># --------------------------------------------------------------------------</span>
+<div class="viewcode-block" id="proxyListDomainDecorator"><a class="viewcode-back" href="../../../paraview.web.decorators.html#paraview.web.decorators.proxyListDomainDecorator">[docs]</a><span class="k">def</span> <span class="nf">proxyListDomainDecorator</span><span class="p">(</span><span class="n">props</span><span class="p">,</span> <span class="n">xmlProps</span><span class="p">,</span> <span class="n">uiProps</span><span class="p">,</span> <span class="n">domain</span><span class="p">):</span>
+    <span class="n">uiProps</span><span class="p">[</span><span class="s2">&quot;widget&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;list-1&quot;</span>
+    <span class="n">uiProps</span><span class="p">[</span><span class="s2">&quot;size&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="n">uiProps</span><span class="p">[</span><span class="s2">&quot;type&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;proxy&quot;</span>
+    <span class="n">values</span> <span class="o">=</span> <span class="p">{}</span>
+
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">domain</span><span class="o">.</span><span class="n">GetNumberOfProxies</span><span class="p">()):</span>
+        <span class="n">nextProxy</span> <span class="o">=</span> <span class="n">domain</span><span class="o">.</span><span class="n">GetProxy</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+        <span class="n">values</span><span class="p">[</span><span class="n">nextProxy</span><span class="o">.</span><span class="n">GetXMLLabel</span><span class="p">()]</span> <span class="o">=</span> <span class="n">nextProxy</span><span class="o">.</span><span class="n">GetGlobalIDAsString</span><span class="p">()</span>
+
+    <span class="n">uiProps</span><span class="p">[</span><span class="s2">&quot;values&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">values</span>
+    <span class="k">return</span> <span class="kc">True</span></div>
+
+
+<span class="c1"># --------------------------------------------------------------------------</span>
+<span class="c1"># Decorate for PropertyWidgetDecorator hint with type=&quot;ClipScalarDecorator&quot;</span>
+<span class="c1"># --------------------------------------------------------------------------</span>
+<span class="c1"># FIXME: Remove this when GenericDecorator goes into master</span>
+<div class="viewcode-block" id="clipScalarDecorator"><a class="viewcode-back" href="../../../paraview.web.decorators.html#paraview.web.decorators.clipScalarDecorator">[docs]</a><span class="k">def</span> <span class="nf">clipScalarDecorator</span><span class="p">(</span><span class="n">prop</span><span class="p">,</span> <span class="n">uiElt</span><span class="p">,</span> <span class="n">hint</span><span class="p">):</span>
+    <span class="n">proxy</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">proxy</span> <span class="o">=</span> <span class="n">prop</span><span class="o">.</span><span class="n">SMProperty</span><span class="o">.</span><span class="n">GetParent</span><span class="p">()</span>
+    <span class="k">except</span><span class="p">:</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">proxy</span> <span class="o">=</span> <span class="n">prop</span><span class="o">.</span><span class="n">GetParent</span><span class="p">()</span>
+        <span class="k">except</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;ERROR: unable to get proxy for property &quot;</span> <span class="o">+</span> <span class="n">prop</span><span class="o">.</span><span class="n">Name</span><span class="p">)</span>
+            <span class="k">return</span>
+    <span class="n">excludeAttr</span> <span class="o">=</span> <span class="n">hint</span><span class="o">.</span><span class="n">GetAttribute</span><span class="p">(</span><span class="s2">&quot;exclude&quot;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">excludeAttr</span> <span class="ow">or</span> <span class="n">excludeAttr</span> <span class="o">!=</span> <span class="s2">&quot;1&quot;</span><span class="p">:</span>
+        <span class="n">depends</span> <span class="o">=</span> <span class="n">proxy</span><span class="o">.</span><span class="n">GetGlobalIDAsString</span><span class="p">()</span> <span class="o">+</span> <span class="s2">&quot;:ClipFunction:Scalar:1&quot;</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">depends</span> <span class="o">=</span> <span class="n">proxy</span><span class="o">.</span><span class="n">GetGlobalIDAsString</span><span class="p">()</span> <span class="o">+</span> <span class="s2">&quot;:ClipFunction:Scalar:0&quot;</span>
+    <span class="n">uiElt</span><span class="p">[</span><span class="s2">&quot;depends&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">depends</span></div>
+
+
+<span class="c1"># --------------------------------------------------------------------------</span>
+<span class="c1"># Decorate for PropertyWidgetDecorator hint with type=&quot;GenericDecorator&quot;</span>
+<span class="c1"># --------------------------------------------------------------------------</span>
+<div class="viewcode-block" id="genericDecorator"><a class="viewcode-back" href="../../../paraview.web.decorators.html#paraview.web.decorators.genericDecorator">[docs]</a><span class="k">def</span> <span class="nf">genericDecorator</span><span class="p">(</span><span class="n">prop</span><span class="p">,</span> <span class="n">uiElt</span><span class="p">,</span> <span class="n">hint</span><span class="p">):</span>
+    <span class="n">proxy</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">proxy</span> <span class="o">=</span> <span class="n">prop</span><span class="o">.</span><span class="n">SMProperty</span><span class="o">.</span><span class="n">GetParent</span><span class="p">()</span>
+    <span class="k">except</span><span class="p">:</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">proxy</span> <span class="o">=</span> <span class="n">prop</span><span class="o">.</span><span class="n">GetParent</span><span class="p">()</span>
+        <span class="k">except</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;ERROR: unable to get proxy for property &quot;</span> <span class="o">+</span> <span class="n">prop</span><span class="o">.</span><span class="n">Name</span><span class="p">)</span>
+            <span class="k">return</span>
+
+    <span class="n">mode</span> <span class="o">=</span> <span class="n">hint</span><span class="o">.</span><span class="n">GetAttribute</span><span class="p">(</span><span class="s2">&quot;mode&quot;</span><span class="p">)</span>
+
+    <span class="c1"># For now we just handle visbility mode</span>
+    <span class="k">if</span> <span class="n">mode</span> <span class="o">==</span> <span class="s2">&quot;visibility&quot;</span><span class="p">:</span>
+        <span class="n">propName</span> <span class="o">=</span> <span class="n">hint</span><span class="o">.</span><span class="n">GetAttribute</span><span class="p">(</span><span class="s2">&quot;property&quot;</span><span class="p">)</span>
+        <span class="n">value</span> <span class="o">=</span> <span class="n">hint</span><span class="o">.</span><span class="n">GetAttribute</span><span class="p">(</span><span class="s2">&quot;value&quot;</span><span class="p">)</span>
+        <span class="n">inverse</span> <span class="o">=</span> <span class="n">hint</span><span class="o">.</span><span class="n">GetAttribute</span><span class="p">(</span><span class="s2">&quot;inverse&quot;</span><span class="p">)</span>
+        <span class="n">visibility</span> <span class="o">=</span> <span class="s2">&quot;1&quot;</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">inverse</span> <span class="ow">or</span> <span class="n">inverse</span> <span class="o">!=</span> <span class="s2">&quot;1&quot;</span><span class="p">:</span>
+            <span class="n">visibility</span> <span class="o">=</span> <span class="s2">&quot;1&quot;</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">visibility</span> <span class="o">=</span> <span class="s2">&quot;0&quot;</span>
+
+        <span class="n">uiElt</span><span class="p">[</span><span class="s2">&quot;depends&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">%s</span><span class="s2">:</span><span class="si">%s</span><span class="s2">:</span><span class="si">%s</span><span class="s2">:</span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span>
+            <span class="n">proxy</span><span class="o">.</span><span class="n">GetGlobalIDAsString</span><span class="p">(),</span>
+            <span class="n">propName</span><span class="p">,</span>
+            <span class="n">value</span><span class="p">,</span>
+            <span class="n">visibility</span><span class="p">,</span>
+        <span class="p">)</span></div>
+
+
+<span class="c1"># --------------------------------------------------------------------------</span>
+<span class="c1"># Decorate for Widget hint with type=&quot;multi_line&quot;</span>
+<span class="c1"># --------------------------------------------------------------------------</span>
+<div class="viewcode-block" id="multiLineDecorator"><a class="viewcode-back" href="../../../paraview.web.decorators.html#paraview.web.decorators.multiLineDecorator">[docs]</a><span class="k">def</span> <span class="nf">multiLineDecorator</span><span class="p">(</span><span class="n">prop</span><span class="p">,</span> <span class="n">uiElt</span><span class="p">,</span> <span class="n">hint</span><span class="p">):</span>
+    <span class="n">uiElt</span><span class="p">[</span><span class="s2">&quot;widget&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;textarea&quot;</span></div>
+
+
+<span class="c1"># --------------------------------------------------------------------------</span>
+<span class="c1"># Decorate for proxyEditorPropertyWidget hint</span>
+<span class="c1"># --------------------------------------------------------------------------</span>
+<div class="viewcode-block" id="proxyEditorPropertyWidgetDecorator"><a class="viewcode-back" href="../../../paraview.web.decorators.html#paraview.web.decorators.proxyEditorPropertyWidgetDecorator">[docs]</a><span class="k">def</span> <span class="nf">proxyEditorPropertyWidgetDecorator</span><span class="p">(</span><span class="n">prop</span><span class="p">,</span> <span class="n">uiElt</span><span class="p">,</span> <span class="n">hint</span><span class="p">):</span>
+    <span class="n">propName</span> <span class="o">=</span> <span class="n">hint</span><span class="o">.</span><span class="n">GetAttribute</span><span class="p">(</span><span class="s2">&quot;property&quot;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">propName</span><span class="p">:</span>
+        <span class="n">uiElt</span><span class="p">[</span><span class="s2">&quot;visibilityProperty&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">propName</span></div>
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2013, Kitware, Inc..</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+  <!-- KW:BEGIN -->
+  <script type="text/javascript" src="/paraview-docs/paraview-version.js"></script>
+  <!-- KW:END -->
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

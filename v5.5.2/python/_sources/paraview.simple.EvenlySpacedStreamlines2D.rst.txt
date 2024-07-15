@@ -1,0 +1,203 @@
+paraview.simple.EvenlySpacedStreamlines2D
+=========================================
+
+.. currentmodule:: paraview.simple
+
+.. autofunction:: EvenlySpacedStreamlines2D
+
+Data Descriptors
+----------------
+
+
+   
+   ClosedLoopMaximumDistance
+       Loops are considered closed if the have two points at
+       distance less than this. This is expressed in IntegrationStepUnit.
+   
+   ComputeVorticity
+       Specify whether or not to compute
+       vorticity.
+   
+   InitialStepLength
+       This property specifies the initial integration step
+       size. For non-adaptive integrators (Runge-Kutta 2 and Runge-Kutta 4),
+       it is fixed (always equal to this initial value) throughout the
+       integration.
+   
+   Input
+       This property specifies the input to the filter.
+   
+   IntegrationStepUnit
+       This property specifies the unit for
+       Initial integration step size. The Length unit refers
+       to the arc length that a particle travels/advects within a single step.
+       The Cell Length unit represents the step size as a number of
+       cells.
+   
+   IntegratorType
+       This property determines which integrator (with
+       increasing accuracy) to use for creating streamlines.
+   
+   InterpolatorType
+       This property determines which interpolator to use for
+       evaluating the velocity vector field. The first is faster though the
+       second is more robust in locating cells during streamline
+       integration.
+   
+   MaximumSteps
+       This property specifies the maximum number of steps,
+       beyond which streamline integration is terminated.
+   
+   SeparatingDistance
+       Specify the separating distance between
+       streamlines expressed in IntegrationStepUnit.
+   
+   SeparatingDistanceRatio
+       Specifies SeparatingDistanceRatio. If streamlines
+       get closer than SeparatingDistance \* SeparatingDistanceRatio to
+       other streamlines integration stops.
+   
+   StartPosition
+       Specify the starting point (seed) of the first streamline
+       in the global coordinate system.
+   
+   TerminalSpeed
+       This property specifies the terminal speed, below which
+       particle advection/integration is terminated.
+   
+   Vectors
+       This property contains the name of the vector array from
+       which to generate streamlines.
+   
+   
+
+Data Descriptors inherited from SourceProxy
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+   
+   CellData
+       Returns cell data information
+   
+   FieldData
+       Returns field data information
+   
+   PointData
+       Returns point data information
+   
+   
+
+Data Descriptors inherited from Proxy
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+   
+   __dict__
+       dictionary for instance variables (if defined)
+   
+   __weakref__
+       list of weak references to the object (if defined)
+   
+
+Methods
+-------
+
+
+   
+   Initialize = aInitialize(self, connection=None, update=True)
+   
+   
+
+Methods inherited from SourceProxy
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+   
+   FileNameChanged(self)
+       Called when the filename of a source proxy is changed.
+   
+   GetCellDataInformation(self)
+       Returns the associated cell data information.
+   
+   GetDataInformation(self, idx=None)
+       This method returns a DataInformation wrapper around a
+       vtkPVDataInformation
+   
+   GetFieldDataInformation(self)
+       Returns the associated cell data information.
+   
+   GetPointDataInformation(self)
+       Returns the associated point data information.
+   
+   UpdatePipeline(self, time=None)
+       This method updates the server-side VTK pipeline and the associated
+       data information. Make sure to update a source to validate the output
+       meta-data.
+   
+   UpdatePipelineInformation(self)
+       This method updates the meta-data of the server-side VTK pipeline and
+       the associated information properties
+   
+   __getitem__(self, idx)
+       Given a slice, int or string, returns the corresponding
+       output port
+   
+   
+
+Methods inherited from Proxy
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+   
+   GetProperty(self, name)
+       Given a property name, returns the property object.
+   
+   GetPropertyValue(self, name)
+       Returns a scalar for properties with 1 elements, the property
+       itself for vectors.
+   
+   InitializeFromProxy(self, aProxy, update=True)
+       Constructor. Assigns proxy to self.SMProxy, updates the server
+       object as well as register the proxy in _pyproxies dictionary.
+   
+   ListProperties(self)
+       Returns a list of all property names on this proxy.
+   
+   SetPropertyWithName(self, pname, arg)
+       Generic method for setting the value of a property.
+   
+   __del__(self)
+       Destructor. Cleans up all observers as well as remove
+       the proxy from the _pyproxies dictionary
+   
+   __eq__(self, other)
+       Returns true if the underlying SMProxies are the same.
+   
+   __getattr__(self, name)
+       With the exception of a few overloaded methods,
+       returns the SMProxy method
+   
+   __hash__(self)
+   
+   __init__(self, \*\*args)
+       Default constructor. It can be used to initialize properties
+       by passing keyword arguments where the key is the name of the
+       property. In addition registrationGroup and registrationName (optional)
+       can be specified (as keyword arguments) to automatically register
+       the proxy with the proxy manager.
+   
+   __iter__(self)
+       Creates an iterator for the properties.
+   
+   __ne__(self, other)
+       Returns false if the underlying SMProxies are the same.
+   
+   __setattr__(self, name, value)
+   
+   add_attribute(self, name, value)
+   
+   
+
+
+
+For the full list of servermanager proxies, please refer to :doc:`Available readers, sources, writers, filters and animation cues <paraview.servermanager_proxies>`

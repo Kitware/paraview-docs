@@ -1,0 +1,194 @@
+paraview.simple.Wavelet
+=======================
+
+.. currentmodule:: paraview.simple
+
+.. autofunction:: Wavelet
+
+Data Descriptors
+----------------
+
+
+   
+   Center
+       This property specifies the 3D coordinates of the center of
+       the periodic function (x, y and z in the equation).
+   
+   Maximum
+       This parameter specifies the maximum value (M) of the
+       function.
+   
+   StandardDeviation
+       This property specifies the standard deviation of the
+       Gaussian used in computing this function.
+   
+   SubsampleRate
+       This property specifies the rate at which to subsample
+       the volume. The extent of the dataset in each dimension will be divided
+       by this value. (See the Whole Extent property.)
+   
+   WholeExtent
+       The six values in this property indicate the X, Y, and Z
+       extent of the output data. The first two values represent the minimum
+       and maximum X indices, the next two are the minimum and maximum Y
+       indices, and the last two are the minimum and maximum Z
+       indices.
+   
+   XFreq
+       This property specifies the natural frequency in X (XF
+       in the equation).
+   
+   XMag
+       This property specifies the wave amplitude in X (XM in
+       the equation).
+   
+   YFreq
+       This property specifies the natural frequency in Y (YF
+       in the equation).
+   
+   YMag
+       This property specifies the wave amplitude in Y (YM in
+       the equation).
+   
+   ZFreq
+       This property specifies the natural frequency in Z (ZF
+       in the equation).
+   
+   ZMag
+       This property specifies the wave amplitude in Z (ZM in
+       the equation).
+   
+   
+
+Data Descriptors inherited from SourceProxy
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+   
+   CellData
+       Returns cell data information
+   
+   FieldData
+       Returns field data information
+   
+   PointData
+       Returns point data information
+   
+   
+
+Data Descriptors inherited from Proxy
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+   
+   __dict__
+       dictionary for instance variables (if defined)
+   
+   __weakref__
+       list of weak references to the object (if defined)
+   
+
+Methods
+-------
+
+
+   
+   Initialize = aInitialize(self, connection=None, update=True)
+   
+   
+
+Methods inherited from SourceProxy
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+   
+   FileNameChanged(self)
+       Called when the filename of a source proxy is changed.
+   
+   GetCellDataInformation(self)
+       Returns the associated cell data information.
+   
+   GetDataInformation(self, idx=None)
+       This method returns a DataInformation wrapper around a
+       vtkPVDataInformation
+   
+   GetFieldDataInformation(self)
+       Returns the associated cell data information.
+   
+   GetPointDataInformation(self)
+       Returns the associated point data information.
+   
+   UpdatePipeline(self, time=None)
+       This method updates the server-side VTK pipeline and the associated
+       data information. Make sure to update a source to validate the output
+       meta-data.
+   
+   UpdatePipelineInformation(self)
+       This method updates the meta-data of the server-side VTK pipeline and
+       the associated information properties
+   
+   __getitem__(self, idx)
+       Given a slice, int or string, returns the corresponding
+       output port
+   
+   
+
+Methods inherited from Proxy
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+   
+   GetProperty(self, name)
+       Given a property name, returns the property object.
+   
+   GetPropertyValue(self, name)
+       Returns a scalar for properties with 1 elements, the property
+       itself for vectors.
+   
+   InitializeFromProxy(self, aProxy, update=True)
+       Constructor. Assigns proxy to self.SMProxy, updates the server
+       object as well as register the proxy in _pyproxies dictionary.
+   
+   ListProperties(self)
+       Returns a list of all property names on this proxy.
+   
+   SetPropertyWithName(self, pname, arg)
+       Generic method for setting the value of a property.
+   
+   __del__(self)
+       Destructor. Cleans up all observers as well as remove
+       the proxy from the _pyproxies dictionary
+   
+   __eq__(self, other)
+       Returns true if the underlying SMProxies are the same.
+   
+   __getattr__(self, name)
+       With the exception of a few overloaded methods,
+       returns the SMProxy method
+   
+   __hash__(self)
+       Return hash(self).
+   
+   __init__(self, \*\*args)
+       Default constructor. It can be used to initialize properties
+       by passing keyword arguments where the key is the name of the
+       property. In addition registrationGroup and registrationName (optional)
+       can be specified (as keyword arguments) to automatically register
+       the proxy with the proxy manager.
+   
+   __iter__(self)
+       Creates an iterator for the properties.
+   
+   __ne__(self, other)
+       Returns false if the underlying SMProxies are the same.
+   
+   __setattr__(self, name, value)
+       Implement setattr(self, name, value).
+   
+   add_attribute(self, name, value)
+   
+   
+
+
+
+For the full list of servermanager proxies, please refer to :doc:`Available readers, sources, writers, filters and animation cues <paraview.servermanager_proxies>`

@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>paraview.catalyst.detail &mdash; ParaView/Python 5.11.0 documentation</title>
+      <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          <ul>
+            <li> <a href="../../../index.html">
+              <img src="../../../_static/paraview-logo-small.png"
+              alt="ParaView/Python"></img></a> </li>
+            <li class="version"> version 5.11.0</li>
+          </ul>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../quick-start.html">Quick-Start :  A Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../paraview.html">The ParaView Python Package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../paraview.simple.html">simple</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../paraview.servermanager.html">servermanager</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../paraview.coprocessing.html">coprocessing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../paraview.benchmark.html">benchmark</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../paraview.servermanager_proxies.html">Available readers, sources, writers, filters and animation cues</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../api-changes.html">API Changes between ParaView versions</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">ParaView/Python</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+      <a href="../../../genindex.html" class="float-right">Index</a> 
+          <li><a href="../../index.html">Module code</a> &raquo;</li>
+          <li><a href="../catalyst.html">paraview.catalyst</a> &raquo;</li>
+      <li>paraview.catalyst.detail</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <h1>Source code for paraview.catalyst.detail</h1><div class="highlight"><pre>
+<span></span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Internal functions not intended for use by users. This may change without</span>
+<span class="sd">notice.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="kn">from</span> <span class="nn">..</span> <span class="kn">import</span> <span class="n">logger</span>
+
+<span class="kn">from</span> <span class="nn">..modules.vtkPVInSitu</span> <span class="kn">import</span> <span class="n">vtkInSituPipelinePython</span>
+
+<span class="kn">from</span> <span class="nn">..modules.vtkPVPythonCatalyst</span> <span class="kn">import</span> <span class="n">vtkCPPythonScriptV2Helper</span>
+
+
+<span class="k">def</span> <span class="nf">_get_active_helper</span><span class="p">():</span>
+    <span class="k">return</span> <span class="n">vtkCPPythonScriptV2Helper</span><span class="o">.</span><span class="n">GetActiveInstance</span><span class="p">()</span>
+
+
+<span class="k">def</span> <span class="nf">_get_active_data_description</span><span class="p">():</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">IsInsitu</span><span class="p">():</span>
+        <span class="k">return</span> <span class="kc">None</span>
+    <span class="n">helper</span> <span class="o">=</span> <span class="n">_get_active_helper</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">helper</span><span class="o">.</span><span class="n">GetDataDescription</span><span class="p">()</span>
+
+<span class="k">def</span> <span class="nf">_transform_registration_name</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
+    <span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">get_args</span>
+    <span class="kn">import</span> <span class="nn">re</span><span class="o">,</span> <span class="nn">argparse</span>
+
+    <span class="n">regex</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;^\${args\.([\w.-]+)}$&quot;</span><span class="p">)</span>
+    <span class="n">m</span> <span class="o">=</span> <span class="n">regex</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">m</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">name</span>
+
+    <span class="n">argname</span> <span class="o">=</span> <span class="n">m</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">parser</span> <span class="o">=</span> <span class="n">argparse</span><span class="o">.</span><span class="n">ArgumentParser</span><span class="p">()</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s2">&quot;--</span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">argname</span><span class="p">,</span> <span class="n">dest</span><span class="o">=</span><span class="n">argname</span><span class="p">)</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s2">&quot;-</span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">argname</span><span class="p">,</span> <span class="n">dest</span><span class="o">=</span><span class="n">argname</span><span class="p">)</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">parser</span><span class="o">.</span><span class="n">parse_known_args</span><span class="p">(</span><span class="n">get_args</span><span class="p">())[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">val</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="n">argname</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">val</span> <span class="k">if</span> <span class="n">val</span> <span class="k">else</span> <span class="n">name</span>
+
+<div class="viewcode-block" id="IsInsitu"><a class="viewcode-back" href="../../../paraview.catalyst.detail.html#paraview.catalyst.detail.IsInsitu">[docs]</a><span class="k">def</span> <span class="nf">IsInsitu</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot;Returns True if executing in an insitu environment, else false&quot;&quot;&quot;</span>
+    <span class="n">helper</span> <span class="o">=</span> <span class="n">_get_active_helper</span><span class="p">()</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">helper</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="IsLegacyCatalystAdaptor"><a class="viewcode-back" href="../../../paraview.catalyst.detail.html#paraview.catalyst.detail.IsLegacyCatalystAdaptor">[docs]</a><span class="k">def</span> <span class="nf">IsLegacyCatalystAdaptor</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot;Returns True if the active execution environment is from within a legacy</span>
+<span class="sd">    Catalyst adaptor implementation that uses vtkCPProcessor etc. manually,</span>
+<span class="sd">    instead of the Conduit-based in situ API&quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">_get_active_data_description</span><span class="p">()</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span></div>
+
+<span class="k">if</span> <span class="n">IsInsitu</span><span class="p">()</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">IsLegacyCatalystAdaptor</span><span class="p">():</span>
+    <span class="kn">from</span> <span class="nn">..modules.vtkPVInSitu</span> <span class="kn">import</span> <span class="n">vtkInSituInitializationHelper</span>
+
+<div class="viewcode-block" id="IsCatalystInSituAPI"><a class="viewcode-back" href="../../../paraview.catalyst.detail.html#paraview.catalyst.detail.IsCatalystInSituAPI">[docs]</a><span class="k">def</span> <span class="nf">IsCatalystInSituAPI</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot;Returns True if the active execution environment is from within</span>
+<span class="sd">    an implementation of the Conduit-based Catalyst In Situ API.&quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">IsInsitu</span><span class="p">()</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">IsLegacyCatalystAdaptor</span><span class="p">()</span> <span class="ow">and</span> <span class="n">vtkInSituInitializationHelper</span><span class="o">.</span><span class="n">IsInitialized</span><span class="p">()</span></div>
+
+<div class="viewcode-block" id="IsInsituInput"><a class="viewcode-back" href="../../../paraview.catalyst.detail.html#paraview.catalyst.detail.IsInsituInput">[docs]</a><span class="k">def</span> <span class="nf">IsInsituInput</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">name</span> <span class="ow">or</span> <span class="ow">not</span> <span class="n">IsInsitu</span><span class="p">():</span>
+        <span class="k">return</span> <span class="kc">False</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="n">_transform_registration_name</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+    <span class="n">dataDesc</span> <span class="o">=</span> <span class="n">_get_active_data_description</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">IsLegacyCatalystAdaptor</span><span class="p">():</span>
+        <span class="c1"># Legacy Catalyst</span>
+        <span class="k">if</span> <span class="n">dataDesc</span><span class="o">.</span><span class="n">GetInputDescriptionByName</span><span class="p">(</span><span class="n">name</span><span class="p">)</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">True</span>
+    <span class="k">elif</span> <span class="n">IsCatalystInSituAPI</span><span class="p">()</span> <span class="ow">and</span> <span class="p">(</span><span class="n">vtkInSituInitializationHelper</span><span class="o">.</span><span class="n">GetProducer</span><span class="p">(</span><span class="n">name</span><span class="p">)</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">):</span>
+        <span class="c1"># Catalyst 2.0</span>
+        <span class="k">return</span> <span class="kc">True</span>
+    <span class="k">return</span> <span class="kc">False</span></div>
+
+
+<div class="viewcode-block" id="RegisterExtractor"><a class="viewcode-back" href="../../../paraview.catalyst.detail.html#paraview.catalyst.detail.RegisterExtractor">[docs]</a><span class="k">def</span> <span class="nf">RegisterExtractor</span><span class="p">(</span><span class="n">extractor</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Keeps track of extractors created inside a specific Catalyst</span>
+<span class="sd">    script.  This is useful to ensure we only update the extractors for that</span>
+<span class="sd">    current script when multiple scripts are being executed in the same run.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">assert</span> <span class="n">IsInsitu</span><span class="p">()</span>
+    <span class="n">_get_active_helper</span><span class="p">()</span><span class="o">.</span><span class="n">RegisterExtractor</span><span class="p">(</span><span class="n">extractor</span><span class="o">.</span><span class="n">SMProxy</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="RegisterView"><a class="viewcode-back" href="../../../paraview.catalyst.detail.html#paraview.catalyst.detail.RegisterView">[docs]</a><span class="k">def</span> <span class="nf">RegisterView</span><span class="p">(</span><span class="n">view</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Keeps track of views created inside a specific Catalyst</span>
+<span class="sd">    script.  This is useful to ensure we only update the views for the</span>
+<span class="sd">    current script when multiple scripts are being executed in the same run.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">assert</span> <span class="n">IsInsitu</span><span class="p">()</span>
+    <span class="n">_get_active_helper</span><span class="p">()</span><span class="o">.</span><span class="n">RegisterView</span><span class="p">(</span><span class="n">view</span><span class="o">.</span><span class="n">SMProxy</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">IsCatalystInSituAPI</span><span class="p">():</span>
+        <span class="n">view</span><span class="o">.</span><span class="n">ViewTime</span> <span class="o">=</span> <span class="n">vtkInSituInitializationHelper</span><span class="o">.</span><span class="n">GetTime</span><span class="p">()</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">view</span><span class="o">.</span><span class="n">ViewTime</span> <span class="o">=</span> <span class="n">_get_active_data_description</span><span class="p">()</span><span class="o">.</span><span class="n">GetTime</span><span class="p">()</span></div>
+
+
+<div class="viewcode-block" id="CreateProducer"><a class="viewcode-back" href="../../../paraview.catalyst.detail.html#paraview.catalyst.detail.CreateProducer">[docs]</a><span class="k">def</span> <span class="nf">CreateProducer</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
+    <span class="k">assert</span> <span class="n">IsInsituInput</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+    <span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">log_level</span>
+    <span class="kn">from</span> <span class="nn">..</span> <span class="kn">import</span> <span class="n">log</span>
+
+    <span class="n">originalname</span> <span class="o">=</span> <span class="n">name</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="n">_transform_registration_name</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+    <span class="n">log</span><span class="p">(</span><span class="n">log_level</span><span class="p">(),</span> <span class="s2">&quot;creating producer for simulation input named &#39;</span><span class="si">%s</span><span class="s2">&#39; (original-name=</span><span class="si">%s</span><span class="s2">)&quot;</span> \
+            <span class="o">%</span> <span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">originalname</span><span class="p">))</span>
+    <span class="k">if</span> <span class="n">IsCatalystInSituAPI</span><span class="p">():</span>
+        <span class="c1"># Catalyst 2.0</span>
+        <span class="kn">from</span> <span class="nn">paraview</span> <span class="kn">import</span> <span class="n">servermanager</span>
+        <span class="n">producer</span> <span class="o">=</span> <span class="n">servermanager</span><span class="o">.</span><span class="n">_getPyProxy</span><span class="p">(</span><span class="n">vtkInSituInitializationHelper</span><span class="o">.</span><span class="n">GetProducer</span><span class="p">(</span><span class="n">name</span><span class="p">))</span>
+
+        <span class="c1"># since state file may have arbitrary properties being specified</span>
+        <span class="c1"># on the original source, we ensure we ignore them</span>
+        <span class="n">producer</span><span class="o">.</span><span class="n">IgnoreUnknownSetRequests</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="k">return</span> <span class="n">producer</span>
+
+    <span class="c1"># Legacy Catalyst</span>
+    <span class="kn">from</span> <span class="nn">paraview</span> <span class="kn">import</span> <span class="n">servermanager</span>
+    <span class="n">helper</span> <span class="o">=</span> <span class="n">_get_active_helper</span><span class="p">()</span>
+    <span class="n">producer</span> <span class="o">=</span> <span class="n">helper</span><span class="o">.</span><span class="n">GetTrivialProducer</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+    <span class="n">producer</span> <span class="o">=</span> <span class="n">servermanager</span><span class="o">.</span><span class="n">_getPyProxy</span><span class="p">(</span><span class="n">producer</span><span class="p">)</span>
+
+    <span class="c1"># since state file may have arbitrary properties being specified</span>
+    <span class="c1"># on the original source, we ensure we ignore them</span>
+    <span class="n">producer</span><span class="o">.</span><span class="n">IgnoreUnknownSetRequests</span> <span class="o">=</span> <span class="kc">True</span>
+    <span class="k">return</span> <span class="n">producer</span></div>
+
+
+<div class="viewcode-block" id="InitializePythonEnvironment"><a class="viewcode-back" href="../../../paraview.catalyst.detail.html#paraview.catalyst.detail.InitializePythonEnvironment">[docs]</a><span class="k">def</span> <span class="nf">InitializePythonEnvironment</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    This is called in vtkCPPythonPipeline to initialize the Python</span>
+<span class="sd">    environment to be more suitable for Catalyst in situ execution.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">log_level</span>
+    <span class="kn">from</span> <span class="nn">..</span> <span class="kn">import</span> <span class="n">log</span>
+
+    <span class="n">log</span><span class="p">(</span><span class="n">log_level</span><span class="p">(),</span> <span class="s2">&quot;initializing Python environment for in situ&quot;</span><span class="p">)</span>
+
+    <span class="c1"># disable writing bytecode, we don&#39;t want to generate pyc files</span>
+    <span class="c1"># when running in situ.</span>
+    <span class="n">log</span><span class="p">(</span><span class="n">log_level</span><span class="p">(),</span> <span class="s2">&quot;disable byte-code generation&quot;</span><span class="p">)</span>
+    <span class="kn">import</span> <span class="nn">sys</span>
+    <span class="n">sys</span><span class="o">.</span><span class="n">dont_write_bytecode</span> <span class="o">=</span> <span class="kc">True</span>
+
+    <span class="c1"># ensure we can import ParaView servermanager and necessary modules</span>
+    <span class="n">log</span><span class="p">(</span><span class="n">log_level</span><span class="p">(),</span> <span class="s2">&quot;import paraview.servermanager&quot;</span><span class="p">)</span>
+    <span class="kn">from</span> <span class="nn">paraview</span> <span class="kn">import</span> <span class="n">servermanager</span>
+
+    <span class="c1"># import Python wrapping for vtkPVCatalyst module</span>
+    <span class="n">log</span><span class="p">(</span><span class="n">log_level</span><span class="p">(),</span> <span class="s2">&quot;import paraview.modules.vtkPVCatalyst&quot;</span><span class="p">)</span>
+    <span class="kn">from</span> <span class="nn">paraview.modules</span> <span class="kn">import</span> <span class="n">vtkPVCatalyst</span></div>
+
+<div class="viewcode-block" id="RegisterPackageFromZip"><a class="viewcode-back" href="../../../paraview.catalyst.detail.html#paraview.catalyst.detail.RegisterPackageFromZip">[docs]</a><span class="k">def</span> <span class="nf">RegisterPackageFromZip</span><span class="p">(</span><span class="n">zipfilename</span><span class="p">,</span> <span class="n">packagename</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">importers</span>
+    <span class="n">zipfilename</span> <span class="o">=</span> <span class="n">_mpi_exchange_if_needed</span><span class="p">(</span><span class="n">zipfilename</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">importers</span><span class="o">.</span><span class="n">add_file</span><span class="p">(</span><span class="n">zipfilename</span><span class="p">,</span> <span class="n">packagename</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="RegisterPackageFromDir"><a class="viewcode-back" href="../../../paraview.catalyst.detail.html#paraview.catalyst.detail.RegisterPackageFromDir">[docs]</a><span class="k">def</span> <span class="nf">RegisterPackageFromDir</span><span class="p">(</span><span class="n">path</span><span class="p">):</span>
+    <span class="kn">import</span> <span class="nn">os.path</span>
+    <span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">importers</span>
+    <span class="n">packagename</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
+    <span class="n">init_py</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="s2">&quot;__init__.py&quot;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">importers</span><span class="o">.</span><span class="n">add_file</span><span class="p">(</span><span class="n">init_py</span><span class="p">,</span> <span class="n">packagename</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="RegisterModuleFromFile"><a class="viewcode-back" href="../../../paraview.catalyst.detail.html#paraview.catalyst.detail.RegisterModuleFromFile">[docs]</a><span class="k">def</span> <span class="nf">RegisterModuleFromFile</span><span class="p">(</span><span class="n">filename</span><span class="p">):</span>
+    <span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">importers</span>
+    <span class="k">return</span> <span class="n">importers</span><span class="o">.</span><span class="n">add_file</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span></div>
+
+
+<span class="n">_temp_directory</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="k">def</span> <span class="nf">_mpi_exchange_if_needed</span><span class="p">(</span><span class="n">filename</span><span class="p">):</span>
+    <span class="k">global</span> <span class="n">_temp_directory</span>
+
+    <span class="kn">from</span> <span class="nn">..modules.vtkRemotingCore</span> <span class="kn">import</span> <span class="n">vtkProcessModule</span>
+    <span class="n">pm</span> <span class="o">=</span> <span class="n">vtkProcessModule</span><span class="o">.</span><span class="n">GetProcessModule</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">pm</span><span class="o">.</span><span class="n">GetNumberOfLocalPartitions</span><span class="p">()</span> <span class="o">&lt;=</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">filename</span>
+
+    <span class="kn">from</span> <span class="nn">mpi4py</span> <span class="kn">import</span> <span class="n">MPI</span>
+    <span class="kn">from</span> <span class="nn">vtkmodules.vtkParallelMPI4Py</span> <span class="kn">import</span> <span class="n">vtkMPI4PyCommunicator</span>
+    <span class="n">comm</span> <span class="o">=</span> <span class="n">vtkMPI4PyCommunicator</span><span class="o">.</span><span class="n">ConvertToPython</span><span class="p">(</span><span class="n">pm</span><span class="o">.</span><span class="n">GetGlobalController</span><span class="p">()</span><span class="o">.</span><span class="n">GetCommunicator</span><span class="p">())</span>
+    <span class="k">if</span> <span class="n">comm</span><span class="o">.</span><span class="n">Get_rank</span><span class="p">()</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="s1">&#39;rb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+            <span class="n">data</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">comm</span><span class="o">.</span><span class="n">bcast</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">root</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">comm</span><span class="o">.</span><span class="n">Get_rank</span><span class="p">()</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">filename</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">_temp_directory</span><span class="p">:</span>
+            <span class="kn">import</span> <span class="nn">tempfile</span><span class="o">,</span> <span class="nn">os.path</span>
+            <span class="c1"># we hook the temp-dir to the module so it lasts for the livetime of</span>
+            <span class="c1"># the interpreter and gets cleaned up on exit.</span>
+            <span class="n">_temp_directory</span> <span class="o">=</span> <span class="n">tempfile</span><span class="o">.</span><span class="n">TemporaryDirectory</span><span class="p">()</span>
+        <span class="n">filename</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">_temp_directory</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">filename</span><span class="p">))</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="s2">&quot;wb&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+            <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">filename</span>
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2013, Kitware, Inc..</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+  <!-- KW:BEGIN -->
+  <script type="text/javascript" src="/paraview-docs/paraview-version.js"></script>
+  <!-- KW:END -->
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
