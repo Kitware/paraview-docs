@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Quick-Start : A Tutorial &mdash; ParaView/Python 5.11.0 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="paraview Package" href="paraview.html" />
+    <link rel="prev" title="ParaView’s Python documentation!" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          <ul>
+            <li> <a href="index.html">
+              <img src="_static/paraview-logo-small.png"
+              alt="ParaView/Python"></img></a> </li>
+            <li class="version"> version 5.11.0</li>
+          </ul>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Quick-Start :  A Tutorial</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#getting-started">Getting Started</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#tab-completion">Tab-completion</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#creating-a-pipeline">Creating a Pipeline</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#rendering">Rendering</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="paraview.html">The ParaView Python Package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="paraview.simple.html">simple</a></li>
+<li class="toctree-l1"><a class="reference internal" href="paraview.servermanager.html">servermanager</a></li>
+<li class="toctree-l1"><a class="reference internal" href="paraview.coprocessing.html">coprocessing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="paraview.benchmark.html">benchmark</a></li>
+<li class="toctree-l1"><a class="reference internal" href="paraview.servermanager_proxies.html">Available readers, sources, writers, filters and animation cues</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="api-changes.html">API Changes between ParaView versions</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">ParaView/Python</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+      <a href="genindex.html" class="float-right">Index</a> 
+      <li>Quick-Start :  A Tutorial</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="section" id="quick-start-a-tutorial">
+<h1>Quick-Start :  A Tutorial<a class="headerlink" href="#quick-start-a-tutorial" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="getting-started">
+<h2>Getting Started<a class="headerlink" href="#getting-started" title="Permalink to this headline">¶</a></h2>
+<p>To start interacting with the Server Manager, you have to load the “simple”
+module. This module can be loaded from any python interpreter as long as the
+necessary files are in PYTHONPATH. These files are the shared libraries located
+in the paraview binary directory and python modules in the paraview directory:
+paraview/simple.py, paraview/vtk.py etc. You can also use either pvpython (for
+stand-alone or client/server execution), pvbatch (for non-interactive,
+distributed batch processing) or the python shell invoked from Tools|Python
+Shell using the ParaView client to execute Python scripts. You do not have to
+set PYTHONPATH when using these.</p>
+<p>This tutorial will be using the python integrated development environment IDLE.
+PYTHONPATH is set to the following:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">Users</span><span class="o">/</span><span class="n">berk</span><span class="o">/</span><span class="n">work</span><span class="o">/</span><span class="n">paraview3</span><span class="o">-</span><span class="n">build</span><span class="o">/</span><span class="n">lib</span><span class="p">:</span><span class="o">/</span><span class="n">Users</span><span class="o">/</span><span class="n">berk</span><span class="o">/</span><span class="n">work</span><span class="o">/</span><span class="n">paraview3</span><span class="o">-</span><span class="n">build</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">site</span><span class="o">-</span><span class="n">packages</span>
+</pre></div>
+</div>
+<p>You may also need to set your path variable for searching for shared libraries
+(i.e. PATH on Windows and LD_LIBRARY_PATH on Unix/Linux/Mac). The corresponding
+LD_LIBRARY_PATH would be:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">Users</span><span class="o">/</span><span class="n">berk</span><span class="o">/</span><span class="n">work</span><span class="o">/</span><span class="n">paraview3</span><span class="o">-</span><span class="n">build</span><span class="o">/</span><span class="n">lib</span> <span class="p">(</span><span class="o">/</span><span class="n">Users</span><span class="o">/</span><span class="n">berk</span><span class="o">/</span><span class="n">work</span><span class="o">/</span><span class="n">paraview3</span><span class="o">-</span><span class="n">build</span><span class="o">/</span><span class="nb">bin</span> <span class="k">for</span> <span class="n">versions</span> <span class="n">before</span> <span class="mf">3.98</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>(Under WindowsXP for a debug build of paraview, set both PATH and PYTHONPATH
+environment variables to include ${BUILD}/lib/Debug and
+${BUILD}/lib/site-packages to make it work.)</p>
+<p>When using a Mac to use the build tree in IDLE, start by loading the
+servermanager module:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">paraview.simple</span> <span class="kn">import</span> <span class="o">*</span>
+</pre></div>
+</div>
+<p>Importing the paraview module directly is deprecated, although still
+possible for backwards compatibility. This document refers to the simple module
+alone.</p>
+<p>In this example, we will use ParaView in the stand-alone mode. Connecting to a
+ParaView server running on a cluster is covered later in this document.</p>
+<div class="section" id="tab-completion">
+<h3>Tab-completion<a class="headerlink" href="#tab-completion" title="Permalink to this headline">¶</a></h3>
+<p>The Python shell in the ParaView Qt client provides auto-completion. One can
+also use IDLE, for example to enable auto-completion. To use auto-completion in
+pvpython, one can use the tips provided at <a class="reference external" href="http://www.razorvine.net/blog/user/irmen/article/2004-11-22/17">TabCompletion</a>.</p>
+<p>In summary, you need to create a variable PYTHONSTARTUP as (in bash):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">export</span> <span class="n">PYTHONSTARTUP</span> <span class="o">=</span> <span class="o">/</span><span class="n">home</span><span class="o">/&lt;</span><span class="n">username</span><span class="o">&gt;/.</span><span class="n">pythonrc</span>
+</pre></div>
+</div>
+<p>where .pythonrc is:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># ~/.pythonrc</span>
+<span class="c1"># enable syntax completion</span>
+<span class="k">try</span><span class="p">:</span>
+    <span class="kn">import</span> <span class="nn">readline</span>
+<span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
+    <span class="nb">print</span> <span class="s2">&quot;Module readline not available.&quot;</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="kn">import</span> <span class="nn">rlcompleter</span>
+    <span class="n">readline</span><span class="o">.</span><span class="n">parse_and_bind</span><span class="p">(</span><span class="s2">&quot;tab: complete&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>That is it. Tab completion works just as in any other shell.</p>
+</div>
+</div>
+<div class="section" id="creating-a-pipeline">
+<h2>Creating a Pipeline<a class="headerlink" href="#creating-a-pipeline" title="Permalink to this headline">¶</a></h2>
+<p>The simple module contains many functions to instantiate sources, filters, and
+other related objects. You can get a list of objects this module can create from
+ParaView’s online help (from help menu or here:
+<a class="reference external" href="http://paraview.org/OnlineHelpCurrent/">http://paraview.org/OnlineHelpCurrent/</a>)</p>
+<p>Start by creating a Cone object:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">cone</span> <span class="o">=</span> <span class="n">Cone</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>You can get some documentation about the cone object using help().</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">help</span><span class="p">(</span><span class="n">cone</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Help on Cone in module paraview.servermanager object:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Cone</span><span class="p">(</span><span class="n">SourceProxy</span><span class="p">)</span>
+ <span class="o">|</span>  <span class="n">The</span> <span class="n">Cone</span> <span class="n">source</span> <span class="n">can</span> <span class="n">be</span> <span class="n">used</span> <span class="n">to</span> <span class="n">add</span> <span class="n">a</span> <span class="n">polygonal</span> <span class="n">cone</span> <span class="n">to</span> <span class="n">the</span> <span class="mi">3</span><span class="n">D</span> <span class="n">scene</span><span class="o">.</span> <span class="n">The</span> <span class="n">output</span> <span class="n">of</span> <span class="n">the</span>
+ <span class="n">Cone</span> <span class="n">source</span> <span class="ow">is</span> <span class="n">polygonal</span> <span class="n">data</span><span class="o">.</span>
+ <span class="o">|</span>
+ <span class="o">|</span>  <span class="n">Method</span> <span class="n">resolution</span> <span class="n">order</span><span class="p">:</span>
+ <span class="o">|</span>      <span class="n">Cone</span>
+ <span class="o">|</span>      <span class="n">SourceProxy</span>
+ <span class="o">|</span>      <span class="n">Proxy</span>
+ <span class="o">|</span>      <span class="n">__builtin__</span><span class="o">.</span><span class="n">object</span>
+ <span class="o">|</span>
+ <span class="o">|</span>  <span class="n">Methods</span> <span class="n">defined</span> <span class="n">here</span><span class="p">:</span>
+ <span class="o">|</span>
+ <span class="o">|</span>  <span class="n">Initialize</span> <span class="o">=</span> <span class="n">aInitialize</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">connection</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+ <span class="o">|</span>
+ <span class="o">|</span>  <span class="o">----------------------------------------------------------------------</span>
+ <span class="o">|</span>  <span class="n">Data</span> <span class="n">descriptors</span> <span class="n">defined</span> <span class="n">here</span><span class="p">:</span>
+ <span class="o">|</span>
+ <span class="o">|</span>  <span class="n">Capping</span>
+ <span class="o">|</span>      <span class="n">If</span> <span class="n">this</span> <span class="nb">property</span> <span class="ow">is</span> <span class="nb">set</span> <span class="n">to</span> <span class="mi">1</span><span class="p">,</span> <span class="n">the</span> <span class="n">base</span> <span class="n">of</span> <span class="n">the</span> <span class="n">cone</span> <span class="n">will</span> <span class="n">be</span> <span class="n">capped</span> <span class="k">with</span> <span class="n">a</span> <span class="n">filled</span> <span class="n">polygon</span><span class="o">.</span>
+ <span class="n">Otherwise</span><span class="p">,</span> <span class="n">the</span> <span class="n">base</span> <span class="n">of</span> <span class="n">the</span> <span class="n">cone</span> <span class="n">will</span> <span class="n">be</span> <span class="nb">open</span><span class="o">.</span>
+ <span class="o">|</span>
+ <span class="o">|</span>  <span class="n">Center</span>
+ <span class="o">|</span>      <span class="n">This</span> <span class="nb">property</span> <span class="n">specifies</span> <span class="n">the</span> <span class="n">center</span> <span class="n">of</span> <span class="n">the</span> <span class="n">cone</span><span class="o">.</span>
+ <span class="o">|</span>
+ <span class="o">|</span>  <span class="n">Direction</span>
+ <span class="o">|</span>      <span class="n">Set</span> <span class="n">the</span> <span class="n">orientation</span> <span class="n">vector</span> <span class="n">of</span> <span class="n">the</span> <span class="n">cone</span><span class="o">.</span>  <span class="n">The</span> <span class="n">vector</span> <span class="n">does</span> <span class="ow">not</span> <span class="n">have</span> <span class="n">to</span> <span class="n">be</span> <span class="n">normalized</span><span class="o">.</span>  <span class="n">The</span> <span class="n">cone</span>
+ <span class="n">will</span> <span class="n">point</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">direction</span> <span class="n">specified</span><span class="o">.</span>
+ <span class="o">|</span>
+ <span class="o">|</span>  <span class="n">Height</span>
+ <span class="o">|</span>      <span class="n">This</span> <span class="nb">property</span> <span class="n">specifies</span> <span class="n">the</span> <span class="n">height</span> <span class="n">of</span> <span class="n">the</span> <span class="n">cone</span><span class="o">.</span>
+ <span class="o">|</span>
+ <span class="o">|</span>  <span class="n">Radius</span>
+ <span class="o">|</span>      <span class="n">This</span> <span class="nb">property</span> <span class="n">specifies</span> <span class="n">the</span> <span class="n">radius</span> <span class="n">of</span> <span class="n">the</span> <span class="n">base</span> <span class="n">of</span> <span class="n">the</span> <span class="n">cone</span><span class="o">.</span>
+ <span class="o">|</span>
+ <span class="o">|</span>  <span class="n">Resolution</span>
+ <span class="o">|</span>      <span class="n">This</span> <span class="nb">property</span> <span class="n">indicates</span> <span class="n">the</span> <span class="n">number</span> <span class="n">of</span> <span class="n">divisions</span> <span class="n">around</span> <span class="n">the</span> <span class="n">cone</span><span class="o">.</span> <span class="n">The</span> <span class="n">higher</span> <span class="n">this</span> <span class="n">number</span><span class="p">,</span> <span class="n">the</span>
+ <span class="n">closer</span> <span class="n">the</span> <span class="n">polygonal</span> <span class="n">approximation</span> <span class="n">will</span> <span class="n">come</span> <span class="n">to</span> <span class="n">representing</span> <span class="n">a</span> <span class="n">cone</span><span class="p">,</span> <span class="ow">and</span> <span class="n">the</span> <span class="n">more</span> <span class="n">polygons</span> <span class="n">it</span> <span class="n">will</span>
+ <span class="n">contain</span><span class="o">.</span>
+ <span class="o">|</span>
+ <span class="o">|</span> <span class="o">...</span>
+</pre></div>
+</div>
+<p>This gives you a full list of properties. Check what the resolution property is set to:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">cone</span><span class="o">.</span><span class="n">Resolution</span>
+<span class="go">6</span>
+</pre></div>
+</div>
+<p>You can increase the resolution as shown below:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">cone</span><span class="o">.</span><span class="n">Resolution</span> <span class="o">=</span> <span class="mi">32</span>
+</pre></div>
+</div>
+<p>Alternatively, we could have specified a value for resolution when creating the object:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">cone</span> <span class="o">=</span> <span class="n">Cone</span><span class="p">(</span><span class="n">Resolution</span><span class="o">=</span><span class="mi">32</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>You can assign values to any number of properties during construction using
+keyword arguments: You can also change the center.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">cone</span><span class="o">.</span><span class="n">Center</span>
+<span class="go">[0.0, 0.0, 0.0]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">cone</span><span class="o">.</span><span class="n">Center</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Vector properties such as this one support setting and retrieval of individual elements, as well as slices (ranges of elements):</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">cone</span><span class="o">.</span><span class="n">Center</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">cone</span><span class="o">.</span><span class="n">Center</span>
+<span class="go">[2.0, 4.0, 3.0]</span>
+</pre></div>
+</div>
+<p>Next, apply a shrink filter to the cone:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">shrinkFilter</span> <span class="o">=</span> <span class="n">Shrink</span><span class="p">(</span><span class="n">cone</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">shrinkFilter</span><span class="o">.</span><span class="n">Input</span>
+<span class="go">&lt;paraview.servermanager.Cone object at 0xaf701f0&gt;</span>
+</pre></div>
+</div>
+<p>At this point, if you are interested in getting some information about the
+output of the shrink filter, you can force it to update (which will also cause
+the execution of the cone source). For details about VTK’s demand-driven
+pipeline model used by ParaView, see one of the VTK books.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">shrinkFilter</span><span class="o">.</span><span class="n">UpdatePipeline</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">shrinkFilter</span><span class="o">.</span><span class="n">GetDataInformation</span><span class="p">()</span><span class="o">.</span><span class="n">GetNumberOfCells</span><span class="p">()</span>
+<span class="go">33L</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">shrinkFilter</span><span class="o">.</span><span class="n">GetDataInformation</span><span class="p">()</span><span class="o">.</span><span class="n">GetNumberOfPoints</span><span class="p">()</span>
+<span class="go">128L</span>
+</pre></div>
+</div>
+<p>We will cover the DataInformation class in more detail later.</p>
+</div>
+<div class="section" id="rendering">
+<h2>Rendering<a class="headerlink" href="#rendering" title="Permalink to this headline">¶</a></h2>
+<p>Now that you’ve created a small pipeline, render the result. You will need two
+objects to render the output of an algorithm in a scene: a representation and a
+view. A representation is responsible for taking a data object and rendering it
+in a view. A view is responsible for managing a render context and a collection
+of representations. Simple creates a view by default. The representation object
+is created automatically with Show().</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">Show</span><span class="p">(</span><span class="n">shrinkFilter</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">Render</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>In this example the value returned by Cone() and Shrink() was assigned
+to Python variables and used to build the pipeline. ParaView keeps track of the
+last pipeline object created by the user. This allows you to accomplish
+everything you did above using the following code:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">paraview.simple</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="go"># Create a cone and assign it as the active object</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">Cone</span><span class="p">()</span>
+<span class="go">&lt;paraview.servermanager.Cone object at 0x2910f0&gt;</span>
+<span class="go"># Set a property of the active object</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">SetProperties</span><span class="p">(</span><span class="n">Resolution</span><span class="o">=</span><span class="mi">32</span><span class="p">)</span>
+<span class="go"># Apply the shrink filter to the active object</span>
+<span class="go"># Shrink is now active</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">Shrink</span><span class="p">()</span>
+<span class="go">&lt;paraview.servermanager.Shrink object at 0xaf64050&gt;</span>
+<span class="go"># Show shrink</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">Show</span><span class="p">()</span>
+<span class="go">&lt;paraview.servermanager.UnstructuredGridRepresentation object at 0xaf57f90&gt;</span>
+<span class="go"># Render the active view</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">Render</span><span class="p">()</span>
+<span class="go">&lt;paraview.servermanager.RenderView object at 0xaf57ff0&gt;</span>
+</pre></div>
+</div>
+<p>This was a quick introduction to the paraview.simple module. In the following
+sections, we will discuss the Python interface in more detail and introduce more
+advanced concepts.</p>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="index.html" class="btn btn-neutral float-left" title="ParaView’s Python documentation!" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="paraview.html" class="btn btn-neutral float-right" title="paraview Package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2013, Kitware, Inc..</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+  <!-- KW:BEGIN -->
+  <script type="text/javascript" src="/paraview-docs/paraview-version.js"></script>
+  <!-- KW:END -->
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
