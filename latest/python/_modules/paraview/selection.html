@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>paraview.selection &mdash; ParaView/Python 5.12.1-1406-gaa27439101 documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+    <link rel="shortcut icon" href="../../_static/pvIcon.ico"/>
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          <ul>
+            <li> <a href="../../index.html">
+              <img src="../../_static/paraview-logo-small.png"
+              alt="ParaView/Python"></img></a> </li>
+            <li class="version"> version 5.12.1-1406-gaa27439101</li>
+          </ul>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../quick-start.html">Quick-Start :  A Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../paraview.html">The ParaView Python Package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../paraview.simple.html">simple</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../paraview.servermanager.html">servermanager</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../paraview.catalyst.html">catalyst</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../paraview.coprocessing.html">coprocessing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../paraview.benchmark.html">benchmark</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../paraview.servermanager_proxies.html">Available readers, sources, writers, filters and animation cues</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../api-changes.html">API Changes between ParaView versions</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">ParaView/Python</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+      <a href="../../genindex.html" class="float-right">Index</a> 
+          <li><a href="../index.html">Module code</a> &raquo;</li>
+      <li>paraview.selection</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <h1>Source code for paraview.selection</h1><div class="highlight"><pre>
+<span></span><span class="c1"># SPDX-FileCopyrightText: Copyright (c) Kitware Inc.</span>
+<span class="c1"># SPDX-License-Identifier: BSD-3-Clause</span>
+
+<span class="sd">&quot;&quot;&quot;selection is a module for defining and using selections via Python. It provides</span>
+<span class="sd">a convenience layer to provide functionality provided by the underlying C++ classes.</span>
+
+<span class="sd">A simple example::</span>
+
+<span class="sd">  from paraview.selection import *</span>
+
+<span class="sd">  # Create a new sphere proxy on the active connection and register it</span>
+<span class="sd">  # in the sources group.</span>
+<span class="sd">  sphere = Sphere(ThetaResolution=16, PhiResolution=32)</span>
+
+<span class="sd">  # Show the sphere</span>
+<span class="sd">  Show(sphere)</span>
+
+<span class="sd">  # Select cells falling inside a rectangle defined by two points on a diagonal,</span>
+<span class="sd">  # (300, 400) and (600, 800).</span>
+<span class="sd">  SelectSurfaceCells(Rectangle=[300, 400, 600, 800])</span>
+
+<span class="sd">  # Add cells on processor 0 with ids 1 and 2 to the current selection.</span>
+<span class="sd">  SelectIDs(IDs=[0, 1, 0, 2], FieldType=&#39;CELL&#39;, Source=sphere, Modifier=&#39;ADD&#39;)</span>
+
+<span class="sd">  # Remove cells on processor 0 with ids 4 and 5 from the current selection.</span>
+<span class="sd">  SelectIDS(IDs=[0, 4, 0, 5], FieldType=&#39;CELL&#39;, Source=sphere, Modifier=&#39;SUBTRACT&#39;)</span>
+
+<span class="sd">  # Extract the currently extracted cells</span>
+<span class="sd">  es = ExtractSelection()</span>
+<span class="sd">  Show(es)</span>
+
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">absolute_import</span><span class="p">,</span> <span class="n">division</span><span class="p">,</span> <span class="n">print_function</span>
+
+<span class="kn">import</span> <span class="nn">paraview</span>
+<span class="kn">from</span> <span class="nn">paraview</span> <span class="kn">import</span> <span class="n">servermanager</span> <span class="k">as</span> <span class="n">sm</span>
+<span class="kn">import</span> <span class="nn">paraview.simple</span>
+
+
+<div class="viewcode-block" id="SelectionProxy"><a class="viewcode-back" href="../../paraview.selection.html#paraview.selection.SelectionProxy">[docs]</a><span class="k">class</span> <span class="nc">SelectionProxy</span><span class="p">(</span><span class="n">sm</span><span class="o">.</span><span class="n">Proxy</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Special proxy wrapper type for Selections.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">args</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">SelectionProxy</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="o">**</span><span class="n">args</span><span class="p">)</span></div>
+
+
+<span class="k">def</span> <span class="nf">_createSelection</span><span class="p">(</span><span class="n">proxyname</span><span class="p">,</span> <span class="o">**</span><span class="n">args</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Utility function to create a selection source. Basically a factory function</span>
+<span class="sd">    that creates a proxy of a given name and hands off keyword arguments to the newly</span>
+<span class="sd">    created proxy.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">session</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">ActiveConnection</span><span class="o">.</span><span class="n">Session</span>
+    <span class="n">pxm</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">ProxyManager</span><span class="p">(</span><span class="n">session</span><span class="p">)</span>
+
+    <span class="n">groupname</span> <span class="o">=</span> <span class="s1">&#39;filters&#39;</span> <span class="k">if</span> <span class="n">proxyname</span> <span class="o">==</span> <span class="s1">&#39;AppendSelections&#39;</span> <span class="k">else</span> <span class="s1">&#39;sources&#39;</span>
+    <span class="n">proxy</span> <span class="o">=</span> <span class="n">pxm</span><span class="o">.</span><span class="n">NewProxy</span><span class="p">(</span><span class="n">groupname</span><span class="p">,</span> <span class="n">proxyname</span><span class="p">)</span>
+
+    <span class="n">s</span> <span class="o">=</span> <span class="n">SelectionProxy</span><span class="p">(</span><span class="n">proxy</span><span class="o">=</span><span class="n">proxy</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">args</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="c1"># Warning: this will add only the attributes initially passed in when creating the proxy.</span>
+        <span class="n">s</span><span class="o">.</span><span class="n">add_attribute</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
+        <span class="n">s</span><span class="o">.</span><span class="n">SetPropertyWithName</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">s</span>
+
+
+<div class="viewcode-block" id="CreateSelection"><a class="viewcode-back" href="../../paraview.selection.html#paraview.selection.CreateSelection">[docs]</a><span class="k">def</span> <span class="nf">CreateSelection</span><span class="p">(</span><span class="n">proxyname</span><span class="p">,</span> <span class="n">registrationname</span><span class="p">,</span> <span class="o">**</span><span class="n">args</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Make a new selection source proxy. Can be either vtkSelection or vtkAppendSelection.</span>
+<span class="sd">    Use this so that selection don&#39;t show up in the pipeline.&quot;&quot;&quot;</span>
+
+    <span class="n">s</span> <span class="o">=</span> <span class="n">_createSelection</span><span class="p">(</span><span class="n">proxyname</span><span class="p">,</span> <span class="o">**</span><span class="n">args</span><span class="p">)</span>
+
+    <span class="n">session</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">ActiveConnection</span><span class="o">.</span><span class="n">Session</span>
+    <span class="n">pxm</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">ProxyManager</span><span class="p">(</span><span class="n">session</span><span class="p">)</span>
+
+    <span class="n">pxm</span><span class="o">.</span><span class="n">RegisterProxy</span><span class="p">(</span><span class="s1">&#39;selection_sources&#39;</span><span class="p">,</span> <span class="n">registrationname</span><span class="p">,</span> <span class="n">s</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">sm</span><span class="o">.</span><span class="n">_getPyProxy</span><span class="p">(</span><span class="n">s</span><span class="p">)</span></div>
+
+
+<span class="k">def</span> <span class="nf">_collectSelectionPorts</span><span class="p">(</span><span class="n">selectedReps</span><span class="p">,</span> <span class="n">selectionSources</span><span class="p">,</span> <span class="n">SelectBlocks</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">Modifier</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Utility to collect all the selection output ports from a list of selected representations</span>
+<span class="sd">    and sources. Selects blocks instead of cells if the SelectBlocks option is True.</span>
+<span class="sd">    The Modifier can be used to modify the currently existing selection through one of the values</span>
+<span class="sd">    &#39;ADD&#39;, &#39;SUBTRACT&#39;, &#39;TOGGLE&#39; or None if the new selection should replace the existing one.</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">outputPorts</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">selectedReps</span> <span class="ow">or</span> <span class="n">selectedReps</span><span class="o">.</span><span class="n">GetNumberOfItems</span><span class="p">()</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">outputPorts</span>
+
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">selectionSources</span> <span class="ow">or</span> <span class="n">selectionSources</span><span class="o">.</span><span class="n">GetNumberOfItems</span><span class="p">()</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">outputPorts</span>
+
+    <span class="k">if</span> <span class="n">selectedReps</span><span class="o">.</span><span class="n">GetNumberOfItems</span><span class="p">()</span> <span class="o">!=</span> <span class="n">selectionSources</span><span class="o">.</span><span class="n">GetNumberOfItems</span><span class="p">():</span>
+        <span class="k">return</span> <span class="n">outputPorts</span>
+
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">selectedReps</span><span class="o">.</span><span class="n">GetNumberOfItems</span><span class="p">()):</span>
+        <span class="nb">repr</span> <span class="o">=</span> <span class="n">selectedReps</span><span class="o">.</span><span class="n">GetItemAsObject</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+        <span class="n">selectionSource</span> <span class="o">=</span> <span class="n">selectionSources</span><span class="o">.</span><span class="n">GetItemAsObject</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">repr</span><span class="p">:</span>
+            <span class="k">continue</span>
+
+        <span class="c1"># Ensure selected representation is registered with the proxy manager</span>
+        <span class="n">pxm</span> <span class="o">=</span> <span class="nb">repr</span><span class="o">.</span><span class="n">GetSessionProxyManager</span><span class="p">()</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">pxm</span><span class="p">:</span>
+            <span class="k">return</span>
+
+        <span class="c1"># Get the output port from the representation input</span>
+        <span class="n">inputProperty</span> <span class="o">=</span> <span class="nb">repr</span><span class="o">.</span><span class="n">GetProperty</span><span class="p">(</span><span class="s2">&quot;Input&quot;</span><span class="p">)</span>
+        <span class="n">selectedDataSource</span> <span class="o">=</span> <span class="n">inputProperty</span><span class="o">.</span><span class="n">GetProxy</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+        <span class="n">portNumber</span> <span class="o">=</span> <span class="n">inputProperty</span><span class="o">.</span><span class="n">GetOutputPortForConnection</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+
+        <span class="n">outputPort</span> <span class="o">=</span> <span class="n">selectedDataSource</span><span class="o">.</span><span class="n">GetOutputPort</span><span class="p">(</span><span class="n">portNumber</span><span class="p">)</span>
+
+        <span class="n">prevAppendSelections</span> <span class="o">=</span> <span class="n">selectedDataSource</span><span class="o">.</span><span class="n">GetSelectionInput</span><span class="p">(</span><span class="n">portNumber</span><span class="p">)</span>
+
+        <span class="c1"># Convert block selection from index-based selection</span>
+        <span class="kn">from</span> <span class="nn">paraview.modules.vtkRemotingViews</span> <span class="kn">import</span> <span class="n">vtkSMSelectionHelper</span>
+        <span class="kn">import</span> <span class="nn">paraview.vtk</span> <span class="k">as</span> <span class="nn">vtk</span>
+        <span class="k">if</span> <span class="n">SelectBlocks</span><span class="p">:</span>
+            <span class="n">dinfo</span> <span class="o">=</span> <span class="n">selectedDataSource</span><span class="o">.</span><span class="n">GetDataInformation</span><span class="p">()</span>
+            <span class="n">targetContentType</span> <span class="o">=</span> <span class="n">vtk</span><span class="o">.</span><span class="n">vtkSelectionNode</span><span class="o">.</span><span class="n">BLOCK_SELECTORS</span> <span class="k">if</span> <span class="n">dinfo</span><span class="o">.</span><span class="n">DataSetTypeIsA</span><span class="p">(</span>
+                <span class="s2">&quot;vtkPartitionedDataSetCollection&quot;</span><span class="p">)</span> <span class="k">else</span> <span class="n">vtk</span><span class="o">.</span><span class="n">vtkSelectionNode</span><span class="o">.</span><span class="n">BLOCKS</span>
+            <span class="n">selectionSource</span> <span class="o">=</span> <span class="n">vtkSMSelectionHelper</span><span class="o">.</span><span class="n">ConvertSelectionSource</span><span class="p">(</span><span class="n">targetContentType</span><span class="p">,</span> <span class="n">selectionSource</span><span class="p">,</span>
+                                                                          <span class="n">selectedDataSource</span><span class="p">,</span> <span class="n">portNumber</span><span class="p">)</span>
+
+        <span class="c1"># create an append-selections proxy with the selection source as the only input</span>
+        <span class="n">newAppendSelections</span> <span class="o">=</span> <span class="n">vtkSMSelectionHelper</span><span class="o">.</span><span class="n">NewAppendSelectionsFromSelectionSource</span><span class="p">(</span><span class="n">selectionSource</span><span class="p">)</span>
+
+        <span class="c1"># Handle selection modifier</span>
+        <span class="k">if</span> <span class="n">Modifier</span> <span class="o">==</span> <span class="s1">&#39;ADD&#39;</span><span class="p">:</span>
+            <span class="n">vtkSMSelectionHelper</span><span class="o">.</span><span class="n">AddSelection</span><span class="p">(</span><span class="n">prevAppendSelections</span><span class="p">,</span> <span class="n">newAppendSelections</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">Modifier</span> <span class="o">==</span> <span class="s1">&#39;SUBTRACT&#39;</span><span class="p">:</span>
+            <span class="n">vtkSMSelectionHelper</span><span class="o">.</span><span class="n">SubtractSelection</span><span class="p">(</span><span class="n">prevAppendSelections</span><span class="p">,</span> <span class="n">newAppendSelections</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">Modifier</span> <span class="o">==</span> <span class="s1">&#39;TOGGLE&#39;</span><span class="p">:</span>
+            <span class="n">vtkSMSelectionHelper</span><span class="o">.</span><span class="n">ToggleSelection</span><span class="p">(</span><span class="n">prevAppendSelections</span><span class="p">,</span> <span class="n">newAppendSelections</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">vtkSMSelectionHelper</span><span class="o">.</span><span class="n">IgnoreSelection</span><span class="p">(</span><span class="n">prevAppendSelections</span><span class="p">,</span> <span class="n">newAppendSelections</span><span class="p">)</span>
+
+        <span class="n">selectedDataSource</span><span class="o">.</span><span class="n">SetSelectionInput</span><span class="p">(</span><span class="n">portNumber</span><span class="p">,</span> <span class="n">newAppendSelections</span><span class="p">,</span> <span class="n">outputPort</span><span class="o">.</span><span class="n">GetPortIndex</span><span class="p">())</span>
+
+        <span class="k">if</span> <span class="n">SelectBlocks</span><span class="p">:</span>
+            <span class="c1"># A new selection proxy was allocated when converting to a block</span>
+            <span class="c1"># selection, so we need to delete unregister it for garbage collection</span>
+            <span class="n">selectionSource</span><span class="o">.</span><span class="n">UnRegister</span><span class="p">(</span><span class="kc">None</span><span class="p">)</span>
+        <span class="n">newAppendSelections</span><span class="o">.</span><span class="n">UnRegister</span><span class="p">(</span><span class="kc">None</span><span class="p">)</span>
+
+        <span class="c1"># Add output port to list of ports and return it</span>
+        <span class="n">outputPorts</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">outputPort</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">outputPorts</span>
+
+
+<span class="k">def</span> <span class="nf">_surfaceSelectionHelper</span><span class="p">(</span><span class="n">rectOrPolygon</span><span class="p">,</span> <span class="n">view</span><span class="p">,</span> <span class="nb">type</span><span class="p">,</span> <span class="n">Modifier</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Selects mesh elements on a surface</span>
+
+<span class="sd">    - rectOrPolygon - represents either a rectangle or polygon. If a rectangle, consists of a list</span>
+<span class="sd">      containing the bottom left (x1, y1) and top right (x2, y2) corner of a rectangle defining the</span>
+<span class="sd">      selection region in the format [x1, y1, x2, y2]. If a polygon, list of points defining the</span>
+<span class="sd">      polygon in x-y pairs (e.g., [x1, y1, x2, y2, x3, y3,...])</span>
+<span class="sd">    - view - the view in which to make the selection</span>
+<span class="sd">    - type - the type of mesh element: &#39;POINT&#39;, &#39;CELL&#39;, or &#39;BLOCK&#39;</span>
+<span class="sd">    - Modifier - &#39;ADD&#39;, &#39;SUBTRACT&#39;, &#39;TOGGLE&#39;, or None to define whether and how the selection</span>
+<span class="sd">      should modify the existing selection.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">view</span><span class="o">.</span><span class="n">SMProxy</span><span class="o">.</span><span class="n">IsA</span><span class="p">(</span><span class="s1">&#39;vtkSMRenderViewProxy&#39;</span><span class="p">):</span>
+        <span class="k">return</span>
+
+    <span class="c1"># ensure the view has rendered so that the selection is valid</span>
+    <span class="n">paraview</span><span class="o">.</span><span class="n">simple</span><span class="o">.</span><span class="n">Render</span><span class="p">(</span><span class="n">view</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">rectOrPolygon</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">rectOrPolygon</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">view</span><span class="o">.</span><span class="n">ViewSize</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">view</span><span class="o">.</span><span class="n">ViewSize</span><span class="p">[</span><span class="mi">1</span><span class="p">]]</span>
+
+    <span class="kn">from</span> <span class="nn">paraview.vtk</span> <span class="kn">import</span> <span class="n">vtkCollection</span><span class="p">,</span> <span class="n">vtkIntArray</span>
+
+    <span class="n">selectedReps</span> <span class="o">=</span> <span class="n">vtkCollection</span><span class="p">()</span>
+    <span class="n">selectionSources</span> <span class="o">=</span> <span class="n">vtkCollection</span><span class="p">()</span>
+
+    <span class="k">if</span> <span class="nb">type</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;POLYGON&#39;</span><span class="p">):</span>
+        <span class="n">polygon</span> <span class="o">=</span> <span class="n">vtkIntArray</span><span class="p">()</span>
+        <span class="n">polygon</span><span class="o">.</span><span class="n">SetNumberOfComponents</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+
+        <span class="k">for</span> <span class="n">component</span> <span class="ow">in</span> <span class="n">rectOrPolygon</span><span class="p">:</span>
+            <span class="n">polygon</span><span class="o">.</span><span class="n">InsertNextValue</span><span class="p">(</span><span class="n">component</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="nb">type</span> <span class="o">==</span> <span class="s1">&#39;POINT&#39;</span><span class="p">:</span>
+        <span class="n">view</span><span class="o">.</span><span class="n">SelectSurfacePoints</span><span class="p">(</span><span class="n">rectOrPolygon</span><span class="p">,</span> <span class="n">selectedReps</span><span class="p">,</span> <span class="n">selectionSources</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="nb">type</span> <span class="o">==</span> <span class="s1">&#39;CELL&#39;</span> <span class="ow">or</span> <span class="nb">type</span> <span class="o">==</span> <span class="s1">&#39;BLOCK&#39;</span><span class="p">:</span>
+        <span class="n">view</span><span class="o">.</span><span class="n">SelectSurfaceCells</span><span class="p">(</span><span class="n">rectOrPolygon</span><span class="p">,</span> <span class="n">selectedReps</span><span class="p">,</span> <span class="n">selectionSources</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="nb">type</span> <span class="o">==</span> <span class="s1">&#39;FRUSTUM_POINTS&#39;</span><span class="p">:</span>
+        <span class="n">view</span><span class="o">.</span><span class="n">SelectFrustumPoints</span><span class="p">(</span><span class="n">rectOrPolygon</span><span class="p">,</span> <span class="n">selectedReps</span><span class="p">,</span> <span class="n">selectionSources</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="nb">type</span> <span class="o">==</span> <span class="s1">&#39;FRUSTUM_CELLS&#39;</span><span class="p">:</span>
+        <span class="n">view</span><span class="o">.</span><span class="n">SelectFrustumCells</span><span class="p">(</span><span class="n">rectOrPolygon</span><span class="p">,</span> <span class="n">selectedReps</span><span class="p">,</span> <span class="n">selectionSources</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="nb">type</span> <span class="o">==</span> <span class="s1">&#39;POLYGON_POINTS&#39;</span><span class="p">:</span>
+        <span class="n">view</span><span class="o">.</span><span class="n">SelectPolygonPoints</span><span class="p">(</span><span class="n">polygon</span><span class="p">,</span> <span class="n">selectedReps</span><span class="p">,</span> <span class="n">selectionSources</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="nb">type</span> <span class="o">==</span> <span class="s1">&#39;POLYGON_CELLS&#39;</span><span class="p">:</span>
+        <span class="n">view</span><span class="o">.</span><span class="n">SelectPolygonCells</span><span class="p">(</span><span class="n">polygon</span><span class="p">,</span> <span class="n">selectedReps</span><span class="p">,</span> <span class="n">selectionSources</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="s2">&quot;Invalid type </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="nb">type</span><span class="p">)</span>
+
+    <span class="n">_collectSelectionPorts</span><span class="p">(</span><span class="n">selectedReps</span><span class="p">,</span> <span class="n">selectionSources</span><span class="p">,</span> <span class="nb">type</span> <span class="o">==</span> <span class="s1">&#39;BLOCK&#39;</span><span class="p">,</span> <span class="n">Modifier</span><span class="p">)</span>
+
+    <span class="n">paraview</span><span class="o">.</span><span class="n">simple</span><span class="o">.</span><span class="n">Render</span><span class="p">(</span><span class="n">view</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="SelectSurfacePoints"><a class="viewcode-back" href="../../paraview.selection.html#paraview.selection.SelectSurfacePoints">[docs]</a><span class="k">def</span> <span class="nf">SelectSurfacePoints</span><span class="p">(</span><span class="n">Rectangle</span><span class="o">=</span><span class="p">[],</span> <span class="n">Polygon</span><span class="o">=</span><span class="p">[],</span> <span class="n">View</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">Modifier</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Select visible points within a rectangular or polygon region.</span>
+
+<span class="sd">    - Rectangle - list containing bottom left (x1, y1) and top right (x2, y2) corner of a</span>
+<span class="sd">      rectangle defining the selection region in the format [x1, y1, x2, y2]. Defined in pixels.</span>
+<span class="sd">      If not empty, the Polygon parameter must be empty or None.</span>
+<span class="sd">    - Polygon - list of 2D points defining a polygon in which visible points should be selected,</span>
+<span class="sd">       e.g., [x1, y1, x2, y2, ..., xn, yn]. Defined in pixels. If not empty, the Rectangle parameter</span>
+<span class="sd">       must be empty or None.</span>
+<span class="sd">    - View - the view in which to perform the selection. If None, uses the current active view.</span>
+<span class="sd">    - Modifier - &#39;ADD&#39;, &#39;SUBTRACT&#39;, &#39;TOGGLE&#39;, or None to define whether and how the selection</span>
+<span class="sd">      should modify the existing selection.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">View</span><span class="p">:</span>
+        <span class="n">View</span> <span class="o">=</span> <span class="n">paraview</span><span class="o">.</span><span class="n">simple</span><span class="o">.</span><span class="n">GetActiveView</span><span class="p">()</span>
+
+    <span class="k">if</span> <span class="n">Rectangle</span> <span class="ow">and</span> <span class="n">Polygon</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="s2">&quot;Can only have one of Rectangle or Polygon named parameters set.&quot;</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">Rectangle</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">_surfaceSelectionHelper</span><span class="p">(</span><span class="n">Rectangle</span><span class="p">,</span> <span class="n">View</span><span class="p">,</span> <span class="s1">&#39;POINT&#39;</span><span class="p">,</span> <span class="n">Modifier</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">Polygon</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">_surfaceSelectionHelper</span><span class="p">(</span><span class="n">Polygon</span><span class="p">,</span> <span class="n">View</span><span class="p">,</span> <span class="s1">&#39;POLYGON_POINTS&#39;</span><span class="p">,</span> <span class="n">Modifier</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="s2">&quot;Need to set either the Rectangle or Polygon named parameters.&quot;</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="kc">None</span></div>
+
+
+<div class="viewcode-block" id="SelectSurfaceCells"><a class="viewcode-back" href="../../paraview.selection.html#paraview.selection.SelectSurfaceCells">[docs]</a><span class="k">def</span> <span class="nf">SelectSurfaceCells</span><span class="p">(</span><span class="n">Rectangle</span><span class="o">=</span><span class="p">[],</span> <span class="n">Polygon</span><span class="o">=</span><span class="p">[],</span> <span class="n">View</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">Modifier</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Select visible cells within a rectangular or polygon region.</span>
+
+<span class="sd">    - Rectangle - list containing bottom left (x1, y1) and top right (x2, y2) corner of a</span>
+<span class="sd">      rectangle defining the selection region in the format [x1, y1, x2, y2]. Defined in pixels.</span>
+<span class="sd">      If not empty, the Polygon parameter must be empty or None.</span>
+<span class="sd">    - Polygon - list of 2D points defining a polygon in which visible points should be selected,</span>
+<span class="sd">       e.g., [x1, y1, x2, y2, ..., xn, yn]. Defined in pixels. If not empty, the Rectangle parameter</span>
+<span class="sd">       must be empty or None.</span>
+<span class="sd">    - View - the view in which to perform the selection. If None, uses the current active view.</span>
+<span class="sd">    - Modifier - &#39;ADD&#39;, &#39;SUBTRACT&#39;, &#39;TOGGLE&#39;, or None to define whether and how the selection</span>
+<span class="sd">      should modify the existing selection.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">View</span><span class="p">:</span>
+        <span class="n">View</span> <span class="o">=</span> <span class="n">paraview</span><span class="o">.</span><span class="n">simple</span><span class="o">.</span><span class="n">GetActiveView</span><span class="p">()</span>
+
+    <span class="k">if</span> <span class="n">Rectangle</span> <span class="ow">and</span> <span class="n">Polygon</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="s2">&quot;Can only have one of Rectangle or Polygon named parameters set.&quot;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">Rectangle</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">_surfaceSelectionHelper</span><span class="p">(</span><span class="n">Rectangle</span><span class="p">,</span> <span class="n">View</span><span class="p">,</span> <span class="s1">&#39;CELL&#39;</span><span class="p">,</span> <span class="n">Modifier</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">Polygon</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">_surfaceSelectionHelper</span><span class="p">(</span><span class="n">Polygon</span><span class="p">,</span> <span class="n">View</span><span class="p">,</span> <span class="s1">&#39;POLYGON_CELLS&#39;</span><span class="p">,</span> <span class="n">Modifier</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="SelectSurfaceBlocks"><a class="viewcode-back" href="../../paraview.selection.html#paraview.selection.SelectSurfaceBlocks">[docs]</a><span class="k">def</span> <span class="nf">SelectSurfaceBlocks</span><span class="p">(</span><span class="n">Rectangle</span><span class="o">=</span><span class="p">[],</span> <span class="n">View</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">Modifier</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Select visible blocks within a rectangular region.</span>
+
+<span class="sd">    - Rectangle - list containing bottom left (x1, y1) and top right (x2, y2) corner of a</span>
+<span class="sd">      rectangle defining the selection region in the format [x1, y1, x2, y2]. Defined in pixels.</span>
+<span class="sd">    - View - the view in which to perform the selection. If None, uses the current active view.</span>
+<span class="sd">    - Modifier - &#39;ADD&#39;, &#39;SUBTRACT&#39;, &#39;TOGGLE&#39;, or None to define whether and how the selection</span>
+<span class="sd">      should modify the existing selection.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">View</span><span class="p">:</span>
+        <span class="n">View</span> <span class="o">=</span> <span class="n">paraview</span><span class="o">.</span><span class="n">simple</span><span class="o">.</span><span class="n">GetActiveView</span><span class="p">()</span>
+
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">Modifier</span><span class="p">:</span>
+        <span class="c1"># Clear the current selection - work around default behavior or utility function, which is</span>
+        <span class="c1"># to add blocks.</span>
+        <span class="n">ClearSelection</span><span class="p">()</span>
+
+        <span class="c1"># need to trigger render since otherwise the representation for the</span>
+        <span class="c1"># selection that was just cleared may not have updated.</span>
+        <span class="n">paraview</span><span class="o">.</span><span class="n">simple</span><span class="o">.</span><span class="n">Render</span><span class="p">(</span><span class="n">View</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">_surfaceSelectionHelper</span><span class="p">(</span><span class="n">Rectangle</span><span class="p">,</span> <span class="n">View</span><span class="p">,</span> <span class="s1">&#39;BLOCK&#39;</span><span class="p">,</span> <span class="n">Modifier</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="SelectPointsThrough"><a class="viewcode-back" href="../../paraview.selection.html#paraview.selection.SelectPointsThrough">[docs]</a><span class="k">def</span> <span class="nf">SelectPointsThrough</span><span class="p">(</span><span class="n">Rectangle</span><span class="o">=</span><span class="p">[],</span> <span class="n">View</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">Modifier</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Select all points within a rectangular region regardless of their visibility.</span>
+
+<span class="sd">    - Rectangle - list containing bottom left (x1, y1) and top right (x2, y2) corner of a</span>
+<span class="sd">      rectangle defining the selection region in the format [x1, y1, x2, y2]. Defined in pixels.</span>
+<span class="sd">    - View - the view in which to perform the selection. If None, uses the current active view.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">View</span><span class="p">:</span>
+        <span class="n">View</span> <span class="o">=</span> <span class="n">paraview</span><span class="o">.</span><span class="n">simple</span><span class="o">.</span><span class="n">GetActiveView</span><span class="p">()</span>
+
+    <span class="k">return</span> <span class="n">_surfaceSelectionHelper</span><span class="p">(</span><span class="n">Rectangle</span><span class="p">,</span> <span class="n">View</span><span class="p">,</span> <span class="s1">&#39;FRUSTUM_POINTS&#39;</span><span class="p">,</span> <span class="n">Modifier</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="SelectCellsThrough"><a class="viewcode-back" href="../../paraview.selection.html#paraview.selection.SelectCellsThrough">[docs]</a><span class="k">def</span> <span class="nf">SelectCellsThrough</span><span class="p">(</span><span class="n">Rectangle</span><span class="o">=</span><span class="p">[],</span> <span class="n">View</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">Modifier</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Select all cells within a rectangular region regardless of their visibility.</span>
+
+<span class="sd">    - Rectangle - list containing bottom left (x1, y1) and top right (x2, y2) corner of a</span>
+<span class="sd">      rectangle defining the selection region in the format [x1, y1, x2, y2]. Defined in pixels.</span>
+<span class="sd">    - View - the view in which to perform the selection. If None, uses the current active view.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">View</span><span class="p">:</span>
+        <span class="n">View</span> <span class="o">=</span> <span class="n">paraview</span><span class="o">.</span><span class="n">simple</span><span class="o">.</span><span class="n">GetActiveView</span><span class="p">()</span>
+
+    <span class="k">return</span> <span class="n">_surfaceSelectionHelper</span><span class="p">(</span><span class="n">Rectangle</span><span class="p">,</span> <span class="n">View</span><span class="p">,</span> <span class="s1">&#39;FRUSTUM_CELLS&#39;</span><span class="p">,</span> <span class="n">Modifier</span><span class="p">)</span></div>
+
+
+<span class="k">def</span> <span class="nf">_selectIDsHelper</span><span class="p">(</span><span class="n">proxyname</span><span class="p">,</span> <span class="n">IDs</span><span class="o">=</span><span class="p">[],</span> <span class="n">FieldType</span><span class="o">=</span><span class="s1">&#39;POINT&#39;</span><span class="p">,</span> <span class="n">ContainingCells</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">Source</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">Modifier</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Selects IDs of a given field type.</span>
+
+<span class="sd">    - proxyname - name of the selection proxy to instantiate</span>
+<span class="sd">    - IDs - list of IDs of attribute types to select.</span>
+<span class="sd">    - FieldType - type of attribute to select, e.g., &#39;POINT&#39;, &#39;CELL&#39;</span>
+<span class="sd">    - ContainingCells - if True and FieldType is &#39;POINT&#39;, select the cells containing the</span>
+<span class="sd">        points corresponding to the given IDs.</span>
+<span class="sd">    - Source - If not None, specifies the sources whose elements should be selected by ID.</span>
+<span class="sd">    - Modifier - &#39;ADD&#39;, &#39;SUBTRACT&#39;, &#39;TOGGLE&#39;, or None to define whether and how the selection</span>
+<span class="sd">        should modify the existing selection.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">Source</span><span class="p">:</span>
+        <span class="n">Source</span> <span class="o">=</span> <span class="n">paraview</span><span class="o">.</span><span class="n">simple</span><span class="o">.</span><span class="n">GetActiveSource</span><span class="p">()</span>
+
+    <span class="nb">repr</span> <span class="o">=</span> <span class="n">paraview</span><span class="o">.</span><span class="n">simple</span><span class="o">.</span><span class="n">GetRepresentation</span><span class="p">(</span><span class="n">Source</span><span class="p">)</span>
+
+    <span class="kn">import</span> <span class="nn">paraview.vtk</span> <span class="k">as</span> <span class="nn">vtk</span>
+    <span class="n">reprCollection</span> <span class="o">=</span> <span class="n">vtk</span><span class="o">.</span><span class="n">vtkCollection</span><span class="p">()</span>
+    <span class="n">reprCollection</span><span class="o">.</span><span class="n">AddItem</span><span class="p">(</span><span class="nb">repr</span><span class="o">.</span><span class="n">SMProxy</span><span class="p">)</span>
+
+    <span class="n">selection</span> <span class="o">=</span> <span class="n">_createSelection</span><span class="p">(</span><span class="n">proxyname</span><span class="p">,</span> <span class="n">IDs</span><span class="o">=</span><span class="n">IDs</span><span class="p">,</span> <span class="n">FieldType</span><span class="o">=</span><span class="n">FieldType</span><span class="p">,</span> <span class="n">ContainingCells</span><span class="o">=</span><span class="n">ContainingCells</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">selection</span><span class="p">:</span>
+        <span class="n">selectionCollection</span> <span class="o">=</span> <span class="n">vtk</span><span class="o">.</span><span class="n">vtkCollection</span><span class="p">()</span>
+        <span class="n">selectionCollection</span><span class="o">.</span><span class="n">AddItem</span><span class="p">(</span><span class="n">selection</span><span class="o">.</span><span class="n">SMProxy</span><span class="p">)</span>
+
+        <span class="n">_collectSelectionPorts</span><span class="p">(</span><span class="n">reprCollection</span><span class="p">,</span> <span class="n">selectionCollection</span><span class="p">,</span> <span class="n">Modifier</span><span class="o">=</span><span class="n">Modifier</span><span class="p">)</span>
+
+    <span class="n">Source</span><span class="o">.</span><span class="n">UpdateVTKObjects</span><span class="p">()</span>
+
+    <span class="n">paraview</span><span class="o">.</span><span class="n">simple</span><span class="o">.</span><span class="n">RenderAllViews</span><span class="p">()</span>
+
+
+<div class="viewcode-block" id="SelectGlobalIDs"><a class="viewcode-back" href="../../paraview.selection.html#paraview.selection.SelectGlobalIDs">[docs]</a><span class="k">def</span> <span class="nf">SelectGlobalIDs</span><span class="p">(</span><span class="n">IDs</span><span class="o">=</span><span class="p">[],</span> <span class="n">FieldType</span><span class="o">=</span><span class="s1">&#39;POINT&#39;</span><span class="p">,</span> <span class="n">ContainingCells</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">Source</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">Modifier</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Select attributes by global IDs.</span>
+
+<span class="sd">    - IDs - list of IDs of attribute types to select. Defined as a list of global IDs.</span>
+<span class="sd">    - FieldType - type of attribute to select, e.g., &#39;POINT&#39;, &#39;CELL&#39;</span>
+<span class="sd">    - ContainingCells - if True and FieldType is &#39;POINT&#39;, select the cells containing the</span>
+<span class="sd">        points corresponding to the given IDs.</span>
+<span class="sd">    - Source - If not None, specifies the sources whose elements should be selected by ID.</span>
+<span class="sd">    - Modifier - &#39;ADD&#39;, &#39;SUBTRACT&#39;, &#39;TOGGLE&#39;, or None to define whether and how the selection</span>
+<span class="sd">        should modify the existing selection.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">_selectIDsHelper</span><span class="p">(</span><span class="s1">&#39;GlobalIDSelectionSource&#39;</span><span class="p">,</span> <span class="o">**</span><span class="nb">locals</span><span class="p">())</span></div>
+
+
+<div class="viewcode-block" id="SelectPedigreeIDs"><a class="viewcode-back" href="../../paraview.selection.html#paraview.selection.SelectPedigreeIDs">[docs]</a><span class="k">def</span> <span class="nf">SelectPedigreeIDs</span><span class="p">(</span><span class="n">IDs</span><span class="o">=</span><span class="p">[],</span> <span class="n">FieldType</span><span class="o">=</span><span class="s1">&#39;POINT&#39;</span><span class="p">,</span> <span class="n">ContainingCells</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">Source</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">Modifier</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Select attributes by Pedigree IDs.</span>
+
+<span class="sd">    - IDs - list of IDs of attribute types to select. Defined as (domain, ID) pairs</span>
+<span class="sd">      interleaved in a single list.</span>
+<span class="sd">    - FieldType - type of attribute to select, e.g., &#39;POINT&#39;, &#39;CELL&#39;</span>
+<span class="sd">    - ContainingCells - if True and FieldType is &#39;POINT&#39;, select the cells containing the</span>
+<span class="sd">        points corresponding to the given IDs.</span>
+<span class="sd">    - Source - If not None, specifies the sources whose elements should be selected by ID.</span>
+<span class="sd">    - Modifier - &#39;ADD&#39;, &#39;SUBTRACT&#39;, &#39;TOGGLE&#39;, or None to define whether and how the selection</span>
+<span class="sd">        should modify the existing selection.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">_selectIDsHelper</span><span class="p">(</span><span class="s1">&#39;PedigreeIDSelectionSource&#39;</span><span class="p">,</span> <span class="o">**</span><span class="nb">locals</span><span class="p">())</span></div>
+
+
+<div class="viewcode-block" id="SelectIDs"><a class="viewcode-back" href="../../paraview.selection.html#paraview.selection.SelectIDs">[docs]</a><span class="k">def</span> <span class="nf">SelectIDs</span><span class="p">(</span><span class="n">IDs</span><span class="o">=</span><span class="p">[],</span> <span class="n">FieldType</span><span class="o">=</span><span class="s1">&#39;POINT&#39;</span><span class="p">,</span> <span class="n">ContainingCells</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">Source</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">Modifier</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Select attributes by attribute IDs.</span>
+
+<span class="sd">    - IDs - list of IDs of attribute types to select. Defined as (process number, attribute ID) pairs</span>
+<span class="sd">      interleaved in a single list. For multiblock datasets, this will select attributes on all</span>
+<span class="sd">      blocks of the provided (processor number, attribute ID) pairs</span>
+<span class="sd">    - FieldType - type of attribute to select, e.g., &#39;POINT&#39;, &#39;CELL&#39;</span>
+<span class="sd">    - ContainingCells - if True and FieldType is &#39;POINT&#39;, select the cells containing the</span>
+<span class="sd">        points corresponding to the given IDs.</span>
+<span class="sd">    - Source - If not None, specifies the sources whose elements should be selected by ID.</span>
+<span class="sd">    - Modifier - &#39;ADD&#39;, &#39;SUBTRACT&#39;, &#39;TOGGLE&#39;, or None to define whether and how the selection</span>
+<span class="sd">        should modify the existing selection.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">_selectIDsHelper</span><span class="p">(</span><span class="s1">&#39;IDSelectionSource&#39;</span><span class="p">,</span> <span class="o">**</span><span class="nb">locals</span><span class="p">())</span></div>
+
+
+<div class="viewcode-block" id="SelectCompositeDataIDs"><a class="viewcode-back" href="../../paraview.selection.html#paraview.selection.SelectCompositeDataIDs">[docs]</a><span class="k">def</span> <span class="nf">SelectCompositeDataIDs</span><span class="p">(</span><span class="n">IDs</span><span class="o">=</span><span class="p">[],</span> <span class="n">FieldType</span><span class="o">=</span><span class="s1">&#39;POINT&#39;</span><span class="p">,</span> <span class="n">ContainingCells</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">Source</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">Modifier</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Select attributes by composite attribute IDs.</span>
+
+<span class="sd">    - IDs - list of IDs of attribute types to select. Defined as 3-tuples of</span>
+<span class="sd">      (flat block index, process number, attribute ID) interleaved in a single list.</span>
+<span class="sd">    - FieldType - type of attribute to select, e.g., &#39;POINT&#39;, &#39;CELL&#39;</span>
+<span class="sd">    - ContainingCells - if True and FieldType is &#39;POINT&#39;, select the cells containing the</span>
+<span class="sd">        points corresponding to the given IDs.</span>
+<span class="sd">    - Source - If not None, specifies the sources whose elements should be selected by ID.</span>
+<span class="sd">    - Modifier - &#39;ADD&#39;, &#39;SUBTRACT&#39;, &#39;TOGGLE&#39;, or None to define whether and how the selection</span>
+<span class="sd">        should modify the existing selection.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">_selectIDsHelper</span><span class="p">(</span><span class="s1">&#39;CompositeDataIDSelectionSource&#39;</span><span class="p">,</span> <span class="o">**</span><span class="nb">locals</span><span class="p">())</span></div>
+
+
+<div class="viewcode-block" id="SelectHierarchicalDataIDs"><a class="viewcode-back" href="../../paraview.selection.html#paraview.selection.SelectHierarchicalDataIDs">[docs]</a><span class="k">def</span> <span class="nf">SelectHierarchicalDataIDs</span><span class="p">(</span><span class="n">IDs</span><span class="o">=</span><span class="p">[],</span> <span class="n">FieldType</span><span class="o">=</span><span class="s1">&#39;POINT&#39;</span><span class="p">,</span> <span class="n">ContainingCells</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">Source</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">Modifier</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Select attributes by hierarchical data IDs.</span>
+
+<span class="sd">    - IDs - list of IDs of attribute types to select. Defined as 3-tuples of</span>
+<span class="sd">      (level, index, attribute ID) interleaved in a single list.</span>
+<span class="sd">    - FieldType - type of attribute to select, e.g., &#39;POINT&#39;, &#39;CELL&#39;</span>
+<span class="sd">    - ContainingCells - if True and FieldType is &#39;POINT&#39;, select the cells containing the</span>
+<span class="sd">        points corresponding to the given IDs.</span>
+<span class="sd">    - Source - If not None, specifies the sources whose elements should be selected by ID.</span>
+<span class="sd">    - Modifier - &#39;ADD&#39;, &#39;SUBTRACT&#39;, &#39;TOGGLE&#39;, or None to define whether and how the selection</span>
+<span class="sd">        should modify the existing selection.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">_selectIDsHelper</span><span class="p">(</span><span class="s1">&#39;HierarchicalDataIDSelectionSource&#39;</span><span class="p">,</span> <span class="o">**</span><span class="nb">locals</span><span class="p">())</span></div>
+
+
+<div class="viewcode-block" id="SelectThresholds"><a class="viewcode-back" href="../../paraview.selection.html#paraview.selection.SelectThresholds">[docs]</a><span class="k">def</span> <span class="nf">SelectThresholds</span><span class="p">(</span><span class="n">Thresholds</span><span class="o">=</span><span class="p">[],</span> <span class="n">ArrayName</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">FieldType</span><span class="o">=</span><span class="s1">&#39;POINT&#39;</span><span class="p">,</span> <span class="n">Source</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">Modifier</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Select attributes in a source by thresholding on values in an associated array.</span>
+
+<span class="sd">    - Thresholds - list of lower and upper threshold bounds. Attributes with associated</span>
+<span class="sd">      values in the selected array between any set of bounds will be selected.</span>
+<span class="sd">    - ArrayName - name of the array to threshold.</span>
+<span class="sd">    - FieldType - atttribute to select, e.g., &#39;POINT&#39; or &#39;CELL&#39;</span>
+<span class="sd">    - Source - if not set, then the selection will be on the active source</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">Source</span><span class="p">:</span>
+        <span class="n">Source</span> <span class="o">=</span> <span class="n">paraview</span><span class="o">.</span><span class="n">simple</span><span class="o">.</span><span class="n">GetActiveSource</span><span class="p">()</span>
+
+    <span class="nb">repr</span> <span class="o">=</span> <span class="n">paraview</span><span class="o">.</span><span class="n">simple</span><span class="o">.</span><span class="n">GetRepresentation</span><span class="p">(</span><span class="n">Source</span><span class="p">)</span>
+
+    <span class="kn">import</span> <span class="nn">paraview.vtk</span> <span class="k">as</span> <span class="nn">vtk</span>
+    <span class="n">reprCollection</span> <span class="o">=</span> <span class="n">vtk</span><span class="o">.</span><span class="n">vtkCollection</span><span class="p">()</span>
+    <span class="n">reprCollection</span><span class="o">.</span><span class="n">AddItem</span><span class="p">(</span><span class="nb">repr</span><span class="o">.</span><span class="n">SMProxy</span><span class="p">)</span>
+
+    <span class="n">selection</span> <span class="o">=</span> <span class="n">_createSelection</span><span class="p">(</span><span class="s1">&#39;ThresholdSelectionSource&#39;</span><span class="p">,</span> <span class="n">Thresholds</span><span class="o">=</span><span class="n">Thresholds</span><span class="p">,</span> <span class="n">ArrayName</span><span class="o">=</span><span class="n">ArrayName</span><span class="p">,</span>
+                                 <span class="n">FieldType</span><span class="o">=</span><span class="n">FieldType</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">selection</span><span class="p">:</span>
+        <span class="n">selectionCollection</span> <span class="o">=</span> <span class="n">vtk</span><span class="o">.</span><span class="n">vtkCollection</span><span class="p">()</span>
+        <span class="n">selectionCollection</span><span class="o">.</span><span class="n">AddItem</span><span class="p">(</span><span class="n">selection</span><span class="o">.</span><span class="n">SMProxy</span><span class="p">)</span>
+
+        <span class="n">_collectSelectionPorts</span><span class="p">(</span><span class="n">reprCollection</span><span class="p">,</span> <span class="n">selectionCollection</span><span class="p">,</span> <span class="n">Modifier</span><span class="o">=</span><span class="n">Modifier</span><span class="p">)</span>
+
+    <span class="n">Source</span><span class="o">.</span><span class="n">UpdateVTKObjects</span><span class="p">()</span></div>
+
+
+<div class="viewcode-block" id="SelectLocation"><a class="viewcode-back" href="../../paraview.selection.html#paraview.selection.SelectLocation">[docs]</a><span class="k">def</span> <span class="nf">SelectLocation</span><span class="p">(</span><span class="n">Locations</span><span class="o">=</span><span class="p">[],</span> <span class="n">Source</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">Modifier</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Select points by location.</span>
+
+<span class="sd">    - Locations - list of x, y, z points to select.</span>
+<span class="sd">    - Source - if not set, then the selection will be on the active source</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">Source</span><span class="p">:</span>
+        <span class="n">Source</span> <span class="o">=</span> <span class="n">paraview</span><span class="o">.</span><span class="n">simple</span><span class="o">.</span><span class="n">GetActiveSource</span><span class="p">()</span>
+
+    <span class="nb">repr</span> <span class="o">=</span> <span class="n">paraview</span><span class="o">.</span><span class="n">simple</span><span class="o">.</span><span class="n">GetRepresentation</span><span class="p">(</span><span class="n">Source</span><span class="p">)</span>
+
+    <span class="kn">import</span> <span class="nn">paraview.vtk</span> <span class="k">as</span> <span class="nn">vtk</span>
+    <span class="n">reprCollection</span> <span class="o">=</span> <span class="n">vtk</span><span class="o">.</span><span class="n">vtkCollection</span><span class="p">()</span>
+    <span class="n">reprCollection</span><span class="o">.</span><span class="n">AddItem</span><span class="p">(</span><span class="nb">repr</span><span class="o">.</span><span class="n">SMProxy</span><span class="p">)</span>
+
+    <span class="n">selection</span> <span class="o">=</span> <span class="n">_createSelection</span><span class="p">(</span><span class="s1">&#39;LocationSelectionSource&#39;</span><span class="p">,</span> <span class="n">Locations</span><span class="o">=</span><span class="n">Locations</span><span class="p">,</span> <span class="n">FieldType</span><span class="o">=</span><span class="s1">&#39;POINT&#39;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">selection</span><span class="p">:</span>
+        <span class="n">selectionCollection</span> <span class="o">=</span> <span class="n">vtk</span><span class="o">.</span><span class="n">vtkCollection</span><span class="p">()</span>
+        <span class="n">selectionCollection</span><span class="o">.</span><span class="n">AddItem</span><span class="p">(</span><span class="n">selection</span><span class="o">.</span><span class="n">SMProxy</span><span class="p">)</span>
+
+        <span class="n">_collectSelectionPorts</span><span class="p">(</span><span class="n">reprCollection</span><span class="p">,</span> <span class="n">selectionCollection</span><span class="p">,</span> <span class="n">Modifier</span><span class="o">=</span><span class="n">Modifier</span><span class="p">)</span>
+
+    <span class="n">Source</span><span class="o">.</span><span class="n">UpdateVTKObjects</span><span class="p">()</span></div>
+
+
+<div class="viewcode-block" id="QuerySelect"><a class="viewcode-back" href="../../paraview.selection.html#paraview.selection.QuerySelect">[docs]</a><span class="k">def</span> <span class="nf">QuerySelect</span><span class="p">(</span><span class="n">QueryString</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">FieldType</span><span class="o">=</span><span class="s1">&#39;POINT&#39;</span><span class="p">,</span> <span class="n">Source</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">InsideOut</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Selection by query expression.</span>
+
+<span class="sd">    :param QueryString: string with NumPy-like boolean expression defining which attributes are selected</span>
+<span class="sd">    :type QueryString: str</span>
+<span class="sd">    :param FieldType: attribute to select, e.g., &#39;POINT&#39; or &#39;CELL&#39;</span>
+<span class="sd">    :type FieldType: str</span>
+<span class="sd">    :param Source: if not set, then the selection will be on the active source</span>
+<span class="sd">    :type Source: paraview.servermanager.source.Proxy</span>
+<span class="sd">    :param InsideOut: Invert the selection so that attributes that do not satisfy the</span>
+<span class="sd">        expression are selected instead of elements that do.</span>
+<span class="sd">    :type InsideOut: bool</span>
+<span class="sd">    :return: None</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">Source</span><span class="p">:</span>
+        <span class="n">Source</span> <span class="o">=</span> <span class="n">paraview</span><span class="o">.</span><span class="n">simple</span><span class="o">.</span><span class="n">GetActiveSource</span><span class="p">()</span>
+
+    <span class="nb">repr</span> <span class="o">=</span> <span class="n">paraview</span><span class="o">.</span><span class="n">simple</span><span class="o">.</span><span class="n">GetRepresentation</span><span class="p">(</span><span class="n">Source</span><span class="p">)</span>
+
+    <span class="kn">import</span> <span class="nn">paraview.vtk</span> <span class="k">as</span> <span class="nn">vtk</span>
+    <span class="n">reprCollection</span> <span class="o">=</span> <span class="n">vtk</span><span class="o">.</span><span class="n">vtkCollection</span><span class="p">()</span>
+    <span class="n">reprCollection</span><span class="o">.</span><span class="n">AddItem</span><span class="p">(</span><span class="nb">repr</span><span class="o">.</span><span class="n">SMProxy</span><span class="p">)</span>
+
+    <span class="c1"># convert FieldType to ElementType. Eventually, all public API should change</span>
+    <span class="c1"># to accepting ElementType but we&#39;ll do that after all selection sources use</span>
+    <span class="c1"># ElementType consistently.</span>
+    <span class="n">ftype</span> <span class="o">=</span> <span class="n">vtk</span><span class="o">.</span><span class="n">vtkSelectionNode</span><span class="o">.</span><span class="n">GetFieldTypeFromString</span><span class="p">(</span><span class="n">FieldType</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">ftype</span> <span class="o">==</span> <span class="n">vtk</span><span class="o">.</span><span class="n">vtkSelectionNode</span><span class="o">.</span><span class="n">NUM_FIELD_TYPES</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Invalid FieldType &#39;</span><span class="si">%s</span><span class="s2">&#39;&quot;</span> <span class="o">%</span> <span class="n">FieldType</span><span class="p">)</span>
+    <span class="n">ElementType</span> <span class="o">=</span> <span class="n">vtk</span><span class="o">.</span><span class="n">vtkSelectionNode</span><span class="o">.</span><span class="n">ConvertSelectionFieldToAttributeType</span><span class="p">(</span><span class="n">ftype</span><span class="p">)</span>
+
+    <span class="n">selection</span> <span class="o">=</span> <span class="n">_createSelection</span><span class="p">(</span><span class="s1">&#39;SelectionQuerySource&#39;</span><span class="p">,</span> <span class="n">ElementType</span><span class="o">=</span><span class="n">ElementType</span><span class="p">,</span>
+                                 <span class="n">QueryString</span><span class="o">=</span><span class="n">QueryString</span><span class="p">,</span> <span class="n">InsideOut</span><span class="o">=</span><span class="n">InsideOut</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">selection</span><span class="p">:</span>
+        <span class="n">selectionCollection</span> <span class="o">=</span> <span class="n">vtk</span><span class="o">.</span><span class="n">vtkCollection</span><span class="p">()</span>
+        <span class="n">selectionCollection</span><span class="o">.</span><span class="n">AddItem</span><span class="p">(</span><span class="n">selection</span><span class="o">.</span><span class="n">SMProxy</span><span class="p">)</span>
+
+        <span class="n">_collectSelectionPorts</span><span class="p">(</span><span class="n">reprCollection</span><span class="p">,</span> <span class="n">selectionCollection</span><span class="p">)</span>
+
+    <span class="n">Source</span><span class="o">.</span><span class="n">UpdateVTKObjects</span><span class="p">()</span></div>
+
+
+<div class="viewcode-block" id="ClearSelection"><a class="viewcode-back" href="../../paraview.selection.html#paraview.selection.ClearSelection">[docs]</a><span class="k">def</span> <span class="nf">ClearSelection</span><span class="p">(</span><span class="n">Source</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Clears the selection on the source passed in to the source parameter</span>
+<span class="sd">        or the active source if no source is provided.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">Source</span> <span class="o">==</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">Source</span> <span class="o">=</span> <span class="n">paraview</span><span class="o">.</span><span class="n">simple</span><span class="o">.</span><span class="n">GetActiveSource</span><span class="p">()</span>
+
+    <span class="n">Source</span><span class="o">.</span><span class="n">SMProxy</span><span class="o">.</span><span class="n">SetSelectionInput</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span></div>
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2013, Kitware, Inc..</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+  <!-- KW:BEGIN -->
+  <script type="text/javascript" src="/paraview-docs/paraview-version.js"></script>
+  <!-- KW:END -->
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
