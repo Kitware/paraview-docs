@@ -1,0 +1,220 @@
+paraview.simple.GaussianResampling
+==================================
+
+.. currentmodule:: paraview.simple
+
+.. autofunction:: GaussianResampling
+
+Data Descriptors
+----------------
+
+
+   
+   EllipiticalEccentricity
+       Control the shape of elliptical splatting. Eccentricity
+       is the ratio of the major axis (aligned along normal) to the minor
+       (axes) aligned along other two axes. So Eccentricity gt 1 creates
+       needles with the long axis in the direction of the normal; Eccentricity
+       lt 1 creates pancakes perpendicular to the normal
+       vector.
+   
+   EllipticalSplats
+       Turn on/off the generation of elliptical splats. If
+       normal warping is on, then the input normals affect the distribution of
+       the splat. This boolean is used in combination with the Eccentricity
+       ivar.
+   
+   EmptyCellValue
+       Set the Null value for output points not receiving a
+       contribution from the input points. (This is the initial value of the
+       voxel samples.)
+   
+   ExtenttoResample
+       Set / get the (xmin,xmax, ymin,ymax, zmin,zmax) bounding
+       box in which the sampling is performed. If any of the (min,max) bounds
+       values are min >= max, then the bounds will be computed
+       automatically from the input data. Otherwise, the user-specified bounds
+       will be used.
+   
+   FillValue
+       Specify the cap value to use. (This instance variable
+       only has effect if the ivar Capping is on.)
+   
+   FillVolumeBoundary
+       Turn on/off the capping of the outer boundary of the
+       volume to a specified cap value. This can be used to close surfaces
+       (after isosurfacing) and create other effects.
+   
+   GaussianExponentFactor
+       Set / get the sharpness of decay of the splats. This is
+       the exponent constant in the Gaussian equation. Normally this is a
+       negative value.
+   
+   GaussianSplatRadius
+       Set / get the radius of propagation of the splat. This
+       value is expressed as a percentage of the length of the longest side of
+       the sampling volume. Smaller numbers greatly reduce execution
+       time.
+   
+   Input
+       This property specifies the input to the
+       filter.
+   
+   ResampleField
+       Choose a scalar array to splat into the output cells. If
+       ignore arrays is chosen, point density will be counted
+       instead.
+   
+   ResamplingGrid
+       Set / get the dimensions of the sampling structured
+       point set. Higher values produce better results but are much
+       slower.
+   
+   ScaleFactor
+       Multiply Gaussian splat distribution by this value. If
+       ScalarWarping is on, then the Scalar value will be multiplied by the
+       ScaleFactor times the Gaussian function.
+   
+   ScaleSplats
+       Turn on/off the scaling of splats by scalar
+       value.
+   
+   SplatAccumulationMode
+       Specify the scalar accumulation mode. This mode
+       expresses how scalar values are combined when splats are overlapped.
+       The Max mode acts like a set union operation and is the most commonly
+       used; the Min mode acts like a set intersection, and the sum is just
+       weird.
+   
+   
+
+Data Descriptors inherited from SourceProxy
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+   
+   CellData
+       Returns cell data information
+   
+   FieldData
+       Returns field data information
+   
+   PointData
+       Returns point data information
+   
+   
+
+Data Descriptors inherited from Proxy
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+   
+   __dict__
+       dictionary for instance variables (if defined)
+   
+   __weakref__
+       list of weak references to the object (if defined)
+   
+
+Methods
+-------
+
+
+   
+   Initialize = aInitialize(self, connection=None, update=True)
+   
+   
+
+Methods inherited from SourceProxy
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+   
+   FileNameChanged(self)
+       Called when the filename of a source proxy is changed.
+   
+   GetCellDataInformation(self)
+       Returns the associated cell data information.
+   
+   GetDataInformation(self, idx=None)
+       This method returns a DataInformation wrapper around a
+       vtkPVDataInformation
+   
+   GetFieldDataInformation(self)
+       Returns the associated cell data information.
+   
+   GetPointDataInformation(self)
+       Returns the associated point data information.
+   
+   UpdatePipeline(self, time=None)
+       This method updates the server-side VTK pipeline and the associated
+       data information. Make sure to update a source to validate the output
+       meta-data.
+   
+   UpdatePipelineInformation(self)
+       This method updates the meta-data of the server-side VTK pipeline and
+       the associated information properties
+   
+   __getitem__(self, idx)
+       Given a slice, int or string, returns the corresponding
+       output port
+   
+   
+
+Methods inherited from Proxy
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+   
+   GetProperty(self, name)
+       Given a property name, returns the property object.
+   
+   GetPropertyValue(self, name)
+       Returns a scalar for properties with 1 elements, the property
+       itself for vectors.
+   
+   InitializeFromProxy(self, aProxy, update=True)
+       Constructor. Assigns proxy to self.SMProxy, updates the server
+       object as well as register the proxy in _pyproxies dictionary.
+   
+   ListProperties(self)
+       Returns a list of all property names on this proxy.
+   
+   SetPropertyWithName(self, pname, arg)
+       Generic method for setting the value of a property.
+   
+   __del__(self)
+       Destructor. Cleans up all observers as well as remove
+       the proxy from the _pyproxies dictionary
+   
+   __eq__(self, other)
+       Returns true if the underlying SMProxies are the same.
+   
+   __getattr__(self, name)
+       With the exception of a few overloaded methods,
+       returns the SMProxy method
+   
+   __hash__(self)
+   
+   __init__(self, \*\*args)
+       Default constructor. It can be used to initialize properties
+       by passing keyword arguments where the key is the name of the
+       property. In addition registrationGroup and registrationName (optional)
+       can be specified (as keyword arguments) to automatically register
+       the proxy with the proxy manager.
+   
+   __iter__(self)
+       Creates an iterator for the properties.
+   
+   __ne__(self, other)
+       Returns false if the underlying SMProxies are the same.
+   
+   __setattr__(self, name, value)
+   
+   add_attribute(self, name, value)
+   
+   
+
+
+
+For the full list of servermanager proxies, please refer to :doc:`Available readers, sources, writers, filters and animation cues <paraview.servermanager_proxies>`

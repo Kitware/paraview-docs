@@ -1,0 +1,181 @@
+paraview.simple.Gradient
+========================
+
+.. currentmodule:: paraview.simple
+
+.. autofunction:: Gradient
+
+Data Descriptors
+----------------
+
+
+   
+   BoundaryMethod
+       Specify how to compute the gradient on the boundaries. 'Smoothed' uses central differencing by duplicating the boundary values to compute the gradient on the boundary elements (corresponds to the old 'Gradient' filter). 'Non-Smoothed' uses forward/backward differencing with the values of a boundary element and its neighbor to compute the gradient (corresponds to the old 'Gradient Of Unstructured DataSet' filter).
+   
+   ComputeDivergence
+       If on, the divergence of a 3-component array is computed.
+   
+   ComputeGradient
+       If on, the gradient of the input array is computed.
+   
+   ComputeQCriterion
+       If on, the Q-criterion of a 3-component array is computed.
+   
+   ComputeVorticity
+       If on, the vorticity/curl of a 3-component array is computed.
+   
+   ContributingCellOption
+       Specify which dimensions of cells should be used when computing gradient quantities. Default is to use the dataset maximum cell dimension.
+   
+   Dimensionality
+       Specify whether to compute the gradient in two or three dimensions. In two dimensions, the X and Y dimensions are used.
+   
+   DivergenceArrayName
+       Provide a name for the output array containing the divergence vector.
+   
+   ExtensiveComputation
+       Use the extensive ratio during the Hyper Tree Grid gradient computation. This property only work in UNLIMITED mode.
+   
+   FasterApproximation
+       If on, the Gradient filter will provide a less accurate (but close) algorithm that performs fewer derivative calculations (and is therefore faster). The error contains some smoothing of the output data and some possible errors on the boundary. Has no effect when performing the gradient of cell data or when the input grid is not a vtkUnstructuredGrid.
+   
+   HTGMode
+       Specify how to compute the gradient on a Hypertree Grid. 'Unlimited' handles the resolution change by virtually subdividing coarser cells and eventually applyging a ratio. 'Unstructured' operate like the AMR like if it was an unstructured mesh, which may give a higher weight to coarser cells.
+   
+   Input
+       Specify the input to the Gradient filter.
+   
+   QCriterionArrayName
+       Provide a name for the output array containing the Q criterion.
+   
+   ReplacementValueOption
+       Specify what value to use when the gradient quantities at a point cannot be computed with the selected \*\*ContributingCellOption\*\*.
+   
+   ResultArrayName
+       Provide a name for the output array containing the gradient vectors.
+   
+   ScalarArray
+       Specify the name of the scalar array from which to compute the gradient.
+   
+   VorticityArrayName
+       Provide a name for the output array containing the vorticity vector.
+   
+   
+
+Data Descriptors inherited from Proxy
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+   
+   __dict__
+       dictionary for instance variables (if defined)
+   
+   __weakref__
+       list of weak references to the object (if defined)
+   
+
+Methods
+-------
+
+
+   
+   Initialize = aInitialize(self, connection=None, update=True)
+   
+   
+
+Methods inherited from SourceProxy
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+   
+   FileNameChanged(self)
+       Called when the filename of a source proxy is changed.
+   
+   GetCellDataInformation(self)
+       Returns the associated cell data information.
+   
+   GetDataInformation(self, idx=None)
+       This method returns a DataInformation wrapper around a
+       vtkPVDataInformation
+   
+   GetFieldDataInformation(self)
+       Returns the associated cell data information.
+   
+   GetPointDataInformation(self)
+       Returns the associated point data information.
+   
+   UpdatePipeline(self, time=None)
+       This method updates the server-side VTK pipeline and the associated
+       data information. Make sure to update a source to validate the output
+       meta-data.
+   
+   UpdatePipelineInformation(self)
+       This method updates the meta-data of the server-side VTK pipeline and
+       the associated information properties
+   
+   __getitem__(self, idx)
+       Given a slice, int or string, returns the corresponding
+       output port
+   
+   
+
+Methods inherited from Proxy
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+   
+   GetProperty(self, name)
+       Given a property name, returns the property object.
+   
+   GetPropertyValue(self, name)
+       Returns a scalar for properties with 1 elements, the property
+       itself for vectors.
+   
+   InitializeFromProxy(self, aProxy, update=True)
+       Constructor. Assigns proxy to self.SMProxy, updates the server
+       object as well as register the proxy in _pyproxies dictionary.
+   
+   ListProperties(self)
+       Returns a list of all property names on this proxy.
+   
+   SetPropertyWithName(self, pname, arg)
+       Generic method for setting the value of a property.
+   
+   __del__(self)
+       Destructor. Cleans up all observers as well as remove
+       the proxy from the _pyproxies dictionary
+   
+   __eq__(self, other)
+       Returns true if the underlying SMProxies are the same.
+   
+   __getattr__(self, name)
+       With the exception of a few overloaded methods,
+       returns the SMProxy method
+   
+   __hash__(self)
+       Return hash(self).
+   
+   __init__(self, \*\*args)
+       Default constructor. It can be used to initialize properties
+       by passing keyword arguments where the key is the name of the
+       property. In addition registrationGroup and registrationName (optional)
+       can be specified (as keyword arguments) to automatically register
+       the proxy with the proxy manager.
+   
+   __iter__(self)
+       Creates an iterator for the properties.
+   
+   __ne__(self, other)
+       Returns false if the underlying SMProxies are the same.
+   
+   __setattr__(self, name, value)
+       Implement setattr(self, name, value).
+   
+   add_attribute(self, name, value)
+   
+   
+
+
+
+For the full list of servermanager proxies, please refer to :doc:`Available readers, sources, writers, filters and animation cues <paraview.servermanager_proxies>`

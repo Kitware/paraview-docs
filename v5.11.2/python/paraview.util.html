@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html class="writer-html4" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>util Package &mdash; ParaView/Python 5.11.2 documentation</title><link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" /><link rel="shortcut icon" href="_static/pvIcon.ico"/>
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="util.vtkAlgorithm Module" href="paraview.util.vtkAlgorithm.html" />
+    <link rel="prev" title="viewers Package" href="paraview.tpl.cinemasci.viewers.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          <ul>
+            <li> <a href="index.html">
+              <img src="_static/paraview-logo-small.png"
+              alt="ParaView/Python"></img></a> </li>
+            <li class="version"> version 5.11.2</li>
+          </ul>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="quick-start.html">Quick-Start :  A Tutorial</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="paraview.html">The ParaView Python Package</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="paraview.html#id1"><code class="docutils literal notranslate"><span class="pre">paraview</span></code> Package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.html#modules">Modules</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="paraview.html#subpackages">Subpackages</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="paraview.algorithms.html">algorithms Package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="paraview.apps.html">apps Package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="paraview.benchmark.html">benchmark Package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="paraview.catalyst.html">catalyst Package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="paraview.demos.html">demos Package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="paraview.detail.html">detail Package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="paraview.tests.html">tests Package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="paraview.tpl.html">tpl Package</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">util Package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id1"><code class="docutils literal notranslate"><span class="pre">util</span></code> Package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#modules">Modules</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="paraview.web.html">web Package</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="paraview.simple.html">simple</a></li>
+<li class="toctree-l1"><a class="reference internal" href="paraview.servermanager.html">servermanager</a></li>
+<li class="toctree-l1"><a class="reference internal" href="paraview.coprocessing.html">coprocessing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="paraview.benchmark.html">benchmark</a></li>
+<li class="toctree-l1"><a class="reference internal" href="paraview.servermanager_proxies.html">Available readers, sources, writers, filters and animation cues</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="api-changes.html">API Changes between ParaView versions</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">ParaView/Python</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+      <a href="genindex.html" class="float-right">Index</a> 
+          <li><a href="paraview.html">paraview Package</a> &raquo;</li>
+      <li>util Package</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="section" id="util-package">
+<h1>util Package<a class="headerlink" href="#util-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id1">
+<h2><code class="xref py py-mod docutils literal notranslate"><span class="pre">util</span></code> Package<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<span class="target" id="module-paraview.util"></span><dl class="function">
+<dt id="paraview.util.Glob">
+<code class="descclassname">paraview.util.</code><code class="descname">Glob</code><span class="sig-paren">(</span><em>path</em>, <em>rootDir=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/util.html#Glob"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.util.Glob" title="Permalink to this definition">¶</a></dt>
+<dd><p>Given a path, this function performs globbing on the file names inside the input
+directory. rootDir is an optional parameter that can set a relative root directory from which
+path is defined. This function returns the list of files matching the globbing pattern (the
+wildcard * is an example of pattern that can be used) of the
+input path. Note that for this function to work, the globbing pattern needs to only belong to
+the file name at the end of path.
+fnmatch package is used as the backend for processing the input pattern.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="paraview.util.IntegrateCell">
+<code class="descclassname">paraview.util.</code><code class="descname">IntegrateCell</code><span class="sig-paren">(</span><em>dataset</em>, <em>cellId</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/util.html#IntegrateCell"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.util.IntegrateCell" title="Permalink to this definition">¶</a></dt>
+<dd><p>This functions uses vtkCellIntegrator’s Integrate method that calculates
+the length/area/volume of a 1D/2D/3D cell. The calculation is exact for
+lines, polylines, triangles, triangle strips, pixels, voxels, convex
+polygons, quads and tetrahedra. All other 3D cells are triangulated
+during volume calculation. In such cases, the result may not be exact.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="paraview.util.ReplaceDollarVariablesWithEnvironment">
+<code class="descclassname">paraview.util.</code><code class="descname">ReplaceDollarVariablesWithEnvironment</code><span class="sig-paren">(</span><em>text</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/util.html#ReplaceDollarVariablesWithEnvironment"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.util.ReplaceDollarVariablesWithEnvironment" title="Permalink to this definition">¶</a></dt>
+<dd><p>Replaces all substrings of the type <cite>${FOO}</cite> with <cite>FOO</cite> obtained
+from the <cite>os.environ</cite>. If the key is not defined in the environment, this
+raises a <cite>KeyError</cite>.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="paraview.util.SetOutputWholeExtent">
+<code class="descclassname">paraview.util.</code><code class="descname">SetOutputWholeExtent</code><span class="sig-paren">(</span><em>algorithm</em>, <em>extent</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/util.html#SetOutputWholeExtent"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.util.SetOutputWholeExtent" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convenience method to help set the WHOLE_EXTENT() in RequestInformation.
+Commonly used by programmable filters. The arguments are the algorithm
+and a tuple/list with 6 elements (xmin, xmax, ymin, ymax, zmin, zmax).</p>
+<p>Example use:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">paraview.util</span>
+<span class="c1"># The output will be of dimensions 10, 1, 1</span>
+<span class="n">paraview</span><span class="o">.</span><span class="n">util</span><span class="o">.</span><span class="n">SetOutputWholeExtent</span><span class="p">(</span><span class="n">algorithm</span><span class="p">,</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+<div class="section" id="modules">
+<h2>Modules<a class="headerlink" href="#modules" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="paraview.util.vtkAlgorithm.html">util.vtkAlgorithm Module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="paraview.util.vtkAlgorithm.html#introduction">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.util.vtkAlgorithm.html#decorator-basics">Decorator Basics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.util.vtkAlgorithm.html#smproxy-decorators"><cite>smproxy</cite> Decorators</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="paraview.util.vtkAlgorithm.html#common-decorator-parameters">Common decorator parameters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="paraview.util.vtkAlgorithm.html#smproxy-source"><cite>smproxy.source</cite></a></li>
+<li class="toctree-l3"><a class="reference internal" href="paraview.util.vtkAlgorithm.html#smproxy-filter"><cite>smproxy.filter</cite></a></li>
+<li class="toctree-l3"><a class="reference internal" href="paraview.util.vtkAlgorithm.html#smproxy-reader"><cite>smproxy.reader</cite></a></li>
+<li class="toctree-l3"><a class="reference internal" href="paraview.util.vtkAlgorithm.html#smproxy-writer"><cite>smproxy.writer</cite></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.util.vtkAlgorithm.html#smproperty-decorators"><cite>smproperty</cite> Decorators</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="paraview.util.vtkAlgorithm.html#id1">Common decorator parameters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="paraview.util.vtkAlgorithm.html#smproperty-xml"><cite>smproperty.xml</cite></a></li>
+<li class="toctree-l3"><a class="reference internal" href="paraview.util.vtkAlgorithm.html#smproperty-intvector-smproperty-doublevector-smproperty-idtypevector-smproperty-stringvector"><cite>smproperty.intvector</cite>, <cite>smproperty.doublevector</cite>, <cite>smproperty.idtypevector</cite>, <cite>smproperty.stringvector</cite></a></li>
+<li class="toctree-l3"><a class="reference internal" href="paraview.util.vtkAlgorithm.html#smproperty-proxy"><cite>smproperty.proxy</cite></a></li>
+<li class="toctree-l3"><a class="reference internal" href="paraview.util.vtkAlgorithm.html#smproperty-input"><cite>smproperty.input</cite></a></li>
+<li class="toctree-l3"><a class="reference internal" href="paraview.util.vtkAlgorithm.html#smproperty-dataarrayselection"><cite>smproperty.dataarrayselection</cite></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.util.vtkAlgorithm.html#smdomain-decorators"><cite>smdomain</cite> Decorators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.util.vtkAlgorithm.html#smhint-decorators"><cite>smhint</cite> Decorators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.util.vtkAlgorithm.html#examples">Examples</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="paraview.tpl.cinemasci.viewers.html" class="btn btn-neutral float-left" title="viewers Package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="paraview.util.vtkAlgorithm.html" class="btn btn-neutral float-right" title="util.vtkAlgorithm Module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2013, Kitware, Inc..</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+  <!-- KW:BEGIN -->
+  <script type="text/javascript" src="/paraview-docs/paraview-version.js"></script>
+  <!-- KW:END -->
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
