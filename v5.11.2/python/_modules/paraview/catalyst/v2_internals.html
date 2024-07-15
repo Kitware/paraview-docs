@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html class="writer-html4" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>paraview.catalyst.v2_internals &mdash; ParaView/Python 5.11.2 documentation</title><link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" /><link rel="shortcut icon" href="../../../_static/pvIcon.ico"/>
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../../_static/language_data.js"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          <ul>
+            <li> <a href="../../../index.html">
+              <img src="../../../_static/paraview-logo-small.png"
+              alt="ParaView/Python"></img></a> </li>
+            <li class="version"> version 5.11.2</li>
+          </ul>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../quick-start.html">Quick-Start :  A Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../paraview.html">The ParaView Python Package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../paraview.simple.html">simple</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../paraview.servermanager.html">servermanager</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../paraview.coprocessing.html">coprocessing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../paraview.benchmark.html">benchmark</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../paraview.servermanager_proxies.html">Available readers, sources, writers, filters and animation cues</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../api-changes.html">API Changes between ParaView versions</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">ParaView/Python</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+      <a href="../../../genindex.html" class="float-right">Index</a> 
+          <li><a href="../../index.html">Module code</a> &raquo;</li>
+          <li><a href="../catalyst.html">paraview.catalyst</a> &raquo;</li>
+      <li>paraview.catalyst.v2_internals</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <h1>Source code for paraview.catalyst.v2_internals</h1><div class="highlight"><pre>
+<span></span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">INTERNAL MODULE, NOT FOR PUBLIC CONSUMPTION.</span>
+
+<span class="sd">Used by vtkCPPythonScriptV2Pipeline and may change without notice.</span>
+
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="kn">from</span> <span class="nn">.</span> <span class="k">import</span> <span class="n">log_level</span>
+<span class="kn">from</span> <span class="nn">..</span> <span class="k">import</span> <span class="n">log</span><span class="p">,</span> <span class="n">print_warning</span>
+<span class="kn">from</span> <span class="nn">..modules.vtkPVPythonCatalyst</span> <span class="k">import</span> <span class="n">vtkCPPythonScriptV2Helper</span>
+
+<div class="viewcode-block" id="register_module"><a class="viewcode-back" href="../../../paraview.catalyst.v2_internals.html#paraview.catalyst.v2_internals.register_module">[docs]</a><span class="k">def</span> <span class="nf">register_module</span><span class="p">(</span><span class="n">path</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;register a file/directory as an importable module.</span>
+<span class="sd">    Returns the name to use to import the module, on success, otherwise `None`.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="kn">from</span> <span class="nn">.detail</span> <span class="k">import</span> <span class="n">RegisterPackageFromZip</span>
+    <span class="kn">from</span> <span class="nn">.detail</span> <span class="k">import</span> <span class="n">RegisterPackageFromDir</span>
+    <span class="kn">from</span> <span class="nn">.detail</span> <span class="k">import</span> <span class="n">RegisterModuleFromFile</span>
+    <span class="kn">from</span> <span class="nn">paraview.vtk.vtkParallelCore</span> <span class="k">import</span> <span class="n">vtkPSystemTools</span>
+
+    <span class="kn">from</span> <span class="nn">.</span> <span class="k">import</span> <span class="n">importers</span>
+    <span class="c1"># plug into Python import machinery to help import pipeline modules</span>
+    <span class="c1"># seamlessly.</span>
+    <span class="n">importers</span><span class="o">.</span><span class="n">install_pathfinder</span><span class="p">()</span>
+
+    <span class="k">if</span> <span class="n">vtkPSystemTools</span><span class="o">.</span><span class="n">FileIsDirectory</span><span class="p">(</span><span class="n">path</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">RegisterPackageFromDir</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">path</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">&quot;.zip&quot;</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">RegisterPackageFromZip</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">RegisterModuleFromFile</span><span class="p">(</span><span class="n">path</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="CatalystV1Information"><a class="viewcode-back" href="../../../paraview.catalyst.v2_internals.html#paraview.catalyst.v2_internals.CatalystV1Information">[docs]</a><span class="k">class</span> <span class="nc">CatalystV1Information</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Provides information to the current `catalyst_execute` call.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dataDescription</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_dataDescription</span> <span class="o">=</span> <span class="n">dataDescription</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">time</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;returns the current simulation time&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_dataDescription</span><span class="o">.</span><span class="n">GetTime</span><span class="p">()</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">timestep</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;returns the current simulation cycle or timestep index&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_dataDescription</span><span class="o">.</span><span class="n">GetTimeStep</span><span class="p">()</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">cycle</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;returns the current simulation cycle or timestep index&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_dataDescription</span><span class="o">.</span><span class="n">GetTimeStep</span><span class="p">()</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">dataDescription</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;avoid using this unless absolutely sure what you&#39;re doing&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_dataDescription</span></div>
+
+<div class="viewcode-block" id="CatalystV2Information"><a class="viewcode-back" href="../../../paraview.catalyst.v2_internals.html#paraview.catalyst.v2_internals.CatalystV2Information">[docs]</a><span class="k">class</span> <span class="nc">CatalystV2Information</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="kn">from</span> <span class="nn">paraview.modules.vtkPVInSitu</span> <span class="k">import</span> <span class="n">vtkInSituInitializationHelper</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">helper</span> <span class="o">=</span> <span class="n">vtkInSituInitializationHelper</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">time</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;returns the current simulation time&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">helper</span><span class="o">.</span><span class="n">GetTime</span><span class="p">()</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">timestep</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;returns the current simulation cycle or timestep index&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">helper</span><span class="o">.</span><span class="n">GetTimeStep</span><span class="p">()</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">cycle</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;returns the current simulation cycle or timestep index&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">helper</span><span class="o">.</span><span class="n">GetTimeStep</span><span class="p">()</span></div>
+
+<div class="viewcode-block" id="import_and_validate"><a class="viewcode-back" href="../../../paraview.catalyst.v2_internals.html#paraview.catalyst.v2_internals.import_and_validate">[docs]</a><span class="k">def</span> <span class="nf">import_and_validate</span><span class="p">(</span><span class="n">modulename</span><span class="p">):</span>
+    <span class="kn">import</span> <span class="nn">importlib</span>
+
+    <span class="n">m</span> <span class="o">=</span> <span class="n">importlib</span><span class="o">.</span><span class="n">import_module</span><span class="p">(</span><span class="n">modulename</span><span class="p">)</span>
+    <span class="n">_validate_and_initialize</span><span class="p">(</span><span class="n">m</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">m</span></div>
+
+<div class="viewcode-block" id="do_request_data_description"><a class="viewcode-back" href="../../../paraview.catalyst.v2_internals.html#paraview.catalyst.v2_internals.do_request_data_description">[docs]</a><span class="k">def</span> <span class="nf">do_request_data_description</span><span class="p">(</span><span class="n">module</span><span class="p">,</span> <span class="n">dataDescription</span><span class="p">):</span>
+    <span class="n">log</span><span class="p">(</span><span class="n">log_level</span><span class="p">(),</span> <span class="s2">&quot;called do_request_data_description </span><span class="si">%r</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">module</span><span class="p">)</span>
+
+    <span class="c1"># call &#39;RequestDataDescription&#39; on module, if exists</span>
+    <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">module</span><span class="p">,</span> <span class="s2">&quot;RequestDataDescription&quot;</span><span class="p">):</span>
+        <span class="n">log</span><span class="p">(</span><span class="n">log_level</span><span class="p">(),</span> <span class="s2">&quot;calling &#39;</span><span class="si">%s</span><span class="s2">.</span><span class="si">%s</span><span class="s2">&#39;&quot;</span><span class="p">,</span> <span class="n">module</span><span class="o">.</span><span class="vm">__name__</span><span class="p">,</span> <span class="s2">&quot;RequestDataDescription&quot;</span><span class="p">)</span>
+        <span class="n">module</span><span class="o">.</span><span class="n">RequestDataDescription</span><span class="p">(</span><span class="n">dataDescription</span><span class="p">)</span>
+        <span class="k">return</span> <span class="kc">True</span> <span class="c1"># indicates RequestDataDescription was overridden in the script.</span>
+    <span class="k">return</span> <span class="kc">False</span></div>
+
+<div class="viewcode-block" id="do_catalyst_initialize"><a class="viewcode-back" href="../../../paraview.catalyst.v2_internals.html#paraview.catalyst.v2_internals.do_catalyst_initialize">[docs]</a><span class="k">def</span> <span class="nf">do_catalyst_initialize</span><span class="p">(</span><span class="n">module</span><span class="p">):</span>
+    <span class="n">log</span><span class="p">(</span><span class="n">log_level</span><span class="p">(),</span> <span class="s2">&quot;called do_catalyst_initialize </span><span class="si">%r</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">module</span><span class="p">)</span>
+
+    <span class="c1"># call &#39;catalyst_initialize&#39; on module if exits</span>
+    <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">module</span><span class="p">,</span> <span class="s2">&quot;catalyst_initialize&quot;</span><span class="p">):</span>
+        <span class="n">log</span><span class="p">(</span><span class="n">log_level</span><span class="p">(),</span> <span class="s2">&quot;calling &#39;</span><span class="si">%s</span><span class="s2">.</span><span class="si">%s</span><span class="s2">&#39;&quot;</span><span class="p">,</span> <span class="n">module</span><span class="o">.</span><span class="vm">__name__</span><span class="p">,</span> <span class="s2">&quot;catalyst_initialize&quot;</span><span class="p">)</span>
+        <span class="n">module</span><span class="o">.</span><span class="n">catalyst_initialize</span><span class="p">()</span></div>
+
+<div class="viewcode-block" id="do_catalyst_finalize"><a class="viewcode-back" href="../../../paraview.catalyst.v2_internals.html#paraview.catalyst.v2_internals.do_catalyst_finalize">[docs]</a><span class="k">def</span> <span class="nf">do_catalyst_finalize</span><span class="p">(</span><span class="n">module</span><span class="p">):</span>
+    <span class="n">log</span><span class="p">(</span><span class="n">log_level</span><span class="p">(),</span> <span class="s2">&quot;called do_catalyst_finalize </span><span class="si">%r</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">module</span><span class="p">)</span>
+
+    <span class="c1"># call &#39;catalyst_finalize&#39; on module if exits</span>
+    <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">module</span><span class="p">,</span> <span class="s2">&quot;catalyst_finalize&quot;</span><span class="p">):</span>
+        <span class="n">log</span><span class="p">(</span><span class="n">log_level</span><span class="p">(),</span> <span class="s2">&quot;calling &#39;</span><span class="si">%s</span><span class="s2">.</span><span class="si">%s</span><span class="s2">&#39;&quot;</span><span class="p">,</span> <span class="n">module</span><span class="o">.</span><span class="vm">__name__</span><span class="p">,</span> <span class="s2">&quot;catalyst_finalize&quot;</span><span class="p">)</span>
+        <span class="n">module</span><span class="o">.</span><span class="n">catalyst_finalize</span><span class="p">()</span></div>
+
+<div class="viewcode-block" id="do_catalyst_execute"><a class="viewcode-back" href="../../../paraview.catalyst.v2_internals.html#paraview.catalyst.v2_internals.do_catalyst_execute">[docs]</a><span class="k">def</span> <span class="nf">do_catalyst_execute</span><span class="p">(</span><span class="n">module</span><span class="p">):</span>
+    <span class="n">log</span><span class="p">(</span><span class="n">log_level</span><span class="p">(),</span> <span class="s2">&quot;called do_catalyst_execute </span><span class="si">%r</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">module</span><span class="p">)</span>
+
+    <span class="c1"># call &#39;catalyst_execute&#39; on module, if exists</span>
+    <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">module</span><span class="p">,</span> <span class="s2">&quot;catalyst_execute&quot;</span><span class="p">):</span>
+        <span class="n">log</span><span class="p">(</span><span class="n">log_level</span><span class="p">(),</span> <span class="s2">&quot;calling &#39;</span><span class="si">%s</span><span class="s2">.</span><span class="si">%s</span><span class="s2">&#39;&quot;</span><span class="p">,</span> <span class="n">module</span><span class="o">.</span><span class="vm">__name__</span><span class="p">,</span> <span class="s2">&quot;catalyst_execute&quot;</span><span class="p">)</span>
+
+        <span class="n">dataDescription</span> <span class="o">=</span> <span class="n">_get_active_data_description</span><span class="p">()</span>
+        <span class="k">if</span> <span class="n">dataDescription</span><span class="p">:</span>
+            <span class="n">info</span> <span class="o">=</span> <span class="n">CatalystV1Information</span><span class="p">(</span><span class="n">dataDescription</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">info</span> <span class="o">=</span> <span class="n">CatalystV2Information</span><span class="p">()</span>
+        <span class="n">module</span><span class="o">.</span><span class="n">catalyst_execute</span><span class="p">(</span><span class="n">info</span><span class="p">)</span>
+        <span class="k">return</span> <span class="kc">True</span>
+
+    <span class="k">return</span> <span class="kc">False</span></div>
+
+<span class="k">def</span> <span class="nf">_get_active_data_description</span><span class="p">():</span>
+    <span class="n">helper</span> <span class="o">=</span> <span class="n">vtkCPPythonScriptV2Helper</span><span class="o">.</span><span class="n">GetActiveInstance</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">helper</span><span class="o">.</span><span class="n">GetDataDescription</span><span class="p">()</span>
+
+<span class="k">def</span> <span class="nf">_get_active_arguments</span><span class="p">():</span>
+    <span class="n">args</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">helper</span> <span class="o">=</span> <span class="n">vtkCPPythonScriptV2Helper</span><span class="o">.</span><span class="n">GetActiveInstance</span><span class="p">()</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">helper</span><span class="p">:</span>
+        <span class="c1"># happens when script is executed in pvbatch, and not catalyst</span>
+        <span class="k">return</span> <span class="n">args</span>
+    <span class="n">slist</span> <span class="o">=</span> <span class="n">helper</span><span class="o">.</span><span class="n">GetArgumentsAsStringList</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">cc</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">slist</span><span class="o">.</span><span class="n">GetLength</span><span class="p">()):</span>
+        <span class="n">args</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">slist</span><span class="o">.</span><span class="n">GetString</span><span class="p">(</span><span class="n">cc</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">args</span>
+
+<span class="k">def</span> <span class="nf">_get_execute_parameters</span><span class="p">():</span>
+    <span class="n">params</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">helper</span> <span class="o">=</span> <span class="n">vtkCPPythonScriptV2Helper</span><span class="o">.</span><span class="n">GetActiveInstance</span><span class="p">()</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">helper</span><span class="p">:</span>
+        <span class="c1"># happens when script is executed in pvbatch, and not catalyst</span>
+        <span class="k">return</span> <span class="n">params</span>
+    <span class="n">slist</span> <span class="o">=</span> <span class="n">helper</span><span class="o">.</span><span class="n">GetParametersAsStringList</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">cc</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">slist</span><span class="o">.</span><span class="n">GetLength</span><span class="p">()):</span>
+        <span class="n">params</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">slist</span><span class="o">.</span><span class="n">GetString</span><span class="p">(</span><span class="n">cc</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">params</span>
+
+<span class="k">def</span> <span class="nf">_get_script_filename</span><span class="p">():</span>
+    <span class="n">helper</span> <span class="o">=</span> <span class="n">vtkCPPythonScriptV2Helper</span><span class="o">.</span><span class="n">GetActiveInstance</span><span class="p">()</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">helper</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">None</span>
+    <span class="k">return</span> <span class="n">helper</span><span class="o">.</span><span class="n">GetScriptFileName</span><span class="p">()</span>
+
+<div class="viewcode-block" id="has_customized_execution"><a class="viewcode-back" href="../../../paraview.catalyst.v2_internals.html#paraview.catalyst.v2_internals.has_customized_execution">[docs]</a><span class="k">def</span> <span class="nf">has_customized_execution</span><span class="p">(</span><span class="n">module</span><span class="p">):</span>
+    <span class="k">return</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">module</span><span class="p">,</span> <span class="s2">&quot;catalyst_execute&quot;</span><span class="p">)</span> <span class="ow">or</span> \
+        <span class="nb">hasattr</span><span class="p">(</span><span class="n">module</span><span class="p">,</span> <span class="s2">&quot;RequestDataDescription&quot;</span><span class="p">)</span> <span class="ow">or</span> \
+        <span class="nb">hasattr</span><span class="p">(</span><span class="n">module</span><span class="p">,</span> <span class="s2">&quot;catalyst_initialize&quot;</span><span class="p">)</span></div>
+
+<span class="k">def</span> <span class="nf">_validate_and_initialize</span><span class="p">(</span><span class="n">module</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Validates a module to confirm that it is a `module` that we can treat as</span>
+<span class="sd">    a Catalyst script. Additionally, adds some private meta-data that this</span>
+<span class="sd">    module will use during exection.&quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">module</span><span class="p">,</span> <span class="s2">&quot;options&quot;</span><span class="p">):</span>
+        <span class="n">print_warning</span><span class="p">(</span><span class="s2">&quot;Module &#39;</span><span class="si">%s</span><span class="s2">&#39; missing Catalyst &#39;options&#39;, will use a default options object&quot;</span><span class="p">,</span> <span class="n">module</span><span class="o">.</span><span class="vm">__name__</span><span class="p">)</span>
+        <span class="kn">from</span> <span class="nn">.</span> <span class="k">import</span> <span class="n">Options</span>
+        <span class="n">module</span><span class="o">.</span><span class="n">options</span> <span class="o">=</span> <span class="n">Options</span><span class="p">()</span>
+    <span class="c1"># provide the options to vtkCPPythonScriptV2Helper.</span>
+    <span class="n">helper</span> <span class="o">=</span> <span class="n">vtkCPPythonScriptV2Helper</span><span class="o">.</span><span class="n">GetActiveInstance</span><span class="p">()</span>
+    <span class="n">helper</span><span class="o">.</span><span class="n">SetOptions</span><span class="p">(</span><span class="n">module</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">SMProxy</span><span class="p">)</span>
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2013, Kitware, Inc..</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+  <!-- KW:BEGIN -->
+  <script type="text/javascript" src="/paraview-docs/paraview-version.js"></script>
+  <!-- KW:END -->
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

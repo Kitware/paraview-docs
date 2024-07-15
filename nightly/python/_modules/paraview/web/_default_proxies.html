@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>paraview.web._default_proxies &mdash; ParaView/Python 5.12.1-1406-gaa27439101 documentation</title>
+      <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+    <link rel="shortcut icon" href="../../../_static/pvIcon.ico"/>
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          <ul>
+            <li> <a href="../../../index.html">
+              <img src="../../../_static/paraview-logo-small.png"
+              alt="ParaView/Python"></img></a> </li>
+            <li class="version"> version 5.12.1-1406-gaa27439101</li>
+          </ul>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../quick-start.html">Quick-Start :  A Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../paraview.html">The ParaView Python Package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../paraview.simple.html">simple</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../paraview.servermanager.html">servermanager</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../paraview.catalyst.html">catalyst</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../paraview.coprocessing.html">coprocessing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../paraview.benchmark.html">benchmark</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../paraview.servermanager_proxies.html">Available readers, sources, writers, filters and animation cues</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../api-changes.html">API Changes between ParaView versions</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">ParaView/Python</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+      <a href="../../../genindex.html" class="float-right">Index</a> 
+          <li><a href="../../index.html">Module code</a> &raquo;</li>
+      <li>paraview.web._default_proxies</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <h1>Source code for paraview.web._default_proxies</h1><div class="highlight"><pre>
+<span></span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;internal module used to get the list of default proxies.</span>
+
+<span class="sd">This is an internal module and not intended to be used by Python code outside of</span>
+<span class="sd">this package.</span>
+
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="n">__defaultProxiesJSON</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">{</span>
+<span class="s2">    &quot;sources&quot;: [</span>
+<span class="s2">        { &quot;name&quot;: &quot;AnnotateTime&quot;, &quot;label&quot;: &quot;Annotate Time&quot; },</span>
+<span class="s2">        { &quot;name&quot;: &quot;Cone&quot; },</span>
+<span class="s2">        { &quot;name&quot;: &quot;Sphere&quot; },</span>
+<span class="s2">        { &quot;name&quot;: &quot;Text&quot; },</span>
+<span class="s2">        { &quot;name&quot;: &quot;Wavelet&quot; }</span>
+<span class="s2">    ],</span>
+
+<span class="s2">    &quot;filters&quot;: [</span>
+<span class="s2">        { &quot;name&quot;: &quot;Calculator&quot; },</span>
+<span class="s2">        { &quot;name&quot;: &quot;CellDatatoPointData&quot;, &quot;label&quot;: &quot;Cell Data To Point Data&quot; },</span>
+<span class="s2">        { &quot;name&quot;: &quot;Clip&quot; },</span>
+<span class="s2">        { &quot;name&quot;: &quot;Contour&quot; },</span>
+<span class="s2">        { &quot;name&quot;: &quot;D3&quot; },</span>
+<span class="s2">        { &quot;name&quot;: &quot;ExtractCTHParts&quot;, &quot;label&quot;: &quot;Extract CTH Parts&quot; },</span>
+<span class="s2">        { &quot;name&quot;: &quot;ProcessIdScalars&quot;, &quot;label&quot;: &quot;Process ID Scalars&quot; },</span>
+<span class="s2">        { &quot;name&quot;: &quot;Reflect&quot; },</span>
+<span class="s2">        { &quot;name&quot;: &quot;Slice&quot; },</span>
+<span class="s2">        { &quot;name&quot;: &quot;StreamTracer&quot;, &quot;label&quot;: &quot;Stream Tracer&quot; },</span>
+<span class="s2">        { &quot;name&quot;: &quot;Threshold&quot; },</span>
+<span class="s2">        { &quot;name&quot;: &quot;Transform&quot; },</span>
+<span class="s2">        { &quot;name&quot;: &quot;Tube&quot; },</span>
+<span class="s2">        { &quot;name&quot;: &quot;Ribbon&quot; },</span>
+<span class="s2">        { &quot;name&quot;: &quot;WarpByScalar&quot;, &quot;label&quot;: &quot;Warp By Scalar&quot; },</span>
+<span class="s2">        { &quot;name&quot;: &quot;WarpByVector&quot;, &quot;label&quot;: &quot;Warp By Vector&quot; },</span>
+<span class="s2">        { &quot;name&quot;: &quot;ExtractBlock&quot;, &quot;label&quot;: &quot;Extract Blocks&quot; }</span>
+<span class="s2">    ],</span>
+
+<span class="s2">    &quot;readers&quot;: [</span>
+<span class="s2">        { &quot;name&quot;: &quot;LegacyVTKReader&quot;, &quot;extensions&quot;: [ &quot;vtk&quot; ], &quot;method&quot;: &quot;FileNames&quot; },</span>
+<span class="s2">        { &quot;name&quot;: &quot;Xdmf3ReaderS&quot;, &quot;extensions&quot;: [ &quot;xmf&quot;, &quot;xdmf&quot; ] }</span>
+<span class="s2">    ]</span>
+<span class="s2">}</span>
+<span class="s2">&quot;&quot;&quot;</span>
+
+
+<div class="viewcode-block" id="getDefaultProxies"><a class="viewcode-back" href="../../../paraview.web._default_proxies.html#paraview.web._default_proxies.getDefaultProxies">[docs]</a><span class="k">def</span> <span class="nf">getDefaultProxies</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot;Returns the JSON object for the default proxies configuration&quot;&quot;&quot;</span>
+    <span class="kn">import</span> <span class="nn">json</span>
+
+    <span class="k">return</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">__defaultProxiesJSON</span><span class="p">)</span></div>
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2013, Kitware, Inc..</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+  <!-- KW:BEGIN -->
+  <script type="text/javascript" src="/paraview-docs/paraview-version.js"></script>
+  <!-- KW:END -->
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

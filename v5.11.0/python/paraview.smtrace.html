@@ -1,0 +1,1080 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>smtrace Module &mdash; ParaView/Python 5.11.0 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="spatiotemporalparallelism Module" href="paraview.spatiotemporalparallelism.html" />
+    <link rel="prev" title="smtesting Module" href="paraview.smtesting.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          <ul>
+            <li> <a href="index.html">
+              <img src="_static/paraview-logo-small.png"
+              alt="ParaView/Python"></img></a> </li>
+            <li class="version"> version 5.11.0</li>
+          </ul>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="quick-start.html">Quick-Start :  A Tutorial</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="paraview.html">The ParaView Python Package</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="paraview.html#id1"><code class="xref py py-mod docutils literal notranslate"><span class="pre">paraview</span></code> Package</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="paraview.html#modules">Modules</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="paraview._backwardscompatibilityhelper.html">_backwardscompatibilityhelper Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="paraview._colorMaps.html">_colorMaps Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="paraview.collaboration.html">collaboration Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="paraview.coprocessing.html">coprocessing Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="paraview.cpstate.html">cpstate Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="paraview.live.html">live Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="paraview.lookuptable.html">lookuptable Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="paraview.numeric.html">numeric Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="paraview.numpy_support.html">numpy_support Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="paraview.pv-vtk-all.html">pv-vtk-all Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="paraview.python_view.html">python_view Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="paraview.selection.html">selection Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="paraview.servermanager.html">servermanager Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="paraview.simple.html">simple Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="paraview.servermanager_proxies.html">Available readers, sources, writers, filters and animation cues</a></li>
+<li class="toctree-l3"><a class="reference internal" href="paraview.smstate.html">smstate Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="paraview.smtesting.html">smtesting Module</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">smtrace Module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#developer-documentation">Developer Documentation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#notes-about-references">Notes about references</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="paraview.spatiotemporalparallelism.html">spatiotemporalparallelism Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="paraview.variant.html">variant Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="paraview.vtk.html">vtk Module</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.html#subpackages">Subpackages</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="paraview.simple.html">simple</a></li>
+<li class="toctree-l1"><a class="reference internal" href="paraview.servermanager.html">servermanager</a></li>
+<li class="toctree-l1"><a class="reference internal" href="paraview.coprocessing.html">coprocessing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="paraview.benchmark.html">benchmark</a></li>
+<li class="toctree-l1"><a class="reference internal" href="paraview.servermanager_proxies.html">Available readers, sources, writers, filters and animation cues</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="api-changes.html">API Changes between ParaView versions</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">ParaView/Python</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+      <a href="genindex.html" class="float-right">Index</a> 
+          <li><a href="paraview.html">paraview Package</a> &raquo;</li>
+      <li>smtrace Module</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="section" id="module-paraview.smtrace">
+<span id="smtrace-module"></span><h1>smtrace Module<a class="headerlink" href="#module-paraview.smtrace" title="Permalink to this headline">¶</a></h1>
+<p>smtrace module is used along with vtkSMTrace to generate Python trace for
+ParaView. While this module is primarily designed to be used from the ParaView
+GUI, Python scripts can use this module too to generate trace from the script
+executed.</p>
+<p>Typical usage is as follows:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">paraview</span> <span class="kn">import</span> <span class="n">smtrace</span>
+<span class="n">config</span> <span class="o">=</span> <span class="n">smtracer</span><span class="o">.</span><span class="n">start_trace</span><span class="p">()</span>
+
+<span class="c1"># config is an instance of vtkSMTrace. One can setup properties on this</span>
+<span class="c1"># object to control  the generated trace. e.g.</span>
+<span class="n">config</span><span class="o">.</span><span class="n">SetFullyTraceSupplementalProxies</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># do the actions to trace.</span>
+    <span class="o">...</span>
+
+<span class="c1"># stop trace. The generated trace is returned.</span>
+<span class="n">txt</span> <span class="o">=</span> <span class="n">smtracer</span><span class="o">.</span><span class="n">stop_trace</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="section" id="developer-documentation">
+<h2>Developer Documentation<a class="headerlink" href="#developer-documentation" title="Permalink to this headline">¶</a></h2>
+<p>This section describes the module design for developers wanted to extend this
+module or use this module for advance tracing/state generation.</p>
+<p>The design can be described as follows:</p>
+<p>C++ code (either in ServerManager or the GUI layer) should trace actions.
+This is done using SM_SCOPED_TRACE() macro provided by vtkSMTrace. When tracing
+is enabled, each SM_SCOPED_TRACE() call creates a <a class="reference internal" href="#paraview.smtrace.TraceItem" title="paraview.smtrace.TraceItem"><code class="xref py py-class docutils literal notranslate"><span class="pre">TraceItem</span></code></a>. The TraceItem
+instance is scoped, i.e. the object is finalized and destroyed when the scope
+exits.</p>
+<p>There are various types of TraceItem, ranging from those that trace specific
+action such as <a class="reference internal" href="#paraview.smtrace.Show" title="paraview.smtrace.Show"><code class="xref py py-class docutils literal notranslate"><span class="pre">Show</span></code></a>, or those that trace any modified properties
+(<a class="reference internal" href="#paraview.smtrace.PropertiesModified" title="paraview.smtrace.PropertiesModified"><code class="xref py py-class docutils literal notranslate"><span class="pre">PropertiesModified</span></code></a>). Generic TraceItem types, such as
+<a class="reference internal" href="#paraview.smtrace.CallMethod" title="paraview.smtrace.CallMethod"><code class="xref py py-class docutils literal notranslate"><span class="pre">CallMethod</span></code></a> and <a class="reference internal" href="#paraview.smtrace.CallFunction" title="paraview.smtrace.CallFunction"><code class="xref py py-class docutils literal notranslate"><span class="pre">CallFunction</span></code></a> can be used to trace methods
+called on vtkObject instances or functions in the global namespace.</p>
+<p>TraceItems create or use <a class="reference internal" href="#paraview.smtrace.Accessor" title="paraview.smtrace.Accessor"><code class="xref py py-class docutils literal notranslate"><span class="pre">Accessor</span></code></a> instances. Accessors are objects
+created for Proxies and Properties in ParaView. Accessor knows how to access
+that proxy or property in the Python trace. TraceItems that create new proxies
+such as <a class="reference internal" href="#paraview.smtrace.RegisterPipelineProxy" title="paraview.smtrace.RegisterPipelineProxy"><code class="xref py py-class docutils literal notranslate"><span class="pre">RegisterPipelineProxy</span></code></a> and <a class="reference internal" href="#paraview.smtrace.RegisterViewProxy" title="paraview.smtrace.RegisterViewProxy"><code class="xref py py-class docutils literal notranslate"><span class="pre">RegisterViewProxy</span></code></a>, create
+new <code class="xref py py-class docutils literal notranslate"><span class="pre">ProxyAccessor</span></code> instances. Other such as
+<a class="reference internal" href="#paraview.smtrace.PropertiesModified" title="paraview.smtrace.PropertiesModified"><code class="xref py py-class docutils literal notranslate"><span class="pre">PropertiesModified</span></code></a> trace item rely on accessors already created.
+<a class="reference internal" href="#paraview.smtrace.Trace" title="paraview.smtrace.Trace"><code class="xref py py-class docutils literal notranslate"><span class="pre">Trace</span></code></a> can provide access to already created accessor as well as create
+new accessor for proxies create before the tracing began
+(<a href="#id1"><span class="problematic" id="id2">:method:`.Trace.get_accessor`</span></a>).</p>
+<p>Additionally, there are filters such as <a class="reference internal" href="#paraview.smtrace.ProxyFilter" title="paraview.smtrace.ProxyFilter"><code class="xref py py-class docutils literal notranslate"><span class="pre">ProxyFilter</span></code></a>,
+<a class="reference internal" href="#paraview.smtrace.PipelineProxyFilter" title="paraview.smtrace.PipelineProxyFilter"><code class="xref py py-class docutils literal notranslate"><span class="pre">PipelineProxyFilter</span></code></a>, etc. which are used to filter properties that get
+traced and where they get traced i.e. in constructor call or right after it.</p>
+</div>
+<div class="section" id="notes-about-references">
+<h2>Notes about references<a class="headerlink" href="#notes-about-references" title="Permalink to this headline">¶</a></h2>
+<p>RealProxyAccessor keeps a hard reference to the servermanager.Proxy instance.
+This is required. If we don’t, then the Python object for vtkSMProxy also gets
+garbage collected since there’s no reference to it.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="paraview.smtrace.Accessor">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">paraview.smtrace.</span></span><span class="sig-name descname"><span class="pre">Accessor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">varname</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">obj</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/smtrace.html#Accessor"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#paraview.smtrace.Accessor" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="paraview.smtrace.Accessor.finalize">
+<span class="sig-name descname"><span class="pre">finalize</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/smtrace.html#Accessor.finalize"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#paraview.smtrace.Accessor.finalize" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="paraview.smtrace.Accessor.get_object">
+<span class="sig-name descname"><span class="pre">get_object</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/smtrace.html#Accessor.get_object"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#paraview.smtrace.Accessor.get_object" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="paraview.smtrace.AnimationProxyFilter">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">paraview.smtrace.</span></span><span class="sig-name descname"><span class="pre">AnimationProxyFilter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">trace_all_in_ctor</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/smtrace.html#AnimationProxyFilter"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#paraview.smtrace.AnimationProxyFilter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#paraview.smtrace.ProxyFilter" title="paraview.smtrace.ProxyFilter"><code class="xref py py-class docutils literal notranslate"><span class="pre">paraview.smtrace.ProxyFilter</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="paraview.smtrace.AnimationProxyFilter.should_never_trace">
+<span class="sig-name descname"><span class="pre">should_never_trace</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">prop</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/smtrace.html#AnimationProxyFilter.should_never_trace"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#paraview.smtrace.AnimationProxyFilter.should_never_trace" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="paraview.smtrace.BlockTraceItems">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">paraview.smtrace.</span></span><span class="sig-name descname"><span class="pre">BlockTraceItems</span></span><a class="reference internal" href="_modules/paraview/smtrace.html#BlockTraceItems"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#paraview.smtrace.BlockTraceItems" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#paraview.smtrace.NestableTraceItem" title="paraview.smtrace.NestableTraceItem"><code class="xref py py-class docutils literal notranslate"><span class="pre">paraview.smtrace.NestableTraceItem</span></code></a></p>
+<p>Item to block further creation of trace items, even
+those that are <cite>NestableTraceItem</cite>. Simply create this and
+no trace items will be created by <cite>_create_trace_item_internal</cite>
+until this instance is cleaned up.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="paraview.smtrace.BookkeepingItem">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">paraview.smtrace.</span></span><span class="sig-name descname"><span class="pre">BookkeepingItem</span></span><a class="reference internal" href="_modules/paraview/smtrace.html#BookkeepingItem"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#paraview.smtrace.BookkeepingItem" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#paraview.smtrace.NestableTraceItem" title="paraview.smtrace.NestableTraceItem"><code class="xref py py-class docutils literal notranslate"><span class="pre">paraview.smtrace.NestableTraceItem</span></code></a></p>
+<p>Base class for trace items that are only used for
+book keeping and don’t affect the trace itself.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="paraview.smtrace.CallFunction">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">paraview.smtrace.</span></span><span class="sig-name descname"><span class="pre">CallFunction</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">functionname</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/smtrace.html#CallFunction"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#paraview.smtrace.CallFunction" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#paraview.smtrace.TraceItem" title="paraview.smtrace.TraceItem"><code class="xref py py-class docutils literal notranslate"><span class="pre">paraview.smtrace.TraceItem</span></code></a></p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="paraview.smtrace.CallMethod">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">paraview.smtrace.</span></span><span class="sig-name descname"><span class="pre">CallMethod</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">proxy</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">methodname</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/smtrace.html#CallMethod"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#paraview.smtrace.CallMethod" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#paraview.smtrace.TraceItem" title="paraview.smtrace.TraceItem"><code class="xref py py-class docutils literal notranslate"><span class="pre">paraview.smtrace.TraceItem</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="paraview.smtrace.CallMethod.get_trace">
+<span class="sig-name descname"><span class="pre">get_trace</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">proxy</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">methodname</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/smtrace.html#CallMethod.get_trace"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#paraview.smtrace.CallMethod.get_trace" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="paraview.smtrace.CallMethod.marshall">
+<em class="property"><span class="pre">classmethod</span> </em><span class="sig-name descname"><span class="pre">marshall</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/smtrace.html#CallMethod.marshall"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#paraview.smtrace.CallMethod.marshall" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="paraview.smtrace.CallMethodIfPropertiesModified">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">paraview.smtrace.</span></span><span class="sig-name descname"><span class="pre">CallMethodIfPropertiesModified</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">proxy</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">methodname</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/smtrace.html#CallMethodIfPropertiesModified"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#paraview.smtrace.CallMethodIfPropertiesModified" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#paraview.smtrace.CallMethod" title="paraview.smtrace.CallMethod"><code class="xref py py-class docutils literal notranslate"><span class="pre">paraview.smtrace.CallMethod</span></code></a></p>
+<p>Similar to CallMethod, except that the trace will get logged only
+if the proxy fires PropertiesModified event before the trace-item is
+finalized.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="paraview.smtrace.CallMethodIfPropertiesModified.finalize">
+<span class="sig-name descname"><span class="pre">finalize</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/smtrace.html#CallMethodIfPropertiesModified.finalize"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#paraview.smtrace.CallMethodIfPropertiesModified.finalize" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="paraview.smtrace.CallMethodIfPropertiesModified.on_event">
+<span class="sig-name descname"><span class="pre">on_event</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">string</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/smtrace.html#CallMethodIfPropertiesModified.on_event"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#paraview.smtrace.CallMethodIfPropertiesModified.on_event" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="paraview.smtrace.ChooseTexture">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">paraview.smtrace.</span></span><span class="sig-name descname"><span class="pre">ChooseTexture</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">owner</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">texture</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prop</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/smtrace.html#ChooseTexture"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#paraview.smtrace.ChooseTexture" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#paraview.smtrace.RenderingMixin" title="paraview.smtrace.RenderingMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">paraview.smtrace.RenderingMixin</span></code></a>, <a class="reference internal" href="#paraview.smtrace.TraceItem" title="paraview.smtrace.TraceItem"><code class="xref py py-class docutils literal notranslate"><span class="pre">paraview.smtrace.TraceItem</span></code></a></p>
+<p>Traces changes of texture object selection. For example renderview background.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="paraview.smtrace.CleanupAccessor">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">paraview.smtrace.</span></span><span class="sig-name descname"><span class="pre">CleanupAccessor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">proxy</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/smtrace.html#CleanupAccessor"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#paraview.smtrace.CleanupAccessor" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#paraview.smtrace.BookkeepingItem" title="paraview.smtrace.BookkeepingItem"><code class="xref py py-class docutils literal notranslate"><span class="pre">paraview.smtrace.BookkeepingItem</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="paraview.smtrace.CleanupAccessor.finalize">
+<span class="sig-name descname"><span class="pre">finalize</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/smtrace.html#CleanupAccessor.finalize"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#paraview.smtrace.CleanupAccessor.finalize" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="paraview.smtrace.CreateAnimationTrack">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">paraview.smtrace.</span></span><span class="sig-name descname"><span class="pre">CreateAnimationTrack</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cue</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/smtrace.html#CreateAnimationTrack"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#paraview.smtrace.CreateAnimationTrack" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#paraview.smtrace.TraceItem" title="paraview.smtrace.TraceItem"><code class="xref py py-class docutils literal notranslate"><span class="pre">paraview.smtrace.TraceItem</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="paraview.smtrace.CreateAnimationTrack.finalize">
+<span class="sig-name descname"><span class="pre">finalize</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/smtrace.html#CreateAnimationTrack.finalize"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#paraview.smtrace.CreateAnimationTrack.finalize" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="paraview.smtrace.CreateExtractor">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">paraview.smtrace.</span></span><span class="sig-name descname"><span class="pre">CreateExtractor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">xmlname</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">producer</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">extractor</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">registrationName</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">comment</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/smtrace.html#CreateExtractor"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#paraview.smtrace.CreateExtractor" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#paraview.smtrace.TraceItem" title="paraview.smtrace.TraceItem"><code class="xref py py-class docutils literal notranslate"><span class="pre">paraview.smtrace.TraceItem</span></code></a></p>
+<p>Traces creation of extractors</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="paraview.smtrace.CreateExtractor.finalize">
+<span class="sig-name descname"><span class="pre">finalize</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/smtrace.html#CreateExtractor.finalize"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#paraview.smtrace.CreateExtractor.finalize" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="paraview.smtrace.Delete">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">paraview.smtrace.</span></span><span class="sig-name descname"><span class="pre">Delete</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">proxy</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/smtrace.html#Delete"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#paraview.smtrace.Delete" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#paraview.smtrace.TraceItem" title="paraview.smtrace.TraceItem"><code class="xref py py-class docutils literal notranslate"><span class="pre">paraview.smtrace.TraceItem</span></code></a></p>
+<p>This traces the deletion of a Pipeline proxy</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="paraview.smtrace.ExodusIIReaderFilter">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">paraview.smtrace.</span></span><span class="sig-name descname"><span class="pre">ExodusIIReaderFilter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">trace_all_in_ctor</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/smtrace.html#ExodusIIReaderFilter"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#paraview.smtrace.ExodusIIReaderFilter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#paraview.smtrace.PipelineProxyFilter" title="paraview.smtrace.PipelineProxyFilter"><code class="xref py py-class docutils literal notranslate"><span class="pre">paraview.smtrace.PipelineProxyFilter</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="paraview.smtrace.ExodusIIReaderFilter.should_never_trace">
+<span class="sig-name descname"><span class="pre">should_never_trace</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">prop</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/smtrace.html#ExodusIIReaderFilter.should_never_trace"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#paraview.smtrace.ExodusIIReaderFilter.should_never_trace" title="Permalink to this definition">¶</a></dt>
+<dd><p>overridden to avoid hiding “non-gui” properties such as FileName.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="paraview.smtrace.ExportView">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">paraview.smtrace.</span></span><span class="sig-name descname"><span class="pre">ExportView</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">view</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exporter</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filename</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/smtrace.html#ExportView"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#paraview.smtrace.ExportView" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#paraview.smtrace.RenderingMixin" title="paraview.smtrace.RenderingMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">paraview.smtrace.RenderingMixin</span></code></a>, <a class="reference internal" href="#paraview.smtrace.TraceItem" title="paraview.smtrace.TraceItem"><code class="xref py py-class docutils literal notranslate"><span class="pre">paraview.smtrace.TraceItem</span></code></a></p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="paraview.smtrace.ExporterProxyFilter">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">paraview.smtrace.</span></span><span class="sig-name descname"><span class="pre">ExporterProxyFilter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">trace_all_in_ctor</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/smtrace.html#ExporterProxyFilter"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#paraview.smtrace.ExporterProxyFilter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#paraview.smtrace.ProxyFilter" title="paraview.smtrace.ProxyFilter"><code class="xref py py-class docutils literal notranslate"><span class="pre">paraview.smtrace.ProxyFilter</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="paraview.smtrace.ExporterProxyFilter.should_never_trace">
+<span class="sig-name descname"><span class="pre">should_never_trace</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">prop</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/smtrace.html#ExporterProxyFilter.should_never_trace"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#paraview.smtrace.ExporterProxyFilter.should_never_trace" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="paraview.smtrace.ExporterProxyFilter.should_trace_in_ctor">
+<span class="sig-name descname"><span class="pre">should_trace_in_ctor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">prop</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/smtrace.html#ExporterProxyFilter.should_trace_in_ctor"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#paraview.smtrace.ExporterProxyFilter.should_trace_in_ctor" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="paraview.smtrace.ExtractSelectionFilter">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">paraview.smtrace.</span></span><span class="sig-name descname"><span class="pre">ExtractSelectionFilter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">trace_all_in_ctor</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/smtrace.html#ExtractSelectionFilter"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#paraview.smtrace.ExtractSelectionFilter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#paraview.smtrace.PipelineProxyFilter" title="paraview.smtrace.PipelineProxyFilter"><code class="xref py py-class docutils literal notranslate"><span class="pre">paraview.smtrace.PipelineProxyFilter</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="paraview.smtrace.ExtractSelectionFilter.should_never_trace">
+<span class="sig-name descname"><span class="pre">should_never_trace</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">prop</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/smtrace.html#ExtractSelectionFilter.should_never_trace"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#paraview.smtrace.ExtractSelectionFilter.should_never_trace" title="Permalink to this definition">¶</a></dt>
+<dd><p>overridden to avoid hiding “non-gui” properties such as FileName.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="paraview.smtrace.ExtractorFilter">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">paraview.smtrace.</span></span><span class="sig-name descname"><span class="pre">ExtractorFilter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">trace_all_in_ctor</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/smtrace.html#ExtractorFilter"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#paraview.smtrace.ExtractorFilter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#paraview.smtrace.ProxyFilter" title="paraview.smtrace.ProxyFilter"><code class="xref py py-class docutils literal notranslate"><span class="pre">paraview.smtrace.ProxyFilter</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="paraview.smtrace.ExtractorFilter.should_never_trace">
+<span class="sig-name descname"><span class="pre">should_never_trace</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">prop</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/smtrace.html#ExtractorFilter.should_never_trace"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#paraview.smtrace.ExtractorFilter.should_never_trace" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="paraview.smtrace.ExtractorFilter.should_trace_in_ctor">
+<span class="sig-name descname"><span class="pre">should_trace_in_ctor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">prop</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/smtrace.html#ExtractorFilter.should_trace_in_ctor"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#paraview.smtrace.ExtractorFilter.should_trace_in_ctor" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="paraview.smtrace.Hide">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">paraview.smtrace.</span></span><span class="sig-name descname"><span class="pre">Hide</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">producer</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">view</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/smtrace.html#Hide"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#paraview.smtrace.Hide" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#paraview.smtrace.RenderingMixin" title="paraview.smtrace.RenderingMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">paraview.smtrace.RenderingMixin</span></code></a>, <a class="reference internal" href="#paraview.smtrace.TraceItem" title="paraview.smtrace.TraceItem"><code class="xref py py-class docutils literal notranslate"><span class="pre">paraview.smtrace.TraceItem</span></code></a></p>
+<p>Traces Hide</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="paraview.smtrace.LoadPlugin">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">paraview.smtrace.</span></span><span class="sig-name descname"><span class="pre">LoadPlugin</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">remote</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/smtrace.html#LoadPlugin"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#paraview.smtrace.LoadPlugin" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#paraview.smtrace.TraceItem" title="paraview.smtrace.TraceItem"><code class="xref py py-class docutils literal notranslate"><span class="pre">paraview.smtrace.TraceItem</span></code></a></p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="paraview.smtrace.LoadState">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">paraview.smtrace.</span></span><span class="sig-name descname"><span class="pre">LoadState</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">options</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/smtrace.html#LoadState"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#paraview.smtrace.LoadState" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#paraview.smtrace.TraceItem" title="paraview.smtrace.TraceItem"><code class="xref py py-class docutils literal notranslate"><span class="pre">paraview.smtrace.TraceItem</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="paraview.smtrace.LoadState.finalize">
+<span class="sig-name descname"><span class="pre">finalize</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/smtrace.html#LoadState.finalize"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#paraview.smtrace.LoadState.finalize" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="paraview.smtrace.NestableTraceItem">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">paraview.smtrace.</span></span><span class="sig-name descname"><span class="pre">NestableTraceItem</span></span><a class="reference internal" href="_modules/paraview/smtrace.html#NestableTraceItem"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#paraview.smtrace.NestableTraceItem" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#paraview.smtrace.TraceItem" title="paraview.smtrace.TraceItem"><code class="xref py py-class docutils literal notranslate"><span class="pre">paraview.smtrace.TraceItem</span></code></a></p>
+<p>Base class for trace item that can be nested i.e.
+can trace when some other trace item is active.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="paraview.smtrace.PipelineProxyFilter">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">paraview.smtrace.</span></span><span class="sig-name descname"><span class="pre">PipelineProxyFilter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">trace_all_in_ctor</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/smtrace.html#PipelineProxyFilter"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#paraview.smtrace.PipelineProxyFilter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#paraview.smtrace.ProxyFilter" title="paraview.smtrace.ProxyFilter"><code class="xref py py-class docutils literal notranslate"><span class="pre">paraview.smtrace.ProxyFilter</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="paraview.smtrace.PipelineProxyFilter.should_never_trace">
+<span class="sig-name descname"><span class="pre">should_never_trace</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">prop</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/smtrace.html#PipelineProxyFilter.should_never_trace"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#paraview.smtrace.PipelineProxyFilter.should_never_trace" title="Permalink to this definition">¶</a></dt>
+<dd><p>overridden to avoid hiding “non-gui” properties such as FileName.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="paraview.smtrace.PipelineProxyFilter.should_trace_in_create">
+<span class="sig-name descname"><span class="pre">should_trace_in_create</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">prop</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/smtrace.html#PipelineProxyFilter.should_trace_in_create"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#paraview.smtrace.PipelineProxyFilter.should_trace_in_create" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="paraview.smtrace.PipelineProxyFilter.should_trace_in_ctor">
+<span class="sig-name descname"><span class="pre">should_trace_in_ctor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">prop</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/smtrace.html#PipelineProxyFilter.should_trace_in_ctor"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#paraview.smtrace.PipelineProxyFilter.should_trace_in_ctor" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="paraview.smtrace.PropertiesModified">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">paraview.smtrace.</span></span><span class="sig-name descname"><span class="pre">PropertiesModified</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">proxy</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">comment</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/smtrace.html#PropertiesModified"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#paraview.smtrace.PropertiesModified" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#paraview.smtrace.NestableTraceItem" title="paraview.smtrace.NestableTraceItem"><code class="xref py py-class docutils literal notranslate"><span class="pre">paraview.smtrace.NestableTraceItem</span></code></a></p>
+<p>Traces properties modified on a specific proxy.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="paraview.smtrace.PropertiesModified.finalize">
+<span class="sig-name descname"><span class="pre">finalize</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/smtrace.html#PropertiesModified.finalize"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#paraview.smtrace.PropertiesModified.finalize" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="paraview.smtrace.PropertyTraceHelper">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">paraview.smtrace.</span></span><span class="sig-name descname"><span class="pre">PropertyTraceHelper</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">propertyname</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">proxyAccessor</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/smtrace.html#PropertyTraceHelper"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#paraview.smtrace.PropertyTraceHelper" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>PropertyTraceHelper is used by RealProxyAccessor to help with tracing
+properites. In its constructor, RealProxyAccessor creates a
+PropertyTraceHelper for each of its properties that could potentially need
+to be traced.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="paraview.smtrace.PropertyTraceHelper.create_multiline_string">
+<span class="sig-name descname"><span class="pre">create_multiline_string</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">astr</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/smtrace.html#PropertyTraceHelper.create_multiline_string"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#paraview.smtrace.PropertyTraceHelper.create_multiline_string" title="Permalink to this definition">¶</a></dt>
+<dd><p>helper to convert a string representation into a multiline string</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="paraview.smtrace.PropertyTraceHelper.finalize">
+<span class="sig-name descname"><span class="pre">finalize</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/smtrace.html#PropertyTraceHelper.finalize"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#paraview.smtrace.PropertyTraceHelper.finalize" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="paraview.smtrace.PropertyTraceHelper.get_object">
+<span class="sig-name descname"><span class="pre">get_object</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/smtrace.html#PropertyTraceHelper.get_object"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#paraview.smtrace.PropertyTraceHelper.get_object" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the servermanager.Property (or subclass) for the
+vtkSMProperty this trace helper is helping with.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="paraview.smtrace.PropertyTraceHelper.get_property_name">
+<span class="sig-name descname"><span class="pre">get_property_name</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/smtrace.html#PropertyTraceHelper.get_property_name"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#paraview.smtrace.PropertyTraceHelper.get_property_name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="paraview.smtrace.PropertyTraceHelper.get_property_trace">
+<span class="sig-name descname"><span class="pre">get_property_trace</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">in_ctor</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/smtrace.html#PropertyTraceHelper.get_property_trace"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#paraview.smtrace.PropertyTraceHelper.get_property_trace" title="Permalink to this definition">¶</a></dt>
+<dd><p>return trace-text for the property.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>in_ctor</strong> – If False, the trace is generated trace will use
+fully-scoped name when referring to the property e.g.
+sphere0.Radius=2, else it will use just the property name, <em>e.g.</em>,
+Radius=2.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="paraview.smtrace.PropertyTraceHelper.get_property_value">
+<span class="sig-name descname"><span class="pre">get_property_value</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/smtrace.html#PropertyTraceHelper.get_property_value"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#paraview.smtrace.PropertyTraceHelper.get_property_value" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the Property value as would be returned by
+servermanager.Proxy.GetPropertyValue().</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="paraview.smtrace.PropertyTraceHelper.get_proxy">
+<span class="sig-name descname"><span class="pre">get_proxy</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/smtrace.html#PropertyTraceHelper.get_proxy"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#paraview.smtrace.PropertyTraceHelper.get_proxy" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="paraview.smtrace.PropertyTraceHelper.get_value">
+<span class="sig-name descname"><span class="pre">get_value</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/smtrace.html#PropertyTraceHelper.get_value"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#paraview.smtrace.PropertyTraceHelper.get_value" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the property value as a string. For proxy properties, this
+will either be a string used to refer to another proxy or a string used
+to refer to the proxy in a proxy list domain.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="paraview.smtrace.PropertyTraceHelper.get_varname">
+<span class="sig-name descname"><span class="pre">get_varname</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">not_fully_scoped</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/smtrace.html#PropertyTraceHelper.get_varname"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#paraview.smtrace.PropertyTraceHelper.get_varname" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the variable name to use when referring to this property.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>not_fully_scoped</strong> – If False, this will return
+fully-scoped name when referring to the property e.g. sphere0.Radius,
+else it will use just the property name, <em>e.g.</em>, Radius.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="paraview.smtrace.PropertyTraceHelper.has_proxy_list_domain">
+<span class="sig-name descname"><span class="pre">has_proxy_list_domain</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/smtrace.html#PropertyTraceHelper.has_proxy_list_domain"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#paraview.smtrace.PropertyTraceHelper.has_proxy_list_domain" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns True if this property has a ProxyListDomain, else False.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="paraview.smtrace.ProxyAccessor">
+<span class="sig-prename descclassname"><span class="pre">paraview.smtrace.</span></span><span class="sig-name descname"><span class="pre">ProxyAccessor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/smtrace.html#ProxyAccessor"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#paraview.smtrace.ProxyAccessor" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="paraview.smtrace.ProxyFilter">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">paraview.smtrace.</span></span><span class="sig-name descname"><span class="pre">ProxyFilter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">trace_all_in_ctor</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/smtrace.html#ProxyFilter"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#paraview.smtrace.ProxyFilter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="paraview.smtrace.ProxyFilter.should_never_trace">
+<span class="sig-name descname"><span class="pre">should_never_trace</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">prop</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hide_gui_hidden</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/smtrace.html#ProxyFilter.should_never_trace"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#paraview.smtrace.ProxyFilter.should_never_trace" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="paraview.smtrace.ProxyFilter.should_trace_in_create">
+<span class="sig-name descname"><span class="pre">should_trace_in_create</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">prop</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">user_can_modify_in_create</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/smtrace.html#ProxyFilter.should_trace_in_create"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#paraview.smtrace.ProxyFilter.should_trace_in_create" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="paraview.smtrace.ProxyFilter.should_trace_in_ctor">
+<span class="sig-name descname"><span class="pre">should_trace_in_ctor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">prop</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/smtrace.html#ProxyFilter.should_trace_in_ctor"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#paraview.smtrace.ProxyFilter.should_trace_in_ctor" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="paraview.smtrace.RealProxyAccessor">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">paraview.smtrace.</span></span><span class="sig-name descname"><span class="pre">RealProxyAccessor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">varname</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">proxy</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/smtrace.html#RealProxyAccessor"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#paraview.smtrace.RealProxyAccessor" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#paraview.smtrace.Accessor" title="paraview.smtrace.Accessor"><code class="xref py py-class docutils literal notranslate"><span class="pre">paraview.smtrace.Accessor</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="paraview.smtrace.RealProxyAccessor.create">
+<em class="property"><span class="pre">classmethod</span> </em><span class="sig-name descname"><span class="pre">create</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/smtrace.html#RealProxyAccessor.create"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#paraview.smtrace.RealProxyAccessor.create" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="paraview.smtrace.RealProxyAccessor.finalize">
+<span class="sig-name descname"><span class="pre">finalize</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/smtrace.html#RealProxyAccessor.finalize"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#paraview.smtrace.RealProxyAccessor.finalize" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="paraview.smtrace.RealProxyAccessor.get_ctor_properties">
+<span class="sig-name descname"><span class="pre">get_ctor_properties</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/smtrace.html#RealProxyAccessor.get_ctor_properties"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#paraview.smtrace.RealProxyAccessor.get_ctor_properties" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a list of property accessors that should be specified
+in the constructor.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="paraview.smtrace.RealProxyAccessor.get_properties">
+<span class="sig-name descname"><span class="pre">get_properties</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/smtrace.html#RealProxyAccessor.get_properties"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#paraview.smtrace.RealProxyAccessor.get_properties" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="paraview.smtrace.RealProxyAccessor.get_property">
+<span class="sig-name descname"><span class="pre">get_property</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/smtrace.html#RealProxyAccessor.get_property"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#paraview.smtrace.RealProxyAccessor.get_property" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="paraview.smtrace.RealProxyAccessor.is_ctor_property">
+<span class="sig-name descname"><span class="pre">is_ctor_property</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">prop</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/smtrace.html#RealProxyAccessor.is_ctor_property"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#paraview.smtrace.RealProxyAccessor.is_ctor_property" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="paraview.smtrace.RealProxyAccessor.register_create_callback">
+<em class="property"><span class="pre">classmethod</span> </em><span class="sig-name descname"><span class="pre">register_create_callback</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">function</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/smtrace.html#RealProxyAccessor.register_create_callback"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#paraview.smtrace.RealProxyAccessor.register_create_callback" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="paraview.smtrace.RealProxyAccessor.trace_ctor">
+<span class="sig-name descname"><span class="pre">trace_ctor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ctor</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filter</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ctor_args</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">skip_assignment</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ctor_var</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ctor_extra_args</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/smtrace.html#RealProxyAccessor.trace_ctor"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#paraview.smtrace.RealProxyAccessor.trace_ctor" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="paraview.smtrace.RealProxyAccessor.trace_properties">
+<span class="sig-name descname"><span class="pre">trace_properties</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">props</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">in_ctor</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/smtrace.html#RealProxyAccessor.trace_properties"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#paraview.smtrace.RealProxyAccessor.trace_properties" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="paraview.smtrace.RealProxyAccessor.unregister_create_callback">
+<em class="property"><span class="pre">classmethod</span> </em><span class="sig-name descname"><span class="pre">unregister_create_callback</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">function</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/smtrace.html#RealProxyAccessor.unregister_create_callback"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#paraview.smtrace.RealProxyAccessor.unregister_create_callback" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="paraview.smtrace.RegisterLayoutProxy">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">paraview.smtrace.</span></span><span class="sig-name descname"><span class="pre">RegisterLayoutProxy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">layout</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/smtrace.html#RegisterLayoutProxy"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#paraview.smtrace.RegisterLayoutProxy" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#paraview.smtrace.RenderingMixin" title="paraview.smtrace.RenderingMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">paraview.smtrace.RenderingMixin</span></code></a>, <a class="reference internal" href="#paraview.smtrace.TraceItem" title="paraview.smtrace.TraceItem"><code class="xref py py-class docutils literal notranslate"><span class="pre">paraview.smtrace.TraceItem</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="paraview.smtrace.RegisterLayoutProxy.finalize">
+<span class="sig-name descname"><span class="pre">finalize</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filter</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/smtrace.html#RegisterLayoutProxy.finalize"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#paraview.smtrace.RegisterLayoutProxy.finalize" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="paraview.smtrace.RegisterLightProxy">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">paraview.smtrace.</span></span><span class="sig-name descname"><span class="pre">RegisterLightProxy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">proxy</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">view</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/smtrace.html#RegisterLightProxy"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#paraview.smtrace.RegisterLightProxy" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#paraview.smtrace.RenderingMixin" title="paraview.smtrace.RenderingMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">paraview.smtrace.RenderingMixin</span></code></a>, <a class="reference internal" href="#paraview.smtrace.TraceItem" title="paraview.smtrace.TraceItem"><code class="xref py py-class docutils literal notranslate"><span class="pre">paraview.smtrace.TraceItem</span></code></a></p>
+<p>Traces creation of a new light (vtkSMParaViewPipelineController::RegisterLightProxy).</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="paraview.smtrace.RegisterLightProxy.finalize">
+<span class="sig-name descname"><span class="pre">finalize</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/smtrace.html#RegisterLightProxy.finalize"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#paraview.smtrace.RegisterLightProxy.finalize" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="paraview.smtrace.RegisterPipelineProxy">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">paraview.smtrace.</span></span><span class="sig-name descname"><span class="pre">RegisterPipelineProxy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">proxy</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/smtrace.html#RegisterPipelineProxy"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#paraview.smtrace.RegisterPipelineProxy" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#paraview.smtrace.TraceItem" title="paraview.smtrace.TraceItem"><code class="xref py py-class docutils literal notranslate"><span class="pre">paraview.smtrace.TraceItem</span></code></a></p>
+<p>This traces the creation of a Pipeline Proxy such as
+sources/filters/readers etc.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="paraview.smtrace.RegisterPipelineProxy.finalize">
+<span class="sig-name descname"><span class="pre">finalize</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/smtrace.html#RegisterPipelineProxy.finalize"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#paraview.smtrace.RegisterPipelineProxy.finalize" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="paraview.smtrace.RegisterViewProxy">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">paraview.smtrace.</span></span><span class="sig-name descname"><span class="pre">RegisterViewProxy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">proxy</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/smtrace.html#RegisterViewProxy"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#paraview.smtrace.RegisterViewProxy" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#paraview.smtrace.RenderingMixin" title="paraview.smtrace.RenderingMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">paraview.smtrace.RenderingMixin</span></code></a>, <a class="reference internal" href="#paraview.smtrace.TraceItem" title="paraview.smtrace.TraceItem"><code class="xref py py-class docutils literal notranslate"><span class="pre">paraview.smtrace.TraceItem</span></code></a></p>
+<p>Traces creation of a new view (vtkSMParaViewPipelineController::RegisterViewProxy).</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="paraview.smtrace.RegisterViewProxy.finalize">
+<span class="sig-name descname"><span class="pre">finalize</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/smtrace.html#RegisterViewProxy.finalize"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#paraview.smtrace.RegisterViewProxy.finalize" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="paraview.smtrace.RenameProxy">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">paraview.smtrace.</span></span><span class="sig-name descname"><span class="pre">RenameProxy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">proxy</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/smtrace.html#RenameProxy"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#paraview.smtrace.RenameProxy" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#paraview.smtrace.TraceItem" title="paraview.smtrace.TraceItem"><code class="xref py py-class docutils literal notranslate"><span class="pre">paraview.smtrace.TraceItem</span></code></a></p>
+<p>Trace renaming of a source proxy.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="paraview.smtrace.RenameProxy.finalize">
+<span class="sig-name descname"><span class="pre">finalize</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/smtrace.html#RenameProxy.finalize"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#paraview.smtrace.RenameProxy.finalize" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="paraview.smtrace.RenderingMixin">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">paraview.smtrace.</span></span><span class="sig-name descname"><span class="pre">RenderingMixin</span></span><a class="reference internal" href="_modules/paraview/smtrace.html#RenderingMixin"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#paraview.smtrace.RenderingMixin" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py property">
+<dt class="sig sig-object py" id="paraview.smtrace.RenderingMixin.skip_from_trace">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">skip_from_trace</span></span><a class="headerlink" href="#paraview.smtrace.RenderingMixin.skip_from_trace" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="paraview.smtrace.RepresentationProxyFilter">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">paraview.smtrace.</span></span><span class="sig-name descname"><span class="pre">RepresentationProxyFilter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">trace_all_in_ctor</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/smtrace.html#RepresentationProxyFilter"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#paraview.smtrace.RepresentationProxyFilter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#paraview.smtrace.PipelineProxyFilter" title="paraview.smtrace.PipelineProxyFilter"><code class="xref py py-class docutils literal notranslate"><span class="pre">paraview.smtrace.PipelineProxyFilter</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="paraview.smtrace.RepresentationProxyFilter.should_never_trace">
+<span class="sig-name descname"><span class="pre">should_never_trace</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">prop</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/smtrace.html#RepresentationProxyFilter.should_never_trace"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#paraview.smtrace.RepresentationProxyFilter.should_never_trace" title="Permalink to this definition">¶</a></dt>
+<dd><p>overridden to avoid hiding “non-gui” properties such as FileName.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="paraview.smtrace.RepresentationProxyFilter.should_trace_in_create">
+<span class="sig-name descname"><span class="pre">should_trace_in_create</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">prop</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/smtrace.html#RepresentationProxyFilter.should_trace_in_create"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#paraview.smtrace.RepresentationProxyFilter.should_trace_in_create" title="Permalink to this definition">¶</a></dt>
+<dd><p>for representations, we always trace the ‘Representation’ property,
+even when it’s same as the default value (see issue #17196).</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="paraview.smtrace.RepresentationProxyFilter.should_trace_in_ctor">
+<span class="sig-name descname"><span class="pre">should_trace_in_ctor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">prop</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/smtrace.html#RepresentationProxyFilter.should_trace_in_ctor"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#paraview.smtrace.RepresentationProxyFilter.should_trace_in_ctor" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="paraview.smtrace.SaveAnimationExtracts">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">paraview.smtrace.</span></span><span class="sig-name descname"><span class="pre">SaveAnimationExtracts</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">proxy</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/smtrace.html#SaveAnimationExtracts"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#paraview.smtrace.SaveAnimationExtracts" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#paraview.smtrace.TraceItem" title="paraview.smtrace.TraceItem"><code class="xref py py-class docutils literal notranslate"><span class="pre">paraview.smtrace.TraceItem</span></code></a></p>
+<p>Used by vtkSMSaveAnimationExtractsProxy to trace saving of extracts
+generation.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="paraview.smtrace.SaveCameras">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">paraview.smtrace.</span></span><span class="sig-name descname"><span class="pre">SaveCameras</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">proxy</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/smtrace.html#SaveCameras"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#paraview.smtrace.SaveCameras" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#paraview.smtrace.RenderingMixin" title="paraview.smtrace.RenderingMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">paraview.smtrace.RenderingMixin</span></code></a>, <a class="reference internal" href="#paraview.smtrace.BookkeepingItem" title="paraview.smtrace.BookkeepingItem"><code class="xref py py-class docutils literal notranslate"><span class="pre">paraview.smtrace.BookkeepingItem</span></code></a></p>
+<p>This is used to request recording of cameras in trace</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="paraview.smtrace.SaveCameras.get_trace">
+<em class="property"><span class="pre">classmethod</span> </em><span class="sig-name descname"><span class="pre">get_trace</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">proxy</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/smtrace.html#SaveCameras.get_trace"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#paraview.smtrace.SaveCameras.get_trace" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="paraview.smtrace.SaveData">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">paraview.smtrace.</span></span><span class="sig-name descname"><span class="pre">SaveData</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">writer</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filename</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">source</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">port</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/smtrace.html#SaveData"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#paraview.smtrace.SaveData" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#paraview.smtrace.TraceItem" title="paraview.smtrace.TraceItem"><code class="xref py py-class docutils literal notranslate"><span class="pre">paraview.smtrace.TraceItem</span></code></a></p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="paraview.smtrace.SaveExtractsFilter">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">paraview.smtrace.</span></span><span class="sig-name descname"><span class="pre">SaveExtractsFilter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">trace_all_in_ctor</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/smtrace.html#SaveExtractsFilter"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#paraview.smtrace.SaveExtractsFilter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#paraview.smtrace.ProxyFilter" title="paraview.smtrace.ProxyFilter"><code class="xref py py-class docutils literal notranslate"><span class="pre">paraview.smtrace.ProxyFilter</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="paraview.smtrace.SaveExtractsFilter.should_trace_in_ctor">
+<span class="sig-name descname"><span class="pre">should_trace_in_ctor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">prop</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/smtrace.html#SaveExtractsFilter.should_trace_in_ctor"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#paraview.smtrace.SaveExtractsFilter.should_trace_in_ctor" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="paraview.smtrace.SaveLayoutSizes">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">paraview.smtrace.</span></span><span class="sig-name descname"><span class="pre">SaveLayoutSizes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">proxy</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/smtrace.html#SaveLayoutSizes"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#paraview.smtrace.SaveLayoutSizes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#paraview.smtrace.RenderingMixin" title="paraview.smtrace.RenderingMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">paraview.smtrace.RenderingMixin</span></code></a>, <a class="reference internal" href="#paraview.smtrace.BookkeepingItem" title="paraview.smtrace.BookkeepingItem"><code class="xref py py-class docutils literal notranslate"><span class="pre">paraview.smtrace.BookkeepingItem</span></code></a></p>
+<p>A bookkeeping item to trace sizes for all layouts used by the trace (or
+the one explicitly passed to the constructor).</p>
+<p>This ensures that all the layouts (and consequently views in those layout)
+are setup with sizes similar to those in the UI (BUG #20102).</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="paraview.smtrace.SaveLayoutSizes.get_trace">
+<em class="property"><span class="pre">classmethod</span> </em><span class="sig-name descname"><span class="pre">get_trace</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">proxy</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/smtrace.html#SaveLayoutSizes.get_trace"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#paraview.smtrace.SaveLayoutSizes.get_trace" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="paraview.smtrace.SaveScreenshotOrAnimation">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">paraview.smtrace.</span></span><span class="sig-name descname"><span class="pre">SaveScreenshotOrAnimation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">helper</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filename</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">view</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">layout</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode_screenshot</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/smtrace.html#SaveScreenshotOrAnimation"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#paraview.smtrace.SaveScreenshotOrAnimation" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#paraview.smtrace.RenderingMixin" title="paraview.smtrace.RenderingMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">paraview.smtrace.RenderingMixin</span></code></a>, <a class="reference internal" href="#paraview.smtrace.TraceItem" title="paraview.smtrace.TraceItem"><code class="xref py py-class docutils literal notranslate"><span class="pre">paraview.smtrace.TraceItem</span></code></a></p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="paraview.smtrace.ScalarBarInteraction">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">paraview.smtrace.</span></span><span class="sig-name descname"><span class="pre">ScalarBarInteraction</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">proxy</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">comment</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/smtrace.html#ScalarBarInteraction"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#paraview.smtrace.ScalarBarInteraction" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#paraview.smtrace.RenderingMixin" title="paraview.smtrace.RenderingMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">paraview.smtrace.RenderingMixin</span></code></a>, <a class="reference internal" href="#paraview.smtrace.NestableTraceItem" title="paraview.smtrace.NestableTraceItem"><code class="xref py py-class docutils literal notranslate"><span class="pre">paraview.smtrace.NestableTraceItem</span></code></a></p>
+<p>Traces scalar bar interactions</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="paraview.smtrace.ScalarBarInteraction.finalize">
+<span class="sig-name descname"><span class="pre">finalize</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/smtrace.html#ScalarBarInteraction.finalize"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#paraview.smtrace.ScalarBarInteraction.finalize" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="paraview.smtrace.ScalarBarProxyFilter">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">paraview.smtrace.</span></span><span class="sig-name descname"><span class="pre">ScalarBarProxyFilter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">trace_all_in_ctor</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/smtrace.html#ScalarBarProxyFilter"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#paraview.smtrace.ScalarBarProxyFilter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#paraview.smtrace.ProxyFilter" title="paraview.smtrace.ProxyFilter"><code class="xref py py-class docutils literal notranslate"><span class="pre">paraview.smtrace.ProxyFilter</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="paraview.smtrace.ScalarBarProxyFilter.should_never_trace">
+<span class="sig-name descname"><span class="pre">should_never_trace</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">prop</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/smtrace.html#ScalarBarProxyFilter.should_never_trace"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#paraview.smtrace.ScalarBarProxyFilter.should_never_trace" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="paraview.smtrace.ScalarBarProxyFilter.should_trace_in_ctor">
+<span class="sig-name descname"><span class="pre">should_trace_in_ctor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">prop</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/smtrace.html#ScalarBarProxyFilter.should_trace_in_ctor"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#paraview.smtrace.ScalarBarProxyFilter.should_trace_in_ctor" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="paraview.smtrace.ScreenShotHelperProxyFilter">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">paraview.smtrace.</span></span><span class="sig-name descname"><span class="pre">ScreenShotHelperProxyFilter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">trace_all_in_ctor</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/smtrace.html#ScreenShotHelperProxyFilter"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#paraview.smtrace.ScreenShotHelperProxyFilter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#paraview.smtrace.ProxyFilter" title="paraview.smtrace.ProxyFilter"><code class="xref py py-class docutils literal notranslate"><span class="pre">paraview.smtrace.ProxyFilter</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="paraview.smtrace.ScreenShotHelperProxyFilter.should_never_trace">
+<span class="sig-name descname"><span class="pre">should_never_trace</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">prop</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/smtrace.html#ScreenShotHelperProxyFilter.should_never_trace"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#paraview.smtrace.ScreenShotHelperProxyFilter.should_never_trace" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="paraview.smtrace.ScreenShotHelperProxyFilter.should_trace_in_ctor">
+<span class="sig-name descname"><span class="pre">should_trace_in_ctor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">prop</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/smtrace.html#ScreenShotHelperProxyFilter.should_trace_in_ctor"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#paraview.smtrace.ScreenShotHelperProxyFilter.should_trace_in_ctor" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="paraview.smtrace.SetCurrentProxy">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">paraview.smtrace.</span></span><span class="sig-name descname"><span class="pre">SetCurrentProxy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">selmodel</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">proxy</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">command</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/smtrace.html#SetCurrentProxy"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#paraview.smtrace.SetCurrentProxy" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#paraview.smtrace.TraceItem" title="paraview.smtrace.TraceItem"><code class="xref py py-class docutils literal notranslate"><span class="pre">paraview.smtrace.TraceItem</span></code></a></p>
+<p>Traces change in active view/source etc.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="paraview.smtrace.SetScalarColoring">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">paraview.smtrace.</span></span><span class="sig-name descname"><span class="pre">SetScalarColoring</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">display</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arrayname</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">attribute_type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">component</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">separate</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lut</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/smtrace.html#SetScalarColoring"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#paraview.smtrace.SetScalarColoring" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#paraview.smtrace.RenderingMixin" title="paraview.smtrace.RenderingMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">paraview.smtrace.RenderingMixin</span></code></a>, <a class="reference internal" href="#paraview.smtrace.TraceItem" title="paraview.smtrace.TraceItem"><code class="xref py py-class docutils literal notranslate"><span class="pre">paraview.smtrace.TraceItem</span></code></a></p>
+<p>Trace vtkSMPVRepresentationProxy.SetScalarColoring</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="paraview.smtrace.SetScalarColoring.finalize">
+<span class="sig-name descname"><span class="pre">finalize</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/smtrace.html#SetScalarColoring.finalize"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#paraview.smtrace.SetScalarColoring.finalize" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="paraview.smtrace.Show">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">paraview.smtrace.</span></span><span class="sig-name descname"><span class="pre">Show</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">producer</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">view</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">display</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">comment</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/smtrace.html#Show"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#paraview.smtrace.Show" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#paraview.smtrace.RenderingMixin" title="paraview.smtrace.RenderingMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">paraview.smtrace.RenderingMixin</span></code></a>, <a class="reference internal" href="#paraview.smtrace.TraceItem" title="paraview.smtrace.TraceItem"><code class="xref py py-class docutils literal notranslate"><span class="pre">paraview.smtrace.TraceItem</span></code></a></p>
+<p>Traces Show</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="paraview.smtrace.Show.finalize">
+<span class="sig-name descname"><span class="pre">finalize</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/smtrace.html#Show.finalize"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#paraview.smtrace.Show.finalize" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="paraview.smtrace.SupplementalProxy">
+<span class="sig-prename descclassname"><span class="pre">paraview.smtrace.</span></span><span class="sig-name descname"><span class="pre">SupplementalProxy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cls</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/smtrace.html#SupplementalProxy"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#paraview.smtrace.SupplementalProxy" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function decorates a ProxyFilter. Designed to be
+used for supplemental proxies, so that we can centralize the logic
+to decide whether to trace any of the properties on the supplemental
+proxies the first time that proxy is accessed.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="paraview.smtrace.Trace">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">paraview.smtrace.</span></span><span class="sig-name descname"><span class="pre">Trace</span></span><a class="reference internal" href="_modules/paraview/smtrace.html#Trace"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#paraview.smtrace.Trace" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="paraview.smtrace.Trace.Output">
+<span class="sig-name descname"><span class="pre">Output</span></span><em class="property"> <span class="pre">=</span> <span class="pre">None</span></em><a class="headerlink" href="#paraview.smtrace.Trace.Output" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="paraview.smtrace.Trace.create_accessor">
+<em class="property"><span class="pre">classmethod</span> </em><span class="sig-name descname"><span class="pre">create_accessor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/smtrace.html#Trace.create_accessor"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#paraview.smtrace.Trace.create_accessor" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a new accessor for a proxy. This returns True when a
+ProxyAccessor has been created, other returns False. This is needed to
+bring into trace proxies that were either already created when the trace
+was started or were created indirectly and hence not explicitly traced.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="paraview.smtrace.Trace.get_accessor">
+<em class="property"><span class="pre">classmethod</span> </em><span class="sig-name descname"><span class="pre">get_accessor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/smtrace.html#Trace.get_accessor"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#paraview.smtrace.Trace.get_accessor" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns an accessor for obj. If none exists, a new one may be
+created, if possible. Currently obj is expected to be a
+<code class="xref py py-class docutils literal notranslate"><span class="pre">servermanager.Proxy</span></code> instance. In future, we may change this to
+be a vtkSMProxy instance instead.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="paraview.smtrace.Trace.get_registered_name">
+<em class="property"><span class="pre">classmethod</span> </em><span class="sig-name descname"><span class="pre">get_registered_name</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">proxy</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reggroup</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/smtrace.html#Trace.get_registered_name"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#paraview.smtrace.Trace.get_registered_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the registered name for <cite>proxy</cite> in the given <cite>reggroup</cite>.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="paraview.smtrace.Trace.get_varname">
+<em class="property"><span class="pre">classmethod</span> </em><span class="sig-name descname"><span class="pre">get_varname</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/smtrace.html#Trace.get_varname"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#paraview.smtrace.Trace.get_varname" title="Permalink to this definition">¶</a></dt>
+<dd><p>returns an unique variable name given a suggested variable name. If
+the suggested variable name is already taken, this method will try to
+find a good suffix that’s available.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="paraview.smtrace.Trace.has_accessor">
+<em class="property"><span class="pre">classmethod</span> </em><span class="sig-name descname"><span class="pre">has_accessor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/smtrace.html#Trace.has_accessor"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#paraview.smtrace.Trace.has_accessor" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="paraview.smtrace.Trace.register_accessor">
+<em class="property"><span class="pre">classmethod</span> </em><span class="sig-name descname"><span class="pre">register_accessor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">accessor</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/smtrace.html#Trace.register_accessor"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#paraview.smtrace.Trace.register_accessor" title="Permalink to this definition">¶</a></dt>
+<dd><p>Register an instance of an Accessor or subclass</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="paraview.smtrace.Trace.rename_separate_tf_and_get_representation">
+<em class="property"><span class="pre">classmethod</span> </em><span class="sig-name descname"><span class="pre">rename_separate_tf_and_get_representation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arrayName</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/smtrace.html#Trace.rename_separate_tf_and_get_representation"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#paraview.smtrace.Trace.rename_separate_tf_and_get_representation" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="paraview.smtrace.Trace.reset">
+<em class="property"><span class="pre">classmethod</span> </em><span class="sig-name descname"><span class="pre">reset</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/smtrace.html#Trace.reset"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#paraview.smtrace.Trace.reset" title="Permalink to this definition">¶</a></dt>
+<dd><p>Resets the Output and clears all register accessors.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="paraview.smtrace.Trace.unregister_accessor">
+<em class="property"><span class="pre">classmethod</span> </em><span class="sig-name descname"><span class="pre">unregister_accessor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">accessor</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/smtrace.html#Trace.unregister_accessor"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#paraview.smtrace.Trace.unregister_accessor" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="paraview.smtrace.TraceItem">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">paraview.smtrace.</span></span><span class="sig-name descname"><span class="pre">TraceItem</span></span><a class="reference internal" href="_modules/paraview/smtrace.html#TraceItem"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#paraview.smtrace.TraceItem" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="paraview.smtrace.TraceItem.finalize">
+<span class="sig-name descname"><span class="pre">finalize</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/smtrace.html#TraceItem.finalize"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#paraview.smtrace.TraceItem.finalize" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="paraview.smtrace.TraceOutput">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">paraview.smtrace.</span></span><span class="sig-name descname"><span class="pre">TraceOutput</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/smtrace.html#TraceOutput"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#paraview.smtrace.TraceOutput" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Internal class used to collect the trace output. Everytime anything is pushed into
+this using the append API, we ensure that the trace is updated. Trace
+doesn’t put commands to the trace-output as soon as modifications are noticed
+to try to consolidate the state changes.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="paraview.smtrace.TraceOutput.append">
+<span class="sig-name descname"><span class="pre">append</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/smtrace.html#TraceOutput.append"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#paraview.smtrace.TraceOutput.append" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="paraview.smtrace.TraceOutput.append_separated">
+<span class="sig-name descname"><span class="pre">append_separated</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/smtrace.html#TraceOutput.append_separated"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#paraview.smtrace.TraceOutput.append_separated" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="paraview.smtrace.TraceOutput.append_separator">
+<span class="sig-name descname"><span class="pre">append_separator</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/smtrace.html#TraceOutput.append_separator"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#paraview.smtrace.TraceOutput.append_separator" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="paraview.smtrace.TraceOutput.raw_data">
+<span class="sig-name descname"><span class="pre">raw_data</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/smtrace.html#TraceOutput.raw_data"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#paraview.smtrace.TraceOutput.raw_data" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="paraview.smtrace.TraceOutput.reset">
+<span class="sig-name descname"><span class="pre">reset</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/smtrace.html#TraceOutput.reset"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#paraview.smtrace.TraceOutput.reset" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="paraview.smtrace.TraceText">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">paraview.smtrace.</span></span><span class="sig-name descname"><span class="pre">TraceText</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">text</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/smtrace.html#TraceText"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#paraview.smtrace.TraceText" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#paraview.smtrace.TraceItem" title="paraview.smtrace.TraceItem"><code class="xref py py-class docutils literal notranslate"><span class="pre">paraview.smtrace.TraceItem</span></code></a></p>
+<p>Add text directly to the trace. For paraview client applications to use with non-proxy objects.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="paraview.smtrace.TransferFunctionProxyFilter">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">paraview.smtrace.</span></span><span class="sig-name descname"><span class="pre">TransferFunctionProxyFilter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">trace_all_in_ctor</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/smtrace.html#TransferFunctionProxyFilter"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#paraview.smtrace.TransferFunctionProxyFilter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#paraview.smtrace.ProxyFilter" title="paraview.smtrace.ProxyFilter"><code class="xref py py-class docutils literal notranslate"><span class="pre">paraview.smtrace.ProxyFilter</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="paraview.smtrace.TransferFunctionProxyFilter.should_never_trace">
+<span class="sig-name descname"><span class="pre">should_never_trace</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">prop</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/smtrace.html#TransferFunctionProxyFilter.should_never_trace"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#paraview.smtrace.TransferFunctionProxyFilter.should_never_trace" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="paraview.smtrace.TransferFunctionProxyFilter.should_trace_in_ctor">
+<span class="sig-name descname"><span class="pre">should_trace_in_ctor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">prop</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/smtrace.html#TransferFunctionProxyFilter.should_trace_in_ctor"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#paraview.smtrace.TransferFunctionProxyFilter.should_trace_in_ctor" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="paraview.smtrace.Untraceable">
+<em class="property"><span class="pre">exception</span> </em><span class="sig-prename descclassname"><span class="pre">paraview.smtrace.</span></span><span class="sig-name descname"><span class="pre">Untraceable</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">logmessage</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'&lt;unspecified&gt;'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/smtrace.html#Untraceable"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#paraview.smtrace.Untraceable" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="paraview.smtrace.ViewProxyFilter">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">paraview.smtrace.</span></span><span class="sig-name descname"><span class="pre">ViewProxyFilter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">trace_all_in_ctor</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/smtrace.html#ViewProxyFilter"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#paraview.smtrace.ViewProxyFilter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#paraview.smtrace.ProxyFilter" title="paraview.smtrace.ProxyFilter"><code class="xref py py-class docutils literal notranslate"><span class="pre">paraview.smtrace.ProxyFilter</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="paraview.smtrace.ViewProxyFilter.should_never_trace">
+<span class="sig-name descname"><span class="pre">should_never_trace</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">prop</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/smtrace.html#ViewProxyFilter.should_never_trace"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#paraview.smtrace.ViewProxyFilter.should_never_trace" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="paraview.smtrace.WriterProxyFilter">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">paraview.smtrace.</span></span><span class="sig-name descname"><span class="pre">WriterProxyFilter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">trace_all_in_ctor</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/smtrace.html#WriterProxyFilter"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#paraview.smtrace.WriterProxyFilter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#paraview.smtrace.ProxyFilter" title="paraview.smtrace.ProxyFilter"><code class="xref py py-class docutils literal notranslate"><span class="pre">paraview.smtrace.ProxyFilter</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="paraview.smtrace.WriterProxyFilter.should_never_trace">
+<span class="sig-name descname"><span class="pre">should_never_trace</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">prop</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/smtrace.html#WriterProxyFilter.should_never_trace"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#paraview.smtrace.WriterProxyFilter.should_never_trace" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="paraview.smtrace.WriterProxyFilter.should_trace_in_ctor">
+<span class="sig-name descname"><span class="pre">should_trace_in_ctor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">prop</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/smtrace.html#WriterProxyFilter.should_trace_in_ctor"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#paraview.smtrace.WriterProxyFilter.should_trace_in_ctor" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="paraview.smtrace.get_current_trace_output">
+<span class="sig-prename descclassname"><span class="pre">paraview.smtrace.</span></span><span class="sig-name descname"><span class="pre">get_current_trace_output</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">raw</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/smtrace.html#get_current_trace_output"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#paraview.smtrace.get_current_trace_output" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the trace generated so far in the tracing process.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="paraview.smtrace.get_current_trace_output_and_reset">
+<span class="sig-prename descclassname"><span class="pre">paraview.smtrace.</span></span><span class="sig-name descname"><span class="pre">get_current_trace_output_and_reset</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">raw</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/smtrace.html#get_current_trace_output_and_reset"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#paraview.smtrace.get_current_trace_output_and_reset" title="Permalink to this definition">¶</a></dt>
+<dd><p>Equivalent to calling:</p>
+<p>get_current_trace_output(raw)
+reset_trace_output()</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="paraview.smtrace.reset_trace_output">
+<span class="sig-prename descclassname"><span class="pre">paraview.smtrace.</span></span><span class="sig-name descname"><span class="pre">reset_trace_output</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/smtrace.html#reset_trace_output"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#paraview.smtrace.reset_trace_output" title="Permalink to this definition">¶</a></dt>
+<dd><p>Resets the trace output without resetting the tracing datastructures
+themselves.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="paraview.smtrace.start_trace">
+<span class="sig-prename descclassname"><span class="pre">paraview.smtrace.</span></span><span class="sig-name descname"><span class="pre">start_trace</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">preamble</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/smtrace.html#start_trace"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#paraview.smtrace.start_trace" title="Permalink to this definition">¶</a></dt>
+<dd><p>Starting tracing. On successful start, will return a vtkSMTrace object.
+One can set tracing options on it to control how the tracing. If tracing was
+already started, calling this contine with the same trace.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="paraview.smtrace.stop_trace">
+<span class="sig-prename descclassname"><span class="pre">paraview.smtrace.</span></span><span class="sig-name descname"><span class="pre">stop_trace</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/smtrace.html#stop_trace"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#paraview.smtrace.stop_trace" title="Permalink to this definition">¶</a></dt>
+<dd><p>Stops the trace and returns the generated trace output string.</p>
+</dd></dl>
+
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="paraview.smtesting.html" class="btn btn-neutral float-left" title="smtesting Module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="paraview.spatiotemporalparallelism.html" class="btn btn-neutral float-right" title="spatiotemporalparallelism Module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2013, Kitware, Inc..</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+  <!-- KW:BEGIN -->
+  <script type="text/javascript" src="/paraview-docs/paraview-version.js"></script>
+  <!-- KW:END -->
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
