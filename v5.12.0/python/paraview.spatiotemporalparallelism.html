@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html class="writer-html4" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>spatiotemporalparallelism Module &mdash; ParaView/Python 5.12.0 documentation</title><link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" /><link rel="shortcut icon" href="_static/pvIcon.ico"/>
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="variant Module" href="paraview.variant.html" />
+    <link rel="prev" title="smtrace Module" href="paraview.smtrace.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          <ul>
+            <li> <a href="index.html">
+              <img src="_static/paraview-logo-small.png"
+              alt="ParaView/Python"></img></a> </li>
+            <li class="version"> version 5.12.0</li>
+          </ul>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="quick-start.html">Quick-Start :  A Tutorial</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="paraview.html">The ParaView Python Package</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="paraview.html#id1"><code class="docutils literal notranslate"><span class="pre">paraview</span></code> Package</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="paraview.html#modules">Modules</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="paraview._backwardscompatibilityhelper.html">_backwardscompatibilityhelper Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="paraview._colorMaps.html">_colorMaps Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="paraview.collaboration.html">collaboration Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="paraview.coprocessing.html">coprocessing Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="paraview.cpstate.html">cpstate Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="paraview.inspect.html">inspect Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="paraview.live.html">live Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="paraview.lookuptable.html">lookuptable Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="paraview.numeric.html">numeric Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="paraview.numpy_support.html">numpy_support Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="paraview.pv-vtk-all.html">pv-vtk-all Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="paraview.python_view.html">python_view Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="paraview.selection.html">selection Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="paraview.servermanager.html">servermanager Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="paraview.simple.html">simple Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="paraview.servermanager_proxies.html">Available readers, sources, writers, filters and animation cues</a></li>
+<li class="toctree-l3"><a class="reference internal" href="paraview.smstate.html">smstate Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="paraview.smtesting.html">smtesting Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="paraview.smtrace.html">smtrace Module</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">spatiotemporalparallelism Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="paraview.variant.html">variant Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="paraview.vtk.html">vtk Module</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="paraview.html#subpackages">Subpackages</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="paraview.simple.html">simple</a></li>
+<li class="toctree-l1"><a class="reference internal" href="paraview.servermanager.html">servermanager</a></li>
+<li class="toctree-l1"><a class="reference internal" href="paraview.catalyst.html">catalyst</a></li>
+<li class="toctree-l1"><a class="reference internal" href="paraview.coprocessing.html">coprocessing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="paraview.benchmark.html">benchmark</a></li>
+<li class="toctree-l1"><a class="reference internal" href="paraview.servermanager_proxies.html">Available readers, sources, writers, filters and animation cues</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="api-changes.html">API Changes between ParaView versions</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">ParaView/Python</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+      <a href="genindex.html" class="float-right">Index</a> 
+          <li><a href="paraview.html">paraview Package</a> &raquo;</li>
+      <li>spatiotemporalparallelism Module</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="section" id="module-paraview.spatiotemporalparallelism">
+<span id="spatiotemporalparallelism-module"></span><h1>spatiotemporalparallelism Module<a class="headerlink" href="#module-paraview.spatiotemporalparallelism" title="Permalink to this headline">¶</a></h1>
+<dl class="function">
+<dt id="paraview.spatiotemporalparallelism.CheckReader">
+<code class="descclassname">paraview.spatiotemporalparallelism.</code><code class="descname">CheckReader</code><span class="sig-paren">(</span><em>reader</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/spatiotemporalparallelism.html#CheckReader"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.spatiotemporalparallelism.CheckReader" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="paraview.spatiotemporalparallelism.CreateControllers">
+<code class="descclassname">paraview.spatiotemporalparallelism.</code><code class="descname">CreateControllers</code><span class="sig-paren">(</span><em>timeCompartmentSize</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/spatiotemporalparallelism.html#CreateControllers"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.spatiotemporalparallelism.CreateControllers" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="paraview.spatiotemporalparallelism.CreateReader">
+<code class="descclassname">paraview.spatiotemporalparallelism.</code><code class="descname">CreateReader</code><span class="sig-paren">(</span><em>ctor</em>, <em>fileInfo</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/spatiotemporalparallelism.html#CreateReader"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.spatiotemporalparallelism.CreateReader" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates a reader, checks if it can be used, and sets the filenames</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="paraview.spatiotemporalparallelism.CreateTimeCompartments">
+<code class="descclassname">paraview.spatiotemporalparallelism.</code><code class="descname">CreateTimeCompartments</code><span class="sig-paren">(</span><em>globalController</em>, <em>timeCompartmentSize</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/spatiotemporalparallelism.html#CreateTimeCompartments"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.spatiotemporalparallelism.CreateTimeCompartments" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="paraview.spatiotemporalparallelism.CreateView">
+<code class="descclassname">paraview.spatiotemporalparallelism.</code><code class="descname">CreateView</code><span class="sig-paren">(</span><em>proxy_ctor</em>, <em>filename</em>, <em>magnification</em>, <em>width</em>, <em>height</em>, <em>tp_views</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/spatiotemporalparallelism.html#CreateView"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.spatiotemporalparallelism.CreateView" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="paraview.spatiotemporalparallelism.CreateWriter">
+<code class="descclassname">paraview.spatiotemporalparallelism.</code><code class="descname">CreateWriter</code><span class="sig-paren">(</span><em>ctor</em>, <em>filename</em>, <em>tp_writers</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/spatiotemporalparallelism.html#CreateWriter"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.spatiotemporalparallelism.CreateWriter" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="paraview.spatiotemporalparallelism.IterateOverTimeSteps">
+<code class="descclassname">paraview.spatiotemporalparallelism.</code><code class="descname">IterateOverTimeSteps</code><span class="sig-paren">(</span><em>globalController</em>, <em>timeCompartmentSize</em>, <em>timeSteps</em>, <em>writers</em>, <em>views</em>, <em>make_cinema_table=False</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/spatiotemporalparallelism.html#IterateOverTimeSteps"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.spatiotemporalparallelism.IterateOverTimeSteps" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="paraview.spatiotemporalparallelism.RegisterView">
+<code class="descclassname">paraview.spatiotemporalparallelism.</code><code class="descname">RegisterView</code><span class="sig-paren">(</span><em>view</em>, <em>filename='filename_%t.vti'</em>, <em>magnification=1.0</em>, <em>width=1024</em>, <em>height=1024</em>, <em>tp_views=[]</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/spatiotemporalparallelism.html#RegisterView"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.spatiotemporalparallelism.RegisterView" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="paraview.spatiotemporalparallelism.RegisterWriter">
+<code class="descclassname">paraview.spatiotemporalparallelism.</code><code class="descname">RegisterWriter</code><span class="sig-paren">(</span><em>writer</em>, <em>filename</em>, <em>tp_writers</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/spatiotemporalparallelism.html#RegisterWriter"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.spatiotemporalparallelism.RegisterWriter" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="paraview.spatiotemporalparallelism.WriteFiles">
+<code class="descclassname">paraview.spatiotemporalparallelism.</code><code class="descname">WriteFiles</code><span class="sig-paren">(</span><em>currentTimeStep</em>, <em>currentTime</em>, <em>writers</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/spatiotemporalparallelism.html#WriteFiles"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.spatiotemporalparallelism.WriteFiles" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="paraview.spatiotemporalparallelism.WriteImages">
+<code class="descclassname">paraview.spatiotemporalparallelism.</code><code class="descname">WriteImages</code><span class="sig-paren">(</span><em>currentTimeStep</em>, <em>currentTime</em>, <em>views</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/paraview/spatiotemporalparallelism.html#WriteImages"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#paraview.spatiotemporalparallelism.WriteImages" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="paraview.smtrace.html" class="btn btn-neutral float-left" title="smtrace Module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="paraview.variant.html" class="btn btn-neutral float-right" title="variant Module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2013, Kitware, Inc..</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+  <!-- KW:BEGIN -->
+  <script type="text/javascript" src="/paraview-docs/paraview-version.js"></script>
+  <!-- KW:END -->
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html class="writer-html4" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>paraview.util &mdash; ParaView/Python 5.11.1 documentation</title><link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" /><link rel="shortcut icon" href="../../_static/pvIcon.ico"/>
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          <ul>
+            <li> <a href="../../index.html">
+              <img src="../../_static/paraview-logo-small.png"
+              alt="ParaView/Python"></img></a> </li>
+            <li class="version"> version 5.11.1</li>
+          </ul>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../quick-start.html">Quick-Start :  A Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../paraview.html">The ParaView Python Package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../paraview.simple.html">simple</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../paraview.servermanager.html">servermanager</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../paraview.coprocessing.html">coprocessing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../paraview.benchmark.html">benchmark</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../paraview.servermanager_proxies.html">Available readers, sources, writers, filters and animation cues</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../api-changes.html">API Changes between ParaView versions</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">ParaView/Python</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+      <a href="../../genindex.html" class="float-right">Index</a> 
+          <li><a href="../index.html">Module code</a> &raquo;</li>
+      <li>paraview.util</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <h1>Source code for paraview.util</h1><div class="highlight"><pre>
+<span></span>
+<span class="c1"># These functions were present in a util.py module.</span>
+<span class="c1"># Keeping them around for backwards compatibility</span>
+<div class="viewcode-block" id="SetOutputWholeExtent"><a class="viewcode-back" href="../../paraview.util.html#paraview.util.SetOutputWholeExtent">[docs]</a><span class="k">def</span> <span class="nf">SetOutputWholeExtent</span><span class="p">(</span><span class="n">algorithm</span><span class="p">,</span> <span class="n">extent</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Convenience method to help set the WHOLE_EXTENT() in RequestInformation.</span>
+<span class="sd">    Commonly used by programmable filters. The arguments are the algorithm</span>
+<span class="sd">    and a tuple/list with 6 elements (xmin, xmax, ymin, ymax, zmin, zmax).</span>
+
+<span class="sd">    Example use::</span>
+
+<span class="sd">        import paraview.util</span>
+<span class="sd">        # The output will be of dimensions 10, 1, 1</span>
+<span class="sd">        paraview.util.SetOutputWholeExtent(algorithm, (0, 9, 0, 0, 0, 0)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">extent</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">6</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="s2">&quot;Expected a sequence of length 6&quot;</span>
+    <span class="kn">from</span> <span class="nn">vtkmodules.vtkCommonExecutionModel</span> <span class="k">import</span> <span class="n">vtkStreamingDemandDrivenPipeline</span>
+    <span class="n">algorithm</span><span class="o">.</span><span class="n">GetExecutive</span><span class="p">()</span><span class="o">.</span><span class="n">GetOutputInformation</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">Set</span><span class="p">(</span><span class="n">vtkStreamingDemandDrivenPipeline</span><span class="o">.</span><span class="n">WHOLE_EXTENT</span><span class="p">(),</span> <span class="n">extent</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">extent</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">extent</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span><span class="n">extent</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">extent</span><span class="p">[</span><span class="mi">4</span><span class="p">],</span> <span class="n">extent</span><span class="p">[</span><span class="mi">5</span><span class="p">])</span></div>
+
+<div class="viewcode-block" id="IntegrateCell"><a class="viewcode-back" href="../../paraview.util.html#paraview.util.IntegrateCell">[docs]</a><span class="k">def</span> <span class="nf">IntegrateCell</span><span class="p">(</span><span class="n">dataset</span><span class="p">,</span> <span class="n">cellId</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    This functions uses vtkCellIntegrator&#39;s Integrate method that calculates</span>
+<span class="sd">    the length/area/volume of a 1D/2D/3D cell. The calculation is exact for</span>
+<span class="sd">    lines, polylines, triangles, triangle strips, pixels, voxels, convex</span>
+<span class="sd">    polygons, quads and tetrahedra. All other 3D cells are triangulated</span>
+<span class="sd">    during volume calculation. In such cases, the result may not be exact.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="kn">from</span> <span class="nn">paraview.modules.vtkPVVTKExtensionsFiltersGeneral</span> <span class="k">import</span> <span class="n">vtkCellIntegrator</span>
+    <span class="k">return</span> <span class="n">vtkCellIntegrator</span><span class="o">.</span><span class="n">Integrate</span><span class="p">(</span><span class="n">dataset</span><span class="p">,</span> <span class="n">cellId</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="ReplaceDollarVariablesWithEnvironment"><a class="viewcode-back" href="../../paraview.util.html#paraview.util.ReplaceDollarVariablesWithEnvironment">[docs]</a><span class="k">def</span> <span class="nf">ReplaceDollarVariablesWithEnvironment</span><span class="p">(</span><span class="n">text</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Replaces all substrings of the type `${FOO}` with `FOO` obtained</span>
+<span class="sd">    from the `os.environ`. If the key is not defined in the environment, this</span>
+<span class="sd">    raises a `KeyError`.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="kn">import</span> <span class="nn">os</span><span class="o">,</span> <span class="nn">re</span>
+    <span class="n">r</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;\$ENV\{([^}]+)\}&quot;</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">repl</span><span class="p">(</span><span class="n">m</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">m</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="n">m</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">1</span><span class="p">)]</span>
+        <span class="k">raise</span> <span class="ne">KeyError</span><span class="p">(</span><span class="s2">&quot;&#39;</span><span class="si">%s</span><span class="s2">&#39; is not defined in the process environment&quot;</span> <span class="o">%</span> <span class="n">m</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">repl</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Glob"><a class="viewcode-back" href="../../paraview.util.html#paraview.util.Glob">[docs]</a><span class="k">def</span> <span class="nf">Glob</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">rootDir</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Given a path, this function performs globbing on the file names inside the input</span>
+<span class="sd">    directory. rootDir is an optional parameter that can set a relative root directory from which</span>
+<span class="sd">    path is defined. This function returns the list of files matching the globbing pattern (the</span>
+<span class="sd">    wildcard * is an example of pattern that can be used) of the</span>
+<span class="sd">    input path. Note that for this function to work, the globbing pattern needs to only belong to</span>
+<span class="sd">    the file name at the end of path.</span>
+<span class="sd">    fnmatch package is used as the backend for processing the input pattern.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="kn">import</span> <span class="nn">paraview</span>
+    <span class="kn">import</span> <span class="nn">paraview.simple</span>
+    <span class="kn">import</span> <span class="nn">paraview.servermanager</span> <span class="k">as</span> <span class="nn">sm</span>
+    <span class="kn">import</span> <span class="nn">fnmatch</span>
+    <span class="kn">import</span> <span class="nn">os.path</span>
+
+    <span class="n">head_tail</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
+    <span class="n">dirPath</span> <span class="o">=</span> <span class="n">head_tail</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">fileName</span> <span class="o">=</span> <span class="n">head_tail</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+
+    <span class="n">fileInfoHelperProxy</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">ProxyManager</span><span class="p">()</span><span class="o">.</span><span class="n">NewProxy</span><span class="p">(</span><span class="s2">&quot;misc&quot;</span><span class="p">,</span> <span class="s2">&quot;FileInformationHelper&quot;</span><span class="p">)</span>
+    <span class="n">fileInfoHelperProxy</span><span class="o">.</span><span class="n">GetProperty</span><span class="p">(</span><span class="s2">&quot;DirectoryListing&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">SetElement</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span>
+    <span class="n">fileInfoHelperProxy</span><span class="o">.</span><span class="n">GetProperty</span><span class="p">(</span><span class="s2">&quot;Path&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">SetElement</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">dirPath</span><span class="p">)</span>
+    <span class="n">fileInfoHelperProxy</span><span class="o">.</span><span class="n">GetProperty</span><span class="p">(</span><span class="s2">&quot;GroupFileSequences&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">SetElement</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">rootDir</span> <span class="o">!=</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">fileInfoHelperProxy</span><span class="o">.</span><span class="n">GetProperty</span><span class="p">(</span><span class="s2">&quot;WorkingDirectory&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">SetElement</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">rootDir</span><span class="p">)</span>
+    <span class="n">fileInfoHelperProxy</span><span class="o">.</span><span class="n">UpdateVTKObjects</span><span class="p">()</span>
+
+    <span class="n">localFileInfo</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">vtkPVFileInformation</span><span class="p">()</span>
+    <span class="n">fileInfoHelperProxy</span><span class="o">.</span><span class="n">GatherInformation</span><span class="p">(</span><span class="n">localFileInfo</span><span class="p">)</span>
+    <span class="n">numFiles</span> <span class="o">=</span> <span class="n">localFileInfo</span><span class="o">.</span><span class="n">GetContents</span><span class="p">()</span><span class="o">.</span><span class="n">GetNumberOfItems</span><span class="p">()</span>
+
+    <span class="n">foundFiles</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">numFiles</span><span class="p">):</span>
+        <span class="n">name</span> <span class="o">=</span> <span class="n">localFileInfo</span><span class="o">.</span><span class="n">GetContents</span><span class="p">()</span><span class="o">.</span><span class="n">GetItemAsObject</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="o">.</span><span class="n">GetName</span><span class="p">()</span>
+        <span class="k">if</span> <span class="n">fnmatch</span><span class="o">.</span><span class="n">fnmatch</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">fileName</span><span class="p">):</span>
+            <span class="n">foundFiles</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">dirPath</span> <span class="o">+</span> <span class="s1">&#39;/&#39;</span> <span class="o">+</span> <span class="n">name</span><span class="p">)</span>
+
+    <span class="n">foundFiles</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
+
+    <span class="k">return</span> <span class="n">foundFiles</span></div>
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2013, Kitware, Inc..</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+  <!-- KW:BEGIN -->
+  <script type="text/javascript" src="/paraview-docs/paraview-version.js"></script>
+  <!-- KW:END -->
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
