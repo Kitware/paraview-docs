@@ -96,7 +96,7 @@ if [ "$PARAVIEW_DOC_UPLOAD" = "true" ]; then
         fi
         cp -av "$VERSION"/ latest/
     fi
-    if [ -f "${GITHUB_SSH_PRIVATE_KEY}" ]; then
-        rsync -e "ssh -i $GITHUB_SSH_PRIVATE_KEY" -av --progress . kitware@web
+    if [ -f "${RSYNC_SSH_PRIVATE_KEY}" ]; then
+        rsync -e "ssh -i $RSYNC_SSH_PRIVATE_KEY" -av --progress . kitware@web
     fi
 fi
