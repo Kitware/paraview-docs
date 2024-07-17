@@ -97,6 +97,6 @@ if [ "$PARAVIEW_DOC_UPLOAD" = "true" ]; then
         cp -av "$VERSION"/ latest/
     fi
     if [ -f "${RSYNC_SSH_PRIVATE_KEY}" ]; then
-        rsync -e "ssh -i $RSYNC_SSH_PRIVATE_KEY" -av --progress . kitware@web:
+        rsync -e "ssh -o StrictHostKeyChecking=accept-new -i $RSYNC_SSH_PRIVATE_KEY" -av --progress . kitware@web:
     fi
 fi
